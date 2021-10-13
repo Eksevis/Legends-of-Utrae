@@ -1,0 +1,263 @@
+[t:template,n:ut2w_bear]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_bear_base";
+	specializes = actor_evil;
+	[actor]
+		{
+			race=other;
+			[skills]
+				{
+			strength =  12.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  54,  0;
+				}
+		}
+	[aspect]
+		{
+		experience_value = 15669;
+		life = 608;
+		max_life = 608;
+		mana = 108;
+		max_mana = 108;
+			model=m_c_na_br_pos_1;
+			material = claw;
+			[voice]
+				{
+					[die]			{ priority = high; * = s_e_die_bear_SED; }
+					[enemy_spotted]	{ priority = high; * = s_e_call_bear_SED; }
+					[hit_glance]
+						{
+							* = s_e_hit_bear_SED;
+							* = s_e_hit_bear2_SED;
+							priority = low;
+						}
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 195;
+			damage_min = 180;
+		}
+	[body]
+		{
+			avg_move_velocity = 3.000000;
+			[bone_translator]
+				{
+					body_anterior = bip01_head;
+					body_mid = bip01_spine1;
+					body_posterior = bip01_spine2;
+					kill_bone = Bip01_Head;
+					shield_bone = bip01_l_hand;
+					weapon_bone = bip01_r_hand;
+				}
+			[chore_dictionary]
+				{
+					chore_prefix = a_c_na_br_fs;
+					[chore_attack]
+						{
+							chore_stances = 0;
+							skrit = select_attack;
+							[anim_files] { 00=at; }
+						}
+					[chore_default]
+						{
+							chore_stances = 0;
+							skrit = infinite_loop;
+							[anim_files] { 00=ds; }
+						}
+					[chore_die]
+						{
+							chore_stances = 0;
+							skrit = select_transition;
+							[anim_files] { 00=di; }
+						}
+					[chore_fidget]
+						{
+							chore_stances = 0;
+							skrit = select_fidget;
+							[anim_files] { 00=dff; }
+						}
+					[chore_walk]
+						{
+							chore_stances = 0;
+							skrit = select_walk;
+							[anim_files] { 00=wl; }
+						}
+				}
+		}
+	[common] { screen_name="Grizzly Bear"; }
+	[defend] { defense = 830; }
+	[guts_manager]
+		{
+			effect_name = melee_hit_2;
+		}
+	[mind]
+		{
+			jat_fidget                     = world\ai\jobs\common\job_fidget.skrit  
+				?social                                 = 0.5  
+				&delay_min                              = 4.0  
+				&delay_max                              = 10.0  
+				&still                                  = false; 
+
+			inner_comfort_zone_range = 3;
+			melee_engage_range = 6;
+			outer_comfort_zone_range = 4;
+			personal_space_range = 3.0;
+			sight_range = 10;
+		}
+	[physics]
+		{
+			break_effect = blood_mist;
+			break_sound = s_e_meat_explosion;
+			[break_particulate]
+				{
+					frag_glb_generic_01 = 2;
+					frag_glb_generic_02 = 2;
+					frag_glb_generic_03 = 2;
+					frag_glb_generic_04 = 2;
+					frag_glb_generic_05 = 2;
+					frag_glb_generic_06 = 2;
+					frag_glb_generic_07 = 2;
+					frag_glb_generic_08 = 1;
+					frag_glb_generic_09 = 1;
+					frag_glb_generic_10 = 1;
+					frag_glb_generic_11 = 1;
+					frag_glb_generic_12 = 1;
+				}
+		}
+}
+
+
+//Polar Bear
+[t:template,n:ut2w_bear_snow]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_bear_snow";
+	specializes = actor_evil;
+	[actor]
+		{
+			race=other;
+			[skills]
+				{
+					strength =  12, 0;
+					intelligence =  7, 0;
+					dexterity =  8, 0;
+					melee =  3,  0;
+				}
+		}
+	[aspect]
+		{
+			life = 40;
+			max_life = 40;
+			model=m_c_na_br_pos_1;
+			material = claw;
+		textures:0 = b_c_edm_br-02;
+			[voice]
+				{
+					[die]			{ * = s_e_die_bear_SED;		 }
+					[enemy_spotted]	{ * = s_e_call_bear_SED; }
+					[hit_glance]
+						{
+							* = s_e_hit_bear_SED;
+							* = s_e_hit_bear2_SED;
+						}
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 25;
+			damage_min = 15;
+		}
+	[body]
+		{
+			avg_move_velocity = 3.000000;
+			[bone_translator]
+				{
+					body_anterior = bip01_head;
+					body_mid = bip01_spine1;
+					body_posterior = bip01_spine2;
+					kill_bone = Bip01_Head;
+					shield_bone = bip01_l_hand;
+					weapon_bone = bip01_r_hand;
+				}
+			[chore_dictionary]
+				{
+					chore_prefix = a_c_na_br_fs;
+					[chore_attack]
+						{
+							chore_stances = 0;
+							skrit = select_attack;
+							[anim_files] { 00=at; }
+						}
+					[chore_default]
+						{
+							chore_stances = 0;
+							skrit = infinite_loop;
+							[anim_files] { 00=ds; }
+						}
+					[chore_die]
+						{
+							chore_stances = 0;
+							skrit = select_transition;
+							[anim_files] { 00=di; }
+						}
+					[chore_fidget]
+						{
+							chore_stances = 0;
+							skrit = select_fidget;
+							[anim_files] { 00=dff; }
+						}
+					[chore_walk]
+						{
+							chore_stances = 0;
+							skrit = select_walk;
+							[anim_files] { 00=wl; }
+						}
+				}
+		}
+	[common] { screen_name="Polar Bear"; }
+	[defend] { defense=25; }
+	[guts_manager]
+		{
+			effect_name = melee_hit_2;
+		}
+	[mind]
+		{
+			jat_fidget                     = world\ai\jobs\common\job_fidget.skrit  
+				?social                                 = 0.5  
+				&delay_min                              = 4.0  
+				&delay_max                              = 10.0  
+				&still                                  = false; 
+
+			inner_comfort_zone_range = 3;
+			melee_engage_range = 6;
+			outer_comfort_zone_range = 4;
+			personal_space_range = 3.0;
+			sight_range = 10;
+		}
+	[physics]
+		{
+			break_effect = blood_mist;
+			break_sound = s_e_meat_explosion;
+			[break_particulate]
+				{
+					frag_glb_generic_01 = 2;
+					frag_glb_generic_02 = 2;
+					frag_glb_generic_03 = 2;
+					frag_glb_generic_04 = 2;
+					frag_glb_generic_05 = 2;
+					frag_glb_generic_06 = 2;
+					frag_glb_generic_07 = 2;
+					frag_glb_generic_08 = 1;
+					frag_glb_generic_09 = 1;
+					frag_glb_generic_10 = 1;
+					frag_glb_generic_11 = 1;
+					frag_glb_generic_12 = 1;
+				}
+		}
+}
+

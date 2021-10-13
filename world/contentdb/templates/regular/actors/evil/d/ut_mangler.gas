@@ -1,0 +1,130 @@
+[t:template,n:ut_mangler]
+{
+	doc = "mangler";
+	specializes = base_mangler;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		16, 0;
+			intelligence = 	5, 0;
+			dexterity = 	9, 0;
+			melee =  		18,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1300;
+		life = 360;
+		max_life = 360;
+		mana = 10;
+		max_mana = 10;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 120;
+		damage_min = 110;
+	}
+	[common] { screen_name="Mangler"; }
+	[defend] { defense=273; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #*/59-71;
+			}
+		}
+	}
+}
+[t:template,n:ut_snapper]
+{
+	doc = "snapper";
+	specializes = base_mangler;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 	4, 0;
+			intelligence = 	2, 0;
+			dexterity = 	3, 0;
+			melee =  		1,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5;
+		life = 7;
+		max_life = 7;
+		mana = 4;
+		max_mana = 4;
+		scale_base = 0.60;
+		[textures]	{0=b_c_edm_mn-02;}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 6;
+		damage_min = 3;
+	}
+	[common] { screen_name="Snapper"; }
+	[defend] { defense=12; }
+	[mind] 
+	{ 
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+        personal_space_range = 0.2;
+	}
+}
+[t:template,n:ut_mangler_sea]
+{
+	doc = "mangler_sea";
+	specializes = base_mangler;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		18, 0;
+			intelligence = 	4, 0;
+			dexterity = 	11, 0;
+			melee =  		20, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 8000;
+		life = 720;
+		max_life = 720;
+		mana = 4;
+		material = teeth;
+		max_mana = 4;
+		//scale_base = 0.60; // $$ What should his scale be? -CarlosN
+		[textures]	{0=b_c_edm_mn-03;}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 118;
+		damage_min = 104;
+	}
+	[common] { screen_name="Sea Mangler"; }
+	[defend] { defense=380; }
+	[mind]
+	{
+		jat_attack_object_melee	= world\ai\jobs\common\job_attack_object_melee.skrit
+			?cautious_chance	= 0.75
+			&min_cautious_distance = 3.00
+			&cautious_approach_distance = 1.0
+			&cautious_down_time = 1.1;
+
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?social 		= 0.35
+			&approach_dist 	= 2.00
+			&move_distance 	= 4.00
+			&min_distance 	= 2.00
+			&still 			= false;
+	}
+}

@@ -1,0 +1,179 @@
+[t:sign_glb_magic_right,n:0x0760005f]
+{
+	[common]
+	{
+		screen_name = "Vielle's Herbs & Spells";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.981628,0,-0.190809;
+	  p position = 0.258278,-0.434768,22.1177,0x362fca78;
+	}
+}
+[t:sign_glb_blacksmith_03,n:0x07600a10]
+{
+	[placement]
+	{
+	  q orientation = 0,0.803857,0,0.594823;
+	  p position = 15.2648,-1.45001,22.8282,0x362fca78;
+	}
+}
+[t:sign_glb_blacksmith_left,n:0x0760005c]
+{
+	[common]
+	{
+		screen_name = "Smithy";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.366501,0,0.930418;
+	  p position = 23.0666,-0.518131,24.0954,0x87926434;
+	}
+}
+[t:sign_glb_magicshop_01,n:0x07600a0b]
+{
+	[common]
+	{
+		screen_name = "Vielle's Herbs & Spells";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.986285,0,-0.165048;
+	  p position = 16.1213,-1.1,16.4501,0x87926434;
+	}
+}
+[t:sign_glb_01,n:0x07600a07]
+{
+	[common]
+	{
+		dev_instance_text = "sign_5";
+		screen_name = "Town of Grescal, 10";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.130527,0,0.991445;
+	  p position = -3.58131,0,0.339966,0x5bd5775f;
+	}
+}
+[t:sign_glb_01,n:0x07600a05]
+{
+	[common]
+	{
+		dev_instance_text = "sign_6";
+		screen_name = "Town of Grescal, 17";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.5,0,0.866026;
+	  p position = 3.67503,0,-1.79608,0x16f4951b;
+	}
+}
+[t:sign_glb_01,n:0x07600a03]
+{
+	[common]
+	{
+		dev_instance_text = "sign_2";
+		screen_name = "Town of Grescal, 15";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.130527,0,0.991445;
+	  p position = -1.80439,0,-0.947266,0x793b97fd;
+	}
+}
+[t:sign_glb_01,n:0x07600a01]
+{
+	[common]
+	{
+		dev_instance_text = "sign_3";
+		screen_name = "Town of Grescal, 16";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.258819,0,0.965926;
+	  p position = 2.67612,1.90735e-006,1.21794,0xd50993d2;
+	}
+}
+[t:sign_glb_01,n:0x076006c0]
+{
+	[common]
+	{
+		dev_instance_text = "sign_4";
+		screen_name = "Town of Grescal, 16";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.608762,0,0.793354;
+	  p position = -2.42252,-4.76837e-007,-1.48479,0x48114033;
+	}
+}
+[t:sign_des_grescal,n:0x0760005a]
+{
+	[placement]
+	{
+	  p position = 1.42584,-0.27592,-10.3313,0x432556a7;
+	}
+}
+[t:lever_glb_06_message,n:0x076009e5]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x076000B1;
+	  x on_scid = 0x076000B1;
+	  f required_level = 50;
+	  f required_level_2 = 80;
+	  f required_level_3 = 106;
+	  f reset_time = 20;
+	  f reset_time_2 = 20;
+	}
+	[placement]
+	{
+	  q orientation = -0.653281,0.270598,0.270598,0.653281;
+	  p position = -0.00576019,1.15453,0.00335121,0x76b1bc12;
+		use_point_scids = 0x07600064, 0x07600092;
+	}
+}
+[t:sign_glb_01,n:0x07600a09]
+{
+	[common]
+	{
+		dev_instance_text = "sign_7";
+		screen_name = "Town of Grescal, 13";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.258819,0,0.965926;
+	  p position = -0.659653,4.76837e-007,-1.8985,0x4d5d4210;
+	}
+}
+[t:sign_glb_01,n:0x076009fe]
+{
+	[common]
+	{
+		dev_instance_text = "sign_8";
+		screen_name = "Town of Grescal, 15";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.430511,0,0.902586;
+	  p position = 2.00789,0.896912,2.43765,0xd44bc688;
+	}
+}
+[t:sign_glb_01,n:0x076006ad]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Grescal";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.956305,0,0.292372;
+	  p position = -5.4145,0.799999,-12.1956,0xa6c36ff3;
+	}
+}

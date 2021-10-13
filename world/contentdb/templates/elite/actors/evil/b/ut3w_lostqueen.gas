@@ -1,0 +1,315 @@
+[t:template,n:ut3w_lostqueen]
+{
+  category_name = "1W_evil_d";
+  doc = "dsx_lostqueen";
+  specializes = actor_evil;
+  [actor]
+    {
+      [skills]
+	{
+	  strength =     12, 0;
+	  intelligence = 10, 0;
+	  dexterity =    10, 0;
+	combat_magic =  6, 0;
+	nature_magic =	6, 0;
+	}
+    }
+  [aspect]
+    {
+      draw_shadow = false;
+      experience_value = 69;
+      life = 220;
+      max_life = 220;
+      max_mana = 10;
+      mana = 10;
+      model = m_c_ebb_lqb;
+      textures:0 = b_c_ebb_lq;
+      
+      [voice]
+	{
+	  [cast]		{ * = s_e_attack_lost_queen;		  }
+	  //[die]			{ priority = high; * = s_e_die_lost_queen;	  }
+	  [enemy_spotted]	{ priority = high; * = s_e_call_lost_queen; }
+	  [hit_glance]	        { priority = low; * = s_e_hit_lost_queen_SED;	  }
+	}
+    }
+	[attack]
+	{
+		attack_range = 4;
+ 		damage_max = 50;
+		damage_min = 40;
+	}
+	[defend] { defense=50; }
+	[body]
+	{
+		// don't let her turn or move or clipping problems and jumping results
+		can_turn_and_move = false;
+		min_move_velocity = 0;
+		avg_move_velocity = 0;
+		max_move_velocity = 0;
+		angular_turning_velocity = 0;
+		terrain_movement_permissions = lf_hover;
+
+		[bone_translator]
+		{
+			body_anterior = Bip01_Head;
+			body_mid = Bip01_Spine;
+			body_posterior = Bip01_Pelvis;
+			kill_bone = Bip01_Spine;
+			//shield_bone = bone03;
+			weapon_bone = Bip01_lower_Jaw;
+		}
+    
+		
+		[chore_dictionary]
+		{
+			initial_chore = chore_none;
+			chore_prefix = a_c_ebb_lqb_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{	
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_magic]
+			{
+		      		chore_stances = 0;
+		      		skrit = select_attack;
+		      		[anim_files] 
+				{ 
+					00=mg-02; 
+					01=mg-02;
+				}
+		    	}
+		}
+	}
+  	[common]
+    	{
+		screen_name="Lost Queen";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("lostqueen_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_lost_queen;
+		}
+		[pcontent]
+		{
+		/* Generated: Tue Jun 17 11:13:15 2003
+			Level 5, Special */
+			//edited by hand
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #weapon/-rare(1)/17-25;
+					il_main = #armor/-rare(1)/0-53;
+					il_main = #*/-rare(1)/17-25;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/-unique(2)/20-32;
+					//	armor and ring requests ALWAYS fail, amulets usually work
+					//il_main = #armor/-unique(2)/0-53;
+					il_main = #amulet/-unique(2)/20-32;
+				}
+			}
+		}
+	}
+
+  	[mind]
+    	{
+		// brain to keep body together
+		//jat_brain 								= world\ai\jobs\actors\evil\dsx_brain_lq_torso.skrit
+		//	?tail_template						= "dsx_lostqueen_tail";							= 
+		jat_flee_from_object					= jat_none;
+		jat_guard         						= jat_none;
+		jat_move          						= jat_none;
+		jat_patrol         						= jat_none;
+		// and a bunch of stuff to make sure she doesn't turn or move
+		jat_face								= jat_none;
+		jat_cast	    						= world\ai\jobs\common\job_cast.skrit
+			?no_moveturn						= true
+			&spell_by_range						= true
+			&use_base_duration					= false
+			&rand_target						= true;
+		jat_startup 							= world\ai\jobs\common\job_startup_reveal.skrit
+			?activate							= true
+			&try_face							= false;
+		jat_fidget								= world\ai\jobs\common\job_fidget.skrit
+			?still								= false;
+		jat_attack_object_melee 				= world\ai\jobs\common\job_attack_object_melee.skrit
+			?no_turn							= true;
+
+		//on_enemy_entered_icz_switch_to_melee	= true;
+		
+		actor_weapon_preference				= WP_MAGIC;
+		actor_auto_switches_to_magic			= true;
+		actor_auto_switches_to_karate			= true;
+		actor_auto_switches_to_melee			= true;
+		
+		movement_orders 						= mo_hold;
+		inner_comfort_zone_range 				= 4.4;
+		melee_engage_range 						= 14.0;
+		personal_space_range 					= 2.0;
+		on_enemy_entered_ocz_attack 			= true;
+		ranged_engage_range 					= 14.0;
+		sight_range 							= 14.0;
+		sight_origin_height						= 2;
+    }
+}
+
+[t:template,n:ut3w_lostqueen_tail]
+{
+	category_name = "1W_evil_b";
+	doc = "dsx_lostqueen_tail";
+	specializes = actor_evil;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =     30, 0;
+			intelligence = 20, 0;
+			dexterity =    20, 0;
+			ranged =       30, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 69;
+		life = 165;
+		max_life = 165;
+		max_mana = 10;
+		mana = 10;
+		model = m_c_ebb_lqt;
+		textures:0 = b_c_ebb_lq_b;
+		
+		[voice]{}
+	}
+	[attack]{}
+	[defend] { defense=35; }
+	[body]
+	{
+		avg_move_velocity = 0;
+		terrain_movement_permissions = lf_hover;
+		[bone_translator]
+		{
+			kill_bone = Bip01_Tail03;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ebb_lqt_fs;
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs_2; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] 
+				{ 
+					00 = di-02_2; 
+					//01 = di_2;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff_2; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					revl = a_c_ebb_lqt_fs0_rv_2;
+				}
+			}
+		}
+	}
+  	[common]
+    {
+		screen_name="Lost Queen Tail";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("lostqueen_tail_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}  
+
+  	[mind]
+  	{		
+		jat_brain								= jat_none; // is this right?
+		jat_flee_from_object					= jat_none;
+		jat_guard         						= jat_none;
+		jat_move          						= jat_none;
+		jat_patrol         						= jat_none;
+		// and a bunch of stuff to make sure she doesn't turn or move
+		jat_face								= jat_none;
+		jat_cast	    						= world\ai\jobs\common\job_cast.skrit
+			?no_moveturn						= true
+			&spell_by_range						= true
+			&use_base_duration					= false
+			&rand_target						= true;
+		jat_startup 							= world\ai\jobs\common\job_startup_reveal.skrit
+			?activate							= true
+			&try_face							= false;
+		jat_fidget								= world\ai\jobs\common\job_fidget.skrit
+			?still								= false;
+		jat_attack_object_melee 				= world\ai\jobs\common\job_attack_object_melee.skrit
+			?no_turn							= true;
+		
+		movement_orders 						= mo_hold;
+		inner_comfort_zone_range 				= 4.4;
+		melee_engage_range 						= 4.5;
+		personal_space_range 					= 2.0;
+		on_enemy_entered_ocz_attack 			= true;
+		ranged_engage_range 					= 10.0;
+		sight_range 							= 14.0;
+		sight_origin_height						= 2;
+	}
+}

@@ -1,0 +1,318 @@
+[t:use_point,n:0x0a000314]
+{
+	[placement]
+	{
+	  p position = -0.202827,0,-1.67569,0xd5e5e8e3;
+	}
+}
+[t:use_point,n:0x0a000321]
+{
+	[placement]
+	{
+	  p position = -0.0848694,-1,-3.82977,0x92c97805;
+	}
+}
+[t:trigger_generic,n:0x0a00000d]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_4");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0784592,0,0.996917;
+	  p position = -4.04136,-2.7925,-0.067318,0xec350b8f;
+	}
+}
+[t:trigger_generic,n:0x0a000074]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0784592,0,0.996917;
+	  p position = -3.68305,-2.79249,-5.80086,0xec350b8f;
+	}
+}
+[t:use_point,n:0x0a000319]
+{
+	[placement]
+	{
+	  p position = -8.90413,-3.93548,-12.3298,0xec350b8f;
+	}
+}
+[t:use_point,n:0x0a00031a]
+{
+	[placement]
+	{
+	  p position = -3.85861,-3.90719,-16.844,0xec350b8f;
+	}
+}
+[t:use_point,n:0x0a00031b]
+{
+	[placement]
+	{
+	  p position = -7.50135,-4,-20.2367,0xec350b8f;
+	}
+}
+[t:use_point,n:0x0a00031c]
+{
+	[placement]
+	{
+	  p position = -17.6626,-4.06884,-19.123,0xec350b8f;
+	}
+}
+[t:use_point,n:0x0a00031d]
+{
+	[placement]
+	{
+	  p position = -0.845467,0,-0.323013,0xcd038612;
+	}
+}
+[t:use_point,n:0x0a00031e]
+{
+	[placement]
+	{
+	  p position = 3.00925,-1,-1.23625,0x564b3683;
+	}
+}
+[t:use_point,n:0x0a000041]
+{
+	[placement]
+	{
+	  p position = 0.66655,0.155043,-1.51681,0x8dc1a7e1;
+	}
+}
+[t:use_point,n:0x0a000316]
+{
+	[placement]
+	{
+	  p position = -3.35703,0,1.55015,0x8772deac;
+	}
+}
+[t:use_point,n:0x0a000268]
+{
+	[placement]
+	{
+	  p position = -1.89541,0,0.537727,0xdfc4e945;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x0a000063]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.500000,2.000000,4.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = dragon_fade_2;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 0.113701,-3.98574,-1.20673,0x92d37dfb;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x0a000232]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xAAA70102,1,4,2,"out:black"), group(1);
+				action* = fade_nodes(0xAAA70102,1,4,2,"in"), group(2);
+			  b can_self_destruct = true;
+				condition* = party_member_left_trigger_group("dragon_fade_2","on_every_leave"), group(2);
+				condition* = party_member_entered_trigger_group("dragon_fade_2","on_every_enter"), group(1);
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -0.728622,-3.98574,-1.21851,0x92d37dfb;
+	}
+}
+[t:use_point,n:0x0a00031f]
+{
+	[placement]
+	{
+	  p position = 1.02574,0,0.0166016,0x27529f25;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x0a000062]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xAAA70102,1,4,1,"out:black"), group(1);
+				action* = fade_nodes(0xAAA70102,1,4,1,"in"), group(2);
+			  b can_self_destruct = true;
+				condition* = party_member_left_trigger_group("dragon_fade_1","on_every_leave"), group(2);
+				condition* = party_member_entered_trigger_group("dragon_fade_1","on_every_enter"), group(1);
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 0.0597305,-3.97612,0.575109,0xbeb9a96a;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x0a00021e]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.500000,2.000000,4.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = dragon_fade_1;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 0.00537109,-3.97612,-1.88099,0xbeb9a96a;
+	}
+}
+[t:use_point,n:0x0a000266]
+{
+	[placement]
+	{
+	  q orientation = 0,-1.49012e-008,0,1;
+	  p position = 1.7412,0,-0.330574,0xfa32e19f;
+	}
+}
+[t:trigger_generic,n:0x0a000042]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_5");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(8.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.760406,0,0.649448;
+	  p position = 2.8733,0,-0.517174,0x8772deac;
+	}
+}
+[t:trigger_generic,n:0x0a000043]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(8.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0784594,0,0.996917;
+	  p position = 0.24456,0.348224,1.22403,0xaad2ab1d;
+	}
+}

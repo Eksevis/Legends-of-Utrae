@@ -1,0 +1,207 @@
+[t:template,n:ut_slithermage_melee]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_slithermage_melee";
+	specializes = dsx_slithermage_base;
+	[actor]
+		{
+			[skills]
+				{
+					strength =	18, 0;
+					intelligence = 8, 0;
+					dexterity =	11, 0;
+					melee =		17, 0;
+					combat_magic = 16,0;
+					nature_magic = 16,0;
+				}
+		}
+	[aspect]
+		{
+			experience_value 		= 414;
+			life				= 480;
+			max_life			= 480;
+			mana				= 228;
+			max_mana			= 228;
+			textures:0 = b_c_ecm_kl-03;
+
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 148;
+			damage_min = 129;
+		}
+	[body]
+		{
+			avg_move_velocity = 2.5;
+		}
+	[common]
+		{
+			screen_name = "Slithermage Master"; //--
+			membership = monster; //--
+		}
+	[defend] { defense = 180; }
+
+		[inventory]
+
+		{
+			selected_active_location = il_active_primary_spell;
+			[other]
+				{
+					il_active_primary_spell	= dsx_spell_slithermage_blast_2; 
+				}
+	
+		
+			drop_at_use_point = true;
+			[pcontent]
+			{
+			[oneof*]
+			{
+				[oneof*]
+				{
+       				chance = 0.02;
+	                	il_main = #nmagic/5-13;
+	                	il_main = #cmagic/5-13;
+				il_main = #*/40-48;
+				il_main = #armor/20-98;
+			}
+			[oneof*]
+			{
+	            		chance = 0.004;
+	                	il_main = #weapon/-rare(1)/46-58;
+	                	il_main = #armor/-rare(1)/66-151;
+                    		il_main = #*/-rare(1)/46-58;
+			}
+			[oneof*]
+			{
+            			chance = 0.002;
+	                	il_main = #weapon/-unique(2)/46-58;
+	                	il_main = #armor/-unique(2)/66-151;
+                    		il_main = #*/-unique(2)/46-58;
+			}
+			
+			}
+		}
+	}
+	[mind]
+		{
+			jat_brain = world\ai\jobs\common\brain_hero.skrit
+				?actor_joins_existing_party	= true;
+			jat_fidget = world\ai\jobs\common\job_fidget.skrit;
+
+			actor_weapon_preference		= WP_MAGIC;
+			actor_auto_switches_to_magic	= true;
+			actor_auto_switches_to_karate	= true;
+			actor_auto_switches_to_melee	= true;
+			actor_auto_uses_stored_items         = true;
+			on_enemy_entered_icz_switch_to_melee = true;
+			melee_engage_range 		= 14;
+			personal_space_range 		= 0.7;
+			ranged_engage_range 		= 14.0;
+			sight_range 			= 14.0;
+			inner_comfort_zone_range        = 4.0;
+			outer_comfort_zone_range        = 9.0;
+		}
+}
+
+[t:template,n:ut_slithermage_ranged]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_slithermage_ranged_base";
+	specializes = dsx_slithermage_base; 
+	[actor]
+	{
+		[skills]
+		{
+			strength =		18, 0;
+			intelligence = 8, 0;
+			dexterity =		11, 0;
+			nature_magic =	16, 0;
+			combat_magic =	16, 0;
+			}
+	}
+	[aspect]
+	{
+		experience_value 	= 412;
+		life			= 450;
+		max_life		= 450;
+		mana			= 228;
+		max_mana		= 228;
+		textures:0 = b_c_ecm_kl-02;
+		scale_base	 = 0.65;
+	}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 77;
+			damage_min = 68;
+		}
+	[body]
+		{
+			avg_move_velocity = 2.5;
+		}
+	[common]
+		{
+			screen_name = "Slithermage"; //--
+			membership = monster; //--
+		}
+	[defend] { defense = 120; }
+
+	[inventory]
+		{
+			selected_active_location = il_active_primary_spell;
+			[other]
+				{
+					il_active_primary_spell		= dsx_spell_slithermage_blast; 
+				}
+				[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 25, Medium */
+		[oneof*]
+		{
+			[oneof*]
+			{
+       				chance = 0.1;
+	                	il_main = #nmagic/16-17;
+	                	il_main = #cmagic/16-17;
+				il_main = #*/46-50;
+				il_main = #armor/150-165;
+			}
+			[oneof*]
+			{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/51-60;
+	                il_main = #armor/-rare(1)/161-172;
+                    	il_main = #*/-rare(1)/51-60;
+			}
+			[oneof*]
+			{
+                		chance = 0.002;
+	                	il_main = #weapon/-unique(2)/51-60;
+	                	il_main = #armor/-unique(2)/161-172;
+                    		il_main = #*/-unique(2)/51-60;
+			}
+			
+		}
+	}
+		}
+
+	[mind]
+		{
+			jat_brain = world\ai\jobs\common\brain_hero.skrit
+				?actor_joins_existing_party	= true;
+			jat_fidget = world\ai\jobs\common\job_fidget.skrit;
+
+			melee_engage_range = 14;
+			personal_space_range = 0.7;
+			ranged_engage_range = 14.0;
+			sight_range = 14.0;
+		}
+	[inventory]
+		{
+			drop_at_use_point = true;
+			
+		}
+}
+

@@ -1,0 +1,349 @@
+[t:template,n:ut2W_trog]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_trog";
+	specializes = 2W_base_trog;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  34.4, 0;
+			intelligence =  9.9, 0;
+			dexterity =  15.8, 0;
+            melee =  64,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 47432;
+		life = 1262.3;
+        max_life = 1262.3;
+        mana = 59.5;
+		max_mana = 59.5;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 312.3;
+		damage_min = 156.4;
+	}
+	[common]
+	{
+		screen_name="Trog Drudge";
+		membership = party_trog_warrior_boss, monster;
+	}
+    [defend] { defense=342.8; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = sd_g_c_st_1h_avg;
+				es_weapon_hand = sd_ra_g_c_bl_1h_fin;
+				es_weapon_hand = sd_ra_g_o_bl_1h_avg;
+				es_weapon_hand = sd_ra_g_o_gl_1h_avg;
+				es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+				es_weapon_hand = ss_ra_g_c_st_1h_fin;
+				es_weapon_hand = ss_g_c_sd_1h_avg;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/164-193;
+				}
+				[oneof*]
+				{
+				   chance = 0.2;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.45
+			&still							= false;
+
+		jat_brain						 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+	}
+
+}
+[t:template,n:ut2W_trog_warrior]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_trog warrior";
+	specializes = 2W_base_trog;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 =  40.7, 0;
+			intelligence =  9.8, 0;
+			dexterity 	 =  17.5, 0;
+            melee 		 =  66,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 52780;
+		life = 1263.9;
+        max_life = 1263.9;
+        mana = 54.4;
+		max_mana = 54.4;
+		textures:0 = b_c_ecm_tg-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 321.7;
+		damage_min = 170;
+	}
+	[common]
+	{
+		screen_name="Trog Fighter";
+		membership = party_trog_warrior_boss, monster;
+	}
+    [defend] { defense=373.3; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = sd_g_c_st_1h_avg;
+				es_weapon_hand = sd_ra_g_c_bl_1h_fin;
+				es_weapon_hand = sd_ra_g_o_bl_1h_avg;
+				es_weapon_hand = sd_ra_g_o_gl_1h_avg;
+				es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+				es_weapon_hand = ss_ra_g_c_st_1h_fin;
+				es_weapon_hand = ss_g_c_sd_1h_avg;
+			}
+			[oneof*]
+			{
+				es_shield_hand = sh_m_g_c_r_s_avg;
+				es_shield_hand = sh_ra_m_c_r_m_decrepit;
+				es_shield_hand = sh_ra_m_g_o_r_s_fin;
+				es_shield_hand = sh_ra_w_g_c_r_m_fin;
+				es_shield_hand = sh_w_f_g_c_t_m_avg_hide_skelldra_dsx;
+				es_shield_hand = sh_w_f_g_c_t_s_avg_hide_hassat_dsx;
+				es_shield_hand = sh_w_m_g_c_t_m_avg_gearwork_dsx;
+				es_shield_hand = sh_w_m_g_c_t_m_avg_ward_blood_dsx;
+				es_shield_hand = sh_w_m_g_c_t_m_avg_mushroom_dsx;
+				es_shield_hand = sh_w_r_g_c_t_m_avg_barrier_flywing_dsx;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+				   	il_main = potion_health_large;
+				   	il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/151-204;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.45
+			&approach_dist					= 2
+			&still							= false;
+
+		jat_brain						 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+
+		actor_auto_switches_to_melee         = true;
+		actor_auto_switches_to_ranged        = false;
+		actor_auto_uses_stored_items		 = true;
+
+		actor_weapon_preference				 = WP_MELEE;
+	}
+}
+[t:template,n:ut2W_trog_warrior_boss_01]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_trog warrior_boss";
+	specializes = 2W_base_trog;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 =  43.3, 0;
+			intelligence =  9.8, 0;
+			dexterity 	 =  19.4, 0;
+            melee 		 =  66,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 61360;
+		life = 1835.6;
+        max_life = 1835.6;
+        mana = 54.4;
+		max_mana = 54.4;
+		textures:0 = b_c_ecm_tg-04;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 338.8;
+		damage_min = 191;
+	}
+	[common]
+	{
+		screen_name="Ratcher The Scaleblade";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_purple(sgx)");
+			}
+		}
+	}
+    [defend] { defense=684.4; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+    	[pcontent]
+		{
+			[all*]
+			{
+				es_shield_hand = sh_m_g_c_r_s_avg;
+				es_weapon_hand = sd_g_c_st_1h_avg;
+			}
+			[all*]
+			{
+				il_main = book_glb_lore_ut_trog;
+			}
+   			[all*]
+			{
+				[oneof*]
+				{
+				   	il_main = potion_health_large;
+				   	il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/151-204;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.45
+			&approach_dist					= 2
+			&friend_template				= false
+			&friends						= party_trog_warrior_boss
+			&still							= false;
+
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_trog_warrior_boss";
+
+		actor_auto_switches_to_melee     = true;
+		actor_auto_switches_to_ranged    = false;
+		actor_auto_uses_stored_items	 = true;
+
+		actor_weapon_preference			 = WP_MELEE;
+	}
+}
+
+
+[t:template,n:ut2W_trog_knight]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_trog knight";
+	specializes = 2W_base_trog;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  47, 0;
+			intelligence =  11.1, 0;
+			dexterity =  21, 0;
+            melee =  69,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 63700;
+		life = 1547.4;
+        max_life = 1547.4;
+        mana = 51.6;
+		max_mana = 51.6;
+		textures:0 = b_c_ecm_tg-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 449.8;
+		damage_min = 322.9;
+	}
+	[common]
+	{
+		screen_name="Trog Champion";
+		membership = party_trog_warrior_boss, monster;
+	}
+    [defend] { defense=377.6; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+    	[pcontent]
+		{
+			[all*]
+			{ 	
+				es_weapon_hand = sd_g_c_sd_2h_fun_trog;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.2;
+				   	il_main = potion_health_large;
+				   	il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/197-215;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?curious						= 0.65
+			&interest						= interest
+			&still							= false;
+
+		jat_brain						 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+
+		actor_auto_switches_to_melee         = true;
+		actor_auto_switches_to_ranged        = false;
+		actor_auto_uses_stored_items		 = true;
+
+		actor_weapon_preference				 = WP_MELEE;
+	}
+}
+

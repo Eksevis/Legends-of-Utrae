@@ -1,0 +1,213 @@
+[t:template,n:ut_cyclops]
+{
+	category_name = "1W_evil_c";
+	doc = "cyclops";
+	specializes = base_cyclops;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	24, 0;
+			intelligence =  10, 0;
+			dexterity =  	11, 0;
+            melee =  		24,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 12446;
+		life = 1240;
+		max_life = 1240;
+		mana = 18;
+		max_mana = 18;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 95;
+		damage_min = 85;
+		reload_delay = 0;
+	}
+	[common] { screen_name="Cyclops"; }
+    [defend] { defense=255; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+		[all*]
+		{
+			es_weapon_hand = cb_un_2h_cyclops;
+		}
+   		[oneof*]
+		{
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = #*/75-103;
+					il_main = #armor/46-235;
+                	il_main = #nmagic/15-30;
+                	il_main = #cmagic/15-30;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/90-110;
+	                il_main = #armor/-rare(1)/289-343;
+                    il_main = #*/-rare(1)/90-110;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/90-110;
+	                il_main = #armor/-unique(2)/289-343;
+                    il_main = #*/-unique(2)/90-110;
+	            }
+			}
+        }
+	}
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_cave_giant]
+{
+	category_name = "1W_evil_c";
+	doc = "cave_giant";
+	specializes = base_cyclops;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  24, 0;
+			intelligence =  6, 0;
+			dexterity =  11, 0;
+            melee =  9,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 700;
+		life = 750;
+		max_life = 750;
+		mana = 18;
+		max_mana = 18;
+		textures:0 = b_c_ecm_cy-02;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_cave_giant; }
+			[hit_critical]	{ priority = low; * = s_e_hit_cave_giant_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_cave_giant_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_cave_giant_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 95;
+		damage_min = 85;
+		reload_delay = 0;
+	}
+	[common] { screen_name="Cave Giant"; }
+    [defend] { defense=94; }
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_cyclops_boss_01]
+{
+	category_name = "1W_evil_c";
+	doc = "cyclops";
+	specializes = base_cyclops;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	24, 0;
+			intelligence =  10, 0;
+			dexterity =  	11, 0;
+            		melee =  		24,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 12446;
+		life = 3240;
+		max_life = 3240;
+		mana = 18;
+		max_mana = 18;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 95;
+		damage_min = 85;
+		reload_delay = 0;
+	}
+	[common] 
+	{ 
+		screen_name="Omrog The Seer"; 
+		membership = skeleton,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_red(sgx)");
+			}
+		}
+	}
+    [defend] { defense=455; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+		[all*]
+		{
+			es_weapon_hand = cb_un_2h_cyclops;
+		}
+   			[oneof*]
+			{
+
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = #*/75-103;
+					il_main = #armor/46-235;
+                	il_main = #nmagic/15-30;
+                	il_main = #cmagic/15-30;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/90-110;
+	                il_main = #armor/-rare(1)/289-343;
+                    il_main = #*/-rare(1)/90-110;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/90-110;
+	                il_main = #armor/-unique(2)/289-343;
+                    il_main = #*/-unique(2)/90-110;
+	            }
+			}
+        }
+	}
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

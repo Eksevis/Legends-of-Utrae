@@ -1,0 +1,213 @@
+[t:template,n:ut2w_angler]
+{
+	doc = "dsx_angler";
+	specializes = dsx_angler_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  12.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  54,  0;
+		}
+	}
+
+	[aspect]
+	{
+		[textures]	{ 0 = b_c_edm_angler; }
+		experience_value = 15669;
+		life = 288;
+		max_life = 288;
+		mana = 108;
+		max_mana = 108;
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 140;
+		damage_min = 138;
+	}
+	[common] { screen_name="Lurking Angler"; }
+	[defend] { defense = 620; }
+}
+
+[t:template,n:ut2w_angler_shadow]
+{
+	doc = "dsx_angler_shadow";
+	specializes = dsx_angler_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  12.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  54,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 15669;
+		life = 888;
+		max_life = 888;
+		mana = 108;
+		max_mana = 108;
+		[textures]	{0=b_c_edm_shadow_angler;}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 190;
+		damage_min = 178;
+	}
+	[common] { screen_name="Shadow Angler"; }
+	[defend] { defense=946; }
+	[mind] 
+	{ 
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+        personal_space_range = 0.2;
+	}
+}
+
+[t:template,n:ut2w_angler_jungle]
+{
+	doc = "dsx_angler_jungle";
+	specializes = dsx_angler_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  12.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  54,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 15669;
+		life = 288;
+		max_life = 288;
+		mana = 108;
+		max_mana = 108;
+		material = teeth;
+ 	    [textures]	{0=b_c_edm_jungle_mangler;}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 176;
+		damage_min = 140;
+	}
+	[common] { screen_name="Murky Angler"; }
+	[defend] { defense=652; }
+	[mind]
+	{
+		jat_attack_object_melee	= world\ai\jobs\common\job_attack_object_melee.skrit
+			?cautious_chance	= 0.75
+			&min_cautious_distance = 3.00
+			&cautious_approach_distance = 1.0
+			&cautious_down_time = 1.1;
+
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?social 		= 0.35
+			&approach_dist 	= 2.00
+			&move_distance 	= 4.00
+			&min_distance 	= 2.00
+			&still 			= false;
+	}
+}
+
+[t:template,n:ut2w_angler_jungle_02]
+]
+{
+	doc = "dsx_angler_jungle_02";
+	specializes = dsx_angler_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 45, 0;
+			intelligence = 8, 0;
+			dexterity    = 51, 0;
+			melee        = 66, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 20692;
+		life             = 869;
+		max_life         = 869;
+		mana             = 0;
+		max_mana         = 0;
+		material = teeth;
+ 	    [textures]	{0=b_c_edm_jungle_mangler;}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 374;
+		damage_min = 365;
+	}
+	[common] { screen_name="Murky Angler"; }
+	[defend] { defense=817; }
+	[mind]
+	{
+		jat_attack_object_melee	= world\ai\jobs\common\job_attack_object_melee.skrit
+			?cautious_chance	= 0.75
+			&min_cautious_distance = 3.00
+			&cautious_approach_distance = 1.0
+			&cautious_down_time = 1.1;
+
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?social 		= 0.35
+			&approach_dist 	= 2.00
+			&move_distance 	= 4.00
+			&min_distance 	= 2.00
+			&still 			= false;
+	}
+}
+
+
+[t:template,n:ut2w_angler_cave]
+{
+	doc = "dsx_angler_cave";
+	specializes = base_mangler;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		= 	13, 0;
+			intelligence 	= 	8, 0;
+			dexterity 		= 	10, 0;
+			melee 			=  	11,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 196;
+		life = 145;
+		max_life = 145;
+		mana = 10;
+		max_mana = 10;
+		voice:die:			* = s_e_die_angler_SED;
+		voice:hit_glance:	* = s_e_hit_mangler_SED;
+		//voice:hit_solid:	* = s_e_hit_mangler_SED;
+		voice:hit_critical:	* = s_e_hit_mangler_SED;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 52;
+		damage_min = 40;
+	}
+	[common] { screen_name="Cave Angler"; }
+	[defend] { defense=135; }
+	[inventory]
+	{
+	}
+}

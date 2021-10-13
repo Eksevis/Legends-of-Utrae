@@ -1,0 +1,50 @@
+[t:template,n:ut2w_knight_death]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_knight_death";
+	specializes = dsx_knight_death_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =  39.4, 0;
+			intelligence =  11.5, 0;
+			dexterity =  25.5, 0;
+            		melee =  61,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 8220;
+		life = 893.6;
+        	max_life = 893.6;
+        	mana = 106.4;
+		max_mana = 106.4;
+
+		model = m_c_ecm_sk_pos_2;
+		//		model = m_c_edm_iw_pos_1;
+		//		textures:0 = b_c_edm_ph_melee;
+		material = steel;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_wraith; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_skeleton_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_skeleton_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_skeleton_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_skeleton_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 278; 
+		damage_min = 168; 
+	}
+	[common]
+	{
+		screen_name="Hovart's Commando";
+	}
+	[defend] { defense = 728; }
+}
+

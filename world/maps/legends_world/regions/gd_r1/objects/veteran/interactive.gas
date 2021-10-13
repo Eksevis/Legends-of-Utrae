@@ -1,0 +1,186 @@
+[t:fountain_csl_mana,n:0x00900228]
+{
+	[fountain]
+	{
+	  f heal_amount = 160;
+	  f health_left = 184;
+	  f health_regen = 0.23025;
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.49012e-007;
+	  p position = 0.0686531,-0.52654,0.286625,0x784c9ea1;
+		use_point_scids = 0x00900152;
+	}
+}
+[t:sign_glb_dungeon_right,n:0x0090017f]
+{
+	[common]
+	{
+		screen_name = "Town of Crystwind, 78";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,5.96046e-008;
+	  p position = 1.16266,1.04359,1.29186,0xbf116b64;
+	}
+}
+[t:sign_glb_dungeon_right,n:0x00900186]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 21";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,5.96046e-008;
+	  p position = 1.16544,1.45594,1.29824,0xbf116b64;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x0090000b]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0090013B;
+	}
+	[placement]
+	{
+	  p position = 0.00327494,-1.75,-0.946136,0x82998a64;
+	}
+}
+[t:sign_glb_dungeon_right,n:0x009001ce]
+{
+	[common]
+	{
+		screen_name = "Hovart's Folly South";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = 0.521843,-0.608121,-1.90675,0x05d30fbb;
+	}
+}
+[t:sign_glb_dungeon_left,n:0x009001d9]
+{
+	[common]
+	{
+		screen_name = "Great Northern Forest, 10";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 1.78746,-0.713942,-0.518909,0x05d30fbb;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x00900223]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00900139;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.10664,-1.75,-1.02643,0x44ac2860;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x00900181]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0090013A;
+	}
+	[placement]
+	{
+	  p position = -0.0278209,-2,-0.140789,0x969b2fe3;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x0090000c]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00900136;
+	}
+	[placement]
+	{
+	  p position = 0.0669137,-1.75,-0.933745,0xd57f0af9;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x00900166]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00900135;
+	}
+	[placement]
+	{
+	  p position = -0.0250682,-1.75,-0.934719,0x060fe1f7;
+	}
+}
+[t:respawn_statue,n:0x00900184]
+{
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = 2.05946,-2,-0.834201,0x7753c6e5;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x0090000a]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00900135;
+	}
+	[placement]
+	{
+	  p position = 0.0120182,-1.75,-0.994198,0x16bfa665;
+	}
+}
+[t:door_glb_gendungeon_01,n:0x009002a8]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00900142;
+	}
+	[placement]
+	{
+	  p position = -0.00833892,-1.49999,0.0288811,0x0f9c1f3a;
+		use_point_scids = 0x009002a9,0x009002aa;
+	}
+}
+[t:respawn_statue,n:0x00900165]
+{
+	[placement]
+	{
+	  q orientation = 0,0.382684,0,0.923879;
+	  p position = -1.55535,4.76837e-007,0.138382,0x008698e6;
+	}
+}
+[t:respawn_statue,n:0x009001fe]
+{
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = 1.26682,-1.43051e-006,-1.19687,0x22477f28;
+	}
+}

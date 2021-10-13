@@ -1,0 +1,229 @@
+[t:respawn_statue,n:0x001002d1]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.594823,0,0.803857;
+	  p position = 0.781902,0,-3.38321,0x6be2ea08;
+		use_point_scids = 0x001001c2;
+	}
+}
+[t:wall_cav_boarded,n:0x00100064]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0010024B,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_killed",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -0.0323258,-0.490955,-2.28763,0x3279c3fe;
+	}
+}
+[t:lever_cav_stone_01,n:0x00100081]
+{
+	[aspect]
+	{
+	  f use_range = 3;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x0010009A;
+	  f on_message_delay = 1;
+	  x on_scid = 0x0010009A;
+	  f reset_time = 7;
+	  f reset_time_2 = 7;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0.707107,0;
+	  p position = 2.55942,0.199999,0.00289528,0x849d5abb;
+		use_point_scids = 0x001002cc,0x001002cd;
+	}
+}
+[t:sign_glb_01,n:0x0010030f]
+{
+	[common]
+	{
+		dev_instance_text = "sign 3";
+		screen_name = "Town of Crystwind, 12";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,3.57628e-007;
+	  p position = -5.06477,-2.18629,-2.7849,0xee60ce5f;
+	}
+}
+[t:sign_glb_01,n:0x00100310]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 41";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707106,0,0.707107;
+	  p position = -5.38284,-2,-2.56159,0xee60ce5f;
+	}
+}
+[t:lever_cav_stone_01,n:0x001000d1]
+{
+	[aspect]
+	{
+	  f use_range = 2.5;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0010009A;
+	  x on_scid = 0x0010009A;
+	  f reset_time = 7;
+	  f reset_time_2 = 7;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0.707107,0;
+	  p position = 2.6475,0.200001,0.234066,0xc25bb18f;
+		use_point_scids = 0x001002cc,0x001002d0;
+	}
+}
+[t:lever_cav_stone_01,n:0x001000e6]
+{
+	[aspect]
+	{
+	  f use_range = 2.5;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x00100098;
+	  f on_message_delay = 1;
+	  x on_scid = 0x00100098;
+	  f reset_time = 7;
+	  f reset_time_2 = 7;
+	}
+	[placement]
+	{
+	  q orientation = -0.707107,0,0,0.707107;
+	  p position = 2.65135,0.200001,-0.147308,0x0c87540d;
+		use_point_scids = 0x001002b6,0x001002ba;
+	}
+}
+[t:lever_cav_stone_01,n:0x0010007a]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00100098;
+	  x on_scid = 0x00100098;
+	  f reset_time = 7;
+	  f reset_time_2 = 7;
+	}
+	[placement]
+	{
+	  q orientation = -0.707107,0,0,0.707107;
+	  p position = 2.61883,0.1,0.0703353,0x7fd15f22;
+		use_point_scids = 0x001002b6,0x001002bb;
+	}
+}
+[t:sign_glb_01,n:0x0010026f]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Elddim, 50";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.55557,0,0.83147;
+	  p position = -2.32081,-2.18682,1.85884,0x9fdde8a1;
+	}
+}
+[t:sign_glb_01,n:0x00100271]
+{
+	[common]
+	{
+		screen_name = "Town of Crystwind";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707106,0,0.707107;
+	  p position = -2.24317,-2,1.73133,0x9fdde8a1;
+	}
+}
+[t:wall_cav_boarded,n:0x0010029e]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00100249,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_killed",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,1.49012e-007;
+	  p position = -0.152329,-0.455105,-2.18773,0x412ec5c8;
+	}
+}
+[t:sign_glb_01,n:0x0010030c]
+{
+	[common]
+	{
+		dev_instance_text = "sign 2";
+		screen_name = "Town of Crystwind";
+	}
+	[placement]
+	{
+	  p position = -1.63741,4.76837e-007,-0.68965,0x7a0d0684;
+	}
+}
+[t:sign_glb_01,n:0x0010030d]
+{
+	[common]
+	{
+		screen_name = "Crystwind Old Mines";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.93715e-007;
+	  p position = -1.48346,-0.632837,-0.822556,0x7a0d0684;
+	}
+}

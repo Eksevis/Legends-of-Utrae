@@ -1,0 +1,581 @@
+[t:template,n:base_ut_skeleton_mage]
+{
+	doc = "Generic skeleton";
+	specializes = actor_evil;
+	[actor]
+	{
+		portrait_icon=b_gui_ig_i_ic_c_sk_e;
+	}
+	[aspect]
+	{
+		material = stone;
+		model=m_c_ecm_sk_pos_1;
+		[voice]
+		{
+			[die]			{ * = s_e_die_skeleton; }
+			[enemy_spotted]	{ * = s_e_call_skeleton_SED; }
+			[hit_critical]	{ * = s_e_hit_skeleton_SED; }
+			[hit_glance]	{ * = s_e_hit_skeleton_SED; }
+			[hit_solid]		{ * = s_e_hit_skeleton_SED; }
+		}
+	}
+	[body]
+	{
+		armor_version = ecm_sk;
+		avg_move_velocity = 1.000000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_sk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					02 = at-03;
+					04 = at-05;
+					05 = at-06;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slp0 = a_c_ecm_sk_fs0_ds-02;
+					slp1 = a_c_ecm_sk_fs1_ds-02;
+					slp2 = a_c_ecm_sk_fs2_ds-02;
+					slp3 = a_c_ecm_sk_fs3_ds-02;
+					slp4 = a_c_ecm_sk_fs4_ds-02;
+					slp5 = a_c_ecm_sk_fs5_ds-02;
+					slp6 = a_c_ecm_sk_fs6_ds-02;
+					wak0 = a_c_ecm_sk_fs0_rv;
+					wak1 = a_c_ecm_sk_fs1_rv;
+					wak2 = a_c_ecm_sk_fs2_rv;
+					wak3 = a_c_ecm_sk_fs3_rv;
+					wak4 = a_c_ecm_sk_fs4_rv;
+					wak5 = a_c_ecm_sk_fs5_rv;
+					wak6 = a_c_ecm_sk_fs6_rv;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+					02 = dff-03;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=mg;
+					00=mg-02;
+				}
+			}
+		}
+	}
+	[common] { membership = skeleton, monster; }
+	[guts_manager]
+	{
+		effect_name = melee_hit_1;
+	}
+	[mind]
+	{
+		com_channels = skeleton;
+		com_range = 7.0;
+		melee_engage_range = 10.0;
+		ranged_engage_range = 10.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_sound = s_e_spiderdie_small;
+		explode_when_killed = true;
+		explosion_magnitude = .045;
+		fire_effect = human_physics_fire;
+		fire_resistance = 0.0;
+		fire_burn_threshold = 20;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_bone_01 = 1;
+			frag_glb_bone_02 = 1;
+			frag_glb_bone_03 = 1;
+			frag_glb_bone_04 = 4;
+			frag_glb_bone_05 = 1;
+			frag_glb_bone_06 = 1;
+		}
+	}
+}
+[t:template,n:ut_skeleton_mage_fire]
+{
+	category_name = "1W_evil_c";
+	doc = "Skeleton Mage";
+	specializes = base_ut_skeleton_mage;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  4, 0;
+			intelligence =  11, 0;
+			dexterity =  3, 0;
+			melee =  1,  0;
+			combat_magic = 6;
+			nature_magic = 6;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 36;
+		life = 35;
+		max_life = 35;
+		mana = 3000;
+		max_mana = 3000;
+		[textures]	{0=b_c_ecm_sk-02;}
+	}
+	[attack]
+	{
+		damage_max = 3;
+		damage_min = 1;
+	}
+	[common]
+	{
+		membership = skeleton, party_skeleton_guard_boss, monster;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("skeleton_mage_fire");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_bone_dirty_01 = 1;
+			frag_glb_bone_dirty_02 = 1;
+			frag_glb_bone_dirty_03 = 1;
+			frag_glb_bone_dirty_04 = 4;
+			frag_glb_bone_dirty_05 = 1;
+			frag_glb_bone_dirty_06 = 1;
+		}
+	}
+	[common] { screen_name="Skeleton Fire Mage"; }
+	[defend] { defense=69; }
+	[inventory]
+	{
+		  selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			  il_active_primary_spell   = spell_fireshot;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.05;
+            	    il_main = #spell/1-4;
+				}
+				[oneof*]
+				{
+					chance = 0.30;
+					il_main = #weapon/8-11;
+					il_main = #armor/3-16;
+   				    il_main = potion_health_small;
+				    il_main = potion_mana_small;
+	    		}
+    			[gold*]
+				{
+					chance = 0.5;
+					max = 19;
+					min = 8;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+		jat_brain									= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party					= true;
+
+		job_travel_distance_limit = 10;
+		melee_engage_range = 8.0;
+		on_job_reached_travel_distance_abort_attack = true;
+		ranged_engage_range							= 8.0;
+		sight_range									= 14.0;
+		jat_fidget									= world\ai\jobs\common\job_fidget.skrit;
+	}
+
+
+}
+[t:template,n:ut_skeleton_mage_cold]
+{
+	category_name = "1W_evil_c";
+	doc = "Skeleton Mage";
+	specializes = base_ut_skeleton_mage;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  4, 0;
+			intelligence =  11, 0;
+			dexterity =  3, 0;
+			melee =  1,  0;
+			combat_magic = 6;
+			nature_magic = 6;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 36;
+		life = 35;
+		max_life = 35;
+		mana = 3000;
+		max_mana = 3000;
+		[textures]	{0=b_c_ecm_sk-02;}
+	}
+	[attack]
+	{
+		damage_max = 3;
+		damage_min = 1;
+	}
+	[common]
+	{
+		membership = skeleton, party_skeleton_guard_boss, monster;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("skeleton_mage_cold");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_bone_dirty_01 = 1;
+			frag_glb_bone_dirty_02 = 1;
+			frag_glb_bone_dirty_03 = 1;
+			frag_glb_bone_dirty_04 = 4;
+			frag_glb_bone_dirty_05 = 1;
+			frag_glb_bone_dirty_06 = 1;
+		}
+	}
+	[common] { screen_name="Skeleton Cold Mage"; }
+	[defend] { defense=69; }
+	[inventory]
+	{
+		  selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			  il_active_primary_spell   = spell_ice_mage_iceblast;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.05;
+            	    il_main = #spell/1-4;
+				}
+				[oneof*]
+				{
+					chance = 0.30;
+					il_main = #weapon/8-11;
+					il_main = #armor/3-16;
+   				    il_main = potion_health_small;
+				    il_main = potion_mana_small;
+	    		}
+    			[gold*]
+				{
+					chance = 0.5;
+					max = 19;
+					min = 8;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+		jat_brain									= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party					= true;
+
+		job_travel_distance_limit = 10;
+		melee_engage_range = 8.0;
+		on_job_reached_travel_distance_abort_attack = true;
+		ranged_engage_range							= 8.0;
+		sight_range									= 14.0;
+		jat_fidget									= world\ai\jobs\common\job_fidget.skrit;
+	}
+
+
+}
+[t:template,n:ut_skeleton_mage_lightning]
+{
+	category_name = "1W_evil_c";
+	doc = "Skeleton Mage";
+	specializes = base_ut_skeleton_mage;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  4, 0;
+			intelligence =  11, 0;
+			dexterity =  3, 0;
+			melee =  1,  0;
+			combat_magic = 6;
+			nature_magic = 6;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 36;
+		life = 35;
+		max_life = 35;
+		mana = 3000;
+		max_mana = 3000;
+		[textures]	{0=b_c_ecm_sk-02;}
+	}
+	[attack]
+	{
+		damage_max = 3;
+		damage_min = 1;
+	}
+	[common]
+	{
+		membership = skeleton, party_skeleton_guard_boss, monster;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("skeleton_mage_lightning");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_bone_dirty_01 = 1;
+			frag_glb_bone_dirty_02 = 1;
+			frag_glb_bone_dirty_03 = 1;
+			frag_glb_bone_dirty_04 = 4;
+			frag_glb_bone_dirty_05 = 1;
+			frag_glb_bone_dirty_06 = 1;
+		}
+	}
+	[common] { screen_name="Skeleton Lightning Mage"; }
+	[defend] { defense=69; }
+	[inventory]
+	{
+		  selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			  il_active_primary_spell   = spell_zap;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.05;
+            	    il_main = #spell/1-4;
+				}
+				[oneof*]
+				{
+					chance = 0.30;
+					il_main = #weapon/8-11;
+					il_main = #armor/3-16;
+   				    il_main = potion_health_small;
+				    il_main = potion_mana_small;
+	    		}
+    			[gold*]
+				{
+					chance = 0.5;
+					max = 19;
+					min = 8;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+		jat_brain									= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party					= true;
+
+		job_travel_distance_limit = 10;
+		melee_engage_range = 8.0;
+		on_job_reached_travel_distance_abort_attack = true;
+		ranged_engage_range							= 8.0;
+		sight_range									= 14.0;
+		jat_fidget									= world\ai\jobs\common\job_fidget.skrit;
+	}
+}
+[t:template,n:ut_skeleton_mage_poison]
+{
+	category_name = "1W_evil_c";
+	doc = "Skeleton Mage";
+	specializes = base_ut_skeleton_mage;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  4, 0;
+			intelligence =  11, 0;
+			dexterity =  3, 0;
+			melee =  1,  0;
+			combat_magic = 6;
+			nature_magic = 6;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 36;
+		life = 35;
+		max_life = 35;
+		mana = 30;
+		max_mana = 30;
+		[textures]	{0=b_c_ecm_sk-02;}
+	}
+	[attack]
+	{
+		damage_max = 3;
+		damage_min = 1;
+	}
+	[common]
+	{
+		membership = skeleton, party_skeleton_guard_boss, monster;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("skeleton_mage_poison");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_bone_dirty_01 = 1;
+			frag_glb_bone_dirty_02 = 1;
+			frag_glb_bone_dirty_03 = 1;
+			frag_glb_bone_dirty_04 = 4;
+			frag_glb_bone_dirty_05 = 1;
+			frag_glb_bone_dirty_06 = 1;
+		}
+	}
+	[common] { screen_name="Skeleton Poison Mage"; }
+	[defend] { defense=69; }
+	[inventory]
+	{
+		  selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			  il_active_primary_spell   = ut_spell_mucosa_poison;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.05;
+            	    il_main = #spell/1-4;
+				}
+				[oneof*]
+				{
+					chance = 0.30;
+					il_main = #weapon/8-11;
+					il_main = #armor/3-16;
+   				    il_main = potion_health_small;
+				    il_main = potion_mana_small;
+	    		}
+    			[gold*]
+				{
+					chance = 0.5;
+					max = 19;
+					min = 8;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+		jat_brain									= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party					= true;
+
+		job_travel_distance_limit = 10;
+		melee_engage_range = 8.0;
+		on_job_reached_travel_distance_abort_attack = true;
+		ranged_engage_range							= 8.0;
+		sight_range									= 14.0;
+		jat_fidget									= world\ai\jobs\common\job_fidget.skrit;
+	}
+}

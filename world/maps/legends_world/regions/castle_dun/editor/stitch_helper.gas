@@ -1,0 +1,23 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xAEA40100;
+	source_region_name = castle_dun;
+	[t:stitch_editor,n:castle]
+	{
+		dest_region = castle;
+		[node_ids]
+		{
+			0x0000acf3 = 0xB9EA1A26,4;
+			0x0000acf4 = 0xDC7C8D9A,3;
+			0x0000acf5 = 0xFE72FE9D,3;
+		}
+	}
+	[t:stitch_editor,n:desert]
+	{
+		dest_region = desert;
+		[node_ids]
+		{
+			0x0000acf1 = 0xE777FB7C,1;
+		}
+	}
+}

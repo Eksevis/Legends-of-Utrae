@@ -1,0 +1,246 @@
+[t:elevator_2s_1c_1n,n:0x00800165]
+{
+	[elevator_2s_1c_1n]
+	{
+	  i connect_door_level1 = 8;
+	  i connect_door_level2 = 15;
+	  x connect_node = 0x14DD04E4;
+	  f duration = 1;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0x23FC91C1;
+		material = "cr_door";
+	}
+	[placement]
+	{
+	  p position = -1.74258,1.14495,-0.0494933,0x14dd04e4;
+	}
+}
+[t:elevator_2s_1c_1n,n:0x00800168]
+{
+	[elevator_2s_1c_1n]
+	{
+	  i connect_door_level1 = 13;
+	  i connect_door_level2 = 6;
+	  x connect_node = 0x14DD04E4;
+	  f duration = 1;
+	  i elevator_door_level1 = 2;
+	  i elevator_door_level2 = 2;
+	  x elevator_node = 0xE0344E42;
+		material = "cr_door";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.382684,0,0.923879;
+	  p position = 1.62038,5.72205e-006,0.0882358,0x14dd04e4;
+	}
+}
+[t:elevator_2s_1c_1n,n:0x000000f7]
+{
+	[elevator_2s_1c_1n]
+	{
+	  i connect_door_level1 = 7;
+	  i connect_door_level2 = 7;
+	  x connect_node = 0x7BB27910;
+	  f duration = 2;
+	  i elevator_door_level1 = 3;
+	  i elevator_door_level2 = 4;
+	  x elevator_node = 0x0586B8C9;
+		material = "cr_door";
+	}
+	[placement]
+	{
+	  p position = 0.69282,1.09688,2.01167,0xba14cc6b;
+	}
+}
+[t:elevator_hidden_stairwell,n:0x000000f6]
+{
+	[elevator_hidden_stairwell]
+	{
+	  f duration = 5;
+		material = "stair";
+	  i stair_door_back = 1;
+	  i stair_door_front_bot = 5;
+	  i stair_door_front_top = 3;
+	  i stair_door_side = 4;
+	  x stair_node_1 = 0x26D0279C;
+	  x stair_node_10 = 0x5A31A62E;
+	  x stair_node_2 = 0xDE4BEC37;
+	  x stair_node_3 = 0x06A45454;
+	  x stair_node_4 = 0x7312DF14;
+	  x stair_node_5 = 0x3485A880;
+	  x stair_node_6 = 0xD3C34B96;
+	  x stair_node_7 = 0x5114DA92;
+	  x stair_node_8 = 0xDFBFE6A0;
+	  x stair_node_9 = 0x4C2FD053;
+	  i stairwell_door10_down = 31;
+	  i stairwell_door10_up = 21;
+	  i stairwell_door1_down = 22;
+	  i stairwell_door1_up = 12;
+	  i stairwell_door2_down = 23;
+	  i stairwell_door2_up = 13;
+	  i stairwell_door3_down = 24;
+	  i stairwell_door3_up = 14;
+	  i stairwell_door4_down = 25;
+	  i stairwell_door4_up = 15;
+	  i stairwell_door5_down = 26;
+	  i stairwell_door5_up = 16;
+	  i stairwell_door6_down = 27;
+	  i stairwell_door6_up = 17;
+	  i stairwell_door7_down = 28;
+	  i stairwell_door7_up = 18;
+	  i stairwell_door8_down = 29;
+	  i stairwell_door8_up = 19;
+	  i stairwell_door9_down = 30;
+	  i stairwell_door9_up = 20;
+	  x stairwell_node = 0xBA14CC6B;
+	}
+	[placement]
+	{
+	  p position = -0.662182,0.114795,-0.123289,0x26d0279c;
+	}
+}
+[t:elevator_2s_1c_1n_act_deact,n:0x008000a5]
+{
+	[elevator_2s_1c_1n_act_deact]
+	{
+	  i connect_door_level1 = 7;
+	  i connect_door_level2 = 10;
+	  x connect_node = 0x29D56FCA;
+	  f duration = 0.35;
+	  i elevator_door_level1 = 4;
+	  i elevator_door_level2 = 4;
+	  x elevator_node = 0x77A14607;
+		level1_message = we_req_deactivate;
+	  x level1_scid = 0x00800178;
+	  x level2_scid = 0x00800178;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.06882,-1.5,-1.44376,0x4b93f83b;
+	}
+}
+[t:elevator_2s_1c_1n_act_deact,n:0x0080029e]
+{
+	[elevator_2s_1c_1n_act_deact]
+	{
+	  i connect_door_level1 = 8;
+	  i connect_door_level2 = 8;
+	  x connect_node = 0xA8C59A31;
+	  f duration = 1;
+	  i elevator_door_level1 = 3;
+	  i elevator_door_level2 = 4;
+	  x elevator_node = 0xE8C5FF84;
+	  x level1_scid = 0x0080029F;
+	}
+	[placement]
+	{
+	  p position = -0.810714,-1.5,-1.6926,0xf204ccda;
+	}
+}
+[t:elevator_hidden_stairwell,n:0x00000105]
+{
+	[elevator_hidden_stairwell]
+	{
+	  f duration = 5;
+		material = "stair";
+	  i stair_door_back = 1;
+	  i stair_door_front_bot = 5;
+	  i stair_door_front_top = 3;
+	  i stair_door_side = 2;
+	  x stair_node_1 = 0xC0B014B1;
+	  x stair_node_10 = 0x1C8E7F18;
+	  x stair_node_2 = 0xDAB8DEE0;
+	  x stair_node_3 = 0xB912B7CD;
+	  x stair_node_4 = 0xCF7694A0;
+	  x stair_node_5 = 0xAB752D86;
+	  x stair_node_6 = 0xDEB8D9E3;
+	  x stair_node_7 = 0xF0394BAF;
+	  x stair_node_8 = 0x158F38A7;
+	  x stair_node_9 = 0x8778BD1B;
+	  i stairwell_door10_down = 31;
+	  i stairwell_door10_up = 21;
+	  i stairwell_door1_down = 22;
+	  i stairwell_door1_up = 12;
+	  i stairwell_door2_down = 23;
+	  i stairwell_door2_up = 13;
+	  i stairwell_door3_down = 24;
+	  i stairwell_door3_up = 14;
+	  i stairwell_door4_down = 25;
+	  i stairwell_door4_up = 15;
+	  i stairwell_door5_down = 26;
+	  i stairwell_door5_up = 16;
+	  i stairwell_door6_down = 27;
+	  i stairwell_door6_up = 17;
+	  i stairwell_door7_down = 28;
+	  i stairwell_door7_up = 18;
+	  i stairwell_door8_down = 29;
+	  i stairwell_door8_up = 19;
+	  i stairwell_door9_down = 30;
+	  i stairwell_door9_up = 20;
+	  x stairwell_node = 0x86504DA0;
+	}
+	[placement]
+	{
+	  p position = 1.25542,0.114789,0.242824,0xdeb8d9e3;
+	}
+}
+[t:elevator_2s_1c_1n,n:0x00800171]
+{
+	[elevator_2s_1c_1n]
+	{
+	  i connect_door_level1 = 8;
+	  i connect_door_level2 = 8;
+	  x connect_node = 0xDDD33C9F;
+	  f duration = 1;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 2;
+	  x elevator_node = 0x418A9ACF;
+		material = "cr_door";
+	  x moving1_scid = 0x0080002A;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.14555,-1.5,-1.43771,0xddd33c9f;
+	}
+}
+[t:elevator_2s_1c_1n,n:0x000000eb]
+{
+	[elevator_2s_1c_1n]
+	{
+	  i connect_door_level1 = 7;
+	  i connect_door_level2 = 9;
+	  x connect_node = 0x1321A8E4;
+	  f duration = 1;
+	  i elevator_door_level1 = 2;
+	  i elevator_door_level2 = 2;
+	  x elevator_node = 0x2C998209;
+		material = "cr_door";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.92388,0,0.382684;
+	  p position = 1.20536,-2,0.842396,0xd8f13a96;
+	}
+}
+[t:elevator_2s_1c_1n,n:0x000000ee]
+{
+	[elevator_2s_1c_1n]
+	{
+	  i connect_door_level1 = 11;
+	  i connect_door_level2 = 5;
+	  x connect_node = 0x1321A8E4;
+	  f duration = 1;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0xD8F13A96;
+		material = "cr_door";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-2.28881e-008;
+	  p position = 0.849613,-4.4,-1.14797,0x2c998209;
+	}
+}

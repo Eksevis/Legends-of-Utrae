@@ -1,0 +1,68 @@
+[t:lever_glb_07,n:0x08c00045]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x08C00042;
+	  x on_scid = 0x08C00042;
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-4.47035e-007;
+	  p position = -0.213323,-1.5,1.40944,0xd4294b6e;
+		use_point_scids = 0x08c00046,0x08c00047;
+	}
+}
+[t:sign_glb_no_return,n:0x08c00066]
+{
+	[common]
+	{
+		screen_name = "Pit of Despair -- Abandon all hope";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,0.92388;
+	  p position = -0.903404,-2,-1.29646,0xd4294b6e;
+	}
+}
+[t:door_csl_dungeon_use_toggle_left_02,n:0x08c000e4]
+{
+	[common]
+	{
+		description = "3 conquered foes will in turn conquer me.";
+		dev_instance_text = "SCRIPTED EVENT - Use Toggle Door";
+	}
+	[placement]
+	{
+	  p position = 0.00695035,8,0.0596466,0x16ac569d;
+		use_point_scids = 0x08c000eb;
+	}
+}
+[t:door_csl_dungeon_use_toggle_right_02,n:0x08c000e5]
+{
+	[common]
+	{
+		description = "3 conquered foes will in turn conquer me.";
+	}
+	[placement]
+	{
+	  q orientation = 0,5.91755e-007,0,1;
+	  p position = 0.00794217,8,0.0599517,0x16ac569d;
+		use_point_scids = 0x08c000eb;
+	}
+}
+[t:lever_glb_07,n:0x08c0005c]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x08C00059;
+	  x on_scid = 0x08C00059;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707106;
+	  p position = 2.17483,-1.5,-0.57818,0x7c1715f4;
+		use_point_scids = 0x08c0005d, 0x08c00043;
+	}
+}

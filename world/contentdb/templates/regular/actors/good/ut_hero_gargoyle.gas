@@ -1,0 +1,296 @@
+[t:template,n:base_ut_hero_gargoyle]
+{
+	doc = "gargoyle";
+	specializes = hero;
+	[actor]
+	{
+		race = other;
+		screen_class = "Gargoyle";
+		portrait_icon = b_gui_ig_i_ic_c_fb_01;
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		material = stone;
+		model = m_c_edm_ga_pos_a1;
+		[textures]
+		{
+			0 = b_c_edm_ga-02;
+		}
+		[voice]
+		{
+			[die]		{ priority = high; * = s_e_die_gargoyle;  }
+		}
+	}
+	[body]
+	{
+		armor_version = edm_ga;		
+		avg_move_velocity = 4.900000;
+		initial_chore = chore_fidget;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee		= 0.65, 0.65, 0.65;
+			as_two_handed_melee	= 0.65, 0.65, 0.65;
+			as_two_handed_sword	= 0.65, 0.65, 0.65;
+			as_staff			= 0.65, 0.65, 0.65;
+			as_bow_and_arrow	= 0.65, 0.65, 0.65;
+			as_minigun			= 0.65, 0.65, 0.65;
+			as_shield_only		= 0.65, 0.65, 0.65;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_ga2_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack_sub;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at;
+					extr = at-02;
+					qffg = dff;
+
+					rat0 = at;
+					rat1 = at-02;
+					sffg = dff;
+
+				}
+				[anim_durations]
+				{
+					fs0 = 1.250; // ac_beastfu (bite/claw/etc.)
+					fs1 = 0.830; // ac_sword + no shied (Single handed weapon)
+					fs2 = 0.830; // ac_sword + shield (Single handed weapon, plus a shield)
+					fs3 = 1.250; // ac_axe + is two handed (battle-axe, halberd, etc.) 
+					fs4 = 1.250; // ac_sword + is_two_handed (Short Handled 2-handed weapon, swords, etc.) 
+					fs5 = 1.250; // ac_staff (Staff)
+					fs6 = 1.000; // ac_bow (bow)
+					fs7 = 0.125; // ac_minigun (Crossbows, exotic ranged weapons, flamethrowers, etc.)
+					fs8 = 1.000; // ac_beastfu + shield (no weapon + shield)
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = simple_loop;
+				[anim_files]
+				{
+					00 = dff;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_edm_ga2_fs0_rv;
+					gtup = a_c_edm_ga2_fs0_up;
+					look = a_c_edm_ga2_fs0_dff;
+					wyme = a_c_edm_ga2_fs0_dff;
+					frtd = a_c_edm_ga2_fs0_dsf-03;
+					talk = a_c_edm_ga2_fs0_dff;
+					bed1 = a_c_edm_ga2_fs0_dff;
+					bed2 = a_c_edm_ga2_fs0_dff;
+					bed3 = a_c_edm_ga2_fs0_dff;
+					mrik = a_c_edm_ga2_fs0_dff;
+					sit1 = a_c_edm_ga2_fs0_dff;
+					sit2 = a_c_edm_ga2_fs0_dff;
+					bed4 = a_c_edm_ga2_fs0_dff;
+					bed5 = a_c_edm_ga2_fs0_dff;
+					froz = a_c_edm_ga2_fs0_dff;
+					andi = a_c_edm_ga2_fs0_dff;
+					lsn2 = a_c_edm_ga2_fs0_dff;
+					knee = a_c_edm_ga2_fs0_di;
+					lstn = a_c_edm_ga2_fs0_up;
+					lblg = a_c_edm_ga2_fs0_dff;
+					hoe1 = a_c_edm_ga2_fs0_dff;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = basic_walk;
+				[anim_files]
+				{
+					00=fl;
+				}
+			}
+		}
+	}
+	[common]
+	{
+		membership = hero,gargoyle;
+		screen_name = "Gargoyle";
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("we_anim_sfx",1);
+				action* = call_sfx_script("gargoyle_hand_glow");
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				action* = call_sfx_script("gargoyle_eye_glow");
+			}
+		}
+	}
+}
+
+[t:template,n:ut_hero_gargoyle]
+{
+	doc = "Hero Gargoyle";
+	specializes = base_ut_hero_gargoyle;
+	[actor]
+	{
+		screen_class = "Gargoyle";
+		portrait_icon = b_gui_ig_i_ic_c_gargoyle;
+		screen_class = "Gargoyle";
+		[skills]
+		{
+			dexterity 		= 1.0, 0, 10;
+			intelligence 		= 4.2, 0, 10;
+			strength 		= 0.8, 0, 10;
+			combat_magic 		= 6, 0, 0;
+			uber 			= 6, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		megamap_override = true;
+		[voice]
+		{
+			[die]		{ priority = high; * = s_e_die_gargoyle;  }
+		}
+		[vo_voice]
+		{
+			[select_char]
+			{ 
+				priority = vo; 
+				* = s_e_call_gargoyle_small_SED;
+			}
+			[order_move]
+			{
+				priority = vo; 
+				* = s_e_call_gargoyle_small_SED;
+			}
+			[order_attack]
+			{
+				priority = vo; 
+				* = s_e_call_gargoyle_small_SED;
+			}
+		}
+	}
+	[common]
+	{
+		membership = hero,gargoyle;
+		screen_name = "Tiamut";
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+             		es_spellbook = book_glb_magic_01;
+			es_chest = bd_ra_ro_m_g_c_005;
+		}
+        	[other]
+        	{
+			il_spell_1 = spell_orb_fire;
+			il_spell_2 = spell_firespray;
+			il_main = book_glb_lore_ut_tiamut;
+        	}
+	}
+	[mind]
+	{
+		/*
+			In my mind's eye, I see... a bunch of skrit code.
+		*/
+
+		////////////////////////////////////////
+		//	jobs
+
+		jat_brain 	= world\ai\jobs\common\brain_hero.skrit;
+		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
+
+		////////////////////////////////////////
+		//	params
+
+		melee_engage_range              = 0.9;
+		ranged_engage_range             = 5.5;
+		sensor_scan_period              = 0.25;
+		sight_range                     = 12.0;
+
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		actor_mana_ratio_low_threshold  = 0.5;
+		actor_mana_ratio_high_threshold = 0.8;
+
+
+		////////////////////////////////////////
+		//	permissions
+
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+		actor_auto_switches_to_karate              = false;
+        	actor_auto_switches_to_melee               = false;
+
+		on_enemy_entered_icz_switch_to_melee       = false;
+		on_engaged_lost_consciousness_abort_attack = false;
+	}
+	[store] { can_sell_self = true; }
+	[water_effects] {}
+}

@@ -1,0 +1,149 @@
+[conversation_mitromus]
+{
+        [text*]
+        {
+                order = 0;
+                choice = shop;
+
+                screen_text = "There are enough blasted wolves in this forest to clothe an entire town in black fur. Even worse, if I didn't know better, I'd say the bandits are controlling them in some way. If it was up to me, I'd keep everyone out of this forest until things quiet down. Best to lighten your load with me and head back to Elddim while you still can.";
+        }
+        [text*]
+        {
+                order = 1;
+                choice = shop;
+
+                screen_text = "Yes, yes, I've heard all the theories about the queen's death setting the monsters loose; tell me something new. I don't care about any of that; I'm just doing my job. Trade or be on your way.";
+        }
+
+        [text*]
+        {
+
+                choice = shop;
+
+                screen_text = "You again? If you're going to do any foresting, remember that the limit is three cords of wood per week. No exceptions.";
+        }
+
+}
+[conversation_mitromus_red]
+{
+	[text*]
+	{
+		choice = shop;
+		screen_text = "By the gods, something evil is afoot here. That is no natural stink, I can tell you that much.";
+	}
+}
+[conversation_loola]
+{
+	[text*]
+	{
+		order = 0;
+		choice = shop;
+
+		screen_text = "Hadush likes the Lift. Hadush sells shiny baubles. Lift goes down filled with fearless parties, Lift comes up filled with shiny baubles. Hadush laughs. Hadush likes the Lift. I am Hadush, Big Cat of the Lift. Want some shiny baubles?";
+	}
+	[text*]
+	{
+	    order = 1;
+		choice = shop;
+
+		screen_text = "Hadush likes the Lift. So tell Hadush. have the Utraeans killed  everyone from the mainland yet? Hadush thinks they will be more thorough than they were last time. Might as well buy some nicer baubles to die with when they come for you.";
+	}
+
+	[text*]
+	{
+
+		choice = shop;
+
+		screen_text = "They said there was no Lift. Hadush likes the Lift. They said there was no escape. Hadush runs fast. They said the Utraeans would never come again. Hadush laughs. Hadush  likes the lift. Couple more baubles from Hadush?";
+	}
+
+}
+[conversation_loola_red]
+{
+	[text*]
+	{
+		choice = shop;
+		screen_text = "Lift goes down red. Lift comes up red. Hadush likes red.";
+	}
+}
+[conversation_wilder_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_lyssa_select_07;
+		screen_text = "Well met, you've done well. All you need to do is to confront the Evil in its prison and vanguish it before it can escape. I'll assist you if you wish. My name is Zaidh. Do you wish for my company?";
+	}
+}
+[conversation_wilder_accept]
+{
+	[text*]
+	{
+		sample = s_v_lyssa_select_10;
+		screen_text = "Good. Let's put an end to this menace once and for all. Then all the spirits can rest in peace and perhaps one day harmony will return to this World.";
+	}
+}
+[conversation_wilder_reject]
+{
+	[text*]
+	{
+		screen_text = "Fine I will wait hear for the news of your victory. I would like to help out but if you feel you can achieve this task without me, that's alright. I'll always be here if you find out that you need me. Good Luck.";
+	}
+}
+[conversation_wilder_disband]
+{
+	[text*]
+	{
+		screen_text = "Fine I will wait hear for the news of your victory. I would like to help out but if you feel you can achieve this task without me, that's alright. I'll always be here if you find out that you need me. Good Luck.";
+	}
+}
+[conversation_wilder_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_lyssa_select_10;
+		screen_text = "Good. Let's put an end to this menace once and for all. Then all the spirits can rest in peace and perhaps one day harmony will return to this World.";
+	}
+}
+[conversation_wilder_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_lyssa_select_10;
+		screen_text = "Aah you need my assistance after all. Don't worry I'll help out. It's a massive task that you are attempting after all. Let's get to it then.";
+	}
+}
+[conversation_maegwin]
+{
+	[text*]
+	{
+
+		screen_text = "It's good to meet you. We've been observing your progress and are very pleased. You may have the ability to finally defeat our foes. Therefore an explanation is in order. The Evil that you are about to face has been imprisoned for over 3000 years and has been attempting to break it's bonds ever since. We helped the survivors of the fall of the Utraeans to imprison this Evil and designed the 8 Key Stones to lock it away, for the conflict drained most of our powers and the Evil couldn't be defeated back then. Yet it must be confronted in it's very lair and defeated before it manages to escape and destroy us all. For that very reason the Key Stones were constructed and hidden so that only the most resourcefull and powerfull of all heroes could ever hope to find them all. Any lesser hero would fail at the final hurdle and let our foes escape. Only the one who can find all 8 Stones would be able to win the battle that is about to unfold. That hero is you. We, the Elves, could only watch from a distance and lend what help we could, you are the one who must do this deed. Therefore take the Hiroth Townstone to Priest Kavaran at Hiroth and assemble all 8 Stones, ready for the final battle. Good Luck and Godspeed to you.";
+	}
+}
+[conversation_maegwin_red]
+{
+	[text*]
+	{
+
+		screen_text = "Och, my bleedin' ears! If that red wind keeps howling, I may never sleep again.";
+	}
+}
+[conversation_darandriel]
+{
+	[text*]
+	{
+
+		screen_text = "Welcome. We are only an emissary group from the last city of the Elves. It is well hidden in this forest and this isn't the time to take you to see it. Once we were far more populous and inhabited many forests across Aranna. Though unfortunately those times are far distant now. We are are very long lived race, but aren't very fertile nor immortal. Perhaps later we can discuss more about ourselves with you, this isn't the proper time or place. You have achieved much, but there is still one last great task that you must accomplish.";
+	}
+}
+[conversation_darandriel_complete]
+{
+	[text*]
+	{
+
+		screen_text = "Well done, I have complete faith in you. Our wishes and thoughts are with you, Hero. Godspeed.";
+	}
+}

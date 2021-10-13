@@ -1,0 +1,486 @@
+[t:template,n:base_hero_dwarf]
+{
+	doc = "Dwarf base template";
+	specializes = hero;
+	[actor]
+	{
+		can_level_up = true;
+		race = human;
+	}
+	[aspect]
+	{
+		is_collidable		= true;
+		is_invincible		= false;
+		life_recovery_period = 4;
+		life_recovery_unit = 1;
+		mana_recovery_period = 3;
+		mana_recovery_unit = 1;
+
+		is_collidable		= true;
+		is_invincible		= false;
+		model = m_c_gan_df_pos_a1;
+	}
+	[body]
+	{
+		armor_version = gan_df;
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gan_df_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					qffg = dff;
+				}
+
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = dfs;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gan_df_fs1_dk;
+					frtd = a_c_gan_df_fs0_dsf;
+					glrn = a_c_gan_df_fs1_dsf;
+					gtup = a_c_gan_df_fs0_up;
+					look = a_c_gan_df_fs1_dff;
+					talk = a_c_gan_df_fs0_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = rl;
+				}
+			}
+		}
+		[weapon_scales]
+		{
+			as_bow_and_arrow = 0.8, 0.8, 0.8;
+			as_minigun = 0.8, 0.8, 0.8;
+			as_shield_only = 0.8, 1.0, 0.8;
+			as_single_melee = 0.9, 0.9, 0.9;
+			as_staff = 1.0, 1.0, 0.8;
+			as_two_handed_melee = 0.9, 0.9, 0.8;
+			as_two_handed_sword = 1.0, 1.0, 0.8;
+		}
+	}
+	[common]
+	{
+		auto_expiration_class = never;
+		forced_expiration_class = never;
+		membership = hero;
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[inventory]
+	{
+		grid_height = 13;
+		grid_width = 4;
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+    	mind:sight_origin_height = 1.6;
+	[physics]
+	{
+		fire_burn_threshold = 9999;
+		fire_effect = human_physics_fire;
+		fire_resistance = 0.0;
+	}
+	[water_effects]
+	{
+	}
+	[store] { can_sell_self = true; }
+}
+[t:template,n:karn]
+{
+	category_name = "1W_character";
+	doc = "Torg";
+	specializes = base_hero_dwarf;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_torg;
+		[skills]
+		{
+			dexterity 		= 2.16, 0, 10;
+			intelligence 		= 0.72, 0, 10;
+			melee 			= 8, 0, 0;
+			strength 		= 5.12, 0, 10;
+			uber 			= 8, 0, 0;			
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		gold_value = 5750;
+		[textures]
+		{
+			0 = b_c_gan_df_skin_02;
+			1 = b_c_pos_a1_006;
+		}
+		[voice]
+		{
+//			[die] { *=s_e_die_male; }
+	[die]		{ priority = high; * = s_v_konus_die; }
+		}
+      [vo_voice]
+	{
+	  [select_char]
+	    { 
+	      priority = vo; 
+	      * = s_v_konus_select_01;
+	      * = s_v_konus_select_02;
+	      * = s_v_konus_select_03;
+	      * = s_v_konus_select_04;
+	      * = s_v_konus_select_05;
+	      * = s_v_konus_select_06;
+	      * = s_v_konus_select_07;
+	      * = s_v_konus_select_08;
+	      * = s_v_konus_select_09;
+	      * = s_v_konus_select_10;
+	      * = s_v_konus_select_11;
+	      * = s_v_konus_select_12;
+	      * = s_v_konus_select_13;
+	      * = s_v_konus_select_14;
+	      * = s_v_konus_select_15;
+	    }
+	  [order_move]
+	    {
+	      priority = vo; 
+	      * = s_v_konus_ack_01;
+	      * = s_v_konus_ack_02;
+	      * = s_v_konus_ack_03;
+	      * = s_v_konus_ack_04;
+	      * = s_v_konus_ack_05;
+	      * = s_v_konus_ack_06;
+	      * = s_v_konus_ack_07;
+	      * = s_v_konus_ack_08;
+	      * = s_v_konus_ack_09;
+	      * = s_v_konus_ack_10;
+	      * = s_v_konus_ack_11;
+	      * = s_v_konus_ack_12;
+	      * = s_v_konus_ack_13;
+	      * = s_v_konus_ack_14;
+	      * = s_v_konus_ack_15;
+	    }
+	  [order_attack]
+	    {
+	      priority = vo; 
+	      * = s_v_konus_attack_01;
+	      * = s_v_konus_attack_02;
+	      * = s_v_konus_attack_03;
+	      * = s_v_konus_attack_04;
+	      * = s_v_konus_attack_05;
+	      * = s_v_konus_attack_06;
+	      * = s_v_konus_attack_07;
+	      * = s_v_konus_attack_08;
+	      * = s_v_konus_attack_09;
+	      * = s_v_konus_attack_10;
+	      * = s_v_konus_attack_11;
+	      * = s_v_konus_attack_12;
+	      * = s_v_konus_attack_13;
+	      * = s_v_konus_attack_14;
+	      * = s_v_konus_attack_15;
+	    }
+	}
+	}
+	[common]
+	{
+		screen_name = "Torg";
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_chest = bd_bl_f_g_c_avg;
+			es_feet = #boots/20-30;
+			es_forearms = #gloves/20-30;
+		}
+		[other]
+		{
+			il_main = ax_d_c_1h1b_avg;
+			il_main = book_glb_lore_ut_torg;
+		}
+	}
+	[mind]
+	{
+		/*
+			In my mind's eye, I see... a bunch of skrit code.
+		*/
+
+		////////////////////////////////////////
+		//	jobs
+
+		jat_brain 	= world\ai\jobs\common\brain_hero.skrit;
+		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
+
+		////////////////////////////////////////
+		//	params
+
+		melee_engage_range              = 0.9;
+		ranged_engage_range             = 10.5;
+		sensor_scan_period              = 0.25;
+		sight_range                     = 12.0;
+		sight_fov                       = 360.0;
+		inner_comfort_zone_range 	= 2.0;
+		outer_comfort_zone_range 	= 12.0;
+
+		actor_weapon_preference         = WP_MAGIC;
+		actor_balanced_attack_preference	= 1.0;
+
+		////////////////////////////////////////
+		//	permissions
+
+		combat_orders                              = CO_FREE;
+		movement_orders                            = MO_FREE;
+		actor_auto_switches_to_magic               = true;
+		actor_auto_defends_others                  = true;
+		actor_auto_heals_others_life               = true;
+		actor_auto_heals_self_life                 = false;
+		actor_auto_reanimates_friends              = true;
+		on_alert_projectile_near_missed_attack	   = true;
+		on_enemy_spotted_alert_friends		   = true;
+		on_engaged_fled_abort_attack		   = true;
+	}
+}
+[t:template,n:hadar]
+{
+	category_name = "1W_character";
+	doc = "hadar";
+	specializes = base_hero_dwarf;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_rhut;
+		[skills]
+		{
+			dexterity 		= 12.42, 0, 10;
+			intelligence 		= 4.14, 0, 10;
+			melee 			= 46, 0, 0;
+			strength 		= 29.44, 0, 10;
+			uber 			= 46, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		gold_value = 354750;
+		[textures]
+		{
+			0 = b_c_gan_df_skin_07;
+			1 = b_c_pos_a1_069;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_male; }
+		}
+      [vo_voice]
+	{
+	  [select_char]
+	    { 
+	      priority = vo; 
+	      * = s_v_konus_select_01;
+	      * = s_v_konus_select_02;
+	      * = s_v_konus_select_03;
+	      * = s_v_konus_select_04;
+	      * = s_v_konus_select_05;
+	      * = s_v_konus_select_06;
+	      * = s_v_konus_select_07;
+	      * = s_v_konus_select_08;
+	      * = s_v_konus_select_09;
+	      * = s_v_konus_select_10;
+	      * = s_v_konus_select_11;
+	      * = s_v_konus_select_12;
+	      * = s_v_konus_select_13;
+	      * = s_v_konus_select_14;
+	      * = s_v_konus_select_15;
+	    }
+	  [order_move]
+	    {
+	      priority = vo; 
+	      * = s_v_konus_ack_01;
+	      * = s_v_konus_ack_02;
+	      * = s_v_konus_ack_03;
+	      * = s_v_konus_ack_04;
+	      * = s_v_konus_ack_05;
+	      * = s_v_konus_ack_06;
+	      * = s_v_konus_ack_07;
+	      * = s_v_konus_ack_08;
+	      * = s_v_konus_ack_09;
+	      * = s_v_konus_ack_10;
+	      * = s_v_konus_ack_11;
+	      * = s_v_konus_ack_12;
+	      * = s_v_konus_ack_13;
+	      * = s_v_konus_ack_14;
+	      * = s_v_konus_ack_15;
+	    }
+	  [order_attack]
+	    {
+	      priority = vo; 
+	      * = s_v_konus_attack_01;
+	      * = s_v_konus_attack_02;
+	      * = s_v_konus_attack_03;
+	      * = s_v_konus_attack_04;
+	      * = s_v_konus_attack_05;
+	      * = s_v_konus_attack_06;
+	      * = s_v_konus_attack_07;
+	      * = s_v_konus_attack_08;
+	      * = s_v_konus_attack_09;
+	      * = s_v_konus_attack_10;
+	      * = s_v_konus_attack_11;
+	      * = s_v_konus_attack_12;
+	      * = s_v_konus_attack_13;
+	      * = s_v_konus_attack_14;
+	      * = s_v_konus_attack_15;
+	    }
+	}
+	}
+	[common]
+	{
+		screen_name = "Hadar";
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		selected_active_location = il_active_melee_weapon;
+		[equipment]
+		{
+			es_chest = bd_ba_f_g_c_avg;
+			es_feet = #boots/60-130;
+			es_forearms = #gloves/60-130;
+		}
+		[other]
+		{
+			il_main = ax_ra_g_c_2h2b_fin;
+			il_main = book_glb_lore_ut_hadar;
+		}
+	}
+	[mind]
+	{
+		/*
+			In my mind's eye, I see... a bunch of skrit code.
+		*/
+
+		////////////////////////////////////////
+		//	jobs
+
+		jat_brain 	= world\ai\jobs\common\brain_hero.skrit;
+		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
+
+		////////////////////////////////////////
+		//	params
+
+		melee_engage_range              = 0.9;
+		ranged_engage_range             = 10.5;
+		sensor_scan_period              = 0.25;
+		sight_range                     = 20.0;
+		sight_fov                       = 360.0;
+		inner_comfort_zone_range 	= 2.0;
+		outer_comfort_zone_range 	= 12.0;
+
+
+		actor_weapon_preference         = WP_MAGIC;
+		actor_balanced_attack_preference	= 1.0;
+
+		////////////////////////////////////////
+		//	permissions
+
+		combat_orders                              = CO_FREE;
+		movement_orders                            = MO_FREE;
+		actor_auto_switches_to_magic               = true;
+		actor_auto_defends_others                  = true;
+		actor_auto_heals_others_life               = true;
+		actor_auto_heals_self_life                 = false;
+		actor_auto_reanimates_friends              = true;
+		on_alert_projectile_near_missed_attack	   = true;
+		on_enemy_spotted_alert_friends		   = true;
+		on_engaged_fled_abort_attack		   = true;
+	}
+}

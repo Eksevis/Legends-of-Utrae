@@ -1,0 +1,65 @@
+[t:elevator_instant_4s_1c,n:0x01d00223]
+{
+	[elevator_instant_4s_1c]
+	{
+	  i connect_door_location1_level1 = 7;
+	  i connect_door_location1_level2 = 8;
+	  i connect_door_location2_level1 = 13;
+	  i connect_door_location2_level2 = 14;
+	  x connect_node_location1 = 0xD906C734;
+	  x connect_node_location2 = 0x007EEAA4;
+		down_effect = "displacer_plate_down";
+	  f duration_location1_moving_to_lv1 = 16;
+	  f duration_location2_moving_to_lv1 = 16;
+	  i e2_connect_door_location1_level1 = 5;
+	  i e2_connect_door_location1_level2 = 6;
+	  i e2_connect_door_location2_level1 = 11;
+	  i e2_connect_door_location2_level2 = 12;
+	  x e2_elevator_node = 0x39AEA885;
+	  i elevator_door_location1_level1 = 2;
+	  i elevator_door_location1_level2 = 2;
+	  i elevator_door_location2_level1 = 2;
+	  i elevator_door_location2_level2 = 2;
+	  x elevator_node = 0xC95ECD0D;
+		location1_moving_to_lv1_actioninfo = "utraean_world_path2crypts_teleport";
+		location1_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		location2_moving_to_lv1_actioninfo = "utraean_world_river_forest_teleport";
+		location2_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		material = "hub";
+	  x other_elevator = 0x08401055;
+		up_effect = "displacer_plate_up";
+	}
+	[placement]
+	{
+	  p position = 0,5,0,0xc95ecd0d;
+	}
+}
+[t:elevator_2s_1c_2n,n:0x01d00208]
+{
+	[elevator_2s_1c_2n]
+	{
+	  i connect_door_level1 = 8;
+	  i connect_door_level2 = 9;
+	  x connect_node_level1 = 0xB8275186;
+	  x connect_node_level2 = 0x712E550E;
+	  f duration = 5;
+	  i elevator_door_level1 = 2;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0xF1533AFB;
+		level1_message = we_req_deactivate;
+	  f level1_message_delay = 0;
+	  x level1_scid = 0x01D00159;
+		level2_message = we_req_deactivate;
+	  f level2_message_delay = 0;
+	  x level2_scid = 0x01D00159;
+		material = "dc_pulley";
+	  f moving1_message_delay = 0;
+	  x moving1_scid = 0x01D00159;
+	  f moving2_message_delay = 0;
+	  x moving2_scid = 0x01D00159;
+	}
+	[placement]
+	{
+	  p position = -0.164017,0.860495,-0.0495186,0xf1533afb;
+	}
+}

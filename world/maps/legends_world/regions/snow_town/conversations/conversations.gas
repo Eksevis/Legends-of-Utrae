@@ -1,0 +1,1190 @@
+[conversation_alda]
+{
+	[text*]
+	{
+		order = 0;
+		screen_text = "Your news is welcome, though bittersweet: my sister lives, but my home is nearly destroyed. 'Twas kind during these attacks to deliver word for a complete stranger. What can I give you for your trouble? Mmmm...this spellbook was given to my father for saving some minstrels from a Trog ambush. Perhaps it is due time for someone worthy to use it once more; I have done nothing yet to earn the right. I would only ask that when it proves no longer useful, you seek someone of courage to bear it forth, in my Father's name.";
+		scroll_rate = 7;
+	}
+	[text*]
+	{
+		screen_text = "Good luck to you in your travels.";
+	}
+}
+[conversation_billib]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700743;
+		screen_text = "Cole's a bit of a daredevil, but the most competent lad I know. If I know Cole, he's too busy entertaining all the lasses to remember to write to his sister back in Fallraen.";
+	}
+}
+[conversation_billib_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700743;
+		screen_text = "I've been living in Fallraen going on thirty years, and I've never seen anything like this!";
+	}
+}
+[conversation_brassi]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270042d;
+		screen_text = "Ooh hello. Joth and I were only talking about you. You've the party which has cleared the way from Elddim all the way here! Fantastic, what a great job. I do hope you'll continue and clear the way to Meren as well. Thanks for everything!";
+	}
+}
+[conversation_brassi_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270042d;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_broeni]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270044b;
+		screen_text = "Hello. Sorry I can't talk to you much. I've a swollen tongue from this frigid air. I also can't see you very well through this damn snow. Not to mention that my hearing's all shot from the constant clatter of ice falling from the roof of my house. My feet are also numb from standing around here all day. Also my han.............. Okay I understand, you've more important things to do. Well I hope to see you when you've more time to spare. Dooo you hear me?";
+	}
+}
+[conversation_broeni_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270044b;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_ceabeth]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270043b;
+		screen_text = "Aah choo. Sorry it's this frigid air! I think it's given me a cold. Why does it has to keep snowing all the time anyhow? And why do I have to keep standing outside in it all the time? It's not fair!";
+	}
+}
+[conversation_ceabeth_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270043b;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_chynna_accept_have_money]
+{
+	[text*]
+	{
+		sample = s_v_jharmaya_select_14;
+		screen_text = "Great! Let's get to it then. We'll have to head north to the Glacial caverns and then through the Mount Utrae Forest. It's a long journey but fear not for I'll be by your side!";
+	}
+}
+[conversation_chynna_accept_no_money]
+{
+	[text*]
+	{
+		screen_text = "Please come back when you have 19000 gold!";
+	}
+}
+[conversation_chynna_disband]
+{
+	[text*]
+	{
+		screen_text = "Noooo! You can't do this to me! What will I do now?";
+	}
+}
+[conversation_chynna_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_08;
+		screen_text = "Good! I see that you realise that you need a strong sword arm after all. Shall we continue then?";
+	}
+}
+[conversation_chynna_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_08;
+		screen_text = "I see that you are heading towards Meren. My name is Chynna and i'm looking for a job so that I can get out of this freezing place so if you want I can guide you there for 19000 gold.  Then if you want I'll stay on and help you with your quest, for I've trained long with the sword and can easily hold my own with anyone.";
+	}
+}
+[conversation_chynna_reject]
+{
+	[text*]
+	{
+		screen_text = "Noooo! You can't do this to me! I'll freeze to death out here!";
+	}
+}
+[conversation_chynna_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_08;
+		screen_text = "Have you come back to hire me then so I can buy some warmer clothes?";
+	}
+}
+[conversation_edissa]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270043c;
+		screen_text = "Welcome there! I haven't seen you before. On your way to Meren? My, that's a dangerous trip, you won't find me attempting such a feat.";
+	}
+}
+[conversation_edissa_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270043c;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_flessan]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x027007d0;
+		choice = more;
+		order = 0;
+		screen_text = "Oh, hail, stranger. If you need magic stuff, talk to Killean. I've got too much to do now that Priest Lagreth's gone. I'm of mind to send out a search party for him.";
+	}
+	[text*]
+	{
+		activate_quest* = goto_elddim;
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		order = 1;
+		screen_text = "Well... You think you can help, do you? I don't know... How's this? Go talk to Utraean Priestess Kelti over in Elddim. She's always looking for trustworthy individuals to assist the Society. I might have a job for you when you're finished.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		screen_text = "Look, I'm not allowed to hire anyone without Priestess Kelti's approval. If she likes you, she'll let me know, and then we can talk. Okay?";
+	}
+}
+[conversation_flessan_all_complete]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		screen_text = "You have done well, friend! Mayhaps you will have a career in the Society someday, eh?";
+	}
+}
+[conversation_flessan_complete]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x027007d0;
+		choice = more;
+		order = 0;
+		screen_text = "You have no idea how glad I am to see you! Terrible creatures have been coming out of the woods at night, and I havn't been able to sleep at all knowing that Priest Lagreth is out there somewhere. Oh dear, you say you came across him dead? Ack! But you do have the Snowflake Stone, yes? Oh, well, then all is not lost, at least. Did you by chance resurrect the poor man?";
+	}
+	[text*]
+	{
+		activate_quest* = goto_meren;
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		complete_quest* = quest_fallraen;
+		screen_text = "You are much braver than I, friend. The entire town of Fallraen is indebted to you. I will ask the Guard Captain to send a rescue party out for Priest Lagreth, now that we know where he is. While I have not the means to reward you appropriately, please accept this small token of appreciation. I will also send word to the town of Meren, so they will treat you with the utmost respect.";
+	}
+}
+[conversation_flessan_goto]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		quest_dialog = true;
+		screen_text = "Utraean Priest Tas in Meren will be waiting for your arrival. He doesn't have much else to do now that the sun hasn't come out for the last three months.";
+	}
+}
+[conversation_flessan_quest]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		quest_dialog = true;
+		screen_text = "Priest Lagreth set off to the north. I think he was trying to get to Lang through the Glacial Caverns for some reason. He just glowered at me when I asked him where he was going, and he muttered something about the Lang Mosquito Stone. I don't know why he didn't just go through the Basilicus. He's one of the very few of us marked with fire.";
+	}
+}
+[conversation_flessan_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		screen_text = "The Legion are sure taking their time returning Priest Lagreth to us! I don't know what this red sky means, but it is surely not good!";
+	}
+}
+[conversation_flessan_ring]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x027007d0;
+		choice = more;
+		complete_quest* = goto_fallraen;
+		complete_quest* = goto_fallraen_b;
+		order = 0;
+		screen_text = "You are the one Priestess Kelti sent? Oh, thank the stars! It's been a terrible month, let me tell you!";
+	}
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x027007d0;
+		choice = more;
+		order = 1;
+		screen_text = "You see, I'm just an apprentice to the Utraean Society. I'd been mostly doing research and studying the few remaining Utraean artifacts we have, when Priest Lagreth heard of some unusual activity in the Frozen Caverns to the north of here. He left a month ago to investigate, and hasn't been heard from since!";
+	}
+	[text*]
+	{
+		activate_quest* = quest_fallraen;
+		activate_quest* = quest_townstones;
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		order = 2;
+		screen_text = "Worst of all, he took the Snowflake Stone with him. The call for the Circle of Stones came just two days after Priest Lagreth left, and I've been beside myself trying to figure out what to do. The Townstones MUST be assembled -- how else will we reopen the road to Crystwind? Priest Lagreth says there's a vast store of Utraean magics and armaments hidden in a magically sealed temple. When the Townstones are united, we'll finally have the supplies to protect ourselves once and for all. If you could go after Priest Lagreth and find Fallraen's Snowflake Stone, we'd be that much closer to safety!";
+	}
+}
+[conversation_flessan_stone]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x027007d0;
+		choice = more;
+		complete_quest* = goto_fallraen;
+		complete_quest* = goto_fallraen_b;
+		order = 0;
+		screen_text = "You are the one Priestess Kelti sent? Oh, thank the stars! It's been a terrible month, let me tell you!";
+	}
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x027007d0;
+		choice = more;
+		order = 1;
+		screen_text = "Wait, did you say you have the Fallraen Townstone? Right this minute? Oh, you have no idea how thrilled I am! The call for the Circle of Stones came just two days after Priest Lagreth left, and I've been beside myself trying to figure out what to do. The Townstones MUST be assembled -- how else will we reopen the road to Crystwind? Priest Lagreth says there's a vast store of Utraean magics and armaments hidden in a magically sealed temple. When all the Townstones are united, we'll finally have the supplies to protect ourselves once and for all. Thanks to you, Fallraen will have done its part!";
+	}
+	[text*]
+	{
+		activate_quest* = goto_meren;
+		activate_quest* = quest_townstones;
+		button_1_text = "Directions";
+		button_1_value = d_0x027007d0;
+		screen_text = "And you found Priest Lagreth as well? Dead, you say? Oh dear. I'll have the Guard Captain send out a rescue party for him. While we do not have much to give, please accept this small token of appreciation. It's the least we can do. Oh, and I'll send word to the Priests in Meren to be on the lookout for you.";
+	}
+}
+[conversation_ghilbertnor_first]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "Here to buy a mule, are you? You want a nice docile beastie you can leave out in the rain, pack a house-worth of stuff onto its back, and feed whenever you feel it's convenient? Hah! It's no wonder we went out of the sodding yak business! Do me a favor: take one of these worthless mules I got in trade for its equal in gold, and I'll be one step closer to getting out of this blighted kingdom for good.";
+	}
+}
+[conversation_ghilbertnor_has_packmules]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "Oh, back to buy one of these cretinous mules? Fine, fine. Take your pick. I don't care which one, just as long as you've got the gold I need.";
+	}
+}
+[conversation_ghilbertnor_no_packmules]
+{
+	[text*]
+	{
+		screen_text = "If you're looking for another mule, you're out of luck. I've sold the last of them, and the Frozen Yak Corral is now history. Good riddance!";
+	}
+}
+[conversation_guard_captain_fallraen]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700722;
+		screen_text = "Good day to you, Stranger. You might want to stop by the tavern for an ale to warm you up on this frosty day. Liorne's got some fine, fur-lined boots for sale over at the Fire and Ice Forge if you're needing supplies. I'm afraid there's not much to be had in terms of quality weapons. With the road to Crystwind blocked, we havn't received any ore in months.";
+	}
+}
+[conversation_guard_captain_fallraen_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700722;
+		screen_text = "That old fool Priest Lagreth is behind this foul weather, mark my words. Well, he can stay dead out there in the stink for awhile longer if I have anything to say about it.";
+	}
+}
+[conversation_guard_gate_n]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700780;
+		screen_text = "Take care, traveler. May the hand of Azunai guide you well.";
+	}
+}
+[conversation_guard_gate_n_high]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700780;
+		screen_text = "Pish, you don't need me to tell you how adept your survival skills are. It's clear you're more than adequately prepared for anything that's around these parts.";
+	}
+}
+[conversation_guard_gate_n_low]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700780;
+		screen_text = "I hate to be the bearer of ill news, but I advise you not to travel outside Fallraen's walls. I'm not jesting when I say you'll end up regretting it without some hefty training under your belt.";
+	}
+}
+[conversation_guard_gate_n_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700780;
+		screen_text = "Hear me well! The air is burning for good reason. Azunai has returned to smite us for our lack of faith! We are all doomed!";
+	}
+}
+[conversation_guard_gate_s]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700781;
+		screen_text = "Hail! The high snows have kept us from clearing the woods of vermin, so take extra care when venturing outside the gates. There've been more than a few mishaps already. ";
+	}
+}
+[conversation_guard_gate_s_high]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700781;
+		screen_text = "Pish, you don't need me to tell you how adept your survival skills are. It's clear you're more than adequately prepared for anything that's around these parts.";
+	}
+}
+[conversation_guard_gate_s_low]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700781;
+		screen_text = "I hate to be the bearer of ill news, but I advise you not to travel outside Fallraen's walls. I'm not jesting when I say you'll end up regretting it without some hefty training under your belt.";
+	}
+}
+[conversation_guard_gate_s_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700781;
+		screen_text = "I'd expect this sort of magick weather someplace like Hiroth, but never in Fallraen! Even with Killean's shop here, there's never been anything more unusual than snow.";
+	}
+}
+[conversation_guard_hub]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700723;
+		order = 0;
+		screen_text = "Hail and well met! Fallraen is as safe as they get, but if you venture beyond the walls, there's no telling what might come to pass. The road to Elddim is closed, Meren lies distant to the northeast, and all that's up north is a cave full of vermin. Lovely day for a walk around the magicatorium, eh?";
+	}
+}
+[conversation_guard_hub_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700723;
+		screen_text = "Gah! Everyone's feeling queasy ever since the sky turned red. If I didn't have guard duty, I'd be sitting cozy by the fire in the Golden Boar with me nose in a tall mug o' their best ale. ";
+	}
+}
+[conversation_guard_id]
+{
+	[text*]
+	{
+		activate_quest* = quest_fallraen_barracks;
+		quest_dialog = true;
+		screen_text = "It's a bloody nightmare out here, what with the heavy snow making the klaw bolder than I've ever seen them. They've infested the old barracks just to the south, forcing the Legion to bunk in town instead. You can be sure the citizens of Fallraen are none too happy about matters. Mayhaps you'd be willing to give us a hand cleansing the barracks before heading into town?";
+	}
+}
+[conversation_guard_id_complete]
+{
+	[text*]
+	{
+		screen_text = "The town of Fallraen and the Legion owe you thanks! Please accept this reward for a job well done. You'll be wanting to head into town to lighten your load after all that fighting, I'm sure. Fallraen is just to the north, past the gates.";
+	}
+}
+[conversation_guard_id_red]
+{
+	[text*]
+	{
+		screen_text = "Such a stench in the air, I do think I'm going to be sick...";
+	}
+}
+[conversation_guard_tavern]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700732;
+		screen_text = "Whatever you do, don't order the mutton. I think I'm going to be sick...";
+	}
+}
+[conversation_guard_tavern_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700732;
+		screen_text = "It's a great day for an ale, dontcha think? Make that a whole barrel of the stuff... *hic*";
+	}
+}
+[conversation_guard_tower_n]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700720;
+		screen_text = "Hey, you! Military personnel onl... Oh, forgive me! I didn't realize you're a visitor. I guess you can stay if you keep still. I saw a snow boar rooting around at the edge of the woods not too long ago. If you keep very still, maybe it'll return and we'll all have pork for supper!";
+	}
+}
+[conversation_guard_tower_n_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700720;
+		screen_text = "I hate red.";
+	}
+}
+[conversation_guard_tower_s]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700721;
+		screen_text = "Oh, it's you, Stranger. There were rumors a brave adventurer was in town. Well, not much is happening up here today. There were rumors of a Klaw sighting in the woods to the north and south of here, but I havn't seen anything unusual yet.";
+	}
+}
+[conversation_guard_tower_s_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700721;
+		screen_text = "At least this foul weather seems to be keeping the beasties indoors as well. Hasn't been this quiet in months!";
+	}
+}
+[conversation_guard_tower_w]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270071f;
+		screen_text = "You shouldn't be up here, you know. What if there's a massive Furok attack while I'm chatting here with you, and I'm too distracted to sound the alarm in time? There's a cave full of the smelly beasts due north of the gates, you know.";
+	}
+}
+[conversation_guard_tower_w_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270071f;
+		screen_text = "And I thought the smell of Furok was nauseating. That's nothing compared to this! Oh, my stomach...";
+	}
+}
+[conversation_joth]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700439;
+		screen_text = "My what an impressive sight! If I wasn't a eight pound weakling, I'd join you. I can only imagine what fame and fortune are waiting for you. I'm so envious. Though I hear that there are some lasses in the Tavern who think they can fight a bit. They may be interested in helping you out, that if you need helping out.";
+	}
+}
+[conversation_joth_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700439;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_kiania]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270045c;
+		choice = shop;
+		screen_text = "Hi. It's sooo cold out there! I have some items that may warm you up. Interested?";
+	}
+}
+[conversation_kiania_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270045c;
+		choice = shop;
+		screen_text = "Can't a lad go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_killean]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002be;
+		choice = shop;
+		order = 0;
+		screen_text = "Now, who would you be? No, wait, let me guess... I've got it! You're a demon in disguise from the northern reaches, about to turn me into a pillar of ice, right? Hahahaha! No? Well, you can't blame a man for having some fun in times like this. Might as well shop for a bit then, eh?";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002be;
+		choice = shop;
+		screen_text = "You understand I didn't mean anything by that demon joke, right? But if you do want to get to know some demons, there's a cave full of them up north. Or, if you've got the skill, I'll sell you the secret on how to conjure your own.";
+	}
+}
+[conversation_killean_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002be;
+		choice = shop;
+		screen_text = "It's a far cry from summer breezes, but this red fog mixed with snow is something different at least!";
+	}
+}
+[conversation_kymian]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700718;
+		screen_text = "Is that armor real? It looks flimsy. Do you have any scars? How many monsters have you killed? Why are you looking at me like that?";
+	}
+}
+[conversation_kymian_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700718;
+		screen_text = "There was never anything this exciting in Elddim!";
+	}
+}
+[conversation_kyssa]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002eb;
+		screen_text = "Hello there! I don't know what kids see in snow, but they never get tired of playing in the stuff.";
+	}
+}
+[conversation_kyssa_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002eb;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_lars]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027005f0;
+		screen_text = "My father and I took a trip through the Crystal Caverns last spring. It'll take you awhile to get there, but it's well worth the journey! The creatures there aren't exactly friendly, but they sure have pretty skins.";
+	}
+}
+[conversation_lars_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027005f0;
+		screen_text = "D'ya think this scourge will last long? Seems everyone's feeling worse by the hour with this stink in the air.";
+	}
+}
+[conversation_laup]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270072c;
+		screen_text = "The Glacial Caverns won't be any trouble to you, I'd bet. But watch out for the Ancient Temple in the Mount Utrae Forest past the caverns -- I hear it's haunted!";
+	}
+}
+[conversation_laup_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270072c;
+		screen_text = "Blasted weather.";
+	}
+}
+[conversation_liorne]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002c0;
+		choice = shop;
+		order = 0;
+		screen_text = "Hail and welcome to the Fire and Ice forge! When it's this cold out, you'll want a nice, fur trimmed breastplate, and I make the best around!";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002c0;
+		choice = shop;
+		order = 1;
+		screen_text = "Yes, I know my goods are pricey, but materials are dear what with the banditry these days. Can't hardly get anything through from Crystwind by the forest road, and strange things have been emerging from the Glacial Caverns to the North.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002c0;
+		choice = shop;
+		screen_text = "Goods are still here, the snow still is falling, you might as well spend your gold since there's not much else calling!";
+	}
+}
+[conversation_liorne_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002c0;
+		choice = shop;
+		screen_text = "It smells funny, but at least it's warmer!";
+	}
+}
+[conversation_maelle]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270073f;
+		screen_text = "Ack, can't you see this room is taken? The rudeness of some people! Hilmer, deal with them, please!";
+	}
+}
+[conversation_maelle_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270073f;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_marli]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700748;
+		screen_text = "My brother, Cole, headed to the town of Lang through the northern Glacial Caverns last fall, but I havn't heard from him since. I'm terribly worried something awful happened to him. I was supposed to join him when the road was clear, but with the western bridge collapsed, we're cut off from the rest of the kingdom.";
+	}
+}
+[conversation_marli_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700748;
+		screen_text = "I s'pose this'll teach everyone not to be skeered of lightning any more, what with twenty-four hour exposure to the stuff.";
+	}
+}
+[conversation_noquest_alda]
+{
+	[text*]
+	{
+		order = 0;
+		screen_text = "You hail from Elddim? I wish you could tell me of my family; I wonder how they fared during the attack.";
+	}
+	[text*]
+	{
+		screen_text = "I hope my sister is alive...";
+	}
+}
+[conversation_owen_fall_first]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "Here to buy a mule, are you? You want a nice docile beastie you can leave out in the rain, pack a house-worth of stuff onto its back, and feed whenever you feel it's convenient? Hah! It's no wonder we went out of the sodding yak business! Do me a favor: take one of these worthless mules I got in trade for its equal in gold, and I'll be one step closer to getting out of this blighted kingdom for good.";
+	}
+}
+[conversation_owen_fall_no_packmules]
+{
+	[text*]
+	{
+		screen_text = "If you're looking for another mule, you're out of luck. I've sold the last of them, and the Frozen Yak Corral is now history. Good riddance!";
+	}
+}
+[conversation_owen_fall_one_packmule]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "Oh, back to buy one of these cretinous mules? Fine, fine. Take your pick. I don't care which one, just as long as you've got the gold I need.";
+	}
+}
+[conversation_owen_fall_two_packmules]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "Oh, back to buy one of these cretinous mules? Fine, fine. Take your pick. I don't care which one, just as long as you've got the gold I need.";
+	}
+}
+[conversation_rhaswen]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002ea;
+		screen_text = "Hi there. We don't see many visitors to Fallraen these days, what with the constant snowing and the mysterious appearance of all these monsters. It's extremely hazardous travelling now!";
+	}
+}
+[conversation_rhaswen_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002ea;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[conversation_sheba_accept_have_money]
+{
+	[text*]
+	{
+		sample = s_v_jharmaya_select_14;
+		screen_text = "Great! Let's get to it then. We'll have to head north to the Glacial caverns and then through the Mount Utrae Forest. It's a long journey but fear not for I'll be by your side!";
+	}
+}
+[conversation_sheba_accept_no_money]
+{
+	[text*]
+	{
+		screen_text = "Please come back when you have 27500 gold!";
+	}
+}
+[conversation_sheba_disband]
+{
+	[text*]
+	{
+		screen_text = "Noooo! You can't do this to me! What will I do now?";
+	}
+}
+[conversation_sheba_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_08;
+		screen_text = "Good! I see that you realise that you need a powerful mage after all. Shall we continue then?";
+	}
+}
+[conversation_sheba_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_08;
+		screen_text = "Hello. My name is Sheba and I've been stuck here in this desolate snow bound place for ages now. If you could use a mage to bring some warmth to this place with her fire magic, then I'm your girl. I only need 27500 gold for my services.";
+	}
+}
+[conversation_sheba_reject]
+{
+	[text*]
+	{
+		screen_text = "Noooo! You can't do this to me!";
+	}
+}
+[conversation_sheba_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_08;
+		screen_text = "Aah. So I'm useful after all. Shall we join together then?";
+	}
+}
+[conversation_siobhan_accept_have_money]
+{
+	[text*]
+	{
+		sample = s_v_mheagan_select_15;
+		screen_text = "Yes! I see that you have a discerning eye for skillful talent. Your journey will both be safer and more ";
+	}
+}
+[conversation_siobhan_accept_no_money]
+{
+	[text*]
+	{
+		screen_text = "I'm eager to join up with you so please return once you have my fee!";
+	}
+}
+[conversation_siobhan_disband]
+{
+	[text*]
+	{
+		screen_text = "Hey, you can't be serious! What will I do now? My reputation will be ruined once people find out about this!";
+	}
+}
+[conversation_siobhan_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_11;
+		screen_text = "Hey, you were joking right! Well I didn't get your joke, but I'm still ready to serve you anyhow. Shall we go?";
+	}
+}
+[conversation_siobhan_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_11;
+		screen_text = "Are you heading towards Meren? My name is Siobhan and it is a dangerous journey but if you can use an experienced archer, I can join your party for 29800 gold. My aim is good and my range is long. So what do you think? .";
+	}
+}
+[conversation_siobhan_reject]
+{
+	[text*]
+	{
+		screen_text = "I can't believe that someone with your obvious eye for talent and skill could overlook me. It must be some sort of mistake!";
+	}
+}
+[conversation_siobhan_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_11;
+		screen_text = "Excellent! You've come back for me and are ready to allow me to show my true abilities. Let's go!";
+	}
+}
+[conversation_townsperson]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_;
+		screen_text = "You look like one of the lucky few who can pass through the H.U.B. What are you doing in this backwater town when you could be lying on the beach in Meren in an instant? Or getting tipsy on the fine mead and swamp gas in Lang?";
+	}
+}
+[conversation_urpete]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270073b;
+		screen_text = "You better leave if you know what good for you. I got friends who like teaching manners to nosy strangers.";
+	}
+}
+[conversation_urpete_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0270073b;
+		screen_text = "Hilmer no like lightning or stinky air!";
+	}
+}
+[conversation_verla]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700731;
+		screen_text = "The troops have been talking for months about an expedition into the Glacial Caves north of here for months. I don't think they'll ever get around to it 'til the spring, though. No one in their right mind would travel during the middle of winter. The few who make it through to us speak of terrible creatures the size of houses!";
+	}
+}
+[conversation_verla_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700731;
+		screen_text = "How can anyone think clearly with everything so topsy-turvy?";
+	}
+}
+[conversation_zerrassi]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002dc;
+		screen_text = "God how I hate this constant snow. I envy you stranger. Even though you'll be risking your life, at least you'll get to see the Sea. Though it's a long and dangerous road to Meren. A word of warning. I've heard that there's a nasty trap in the Ancient Temple that you have to be carefull of. You'd best be carefull down there. Pleasant trip!";
+	}
+}
+[conversation_zerrassi_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x027002dc;
+		screen_text = "Can't a lass go anywhere in this dratted excuse of a town to get a good night's sleep?";
+	}
+}
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "Aye, you can get to the town of Meren from here without too much difficulty if you have a strong sword arm and courageous heart. Follow the mountainside north and enter the Glacial Caverns. If you take care, you should find your way through to the Mount Utrae Forest. From there, follow the road until you come to the Ancient Temple entrance. I don't know what it's like this time of year, but it exits into the Crystal Caverns. Stay east and you will emerge on the hill overlooking the beach just northwest of Meren.";
+	}
+}
+[conversation_fall_intro]
+{
+	[text*]
+	{
+		screen_text = "Fallraen, a town at the foot of Mt. Elspen. \nNormally a harsh & unforgiving land, things are even worse than normal this summer. \nAn unseasonable Blizzard has swept in and destroyed the Spring crops and famine is biting at the gates of the town.\nIsolated and facing starvation, the people of Fallraen have no one they can turn to.\nIs there a connection with the call of the Priests for the reunification of the Stones?\nOr is it just one coincidence amongst the many difficulties besieging the Kingdom?";
+	  f scroll_rate = 5.000000;
+	}
+}
+[conversation_archer_guard2]
+{
+	[text*]
+	{
+		//sample = s_v_greet_male_hi;
+		screen_text = "Hey, you! Military personnel onl... Oh, forgive me! I didn't realize you're a visitor. I guess you can stay if you keep still. I saw a snow boar rooting around at the edge of the woods not too long ago. If you keep very still, maybe it'll return and we'll all have pork for supper!" ;
+	}
+}
+[conversation_book1]
+{
+	[text*]
+	{
+	order = 0;
+		//sample = s_v_greet_male_startled;
+	screen_text = "Excuse me, what are you doing up-- oh! Radack wants his book back does he. Good timing; I just finished it. Say thanks to him for me will you, I really enjoyed it.";
+	}
+	[text*]
+	{
+	screen_text = "Sure is cold up here.";
+	}
+}
+[conversation_book2]
+{
+	[text*]
+	{
+	order = 0;
+		//sample = s_v_greet_male_howdy;
+	screen_text = "Excuse me, what are you doing up-- oh! I see. Radack wants his book back. No problem it was tremendous reading.";
+
+	}
+	[text*]
+	{
+	screen_text = "Don't let the door hit you on your way out.";
+	}
+}
+[conversation_book_no_quest]
+{
+	[text*]
+	{
+		//sample = s_v_greet_male_howdy;
+	screen_text = "Oh, it's you, Stranger. There were rumors a brave adventurer was in town. Well, not much is happening up here today. There were rumors of a Klaw sighting in the woods to the north and south of here, but I havn't seen anything unusual yet.";
+	}
+}
+[conversation_apprentice]
+{
+	[text*]                    //ardun
+	{
+	order = 0;
+		//sample = s_v_greet_male_allochap;
+	screen_text = "Master Lagreth is going to have my hide! I borrowed a stack of books, and lent two out to some friends. But now, I don't remember to whom I lent them! Priest Lagreth forbids me to leave while he is absent, but I am sure he will find them missing when he returns. I've been searching everywhere but I can't find them.  Might you have a few minutes to ask around town for me?";
+		quest_dialog = true;
+		choice = more;
+	}
+	[text*]
+	{
+	order = 1;
+	screen_text = "You are very kind, stranger. I will gladly reimburse you for your trouble. Here's my ring so my friends will know you are genuine.";
+		 activate_quest* = quest_apprentice_books;
+	}
+	[text*]
+	{
+	screen_text = "Maybe I'd be able to remember who had the books if I didn't have to memorize so many spells.";
+	}
+}
+[conversation_apprentice_one_book]
+{
+	[text*]
+	{
+	order = 0;
+	screen_text = "Well, one is better than none, but I don't want to tell Master Lagreth until I can return all of them to him. You'd better keep this one until you find the other one.";
+
+	}
+	[text*]
+	{
+	screen_text = "I hope the other book is returned soon...";
+	}
+}
+[conversation_apprentice_two_books]
+{
+	[text*]
+	{
+	order = 0;
+	screen_text = "Thank you, friend! You have saved my job, and maybe my life. Take this gold and my gratitude for your help.";
+	complete_quest* = quest_apprentice_books;
+	}
+}
+[conversation_apprentice_complete]
+{
+	[text*]       //if the quest is complete
+	{
+	screen_text = "Neither a borrower nor a lender be; that's my new motto.";
+	}
+}
+[conversation_pardun]
+{
+	[text*]
+	{	
+		screen_text = "Please listen to me. I fear Priest Lagreth is the victim of foul play. I don't trust Apprentice Flessan for he was too eager for Priest Lagreth to leave on his journey, knowing as he does Priest Lagreth's poor health. The day after Priest Lagreth left this Blizzard swept in yet Apprentice Flessan maintained that everything would be fine! It's only since the appearance of all of these monsters that Apprentice Flessan relented and advised a search be made for the missing Priest. After the disappearance of the first search party, the Captain of the Guards ordered that no more men could be spared for he was undermanned as it was. If you can't save Priest Lagreth, then no one can! You do have somebody who can revive the dead, do you not?";
+		activate_quest* = quest_lagrath_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_pardun_2]
+{
+	[text*]
+	{
+		screen_text = "I'm sure Priest Lagreth will put Flessan in his place when he returns. I've never liked Flessan, but since this Blizzard started he has become even more unlike able, almost like he's enjoying watching our misery and despair!";
+	}
+}
+[conversation_displacer_quest]
+{
+	[text*] 
+	{	
+	
+		screen_text = "Well met strangers. News of your reputation precedes you. I would ask a favour of you if you please, for we are too weak and few to attempt it ourselves. If you could clear the path to the displacer near the Ancient Temple, we would have a route to a safe haven should this Blizzard continue unabated. You are headed that way anyhow are you not, so this should require just a small extra effort on your behalf. We haven't much but I promise a reward should you succeed.";
+		activate_quest* = quest_displacer_quest;
+		quest_dialog = true;
+	}
+
+}
+
+[conversation_displacer_quest_complete]
+{
+	[text*]
+	{
+		screen_text = "Oh, thank you for clearing the path to the displacer. It'll make our job so much easier knowing we have an escape route should the situation here continue unchanged. May you experience continued good fortune on the rest of your journey.";
+	}
+}
+[conversation_displacer_quest_red]
+{
+	[text*]
+	{
+		screen_text = "Brimstone's in the air, and fire's upon the wind. 'Tis ill times for us all, I'm afraid.";
+	}
+}
+[conversation_banth]
+{
+	[text*]
+	{
+		screen_text = "I see you carry the mark of the Utraean Society. I sure hope that you can save us for we cannot save ourselves. If what the Priests are saying is true then a better future does indeed wait for us all. However the omens haven't been good for this blizzard first swept in the day after the announcement of the reunification of the Stones. While the weather has always been harsh here in Fallraen, we have always been able to cope for the weather is usually benign at this time of the year and the ground rich and fertile. This year however we no sooner planted the first spring crops then the Blizzard struck and hasn't abated. That in itself is unusual for the mountain updraughts usually result in quick changes in weather extremes. Now however it's been 6 weeks without a break. The crops have perished and the stores dangerously low. If no supplies reach us soon I afraid it'll be too late.";
+	}
+}
+[conversation_tiaend]
+{
+	[text*]
+	{
+		screen_text = "Now that you say the road to Crystwind is clear, I doubt that many people will stay in this wretched town. When the Utraean Priests announced that they were going to reunite the Townstones, all of our heads were filled with visions of what that would mean. Neverending spring weather, bountiful crops throughout the year and plenty for all. Instead the next day this unseasonal Blizzard swept in and destroyed the first spring crops. Now we are facing a famine instead of a feast and the visions of a better future is but a distant memory.";
+	}
+}
+[conversation_kelran]
+{
+	[text*]
+	{
+		screen_text = "I'm impressed! You've sure have more guts than the rest of us yellow bellies around here. While we huddle around like turkeys on thanksgiving day, you're actually trying to achieve something! I'd love to join you but I'm afraid that I'd just be a hindrance. This perpetual cold has sapped my will and now I'm just like the rest of them.";
+	}
+}
+[conversation_lyetia]
+{
+	[text*]
+	{
+		screen_text = "I've lived here for 20 years and I've never seen a Summer like this one. Normally by now there'd be wildflowers & birds everywhere by now by nothing can grow with all of this snow around. Everything is withering with frostbite and monsters assault the Town gates every night.";
+	}
+}
+[conversation_hasuf]
+{
+	[text*]
+	{
+		screen_text = "Talk about being frozen alive! I'm trying my best to stay warm but it's not working. No matter where you go you're freezing to death. Now if reuniting these Stones that the Priests are talking about would really stop this blizzard, while I'd even risk my life to help find them. Not that I believe a thing they say, after all they were saying about how Azunai has granted us a mild winter on the day they asked for adventurers to start looking for the Stones. The next day this blizzard swept in and has kept at it ever since.";
+	}
+}
+[conversation_kalito]
+{
+	[text*]
+	{
+		screen_text = "Damn this freezing blizzard, it's giving me chill blains. If it doesn't stop soon, we're all going to freeze. To think that everyone was so excited about the announcement from the Utraean Priests that they were looking to reunite the Stones of Utrae! Then the next day the blizzard started and nobody's been able to spare the time to start looking for the Stones.";
+	}
+}
+[conversation_eloeta]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700265;
+		screen_text = "Welcome to the Fallraen Heights Tavern. I'm afraid that all we can serve you is Varg cutlets or Yeti dumplings, washed down with ice cold Iceflow cider. The last few months have been hell, if you excuse the pun. Ever since this unseasonal blizzard has hit us and cut off the supply routes, things have been tough. With the patrols unable to go far, the monsters have taken up residence just outside the town gates, as you very well know since you're managed to thin their numbers down somewhat. For which I gratefully thank you. Maybe we may get some fresh supplies in now?";
+	}
+}
+[conversation_eloeta_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x02700265;
+		screen_text = "I s'pose this'll teach everyone not to be skeered of lightning any more, what with twenty-four hour exposure to the stuff.";
+	}
+}
+[conversation_linlye]
+{
+	[text*]
+	{
+		screen_text = "Please don't bother me, I'm walking around trying to keep warm. I've frostbite on places you wouldn't imagine and until recently my lips were stuck together and I couldn't even talk! And this Nice Guy came around to try to chat me up too, then left in a huff when I couldn't reply to him. He was so handsome too. What's a lass to do, huh.";
+	}
+}

@@ -1,0 +1,353 @@
+[t:template,n:ut3w_nomad_melee]
+{
+	doc = "utraean_melee";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	56, 0;
+			intelligence =  19.2, 0;
+			dexterity =  	13.4, 0;
+            		melee =         99, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5056564;
+		life = 2048.2;
+		max_life = 2048.2;
+		mana = 26.8;
+        	max_mana = 26.8;
+		model = m_c_gbn_ja_pos_1;
+		[textures]
+		{
+			0 = b_c_gbn_ja;
+		}
+	}
+	[common]
+	{
+		screen_name="Nomad Slayer";
+		membership = monster, party_utraean, utraean;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = ax_g_c_dsx_ptr_avg;
+                		es_weapon_hand = ax_g_c_dsx_psc_avg;
+                		es_weapon_hand = ax_g_c_dsx_pfk_avg;
+                		es_weapon_hand = ax_g_c_dsx_png_avg;
+                		es_weapon_hand = ax_g_c_dsx_pzc_avg;
+                		es_weapon_hand = ax_g_c_dsx_pbd_avg;
+                		es_weapon_hand = ax_g_c_dsx_pcl_avg;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-687;
+        	        il_main = #nmagic/40-77;
+            	    il_main = #cmagic/40-74;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 399.2;
+		damage_min = 347.9;
+	}
+   	[defend] { defense=1475; }
+   	[mind]
+   	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+	}
+}
+[t:template,n:ut3w_nomad_ranged]
+{
+	doc = "utraean_ranged";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	40.7, 0;
+			intelligence =  23.8, 0;
+			dexterity =  	44.1, 0;
+			ranged =  	95, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3072000;
+		life = 1450;
+		max_life = 1450;
+		mana = 38.7;
+		max_mana = 38.7;
+		model = m_c_gbn_ja_pos_1;
+		[textures]
+		{
+			0 = b_c_gbn_ja-02;
+		}
+	}
+	[common]
+	{
+		screen_name="Nomad Assassin";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//        		custom_head = m_c_gah_fb_hlmt_head-05;
+    		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_flamethrower;
+				es_weapon_hand = ut_rock_assassin_star;
+				es_weapon_hand = ut_rock_assassin_axe;
+				es_weapon_hand = ut_rock_assassin_explosives;
+				es_weapon_hand = ut_rock_assassin_knife;
+                		es_weapon_hand = cw_g_c_dsx_bon_avg;
+                		es_weapon_hand = cw_g_c_dsx_clk_avg;
+				ES_WEAPON_HAND = minigun_grenade_launcher;
+				es_weapon_hand = dsx_minigun_gas_monster;
+				ES_WEAPON_HAND = minigun_napalm;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-687;
+        	        il_main = #nmagic/40-77;
+            	    il_main = #cmagic/40-74;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 504.2;
+		damage_min = 326.7;
+		damage_bonus_min_ranged = 129;
+		damage_bonus_max_ranged = 181;
+	}
+	[defend] { defense=1250; }
+	[mind]
+    	{
+  		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template			= "party_utraean";
+
+    		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		on_enemy_entered_icz_switch_to_melee	= false;
+		on_enemy_entered_ocz_flee 		= true;
+		on_enemy_entered_ocz_attack 		= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 2;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_distance = 10;
+    	}
+}
+[t:template,n:ut3w_nomad_magic]
+{
+	doc = "utraean_magic";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			strength 	=  43.3, 0;
+			intelligence 	=  57.2, 0;
+			dexterity 	=  42.1, 0;
+            		combat_magic 	=  94, 0;
+            		nature_magic 	=  94, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3072000;
+		life = 1370;
+		max_life = 1370;
+		mana = 38.7;
+		max_mana = 38.7;
+		model = m_c_gbn_ja_pos_1;
+		[textures]
+		{
+			0 = b_c_gbn_ja-03;
+		}
+	}
+	[common]
+	{
+		screen_name="Nomad Djinncaster";
+		membership = monster, party_utraean, utraean;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//		custom_head = m_c_gah_fg_hlmt_head-02;
+		selected_active_location = il_active_primary_spell;
+		[other] 
+		{ 
+			il_active_primary_spell=ut_spell_glyph_flaming; 
+			il_active_secondary_spell = spell_resurrect_monster_full;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_g_c_dsx_cry_avg;
+                		es_weapon_hand = st_g_c_dsx_jad_avg;
+                		es_weapon_hand = st_g_c_dsx_ltn_avg;
+                		es_weapon_hand = st_g_c_dsx_bar_avg;
+                		es_weapon_hand = st_g_c_dsx_pcane;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-687;
+        	        il_main = #nmagic/40-77;
+            	    il_main = #cmagic/40-74;
+	    			il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 479.3;
+		damage_min = 256.5;
+		damage_bonus_min_cmagic = 290;
+		damage_bonus_max_cmagic = 302;
+	}
+	[defend] { defense=1250; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+//			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    			?social					= 0.35
+    			&still					= false;
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		actor_auto_reanimates_friends        	= true;
+		actor_auto_uses_stored_items         	= true;
+		actor_auto_heals_others_life		= true;
+		on_enemy_entered_icz_switch_to_melee	= false;
+		on_enemy_entered_ocz_flee 		= true;
+		on_enemy_entered_ocz_attack 		= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 2;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_distance = 10;
+    	}
+}

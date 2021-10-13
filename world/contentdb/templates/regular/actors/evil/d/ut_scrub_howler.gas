@@ -1,0 +1,453 @@
+[t:template,n:ut_scrub_howler]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_skrub_howler_base";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 30, 0;
+			intelligence = 13, 0;
+			dexterity    = 22, 0;
+			melee        = 40, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 46000;
+		life 				= 1024;
+		max_life 			= 1024;
+		mana 				= 14;
+		max_mana 			= 14;
+		[textures]	{ 0 = b_c_ecm_scrub_howler; }
+		model = m_c_ecm_SCRUBHWL_pos_1;
+		[voice]
+		{
+			[enemy_spotted]	{ priority = high; * = s_e_call_scrub_howler_SED; }
+			[die]			{ priority = high; * = s_e_die_scrub_howler_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_scrub_howler_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_scrub_howler_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_scrub_howler_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.9;
+		damage_max = 104;
+		damage_min = 90;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.340000;
+		max_move_velocity = 3.7;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_to_fs;
+			[chore_attack]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files]
+					{
+						00 = at;
+						01 = at-02;
+					}
+			}
+			[chore_default]
+			{
+				chore_stances = 5;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 5;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 5;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+		[weapon_scales]
+		{
+			as_staff	= 1.8, 1.8, 1.8;
+		}
+	}
+	[common] { screen_name="Scrub Howler"; }
+	[defend] { defense=545; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			es_weapon_hand = st_un_toreck_dsx;
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 20, Weak */
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/109-115;
+					il_main = #armor/54-272;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/112-127;
+	                il_main = #armor/-rare(1)/290-350;
+                    il_main = #*/-rare(1)/112-127;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/112-127;
+	                il_main = #armor/-unique(2)/290-350;
+                    il_main = #*/-unique(2)/112-127;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 15348;
+					min = 10199;
+				}
+				
+			}
+		}
+	}
+	[mind]
+	{
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+		jat_fidget							= world\ai\jobs\common\job_fidget.skrit
+			?curious							= 0.75
+			&interest							= interest
+			&meander							= false
+			&still								= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_scrub_howler_gnf]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_skrub_howler_base";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  16, 0;
+			intelligence 	=   8, 0;
+			dexterity 		=  12, 0;
+			melee 			=  16, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 460;
+		life 				= 224;
+		max_life 			= 224;
+		mana 				= 14;
+		max_mana 			= 14;
+		[textures]	{ 0 = b_c_ecm_scrub_howler; }
+		model = m_c_ecm_SCRUBHWL_pos_1;
+		[voice]
+		{
+			[enemy_spotted]	{ priority = high; * = s_e_call_scrub_howler_SED; }
+			[die]			{ priority = high; * = s_e_die_scrub_howler_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_scrub_howler_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_scrub_howler_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_scrub_howler_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.9;
+		damage_max = 94;
+		damage_min = 80;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.340000;
+		max_move_velocity = 3.7;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_to_fs;
+			[chore_attack]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files]
+					{
+						00 = at;
+						01 = at-02;
+					}
+			}
+			[chore_default]
+			{
+				chore_stances = 5;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 5;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 5;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+		[weapon_scales]
+		{
+			as_staff	= 1.8, 1.8, 1.8;
+		}
+	}
+	[common] { screen_name="Scrub Howler"; }
+	[defend] { defense=145; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			es_weapon_hand = st_un_toreck_dsx;
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 20, Weak */
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 783;
+					max = 1556;
+				}
+				[oneof*]
+				{
+					chance = 0.1;
+					il_main = #weapon/39-55;
+					il_main = #armor/17-128;
+					il_main = #*/39-55;
+				}
+				[oneof*]
+				{
+					chance = 0.005;
+					il_main = #weapon/-rare(1)/33-58;
+					il_main = #armor/-rare(1)/81-128;
+					il_main = #*/-rare(1)/33-58;
+				}
+				
+			}
+		}
+	}
+	[mind]
+	{
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+		jat_fidget							= world\ai\jobs\common\job_fidget.skrit
+			?curious							= 0.75
+			&interest							= interest
+			&meander							= false
+			&still								= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+[t:template,n:ut_forest_howler]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_skrub_howler_base";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  16, 0;
+			intelligence 		=   8, 0;
+			dexterity 		=  12, 0;
+			melee 			=  16, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 1060;
+		life 				= 724;
+		max_life 			= 724;
+		mana 				= 14;
+		max_mana 			= 14;
+		[textures]	{ 0 = b_c_ecm_scrub_howler-03; }
+		model = m_c_ecm_SCRUBHWL_pos_1;
+		[voice]
+		{
+			[enemy_spotted]	{ priority = high; * = s_e_call_scrub_howler_SED; }
+			[die]			{ priority = high; * = s_e_die_scrub_howler_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_scrub_howler_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_scrub_howler_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_scrub_howler_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.9;
+		damage_max = 74;
+		damage_min = 60;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.340000;
+		max_move_velocity = 3.7;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_to_fs;
+			[chore_attack]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files]
+					{
+						00 = at;
+						01 = at-02;
+					}
+			}
+			[chore_default]
+			{
+				chore_stances = 5;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 5;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 5;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+		[weapon_scales]
+		{
+			as_staff	= 1.8, 1.8, 1.8;
+		}
+	}
+	[common] { screen_name="Forest Howler"; }
+	[defend] { defense=245; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			es_weapon_hand = st_un_toreck_dsx;
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 20, Weak */
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 783;
+					max = 1256;
+				}
+				[oneof*]
+				{
+					chance = 0.111111111111111;
+					il_main = potion_mana_medium;
+					il_main = potion_health_medium;
+				}
+				[oneof*]
+				{
+					chance = 0.1;
+					il_main = #weapon/29-35;
+					il_main = #armor/17-128;
+					il_main = #*/29-35;
+				}
+				[oneof*]
+				{
+					chance = 0.005;
+					il_main = #weapon/-rare(1)/33-48;
+					il_main = #armor/-rare(1)/81-128;
+					il_main = #*/-rare(1)/33-48;
+				}
+				
+			}
+		}
+	}
+	[mind]
+	{
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+		jat_fidget							= world\ai\jobs\common\job_fidget.skrit
+			?curious							= 0.75
+			&interest							= interest
+			&meander							= false
+			&still								= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+

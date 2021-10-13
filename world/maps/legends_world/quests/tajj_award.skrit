@@ -1,0 +1,62 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+// File     :  overseer_award.skrit
+// Author(s):  Eric Tams
+//
+// Copyright © 2001 Gas Powered Games, Inc.  All rights reserved.
+//----------------------------------------------------------------------------
+//  $Revision:: $              $Date:$
+//----------------------------------------------------------------------------
+//////////////////////////////////////////////////////////////////////////////
+//
+//
+// To be run on completion of the overseer quest completion
+//
+//
+
+owner = SkritObject;
+
+RewardQuest$( goid Recipient$ )
+{
+	float experience$ = 380000.0;
+	
+	if( Recipient$.IsValid() ) 
+	{
+		// get the party
+		Go Party$ = Recipient$.Go.OwningParty;
+		if (Party$ != NULL)
+		{
+			GopColl partyMembers$ = Party$.Children;
+			
+			int i$ = 0;
+			Go temp$;
+			
+			if( partyMembers$.Size() > 0)
+			{
+				experience$ = experience$ / partyMembers$.Size();
+			}
+			
+			// iterate through all party members.
+			while( i$ < partyMembers$.Size() )
+			{
+				temp$ = partyMembers$.Get( i$ );
+				if (temp$.HasInventory() ) {
+			
+					// find each members active weapon and give them experience acordingly.
+	 				Go Weapon$ = NULL;
+	 				if( temp$.Inventory.IsMeleeWeaponSelected || temp$.Inventory.IsRangedWeaponSelected )
+	 				{
+	 					Weapon$ = temp$.Inventory.GetSelectedWeapon;
+	 				} else if ( temp$.Inventory.IsSpellSelected ) {
+	 					Weapon$ = temp$.Inventory.GetSelectedSpell;
+	 				}
+	 				
+	 				if (Weapon$ != NULL ) {
+	 					Rules.AwardExperience( temp$.goid, Weapon$.goid, experience$ );
+	 				} 
+	 			}
+				i$ += 1;
+			}
+		}
+	}
+}

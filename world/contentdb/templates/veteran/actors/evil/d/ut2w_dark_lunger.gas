@@ -1,0 +1,723 @@
+[t:template,n:ut2W_dark_lunger]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_dark_lunger";
+	specializes = 2W_base_dark_lunger;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  26.4, 0;
+			intelligence =  18.3, 0;
+			dexterity =  9.9, 0;
+            melee =  59,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 47432;
+		life = 1113.5;
+        max_life = 1113.5;
+        mana = 110.5;
+        max_mana = 110.5;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 266.5;
+		damage_min = 202.7;
+	}
+	[common]
+	{
+		screen_name="Fiend Lunger";
+		membership = party_dark_lunger_boss, monster;
+	}
+	[defend] { defense=321.6; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #nmagic/21-55;
+	                il_main = #cmagic/21-55;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/164-197;
+					il_main = #armor/85-417;
+                }
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/189-238;
+	                il_main = #armor/-rare(1)/281-642;
+                    il_main = #*/-rare(1)/189-238;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/189-238;
+	                il_main = #armor/-unique(2)/281-642;
+                    il_main = #*/-unique(2)/189-238;
+				}
+            }
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_dark_lunger_01 = 1;
+			frag_glb_dark_lunger_02 = 2;
+			frag_glb_dark_lunger_03 = 2;
+			frag_glb_dark_lunger_04 = 2;
+			frag_glb_dark_lunger_05 = 1;
+		}
+	}
+}
+[t:template,n:ut2W_dark_lunger_boss_01]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_dark_lunger boss";
+	specializes = 2W_base_dark_lunger;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  25.5, 0;
+			intelligence =  18.2, 0;
+			dexterity 	=  9.7, 0;
+            melee 		=  59,  0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_edm_dl-07;
+		experience_value = 62153;
+		life = 1610;
+        max_life = 1610;
+        mana = 101.1;
+        max_mana = 101.1;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 243.8;
+		damage_min = 185.5;
+	}
+	[common]
+	{
+		screen_name="Corrupt Fiend Lunger";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_blue(sgx)");
+			}
+		}
+	}
+	[defend] { defense=527.6; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.1;
+	                il_main = #nmagic/62-66;
+	                il_main = #cmagic/62-66;
+				}
+				[oneof*]
+				{
+					chance = 0.894;
+					il_main = #*/174-189;
+					il_main = #armor/583-642;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/193-227;
+	                il_main = #armor/-rare(1)/626-669;
+                    il_main = #*/-rare(1)/193-227;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/193-227;
+	                il_main = #armor/-unique(2)/626-669;
+                    il_main = #*/-unique(2)/193-227;
+				}
+            }
+		}
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_dark_lunger_01 = 1;
+			frag_glb_dark_lunger_02 = 2;
+			frag_glb_dark_lunger_03 = 2;
+			frag_glb_dark_lunger_04 = 2;
+			frag_glb_dark_lunger_05 = 1;
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_dark_lunger_boss";
+
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.8
+			&friend_template	= false
+			&friends			= party_dark_lunger_boss
+			&still				= false;
+	}
+}
+
+[t:template,n:ut2W_dark_caster]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_dark_caster";
+	specializes = 2W_base_dark_lunger;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  19.8, 0;
+			intelligence 	=  16.7, 0;
+			dexterity 		=  15.3, 0;
+            nature_magic 	=  57,  0;
+   			combat_magic =  62,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 47311;
+		life = 427.4;
+        max_life = 427.4;
+        mana = 95.8;
+        max_mana = 95.8;
+        textures:0 = b_c_edm_dl-02;
+        [voice]
+		{
+			[cast]			{ * = s_e_spell_zap_cast;	}
+			[die]			{ priority = high; * = s_e_die_dark_lunger;	}
+			[hit_glance]	{ priority = low; * = s_e_hit_dark_lunger;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 316.1;
+		damage_min = 232.1;
+		damage_bonus_min_cmagic = 174;
+		damage_bonus_max_cmagic = 230;
+	}
+	[common]
+	{
+		screen_name="Fiend Caster";
+		membership = monster, party_dark_lunger_boss;
+	}
+	[defend] { defense=319.3; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #nmagic/18-48;
+	                il_main = #cmagic/18-48;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/161-187;
+					il_main = #armor/88-438;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/183-244;
+	                il_main = #armor/-rare(1)/453-593;
+                    il_main = #*/-rare(1)/183-244;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/183-244;
+	                il_main = #armor/-unique(2)/453-593;
+                    il_main = #*/-unique(2)/183-244;
+	            }
+            }
+		}
+    }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_dark_lunger_zap; }
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_dark_caster_01 = 1;
+			frag_glb_dark_caster_02 = 2;
+			frag_glb_dark_caster_03 = 2;
+			frag_glb_dark_caster_04 = 2;
+			frag_glb_dark_caster_05 = 1;
+		}
+	}
+}
+[t:template,n:ut2W_dark_slinger]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_dark_slinger";
+	specializes = 2W_base_dark_lunger;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  24.7, 0;
+			intelligence =  18.1, 0;
+			dexterity =  9.6, 0;
+            		melee =  58,  0;
+   			combat_magic =  52,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 47311;
+		life = 508.4;
+        max_life = 508.4;
+        mana = 95.8;
+        max_mana = 95.8;
+        textures:0 = b_c_edm_dl-03;
+        [voice]
+		{
+			//[cast]			{	* = s_e_attack_dark_lunger;	} //this is already called from the effects script -MM
+			[die]			{ priority = high;	* = s_e_die_dark_lunger;	}
+			[hit_glance]	{ priority = low;	* = s_e_hit_dark_lunger;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 202.6;
+		damage_min = 159.2;
+		damage_bonus_min_cmagic = 118;
+		damage_bonus_max_cmagic = 151;
+	}
+	[common]
+	{
+		screen_name="Fiend Slinger";
+		membership = monster, party_dark_lunger_boss;
+	}
+	[defend] { defense=319.3; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #nmagic/18-48;
+	                il_main = #cmagic/18-48;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/161-187;
+					il_main = #armor/88-427;
+                }
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/190-219;
+	                il_main = #armor/-rare(1)/486-652;
+                    il_main = #*/-rare(1)/190-219;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/190-219;
+	                il_main = #armor/-unique(2)/486-652;
+                    il_main = #*/-unique(2)/190-219;
+				}
+            }
+		}
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_dark_lunger_spear; }
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_dark_slinger_01 = 1;
+			frag_glb_dark_slinger_02 = 2;
+			frag_glb_dark_slinger_03 = 2;
+			frag_glb_dark_slinger_04 = 2;
+			frag_glb_dark_slinger_05 = 1;
+		}
+	}
+}
+[t:template,n:ut2W_water_slinger]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_water_slinger";
+	specializes = 2W_base_dark_lunger;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	23.4, 0;
+			intelligence =  9, 0;
+			dexterity =  	25.2, 0;
+            		ranged =  	74,  0;
+   			combat_magic =  72,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 119000;
+		life = 277.1;
+        max_life = 277.1;
+        mana = 55.4;
+        max_mana = 55.4;
+        textures:0 = b_c_edm_dl-05;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 253.2;
+		damage_min = 199.5;
+		damage_bonus_min_cmagic = 107;
+		damage_bonus_max_cmagic = 143;
+	}
+	[common] { screen_name="Flood Slinger"; }
+	[defend] { defense=767.4; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/116-217;
+					il_main = #armor/102-501;
+                	il_main = #nmagic/49-81;
+                	il_main = #cmagic/53-81;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/188-236;
+	                il_main = #armor/-rare(1)/428-558;
+                    il_main = #*/-rare(1)/188-236;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/188-236;
+	                il_main = #armor/-unique(2)/428-558;
+                    il_main = #*/-unique(2)/188-236;
+	            }
+        	}
+		}
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_water_slinger_spear; }
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_water_slinger_01 = 1;
+			frag_glb_water_slinger_02 = 2;
+			frag_glb_water_slinger_03 = 2;
+			frag_glb_water_slinger_04 = 2;
+			frag_glb_water_slinger_05 = 1;
+		}
+	}
+}
+
+[t:template,n:ut2W_water_lunger]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_water_lunger";
+	specializes = 2W_base_dark_lunger;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  27, 0;
+			intelligence =  9, 0;
+			dexterity =  25.2, 0;
+            melee =  74,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 137800;
+		life = 1364.2;
+        max_life = 1364.2;
+        mana = 55.4;
+        max_mana = 55.4;
+        textures:0 = b_c_edm_dl-04;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 340;
+		damage_min = 239.8;
+	}
+	[common]
+	{
+		screen_name="Flood Lunger";
+		membership = party_water_lunger_boss, monster;
+	}
+	[defend] { defense=831.3; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/116-217;
+					il_main = #armor/102-501;
+                	il_main = #nmagic/49-81;
+                	il_main = #cmagic/53-81;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/203-258;
+	                il_main = #armor/-rare(1)/424-558;
+                    il_main = #*/-rare(1)/203-258;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/203-258;
+	                il_main = #armor/-unique(2)/424-558;
+                    il_main = #*/-unique(2)/203-258;
+	            }
+			}
+        }
+	}
+	[mind]
+	{
+        sight_origin_height	= 2.5;
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_water_lunger_01 = 1;
+			frag_glb_water_lunger_02 = 2;
+			frag_glb_water_lunger_03 = 2;
+			frag_glb_water_lunger_04 = 2;
+			frag_glb_water_lunger_05 = 1;
+		}
+	}
+}
+
+[t:template,n:ut2W_water_lunger_boss_01]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_water_lunger boss";
+	specializes = 2W_base_dark_lunger;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  28.8, 0;
+			intelligence =  9, 0;
+			dexterity =  26.7, 0;
+            melee =  77,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 158200;
+		life = 2679.4;
+        max_life = 2679.4;
+        mana = 55.4;
+        max_mana = 55.4;
+        textures:0 = b_c_edm_dl-06;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 340;
+		damage_min = 239.8;
+	}
+	[common]
+	{
+		screen_name="Bile Lunger";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_cyan(sgx)");
+			}
+		}
+	}
+	[defend] { defense=1167; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.994;
+					il_main = #*/217-274;
+					il_main = #armor/533-639;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/258-302;
+	                il_main = #armor/-rare(1)/625-684;
+                    il_main = #*/-rare(1)/258-302;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/258-302;
+	                il_main = #armor/-unique(2)/293-321
+                    il_main = #*/-unique(2)/258-302;
+	            }
+			}
+        }
+	}
+	[mind]
+	{
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_water_lunger_boss";
+
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.8
+			&friend_template	= false
+			&friends			= party_water_lunger_boss
+			&still				= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_water_lunger_01 = 1;
+			frag_glb_water_lunger_02 = 2;
+			frag_glb_water_lunger_03 = 2;
+			frag_glb_water_lunger_04 = 2;
+			frag_glb_water_lunger_05 = 1;
+		}
+	}
+}
+

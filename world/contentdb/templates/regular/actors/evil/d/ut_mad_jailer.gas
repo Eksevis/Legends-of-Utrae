@@ -1,0 +1,169 @@
+[t:template,n:ut_mad_jailer]
+{
+	category_name = "1W_evil_d";
+	doc = "mad_jailer";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	40, 0;
+			intelligence =  13, 0;
+			dexterity =  	16, 0;
+			melee =  		65, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 150000;
+		life = 6400;
+		max_life = 6400;
+		mana = 90;
+		max_mana = 90;
+		model = m_c_gbn_bs_pos_1;
+		[textures]	{0=b_c_edm_mj;}
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_mad_jailer; }
+			[hit_critical]	{ priority = low; * = s_e_hit_mad_jailer_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_mad_jailer_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_mad_jailer_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 115;
+		damage_min = 95;
+	}
+	[body]
+	{
+		avg_move_velocity = 1.770000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = Bip01_Spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+
+		[weapon_scales]
+		{
+			as_single_melee	= 1.35, 1.35, 1.35;
+		}
+
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_mj_fs;
+			[chore_attack]
+			{
+				chore_stances = 1;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 1;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 1;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 1;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 1;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					talk = a_c_edm_mj_fs1_dsf-03;
+				}
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Swanny the Mad Undertaker";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_red(sgx)");
+
+			}
+
+		}
+	}
+	[conversation] { }
+	[defend] { defense=510; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = cb_un_1h_swanny;
+			}
+			[all*]
+			{
+				[all*]
+				{
+					il_main = #*/115-138;
+	                il_main = #armor/65-322;
+				}
+				[oneof*]
+				{
+	            	chance = 0.01;
+	                il_main = #weapon/-rare(1)/140-155;
+	                il_main = #armor/-rare(1)/490-505;
+                    il_main = #*/-rare(1)/140-155;
+                }
+				[oneof*]
+				{
+	                il_main = #weapon/-unique(2)/140-155;
+	                il_main = #armor/-unique(2)/490-505;
+                    il_main = #*/-unique(2)/140-155;
+	            }
+				[gold*]
+				{
+					max = 42780;
+					min = 34567;
+				}
+			}
+        }
+	}
+	[mind]
+	{
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

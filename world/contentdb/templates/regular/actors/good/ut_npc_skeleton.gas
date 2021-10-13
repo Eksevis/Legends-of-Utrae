@@ -1,0 +1,92 @@
+[t:template,n:shamblin]
+{
+	category_name = "1W_character";
+	doc = "Skeleton (good alignment)";
+	specializes = base_skeleton_good;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_sk_g;
+		screen_class = "Corpse";
+		[skills]
+		{
+			dexterity 		= 9.45, 0, 10;
+			intelligence 		= 3.15, 0, 10;
+			strength 		= 22.4, 0, 10;
+			melee 			= 35, 0, 0;
+			uber 			= 35, 0, 0;
+		}
+	}
+	[conversation]
+	{
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		megamap_override = true; // RAID#7185: MP: Teammates in MP should be non-Line of Sight on map.  -MM 02.03.2002
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_spellbook = book_glb_magic_01;
+		}
+        [other]
+        {
+			il_main = he_op_bigwings_02;
+			il_main = gl_gl_ch_f_g_c_avg;
+			il_main = bo_bo_ch_f_g_c_avg;
+			il_main = bd_ba_f_g_c_avg;
+			il_main = sd_g_c_sd_2h_avg;
+			il_main = book_glb_lore_ut_shamblin;
+        }
+	}
+	[mind]
+	{
+		/*
+			In my mind's eye, I see... a bunch of skrit code.
+		*/
+
+		////////////////////////////////////////
+		//	jobs
+
+		jat_brain 	= world\ai\jobs\common\brain_hero.skrit;
+		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
+
+		////////////////////////////////////////
+		//	params
+
+		melee_engage_range              = 0.9;
+		ranged_engage_range             = 5.5;
+		sensor_scan_period              = 0.25;
+		sight_range                     = 12.0;
+
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		actor_mana_ratio_low_threshold  = 0.5;
+		actor_mana_ratio_high_threshold = 0.8;
+
+
+		////////////////////////////////////////
+		//	permissions
+
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+		actor_auto_switches_to_karate              = false;
+        	actor_auto_switches_to_melee               = false;
+
+		on_enemy_entered_icz_switch_to_melee       = false;
+		on_engaged_lost_consciousness_abort_attack = false;
+	}
+	[store] { can_sell_self = true; }
+}

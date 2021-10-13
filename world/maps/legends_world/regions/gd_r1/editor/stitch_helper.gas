@@ -1,0 +1,33 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xE0A672FE;
+	source_region_name = gd_r1;
+	[t:stitch_editor,n:mega_forest]
+	{
+		dest_region = mega_forest;
+		[node_ids]
+		{
+			0x0000afd1 = 0x75488C9F,6;
+			0x0000afd2 = 0x75488C9F,5;
+			0x0000afd3 = 0x75488C9F,4;
+		}
+	}
+	[t:stitch_editor,n:path2mines]
+	{
+		dest_region = path2mines;
+		[node_ids]
+		{
+			0x00000db1 = 0x782E5F03,4;
+			0x00000db2 = 0x782E5F03,5;
+			0x00000db3 = 0x782E5F03,6;
+		}
+	}
+	[t:stitch_editor,n:sd_r1]
+	{
+		dest_region = sd_r1;
+		[node_ids]
+		{
+			0x00000da1 = 0x10F3310F,1;
+		}
+	}
+}

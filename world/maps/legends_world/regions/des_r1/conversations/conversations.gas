@@ -1,0 +1,542 @@
+[conversation_allissedell]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007007e1;
+		screen_text = "Droog like not strangers in our land. You stay not long if you smart. Dragon Queen is not only danger in the night.";
+	}
+}
+[conversation_allissedell_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007007e1;
+		screen_text = "Death stink is on the wind, you can smell? This not good place to be when warriors come home.";
+	}
+}
+[conversation_calbyllon]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007007df;
+		choice = shop;
+		screen_text = "Made it to Quillrabe, eh? You either great warrior must be, or great fool. Out here, even the rocks have teeth, and same are we to drakes after dark. You in Elddim not anymore, you know. So you better buy some of my special merchandise, never know you may survive a bit longer.";
+	}
+}
+[conversation_calbyllon_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007007df;
+		choice = shop;
+		screen_text = "There is smell of wrongness in Quillrabe. The Windy River no serve your kind here again.";
+	}
+}
+[conversation_chandrall]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700797;
+		screen_text = "Ha! Who's skeered of some winged lizards flying 'round? Ya give me a decent bow, and I'll clean that filthy Drake Nest m'self! Jes' gimme 'nother round of ale, first. *hic*";
+	}
+}
+[conversation_chandrall_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700797;
+		screen_text = "Is it this bad all over the land? The stink of brimstone is making me sick!";
+	}
+}
+[conversation_dreven]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700615;
+		choice = shop;
+		order = 0;
+		screen_text = "Magic... Strong... Potions... Wands... This and more... I have in store... Come!";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700615;
+		choice = shop;
+		screen_text = "Hiroth has fallen in the south, not so great after all... How Dreven know? The moon shows all to Dreven.";
+	}
+}
+[conversation_dreven_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700615;
+		choice = shop;
+		screen_text = "Droog no like changes like this. The warriors seek revenge, I tell you so.";
+	}
+}
+[conversation_ferdl]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x0070087f;
+		choice = more;
+		order = 0;
+		screen_text = "Oh, it's you. Look, I don't have Orellean's silly little book, and I've never seen it either. You can tell that -- what? Oh, you're not one of his lackeys? What do you want, then?";
+	}
+	[text*]
+	{
+		activate_quest* = goto_elddim;
+		button_1_text = "Directions";
+		button_1_value = d_0x0070087f;
+		screen_text = "Erm, I'm sorry, but Priestess Kelti of Elddim is the only one of the Society who hires strangers. Why don't you go talk to her.";
+	}
+}
+[conversation_ferdl_all_complete]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0070087f;
+		screen_text = "I must thank you, friend. I did not, uh, believe I would survive another night with the, er, Droog, so suspicious. You have my, um, gratitude.";
+	}
+}
+[conversation_ferdl_complete]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x0070087f;
+		choice = more;
+		order = 0;
+		screen_text = "What? You again? Uh, you're alive! You failed, did you? No?! By the stars, this cannot be! I...er, I see with my own two eyes that you have the Quillrabe Mask Stone, but, I... How did you... I'm... I'm speechless! No, no, please do not tell me how you managed to, uh, rescue our Townstone and free us from the Dragon Queen's wrath. The very thought of venturing into that cave makes me feel ill. Um, we are indebted to you forever more. Never can, er, repay you... Take this trifle as thanks?";
+	}
+	[text*]
+	{
+		activate_quest* = goto_hiroth_a;
+		button_1_text = "Directions";
+		button_1_value = d_0x0070087f;
+		complete_quest* = quest_quillrabe;
+		screen_text = "I'm sure we can, er, handle whatever drakes may come seeking revenge. When you get that Stone in place, then they'll have something to fear. So, uh, you could go to Hiroth and let High Priest Kavaren know about, um, your success here. The dragons plagued them a bit as well, back when our queen, may the gods bless her soul, held court in Castle Hiroth. You can even get there through the dragon catacombs now that it's, er, passable.";
+	}
+}
+[conversation_ferdl_goto]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0070087f;
+		quest_dialog = true;
+		screen_text = "High Priest Kavaren will show you the Circle when you arrive in, er, Hiroth.";
+	}
+}
+[conversation_ferdl_quest]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0070087f;
+		quest_dialog = true;
+		screen_text = "The Dragon Queen lives in a vast network of catacombs to the south. Beware, though, her drakes are never far from her side.";
+	}
+}
+[conversation_ferdl_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0070087f;
+		screen_text = "Uhm, er, what? This is, ah, not supposed to happen! Oh dear, I, um, fear for us all! The Droog will, er, not take kindly to this surprise. Best leave while you, um, still can!";
+	}
+}
+[conversation_ferdl_ring]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x0070087f;
+		choice = more;
+		complete_quest* = goto_quillrabe;
+		complete_quest* = goto_quillrabe_b;
+		order = 0;
+		screen_text = "Um, you are the one High Priestess Kelti has anointed, I see. Er, well, I want to see the Circle united just like everyone else, but, um, I'm afraid that won't be possible. We, uh, that is, Quillrabe, used to have a terrible problem with the dragons preying on townspeople. We finally put an end to the rampage by offering tribute: the Dragon Queen could take whatever she wanted, if she and her drakes would leave us in peace.";
+	}
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x0070087f;
+		choice = more;
+		order = 1;
+		screen_text = "The Dragon Queen looked over our meagre possessions and flamed three more of our warriors. We were forced to bring the Quillrabe Mask Stone out of hiding! She, uh, the Dragon Queen, took one look at the Stone, and refused to consider any other payment. She flew off with it in her talons, and we haven't seen it since.";
+	}
+	[text*]
+	{
+		activate_quest* = quest_quillrabe;
+		activate_quest* = quest_townstones;
+		button_1_text = "Directions";
+		button_1_value = d_0x0070087f;
+		order = 2;
+		screen_text = "You can, um, try to steal it from her, but more than likely you'll just end up getting turned to, uh, cinders like all the others. If you did find it, and the Circle was built, we'd finally have control of those winged, er, rats! Why else would the Dragon Queen care so much for, um, something so insignificant, if it didn't affect her in some way?";
+	}
+}
+[conversation_ferdl_stone]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x0070087f;
+		choice = more;
+		complete_quest* = goto_quillrabe;
+		complete_quest* = goto_quillrabe_b;
+		order = 0;
+		screen_text = "By the stars, this cannot be! I...er, I see with my own two eyes that you have the Quillrabe Mask Stone, but, I... How did you... I'm... I'm speechless! No, no, please do not tell me how you managed to rescue our Townstone and free us from the Dragon Queen's wrath. The very thought of venturing into that cave makes me feel ill. Um, we are indebted to you forever more. Never can, er, repay you... Take this trifle as thanks?";
+	}
+	[text*]
+	{
+		activate_quest* = goto_hiroth_a;
+		button_1_text = "Directions";
+		button_1_value = d_0x0070087f;
+		order = 1;
+		quest_dialog = true;
+		screen_text = "I'm sure we can, er, handle whatever drakes may come seeking revenge. When you get that Stone in place, then they'll have something to fear... Heh heh, oh yes, no longer will the people of Quillrabe live in fear. So, uh, you could go to Hiroth and let High Priest Kavaren know about, um, your success here. The dragons plagued them a bit as well, back when the queen, may the gods bless her soul, held court in Castle Hiroth. You can even get there through the dragon catacombs now that it's, er, passable.";
+	}
+}
+[conversation_guard_e]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007006d0;
+		screen_text = "If yer thinking about taking a stroll along the banks of the Iliarth, keep an eye out for an ambush. The warriors out in the bush aren't anywhere near so tame as the Droog in Quillrabe. ";
+	}
+}
+[conversation_guard_e_high]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007006d0;
+		screen_text = "Aye, that's right, go show those Droog patrols who to bow down to. They'll be quaking in their sandals at the sight of ye, they will! 'Course, they're not that much of a bother tell ye the truth, and all ye'll do is dull yer weapons against their heads. Ye might be better suited to fodder a bit more evenly matched, mebbe some of them drakes down south?";
+	}
+}
+[conversation_guard_e_low]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007006d0;
+		screen_text = "Ye really don't want to head inta the bush without some proper training. Those Droog patrols will eat ye fer supper if they catch ye!";
+	}
+}
+[conversation_guard_e_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007006d0;
+		screen_text = "Phew! Dorfs like meself belong underground where the air is cool and smells of dirt and rock. I knew I shouldn't of taken this post in this desert waste.";
+	}
+}
+[conversation_guard_elevator]
+{
+	[text*]
+	{
+		screen_text = "Hail, friend! With the Droog so restless, it's been a long while since I've seen a traveller in these parts. Quillrabe is just a bit further west along the river. The Legion doesn't have a strong presence out here, so I'd advise you to get to the safety of the town as soon as possible. Don't waste your time at the lookout on the ledge above, it's a nasty ambush ever since the old bridge collapsed. ";
+	}
+}
+[conversation_guard_elevator_red]
+{
+	[text*]
+	{
+		screen_text = "My grandmother was a wise woman. She would have said this weather is a harbinger of ill news for us all...";
+	}
+}
+[conversation_guard_s]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007006d1;
+		screen_text = "Hail, traveller. All suited up and ready to go, eh? Don't let these tame Quillrabe Droog fool you; their brothers are as bloodthirsty as they come, stinkin' savages. You look like you won't have too much trouble convincing them to let you by, though. Heh heh. ";
+	}
+}
+[conversation_guard_s_high]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007006d1;
+		screen_text = "Yes, that's right, go show those Droog patrols who to bow down to. They'll be quaking in their sandals at the sight of you, they will! Of course, they're not that much of a bother to tell you the truth, and all you'll do is dull your weapons against their heads. You might be better suited to fodder a bit more evenly matched, maybe some of those drakes to the south?";
+	}
+}
+[conversation_guard_s_low]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007006d1;
+		screen_text = "You really don't want to head into the bush without some proper training. Those Droog patrols will eat you for supper if they catch you!";
+	}
+}
+[conversation_guard_s_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007006d1;
+		screen_text = "Lightning in the desert?! I have a bad feeling about this...";
+	}
+}
+[conversation_hadar_accept_have_money]
+{
+	[text*]
+	{
+		sample = s_v_konus_select_06;
+		screen_text = "Fine. My family will be well taken care of now! Let's depart to Hiroth through the Drake's nest. It reminds me of the old' mines back in Crystwind.";
+	}
+}
+[conversation_hadar_accept_no_money]
+{
+	[text*]
+	{
+		screen_text = "I simply can't leave until my family is taken care of! Who knows how long I'll be away from them.";
+	}
+}
+[conversation_hadar_disband]
+{
+	[text*]
+	{
+		screen_text = "Think you can manage on your own now? Fair enough, I'll just wait here for a while if you happen to reconsider, before heading back to Crystwind.";
+	}
+}
+[conversation_hadar_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_konus_select_01;
+		screen_text = "I thought you may reconsider, that's why I waited. Come, let's go.";
+	}
+}
+[conversation_hadar_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_konus_select_01;
+		screen_text = "Are you planning on leaving this town? I'm Hadar and I know that you will be needing a guide through the drake's nest to Hiroth. I just need a modest fee of 354750 gold. My family needs to attended to after all.";
+	}
+}
+[conversation_hadar_reject]
+{
+	[text*]
+	{
+		screen_text = "No problem. I'll simply wait here. Who knows, you may change your mind. If so I'll still be waiting.";
+	}
+}
+[conversation_hadar_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_konus_select_01;
+		screen_text = "Good. Now my family is taken care of. Let's go.";
+	}
+}
+[conversation_mordryn]
+{
+	[text*]
+	{
+		screen_text = "Ahhhhh, my missing lucky jewel. Thank you so much! Some thieving Droog nicked it a while ago & I thought I'd never see it again. Here please take this, it's not much but it's all I got. Also some free advice for you kid, if you have something to offer, the Droog will treat you nicely. If you're down on your luck, don't ask them for help. They've got no room for leachers, and would just as soon feed you to the animals.";
+	}
+}
+[conversation_noquest_mordryn]
+{
+	[text*]
+	{
+		screen_text = "Lookit those dumb birds. The world is falling apart around us, and they're still perfectly happy to peck at a few seeds.";
+	}
+}
+[conversation_noyofan]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007007e0;
+		screen_text = "Noyofan sister Callanon run tavern as long as Dragon Queen has lived in southern cave. I sometimes led tourists from Meren on drake hunts, but they not pay when they dead.";
+	}
+}
+[conversation_noyofan_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007007e0;
+		screen_text = "I like not the things you bring, stranger. Droog stick to Droog, and should not have done differently.";
+	}
+}
+[conversation_orelle]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700614;
+		choice = shop;
+		order = 0;
+		screen_text = "Stranger and stranger. Last week Orelle see zombies from Lang, this week Orelle see you. Someone been telling you about Orelle special leather maybe?";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700614;
+		choice = shop;
+		order = 1;
+		screen_text = "Strange person come back? I suppose Orelle show things you not see before. You probably need if going to get out of here in one piece.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700614;
+		choice = shop;
+		screen_text = "When wind blows hot, tempers burn. I sell you goods, but many of Orelle's brothers not greet you with kindness.";
+	}
+}
+[conversation_orelle_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x00700614;
+		choice = shop;
+		screen_text = "Sky red? What is happening?";
+	}
+}
+[conversation_rhiannon_accept_have_money]
+{
+	[text*]
+	{
+		sample = s_v_jharmaya_select_05;
+		screen_text = "Thank you very much for your faith in me. I won't let your down!";
+	}
+}
+[conversation_rhiannon_accept_no_money]
+{
+	[text*]
+	{
+		screen_text = "I would like to join you, but my debt must be paid. Please come back when you can do so.";
+	}
+}
+[conversation_rhiannon_disband]
+{
+	[text*]
+	{
+		screen_text = "No! What have I done? Please tell me. We can't finish like this.";
+	}
+}
+[conversation_rhiannon_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_15;
+		screen_text = "Excellent! I'm glad that you see fit to offer me another chance. I won't disappoint you. Let's continue our quest at once!";
+	}
+}
+[conversation_rhiannon_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_15;
+		screen_text = "My name is Rhiannon and Im looking for adventure. I've been left stranded here with a debt of 364500 gold. If you could repay it for me I'll gladly join your party. I'm already a Grand Mage in nature mage so i'm sure that will be of great assistance to you. Do you agree?";
+	}
+}
+[conversation_rhiannon_reject]
+{
+	[text*]
+	{
+		screen_text = "No! Aren't I good enough? Aren't you at least willing to give me a chance to prove myself to you?";
+	}
+}
+[conversation_rhiannon_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_15;
+		screen_text = "I'm so happy to see you again. Does this mean that you want me to join your party?";
+	}
+}
+[conversation_scudicus]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007007e2;
+		screen_text = "Better watch them Droog. They're perfectly sociable inside Quillrabe, but if ye come across one of them warrior types out on the canyon, they'll feather ye quicker than ye can say 'hail.'";
+	}
+}
+[conversation_scudicus_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x007007e2;
+		screen_text = "Can you see the Droog villagers smirking as they bow? A little blood in the sky's the least of my worries!";
+	}
+}
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "Everyone should see Hiroth at least once. It's really not that far from here, but the journey is extremely treacherous. You'll want to exit town via the upper stairs to the west. Follow the torches until you meet up with the road in Quillrabe Canyons, then head south until you reach the Drake Nest cave. If you can sneak past the Dragon Queen and her drakes, you should be able to find your way. Keep to the south and east walls when you come to the split. The Nest exits into Hiroth Ravine, which is just outside of Hiroth proper. Follow the river and you will see Lake Hiroth ahead, with the town around its banks. ";
+	}
+}
+[conversation_quillrabe_intro]
+{
+	[text*]
+	{
+		screen_text = "Quillrabe, desert town of deception & betrayal.\nLong kept in check by the fear of the 10th Legion, lately many Droog have become more outspoken against the peace treaty with the Kingdom.\nAgitation only increased when the call for the unification of the Eight Stones of Utrae went out by the Utraean Society\nEver since then the Droog have become more hostile. Do the Droog know what the Stones hide?";
+	  f scroll_rate = 5.000000;
+	}
+}
+[conversation_rebel]
+{
+	[text*]
+	{
+		screen_text = "The Droog have again pledged to remain at peace with the Kingdom, but a few rebels still hold out. Find and assassinate the Rebel's leader so the latest peace treaty will last. At least until next week that is!";
+		activate_quest* = quest_rebel_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_rebel_no_quest]
+{
+	[text*]
+	{
+		screen_text = "These Droog are no threat. They're practically shaking in their boots in awe of you. Good job!";
+	}
+}
+[conversation_tarkrisgh]
+{
+	[text*]
+	{
+		screen_text = "Salutations brave adventurer. We Droog humbly admit the errors of our ways & submit to your might sword, err...wisdom. We swear an oath of allegiance to your mighty Kingdom and pledge never to cause any further trouble to you..... at least until the next full moon that is. Please inform the Hiroth Captain of the Guards of this latest peace treaty and ask him to stop blockading the shipments of Droog special ale. We are parched to the bone out here";
+		activate_quest* = quest_messager_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_tarkrisgh_no_quest]
+{
+	[text*]
+	{
+		screen_text = "Burpppp.....Goooood Stuffff this. No you're not having any so don't ask.";
+	}
+}

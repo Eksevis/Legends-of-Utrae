@@ -1,0 +1,233 @@
+[t:template,n:ut_base_gikk]
+{
+	category_name = "ambients";
+	doc = "Gikk";
+	specializes = actor_evil;
+	[aspect] { model = m_c_edm_gk_pos_1; }
+
+	[body]
+	{
+		avg_move_velocity = 6.0000;
+		[bone_translator]
+		{
+			body_anterior = bip01;
+			body_mid = bip01;
+			body_posterior = bip01;
+			kill_bone = bip01;
+			shield_bone = bip01;
+			weapon_bone = beakbone;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_gk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Gikk"; }
+	[mind]
+	{
+		actor_weapon_preference		= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_evil_gikk]
+{
+	category_name = "evil_b";
+	doc = "chicken_white_super";
+	specializes = ut_base_gikk;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	74.6,  0;
+			intelligence =  1.1,  0;
+			dexterity =  	55.2, 0;
+			melee =  	66, 0;
+		}
+	}
+    	[defend] { defense=3147.4; }
+	[aspect]
+	{
+		experience_value = 10230000;
+		life = 18389.4;
+		max_life = 18389.4;
+		mana = 9358.5;
+		max_mana = 9358.5;
+	}
+	[attack]
+	{
+		damage_max = 540.5;
+		damage_min = 358;
+	}
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+					chance = 0.5;
+            	    il_main = #spell/68-110;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/251-335;
+					il_main = #armor/628-785;
+					max = 4;
+					min = 2;
+   	    		}
+    			[gold*]
+				{
+					chance = 0.5;
+					max = 683288;
+					min = 136658;
+                    piles = 3 - 7;
+				}
+				[oneof*]
+				{
+	            	il_main = #weapon/-rare(1)/251-335;
+	                il_main = #armor/-rare(1)/628-785;
+                    il_main = #*/-rare(1)/251-335;
+					max = 2;
+					min = 1;
+
+                }
+				[oneof*]
+                {
+	                il_main = #weapon/-unique(2)/251-335;
+	                il_main = #armor/-unique(2)/628-785;
+                    il_main = #*/-unique(2)/251-335;
+					max = 1;
+					min = 0;
+	            }
+
+			}
+		}
+	}
+}
+
+[t:template,n:ut_forest_gikk]
+{
+	category_name = "evil_b";
+	doc = "chicken_white_super";
+	specializes = ut_base_gikk;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	24.6,  0;
+			intelligence =  1.1,  0;
+			dexterity =  	55.2, 0;
+			melee =  	16, 0;
+		}
+	}
+    	[defend] { defense=187; }
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 8;
+		experience_value = 1023;
+		life = 1089;
+		max_life = 1089;
+		mana = 9358.5;
+		max_mana = 9358.5;
+		[textures] { 0=b_c_edm_gk-01; }
+	}
+	[attack]
+	{
+		damage_max = 140;
+		damage_min = 108;
+	}
+	[common]
+	{
+ 		screen_name="Rare Pandegonium Forest Pecker";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_bird_quest","active",1);
+				action* = change_quest_state("quest_bird_quest","completed",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_killed",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_green(sgx)");
+			}
+		}
+	}
+	[mind]
+	{
+		actor_life_ratio_low_threshold  	= 0.6;
+		actor_weapon_preference			= WP_MELEE;
+		on_enemy_entered_ocz_flee		= true;
+		on_enemy_entered_icz_flee		= false;
+		on_life_ratio_low_flee 			= true;
+		inner_comfort_zone_range		= 6;
+		outer_comfort_zone_range		= 12;
+		personal_space_range			= 0.7;
+		melee_engage_range			= 6;
+		ranged_engage_range			= 12;
+		sight_range				= 18;
+		flee_distance				= 20;
+		flee_count				 = 1000;
+	}
+}
+

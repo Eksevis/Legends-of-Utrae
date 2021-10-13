@@ -1,0 +1,29 @@
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "What! You really want directions? Do I look like the sort that you'd trust asking for directions? Well if you insist. One of these Pyramids is suppose to go to hell and the other to heaven, but it's hell also. If you go in a straight line northeast you'll eventually stumble onto a wreck of a town called Grescal. Though you've probably already been there. So I needn't go on about the tourist attractions there or the lack of. If you go in a straight line anywhere else you'll eventually stumble into something or other, and if you follow that you'll eventually end up somewhere or other that you may recognize. Otherwise you'll end up going in circles and end up like poor Bareld here. Well have a pleasant stroll. Please don't bother sending a postcard, the mail delivery's absolutely shocking out here.";
+	}
+}
+[conversation_luthiel]
+{
+	[text*]
+	{
+		choice = shop;
+
+		screen_text = "We came out here looking for adventure and treasure and what did we end up with? Well you don't have to be a rocket scientist to work that one out. Anyhow we ended up with a few trinkets that you may be interested in. Care to look? Though god knows what I'll do with any proceeds.";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0770024f;
+	}
+
+}
+[conversation_luthiel_red]
+{
+	[text*]
+	{
+		choice = shop;
+		screen_text = "I've seen plenty of sandstorms before, but this takes the cake!";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0770024f;
+	}
+}

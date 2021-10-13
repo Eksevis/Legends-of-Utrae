@@ -1,0 +1,376 @@
+[t:template,n:ut_mummy]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_mummy";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+		  strength     = 13, 0;
+		  intelligence = 8, 0;
+		  dexterity    = 9, 0;
+		  melee        = 9, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 20;
+		life             = 32;
+		max_life         = 32;
+		mana             = 45;
+		max_mana         = 45;
+
+		model = m_c_edm_zo_pos_1;
+		textures:0 = b_c_edm_mummy;
+		material = leather;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_dead_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_mummy_SED; }
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 26;
+		damage_min = 22;
+	}
+	[common]
+	{
+	  screen_name = "Mummy"; //--
+	  membership = monster, undead; //--
+	}
+
+	[defend] { defense = 55; }
+	[body]
+	{
+		avg_move_velocity = 1.000000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_sk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+					02 = at-03;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_misc]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = ds-02;
+					wake = rv;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at-02; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = wl;
+					01 = wl-02;
+					02 = wl-03;
+				}
+			}
+		}
+	}
+	[inventory]
+	  {
+      [pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 13, Medium */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 13;
+				max = 35;
+			}
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = potion_mana_small;
+				il_main = potion_health_small;
+			}
+			[oneof*]
+			{
+				chance = 0.15;
+				il_main = #weapon/25-36;
+				il_main = #armor/9-71;
+				il_main = #*/25-36;
+			}
+			[oneof*]
+			{
+				chance = 0.0075;
+				il_main = #weapon/-rare(1)/28-41;
+				il_main = #armor/-rare(1)/53-118;
+				il_main = #*/-rare(1)/28-41;
+			}
+			
+		}
+	}
+      
+	  }
+	
+	[mind]
+	{
+		jat_startup						= world\ai\jobs\common\job_startup_reveal.skrit;
+		actor_auto_fidgets					= false;
+		on_enemy_spotted_alert_friends				= true;
+   		on_job_reached_travel_distance_abort_attack 		= true;
+		sight_origin_height					= 1;
+		melee_engage_range					= 9;
+		personal_space_range					= 0.7;
+		ranged_engage_range					= 9.0;
+		sight_range						= 9.0;
+
+		com_channels = dyn_party, zombie;
+		com_range = 5.0;
+
+	}
+	[physics]
+	{
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_generic_darker_03 = 1;
+			frag_glb_generic_darker_04 = 1;
+			frag_glb_generic_darker_05 = 1;
+			frag_glb_generic_darker_06 = 1;
+			frag_glb_generic_darker_07 = 1;
+			frag_glb_generic_darker_08 = 1;
+			frag_glb_generic_darker_09 = 1;
+			frag_glb_generic_darker_10 = 1;
+			frag_glb_generic_darker_11 = 1;
+			frag_glb_generic_darker_12 = 1;
+		}
+	}
+}
+[t:template,n:ut_mummy_01]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_mummy";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+		  strength     = 53, 0;
+		  intelligence = 8, 0;
+		  dexterity    = 9, 0;
+		  melee        = 50, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 20000;
+		life             = 1032;
+		max_life         = 1032;
+		mana             = 45;
+		max_mana         = 45;
+
+		model = m_c_edm_zo_pos_1;
+		textures:0 = b_c_edm_mummy_01;
+		material = leather;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_dead_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_mummy_SED; }
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 246;
+		damage_min = 232;
+	}
+	[common]
+	{
+	  screen_name = "Utraean Mummy"; //--
+	  membership = monster, undead; //--
+	}
+
+	[defend] { defense = 1555; }
+	[body]
+	{
+		avg_move_velocity = 1.000000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_sk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+					02 = at-03;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_misc]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = ds-02;
+					wake = rv;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at-02; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = wl;
+					01 = wl-02;
+					02 = wl-03;
+				}
+			}
+		}
+	}
+	[inventory]
+	  {
+      [pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 13, Medium */
+		[oneof*]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+			}
+			
+		}
+	}
+      
+	  }
+	
+	[mind]
+	{
+		jat_startup						= world\ai\jobs\common\job_startup_reveal.skrit;
+		actor_auto_fidgets					= false;
+		on_enemy_spotted_alert_friends				= true;
+   		on_job_reached_travel_distance_abort_attack 		= true;
+		sight_origin_height					= 1;
+		melee_engage_range					= 9;
+		personal_space_range					= 0.7;
+		ranged_engage_range					= 9.0;
+		sight_range						= 9.0;
+
+		com_channels = dyn_party, zombie;
+		com_range = 5.0;
+
+	}
+	[physics]
+	{
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_generic_darker_03 = 1;
+			frag_glb_generic_darker_04 = 1;
+			frag_glb_generic_darker_05 = 1;
+			frag_glb_generic_darker_06 = 1;
+			frag_glb_generic_darker_07 = 1;
+			frag_glb_generic_darker_08 = 1;
+			frag_glb_generic_darker_09 = 1;
+			frag_glb_generic_darker_10 = 1;
+			frag_glb_generic_darker_11 = 1;
+			frag_glb_generic_darker_12 = 1;
+		}
+	}
+}

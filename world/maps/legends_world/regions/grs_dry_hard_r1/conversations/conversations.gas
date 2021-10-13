@@ -1,0 +1,118 @@
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "Yer in luck! Here in Iliarth Canyon, ye can travel to three of the finest towns in the Utraean Peninsula. Just follow the Iliarth River upstream, and yer in Elddim! Follow it downstream, and ye'll run into Quillrabe. Head north, and ye'll come across Crystwind in no time at all.";
+	}
+}
+
+[conversation_sar_vinien]
+{
+	[text*]
+	{
+		
+		choice = shop;
+		button_1_text = "Directions";
+       	button_1_value = d_0x0050053F;
+
+		screen_text = "The creatures around here are unusually aggressive these days. I'm afraid I'll end up dead, or worse, bankrupt! I was supposed to deliver a letter to Quillrabe by last night, but the trip down the river has been perilous to say the least. I've picked up a few items on my journey, would ye be interested in looking them over?";
+	}
+	
+
+}
+[conversation_sar_vinien_red]
+{
+	[text*]
+	{
+		
+		choice = shop;
+		button_1_text = "Directions";
+       	button_1_value = d_0x0050053F;
+
+		screen_text = "Blech! The air stinks worse than a giant lizard's breath, and this red haze has me seeing double.";
+	}
+	
+
+}
+[conversation_guard]
+{
+	[text*]	//47 - 49
+	{
+
+		screen_text = "Off to Quillrabe, are ye? It's a nasty trudge back and forth over the river, but ye look well enough to handle it. Cross over the bridge just to the southwest of here and follow the footpath.";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0050046D;
+	}
+}
+[conversation_guard_low]
+{
+	[text*] //level 46 or lower
+	{
+
+		screen_text = "Ye gods, friend. Ye would be mad to take the high bridges across the canyon as ill-prepared as ye are. Ye really should stay near Crystwind afore the Droog cook ye fer supper!";
+		button_1_text = "Directions";
+       	button_1_value = d_0x0050046D;
+	}
+}
+[conversation_guard_high]
+{
+	[text*]	//level 50+
+	{
+
+		screen_text = "Heh heh. It's good to see a traveller as well-off as yerself, all suited up in yer fancy trappings. Ye'll find the high bridges along the path to Quillrabe exciting enough, I'd bet, but there'll be no worthy foes to try yer courage on, that's fer sure!";
+		button_1_text = "Directions";
+       	button_1_value = d_0x0050046D;
+	}
+}
+[conversation_guard_red]
+{
+	[text*]
+	{
+		
+		screen_text = "If I was you, I'd run back to Crystwind and get out of this foul wind. I bet the Droog will use it as cover for a nasty ambush.";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0050046D;
+	}
+}
+[conversation_archer]
+{
+	[text*]	// 11- 13
+	{
+
+		screen_text = "Hail, friend. If yer heading to Elddim, take the lift down to the canyon floor an' climb the eastern cliffs upriver. There's a good many Krug up that way, but methinks ye can handle 'em.";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0050046C;
+	}
+}
+[conversation_archer_low]
+{
+	[text*] //level 12 or lower
+	{
+
+		screen_text = "Ye gods, friend. Ye would be mad to take the lift down to the canyon floor as ill-prepared as ye are. Ye really should stay near Crystwind afore the Krug cook ye fer supper!";
+		button_1_text = "Directions";
+       	button_1_value = d_0x0050046C;
+	}
+}
+[conversation_archer_high]
+{
+	[text*]	//level 14+
+	{
+
+		screen_text = "Heh heh. It's good to see a traveller as well-off as yerself, all suited up in yer fancy trappings. The old lift is a fair bit modest compared to ye, but it will still take ye down to the canyon floor well enough. There's a few Krug stirring up dust down there, but ye'd be able to lop their 'eads off with yer eyes closed!";
+		button_1_text = "Directions";
+       	button_1_value = d_0x0050046C;
+	}
+}
+[conversation_archer_red]
+{
+	[text*]
+	{
+		
+		screen_text = "Ugh, tell me when it's safe to open me eyes! I cannot stand the sight of lightning!";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0050046C;
+	}
+}
+
+

@@ -1,0 +1,115 @@
+[t:template,n:ut3W_impaler]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_impaler";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	57.3, 0;
+			intelligence =  7.3, 0;
+			dexterity =  	28.3, 0;
+            melee =         95, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4278000;
+		life = 3513.8;
+		max_life = 3513.8;
+		mana = 26.2;
+		max_mana = 26.2;
+        scale_base = 1.45;
+		model = m_c_edm_im_pos_1;
+		[voice]
+		{
+			[die]	{ priority = high; * = s_e_die_spider; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_insectoid_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 750;
+		damage_min = 566.4;
+		reload_delay = 0;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.350000;
+		[bone_translator]
+		{
+			body_anterior = lower_jaw;
+			body_mid = body_1;
+			body_posterior = body_tail;
+			kill_bone = body_1;
+			shield_bone = R1_upper;
+			weapon_bone = L1_upper;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_im_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Dread Impaler"; 
+	}
+    [defend] { defense=1223.3; }
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_impaler_01 = 1;
+			frag_glb_impaler_02	= 1;
+			frag_glb_impaler_03 = 3;
+			frag_glb_impaler_04 = 3;
+			frag_glb_impaler_05 = 4;
+		}
+	}
+}

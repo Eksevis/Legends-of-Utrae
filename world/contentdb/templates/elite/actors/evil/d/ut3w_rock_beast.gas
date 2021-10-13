@@ -1,0 +1,493 @@
+[t:template,n:ut3W_rock_beast]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_rock_beast";
+	specializes = 3W_base_rock_beast;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  96.7, 0;
+			intelligence =  5.2, 0;
+			dexterity =  25.6, 0;
+            melee =  	92,  0;
+  			combat_magic =  92,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 890101;
+		life = 1280.4;
+		material = stone;
+		max_life = 1280.4;
+		mana = 97;
+		max_mana = 97;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 626.2;
+		damage_min = 487.5;
+		damage_bonus_min_cmagic = 423;
+		damage_bonus_max_cmagic = 562;
+	}
+	[common] 
+	{ 
+		screen_name="Rock Crusher"; 
+
+	}
+	[defend] { defense=1544.6; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_rock_beast_blast; }
+
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 1.0;
+					il_main = #*/228-255;
+					il_main = #armor/116-640;
+				}
+			}
+		}
+	}
+
+}
+
+[t:template,n:ut3W_lava_beast]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_lava_beast";
+	specializes = 3W_base_rock_beast;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	105, 0;
+			intelligence =  22.8, 0;
+			dexterity =  	40.9, 0;
+            melee =  		98,  0;
+  			combat_magic =  98,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 12090000;
+		life = 3075;
+		material = stone;
+		max_life = 3075;
+		mana = 23.2;
+		max_mana = 23.2;
+		textures:0 = b_c_edm_rb-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 561.6;
+		damage_min = 396.8;
+		damage_bonus_min_cmagic = 226;
+		damage_bonus_max_cmagic = 320;
+	}
+	[common] 
+	{ 
+		screen_name="Molten Brute"; 
+
+	}
+	[defend] { defense=1983.1; }
+
+	[physics]
+	gib_gore_good = true;
+	{
+		[break_particulate]
+		{
+			frag_glb_lava_beast_01 = 1;
+			frag_glb_lava_beast_02 = 1;
+			frag_glb_lava_beast_03 = 1;
+			frag_glb_lava_beast_04 = 1;
+			frag_glb_lava_beast_05 = 1;
+			frag_glb_lava_beast_06 = 2;
+			frag_glb_lava_beast_07 = 3;
+			frag_glb_lava_beast_08 = 4;
+		}
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_lava_beast_blast; }
+
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.45;
+					il_main = #*/183-308;
+					il_main = #armor/138-687;
+	                il_main = #nmagic/115-126;
+	                il_main = #cmagic/115-126;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/299-339;
+	                il_main = #armor/-rare(1)/1033-1068;
+                    il_main = #*/-rare(1)/299-339;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/299-339;
+	                il_main = #armor/-unique(2)/1033-1068;
+                    il_main = #*/-unique(2)/299-339;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 637968;
+					min = 490210;
+					min_pile = 4019;
+					piles = 2 - 4;
+				}
+			}
+		}
+	}
+
+}
+[t:template,n:ut3W_lava_beast_boss_01]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_lava_beast boss 01";
+	specializes = 3W_base_rock_beast;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	111.1, 0;
+			intelligence =  18.5, 0;
+			dexterity =  	40.9, 0;
+            melee =  		103,  0;
+  			combat_magic =  112,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 18507000;
+		life = 3140;
+		material = stone;
+		max_life = 3140;
+		mana = 23.2;
+		max_mana = 23.2;
+		textures:0 = b_c_edm_rb-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 576.9;
+		damage_min = 409.4;
+		damage_bonus_min_cmagic = 226;
+		damage_bonus_max_cmagic = 320;
+	}
+	[common]
+	{
+		screen_name="Char Master";
+
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("rock_beast_eye_glow");
+				action* = call_sfx_script("unique_ray_yellow(sgx)");
+				action* = call_sfx_script("unique_light_yellow(sgx)");
+			}
+			[*]
+			{
+				action* = call_sfx_script("rock_beast_dust","bip01_r_foot");
+				condition* = receive_world_message("we_anim_other",'rfdn');
+			}
+			[*]
+			{
+				action* = call_sfx_script("rock_beast_dust","bip01_l_foot");
+				condition* = receive_world_message("we_anim_other",'lfdn');
+			}
+			[*]
+			{
+				action* = call_sfx_script("rock_beast_smash");
+				condition* = receive_world_message("we_anim_sfx",1);
+			}
+			[*]
+			{
+				action* = call_sfx_script("rock_beast_yell");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("rock_beast_dust_hands");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+		}
+	}
+	[defend] { defense=4494.1; }
+
+	[physics]
+	{
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_lava_beast_01 = 1;
+			frag_glb_lava_beast_02 = 1;
+			frag_glb_lava_beast_03 = 1;
+			frag_glb_lava_beast_04 = 1;
+			frag_glb_lava_beast_05 = 1;
+			frag_glb_lava_beast_06 = 2;
+			frag_glb_lava_beast_07 = 3;
+			frag_glb_lava_beast_08 = 4;
+		}
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_lava_beast_blast; }
+
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.594;
+					il_main = #*/312-354;
+					il_main = #armor/1005-1110;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/370-406;
+	                il_main = #armor/-rare(1)/1152-1181;
+                    il_main = #*/-rare(1)/370-406;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/370-406;
+	                il_main = #armor/-unique(2)/1152-1181;
+                    il_main = #*/-unique(2)/370-406;
+	            }
+				[gold*]
+				{
+					chance = 0.4;
+					max = 1206651;
+					min = 1161429;
+					min_pile = 5987;
+					piles = 6 - 8;
+				}
+			}
+		}
+	}
+
+}
+[t:template,n:ut3w_golem_cobbleman]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_golem_cobbleman";
+	specializes = base_rock_beast;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  68.9, 0;
+			intelligence =  13.8, 0;
+			dexterity =  28.3, 0;
+            		melee =  97,  0;
+			nature_magic	= 93, 0;
+			combat_magic 	= 93, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1012680;
+		life = 2225;
+        	max_life = 2225;
+        	mana = 126;
+        	max_mana = 126;
+		textures:0 = b_c_edm_rb-05;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max 	= 519;
+		damage_min 	= 400;
+		reload_delay = 0;
+	}
+	[common] 
+	{ 
+		screen_name = "Forgotten Cobble Man"; 
+		membership = monster;
+	
+	}
+	[defend] { defense = 1360; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_rock_beast_blast; }
+			[pcontent]
+			{
+				/* Generated: Tue Jun 17 11:13:15 2003
+				Level 16, Strong */
+				[oneof*]
+				{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/63-99;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/255-306;
+					il_main = #armor/117-657;
+	                il_main = #weapon/255-306;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	            	il_main = #weapon/-rare(1)/289-375;
+	                il_main = #armor/-rare(1)/306-1053;
+                    il_main = #*/-rare(1)/289-375;
+                }
+				[oneof*]
+                {
+					chance = 0.002;
+	                il_main = #weapon/-unique(2)/289-375;
+	                il_main = #armor/-unique(2)/306-1053;
+                    il_main = #*/-unique(2)/289-375;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 321092;
+					min = 196103;
+				}			
+				}
+			}
+		}
+	}
+
+}
+[t:template,n:ut3w_ice_beast]
+{
+	category_name = "1W_evil_d";
+	doc = "lava_beast";
+	specializes = base_rock_beast;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  68.9, 0;
+			intelligence =  13.8, 0;
+			dexterity =  28.3, 0;
+            		melee =  97,  0;
+  			combat_magic =  97,  0;
+		}
+	}
+	[aspect]
+	{
+		material = stone;
+		experience_value = 812680;
+		life = 1825;
+        	max_life = 1825;
+        	mana = 126;
+        	max_mana = 126;
+		textures:0 = b_c_edm_rb-04;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 450;
+		damage_min = 340;
+	}
+	[common] 
+	{ 
+		screen_name="Ice Hulk"; 
+
+	}
+	[defend] { defense=1300; }
+
+	[physics]
+	gib_gore_good = true;
+	{
+		[break_particulate]
+		{
+			frag_glb_frost_golem_01 = 1;
+			frag_glb_frost_golem_02 = 6;
+			frag_glb_frost_golem_03 = 1;
+			frag_glb_frost_golem_04 = 2;
+			frag_glb_frost_golem_05 = 1;
+		}
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_golem_frost_blast; }
+
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/63-99;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/255-306;
+					il_main = #armor/117-657;
+	                il_main = #weapon/255-306;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	            	il_main = #weapon/-rare(1)/289-375;
+	                il_main = #armor/-rare(1)/306-1053;
+                    il_main = #*/-rare(1)/289-375;
+                }
+				[oneof*]
+                {
+					chance = 0.002;
+	                il_main = #weapon/-unique(2)/289-375;
+	                il_main = #armor/-unique(2)/306-1053;
+                    il_main = #*/-unique(2)/289-375;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 321092;
+					min = 196103;
+				}
+			}
+		}
+	}
+
+}

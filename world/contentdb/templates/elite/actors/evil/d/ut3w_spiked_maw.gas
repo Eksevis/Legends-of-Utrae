@@ -1,0 +1,307 @@
+[t:template,n:ut3W_spiked_maw]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_spiked_maw";
+	specializes = 3W_base_maw;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  50.4, 0;
+			intelligence =  9.8, 0;
+			dexterity =  27.2, 0;
+			melee =  94,  0;
+  			combat_magic =  94,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1249155;
+		life = 977.6;
+		max_life = 977.6;
+		mana = 52;
+		max_mana = 52;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 394.7;
+		damage_min = 280.8;
+		damage_bonus_min_cmagic = 284;
+		damage_bonus_max_cmagic = 370;
+	}
+	[common]
+	{
+		screen_name="Quill Maw";
+		membership = party_spiked_maw_boss, monster;
+
+	}
+	[defend] { defense=533; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_spiked_maw_spikes; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #nmagic/26-78;
+	                il_main = #cmagic/26-78;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/197-263;
+					il_main = #armor/130-634;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/233-308;
+	                il_main = #armor/-rare(1)/640-931;
+                    il_main = #*/-rare(1)/233-308;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/233-308;
+	                il_main = #armor/-unique(2)/640-931;
+                    il_main = #*/-unique(2)/233-308;
+				}
+            }
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		[break_particulate]
+		{
+			frag_glb_spiked_maw_01 = 1;
+			frag_glb_spiked_maw_02 = 1;
+			frag_glb_spiked_maw_03 = 1;
+			frag_glb_spiked_maw_04 = 6;
+			frag_glb_spiked_maw_05 = 8;
+		}
+	}
+
+}
+
+[t:template,n:ut3W_spiked_maw_boss_01]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_spiked_maw_boss_01";
+	specializes = 3W_base_maw;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  50.4, 0;
+			intelligence =  13.1, 0;
+			dexterity =  27.2, 0;
+			melee =  97,  0;
+			ranged =  95,  0;
+  			combat_magic =  95,  0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_edm_sm-03;
+		experience_value = 1828336;
+		life = 1237.6;
+		max_life = 1237.6;
+		mana = 52;
+		max_mana = 52;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 394.7;
+		damage_min = 280.8;
+		damage_bonus_min_cmagic = 284;
+		damage_bonus_max_cmagic = 370;
+	}
+	[common]
+	{
+		screen_name="Rabid Spiked Maw";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+
+	}
+	[defend] { defense=1318.2; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_spiked_maw_spikes; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.2;
+	                il_main = #nmagic/94-99;
+	                il_main = #cmagic/94-99;
+				}
+				[oneof*]
+				{
+					chance = 0.794;
+					il_main = #*/263-278;
+					il_main = #armor/936-988;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/303-349;
+	                il_main = #armor/-rare(1)/983-1092;
+                    il_main = #*/-rare(1)/303-349;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/303-349;
+	                il_main = #armor/-unique(2)/983-1092;
+                    il_main = #*/-unique(2)/303-349;
+	            }
+            }
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_spiked_maw_boss";
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.8
+			&approach_dist		= 1.75
+			&friends			= party_spiked_maw_boss
+			&still				= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		[break_particulate]
+		{
+			frag_glb_spiked_maw_01 = 1;
+			frag_glb_spiked_maw_02 = 1;
+			frag_glb_spiked_maw_03 = 1;
+			frag_glb_spiked_maw_04 = 6;
+			frag_glb_spiked_maw_05 = 8;
+		}
+	}
+
+}
+
+[t:template,n:ut3W_spiked_dweller]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_spiked_dweller";
+	specializes = 3W_base_maw;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	34.9, 0;
+			intelligence =  7.6, 0;
+			dexterity =  	18.5, 0;
+			ranged =  		95,  0;
+  			combat_magic =  98,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3237300;
+		life = 894.6;
+		max_life = 894.6;
+		mana = 31.4;
+		max_mana = 31.4;
+		textures:0 = b_c_edm_sm-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 410.9;
+		damage_min = 319.2;
+		damage_bonus_min_cmagic = 289;
+		damage_bonus_max_cmagic = 388;
+	}
+	[common]
+	{
+		screen_name="Razor Dweller";
+		membership = monster, party_spiked_dweller;
+
+	}
+	[defend] { defense=951.1; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_spiked_dweller_spikes; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/152-289;
+					il_main = #armor/139-685;
+                	il_main = #nmagic/15-111;
+                	il_main = #cmagic/15-111;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/265-319;
+	                il_main = #armor/-rare(1)/891-1039;
+                    il_main = #*/-rare(1)/265-319;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/265-319;
+	                il_main = #armor/-unique(2)/891-1039;
+                    il_main = #*/-unique(2)/265-319;
+	            }
+			}
+        }
+	}
+	[mind]
+	{
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true
+			&actor_creates_own_party	= true
+			&party_template				= "party_spiked_dweller";
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		[break_particulate]
+		{
+			frag_glb_spiked_dweller_01 = 1;
+			frag_glb_spiked_dweller_02 = 1;
+			frag_glb_spiked_dweller_03 = 1;
+			frag_glb_spiked_dweller_04 = 6;
+			frag_glb_spiked_dweller_05 = 8;
+		}
+	}
+
+}

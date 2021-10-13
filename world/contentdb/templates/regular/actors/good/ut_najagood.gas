@@ -1,0 +1,233 @@
+[t:template,n:snake_woman_good_base]
+{
+	doc = "snake woman";
+	specializes = hero;
+	[actor]
+	{
+//		is_hero = true;
+		is_male = false;
+		screen_class = "farmer";
+		portrait_icon = b_gui_ig_i_ic_c_fg_a_01; 
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gs_na_pos_a1;
+		scale_base = 0.6;
+		megamap_override = true;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_female; }
+		}
+	}
+	[body]
+	{
+		armor_version = gs_na;
+		avg_move_velocity = 4.5;
+		[bone_translator]
+		{
+			body_anterior = Bip01_Head;
+			body_mid = Bip01_Pelvis;
+			body_posterior = Bone02;
+			kill_bone = Bip01_pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee		= 1.5, 1.5, 1.5;
+			as_two_handed_melee	= 1.5, 1.5, 1.5;
+			as_two_handed_sword	= 1.5, 1.5, 1.5;
+			as_staff			= 1.5, 1.5, 1.5;
+			as_bow_and_arrow	= 1.5, 1.5, 1.5;
+			as_minigun			= 1.1, 1.1, 1.1;
+			as_shield_only		= 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gs_na_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files] 
+				{ 
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					extr = at;
+					qffg = dff;
+				}
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = simple_loop;
+				[anim_files] 
+				{ 
+					00=dff; 
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files] 
+				{ 
+					00=di; 
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files] 
+				{ 
+					00=mg-02; 
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files] 
+				{ 
+					00=dff;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					frtd = a_c_gs_na_fs0_dsf;
+					drnk = a_c_gs_na_fs1_dk;
+					gtup = a_c_gs_na_fs0_up;
+					look = a_c_gs_na_fs0_dsf;
+					talk = a_c_gs_na_fs0_dsf;
+					wyme = a_c_gs_na_fs0_dsf;
+					hoe1 = a_c_gs_na_fs5_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files] 
+				{ 
+					00=wl; 
+				}
+			}
+		}
+	}
+	[common] { screen_name="naja"; }
+	[water_effects] {}
+}
+
+[t:template,n:Snake_woman_good]
+{
+	doc="naja in original scales";
+	specializes = snake_woman_good_base;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_naja;
+		screen_class = "Snake Woman";
+		[skills]
+		{
+			dexterity 		= 8.6, 0, 10;
+			intelligence 		= 35.0, 0, 10;
+			strength 		= 4.4, 0, 10;
+			nature_magic 		= 48, 0, 0;
+			uber 			= 48, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gs_na_skin_tan;
+		}
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_chest = bd_le_m_g_c_avg_beaded2_dsx;
+            		es_spellbook = book_glb_magic_01;
+		}
+        	[other]
+        	{
+			il_spell_1 = spell_major_heal;
+			il_spell_2 = spell_shock_wave;
+	         	il_main = st_g_c_dsx_cry_avg;
+			il_main = book_glb_lore_ut_snake;
+        	}
+	}
+	[mind]
+	{
+		/*
+			In my mind's eye, I see... a bunch of skrit code.
+		*/
+
+		////////////////////////////////////////
+		//	jobs
+
+		jat_brain 	= world\ai\jobs\common\brain_hero.skrit;
+		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
+
+		////////////////////////////////////////
+		//	params
+
+		melee_engage_range              = 0.9;
+		ranged_engage_range             = 5.5;
+		sensor_scan_period              = 0.25;
+		sight_range                     = 12.0;
+
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		actor_mana_ratio_low_threshold  = 0.5;
+		actor_mana_ratio_high_threshold = 0.8;
+
+
+		////////////////////////////////////////
+		//	permissions
+
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+		actor_auto_switches_to_karate              = false;
+        	actor_auto_switches_to_melee               = false;
+
+		on_enemy_entered_icz_switch_to_melee       = false;
+		on_engaged_lost_consciousness_abort_attack = false;
+	}
+	[store] { can_sell_self = true; }
+}
+
+

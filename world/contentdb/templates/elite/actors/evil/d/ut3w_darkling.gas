@@ -1,0 +1,231 @@
+[t:template,n:3W_darkling_ut]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_darkling";
+	specializes = 3W_base_darkling;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  66.5, 0;
+			intelligence =  13.8, 0;
+			dexterity =  37.3, 0;
+			combat_magic =  98,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 917150;
+		life = 450.8;
+		max_life = 450.8;
+		mana = 156.8;
+		max_mana = 156.8;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 377.3;
+		damage_min = 264.6;
+		damage_bonus_min_cmagic = 128;
+		damage_bonus_max_cmagic = 212;
+	}
+	[common] 
+	{ 
+		screen_name="Darkling Terror"; 
+
+	}
+	[defend] { defense=463.5; }
+	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_darkling_spark; }
+    	[pcontent]
+		{
+			[all*]
+			{
+   				chance = 0.03;
+                il_main = #nmagic/49-108;
+                il_main = #cmagic/29-78;
+			}
+			[oneof*]
+			{
+				chance = 0.18;
+				il_main = #*/230-267;
+				il_main = #armor/118-588;
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit;
+	}
+
+}
+[t:template,n:ut3W_darkling]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_darkling";
+	specializes = 3W_darkling_ut;
+}
+
+[t:template,n:ut3W_darkling_reveal]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_revealing darkling";
+	specializes = 3W_darkling_ut;
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("darkling_eye_glow");
+				action* = call_sfx_script("darkling_reveal");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+}
+
+[t:template,n:3W_darkling_forest_ut]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_darkling_forest";
+	specializes = 3W_base_darkling;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	21.5, 0;
+			intelligence =  22.6, 0;
+			dexterity =  	24, 0;
+			combat_magic =  99,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3106304;
+		life = 1300.4;
+		max_life = 1300.4;
+		mana = 47.2;
+		max_mana = 47.2;
+		textures:0 = b_c_edm_dg-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 454.1;
+		damage_min = 342.3;
+		damage_bonus_min_cmagic = 210;
+		damage_bonus_max_cmagic = 300;
+	}
+	[common] 
+	{ 
+		screen_name="Forest Shadow Darkling "; 
+
+	}
+	[defend] { defense=1197.2; }
+	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_darkling_spark_forest; }
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/186-293;
+					il_main = #armor/139-686;
+                	il_main = #nmagic/71-114;
+                	il_main = #cmagic/71-114;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/264-315;
+	                il_main = #armor/-rare(1)/609-751;
+                    il_main = #*/-rare(1)/264-315;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/264-315;
+	                il_main = #armor/-unique(2)/609-751;
+                    il_main = #*/-unique(2)/264-315;
+
+				}
+			}
+        }
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_darkling_forest_01 = 1;
+			frag_glb_darkling_forest_02 = 2;
+			frag_glb_darkling_forest_03 = 1;
+			frag_glb_darkling_forest_04 = 1;
+			frag_glb_darkling_forest_05 = 1;
+		}
+	}
+	[mind]
+	{
+
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social			= 0.35
+			&approach_dist	= 2.0
+			&meander		= false
+			&still			= false;
+
+		on_enemy_entered_ocz_flee 	= true;
+		on_enemy_entered_ocz_attack = false;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 					= 1;
+
+	}
+
+}
+[t:template,n:ut3W_darkling_forest]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_darkling_forest";
+	specializes = 3W_darkling_forest_ut;
+}
+
+[t:template,n:ut3W_darkling_forest_reveal]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_revealing darkling_forest";
+	specializes = 3W_darkling_forest_ut;
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("darkling_forest_reveal");
+				action* = call_sfx_script("darkling_eye_glow");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+}

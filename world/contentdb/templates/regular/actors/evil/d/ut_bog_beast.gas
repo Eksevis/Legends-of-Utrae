@@ -1,0 +1,165 @@
+[t:template,n:ut_bog_beast]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_bog_beast";
+	specializes = dsx_bog_beast_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength		= 12, 0;
+			intelligence 	= 8, 0;
+			dexterity		= 10, 0;
+			melee			= 19, 0;
+		}
+	}
+	
+	[aspect]
+	{
+		[textures]	{ 0 = b_c_edm_bog_beast; }
+		material = flesh;
+	
+		experience_value 	= 2184;
+		life		 	= 845;
+		max_life	 	= 845;
+		mana			= 45;
+		max_mana	 	= 45;
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 167; 
+		damage_min = 148; 
+	}
+	[defend] { defense = 405; }
+	}
+	[common]
+	{
+		screen_name="Bog Beast";
+		membership = monster;
+	}
+	[inventory]
+	{
+		drop_at_use_point = true;
+		// @TODO - this is the wrong level $$$
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 12, Medium */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 2150;
+				max = 3299;
+			}
+			[oneof*]
+			{
+				chance = 0.15;
+				il_main = #weapon/15-43;
+				il_main = #armor/79-171;
+				il_main = #*/15-43;
+			}
+			[oneof*]
+			{
+				chance = 0.111111111111111;
+				il_main = potion_mana_medium;
+				il_main = potion_health_medium;
+			}
+			[oneof*]
+			{
+				chance = 0.0075;
+				il_main = #weapon/-rare(1)/18-49;
+				il_main = #armor/-rare(1)/143-179;
+				il_main = #*/-rare(1)/18-49;
+			}	
+		}
+	}
+	}
+   	[mind]
+	{
+		jat_brain			= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?meander			= true
+			&still				= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 1.0; //0.7
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_bog_beast_boss]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_bog_beast";
+	specializes = dsx_bog_beast_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength		= 12, 0;
+			intelligence 		= 8, 0;
+			dexterity		= 10, 0;
+			melee			= 9, 0;
+		}
+	}
+	
+	[aspect]
+	{
+		[textures]	{ 0 = b_c_edm_bog_beast; }
+		material = flesh;
+	
+		experience_value 	= 184;
+		life		 	= 245;
+		max_life	 	= 245;
+		mana			= 45;
+		max_mana	 	= 45;
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 27; 
+		damage_min = 18; 
+	}
+	[defend] { defense = 65; }
+	}
+	[common]
+	{
+		screen_name="Bog Beast";
+		membership = monster;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_green(sgx)");
+
+			}
+
+		}
+	}
+   	[mind]
+	{
+		jat_brain			= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?meander			= true
+			&still				= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 1.0; //0.7
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

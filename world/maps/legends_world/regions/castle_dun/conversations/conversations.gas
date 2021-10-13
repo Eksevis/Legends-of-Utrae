@@ -1,0 +1,51 @@
+[conversation_naja_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		screen_text = "Please don't be frightened. I'm not a Kell, though we are distantly related. We are the survivors of a great disaster, which sadly we were responsible for. Now our race is barely sentient and few of us are capable of rational thought. All I wish for is the chance to seek redemption and help prevent a reoccurrence of this disaster by those who seek to duplicate our folly. My name is Naja. Will you accept my aid?";
+	}
+}
+[conversation_naja_accept]
+{
+	[text*]
+	{
+		screen_text = "Thank you! Now I may help you to prevent the return of a great evil. Let us hurry.";
+		activate_quest* = quest_naja_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_naja_reject]
+{
+	[text*]
+	{
+		screen_text = "I understand. Our race will fade into obscurity and soon nobody will remember us. Good Luck to you!";
+	}
+}
+[conversation_naja_disband]
+{
+	[text*]
+	{
+		screen_text = "I will be alright. You must look after yourselves. Good Luck!";
+	}
+}
+[conversation_naja_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		screen_text = "Good you seek my aid again? I'm only to happy to help!";
+	}
+}
+[conversation_naja_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		screen_text = "Do you still want my services? I'll be glad to help out!";
+	}
+}
+
+
+
+

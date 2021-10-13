@@ -1,0 +1,191 @@
+[t:template,n:ut3w_kikclaw]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength =  63.8, 0;
+			intelligence =  12.7, 0;
+			dexterity =  15.9, 0;
+            		melee =  	93,  0;
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		
+		damage_max = 482;
+		damage_min = 274;
+	}
+	[defend] { defense = 1040; }
+	[aspect] 
+	{
+		experience_value = 467500;
+		life = 1360;
+		max_life = 1360;
+		mana = 40;
+		max_mana = 40;
+		model = m_c_edm_kc_pos_1; 
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_SED;  }
+		}	
+		scale_base	= 0.7;
+	}
+	
+	[common] 
+	{ 
+		screen_name = "Endarkened Skitterclaw"; 
+
+	}
+	
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+
+}
+
+[t:template,n:ut3w_kikclaw_2]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw_2";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 13.3, 0;
+			  intelligence = 5.4, 0;
+			  strength = 31.5, 0;
+			  melee = 89, 0;
+		}
+	}
+	
+	[aspect] 
+	{
+		textures: 0 = b_c_edm_klik-2;
+		scale_base	= 0.4;
+		
+		  experience_value = 396978;
+		  life = 568;
+		  mana = 534;
+		  max_life = 568;
+		  max_mana = 534;
+		
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw_baby;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_baby_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw__baby_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		  damage_max = 350.4;
+		  damage_min = 260.3;
+	}
+	[body]
+	{
+		avg_move_velocity = 5.00000;
+	}
+	
+	[common] 
+	{ 
+		screen_name = "Endarkened Skitterling";
+
+	}
+	
+	[defend] { defense = 480; }
+
+	[mind]  
+	{ 
+		jat_fidget                              = world\ai\jobs\common\job_fidget.skrit  
+		?social                                   = 0.5  
+		&delay_min                              = 4.0  
+		&delay_max                              = 10.0  
+		&still                                   = false;  
+	}
+
+}	
+[t:template,n:ut3w_kikclaw_3]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw_2";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 13.3, 0;
+			  intelligence = 5.4, 0;
+			  strength = 31.5, 0;
+			  melee = 88, 0;
+		}
+	}
+	
+	[aspect] 
+	{
+		textures: 0 = b_c_edm_klik-2;
+		scale_base	= 0.4;
+		
+		  experience_value = 422840;
+		  life = 412;
+		  mana = 534;
+		  max_life = 412;
+		  max_mana = 534;
+		
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw_baby;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_baby_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw__baby_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		  damage_max = 280.1;
+		  damage_min = 200.9;
+	}
+	[body]
+	{
+		avg_move_velocity = 5.00000;
+	}
+	
+	[common] 
+	{ 
+		screen_name = "Endarkened Skitterling";
+
+	}
+	
+	[defend] { defense = 400; }
+
+	[mind]  
+	{  
+		jat_fidget                              = world\ai\jobs\common\job_fidget.skrit  
+		?social                                   = 0.5  
+		&delay_min                              = 4.0  
+		&delay_max                              = 10.0  
+		&still                                   = false;  
+	}
+
+}	

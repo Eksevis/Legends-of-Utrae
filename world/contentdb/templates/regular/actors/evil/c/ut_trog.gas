@@ -1,0 +1,407 @@
+[t:template,n:ut_trog]
+{
+	category_name = "1W_evil_c";
+	doc = "trog";
+	specializes = base_trog;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  13, 0;
+			intelligence =  7, 0;
+			dexterity =  8, 0;
+            melee =  18,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 392;
+		life = 297;
+        max_life = 297;
+        mana = 14;
+		max_mana = 14;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 42;
+		damage_min = 38;
+	}
+	[common]
+	{
+		screen_name="Trog";
+		membership = party_trog_warrior_boss, monster;
+	}
+    [defend] { defense=178; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = sd_g_c_st_1h_avg;
+				es_weapon_hand = sd_ra_g_c_bl_1h_fin;
+				es_weapon_hand = sd_ra_g_o_bl_1h_avg;
+				es_weapon_hand = sd_ra_g_o_gl_1h_avg;
+				es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+				es_weapon_hand = ss_ra_g_c_st_1h_fin;
+				es_weapon_hand = ss_g_c_sd_1h_avg;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/35-52;
+					il_main = #armor/50-120;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/35-52;
+	                il_main = #armor/-rare(1)/50-120;
+                    il_main = #*/-rare(1)/35-52;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/35-52;
+	                il_main = #armor/-unique(2)/50-120;
+                    il_main = #*/-unique(2)/35-52;
+	            }
+				[gold*]
+				{
+					chance = 0.1;
+					max = 620;
+					min = 400;
+				}
+            }
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.45
+			&still							= false;
+
+		jat_brain						 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+	}
+
+}
+[t:template,n:ut_trog_warrior]
+{
+	category_name = "1W_evil_c";
+	doc = "trog warrior";
+	specializes = base_trog;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 =  16, 0;
+			intelligence =  7, 0;
+			dexterity 	 =  9, 0;
+            melee 		 =  24,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 580;
+		life = 325;
+        max_life = 325;
+        mana = 14;
+		max_mana = 14;
+		textures:0 = b_c_ecm_tg-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 50;
+		damage_min = 40;
+	}
+	[common]
+	{
+		screen_name="Trog Warrior";
+		membership = party_trog_warrior_boss, monster;
+	}
+    [defend] { defense=193; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = sd_g_c_st_1h_avg;
+				es_weapon_hand = sd_ra_g_c_bl_1h_fin;
+				es_weapon_hand = sd_ra_g_o_bl_1h_avg;
+				es_weapon_hand = sd_ra_g_o_gl_1h_avg;
+				es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+				es_weapon_hand = ss_ra_g_c_st_1h_fin;
+				es_weapon_hand = ss_g_c_sd_1h_avg;
+			}
+			[oneof*]
+			{
+				es_shield_hand = sh_m_g_c_r_s_avg;
+				es_shield_hand = sh_ra_m_c_r_m_decrepit;
+				es_shield_hand = sh_ra_m_g_o_r_s_fin;
+				es_shield_hand = sh_ra_w_g_c_r_m_fin;
+				es_shield_hand = sh_w_f_g_c_t_m_avg_hide_skelldra_dsx;
+				es_shield_hand = sh_w_f_g_c_t_s_avg_hide_hassat_dsx;
+				es_shield_hand = sh_w_m_g_c_t_m_avg_gearwork_dsx;
+				es_shield_hand = sh_w_m_g_c_t_m_avg_ward_blood_dsx;
+				es_shield_hand = sh_w_m_g_c_t_m_avg_mushroom_dsx;
+				es_shield_hand = sh_w_r_g_c_t_m_avg_barrier_flywing_dsx;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/35-52;
+					il_main = #armor/50-120;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/35-52;
+	                il_main = #armor/-rare(1)/50-120;
+                    il_main = #*/-rare(1)/35-52;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/35-52;
+	                il_main = #armor/-unique(2)/50-120;
+                    il_main = #*/-unique(2)/35-52;
+	            }
+				[gold*]
+				{
+					chance = 0.1;
+					max = 750;
+					min = 500;
+				}
+            }
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.45
+			&approach_dist					= 2
+			&still							= false;
+
+		jat_brain						 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+
+		actor_auto_switches_to_melee         = true;
+		actor_auto_switches_to_ranged        = false;
+		actor_auto_uses_stored_items		 = true;
+
+		actor_weapon_preference				 = WP_MELEE;
+	}
+}
+[t:template,n:ut_trog_warrior_boss_01]
+{
+	category_name = "1W_evil_c";
+	doc = "trog warrior_boss";
+	specializes = base_trog;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 =  17, 0;
+			intelligence =  7, 0;
+			dexterity 	 =  10, 0;
+            melee 		 =  24,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1180;
+		life = 772;
+        max_life = 772;
+        mana = 14;
+		max_mana = 14;
+		textures:0 = b_c_ecm_tg-04;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 64;
+		damage_min = 56;
+	}
+	[common]
+	{
+		screen_name="Captain Aeyr";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_purple(sgx)");
+			}
+		}
+	}
+    	[defend] { defense=267; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+    	[pcontent]
+		{
+			[all*]
+			{
+				es_shield_hand = sh_m_g_c_r_s_avg;
+				es_weapon_hand = sd_g_c_st_1h_avg;
+			}
+			[all*]
+			{
+				il_main = book_glb_lore_ut_trog;
+			}
+   			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #*/40-58;
+					il_main = #armor/80-120;
+				}
+				[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/40-58;
+	                		il_main = #armor/-rare(1)/80-120;
+                    			il_main = #*/-rare(1)/40-58;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/40-58;
+	                		il_main = #armor/-unique(2)/80-120;
+                    			il_main = #*/-unique(2)/40-58;
+	            		}
+				[gold*]
+				{
+					chance = 0.5;
+					max = 1150;
+					min = 900;
+				}
+            }
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.45
+			&approach_dist					= 2
+			&friend_template				= false
+			&friends						= party_trog_warrior_boss
+			&still							= false;
+
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_trog_warrior_boss";
+
+		actor_auto_switches_to_melee     = true;
+		actor_auto_switches_to_ranged    = false;
+		actor_auto_uses_stored_items	 = true;
+
+		actor_weapon_preference			 = WP_MELEE;
+	}
+}
+
+
+[t:template,n:ut_trog_knight]
+{
+	category_name = "1W_evil_c";
+	doc = "trog knight";
+	specializes = base_trog;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  19, 0;
+			intelligence =  8, 0;
+			dexterity =  11, 0;
+            melee =  24,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 700;
+		life = 420;
+        max_life = 420;
+        mana = 14;
+		max_mana = 14;
+		textures:0 = b_c_ecm_tg-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 73;
+		damage_min = 65;
+	}
+	[common]
+	{
+		screen_name="Trog Knight";
+		membership = party_trog_warrior_boss, monster;
+	}
+    [defend] { defense=190; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+    	[pcontent]
+		{
+			[all*] { es_weapon_hand = sd_g_c_sd_2h_fun_trog; }
+
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/40-58;
+					il_main = #armor/80-120;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/40-58;
+	                il_main = #armor/-rare(1)/80-120;
+                    il_main = #*/-rare(1)/40-58;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/40-58;
+	                il_main = #armor/-unique(2)/80-120;
+                    il_main = #*/-unique(2)/40-58;
+	            }
+				[gold*]
+				{
+					chance = 0.1;
+					max = 840;
+					min = 600;
+				}
+            }
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?curious						= 0.65
+			&interest						= interest
+			&still							= false;
+
+		jat_brain						 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+
+		actor_auto_switches_to_melee         = true;
+		actor_auto_switches_to_ranged        = false;
+		actor_auto_uses_stored_items		 = true;
+
+		actor_weapon_preference				 = WP_MELEE;
+	}
+}
+

@@ -1,0 +1,70 @@
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "Aye, it's true this is a crossroads of sort. Meren lies through the Crystal Caverns to the south, and Fallraen is a goodly trek beyond the Ancient Temple to the west here. It is also possible to reach Lang far to the north through Dornek's Stone Quarry and the treacherous Sulfur Tunnels, but I wouldn't recommend it.";
+	}
+}
+
+[conversation_tracker]
+{
+	[text*] 
+	{	
+	
+		screen_text = "Good to see another soul out braving the snow for once! It's been too long since these roads were traveled, my friend. Best keep your eyes open, however. I've hardly had a chance to reset my traps before they're full again. With so many critters roaming the Mt. Elspen Forest these days, you'd probably be much more comfortable traveling through the Crystal Caverns just to the south where you'll be out of the cold. However if you would like a job, how about investigating Dornek's Quarry for me. I'd be much obliged.";
+		activate_quest* = quest_snow_quest;
+		quest_dialog = true;
+	}
+
+}
+[conversation_tracker_complete]
+{
+	[text*] 
+	{	
+	
+		screen_text = "Thanks for investigating and clearing out Dornek's Quarry for me and old Dornek here. We're not as nimble as we used to be you know, so we really appreciate your efforts. So I hope this is adequate reward for your toils.";
+	}
+
+}
+[conversation_tracker_red]
+{
+	[text*]
+	{
+		screen_text = "I don't expect I'll be catching much in my traps with the weather so bizarre. Lightning scares even the boldest critters back to their dens.";
+	}
+}
+
+[conversation_dornek]
+{
+	[text*]
+	{
+		order = 0;
+		choice = shop;
+
+		screen_text = "Aargh! I thought ye were one of those blasted snow beasts. They took over me quarry and killed me workers, so what was I to do but run for the safety of the Ancient Temple? At least I managed to stuff a handful of me best blades into me pack, not that they're much use now. Would ye like to buy one?";
+	}
+	[text*]
+	{
+	        order = 1;
+		choice = shop;
+
+		screen_text = "Half the buildings in the Utraean Peninsula are built with stones from me quarry. I've a reputation to keep and a family to feed. I'm sure the vermin will leave come spring, but until then, a man's got to make a living selling something.";
+	}
+
+	[text*]
+	{
+
+		choice = shop;
+
+		screen_text = "It's a good thing you're so willing to let your money and goods change hands; I'll need quite a bit of coin to hire new lads, now that the Klaw have run me crew to their deaths.";
+	}
+
+}
+[conversation_dornek_red]
+{
+	[text*]
+	{
+		screen_text = "Blast it all! First I lose me quarry, and now the sky's on fire. What evil could be behind this?";
+			
+	}
+}

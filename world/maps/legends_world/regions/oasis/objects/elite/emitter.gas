@@ -1,0 +1,108 @@
+[t:emt_sound,n:0x076009df]
+{
+	[placement]
+	{
+	  q orientation = 0,0.113203,0,-0.993572;
+	  p position = -33.1818,4.50617,3.41968,0xf4f70836;
+	}
+	[sound_emitter]
+	{
+		event_sound = "amb_crickets";
+	  f max_repeat_rate = 10;
+	  f repeat_rate = 1;
+	  i start_hour = 22;
+	  i stop_hour = 4;
+	}
+}
+[t:emt_sound,n:0x076009e0]
+{
+	[placement]
+	{
+	  q orientation = 0,0.113203,0,-0.993572;
+	  p position = -19.5519,3.95762,-5.78067,0xf4f70836;
+	}
+	[sound_emitter]
+	{
+		event_sound = "amb_crickets";
+	  f max_repeat_rate = 10;
+	  f repeat_rate = 1;
+	  i start_hour = 22;
+	  i stop_hour = 4;
+	}
+}
+[t:emt_sound,n:0x076009e2]
+{
+	[placement]
+	{
+	  q orientation = 0,0.113203,0,-0.993572;
+	  p position = -41.607,5.441,-14.2942,0xf4f70836;
+	}
+	[sound_emitter]
+	{
+		event_sound = "amb_crickets";
+	  f max_repeat_rate = 10;
+	  f repeat_rate = 1;
+	  i start_hour = 22;
+	  i stop_hour = 4;
+	}
+}
+[t:emt_sound,n:0x076009e1]
+{
+	[placement]
+	{
+	  q orientation = 0,0.622515,0,0.782608;
+	  p position = -37.0116,4.75686,-13.9336,0xcb1fa62b;
+	}
+	[sound_emitter]
+	{
+		event_sound = "amb_crickets";
+	  f max_repeat_rate = 10;
+	  f repeat_rate = 1;
+	  i start_hour = 22;
+	  i stop_hour = 4;
+	}
+}
+[t:emt_sound,n:0x076009e3]
+{
+	[placement]
+	{
+	  q orientation = 0,0.622515,0,0.782608;
+	  p position = -32.6292,4.65514,3.61697,0xcb1fa62b;
+	}
+	[sound_emitter]
+	{
+		event_sound = "amb_crickets";
+	  f max_repeat_rate = 10;
+	  f repeat_rate = 1;
+	  i start_hour = 22;
+	  i stop_hour = 4;
+	}
+}
+[t:emt_sound,n:0x076009e4]
+{
+	[placement]
+	{
+	  q orientation = 0,0.622515,0,0.782608;
+	  p position = -21.419,4.04924,-10.6672,0xcb1fa62b;
+	}
+	[sound_emitter]
+	{
+		event_sound = "amb_crickets";
+	  f max_repeat_rate = 10;
+	  f repeat_rate = 1;
+	  i start_hour = 22;
+	  i stop_hour = 4;
+	}
+}
+[t:emt_sound_act,n:0x07600958]
+{
+	[placement]
+	{
+	  p position = -0.112762,-1.24617,-0.00561523,0x87d40866;
+	}
+	[sound_emitter_act]
+	{
+		event_sound = "env_shrine_health";
+	  b start_on_creation = false;
+	}
+}

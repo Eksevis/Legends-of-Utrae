@@ -1,0 +1,874 @@
+[t:template,n:base_evil_utraean]
+{
+	category_name = "1W_evil_a";
+	doc = "Base template for utraeans.";
+	specializes = actor_evil;
+	[aspect]
+	{
+		model = m_c_gah_fb_pos_a3;
+		experience_value = 96;
+		[voice]
+		{
+			[die] { *=s_e_die_male; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_bandit_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_bandit_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_bandit_SED; }
+			[hit_solid]	{ priority = low; * = s_e_hit_bandit_SED; }
+		}
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[common]
+	{
+		screen_name="Bandit";
+		// $ removed blood effect, it is now controlled with the guts manager. -ET
+	}
+	[defend] { defense=18; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #*/10-13;
+			}
+		}
+	}
+	[body]
+	{
+		armor_version = gah_fb;
+		avg_move_velocity = 4.500000;
+		min_move_velocity = 3.5;
+		initial_chore = chore_fidget;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gah_fb_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					extr = at-04;
+					qffg = dff;
+				}
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.750;
+					fs2 = 0.750;
+					fs3 = 1.500;
+					fs4 = 1.000;
+					fs5 = 1.333;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 1;
+				skrit = simple_loop;
+				[anim_files] { 00=dff; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gah_fb_fs1_dk;
+					gtup = a_c_gah_fb_fs0_up;
+					look = a_c_gah_fb_fs0_dsf;
+					wyme = a_c_gah_fb_fs0_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files] { 05=rl; }
+			}
+		}
+	}
+	[mind]
+	{
+		com_channels = dyn_party, utraean;
+		com_range = 8.0;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+        		job_travel_distance_limit = 30;
+        		on_job_reached_travel_distance_abort_attack = true;
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		actor_mana_ratio_low_threshold  = 0.5;
+		actor_mana_ratio_high_threshold = 0.8;
+	}
+}
+
+[t:template,n:ut_utraean_melee]
+{
+	doc = "utraean_melee";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   15, 0;
+			intelligence =  10, 0;
+			dexterity =   11, 0;
+			melee =  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 360;
+		max_life = 360;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin_03;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[common]
+	{
+		screen_name="Elite Utraean Guard";
+		membership = monster, party_utraean, utraean;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                				es_weapon_hand = sd_un_seck_1h_fin;
+			}
+			[oneof*]
+			{
+                				es_shield_hand = bw_ra_g_c_c_s_4_avg;
+                				es_shield_hand = bw_ra_g_c_s_s_c_stopper;
+                				es_shield_hand = bw_ra_g_o_s_s_r_avg;
+                				es_shield_hand = bw_g_c_s_s_r_avg_dsx;
+                				es_shield_hand = bw_g_c_dsx_cry_avg;
+                				es_shield_hand = bw_g_c_dsx_ltn_avg;
+                				es_shield_hand = bw_g_c_dsx_spd_avg;
+                				es_shield_hand = bw_ra_g_c_c_m_4_fin;
+                				es_shield_hand = bw_ra_g_c_c_m_r_avg;
+                				es_shield_hand = bw_ra_g_c_s_m_c_fin;
+                				es_shield_hand = bw_ra_g_c_s_m_r_fin;
+                				es_shield_hand = bw_g_c_c_m_4_avg;
+                				es_shield_hand = bw_g_c_c_m_r_avg;
+                				es_shield_hand = bw_g_c_c_m_r_fun;
+                				es_shield_hand = bw_g_c_s_m_r_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                				es_feet = bo_bo_le_f_g_c_avg;
+                				es_feet = bo_gr_bl_f_g_c_avg;
+                				es_feet = bo_ra_bo_le_f_g_c_fin;
+                				es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	                				il_main = #armor/-rare(1)/350-400;
+                    				il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	                				il_main = #weapon/-unique(2)/128-140;
+	                				il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 42;
+		damage_min = 37;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_utraean_ranged]
+{
+	doc = "utraean_ranged";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   14, 0;
+			intelligence 	= 10, 0;
+			dexterity 	=   12, 0;
+			ranged 		=  14,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 315;
+		max_life = 315;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1138;
+
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin_01;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="Elite Utraean Archer";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+//        		custom_head = m_c_gah_fb_hlmt_head-05;
+    		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                				es_shield_hand = bw_ra_g_c_c_s_4_avg;
+                				es_shield_hand = bw_ra_g_c_s_s_c_stopper;
+                				es_shield_hand = bw_ra_g_o_s_s_r_avg;
+                				es_shield_hand = bw_g_c_s_s_r_avg_dsx;
+                				es_shield_hand = bw_g_c_dsx_cry_avg;
+                				es_shield_hand = bw_g_c_dsx_ltn_avg;
+                				es_shield_hand = bw_g_c_dsx_spd_avg;
+                				es_shield_hand = bw_ra_g_c_c_m_4_fin;
+                				es_shield_hand = bw_ra_g_c_c_m_r_avg;
+                				es_shield_hand = bw_ra_g_c_s_m_c_fin;
+                				es_shield_hand = bw_ra_g_c_s_m_r_fin;
+                				es_shield_hand = bw_g_c_c_m_4_avg;
+                				es_shield_hand = bw_g_c_c_m_r_avg;
+                				es_shield_hand = bw_g_c_c_m_r_fun;
+                				es_shield_hand = bw_g_c_s_m_r_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                				es_feet = bo_bo_le_f_g_c_avg;
+                				es_feet = bo_gr_bl_f_g_c_avg;
+                				es_feet = bo_ra_bo_le_f_g_c_fin;
+                				es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	                				il_main = #armor/-rare(1)/350-400;
+                    				il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	                				il_main = #weapon/-unique(2)/128-140;
+	                				il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 50;
+	}
+	[defend] { defense=150; }
+	[mind]
+    	{
+  		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template			= "party_utraean";
+
+    		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+    	}
+}
+
+[t:template,n:ut_utraean_magic_big_boss]
+{
+	doc = "utraean_magic";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+          	drops_spellbook = false;
+		[skills]
+		{
+			strength 	=   14, 0;
+			intelligence 	= 100, 0;
+			dexterity 	=   12, 0;
+			ranged 		=  14,  0;
+			combat_magic	=  64,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1815;
+		max_life = 1815;
+		mana = 200000;
+		max_mana = 200000;
+   		experience_value = 91138;
+
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin_02;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="Lord Priest Nairadoth Kraeltor";
+		membership=monster,party_bandit_ranged,bandit,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_red(sgx)");
+
+			}
+
+		}
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//        	custom_head = m_c_gah_fb_hlmt_head-05;
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_utraean_sun_ray;
+			il_active_secondary_spell = ut_spell_utraean_heal;
+			il_spell_3 = spell_utraean_dragon_fire;
+			il_spell_4 = spell_utraean_firebomb;
+			il_spell_5 = spell_utraean_orb;
+		}
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+                	es_weapon_hand = st_g_c_dsx_stars; 
+  			es_chest = bd_ro_m_g_c_110;
+                	es_feet = bo_bo_le_f_g_c_satin;
+			es_forearms = gl_ra_ga_sc_f_g_c_fin;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+                		{
+	                		il_main = #weapon/-unique(2)/240-320;
+	               	 		il_main = #armor/-unique(2)/600-800;
+                    			il_main = #*/-unique(2)/240-320;
+					max = 3;
+					min = 2;
+	            		}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 2;
+		damage_min = 1;
+	}
+	[defend] { defense=4950; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.25,0.25,0.25,0.25"
+			&spells				= "spell_utraean_sun_ray, spell_utraean_dragon_fire, spell_utraean_firebomb, spell_utraean_orb";
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		actor_auto_reanimates_friends        	= true;
+		actor_auto_uses_stored_items         	= true;
+		actor_auto_heals_others_life		= true;
+		on_enemy_entered_icz_switch_to_melee	= false;
+		on_enemy_entered_ocz_flee 		= true;
+		on_enemy_entered_ocz_attack 		= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 2;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}
+[t:template,n:ut_utraean_magic_boss_01]
+{
+	doc = "utraean_magic";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			strength 	=   14, 0;
+			intelligence 	= 100, 0;
+			dexterity 	=   12, 0;
+			ranged 		=  14,  0;
+			combat_magic	=  64,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1375;
+		max_life = 1375;
+		mana = 20000;
+		max_mana = 20000;
+   		experience_value = 51138;
+
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin_01;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="High Priest Gualden";
+		membership=monster,party_bandit_ranged,bandit,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//        	custom_head = m_c_gah_fb_hlmt_head-05;
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_utraean_fireball;
+			il_active_secondary_spell = ut_spell_utraean_heal;
+			il_spell_3 = spell_utraean_flame_blades;
+			il_spell_4 = spell_utraean_fireskull;
+			il_spell_5 = spell_utraean_orb;
+		}
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+                	es_weapon_hand = st_g_c_dsx_ltn_avg; 
+  			es_chest = bd_ro_m_g_c_avg_elbead_dsx;
+                	es_feet = bo_bo_le_f_g_c_satin;
+			es_forearms = gl_ra_gl_br_f_g_c_fin;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+
+				[oneof*]
+                		{
+	                		il_main = #weapon/-unique(2)/140-240;
+	               	 		il_main = #armor/-unique(2)/400-600;
+                    			il_main = #*/-unique(2)/140-240;
+					max = 2;
+					min = 1;
+	            		}
+
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 2;
+		damage_min = 1;
+	}
+	[defend] { defense=3500; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.25,0.25,0.25,0.25"
+			&spells				= "spell_utraean_fireball, spell_utraean_flame_blades, spell_utraean_fireskull, spell_utraean_orb";
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		actor_auto_reanimates_friends        	= true;
+		actor_auto_uses_stored_items         	= true;
+		actor_auto_heals_others_life		= true;
+		on_enemy_entered_ocz_flee 		= true;
+		on_enemy_entered_ocz_attack 		= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 2;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}
+[t:template,n:ut_utraean_magic_boss_02]
+{
+	doc = "utraean_magic";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			strength 	=   14, 0;
+			intelligence 	= 100, 0;
+			dexterity 	=   12, 0;
+			ranged 		=  14,  0;
+			combat_magic	=  64,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1365;
+		max_life = 1365;
+		mana = 20000;
+		max_mana = 20000;
+   		experience_value = 1138;
+
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin_02;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="High Priest Zervon";
+		membership=monster,party_bandit_ranged,bandit,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//        	custom_head = m_c_gah_fb_hlmt_head-05;
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_utraean_fireball;
+			il_active_secondary_spell = ut_spell_utraean_heal;
+			il_spell_3 = spell_utraean_flame_blades;
+			il_spell_4 = spell_utraean_fireskull;
+			il_spell_5 = spell_utraean_orb;
+		}
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+                	es_weapon_hand = st_g_c_dsx_ltn_avg; 
+  			es_chest = bd_ro_m_g_c_avg_elbead_dsx;
+                	es_feet = bo_bo_le_f_g_c_satin;
+			es_forearms = gl_ra_gl_br_f_g_c_fin;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+                		{
+	                		il_main = #weapon/-unique(2)/140-240;
+	               	 		il_main = #armor/-unique(2)/400-600;
+                    			il_main = #*/-unique(2)/140-240;
+					max = 2;
+					min = 1;
+	            		}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 2;
+		damage_min = 1;
+	}
+	[defend] { defense=3500; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.25,0.25,0.25,0.25"
+			&spells				= "spell_utraean_fireball, spell_utraean_flame_blades, spell_utraean_fireskull, spell_utraean_orb";
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		actor_auto_reanimates_friends        	= true;
+		actor_auto_uses_stored_items         	= true;
+		actor_auto_heals_others_life		= true;
+		on_enemy_entered_icz_switch_to_melee	= false;
+		on_enemy_entered_ocz_flee 		= true;
+		on_enemy_entered_ocz_attack 		= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 2;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}
+[t:template,n:ut_utraean_magic_boss_03]
+{
+	doc = "utraean_magic";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			strength 	=   14, 0;
+			intelligence 	= 100, 0;
+			dexterity 	=   12, 0;
+			ranged 		=  14,  0;
+			combat_magic	=  64,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1355;
+		max_life = 1355;
+		mana = 20000;
+		max_mana = 20000;
+   		experience_value = 51138;
+
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin_03;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="High Priest Dealdon";
+		membership=monster,party_bandit_ranged,bandit,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//        	custom_head = m_c_gah_fb_hlmt_head-05;
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_utraean_fireball;
+			il_active_secondary_spell = ut_spell_utraean_heal;
+			il_spell_3 = spell_utraean_flame_blades;
+			il_spell_4 = spell_utraean_fireskull;
+			il_spell_5 = spell_utraean_orb;
+		}
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+                	es_weapon_hand = st_g_c_dsx_ltn_avg; 
+  			es_chest = bd_ro_m_g_c_avg_elbead_dsx;
+                	es_feet = bo_bo_le_f_g_c_satin;
+			es_forearms = gl_ra_gl_br_f_g_c_fin;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+                		{
+	                		il_main = #weapon/-unique(2)/140-240;
+	               	 		il_mai = #armor/-unique(2)/400-600;
+                    			il_main = #*/-unique(2)/140-240;
+					max = 2;
+					min = 1;
+	            		}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 2;
+		damage_min = 1;
+	}
+	[defend] { defense=3500; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.25,0.25,0.25,0.25"
+			&spells				= "spell_utraean_fireball, spell_utraean_flame_blades, spell_utraean_fireskull, spell_utraean_orb";
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		actor_auto_reanimates_friends        	= true;
+		actor_auto_uses_stored_items         	= true;
+		actor_auto_heals_others_life		= true;
+		on_enemy_entered_icz_switch_to_melee	= false;
+		on_enemy_entered_ocz_flee 		= true;
+		on_enemy_entered_ocz_attack 		= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 2;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}

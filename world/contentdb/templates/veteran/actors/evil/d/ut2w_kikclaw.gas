@@ -1,0 +1,182 @@
+[t:template,n:ut2w_kikclaw]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 45, 0;
+			intelligence = 8, 0;
+			dexterity    = 51, 0;
+			melee        = 66, 0;
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		
+		damage_max = 382;
+		damage_min = 324;
+	}
+	[defend] { defense = 840; }
+	[aspect] 
+	{
+		experience_value = 20692;
+		life             = 1009;
+		max_life         = 1009;
+		mana             = 0;
+		max_mana         = 0;
+		model = m_c_edm_kc_pos_1; 
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_SED;  }
+		}	
+		scale_base	= 0.7;
+	}
+	
+	[common] { screen_name = "Rabid Skitterclaw"; }
+	
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+}
+
+[t:template,n:ut2w_kikclaw_2]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw_2";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength =  12.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  54,  0;
+		}
+	}
+	
+	[aspect] 
+	{
+		textures: 0 = b_c_edm_klik-2;
+		scale_base	= 0.4;
+		
+		experience_value = 15669;
+		life = 388;
+		max_life = 388;
+		mana = 108;
+		max_mana = 108;
+		
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw_baby;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_baby_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw__baby_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 180;
+		damage_min = 160;
+	}
+	[body]
+	{
+		avg_move_velocity = 5.00000;
+	}
+	
+	[common] 
+	{ 
+		screen_name = "Rabid Skitterling";
+	}
+	
+	[defend] { defense = 608; }
+
+	[mind]  
+	{  
+		jat_fidget                              = world\ai\jobs\common\job_fidget.skrit  
+		?social                                   = 0.5  
+		&delay_min                              = 4.0  
+		&delay_max                              = 10.0  
+		&still                                   = false;  
+	}
+}	
+[t:template,n:ut2w_kikclaw_3]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw_2";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength =  12.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  54,  0;
+		}
+	}
+	
+	[aspect] 
+	{
+		textures: 0 = b_c_edm_klik-2;
+		scale_base	= 0.4;
+		
+		experience_value = 15669;
+		life = 308;
+		max_life = 308;
+		mana = 108;
+		max_mana = 108;
+		
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw_baby;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_baby_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw__baby_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 184;
+		damage_min = 163;
+	}
+	[body]
+	{
+		avg_move_velocity = 5.00000;
+	}
+	
+	[common] 
+	{ 
+		screen_name = "Rabid Skitterling";
+	}
+	
+	[defend] { defense = 604; }
+
+	[mind]  
+	{  
+		jat_fidget                              = world\ai\jobs\common\job_fidget.skrit  
+		?social                                   = 0.5  
+		&delay_min                              = 4.0  
+		&delay_max                              = 10.0  
+		&still                                   = false;  
+	}
+}	

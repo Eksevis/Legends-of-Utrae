@@ -1,0 +1,138 @@
+[t:door_glb_gendungeon_03,n:0x064002bc]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x06400065;
+	}
+	[placement]
+	{
+	  p position = -0.00459291,-1.5,-0.0914536,0x30440166;
+	}
+}
+[t:door_glb_gendungeon_03,n:0x064002bb]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x06400064;
+	}
+	[placement]
+	{
+	  p position = -0.00803374,-1.5,-0.0638809,0x9a4dd54d;
+	}
+}
+[t:door_glb_gendungeon_03,n:0x064002ba]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0640006C;
+	}
+	[placement]
+	{
+	  p position = -0.00184629,-1.5,-0.101147,0x83054cc1;
+	}
+}
+[t:door_glb_gendungeon_03,n:0x064002b8]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0640006B;
+	}
+	[placement]
+	{
+	  p position = -0.0106468,-1.5,-0.0668154,0x2683a223;
+	}
+}
+[t:lever_glb_06,n:0x064003e2]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x064003DE;
+	  x on_scid = 0x064003DE;
+	  b one_shot = true;
+	}
+	[placement]
+	{
+	  q orientation = 0,2.38419e-007,0,1;
+	  p position = 1.72174,1.28644,-0.963433,0x48bb88c8;
+	}
+}
+[t:lever_glb_06,n:0x064000ac]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x064003DE;
+	  x on_scid = 0x064003DE;
+	  b one_shot = true;
+	}
+	[placement]
+	{
+	  q orientation = 0,2.38419e-007,0,1;
+	  p position = -1.75088,1.26597,-0.895476,0x70946200;
+	}
+}
+[t:door_glb_gendungeon_03,n:0x064002bf]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x06400067;
+	}
+	[placement]
+	{
+	  p position = 0.0277557,-1.5,-0.00758362,0xc889b0e1;
+	}
+}
+[t:door_glb_gendungeon_03,n:0x064002be]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x06400066;
+	}
+	[placement]
+	{
+	  p position = 0.00466538,-1.5,0.0218735,0x094365b4;
+	}
+}
+[t:respawn_statue,n:0x0640009a]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.382683,0,0.92388;
+	  p position = -3.71671,0,-1.76289,0x723ea7fd;
+		use_point_scids = 0x0640009d;
+	}
+}
+[t:door_glb_gendungeon_03,n:0x064002bd]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x06400060;
+	}
+	[placement]
+	{
+	  p position = -0.0580196,-1.5,0.0129395,0xb561b6ea;
+	}
+}
+[t:door_glb_gendungeon_03,n:0x064002c0]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0640006D;
+	}
+	[placement]
+	{
+	  p position = -0.0055914,-1.5,-0.107984,0xbb0e10eb;
+	}
+}
+[t:door_glb_gendungeon_03,n:0x064002b9]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x06400025;
+	}
+	[placement]
+	{
+	  p position = 0.00502014,-1.5,-0.0140915,0x8c9aed5a;
+	}
+}

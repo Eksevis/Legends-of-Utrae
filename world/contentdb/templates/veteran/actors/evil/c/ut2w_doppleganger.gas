@@ -1,0 +1,259 @@
+[t:template,n:ut2w_doppelganger]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_doppelganger";
+	specializes = dsx_doppelganger_base;
+	[actor]
+	{
+		[skills]
+			{
+				strength 	=  65, 0;
+				intelligence = 48, 0;
+				dexterity 	=  51, 0;
+				melee 		=  63, 0;
+			}
+	}
+	[aspect]
+	{
+		experience_value = 136695;
+		life = 1111;
+		max_life = 1111;
+		mana = 36.4;
+		max_mana = 36.4;
+	}
+	[common]
+	{
+		screen_name = "Doppleganger Spook";
+		membership = monster,immune_freeze;
+	}
+	[doppelganger]{ statsMultiplier = 0.8; }
+	[defend] { defense=1074; }
+	[inventory]
+	{
+		drop_at_use_point = true;
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 19, Medium */
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/157-211;
+                    il_main = #armor/103-512;
+	                il_main = #spell/53-91;
+                    il_main = #body,ro/351-553;
+		    		il_main = potion_mana_large;
+				il_main = potion_health_large;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/175-231;
+	                il_main = #armor/-rare(1)/502-561;
+                    il_main = #*/-rare(1)/175-231;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/175-231;
+	                il_main = #armor/-unique(2)/502-561;
+                    il_main = #*/-unique(2)/175-231;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 159547;
+					min = 149717;
+				}
+				
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 286;
+		damage_min = 280;
+	}
+
+}
+
+[t:template,n:ut2w_doppelganger_2]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_doppelganger_2";
+	specializes = dsx_doppelganger_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =		29.8, 0;
+			intelligence = 	11.5, 0;
+			dexterity = 	13.9, 0;
+            		melee =  		75,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 138850;
+		life = 1517;
+		max_life = 1517;
+		mana = 32.8;
+		max_mana = 32.8;
+	}
+
+	[common]
+	{
+		screen_name = "Doppleganger Terrorizer";
+		membership = monster,immune_freeze;
+	}
+	[doppelganger]{ statsMultiplier = 1.0; }
+	[defend] { defense=1556; }
+	[inventory]
+	{
+		drop_at_use_point = true;
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 19, Strong */
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/157-211;
+                    il_main = #armor/103-512;
+	                il_main = #spell/53-91;
+                    il_main = #body,ro/351-553;
+		    		il_main = potion_mana_large;
+				il_main = potion_health_large;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/175-231;
+	                il_main = #armor/-rare(1)/502-561;
+                    il_main = #*/-rare(1)/175-231;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/175-231;
+	                il_main = #armor/-unique(2)/502-561;
+                    il_main = #*/-unique(2)/175-231;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 159547;
+					min = 149717;
+				}			
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 272;
+		damage_min = 236;
+	}
+}
+
+[t:template,n:ut2w_doppelganger_boss]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_doppelganger_boss";
+	specializes = dsx_doppelganger_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =	29.8, 0;
+			intelligence = 	11.5, 0;
+			dexterity = 	13.9, 0;
+            		melee =  	75,  0;
+		}
+	}
+	[aspect]
+	{
+		scale_base = 2.0;
+		experience_value = 138850;
+		life = 4517;
+		max_life = 4517;
+		mana = 32.8;
+		max_mana = 32.8;
+	}
+	[common]
+	{
+		screen_name = "Masterful Doppleganger";
+		membership = monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;		
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("doppelganger_body_boss");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_blue(sgx)");
+			}
+		}
+	}
+	[inventory]
+	{
+		drop_at_use_point = true;
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 19, Special */
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #*/157-211;
+                    il_main = #armor/103-512;
+	                il_main = #spell/53-91;
+                    il_main = #body,ro/351-553;
+				}
+				[oneof*]
+				{
+	                il_main = #weapon/-rare(1)/175-231;
+	                il_main = #armor/-rare(1)/502-561;
+                    il_main = #*/-rare(1)/175-231;
+                }
+				[oneof*]
+				{
+	                il_main = #weapon/-unique(2)/175-231;
+	                il_main = #armor/-unique(2)/502-561;
+                    il_main = #*/-unique(2)/175-231;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 159547;
+					min = 149717;
+				}			
+			}
+		}
+	}
+	[defend] { defense=2884; }
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 299;
+		damage_min = 283;
+	}
+	
+	[doppelganger]
+	{ 
+		statsMultiplier = 2.5;
+		effect_script = doppelganger_glow_boss;
+	}
+}

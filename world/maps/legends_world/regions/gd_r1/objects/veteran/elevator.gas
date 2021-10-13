@@ -1,0 +1,34 @@
+[t:elevator_2s_1c_1n,n:0x00900150]
+{
+	[elevator_2s_1c_1n]
+	{
+	  i connect_door_level1 = 11;
+	  i connect_door_level2 = 5;
+	  x connect_node = 0x3BCDF65D;
+	  f duration = 1.5;
+	  i elevator_door_level1 = 3;
+	  i elevator_door_level2 = 3;
+	  x elevator_node = 0x0BFCDC11;
+	}
+	[placement]
+	{
+	  p position = 0.124126,-5,-1.00375,0x4e399e18;
+	}
+}
+[t:elevator_2s_1c_1n,n:0x00900151]
+{
+	[elevator_2s_1c_1n]
+	{
+	  i connect_door_level1 = 7;
+	  i connect_door_level2 = 9;
+	  x connect_node = 0x3BCDF65D;
+	  f duration = 1;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0x4E399E18;
+	}
+	[placement]
+	{
+	  p position = -0.499447,-5,0.687532,0x4e399e18;
+	}
+}

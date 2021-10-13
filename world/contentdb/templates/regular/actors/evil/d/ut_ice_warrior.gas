@@ -1,0 +1,375 @@
+[t:template,n:ut_ice_warrior]
+{
+	category_name = "1W_evil_d";
+	doc = "ice_warrior";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  18, 0;
+			intelligence =  4, 0;
+			dexterity 	=  10, 0;
+            melee 		=  7,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 348;
+		life = 288;
+        max_life = 288;
+        mana = 8;
+		max_mana = 8;
+		model = m_c_edm_iw_pos_1;
+		material = ice;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_ice_warrior;			}
+			[enemy_spotted]	{ priority = high; * = s_e_call_ice_creature_SED;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 33;
+		damage_min = 29;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.5;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee = 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_iw_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Ice Warrior";
+		membership = monster, party_ice_archer,immune_freeze;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+    [defend] { defense=98; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+
+    	[pcontent]
+		{
+			[all*]
+			{
+                  es_weapon_hand = sd_un_ice_avg;
+			}
+
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/10-14;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/6-11;
+					il_main = #armor/18-98;
+	                il_main = #weapon/36-44;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/42-59;
+	                il_main = #armor/-rare(1)/126-144;
+                    il_main = #*/-rare(1)/42-59;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/42-59;
+	                il_main = #armor/-unique(2)/126-144;
+                    il_main = #*/-unique(2)/42-59;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 328;
+					min = 239;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+
+		jat_fidget 						= world\ai\jobs\common\job_fidget.skrit;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		explosion_magnitude = 1.75;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_ice_01 = 2;
+			frag_glb_ice_02 = 1;
+			frag_glb_ice_03 = 3;
+			frag_glb_ice_04 = 1;
+			frag_glb_ice_05 = 2;
+			frag_glb_ice_06 = 1;
+			frag_glb_ice_07 = 1;
+			frag_glb_ice_08 = 3;
+		}
+	}
+}
+[t:template,n:ut_ice_warrior_boss_01]
+{
+	category_name = "1W_evil_d";
+	doc = "ice_warrior boss";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  18, 0;
+			intelligence =  5, 0;
+			dexterity 	=  11, 0;
+            melee 		=  13,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 550;
+		life = 727;
+        	max_life = 727;
+        	mana = 8;
+		max_mana = 8;
+		model = m_c_edm_iw_pos_1;
+		textures:0 = b_c_edm_iw-02;
+		material = ice;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_ice_warrior; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 33;
+		damage_min = 29;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.5;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee = 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_iw_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Shardshiver The Warmaster";
+		membership = monster,party_ice_archer,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("ice_warrior");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_cyan(sgx)");
+			}
+		}
+	}
+    [defend] { defense=262; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+
+    	[pcontent]
+		{
+			[all*]
+			{
+                  es_weapon_hand = sd_un_ice_avg;
+			}
+
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #armor,f/130-145;
+	                il_main = #weapon/44-48;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/51-59;
+	                il_main = #armor/-rare(1)/155-172;
+                    il_main = #*/-rare(1)/51-59;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/51-59;
+	                il_main = #armor/-unique(2)/155-172;
+                    il_main = #*/-unique(2)/51-59;
+	            }
+				[gold*]
+				{
+					max = 484;
+					min = 241;
+					min_pile = 41;
+					piles = 2 - 4;
+				}
+			}
+		}
+	}
+
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&form_party_on_friend_entered_ICZ	= true
+			&form_party_on_friend_entered_OCZ	= true
+			&stop_flee_alive_party_size			= 1
+			&party_template						= "party_ice_archer";
+
+		jat_fidget 						= world\ai\jobs\common\job_fidget.skrit
+			?still						= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		explosion_magnitude = 1.75;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_ice_01 = 2;
+			frag_glb_ice_02 = 1;
+			frag_glb_ice_03 = 3;
+			frag_glb_ice_04 = 1;
+			frag_glb_ice_05 = 2;
+			frag_glb_ice_06 = 1;
+			frag_glb_ice_07 = 1;
+			frag_glb_ice_08 = 3;
+		}
+	}
+}

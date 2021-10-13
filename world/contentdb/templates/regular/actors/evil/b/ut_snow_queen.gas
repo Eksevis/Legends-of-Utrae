@@ -1,0 +1,182 @@
+[t:template,n:ut_queen_snow]
+{
+	category_name = "1W_evil_b";
+	doc = "world3 snow queen";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  9, 0;
+			intelligence 	=  22, 0;
+			dexterity 	=  10, 0;
+			melee 		=  3,  0;
+            		combat_magic 	= 16, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 1850;
+		max_life = 1850;
+		mana = 1200;
+		max_mana = 1200;
+        	experience_value = 500;
+		model=m_c_gah_fg_pos_a7;
+		textures:0 = b_c_gah_fg_skin_26;
+        	textures:1 = b_c_pos_a7_051;
+        	scale_base = 1.5;
+        [voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 25;
+		damage_min = 25;
+	}
+	[body]
+	{
+		avg_move_velocity = 3.000000;
+		max_move_velocity = 10000.0;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ebb_sq_fs;
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] 
+				{ 
+					00=mg;
+					01=mg-02;
+					02=mg-03;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Snow Queen";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				action* = call_sfx_script("snow_queen_head_frost");
+			}
+			[*]
+			{
+				action* = call_sfx_script("snow_queen_die");
+				condition* = receive_world_message("we_killed");
+			}
+		}
+	}
+    	[defend] { defense=300; }
+
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-04;
+		
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=gpg_spell_snow_queen_frost_stream;
+			il_spell_2 = gpg_spell_snow_queen_summon;
+			il_spell_3 = gpg_spell_snow_queen_frost_beam;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					max = 521;
+					min = 284;
+					min_pile = 10;
+					piles = 4 - 6;
+				}
+				[all*]
+				{
+					il_main = #weapon/44-56;
+					il_main = #body/119-135;
+				    	il_main = #body,ro/119-135;
+					max = 3;
+					min = 1;
+				}
+             		}
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit;
+
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&use_base_duration			= false
+			&spell_chances				= "0.3,                               0.4,                         0.3"
+			&spells						= "gpg_spell_snow_queen_frost_stream, gpg_spell_snow_queen_summon, gpg_spell_snow_queen_frost_beam;
+
+		jat_die 						= world\ai\jobs\actors\evil\job_die_explode.skrit;
+		
+		jat_flee_from_object			= world\ai\jobs\common\job_flee_from_object.skrit
+			?run_chance					= 1.0;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range 				= 20;
+		personal_space_range 			= 0.7;
+		ranged_engage_range 			= 20.0;
+		sight_range 					= 20.0;
+		
+		flee_count 						= 1000;
+		flee_distance					= 6;
+	}
+	[physics]
+	{
+		break_effect = snow_queen_explosion;
+	}
+}

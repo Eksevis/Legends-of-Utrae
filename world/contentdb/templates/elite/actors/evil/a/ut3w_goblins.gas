@@ -1,0 +1,363 @@
+[t:template,n:ut3W_goblin_grunt]
+{
+	category_name = "3W_evil_a";
+	doc = "3W_Goblin Grunt";
+	specializes = 3W_base_goblin;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	19.1, 0;
+			intelligence =  	18.7, 0;
+			dexterity =  	24, 0;
+			melee =  		88,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1299900;
+		life = 1162.7;
+		max_life = 1162.7;
+		mana = 87.2;
+		max_mana = 87.2;
+		model = m_c_eam_ggt_pos_1;
+		scale_base = 1.2;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 203.8;
+		damage_min = 141.9;
+	}
+	[common] 
+	{ 
+		screen_name="Goblin Fighter"; 
+	}
+	[defend] { defense=554.1; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+            [oneof*] { es_weapon_hand = hm_g_c_1h1m_low; }
+
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/179-286;
+					il_main = #armor/134-672;
+                	il_main = #nmagic/18-55;
+					il_main = #cmagic/18-55;
+                }
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/200-314;
+	                il_main = #armor/-rare(1)/480-796;
+                    il_main = #*/-rare(1)/200-314;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/200-314;
+	                il_main = #armor/-unique(2)/480-796;
+                    il_main = #*/-unique(2)/200-314;
+	            }
+			}
+		}
+    }
+	[mind]
+	{
+		on_life_ratio_low_flee = true;
+		flee_count = 1;
+		flee_distance = 20;
+		melee_engage_range = 10;
+		personal_space_range = 0.7;
+		ranged_engage_range = 10.0;
+		sight_range = 10.0;
+	}
+}
+[t:template,n:ut3W_goblin_guard]
+{
+	category_name = "3W_evil_a";
+	doc = "3W_Goblin Guard";
+	specializes = 3W_base_goblin;
+	[body]
+	{
+		max_move_velocity = 4.3;
+	}
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	24.6, 0;
+			intelligence =  	17.2, 0;
+			dexterity =  	24, 0;
+			melee =  		91,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2084000;
+		life = 1598.7;
+		max_life = 1598.7;
+		mana = 79.9;
+		max_mana = 79.9;
+		model = m_c_eam_ggt_pos_1;
+		scale_base = 1.2;
+		textures:0 = b_c_eam_ggd;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 438.6;
+		damage_min = 306.5;
+	}
+	[common] 
+	{ 
+		screen_name="Goblin Myrmidon"; 
+	}
+	[defend] { defense=735.8; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = ss_g_c_bl_1h_avg;
+               	es_weapon_hand = mc_g_c_s_1h_avg;
+               	es_weapon_hand = sd_g_c_gl_1h_avg;
+               	es_weapon_hand = ax_g_c_1h2b_avg;
+			}
+
+            [oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/179-293;
+					il_main = #armor/134-672;
+                	il_main = #nmagic/18-55;
+                	il_main = #cmagic/18-55;
+				}
+            	[oneof*]
+				{
+	        		chance = 0.004;
+	            	il_main = #weapon/-rare(1)/175-286;
+	            	il_main = #armor/-rare(1)/480-832;
+                	il_main = #*/-rare(1)/175-286;
+            	}
+				[oneof*]
+				{
+            		chance = 0.002;
+	            	il_main = #weapon/-unique(2)/175-286;
+	            	il_main = #armor/-unique(2)/480-832;
+                	il_main = #*/-unique(2)/175-286;
+                }
+	        }
+		}
+    }
+	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious	= 0.4
+			&social		= 0.35
+			&meander	= true
+			&interest	= interest
+			&still		= false;
+
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+[t:template,n:ut3w_goblin_blackguard]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_goblin_blackguard";
+	specializes = base_goblin;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	24.6, 0;
+			intelligence =  	17.2, 0;
+			dexterity =  	24, 0;
+			melee =  		91,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2084000;
+		life = 1598.7;
+		max_life = 1598.7;
+		mana = 79.9;
+		max_mana = 79.9;
+		model = m_c_eam_ggt_pos_1;
+		scale_base = 1.2;
+		textures:0 = b_c_eam_ggt-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 438.6;
+		damage_min = 306.5;
+	}
+	[common] 
+	{ 
+		screen_name="Goblin Warlord"; 
+	}
+	[defend] { defense=735.8; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+    		[equipment]
+          	{ 
+			es_weapon_hand = hm_g_c_dsx_goblin_blackguard;
+		}
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 26, Medium */
+		[oneof*]
+		{
+				[oneof*]
+				{
+				chance = 0.2;
+				il_main = #*/179-293;
+				il_main = #armor/134-672;
+                		il_main = #nmagic/18-55;
+                		il_main = #cmagic/18-55;
+				}
+            			[oneof*]
+				{
+	        		chance = 0.004;
+	            		il_main = #weapon/-rare(1)/175-286;
+	            		il_main = #armor/-rare(1)/480-832;
+                		il_main = #*/-rare(1)/175-286;
+            			}
+				[oneof*]
+				{
+            			chance = 0.002;
+	            		il_main = #weapon/-unique(2)/175-286;
+	            		il_main = #armor/-unique(2)/480-832;
+                		il_main = #*/-unique(2)/175-286;
+                		}
+			
+		}
+	}
+	}
+ 	[mind]
+	{
+		on_life_ratio_low_flee = true;
+		flee_count = .5;
+		flee_distance = 20;
+		melee_engage_range = 10;
+		personal_space_range = 0.7;
+		ranged_engage_range = 10.0;
+		sight_range = 10.0;
+	}
+}
+
+// Goblin Headsman
+[t:template,n:ut3w_goblin_headsman]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_goblin_guard";
+	specializes = base_goblin;
+	[body]
+	{
+		max_move_velocity = 4.3;
+	}
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	24.6, 0;
+			intelligence =  	17.2, 0;
+			dexterity =  	24, 0;
+			melee =  		91,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2084000;
+		life = 1598.7;
+		max_life = 1598.7;
+		mana = 79.9;
+		max_mana = 79.9;
+		model = m_c_eam_ggt_pos_1;
+		scale_base = 1.2;
+		textures:0 = b_c_eam_ggt-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 438.6;
+		damage_min = 306.5;
+	}
+	[common] 
+	{ 
+		screen_name="Goblin Overseer"; 
+	}
+	[defend] { defense=735.8; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+    	[equipment]
+		{
+			es_weapon_hand = sd_g_c_dsx_goblin_guard; 
+		}
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 26, Strong */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				chance = 0.2;
+				il_main = #*/179-293;
+				il_main = #armor/134-672;
+                		il_main = #nmagic/18-55;
+                		il_main = #cmagic/18-55;
+				}
+            			[oneof*]
+				{
+	        		chance = 0.004;
+	            		il_main = #weapon/-rare(1)/175-286;
+	            		il_main = #armor/-rare(1)/480-832;
+                		il_main = #*/-rare(1)/175-286;
+            			}
+				[oneof*]
+				{
+            			chance = 0.002;
+	            		il_main = #weapon/-unique(2)/175-286;
+	            		il_main = #armor/-unique(2)/480-832;
+                		il_main = #*/-unique(2)/175-286;
+                		}			
+			}
+		}	
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+		?curious	= 0.4
+		&social		= 0.35
+		&meander	= true
+		&interest	= interest
+		&still		= false;
+
+		jat_attack_object_melee = world\ai\jobs\common\job_attack_object_melee.skrit
+		?run_chance 			= 1.0;
+		melee_engage_range 		= 14;
+		personal_space_range 	= 0.7;
+		ranged_engage_range 	= 14.0;
+		sight_range 			= 14.0;
+	}
+}

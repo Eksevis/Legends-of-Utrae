@@ -1,0 +1,1374 @@
+//Thanks to Madigan for his job_talk_face skrit and job_fidget_mosey skrit ;D
+//
+[t:template,n:base_ut_city_walker]
+{
+   category_name = "1w_character";
+   doc = "base character for city people";
+   specializes = base_npc_fb_multiplayer;
+   [conversation] {  }
+   [actor]
+   {
+      alignment         = aa_good;
+      [skills]
+      {
+         strength =  5, 0;
+         intelligence =  5, 0;
+         dexterity =  5, 0;
+      }
+   }
+   [aspect]
+   {
+      experience_value = 1;
+      life = 25;
+      max_life = 25;
+        is_invincible     = true;
+      is_collidable   = false;
+      life_state = ls_alive_conscious;
+      draw_shadow = true;
+   }
+   [attack]
+   {
+      attack_range = 1;
+      damage_max = 1;
+      damage_min = 1;
+      is_melee = false;
+      reload_delay = 1;
+   }
+   [body]
+   {
+      avg_move_velocity = 1.360000;
+      [bone_translator]
+      {
+            body_anterior = bip01_head;
+         body_mid = bip01_spine2;
+         body_posterior = bip01_pelvis;
+         kill_bone = bip01_spine2;
+         shield_bone = shield_grip;
+         weapon_bone = weapon_grip;
+      }
+[chore_dictionary]
+      {
+         chore_prefix = a_c_gah_fb_fs;
+         [chore_attack]
+         {
+            chore_stances = 0,1,2,3,4,5,6,7;
+            skrit = select_attack;
+            [anim_files]
+            {
+               00 = at;
+            }
+         }
+         [chore_default]
+         {
+            chore_stances = 0,1,2,3,4,5,6,7;
+            skrit = infinite_loop;
+            [anim_files]
+            {
+               00 = ds;
+            }
+         }
+         [chore_die]
+         {
+            chore_stances = 0,1,2,3,4,5,6,7;
+            skrit = select_transition;
+            [anim_files]
+            {
+               00 = di;
+            }
+         }
+         [chore_fidget]
+         {
+            chore_stances = 0,1,2,3,4,5,6,7;
+            skrit = select_fidget;
+            [anim_files]
+            {
+               00 = dsf;
+               01 = dsf-02;
+            }
+         }
+         [chore_misc]
+         {
+            chore_stances = ignore;
+            skrit = select_transition;
+            [anim_files]
+            {
+               sit1 = a_c_gah_fb_fs0_dsf-08;
+            }
+         }
+         [chore_walk]
+         {
+            chore_stances = 0,1,2,3,4,5,6;
+            skrit = select_walk;
+            [anim_files]
+            {
+               00 = wl;
+            }
+         }
+      }
+   }
+   [common] { screen_name="Crazy walking NPC person"; }
+    [inventory]
+   {
+      [equipment]
+      {
+         es_feet = bo_bo_le_light;
+      }
+   }
+   [mind]
+   {
+      jat_die = jat_none;
+      jat_fidget = world\ai\jobs\actors\good\job_fidget_mosey_advanced.skrit;
+      jat_talk   = world\ai\jobs\actors\good\job_talk_face.skrit;
+
+      actor_auto_fidgets = true;
+
+      on_enemy_spotted_alert_friends             = false;
+      on_enemy_spotted_attack                    = false;
+      actor_auto_defends_others                  = true;
+      actor_auto_heals_others_life               = false;
+      actor_auto_heals_others_mana               = false;
+      actor_auto_heals_self_life                 = false;
+      actor_auto_heals_self_mana                 = false;
+      actor_auto_xfers_mana                      = false;
+      actor_may_attack 							 = false;
+        actor_may_be_attacked 					 = false;
+      melee_engage_range                         = 10;
+      personal_space_range                       = 0.7;
+      ranged_engage_range                        = 10;
+      sight_range                                = 10;
+      combat_orders                              = co_free;
+      movement_orders                            = mo_free;
+   }
+}
+[t:template,n:ut_walking_mp_townfolk_male_06]
+{
+	category_name = "1w_character";
+	doc = "walking_mp_townfolk_male_06";
+	specializes = base_ut_city_walker;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_wh;
+	}
+	[aspect]
+	{
+		draw_selection_indicator = TRUE;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_17;
+			1 = b_c_pos_a1_033;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[conversation]
+	{
+	}
+}
+[t:template,n:ut_walking_townfolk_m_01]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_m_01";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_14;
+			1 = b_c_pos_a1_029;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-02;
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_townfolk_m_02]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_m_02";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_22;
+			1 = b_c_pos_a1_064;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-03;
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_townfolk_m_03]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_m_03";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_19;
+			1 = b_c_pos_a1_060;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_townfolk_m_04]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_m_04";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_23;
+			1 = b_c_pos_a1_063;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-03;
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_townfolk_m_05]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_m_05";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_27;
+			1 = b_c_pos_a1_036;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_townfolk_m_06]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_m_06";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_15;
+			1 = b_c_pos_a1_040;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-03;
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_townfolk_male_05]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_Male Townsperson 05";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_06;
+			1 = b_c_pos_a1_010;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_m_01]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_m_01";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_14;
+			1 = b_c_pos_a1_029;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-02;
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_m_02]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_m_02";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_22;
+			1 = b_c_pos_a1_064;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-03;
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_m_03]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_m_03";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_19;
+			1 = b_c_pos_a1_060;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_m_04]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_m_04";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_23;
+			1 = b_c_pos_a1_063;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-03;
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_m_05]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_m_05";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_27;
+			1 = b_c_pos_a1_036;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_m_06]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_m_06";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_15;
+			1 = b_c_pos_a1_040;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-03;
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_Utraean_Priest_Ferdl]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_Utraean_Priest_Ferdl";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_15;
+			1 = b_c_pos_a1_040;
+		}
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fb_hlmt_head-03;
+		[equipment]
+		{
+			es_chest = bd_ra_ro_m_g_c_084;
+			es_feet = bo_bo_le_light;
+		}
+        [pcontent]
+        {
+			[all*]
+			{
+    	        il_main = emitter_ferdl_reward_mp;
+			}
+        }
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_male_01]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_male_01";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_02;
+			1 = b_c_pos_a1_002;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_male_02]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_male_02";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_03;
+			1 = b_c_pos_a1_003;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_male_03]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_male_03";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_04;
+			1 = b_c_pos_a1_004;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_male_04]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_male_04";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_05;
+			1 = b_c_pos_a1_009;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_townfolk_male_05]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_townfolk_male_05";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_06;
+			1 = b_c_pos_a1_010;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_walking_mp_village_idiot]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_mp_village_idiot";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_21;
+			1 = b_c_pos_a1_055;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+}
+[t:template,n:ut_skartis]
+{
+	category_name = "1W_character";
+	doc = "skartis, simple farmer";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		draw_selection_indicator = TRUE;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_026;
+			1 = b_c_pos_a1_015;
+		}
+	}
+	[common]
+	{
+		screen_name = "Skartis";
+	}
+	[conversation]
+	{
+	}
+}
+
+/////moving guards, patrol dudes
+
+[t:template,n:ut_walking_guard]
+{
+	category_name = "1w_character";
+	doc = "walking_guard";
+	specializes = base_ut_city_walker;
+	[actor]
+	{
+		[skills]
+		{
+			dexterity = 14,  0;
+			intelligence = 13,  0;
+			melee = 10,  0;
+			strength = 17, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_selection_indicator = true;
+		is_collidable = true;
+        [textures]
+		{
+			0 = b_c_gah_fb_skin_02;
+		}
+	}
+	[common]
+	{
+		screen_name = "City Guard";
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_un_pl_f_g_c_fun;
+			es_feet = bo_bo_ch_f_g_c_avg;
+			es_forearms = gl_ga_bl_f_g_c_avg;
+			es_head = he_op_pl_eyes;
+			es_shield_hand = sh_m_g_c_r_s_avg;
+			es_weapon_hand = #sd_g_c_st_1h_avg:o_avg;
+		}
+	}
+	[mind]
+	{
+		actor_may_attack = true;
+        actor_may_be_attacked = true;
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+}
+[t:template,n:ut_walking_guard_captain]
+{
+	category_name = "1w_character";
+	doc = "walking_guard_captain";
+	specializes = base_ut_city_walker;
+	[actor]
+	{
+		[skills]
+		{
+			dexterity = 16,  0;
+			intelligence = 15,  0;
+			melee = 15,  0;
+			strength = 20, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_selection_indicator = true;
+		is_collidable = true;
+        [textures]
+		{
+			0 = b_c_gah_fb_skin_12;
+		}
+	}
+	[common]
+	{
+		screen_name = "City Guard Captain";
+	}
+	[conversation]
+	{
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_un_pl_f_g_c_avg;
+			es_feet = bo_bo_sc_f_g_c_avg;
+			es_forearms = gl_ga_fp_f_g_c_avg;
+			es_head = he_op_pl_roman;
+			es_shield_hand = sh_w_g_c_r_m_avg;
+			es_weapon_hand = #sd_g_c_st_1h_avg:o_fin;
+		}
+	}
+	[mind]
+	{
+		actor_may_attack = true;
+        actor_may_be_attacked = true;
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+}
+[t:template,n:ut_walking_guard_ranged]
+{
+	category_name = "1w_character";
+	doc = "walking_guard_ranged";
+	specializes = base_ut_city_walker;
+	[actor]
+	{
+		[skills]
+		{
+			dexterity = 14,  0;
+			intelligence = 13,  0;
+			melee = 10,  0;
+			strength = 17, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_selection_indicator = true;
+		is_collidable = true;
+        [textures]
+		{
+			0 = b_c_gah_fb_skin_004;
+		}
+	}
+	[common]
+	{
+		screen_name = "City Guard Archer";
+	}
+	[conversation]
+	{
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_ranged_weapon;
+		[equipment]
+		{
+			es_chest = bd_un_pl_f_g_c_avg;
+			es_feet = bo_bo_ch_f_g_c_avg;
+			es_head = he_op_pl_avg;
+			es_shield_hand = bw_g_c_s_m_c_avg;
+		}
+	}
+	[mind]
+	{
+		actor_may_attack = true;
+        actor_may_be_attacked = true;
+		jat_talk = world\ai\jobs\common\job_talk.skrit;
+	}
+}
+[t:template,n:ut_walking_guard_02]
+{
+	category_name = "1w_character";
+	doc = "walking_guard_02";
+	specializes = base_ut_city_walker;
+	[aspect]
+	{
+		is_collidable = true;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_03;
+			1 = b_c_pos_a1_003;
+		}
+	}
+	[common]
+	{
+		screen_name = "City Guard";
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_un_pl_f_g_c_fun;
+			es_feet = bo_bo_ch_f_g_c_avg;
+			es_forearms = gl_ga_bl_f_g_c_avg;
+			//es_head = he_op_pl_eyes;
+			es_shield_hand = sh_m_g_c_r_s_avg;
+			es_weapon_hand = #sd_g_c_st_1h_avg:o_avg;
+		}
+	}
+	[mind]
+	{
+		actor_may_attack = true;
+        actor_may_be_attacked = true;
+    }
+}
+
+
+/////////////women:
+[t:template,n:base_ut_city_walkerf]
+{
+   category_name = "1w_character";
+   doc = "base character for city people";
+   specializes = base_npc_fg;
+   [conversation] {  }
+   [actor]
+   {
+      alignment         = aa_good;
+      [skills]
+      {
+         strength =  5, 0;
+         intelligence =  5, 0;
+         dexterity =  5, 0;
+      }
+   }
+   [aspect]
+   {
+      experience_value = 1;
+      life = 25;
+      max_life = 25;
+        is_invincible     = false;
+      is_collidable   = false;
+      life_state = ls_alive_conscious;
+      draw_shadow = true;
+   }
+   [attack]
+   {
+      attack_range = 1;
+      damage_max = 1;
+      damage_min = 1;
+      is_melee = false;
+      reload_delay = 1;
+   }
+   [body]
+   {
+       armor_version = gah_fg;
+      avg_move_velocity = 1.300000;
+      [bone_translator]
+      {
+            body_anterior = bip01_head;
+         body_mid = bip01_spine2;
+         body_posterior = bip01_pelvis;
+         kill_bone = bip01_spine2;
+         shield_bone = shield_grip;
+         weapon_bone = weapon_grip;
+      }
+[chore_dictionary]
+      {
+         chore_prefix = a_c_gah_fg_fs;
+         [chore_attack]
+         {
+            chore_stances = 0,1,2,3,4,5,6,7;
+            skrit = select_attack;
+            [anim_files]
+            {
+               00 = at;
+            }
+         }
+         [chore_default]
+         {
+            chore_stances = 0,1,2,3,4,5,6,7;
+            skrit = infinite_loop;
+            [anim_files]
+            {
+               00 = ds;
+            }
+         }
+         [chore_die]
+         {
+            chore_stances = 0,1,2,3,4,5,6,7;
+            skrit = select_transition;
+            [anim_files]
+            {
+               00 = di;
+            }
+         }
+         [chore_fidget]
+         {
+            chore_stances = 0,1,2,3,4,5,6,7;
+            skrit = select_fidget;
+            [anim_files]
+            {
+               00 = dsf;
+               01 = dsf-02;
+            }
+         }
+         [chore_misc]
+         {
+            chore_stances = ignore;
+            skrit = select_transition;
+            [anim_files]
+            {
+               sit1 = a_c_gah_fg_fs0_dsf-08;
+            }
+         }
+         [chore_walk]
+         {
+            chore_stances = 0,1,2,3,4,5,6;
+            skrit = select_walk;
+            [anim_files]
+            {
+               00 = wl;
+            }
+         }
+      }
+   }
+   [common] { screen_name="Crazy walking NPC person"; }
+    [inventory]
+   {
+      [equipment]
+      {
+         es_feet = bo_bo_le_light;
+      }
+   }
+   [mind]
+   {
+      jat_die = jat_none;
+      jat_fidget = world\ai\jobs\actors\good\job_fidget_mosey_advanced.skrit;
+      jat_talk   = world\ai\jobs\actors\good\job_talk_face.skrit;
+
+      actor_auto_fidgets = true;
+
+      on_enemy_spotted_alert_friends             = false;
+      on_enemy_spotted_attack                    = false;
+      actor_auto_defends_others                  = true;
+      actor_auto_heals_others_life               = false;
+      actor_auto_heals_others_mana               = false;
+      actor_auto_heals_self_life                 = false;
+      actor_auto_heals_self_mana                 = false;
+      actor_auto_xfers_mana                      = false;
+      actor_may_attack 							 = false;
+        actor_may_be_attacked 					 = false;
+      melee_engage_range                         = 10;
+      personal_space_range                       = 0.7;
+      ranged_engage_range                        = 10;
+      sight_range                                = 10;
+      combat_orders                              = co_free;
+      movement_orders                            = mo_free;
+   }
+}
+
+
+[t:template,n:ut_walking_townfolk_f_02]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_f_02";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_16;
+			1 = b_c_pos_a1_038;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-05;
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_f_03]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_f_03";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_21;
+			1 = b_c_pos_a1_063;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-04;
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_f_04]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_f_04";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_13;
+			1 = b_c_pos_a1_058;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_f_05]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_f_05";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		model = m_c_gah_fg_pos_a7;
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_24;
+			1 = b_c_pos_a7_049;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-03;
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_f_06]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_f_06";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_07;
+			1 = b_c_pos_a1_061;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-04;
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_female_01]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_Female Townsperson 01";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		draw_selection_indicator = FALSE;
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_22;
+			1 = b_c_pos_a1_059;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-02;
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_female_02]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_Female Townsperson 02";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		draw_selection_indicator = FALSE;
+		model = m_c_gah_fg_pos_b1;
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_03;
+			1 = b_c_pos_b1_002;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-03;
+		[equipment]
+		{
+			[other]
+			{
+			}
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_female_03]
+{
+	category_name = "1w_townsperson";
+	doc = "Female Townsperson 03";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		draw_selection_indicator = FALSE;
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_04;
+			1 = b_c_pos_a1_056;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-03;
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_female_04]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_Female Townsperson 04";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		draw_selection_indicator = FALSE;
+		model = m_c_gah_fg_pos_b1;
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_05;
+			1 = b_c_pos_b1_004;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			[other]
+			{
+			}
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_female_05]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_Female Townsperson 05";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		draw_selection_indicator = FALSE;
+		model = m_c_gah_fg_pos_b1;
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_06;
+			1 = b_c_pos_b1_005;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			[other]
+			{
+			}
+		}
+	}
+}
+[t:template,n:ut_walking_townfolk_female_06]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_Female Townsperson 06";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		draw_selection_indicator = FALSE;
+		model = m_c_gah_fg_pos_b1;
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_07;
+			1 = b_c_pos_b1_002;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			[other]
+			{
+			}
+		}
+	}
+}
+[t:template,n:ut_walking_townswoman_f_01]
+{
+	category_name = "1w_townsperson";
+	doc = "walking_townfolk_f_01";
+	specializes = base_ut_city_walkerf;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_14;
+			1 = b_c_pos_a1_073;
+		}
+	}
+	[common]
+	{
+		screen_name = "Townsperson";
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+}
+
+//walking sorceress, she will sell gooooood stuff ;D
+
+[t:template,n:ut_walking_sorceress]
+{
+	category_name = "1w_shopkeep";
+	doc = "walking_sorceress";
+	specializes = base_ut_city_walkerf;
+	[actor]	{portrait_icon = b_gui_ig_i_ic_c_vielle;}
+	[aspect]
+	{
+		draw_selection_indicator = TRUE;
+		is_ghost_usable = TRUE;
+		model = m_c_gah_fg_pos_a7;
+		use_range = 1;
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_12;
+			1 = b_c_pos_a7_018;
+		}
+	}
+	[common]
+	{
+		screen_name = "Nameless Sorceress";
+	}
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		custom_head = m_c_gah_fg_hlmt_head-05;
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+		[store_pcontent]
+		{
+			full_ratio = 0.8;
+			[magic]
+			{
+				[all*]
+				{
+					il_main = #spell/35-56;
+					max = 40;
+					min = 40;
+				}
+				[all*]
+				{
+					il_main = #spell/0-34;
+					max = 10;
+					min = 10;
+				}
+			}
+			[misc]
+			{
+                [all*]
+				{
+					il_main = #spellbook/81-152;
+					max = 6;
+					min = 4;
+				}
+				[all*]
+				{
+					il_main = book_glb_magic_01;
+					max = 5;
+					min = 5;
+				}
+			}
+		}
+	}
+	[respawn_shrine]
+	{
+	}
+	[store]
+	{
+		item_markup = 2;
+
+		[item_restock]
+		{
+			potion_health_small = 5;
+			potion_health_medium = 10;
+			potion_health_large = 15;
+			potion_mana_small = 5;
+			potion_mana_medium = 10;
+			potion_mana_large = 15;
+			potion_rejuvenation_small = 2;
+			potion_rejuvenation_medium = 2;
+			potion_rejuvenation_large = 3;
+
+			scroll_resurrect = 10;
+            spell_resurrect = 10;
+            spell_revive = 10;
+            spell_healing_hands = 10;
+
+            spell_fireshot = 4;
+            spell_zap = 4;
+		}
+	}
+}
+

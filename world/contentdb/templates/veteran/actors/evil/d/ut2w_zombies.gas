@@ -1,0 +1,1050 @@
+[t:template,n:2W_ut_zombie_01]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie";
+	specializes = 2W_base_zombie;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	25.5,0;
+			intelligence =  4,0;
+			dexterity =  	12.2,0;
+			melee =  		57,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 76284;
+		life = 1722.2;
+		max_life = 1722.2;
+		mana = 16.7;
+		max_mana = 16.7;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 271.9;
+		damage_min = 202.5;
+	}
+	[common] { screen_name="Zombie"; }
+	[defend] { defense=325.9; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/33-50;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #armor/94-461;
+	                il_main = #weapon/123-202;
+				}
+				[oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/164-213;
+	                   il_main = #armor/-rare(1)/500-625;
+                       il_main = #*/-rare(1)/164-213;
+                }
+				[oneof*]
+				{
+                       chance = 0.002;
+	                   il_main = #weapon/-unique(2)/164-213;
+	                   il_main = #armor/-unique(2)/500-625;
+                       il_main = #*/-unique(2)/164-213;
+	            }
+
+				[gold*]
+				{
+					chance = 0.15;
+					max = 101098;
+					min = 55814;
+				}
+			}
+		}
+	}
+}
+[t:template,n:ut2W_zombie_01]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie";
+	specializes = 2W_ut_zombie_01;
+}
+[t:template,n:ut2W_zombie_01_ar]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie auto-reveal";
+	specializes = 2W_ut_zombie_01;
+	[mind]
+	{
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?auto_reveal 				= true;
+	}
+}
+
+[t:template,n:2W_ut_zombie_02]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_decayed";
+	specializes = 2W_base_zombie;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	25.5,0;
+			intelligence =  4,0;
+			dexterity =  	12.2,0;
+			melee =  		57,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 76284;
+		life = 1722.2;
+		max_life = 1722.2;
+		mana = 16.7;
+		max_mana = 16.7;
+		[textures] { 0=b_c_edm_zo-02; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 275;
+		damage_min = 200;
+	}
+	[common] { screen_name="Ghoul Mare"; }
+	[defend] { defense=325.9; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/33-50;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #armor/94-461;
+	                il_main = #weapon/123-202;
+				}
+				[oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/164-213;
+	                   il_main = #armor/-rare(1)/500-625;
+                       il_main = #*/-rare(1)/164-213;
+                }
+				[oneof*]
+				{
+                       chance = 0.002;
+	                   il_main = #weapon/-unique(2)/164-213;
+	                   il_main = #armor/-unique(2)/500-625;
+                       il_main = #*/-unique(2)/164-213;
+	            }
+
+				[gold*]
+				{
+					chance = 0.15;
+					max = 101098;
+					min = 55814;
+				}
+			}
+		}
+	}
+}
+[t:template,n:ut2W_zombie_02]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_decayed";
+	specializes = 2W_ut_zombie_02;
+}
+[t:template,n:ut2W_zombie_02_boss_01]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_decayed boss 01";
+	specializes = 2W_ut_zombie_02;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	42.5,0;
+			intelligence =  8.1,0;
+			dexterity =  	24.5,0;
+			melee =  		68,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 92800;
+		life = 3200;
+		max_life = 3200;
+		mana = 16.7;
+		max_mana = 16.7;
+		[textures] { 0=b_c_edm_zo-08; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 290.3;
+		damage_min = 212.5;
+	}
+	[common]
+	{
+		screen_name="Wretched Ghoul";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_red(sgx)");
+			}
+		}
+	}
+	[defend] { defense=775; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.1;
+	                il_main = #spell/81-86;
+				}
+				[oneof*]
+				{
+					chance = 0.694;
+					il_main = #*/205-221;
+					il_main = #armor/694-806;
+	                il_main = #weapon/205-221;
+				}
+				[oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/164-221;
+	                   il_main = #armor/-rare(1)/611-806;
+                       il_main = #*/-rare(1)/164-221;
+                }
+				[oneof*]
+				{
+                       chance = 0.002;
+	                   il_main = #weapon/-unique(2)/164-221;
+	                   il_main = #armor/-unique(2)/611-806;
+                       il_main = #*/-unique(2)/164-221;
+	            }
+				[gold*]
+				{
+					chance = 0.2;
+					max = 192298;
+					min = 155758;
+					min_pile = 622;
+					piles = 3 - 5;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_startup = jat_none;
+		actor_auto_fidgets = true;
+	}
+}
+
+
+[t:template,n:ut2W_zombie_02_ar]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_decayed auto-reveal";
+	specializes = 2W_ut_zombie_02;
+	[mind]
+	{
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?auto_reveal 				= true;
+	}
+}
+
+
+[t:template,n:2W_ut_zombie_03]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_pudgy";
+	specializes = 2W_base_zombie;
+	[body]
+	{
+		max_move_velocity = 1.4;
+	}
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	25.5,0;
+			intelligence =  5.4,0;
+			dexterity =  	12.2,0;
+			melee =  		58,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 76284;
+		life = 1722.2;
+		max_life = 1722.2;
+		mana = 22.2;
+		max_mana = 22.2;
+		model = m_c_edm_zo_pos_2;
+		[textures] { 0=b_c_edm_zo-03; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 293.3;
+		damage_min = 215;
+	}
+	[common] { screen_name="Ghoul"; }
+	[defend] { defense=353.7; }
+	[mind]
+	{
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+	}
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/33-50;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #armor/94-461;
+	                il_main = #weapon/123-202;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/164-213;
+	                il_main = #armor/-rare(1)/500-625;
+                    il_main = #*/-rare(1)/164-213;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/164-213;
+	                il_main = #armor/-unique(2)/500-625;
+                    il_main = #*/-unique(2)/164-213;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 101098;
+					min = 55814;
+				}
+			}
+		}
+	}
+}
+[t:template,n:ut2W_zombie_03]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_pudgy";
+	specializes = 2W_ut_zombie_03;
+}
+[t:template,n:ut2W_zombie_03_ar]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_pudgy auto-reveal";
+	specializes = 2W_ut_zombie_03;
+	[mind]
+	{
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?auto_reveal 				= true;
+	}
+}
+
+[t:template,n:ut2W_walking_corpse]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_decayed";
+	specializes = 2W_base_zombie;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	31.5,0;
+			intelligence =  	4.4,0;
+			dexterity =  	9,0;
+			melee =  		57,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 17930;
+		life = 360;
+		max_life = 360;
+		mana = 60;
+		max_mana = 60;
+		[textures] { 0=b_c_edm_zo-02; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 123;
+		damage_min = 61;
+	}
+	[body]
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_sk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+					02 = at-03;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = wl;
+					01 = wl-02;
+					02 = wl-03;
+				}
+			}
+		}
+	}
+	[common] { screen_name="Crypt Zombie"; }
+	[defend] { defense=423.3; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.02;
+            	    il_main = #spell/20-60;
+				}
+				[oneof*]
+				{
+					chance = 0.17;
+					il_main = #*/127-181;
+					il_main = #armor/80-410;
+	                il_main = #weapon/127-181;
+				}
+        		[oneof*]
+				{
+	                   chance = 0.002;
+	                   il_main = #weapon/-rare(1)/181-244;
+	                   il_main = #armor/-rare(1)/200-450;
+	            }
+				[oneof*]
+				{
+					chance = 0.20;
+    			    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[gold*]
+				{
+					chance = 0.15;
+					max = 56218;
+					min = 27073;
+				}
+			}
+		}
+	}
+   	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?still				= false
+			&meander			= false;
+
+		actor_auto_fidgets = true;
+		jat_startup = jat_none;
+		on_enemy_spotted_alert_friends = true;
+	}
+}
+[t:template,n:ut2W_walking_corpse_boss_01]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_decayed";
+	specializes = 2W_base_zombie;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	42,0;
+			intelligence =  5.8,0;
+			dexterity =  	13.5,0;
+			melee =  		59,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 26600;
+		life = 460;
+		max_life = 460;
+		mana = 60;
+		max_mana = 60;
+		textures:0 = b_c_edm_zo-07;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 156;
+		damage_min = 96;
+	}
+	[body]
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_sk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+					02 = at-03;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = wl;
+					01 = wl-02;
+					02 = wl-03;
+				}
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Mummified Corpse";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_red(sgx)");
+			}
+		}
+	}
+	[defend] { defense=590; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.6;
+					il_main = #body,f/396-468;
+	                il_main = #weapon/172-199;
+				}
+        		[oneof*]
+				{
+	                   chance = 0.002;
+	                   il_main = #weapon/-rare(1)/199-271;
+	                   il_main = #armor/-rare(1)/450-550;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 56437;
+					min = 44291;
+					min_pile = 11;
+					piles = 2 - 3;
+				}
+			}
+		}
+	}
+   	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?still				= false
+			&meander			= false;
+
+		actor_auto_fidgets = true;
+		jat_startup = jat_none;
+		on_enemy_spotted_alert_friends = true;
+	}
+}
+
+[t:template,n:2W_ut_zombie_headless]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_headless";
+	specializes = 2W_base_zombie;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	25.5,0;
+			intelligence =  1.3,0;
+			dexterity =  	12.2,0;
+			melee =  		52,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 76284;
+		life = 2088.9;
+		max_life = 2088.9;
+		mana = 22.2;
+		max_mana = 22.2;
+		model = m_c_edm_zo_pos_3;
+		[textures] { 0=b_c_edm_zo-04; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 253.6;
+		damage_min = 187.5;
+	}
+	[common] { screen_name="Holgg"; }
+	[defend] { defense=367.6; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/33-50;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #armor/94-461;
+	                il_main = #weapon/123-202;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/134-219;
+	                il_main = #armor/-rare(1)/367-636;
+                    il_main = #*/-rare(1)/134-219;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/134-219;
+	                il_main = #armor/-unique(2)/367-636;
+                    il_main = #*/-unique(2)/134-219;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 112409;
+					min = 62400;
+				}
+			}
+		}
+	}
+}
+[t:template,n:ut2W_zombie_headless]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_headless";
+	specializes = 2W_ut_zombie_headless;
+}
+[t:template,n:ut2W_zombie_headless_ar]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_zombie_headless auto-reveal";
+	specializes = 2W_ut_zombie_headless;
+	[mind]
+	{
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?auto_reveal 				= true;
+	}
+}
+
+[t:template,n:2W_ut_goo_walker]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_goo walker";
+	specializes = 2W_base_zombie;
+	[actor]
+	{
+		[skills]
+		{
+			dexterity = 15.7, 0;
+			intelligence = 5.4, 0;
+   			combat_magic =  52,  0;
+			strength = 23.4, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 76284;
+		life = 1388.9;
+		mana = 16.7;
+		max_life = 1388.9;
+		max_mana = 16.7;
+		textures:0 = b_c_edm_zo-06;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 226.1;
+		damage_min = 180;
+		damage_bonus_min_cmagic = 115;
+		damage_bonus_max_cmagic = 153;
+	}
+	[common] { screen_name="Skinless One"; }
+   	[defend] { defense=341.7; }
+   	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_goo_walker_flesh; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/33-50;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #armor/94-461;
+	                il_main = #weapon/123-202;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/134-219;
+	                il_main = #armor/-rare(1)/367-636;
+                    il_main = #*/-rare(1)/134-219;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/134-219;
+	                il_main = #armor/-unique(2)/367-636;
+                    il_main = #*/-unique(2)/134-219;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 126660;
+					min = 69805;
+				}
+			}
+		}
+
+	}
+   	[mind]
+	{
+		actor_weapon_preference     = wp_magic;
+		actor_auto_switches_to_magic     = true;
+		melee_engage_range          = 2;
+		personal_space_range        = 0.7;
+		on_enemy_entered_ocz_attack = true;
+		ranged_engage_range         = 14.0;
+		sight_range                 = 14.0;
+	}
+}
+[t:template,n:ut2W_goo_walker]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_goo walker";
+	specializes = 2W_ut_goo_walker;
+}
+[t:template,n:ut2W_goo_walker_ar]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_goo walker auto-reveal";
+	specializes = 2W_ut_goo_walker;
+	[mind]
+	{
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?auto_reveal 				= true;
+	}
+}
+[t:template,n:ut2w_slime_zombie]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_slime_zombie";
+	specializes = base_zombie;
+	[actor]
+		{
+			[skills]
+				{
+			strength =  	25.5,0;
+			intelligence =  1.3,0;
+			dexterity =  	12.2,0;
+			melee =  		52,0;
+				}
+		}
+	[aspect]
+		{
+			[textures] { 0 = b_c_edm_slime_zombie; }
+		experience_value = 76284;
+		life = 1998.9;
+		max_life = 1998.9;
+		mana = 22.2;
+		max_mana = 22.2;
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_min = 230;
+			damage_max = 250;
+		}
+	[defend] { defense = 432; }
+	[common] { screen_name = "Gloomed One"; }
+	[inventory]
+		{
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 4, Medium */
+		[oneof*]
+		{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/33-50;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #armor/94-461;
+	                il_main = #weapon/123-202;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/134-219;
+	                il_main = #armor/-rare(1)/367-636;
+                    il_main = #*/-rare(1)/134-219;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/134-219;
+	                il_main = #armor/-unique(2)/367-636;
+                    il_main = #*/-unique(2)/134-219;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 112409;
+					min = 62400;
+				}
+		}
+	}	
+		}
+}
+
+[t:template,n:ut2w_muck_zombie]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_zombie_2";
+	specializes = base_zombie;
+	[actor]
+		{
+			[skills]
+				{
+			strength =  	25.5,0;
+			intelligence =  1.3,0;
+			dexterity =  	12.2,0;
+			melee =  		52,0;
+				}
+		}
+	[aspect]
+		{
+			[textures] { 0 = b_c_edm_muck_zombie; }
+			model = m_c_edm_zo_pos_2;
+		experience_value = 76284;
+		life = 2008.9;
+		max_life = 2008.9;
+		mana = 22.2;
+		max_mana = 22.2;
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 250;
+			damage_min = 238;
+		}
+	[defend] { defense = 437; }
+	[common] 
+	{ 
+		screen_name = "Soulless One";
+		membership=monster, undead;
+	}
+	[inventory]
+		{
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 4, Medium */
+		[oneof*]
+		{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/33-50;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #armor/94-461;
+	                il_main = #weapon/123-202;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/134-219;
+	                il_main = #armor/-rare(1)/367-636;
+                    il_main = #*/-rare(1)/134-219;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/134-219;
+	                il_main = #armor/-unique(2)/367-636;
+                    il_main = #*/-unique(2)/134-219;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 112409;
+					min = 62400;
+				}
+		}
+	}	
+		}
+}
+

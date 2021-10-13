@@ -1,0 +1,135 @@
+[t:template,n:ut2w_mhulliq_two]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_mhulliq_two";
+	specializes = dsx_mhulliq_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  62.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  64,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 12200;
+		life             = 1256;
+		max_life         = 1256;
+		mana             = 12;
+		max_mana         = 12;
+		textures:0 = b_c_edm_hb-04;
+		material = flesh;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_mhulliq_SED;		}
+			[enemy_spotted]	{ priority = high;  * = s_e_call_mhulliq_SED; }
+			[hit_critical]	{ priority = low;	* = s_e_hit_mhulliq_SED;		}
+			[hit_glance]	{ priority = low;	* = s_e_hit_mhulliq_SED;		}
+			[hit_solid]		{ priority = low;	* = s_e_hit_mhulliq_SED;		}
+		}	
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 235;
+		damage_min = 175;
+	}
+	[body]
+	{
+		avg_move_velocity = 4;
+	}
+	[common]
+	{
+		screen_name = "Hassat Mhulliq"; 
+		membership = monster;
+	}
+	[defend] { defense = 945; }
+	
+	[mind]
+	{
+		jat_brain = world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party	= true;	
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social			= 0.30
+			&wander			= 0.60
+			&approach_dist 	= 2.50
+			&still			= false;
+		
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+
+[t:template,n:ut2w_mhulliq_one]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_mhulliq_one";
+	specializes = dsx_mhulliq_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  12.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  54,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 15669;
+		life = 508;
+		max_life = 508;
+		mana = 108;
+		max_mana = 108;
+		textures:0 = b_c_edm_hb-03;
+		material = flesh;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_mhulliq_SED;		}
+			[enemy_spotted]	{ priority = high;  * = s_e_call_mhulliq_SED; }
+			[hit_critical]	{ priority = low;	* = s_e_hit_mhulliq_SED;		}
+			[hit_glance]	{ priority = low;	* = s_e_hit_mhulliq_SED;		}
+			[hit_solid]		{ priority = low;	* = s_e_hit_mhulliq_SED;		}
+		}
+	}
+	[attack]
+	{
+		damage_max = 202.8;
+		damage_min = 162.4;
+	}
+	[body]
+	{
+		avg_move_velocity = 5;
+	}
+	[common]
+	{
+		screen_name = "Dire Mhulliq"; 
+		membership = monster;
+	}
+	[defend] { defense = 619; }
+	
+	[mind]
+	{
+		jat_brain = world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party	= true;
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social			= 0.30
+			&wander			= 0.60
+			&approach_dist 		= 2.50
+			&still			= false;
+		
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+

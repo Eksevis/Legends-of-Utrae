@@ -1,0 +1,265 @@
+[t:door_cav_01,n:0x00c00374]
+{
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.49012e-007;
+	  p position = 2.00151,-1.25,-2.46524,0xcef1c513;
+		use_point_scids = 0x00c00381,0x00c0037a;
+	}
+}
+[t:sign_glb_blacksmith_02,n:0x00c003e7]
+{
+	[common]
+	{
+		screen_name = "Burning Ore Forge";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -2.4228,2.70233,0.234253,0xcef1c513;
+	}
+}
+[t:sign_glb_blacksmith_03,n:0x00c003e8]
+{
+	[common]
+	{
+		screen_name = "Burning Ore Forge";
+	}
+	[placement]
+	{
+	  p position = 3.2682,-1.75,-3.26829,0xcef1c513;
+	}
+}
+[t:sign_glb_magicshop_01,n:0x00c003a2]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.7;
+	}
+	[common]
+	{
+		screen_name = "Orkin's Herbs and Charms";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -2.83029,-1.5,-2.06218,0xe4ac454a;
+	}
+}
+[t:door_grs_peasant_left,n:0x00c003c9]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00C0000F;
+		msg_type_opening = we_trigger_activate;
+	  x second_door = 0x00C003CA;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,-0.707107;
+	  p position = -2.27052,-1.5,-0.792637,0xe4ac454a;
+		use_point_scids = 0x00c003c7,0x00c003c8;
+	}
+}
+[t:door_grs_peasant_right,n:0x00c003ca]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00C0000F;
+		msg_type_opening = we_trigger_activate;
+	  x second_door = 0x00C003C9;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -2.26469,-1.5,2.0137,0xe4ac454a;
+		use_point_scids = 0x00c003e4,0x00c003e5;
+	}
+}
+[t:door_cav_01,n:0x00c003bc]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00C00025;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707108,0,-0.707108;
+	  p position = 3.46268,-1.5,3.53988,0x7f90c19e;
+		use_point_scids = 0x00c003c2,0x00c003c3;
+	}
+}
+[t:sign_glb_01,n:0x00c003af]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 71";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,-0.707107;
+	  p position = -3.51398,-0.213395,1.0973,0xc2626a4a;
+	}
+}
+[t:sign_glb_01,n:0x00c003b0]
+{
+	[common]
+	{
+		screen_name = "Crystwind Mines";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.980785,0,0.19509;
+	  p position = -3.36056,-0.461232,1.08514,0xc2626a4a;
+	}
+}
+[t:sign_glb_01,n:0x00c00416]
+{
+	[common]
+	{
+		screen_name = " Town of Fallraen, 86";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.980785,0,0.19509;
+	  p position = -3.33399,0,1.08757,0xc2626a4a;
+	}
+}
+[t:door_cav_01,n:0x00c00384]
+{
+	[door_basic]
+	{
+	  b can_use = false;
+	}
+	[placement]
+	{
+	  p position = -2.21703,-1.5,1.93327,0x4fee08b9;
+	}
+}
+[t:door_cav_01,n:0x00c00386]
+{
+	[door_basic]
+	{
+	  b can_use = false;
+	}
+	[placement]
+	{
+	  q orientation = 0,-3.57628e-007,0,-1;
+	  p position = -2.22216,-1.5,-0.749166,0x4fee08b9;
+	}
+}
+[t:door_grs_left_05,n:0x00c00331]
+{
+	[door_basic]
+	{
+	  b can_use = false;
+	}
+	[placement]
+	{
+	  q orientation = 6.31845e-009,0.913545,3.9482e-009,-0.406737;
+	  p position = 3.15878,-1.35992,1.03116,0x63e0eda7;
+	}
+}
+[t:lever_glb_06_message,n:0x00c0033d]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00C00323;
+	  x on_scid = 0x00C00323;
+	  f required_level = 5;
+	  f required_level_2 = 56;
+	  f required_level_3 = 87;
+	  f reset_time = 20;
+	  f reset_time_2 = 20;
+	}
+	[placement]
+	{
+	  q orientation = -0.3232,0.626433,0.630316,0.325309;
+	  p position = -0.0027523,1.16216,0.00404739,0xce51e64e;
+		use_point_scids = 0x00c000e4, 0x00c000e5;
+	}
+}
+[t:lever_glb_07,n:0x00c00424]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00C00423;
+	  x on_scid = 0x00C00423;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,2.08616e-007;
+	  p position = 1.26448,0,2.48793,0x873a3f85;
+		use_point_scids = 0x00c00427,0x00c00426;
+	}
+}
+[t:lever_glb_07,n:0x00c00425]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00C00423;
+	  x on_scid = 0x00C00423;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,-0.707107;
+	  p position = 0.0618694,-0.6,3.35106,0xaa764da6;
+		use_point_scids = 0x00c00427,0x00c00428,0x00c00429;
+	}
+}
+[t:statue_cav_spin_02,n:0x00c00420]
+{
+	[common]
+	{
+		screen_name = "Crystwind to Crystwind Old Mines Displacer";
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00C001DE;
+	  x on_scid = 0x00C001DE;
+	  f reset_time = 25;
+	  f reset_time_2 = 25;
+	}
+	[placement]
+	{
+	  p position = -0.00379384,0.199999,-0.00310516,0xf9cdb7c4;
+		use_point_scids = 0x00c00421;
+	}
+}
+[t:sign_grs_crystwind,n:0x00c0042c]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,-1.49012e-007;
+	  p position = 0.0344419,-0.248979,1.31402,0x2e9c049a;
+	}
+}
+[t:sign_grs_crystwind,n:0x00c0042b]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.0207286,-0.422002,1.32497,0xb9e4fc52;
+	}
+}

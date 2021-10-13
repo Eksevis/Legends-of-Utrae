@@ -1,0 +1,733 @@
+[t:sign_glb_blacksmith_02,n:0x03200c53]
+{
+	[common]
+	{
+		screen_name = "Zabar's Smithy";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.173648,0,0.984808;
+	  p position = -4.19502,3.88949,0.841222,0x070316b2;
+	}
+}
+[t:bookcase_glb_gen_04,n:0x032007e2]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  b is_usable = false;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.984808,0,-0.173648;
+	  p position = 4.30595,-1.02769,8.64735,0x17f2a80d;
+	}
+}
+[t:bookcase_glb_gen_05,n:0x03200866]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  b is_usable = false;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.182236,0,0.983255;
+	  p position = -6.74673,-1.02769,-10.0537,0x17f2a80d;
+	}
+}
+[t:door_grs_ornate_right,n:0x03200bf8]
+{
+	[aspect]
+	{
+	  f use_range = 0.3;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x03200169;
+		msg_type_opening = we_trigger_activate;
+	  x second_door = 0x03200BF9;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.819153,0,-0.573576;
+	  p position = 11.4243,-2,-6.8141,0x17f2a80d;
+		use_point_scids = 0x03200bf7,0x03200bf6;
+	}
+}
+[t:door_grs_ornate_left,n:0x03200bf9]
+{
+	[aspect]
+	{
+	  f use_range = 0.3;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x03200169;
+		msg_type_opening = we_trigger_activate;
+	  x second_door = 0x03200BF8;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.819153,0,-0.573576;
+	  p position = 12.3751,-2,-4.17735,0x17f2a80d;
+		use_point_scids = 0x03200bf7,0x03200bf6;
+	}
+}
+[t:sign_glb_magicshop_01,n:0x03200c55]
+{
+	[common]
+	{
+		screen_name = "Azunite Shrine of Passion";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.587785,0,0.809017;
+	  p position = 16.4959,-3,-2.18333,0x17f2a80d;
+	}
+}
+[t:sign_glb_01,n:0x03200da7]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 112";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.991444,0,-0.130526;
+	  p position = 17.8986,-3.25368,0.54087,0x17f2a80d;
+	}
+}
+[t:sign_glb_blacksmith_right,n:0x032004e3]
+{
+	[common]
+	{
+		screen_name = "Zabar's Smithy";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -3.1171,2.38419e-007,1.97389,0xbef689f4;
+	}
+}
+[t:sign_glb_01,n:0x03200da0]
+{
+	[common]
+	{
+		dev_instance_text = "sign_7";
+		screen_name = "Great Northern Forest";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 2.82841,-0.999999,-2.90012,0x56c360d9;
+	}
+}
+[t:door_glb_woodfence_left_01,n:0x0320042d]
+{
+	[placement]
+	{
+	  q orientation = 0,-3.57628e-007,0,1;
+	  p position = -0.0104713,-0.95,1.01929,0x24bae204;
+		use_point_scids = 0x03200454,0x03200472;
+	}
+}
+[t:sign_grs_elddim,n:0x03200475]
+{
+	[placement]
+	{
+	  q orientation = 1.42821e-008,0.995396,0.0958458,1.48326e-007;
+	  p position = -4.44794,-0.795195,-4.79597,0x48a09e8d;
+	}
+}
+[t:lever_glb_06,n:0x03200cad]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x03200CAE;
+	  x on_scid = 0x03200CAE;
+	  f reset_time = 20;
+	  f reset_time_2 = 20;
+	}
+	[placement]
+	{
+	  q orientation = -0.707107,-1.49012e-008,0,0.707107;
+	  p position = 0.00715208,1.13457,0.00771332,0x07c15973;
+		use_point_scids = 0x03200858, 0x03200859;
+	}
+}
+[t:sign_glb_01,n:0x032004f5]
+{
+	[common]
+	{
+		dev_instance_text = "sign_2";
+		screen_name = "Ancient Crypt, 102";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-5.96046e-008;
+	  p position = 4.87894,1.95,2.95615,0xb7133259;
+	}
+}
+[t:sign_glb_01,n:0x03200d9e]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim";
+	}
+	[placement]
+	{
+	  q orientation = 0,-5.96046e-008,0,1;
+	  p position = 4.8337,1.94297,3.77332,0xb7133259;
+	}
+}
+[t:door_grs_peasant_left,n:0x03200bdb]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x03200172;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.986286,0,0.165048;
+	  p position = 1.34616,-3.65,-3.39765,0x98240029;
+		use_point_scids = 0x03200bff,0x03200bfd;
+	}
+}
+[t:door_grs_peasant_left,n:0x03200c00]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x03200176;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.991445,0,0.130526;
+	  p position = 0.926174,-3,-2.98184,0x48b898f3;
+		use_point_scids = 0x03200c08,0x03200c01;
+	}
+}
+[t:door_grs_peasant_left,n:0x03200c0a]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x032001BF;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.984808,0,-0.173648;
+	  p position = 1.34623,-3.65,-3.38316,0xd5a8597c;
+		use_point_scids = 0x03200c06,0x03200c03;
+	}
+}
+[t:door_grs_peasant_right,n:0x03200bdf]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x032004F9;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707108,0,-0.707107;
+	  p position = 11.2432,-2.7,-0.106064,0xf9384d81;
+		use_point_scids = 0x03200c18,0x03200c17;
+	}
+}
+[t:sign_glb_inn_02,n:0x03200c4e]
+{
+	[common]
+	{
+		screen_name = "Golden Mug Tavern";
+	}
+	[placement]
+	{
+	  p position = 13.3289,0.596196,0.60199,0xf9384d81;
+	}
+}
+[t:sign_glb_01,n:0x03200473]
+{
+	[common]
+	{
+		dev_instance_text = "sign_4";
+		screen_name = "Town of Crystwind, 48";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.07196,-0.214862,-1.54375,0x26d255b7;
+	}
+}
+[t:sign_glb_01,n:0x03200d86]
+{
+	[common]
+	{
+		dev_instance_text = "sign_4";
+		screen_name = "Crystwind Mines, 31";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.07196,0,-1.54375,0x26d255b7;
+	}
+}
+[t:sign_glb_01,n:0x03200d87]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -1.7049,-4.76837e-007,-1.56094,0x26d255b7;
+	}
+}
+[t:door_glb_woodfence_left_01,n:0x03200cfd]
+{
+	[placement]
+	{
+	  q orientation = 0,-3.57628e-007,0,1;
+	  p position = -0.00460815,-0.95,1.01216,0xf3e5ffc9;
+		use_point_scids = 0x03200d02,0x03200d01;
+	}
+}
+[t:sign_grs_elddim,n:0x03200476]
+{
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.49012e-007;
+	  p position = 0.00971413,-0.336544,1.34202,0x4693b784;
+	}
+}
+[t:sign_glb_01,n:0x03200415]
+{
+	[common]
+	{
+		dev_instance_text = "sign_5";
+		screen_name = "Town of Crystwind, 48";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -2.42752,0.576647,0.625153,0x27142eaf;
+	}
+}
+[t:sign_glb_01,n:0x03200d9a]
+{
+	[common]
+	{
+		dev_instance_text = "sign_5";
+		screen_name = "Crystwind Mines, 31";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -2.42752,0.777387,0.625153,0x27142eaf;
+	}
+}
+[t:sign_glb_01,n:0x03200d9b]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,-0.707107;
+	  p position = -1.66096,0.777615,0.625244,0x27142eaf;
+	}
+}
+[t:door_grs_peasant_left,n:0x03200c05]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x032001C2;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.992546,0,0.121869;
+	  p position = 0.947403,-3,-3.11549,0x23777411;
+		use_point_scids = 0x03200c07,0x03200c0c;
+	}
+}
+[t:sign_glb_blacksmith_right,n:0x032004e4]
+{
+	[common]
+	{
+		screen_name = "Zabar's Smithy";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 2.48793,0.395568,-3.90027,0x88e4e88a;
+	}
+}
+[t:sign_glb_magic_left,n:0x03200477]
+{
+	[common]
+	{
+		screen_name = "Azunite Shrine of Passion";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.97237,0,0.233445;
+	  p position = -0.302471,-3.53426,-9.40536,0x46a39592;
+	}
+}
+[t:door_grs_peasant_left,n:0x03200be1]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x03200163;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.986286,0,-0.165047;
+	  p position = 4.97437,-3.1,-5.90658,0x46a39592;
+		use_point_scids = 0x03200c16,0x03200c15;
+	}
+}
+[t:door_grs_peasant_left,n:0x03200be7]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x03200003;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.986286,0,0.165049;
+	  p position = 1.31889,-3.65,-3.50213,0x5419dd1b;
+		use_point_scids = 0x03200c12,0x03200c11;
+	}
+}
+[t:door_grs_peasant_right,n:0x03200bd5]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x03200008;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707106;
+	  p position = 4.19563,2,-1.70998,0x2c0b4ca2;
+		use_point_scids = 0x03200c14,0x03200c13;
+	}
+}
+[t:sign_glb_blacksmith_left,n:0x032004f3]
+{
+	[common]
+	{
+		screen_name = "Zabar's Smithy";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 5.44213,0.14069,1.76645,0x01f2fa60;
+	}
+}
+[t:sign_glb_01,n:0x0320050b]
+{
+	[common]
+	{
+		dev_instance_text = "sign_6";
+		screen_name = "Great Northern Forest";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -2.12808,-6.67572e-006,3.05448,0x88ef0238;
+	}
+}
+[t:sign_glb_01,n:0x0320050e]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 112";
+	}
+	[placement]
+	{
+	  p position = -2.5741,-0.277017,3.49575,0x88ef0238;
+	}
+}
+[t:sign_glb_01,n:0x03200d58]
+{
+	[common]
+	{
+		screen_name = " Crystwind Mines";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -3.04684,-5.66244e-006,3.03768,0x88ef0238;
+	}
+}
+[t:sign_glb_01,n:0x03200d84]
+{
+	[common]
+	{
+		screen_name = "Town of Lang, 72";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -2.59024,-0.270503,2.66212,0x88ef0238;
+	}
+}
+[t:sign_glb_01,n:0x03200d8e]
+{
+	[common]
+	{
+		dev_instance_text = "sign_8";
+		screen_name = "Town of Elddim";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.965926,0,-0.258819;
+	  p position = 1.25268,-1,-2.52849,0xaef26d1d;
+	}
+}
+[t:sign_glb_01,n:0x03200d8f]
+{
+	[common]
+	{
+		screen_name = "Town of Lang, 61";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.130526,0,-0.991446;
+	  p position = 1.09992,-1.27186,-1.75812,0xaef26d1d;
+	}
+}
+[t:door_grs_farmhouse,n:0x03200c04]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x032001CB;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.92388,0,-0.382683;
+	  p position = 1.19771,-2.25,-2.40384,0x0255a9d2;
+		use_point_scids = 0x03200c1a,0x03200c19;
+	}
+}
+[t:sign_glb_01,n:0x03200d89]
+{
+	[common]
+	{
+		dev_instance_text = "sign_9";
+		screen_name = "Town of Elddim";
+	}
+	[placement]
+	{
+	  q orientation = 0,-5.96046e-008,0,1;
+	  p position = 3.94864,-9.53674e-007,1.74071,0x00fe15db;
+	}
+}
+[t:sign_glb_01,n:0x03200d8a]
+{
+	[common]
+	{
+		screen_name = "Town of Lang, 63";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-5.96046e-008;
+	  p position = 3.99556,0,0.722763,0x00fe15db;
+	}
+}
+[t:sign_grs_elddim,n:0x03200516]
+{
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.49012e-007;
+	  p position = -0.0215251,-0.473219,1.33852,0x414ccc6b;
+	}
+}
+[t:door_grs_barn_right,n:0x03200be3]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x032001C8;
+		msg_type_opening = we_trigger_activate;
+	  x second_door = 0x03200BE4;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0871569,0,-0.996195;
+	  p position = 8.28012,-1.9,8.7047,0x7ea1508c;
+		use_point_scids = 0x03200c0e,0x03200c0d;
+	}
+}
+[t:door_grs_barn_left,n:0x03200be4]
+{
+	[aspect]
+	{
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x032001C8;
+		msg_type_opening = we_trigger_activate;
+	  x second_door = 0x03200BE3;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0871569,0,-0.996195;
+	  p position = 5.50557,-1.9,9.1977,0x7ea1508c;
+		use_point_scids = 0x03200c0e,0x03200c0d;
+	}
+}
+[t:door_glb_woodfence_left_01,n:0x03200c0b]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.1;
+	  f use_range = 0.5;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x032001C7;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.656059,0,0.75471;
+	  p position = 1.9375,-1.9,-5.15837,0x7ea1508c;
+		use_point_scids = 0x03200c0f,0x03200c10;
+	}
+}
+[t:sign_glb_01,n:0x03200d91]
+{
+	[common]
+	{
+		dev_instance_text = "sign_10";
+		screen_name = "Town of Elddim";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = 1.02873,-1,-1.27769,0xb54eced2;
+	}
+}
+[t:sign_glb_01,n:0x03200d92]
+{
+	[common]
+	{
+		screen_name = "Town of Lang, 63";
+	}
+	[placement]
+	{
+	  q orientation = 0,5.96046e-008,0,1;
+	  p position = 1.05391,-1,-1.26492,0xb54eced2;
+	}
+}
+[t:door_grs_peasant_left,n:0x03200bfa]
+{
+	[aspect]
+	{
+	  f use_range = 0.3;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x03200161;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.92388,0,0.382684;
+	  p position = -3.56615,-4.25,-3.53771,0x2a09571b;
+		use_point_scids = 0x03200bf5,0x03200be5;
+	}
+}
+[t:sign_glb_magic_left,n:0x03200501]
+{
+	[common]
+	{
+		screen_name = "Azunite Shrine of Passion";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.93358,0,0.358367;
+	  p position = -1.34744,0,-1.15608,0x64c427c6;
+	}
+}
+[t:sign_glb_01,n:0x03200d9d]
+{
+	[common]
+	{
+		dev_instance_text = "sign 11";
+		screen_name = "Ancient Crypt, 106";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,1.49012e-007;
+	  p position = 2.62429,-1,-2.40269,0xb32eb25a;
+	}
+}
+[t:door_grs_peasant_left,n:0x03200bfe]
+{
+	[aspect]
+	{
+	  f use_range = 0.3;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0320015E;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,6.4075e-007;
+	  p position = 1.68977,-3.65,-3.14251,0x1939e1a6;
+		use_point_scids = 0x03200bde,0x03200be0;
+	}
+}

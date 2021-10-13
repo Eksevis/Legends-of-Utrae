@@ -1,0 +1,712 @@
+[t:template,n:base_liche]
+{
+	category_name = "1W_character";
+	doc = "Base Liche";
+	specializes = actor_evil;
+	[aspect]
+	{
+		material = stone;
+		model = m_c_ecm_sk_pos_2;
+		textures:0 = b_c_ecm_skg-03;
+        	scale_base = 1.25;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_skeleton; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_skeleton_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_skeleton_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_skeleton_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_skeleton_SED; }
+		}
+	}
+	[body]
+	{
+		armor_version = ecm_sk;
+		avg_move_velocity = 1.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_sk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					02 = at-03;
+					04 = at-05;
+					05 = at-06;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=mg;
+					01=mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slp0 = a_c_ecm_sk_fs0_ds-02;
+					slp1 = a_c_ecm_sk_fs1_ds-02;
+					slp2 = a_c_ecm_sk_fs2_ds-02;
+					slp3 = a_c_ecm_sk_fs3_ds-02;
+					slp4 = a_c_ecm_sk_fs4_ds-02;
+					slp5 = a_c_ecm_sk_fs5_ds-02;
+					slp6 = a_c_ecm_sk_fs6_ds-02;
+					wak0 = a_c_ecm_sk_fs0_rv;
+					wak1 = a_c_ecm_sk_fs1_rv;
+					wak2 = a_c_ecm_sk_fs2_rv;
+					wak3 = a_c_ecm_sk_fs3_rv;
+					wak4 = a_c_ecm_sk_fs4_rv;
+					wak5 = a_c_ecm_sk_fs5_rv;
+					wak6 = a_c_ecm_sk_fs6_rv;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+					02 = dff-03;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Liche";
+		membership = skeleton, monster; 
+
+	}
+	[defend] { defense=3; }
+	[guts_manager]
+	{
+		effect_name = melee_hit_1;
+	}
+	[mind]
+	{
+		com_channels = skeleton;
+		com_range = 7.0;
+		jat_cast 		= world\ai\jobs\common\job_cast.skrit
+			?rand_spell	= true;
+		actor_weapon_preference		= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range 	= 5.0;
+		personal_space_range 	= 0.7;
+		ranged_engage_range 	= 14.0;
+		sight_range 		= 20.0;
+	}
+	[physics]
+	{
+		break_sound = s_e_spiderdie_small;
+		explode_when_killed = true;
+		explosion_magnitude = .045;
+		fire_effect = human_physics_fire;
+		fire_resistance = 0.0;
+		fire_burn_threshold = 20;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_bone_01 = 1;
+			frag_glb_bone_02 = 1;
+			frag_glb_bone_03 = 1;
+			frag_glb_bone_04 = 4;
+			frag_glb_bone_05 = 1;
+			frag_glb_bone_06 = 1;
+		}
+	}
+}
+
+[t:template,n:ut_liche_01]
+{
+	category_name = "1W_character";
+	doc = "Liche";
+	specializes = base_liche;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  	27, 0;
+			intelligence 	=  	49, 0;
+			dexterity 	=  	8, 0;
+			melee 		=  	7,  0;
+			combat_magic	=  	47,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 17980;
+		life = 752;
+		max_life = 752;
+		mana = 1000;
+		max_mana = 1000;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 120;
+		damage_min = 90;
+	}
+	[common]
+	{
+		screen_name="Liche";
+		membership = monster, party_skeleton_mercenary_archer;
+	}
+	[defend] { defense=633; }
+	[inventory]
+	{
+
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=ut_spell_liche_01;
+			il_spell_2 = ut_spell_summon_liche_02;
+			il_spell_3 = ut_spell_liche_03;
+
+		}
+		[pcontent]
+		{
+				[oneof*]
+				{
+    					es_weapon_hand = st_g_c_dsx_ltn_avg;
+					es_weapon_hand = st_g_c_dsx_jad_avg;
+					es_weapon_hand = st_g_c_dsx_cry_avg;
+				}
+				[oneof*]
+				{
+					es_feet = bo_bo_sc_m_g_c_avg_geared_dsx;
+					es_feet = bo_bo_sc_m_g_c_avg_ceramic_dsx;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+				}
+				[oneof*]
+				{
+					es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+					es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+					es_forearms = gl_ra_gl_sl_f_g_c_fin;
+					es_forearms = gl_ra_gl_le_f_g_c_fin;
+					es_forearms = gl_ra_gl_bl_f_g_c_fin;
+					es_forearms = gl_ra_ga_bl_f_g_c_fin;
+				}
+				[oneof*]
+				{
+					es_head = he_op_pl_f_allow_crown_dsx;
+					es_head = he_op_pl_m_bone_crown_dsx;
+					es_head = he_op_pl_r_flywing_crown_dsx;
+					es_head = he_op_pl_r_zaurask_crown_dsx;
+				}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/109-125;
+					il_main = #armor/54-266;
+        	        		il_main = #nmagic/35-48;
+            	    			il_main = #cmagic/35-48;
+				}
+				[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/121-134;
+	                		il_main = #armor/-rare(1)/290-350;
+                    			il_main = #*/-rare(1)/121-134;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/121-134;
+	                		il_main = #armor/-unique(2)/290-350;
+                    			il_main = #*/-unique(2)/121-134;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 5002;
+					min = 3145;
+				}
+			}
+		}
+	}
+   	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.65
+			&interest		= interest
+			&still			= false;
+
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.34,0.32,0.34"
+			&spells				= "ut_spell_liche_01, ut_spell_summon_liche_02, ut_spell_liche_03";
+
+		on_engaged_lost_consciousness_abort_attack = true;
+
+		sight_origin_height	= 1.3;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_liche_02]//ghost
+{
+	category_name = "1W_character";
+	doc = "Liche";
+	specializes = base_liche;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  	27, 0;
+			intelligence 	=  	49, 0;
+			dexterity 	=  	8, 0;
+			melee 		=  	7,  0;
+			combat_magic	=  	47,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 17980;
+		life = 852;
+		max_life = 852;
+		mana = 1000;
+		max_mana = 1000;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 120;
+		damage_min = 90;
+	}
+	[common]
+	{
+		screen_name="Ancient Liche";
+		membership = monster, party_skeleton_mercenary_archer;
+	}
+	[defend] { defense=633; }
+	[inventory]
+	{
+
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=ut_spell_liche_skull_burn;
+			il_spell_2 = ut_spell_summon_liche_03;
+			il_spell_3 = spell_liche_killing_fist;
+
+		}
+		[pcontent]
+		{
+				[oneof*]
+				{
+    					es_weapon_hand = st_g_c_dsx_ltn_avg;
+					es_weapon_hand = st_g_c_dsx_jad_avg;
+					es_weapon_hand = st_g_c_dsx_cry_avg;
+				}
+				[oneof*]
+				{
+					es_feet = bo_bo_sc_m_g_c_avg_geared_dsx;
+					es_feet = bo_bo_sc_m_g_c_avg_ceramic_dsx;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+				}
+				[oneof*]
+				{
+					es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+					es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+					es_forearms = gl_ra_gl_sl_f_g_c_fin;
+					es_forearms = gl_ra_gl_le_f_g_c_fin;
+					es_forearms = gl_ra_gl_bl_f_g_c_fin;
+					es_forearms = gl_ra_ga_bl_f_g_c_fin;
+				}
+				[oneof*]
+				{
+					es_head = he_op_pl_f_allow_crown_dsx;
+					es_head = he_op_pl_m_bone_crown_dsx;
+					es_head = he_op_pl_r_flywing_crown_dsx;
+					es_head = he_op_pl_r_zaurask_crown_dsx;
+				}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/109-125;
+					il_main = #armor/54-266;
+        	        		il_main = #nmagic/35-48;
+            	    			il_main = #cmagic/35-48;
+				}
+				[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/121-134;
+	                		il_main = #armor/-rare(1)/290-350;
+                    			il_main = #*/-rare(1)/121-134;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/121-134;
+	                		il_main = #armor/-unique(2)/290-350;
+                    			il_main = #*/-unique(2)/121-134;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 5002;
+					min = 3145;
+				}
+			}
+		}
+	}
+   	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.65
+			&interest		= interest
+			&still			= false;
+
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.34,0.32,0.34"
+			&spells				= "ut_spell_liche_skull_burn, ut_spell_summon_liche_03, spell_liche_killing_fist";
+
+		on_engaged_lost_consciousness_abort_attack = true;
+
+		sight_origin_height	= 1.3;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_liche_03]//wraith
+{
+	category_name = "1W_character";
+	doc = "Liche";
+	specializes = base_liche;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  	27, 0;
+			intelligence 	=  	49, 0;
+			dexterity 	=  	8, 0;
+			melee 		=  	7,  0;
+			combat_magic	=  	47,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 17980;
+		life = 892;
+		max_life = 892;
+		mana = 1000;
+		max_mana = 1000;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 120;
+		damage_min = 90;
+	}
+	[common]
+	{
+		screen_name="Ancient Liche";
+		membership = monster, party_skeleton_mercenary_archer;
+	}
+	[defend] { defense=633; }
+	[inventory]
+	{
+
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_liche_nova_strike;
+			il_spell_2 = ut_spell_summon_liche_04;
+			il_spell_3 = ut_spell_liche_nosirrom;
+
+		}
+		[pcontent]
+		{
+				[oneof*]
+				{
+    					es_weapon_hand = st_g_c_dsx_ltn_avg;
+					es_weapon_hand = st_g_c_dsx_jad_avg;
+					es_weapon_hand = st_g_c_dsx_cry_avg;
+				}
+				[oneof*]
+				{
+					es_feet = bo_bo_sc_m_g_c_avg_geared_dsx;
+					es_feet = bo_bo_sc_m_g_c_avg_ceramic_dsx;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+				}
+				[oneof*]
+				{
+					es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+					es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+					es_forearms = gl_ra_gl_sl_f_g_c_fin;
+					es_forearms = gl_ra_gl_le_f_g_c_fin;
+					es_forearms = gl_ra_gl_bl_f_g_c_fin;
+					es_forearms = gl_ra_ga_bl_f_g_c_fin;
+				}
+				[oneof*]
+				{
+					es_head = he_op_pl_f_allow_crown_dsx;
+					es_head = he_op_pl_m_bone_crown_dsx;
+					es_head = he_op_pl_r_flywing_crown_dsx;
+					es_head = he_op_pl_r_zaurask_crown_dsx;
+				}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/109-125;
+					il_main = #armor/54-266;
+        	        		il_main = #nmagic/35-48;
+            	    			il_main = #cmagic/35-48;
+				}
+				[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/121-134;
+	                		il_main = #armor/-rare(1)/290-350;
+                    			il_main = #*/-rare(1)/121-134;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/121-134;
+	                		il_main = #armor/-unique(2)/290-350;
+                    			il_main = #*/-unique(2)/121-134;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 5002;
+					min = 3145;
+				}
+			}
+		}
+	}
+   	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.65
+			&interest		= interest
+			&still			= false;
+
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.34,0.32,0.34"
+			&spells				= "spell_liche_nova_strike, ut_spell_summon_liche_04, ut_spell_liche_nosirrom";
+
+		on_engaged_lost_consciousness_abort_attack = true;
+
+		sight_origin_height	= 1.3;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_liche_04]
+{
+	category_name = "1W_character";
+	doc = "Liche";
+	specializes = base_liche;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  	27, 0;
+			intelligence 	=  	49, 0;
+			dexterity 	=  	8, 0;
+			melee 		=  	7,  0;
+			combat_magic	=  	47,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 17980;
+		life = 792;
+		max_life = 792;
+		mana = 1000;
+		max_mana = 1000;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 120;
+		damage_min = 90;
+	}
+	[common]
+	{
+		screen_name="Liche";
+		membership = monster, party_skeleton_mercenary_archer;
+	}
+	[defend] { defense=633; }
+	[inventory]
+	{
+
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_liche_pillar_fire;
+			il_spell_2 = spell_summon_gresh;
+			il_spell_3 = spell_liche_orb;
+			il_spell_4 = spell_liche_meteor;
+
+		}
+		[pcontent]
+		{
+				[oneof*]
+				{
+    					es_weapon_hand = st_g_c_dsx_ltn_avg;
+					es_weapon_hand = st_g_c_dsx_jad_avg;
+					es_weapon_hand = st_g_c_dsx_cry_avg;
+				}
+				[oneof*]
+				{
+					es_feet = bo_bo_sc_m_g_c_avg_geared_dsx;
+					es_feet = bo_bo_sc_m_g_c_avg_ceramic_dsx;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+					es_feet = bo_bo_ch_f_g_c_avg;
+					es_feet = bo_gr_fp_f_g_c_avg;
+				}
+				[oneof*]
+				{
+					es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+					es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+					es_forearms = gl_ra_gl_sl_f_g_c_fin;
+					es_forearms = gl_ra_gl_le_f_g_c_fin;
+					es_forearms = gl_ra_gl_bl_f_g_c_fin;
+					es_forearms = gl_ra_ga_bl_f_g_c_fin;
+				}
+				[oneof*]
+				{
+					es_head = he_op_pl_f_allow_crown_dsx;
+					es_head = he_op_pl_m_bone_crown_dsx;
+					es_head = he_op_pl_r_flywing_crown_dsx;
+					es_head = he_op_pl_r_zaurask_crown_dsx;
+				}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/109-125;
+					il_main = #armor/54-266;
+        	        		il_main = #nmagic/35-48;
+            	    			il_main = #cmagic/35-48;
+				}
+				[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/121-134;
+	                		il_main = #armor/-rare(1)/290-350;
+                    			il_main = #*/-rare(1)/121-134;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/121-134;
+	                		il_main = #armor/-unique(2)/290-350;
+                    			il_main = #*/-unique(2)/121-134;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 5002;
+					min = 3145;
+				}
+			}
+		}
+	}
+   	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.65
+			&interest		= interest
+			&still			= false;
+
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.25,0.25,0.25, 0.25"
+			&spells				= "spell_liche_pillar_fire, spell_summon_gresh, spell_liche_orb, spell_liche_meteor";
+
+		on_engaged_lost_consciousness_abort_attack = true;
+
+		sight_origin_height	= 1.3;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

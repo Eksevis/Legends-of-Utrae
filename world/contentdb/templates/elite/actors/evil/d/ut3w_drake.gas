@@ -1,0 +1,1678 @@
+[t:template,n:3W_drake_red_ut]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_red";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	98.3, 0;
+			intelligence =  32.8, 0;
+			dexterity =  	83.1, 0;
+            melee =  		115, 0;
+            combat_magic =  115, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 13950000;
+		life = 2939.3;
+		max_life = 2939.3;
+		mana = 78.1;
+        max_mana = 78.1;
+		model=m_c_edm_dk_pos_1;
+ 		[textures] { 0=b_c_edm_dk-01; }
+
+	}
+	[attack]
+	{
+        attack_range = 0.5;
+		damage_max = 631.5;
+		damage_min = 413.3;
+		damage_bonus_min_cmagic = 187;
+		damage_bonus_max_cmagic = 285;
+	}
+	[common]
+	{
+        screen_name="Bloodlust Drake";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1604; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_red; }
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.45;
+					il_main = #*/212-306;
+					il_main = #armor/140-701;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/296-333;
+	                il_main = #armor/-rare(1)/761-884;
+                    il_main = #*/-rare(1)/296-333;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/296-333;
+	                il_main = #armor/-unique(2)/761-884;
+                    il_main = #*/-unique(2)/296-333;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 649463;
+					min = 535085;
+					min_pile = 2210;
+					piles = 4 - 6;
+				}
+			}
+		}
+	}
+   	[mind] 	
+	{ 
+		personal_space_range = 1.0; 
+
+	}
+
+}
+[t:template,n:ut3W_drake_red]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_red";
+	specializes = 3W_drake_red_ut;
+}
+
+[t:template,n:ut3W_drake_red_reveal]
+{
+	category_name = "3W_evil_d";
+	doc = "[reveal] drake_red";
+	specializes = 3W_drake_red_ut;
+
+	mind:jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+}
+
+[t:template,n:3W_drake_green_ut]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_green_sm";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	61.2, 0;
+			intelligence =  24.9, 0;
+			dexterity =  	33.8, 0;
+            melee =  		128, 0;
+            nature_magic =  128, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 5580000;
+		life = 4035.7;
+		max_life = 4035.7;
+		mana = 82.8;
+        max_mana = 82.8;
+		model=m_c_edm_dk_pos_1;
+        scale_base = 0.75;
+ 		[textures] { 0=b_c_edm_dk; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 796.8;
+		damage_min = 512.2;
+		damage_bonus_min_cmagic = 293;
+		damage_bonus_max_cmagic = 375;
+	}
+
+	[common]
+	{
+        screen_name="Green Wyrm";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream_green");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1440.9; }
+    	[mind] 	
+	{ 
+		personal_space_range = 1.0; 
+
+	}
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_green; }
+
+    	[pcontent]
+		{
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = #*/261-277;
+       				il_main = #armor/140-702;
+				}
+
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/282-297;
+	                il_main = #armor/-rare(1)/820-910;
+                    il_main = #*/-rare(1)/282-297;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/282-297;
+	                il_main = #armor/-unique(2)/820-910;
+                    il_main = #*/-unique(2)/282-297;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 485937;
+					min = 382002;
+					min_pile = 1987;
+					piles = 3 - 5;
+				}
+			}
+		}
+	}
+
+}
+[t:template,n:ut3W_drake_green]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_green";
+	specializes = 3W_drake_green_ut;
+}
+
+[t:template,n:ut3W_drake_green_reveal]
+{
+	category_name = "3W_evil_d";
+	doc = "[reveal] drake_green";
+	specializes = 3W_drake_green_ut;
+
+	mind:jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+}
+
+[t:template,n:3W_drake_white_ut]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_white";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  80, 0;
+			intelligence =  21.9, 0;
+			dexterity =  31.8, 0;
+            melee =  106,  0;
+            combat_magic = 106, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 1199910;
+		life = 6302.4;
+		max_life = 6302.4;
+		mana = 175.1;
+        max_mana = 175.1;
+		model=m_c_edm_dk_pos_1;
+   		[textures] { 0=b_c_edm_dk-03; }
+	}
+	[attack]
+	{
+        attack_range = 0.5;
+		damage_max = 888.8;
+		damage_min = 606;
+		damage_bonus_min_cmagic = 361;
+		damage_bonus_max_cmagic = 467;
+	}
+	[common]
+	{
+        screen_name="Spirit Drake";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream_white");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=794.5; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_white; }
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.8;
+				il_main = #*/246-272;
+			}
+		}
+	}
+   	[mind] 	
+	{ 
+		personal_space_range = 1.0; 
+
+	}
+
+}
+[t:template,n:ut3W_drake_white]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_white";
+	specializes = 3W_drake_white_ut;
+}
+
+[t:template,n:ut3W_drake_white_reveal]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_revealing drake_white";
+	specializes = 3W_drake_white_ut;
+
+	mind:jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+}
+
+[t:template,n:3W_drake_blue_ut]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_blue";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	58.7, 0;
+			intelligence =  23.9, 0;
+			dexterity =  	41.4, 0;
+       		melee =  		135, 0;
+            combat_magic =  135, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 3880000;
+		life = 4830;
+		max_life = 4830;
+		mana = 86.3;
+        max_mana = 86.3;
+		model=m_c_edm_dk_pos_1;
+   		[textures] { 0=b_c_edm_dk-02; }
+	}
+	[attack]
+	{
+        attack_range = 0.5;
+		damage_max = 600.9;
+		damage_min = 452.8;
+		damage_bonus_min_cmagic = 245;
+		damage_bonus_max_cmagic = 320;
+	}
+	[common]
+	{
+        screen_name="Azure Drake";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream_blue");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1459.1; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_blue; }
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.7;
+					il_main = #*/266-288;
+					il_main = #armor/139-702;
+                	il_main = #nmagic/69-119;
+                	il_main = #cmagic/69-119;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/272-307;
+	                il_main = #armor/-rare(1)/832-971;
+                    il_main = #*/-rare(1)/272-307;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/272-307;
+	                il_main = #armor/-unique(2)/832-971;
+                    il_main = #*/-unique(2)/272-307;
+	            }
+			}
+        }
+	}
+   	[mind] 	
+	{ 
+		personal_space_range = 1.0; 
+
+	}
+
+}
+[t:template,n:ut3W_drake_blue]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_blue";
+	specializes = 3W_drake_blue_ut;
+}
+
+[t:template,n:ut3W_drake_blue_reveal]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_revealing drake_blue";
+	specializes = 3W_drake_blue_ut;
+
+	mind:jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+}
+
+[t:template,n:3W_drake_black_ut]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_black";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	108.7, 0;
+			intelligence =  34, 0;
+			dexterity =  	91, 0;
+            melee =  		118, 0;
+            combat_magic =  118, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 15810000;
+		life = 4418.9;
+		max_life = 4418.9;
+		mana = 76.7;
+        max_mana = 76.7;
+		model=m_c_edm_dk_pos_1;
+        scale_base = 0.65;
+ 		[textures] { 0=b_c_edm_dk-04; }
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 694.4;
+		damage_min = 464.7;
+		damage_bonus_min_cmagic = 215;
+		damage_bonus_max_cmagic = 304;
+	}
+	[common]
+	{
+        screen_name="Black Wyrm";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1600.7; }
+   	[mind] 	
+	{ 
+		personal_space_range = 1.0; 
+
+	}
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_black; }
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.45;
+					il_main = #*/201-301;
+					il_main = #armor/139-700;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/311-341;
+	                il_main = #armor/-rare(1)/848-989;
+                    il_main = #*/-rare(1)/311-341;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/311-341;
+	                il_main = #armor/-unique(2)/848-989;
+                    il_main = #*/-unique(2)/311-341;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 648048;
+					min = 571662;
+				}
+			}
+		}
+	}
+
+}
+[t:template,n:ut3W_drake_black]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_black";
+	specializes = 3W_drake_black_ut;
+}
+
+[t:template,n:ut3W_drake_black_reveal]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_revealing drake_black";
+	specializes = 3W_drake_black_ut;
+
+	mind:jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+}
+
+[t:template,n:3W_drake_molten_ut]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_molten";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	134.4, 0;
+			intelligence =  25.5, 0;
+			dexterity =  	77, 0;
+            melee =  		108, 0;
+            combat_magic =  108, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 15810000;
+		life = 4689.5;
+		max_life = 4689.5;
+		mana = 76.7;
+        max_mana = 76.7;
+		model=m_c_edm_dk_pos_1;
+ 		[textures] { 0=b_c_edm_dk-05; }
+
+        scale_base = 0.65;
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 620;
+		damage_min = 446.4;
+		damage_bonus_min_cmagic = 208;
+		damage_bonus_max_cmagic = 268;
+	}
+	[common]
+	{
+        screen_name="Hell Dragon";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1821.7; }
+   	[mind] 	
+	{ 
+		personal_space_range = 1.0; 
+
+	}
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_molten; }
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.45;
+					il_main = #*/209-301;
+					il_main = #armor/139-700;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/319-353;
+	                il_main = #armor/-rare(1)/848-989;
+                    il_main = #*/-rare(1)/319-353;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/319-353;
+	                il_main = #armor/-unique(2)/848-989;
+                    il_main = #*/-unique(2)/319-353;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 662980;
+					min = 608418;
+					min_pile = 4109;
+					piles = 3 - 5;
+				}
+			}
+		}
+	}
+
+}
+[t:template,n:ut3W_drake_molten]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_molten";
+	specializes = 3W_drake_molten_ut;
+}
+
+[t:template,n:ut3W_drake_molten_reveal]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_revealing drake_molten";
+	specializes = 3W_drake_molten_ut;
+
+	mind:jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+}
+[t:template,n:ut3W_drake_molten_boss_01]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_drake_molten boss 01";
+	specializes = 3W_drake_molten_ut;
+
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	138.4, 0;
+			intelligence =  26.9, 0;
+			dexterity =  	82.2, 0;
+            melee =  		121, 0;
+            combat_magic =  108, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 23715000;
+		life = 5726.5;
+		max_life = 5726.5;
+		mana = 76.7;
+        max_mana = 76.7;
+		model=m_c_edm_dk_pos_1;
+ 		[textures] { 0=b_c_edm_dk-06; }
+
+        scale_base = 0.65;
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 627.4;
+		damage_min = 464.7;
+		damage_bonus_min_cmagic = 208;
+		damage_bonus_max_cmagic = 268;
+	}
+	[common]
+	{
+        screen_name="Hell Dragon Lord";
+        membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_red(sgx)");
+			}
+
+		}
+
+	}
+   	[defend] { defense=2183.5; }
+   	[mind] 	
+	{ 
+		personal_space_range = 1.0; 
+
+	}
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_molten; }
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.794;
+					il_main = #*/301-361;
+					il_main = #armor/848-989;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/361-421;
+	                il_main = #armor/-rare(1)/848-989;
+                    il_main = #*/-rare(1)/361-421;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/361-421;
+	                il_main = #armor/-unique(2)/848-989;
+                    il_main = #*/-unique(2)/361-421;
+	            }
+				[gold*]
+				{
+					chance = 0.2;
+					max = 1297570;
+					min = 1196430;
+					min_pile = 7210;
+					piles = 5 - 7;
+				}
+			}
+		}
+	}
+
+}
+
+[t:template,n:ut3w_drake_death_one]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_drake_death_one";
+	specializes = dsx_drake_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	61.2, 0;
+			intelligence =  24.9, 0;
+			dexterity =  	33.8, 0;
+            		melee =  	128, 0;
+            		nature_magic =  128, 0;
+            		combat_magic =  125, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5580000;
+		life = 3995.7;
+		max_life = 3995.7;
+		mana = 82.8;
+        	max_mana = 82.8;
+		
+		textures:0 = b_c_edm_ddk-01;
+
+	}
+	[defend] { defense = 1750; }
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 796.8;
+		damage_min = 512.2;
+		damage_bonus_min_cmagic = 293;
+		damage_bonus_max_cmagic = 375;
+	}
+
+	[common]
+	{
+		screen_name="Liche Dragon";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+		}
+		membership = monster;
+	}
+	[inventory]
+	{
+   		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_drake_breath_red; }
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 14, Strong */
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = #*/261-277;
+       				il_main = #armor/140-702;
+				}
+
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/282-297;
+	                il_main = #armor/-rare(1)/820-910;
+                    il_main = #*/-rare(1)/282-297;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/282-297;
+	                il_main = #armor/-unique(2)/820-910;
+                    il_main = #*/-unique(2)/282-297;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 485937;
+					min = 382002;
+					min_pile = 1987;
+					piles = 3 - 5;
+				}			
+			}
+		}
+	}
+	[mind]
+	{
+
+		melee_engage_range = 2;
+		personal_space_range = 0.7;
+		ranged_engage_range = 23.0;
+		sight_range = 25.0;
+	}
+
+}
+[t:template,n:ut3w_drake_death_two]
+{
+	// Level 15, Hard melee
+	category_name = "1W_evil_d";
+	doc = "dsx_drake_death_two_base";
+	specializes = dsx_drake_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	61.2, 0;
+			intelligence =  24.9, 0;
+			dexterity =  	33.8, 0;
+            		melee =  	128, 0;
+            		nature_magic =  128, 0;
+            		combat_magic =  125, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5580000;
+		life = 4035.7;
+		max_life = 4035.7;
+		mana = 82.8;
+        	max_mana = 82.8;
+
+		model = m_c_edm_dk_pos_1;
+		textures:0 = b_c_edm_ddk-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 796.8;
+		damage_min = 512.2;
+		damage_bonus_min_cmagic = 293;
+		damage_bonus_max_cmagic = 375;
+	}
+
+	[common]
+	{
+		screen_name="Black Liche Dragon";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+		}
+		membership = monster;
+	}
+ 
+	[defend] { defense = 2342; }
+	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_drake_breath_black; }
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 14, Strong */
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = #*/261-277;
+       				il_main = #armor/140-702;
+				}
+
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/282-297;
+	                il_main = #armor/-rare(1)/820-910;
+                    il_main = #*/-rare(1)/282-297;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/282-297;
+	                il_main = #armor/-unique(2)/820-910;
+                    il_main = #*/-unique(2)/282-297;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 485937;
+					min = 382002;
+					min_pile = 1987;
+					piles = 3 - 5;
+				}			
+			}
+		}
+	}
+	[mind]
+	{
+
+		melee_engage_range = 2;
+		personal_space_range = 0.7;
+		ranged_engage_range = 23.0;
+		sight_range = 25.0;
+	}
+
+}
+
+[t:template,n:ut3w_drake_feathered]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_drake_feathered";
+	specializes = dsx_drake_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  63.8, 0;
+			intelligence =  12.7, 0;
+			dexterity =  15.9, 0;
+            		melee =  	93,  0;
+		}		 
+	}
+	[aspect]
+	{		
+		[textures]	{ 0 = b_c_edm_feathered_drakeling; }
+		experience_value = 467500;
+		life = 1360;
+		max_life = 1360;
+		mana = 40;
+		max_mana = 40;
+		material = claw;
+		model = m_c_edm_FLDRKLNG_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_drakeling_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_drakeling_SED;	}
+			}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 492;
+		damage_min = 280;
+	}
+	[body]
+	{
+		avg_move_velocity = 4.990000;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_ss_fs;
+			[chore_attack]
+				{
+					chore_stances = 0;
+					skrit = select_attack;
+					[anim_files] { 00=at; }
+				}
+			[chore_default]
+				{
+					chore_stances = 0;
+					skrit = infinite_loop;
+					[anim_files] { 00=ds; }
+				}
+			[chore_die]
+				{
+					chore_stances = 0;
+					skrit = select_transition;
+					[anim_files] { 00=di; }
+				}
+			[chore_fidget]
+				{
+					chore_stances = 0;
+					skrit = select_fidget;
+					[anim_files] { 00=dff; }
+				}
+			[chore_walk]
+				{
+					chore_stances = 0;
+					skrit = select_walk;
+					[anim_files] { 00=fl; }
+				}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Sky Drakeling";
+		membership = monster;
+
+	}
+	[defend] { defense=1029; }
+	[mind]
+	{
+
+		melee_engage_range = 12;
+		personal_space_range = 0.7;
+		ranged_engage_range = 23.0;
+		sight_range = 25.0;
+	}
+
+}
+[t:template,n:ut3W_drakeling_red]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_drake_red";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	75, 0;
+			intelligence =  28.2, 0;
+			dexterity =  	66.1, 0;
+            		melee =  	122, 0;
+            		combat_magic =  122, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 3488120;
+		life = 2184;
+		max_life = 2184;
+		mana = 27.6;
+		max_mana = 27.6;
+		model=m_c_edm_dk_pos_1;
+        	scale_base = 0.35;
+ 		[textures] { 0=b_c_edm_dk-01; }
+
+	}
+	[attack]
+	{
+        	attack_range = 0.5;
+		damage_max = 600.9;
+		damage_min = 452.8;
+		damage_bonus_min_cmagic = 245;
+		damage_bonus_max_cmagic = 320;
+	}
+	[common]
+	{
+        screen_name="Imbued Dragon Whelp";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1577.1; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_red; }
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-703;
+        	        il_main = #nmagic/40-105;
+            	    il_main = #cmagic/40-105;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+			}
+		}
+	}
+    	[mind] 	
+	{ 
+
+		actor_weapon_preference		= WP_MELEE;
+		actor_auto_switches_to_magic	= false;
+		actor_auto_switches_to_karate	= true;
+		actor_auto_switches_to_melee	= true;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+[t:template,n:ut3W_drakling_green]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_drake_green_sm";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	46.2, 0;
+			intelligence =  21.3, 0;
+			dexterity =  	26.7, 0;
+            		melee =  	122, 0;
+            		combat_magic =  122, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 3488120;
+		life = 2274;
+		max_life = 2274;
+		mana = 27.6;
+		max_mana = 27.6;
+		model=m_c_edm_dk_pos_1;
+        	scale_base = 0.35;
+ 		[textures] { 0=b_c_edm_dk; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 600.9;
+		damage_min = 452.8;
+		damage_bonus_min_cmagic = 245;
+		damage_bonus_max_cmagic = 320;
+	}
+
+	[common]
+	{
+        screen_name="Enchanted Dragon Whelp";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream_green");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1441.3; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_green; }
+    	[pcontent]
+		{
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-703;
+        	        il_main = #nmagic/40-105;
+            	    il_main = #cmagic/40-105;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+			}
+		}
+	}
+    	[mind] 	
+	{ 
+
+		actor_weapon_preference		= WP_MELEE;
+		actor_auto_switches_to_magic	= false;
+		actor_auto_switches_to_karate	= true;
+		actor_auto_switches_to_melee	= true;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+[t:template,n:ut3W_drakeling_white]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_drake_white";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  57.3, 0;
+			intelligence =  18.5, 0;
+			dexterity =  24.2, 0;
+            		melee =  	122, 0;
+            		combat_magic =  122, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 3488120;
+		life = 2076;
+		max_life = 2076;
+		mana = 27.6;
+		max_mana = 27.6;
+		model=m_c_edm_dk_pos_1;
+       		scale_base = 0.35;
+   		[textures] { 0=b_c_edm_dk-03; }
+	}
+	[attack]
+	{
+        	attack_range = 0.5;
+		damage_max = 600.9;
+		damage_min = 452.8;
+		damage_bonus_min_cmagic = 245;
+		damage_bonus_max_cmagic = 320;
+	}
+	[common]
+	{
+        	screen_name="Purified Dragon Whelp";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream_white");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1534.9; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_white; }
+		[pcontent]
+		{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-703;
+        	        il_main = #nmagic/40-105;
+            	    il_main = #cmagic/40-105;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+		}
+	}
+    	[mind] 	
+	{ 
+
+		actor_weapon_preference		= WP_MELEE;
+		actor_auto_switches_to_magic	= false;
+		actor_auto_switches_to_karate	= true;
+		actor_auto_switches_to_melee	= true;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+[t:template,n:ut3W_drakeling_blue]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_drake_blue";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	43.9, 0;
+			intelligence =  20.4, 0;
+			dexterity =  	32.4, 0;
+            		melee =  	122, 0;
+            		combat_magic =  122, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 3488120;
+		life = 1877;
+		max_life = 1877;
+		mana = 27.6;
+		max_mana = 27.6;
+		model=m_c_edm_dk_pos_1;
+       		scale_base = 0.35;
+   		[textures] { 0=b_c_edm_dk-02; }
+	}
+	[attack]
+	{
+        	attack_range = 0.5;
+		damage_max = 600.9;
+		damage_min = 452.8;
+		damage_bonus_min_cmagic = 245;
+		damage_bonus_max_cmagic = 320;
+	}
+	[common]
+	{
+        screen_name="Blessed Dragon Whelp";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream_blue");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1640.4; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_blue; }
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-703;
+        	        il_main = #nmagic/40-105;
+            	    il_main = #cmagic/40-105;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+			}
+        }
+	}
+    	[mind] 	
+	{ 
+
+		actor_weapon_preference		= WP_MELEE;
+		actor_auto_switches_to_magic	= false;
+		actor_auto_switches_to_karate	= true;
+		actor_auto_switches_to_melee	= true;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+[t:template,n:ut3W_drakeling_black]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_drake_black";
+	specializes = 3W_base_drake;
+   	[actor]
+	{
+		[skills]
+		{
+			strength =  	83, 0;
+			intelligence =  29.2, 0;
+			dexterity =  	72.3, 0;
+            		melee =  	122, 0;
+            		combat_magic =  122, 0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 3488120;
+		life = 1692;
+		max_life = 1692;
+		mana = 27.6;
+		max_mana = 27.6;
+		model=m_c_edm_dk_pos_1;
+        	scale_base = 0.35;
+ 		[textures] { 0=b_c_edm_dk-04; }
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 600.9;
+		damage_min = 452.8;
+		damage_bonus_min_cmagic = 245;
+		damage_bonus_max_cmagic = 320;
+	}
+	[common]
+	{
+        screen_name="Enchanced Dragon Whelp";
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("drake_wing");
+				condition* = receive_world_message("we_anim_sfx",2);
+			}
+			[*]
+			{
+				action* = call_sfx_script("drake_scream");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+
+		}
+
+	}
+   	[defend] { defense=1874.7; }
+    [mind] 	{ personal_space_range = 0.9; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_drake_breath_black; }
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-703;
+        	        il_main = #nmagic/40-105;
+            	    il_main = #cmagic/40-105;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+			}
+		}
+	}
+    	[mind] 	
+	{ 
+
+		actor_weapon_preference		= WP_MELEE;
+		actor_auto_switches_to_magic	= false;
+		actor_auto_switches_to_karate	= true;
+		actor_auto_switches_to_melee	= true;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}

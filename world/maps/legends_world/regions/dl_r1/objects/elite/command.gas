@@ -1,0 +1,40 @@
+[t:camera_quake,n:0x0a100071]
+{
+	[camera_quake]
+	{
+	  f duration = 3;
+	  f magnitude_x = 0.8;
+	  f magnitude_y = 0.5;
+	  f magnitude_z = 0.8;
+	}
+	[placement]
+	{
+	  p position = -7.06818,19.3634,-8.22763,0x4a217ab7;
+	}
+}
+[t:light_enable,n:0x0a100178]
+{
+	[light_enable]
+	{
+	  b initially_active = false;
+	  x siege_light = 0xD096D60B;
+	  b use_flare = true;
+	}
+	[placement]
+	{
+	  p position = -7.58115,19.9597,-7.05285,0x4a217ab7;
+	}
+}
+[t:cmd_ai_c_send_message,n:0x0a100051]
+{
+	[cmd_send_world_message]
+	{
+		send_message = we_req_activate;
+	  b sendtoallclients = true;
+	  x sendtoscid = 0x0A100052;
+	}
+	[placement]
+	{
+	  p position = -6.30604,3.94382,-13.4844,0x26b536ed;
+	}
+}

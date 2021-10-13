@@ -1,0 +1,403 @@
+[t:template,n:ut3w_chitterskrag_one]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_chitterskrag_one";
+	specializes = dsx_chitterskrag_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =     24, 0;
+			intelligence = 8, 0;
+			dexterity =    10, 0;
+			melee =        42, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3390000;
+		life = 2212;
+		max_life = 2212;
+		mana = 30.5;
+		max_mana = 30.5;
+		model = m_c_edm_chs_pos_1;
+		textures:0 = b_c_edm_chs;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max 	= 607; 
+		damage_min 	= 496;
+	}
+	[common]
+	{
+		screen_name = "Chitterskrag Dreadnought";
+		membership = monster;
+
+	}
+	[defend] { defense = 2054; }
+	[inventory]
+	{
+		drop_at_use_point = true;
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 16, Medium */
+			[oneof*]
+			{
+			[oneof*]
+			{
+				chance = 0.4;
+				il_main = #*/148-296;
+				il_main = #armor/138-705;
+                il_main = #nmagic/15-111;
+                il_main = #cmagic/15-111;
+			}
+            [oneof*]
+			{
+	        	chance = 0.004;
+	            il_main = #weapon/-rare(1)/163-329;
+	            il_main = #armor/-rare(1)/372-1026;
+                il_main = #*/-rare(1)/163-329;
+            }
+			[oneof*]
+			{
+            	chance = 0.002;
+	            il_main = #weapon/-unique(2)/163-329;
+	            il_main = #armor/-unique(2)/372-1026;
+                il_main = #*/-unique(2)/163-329;
+            }
+				
+			}
+		}
+	}
+
+}
+
+[t:template,n:ut3w_chitterskrag_baby]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_chitterskrag_baby";
+	specializes = dsx_chitterskrag_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =     94, 0;
+			intelligence = 8, 0;
+			dexterity =    10, 0;
+			melee =        91, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5051600;
+		life = 1014.2;
+		max_life = 1014.2;
+		mana = 76.2;
+		max_mana = 76.2;
+		model = m_c_edm_chs_pos_1;
+		scale_base = 0.35;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_baby_chitterskrag_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_baby_chitterskrag_SED; }
+		}
+		textures:0 = b_c_edm_chs;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 553;
+		damage_min = 347;
+	}
+	[common]
+	{
+		screen_name = "Chitterskrag Pest"; //--
+		membership = monster; //--
+
+	}
+	[defend] { defense = 1090; }
+	[body]
+	{
+		avg_move_velocity = 5;
+	}
+}
+ 
+
+[t:template,n:ut3w_chitterskrag_two]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_chitterskrag_two";
+	specializes = dsx_chitterskrag_base;
+	[actor]
+		{
+		[skills]
+		{
+			strength =  	66, 0;
+			intelligence =  7.6, 0;
+			dexterity =  	18.2, 0;
+			ranged 		= 81, 0;
+			combat_magic	= 81, 0;
+			nature_magic	= 81, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3390000;
+		life = 1812;
+		max_life = 1812;
+		mana = 30.5;
+		max_mana = 30.5;
+		model = m_c_edm_chs_pos_2;
+		scale_base = 1.0;
+		textures:0 = b_c_edm_chs-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 454.1;
+		damage_min = 342.3;
+		damage_bonus_min_cmagic = 210;
+		damage_bonus_max_cmagic = 300;
+	}
+	[common]
+	{
+		screen_name = "Chitterskrag Artillery"; //--
+		membership = monster; //--
+
+	}
+	[defend] { defense = 1905; }
+	[body]
+	{
+		avg_move_velocity = 2.5;
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_chs_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] 
+				{ 
+				00=rl; //alternate //01=wl;  
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]{ 00=mg; }
+			}
+		}
+	}
+	[mind]
+	{
+
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true;
+		
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+		
+		personal_space_range = 0.75;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_chitterskrag_poison; }
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 16, Medium */
+			[oneof*]
+			{
+			[oneof*]
+			{
+				chance = 0.4;
+				il_main = #*/148-296;
+				il_main = #armor/138-705;
+                il_main = #nmagic/15-111;
+                il_main = #cmagic/15-111;
+			}
+            [oneof*]
+			{
+	        	chance = 0.004;
+	            il_main = #weapon/-rare(1)/163-329;
+	            il_main = #armor/-rare(1)/372-1026;
+                il_main = #*/-rare(1)/163-329;
+            }
+			[oneof*]
+			{
+            	chance = 0.002;
+	            il_main = #weapon/-unique(2)/163-329;
+	            il_main = #armor/-unique(2)/372-1026;
+                il_main = #*/-unique(2)/163-329;
+            }
+				
+			}
+		}
+	}
+
+}
+[t:template,n:ut3w_chitterskrag_baby_01]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_chitterskrag_baby";
+	specializes = dsx_chitterskrag_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 81.3, 0;
+			intelligence = 81.4, 0;
+			dexterity    = 49.6, 0;
+			combat_magic = 103, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5051600;
+		life = 1014.2;
+		max_life = 1014.2;
+		mana = 76.2;
+		max_mana = 76.2;
+		model = m_c_edm_chs_pos_1;
+		scale_base = 0.35;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_baby_chitterskrag_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_baby_chitterskrag_SED; }
+		}
+		textures:0 = b_c_edm_chs;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 524.9;
+		damage_min = 371.6;
+		damage_bonus_min_cmagic = 306;
+		damage_bonus_max_cmagic = 344;
+	}
+	[common]
+	{
+		screen_name = "Immature Chitterskrag"; //--
+		membership = monster; //--
+	}
+	[defend] { defense = 1090; }
+	[body]
+	{
+		avg_move_velocity = 5.0;
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_chs_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] 
+				{ 
+				00=rl; //alternate //01=wl;  
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]{ 00=mg; }
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true;
+		
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;	
+		personal_space_range = 0.75;
+
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.35
+			&still		= false;
+
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 1;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_chitterskrag_poison; }
+	}
+
+}
+
+
+ 
+

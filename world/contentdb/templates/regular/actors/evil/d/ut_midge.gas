@@ -1,0 +1,163 @@
+[t:template,n:ut_midge_swirling]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_midge_swirling";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	= 15, 0;
+			intelligence 	= 10, 0;
+			dexterity 	= 10, 0;
+			nature_magic 	= 13, 0;
+			combat_magic	= 13, 0;
+		}
+    }
+	[aspect]
+	{
+		experience_value = 1448;
+		force_no_render	 = true;
+		// MRC 7/18/2003 Allow clicking on invisible objects.
+		force_no_render_click = true;
+		life             = 469;
+		max_life         = 469;
+		mana             = 56;
+		max_mana         = 56;
+		megamap_icon	= b_gui_ig_mnu_midge_swirling;
+		megamap_orient = true;
+		draw_shadow = false;
+		model = m_c_edm_ga_pos_1;
+		scale_base = 1;  
+		
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_swirling_midges;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_swirling_midges_SED; }
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 68; 
+		damage_min = 62; 
+	}
+	[body]
+	{
+		avg_move_velocity = 2.5;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_ga_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_misc]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = ds;
+					wake = rv;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = basic_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}		
+	[common]
+	{
+		forced_expiration_class=immediate;
+		auto_expiration_class=immediate;
+
+		screen_name = "Swirling Midges";
+		membership = monster,immune_polymorph;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("swirling_midges");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+	[defend] { defense = 231; }
+	
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_midge_swirling; }
+	}
+
+	[mind]
+	{
+		actor_weapon_preference		= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_effect = swirling_midges_die;
+		explode_when_killed = true;
+		explosion_magnitude = 2;
+		fire_effect = human_physics_fire;
+		fire_resistance = 0.0;
+        fire_burn_threshold = 20;
+        gib_gore_good = true;
+	}
+}

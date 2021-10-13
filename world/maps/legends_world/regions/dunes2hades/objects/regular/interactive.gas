@@ -1,0 +1,19 @@
+[t:lever_glb_06,n:0x07e00039]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x07B0003A;
+	  x on_scid = 0x07B0003A;
+	}
+	[placement]
+	{
+	  q orientation = -0.707107,0,0,0.707107;
+	  p position = 1.97452,2.04022,-1.27518,0xc955e329;
+		use_point_scids = 0x07b000f1,0x07e0003a;
+	}
+}

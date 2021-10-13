@@ -1,0 +1,646 @@
+[t:template,n:ut3W_seck_archer]
+{
+	category_name = "3W_evil_a";
+	doc = "3W_Seck Archer";
+	specializes = 3W_base_seck;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	53.7, 0;
+			intelligence =  27.7, 0;
+			dexterity =  	55.8, 0;
+			ranged =  		98, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 6789000;
+		life = 1966.3;
+		max_life = 1966.3;
+		mana = 65.5;
+		max_mana = 65.5;
+		model = m_c_eam_sa_pos_1;
+		[textures] { 0=b_c_eam_sa; }
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 707.8;
+		damage_min = 425.8;
+		damage_bonus_min_ranged = 154;
+		damage_bonus_max_ranged = 264;
+	}
+	[common] 
+	{ 
+		screen_name="Seck Deathbringer";
+	}
+	[defend] { defense=1081.4; }
+	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				es_shield_hand = bw_un_seck_avg;
+			}
+
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/193-294;
+					il_main = #armor/139-687;
+	    			il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/294-321;
+	                il_main = #armor/-rare(1)/694-786;
+                    il_main = #*/-rare(1)/294-321;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/294-321;
+	                il_main = #armor/-unique(2)/694-786;
+                    il_main = #*/-unique(2)/294-321;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 594028;
+					min = 537002;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?still	= false;
+	}
+}
+[t:template,n:ut3W_seck_grunt]
+{
+	category_name = "3W_evil_a";
+	doc = "3W_Seck Grunt";
+	specializes = 3W_base_seck;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	95.1, 0;
+			intelligence =  24.6, 0;
+			dexterity =  	47.8, 0;
+			melee =  		107, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 7626000;
+		life = 3654.7;
+		max_life = 3654.7;
+		mana = 59.3;
+		max_mana = 59.3;
+		model = m_c_eam_sg_pos_1;
+		[textures] { 0=b_c_eam_sg; }
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 473.3;
+		damage_min = 253.9;
+	}
+	[common]
+	{
+		screen_name="Seck Survivor";
+	}
+	[defend] { defense=1642.1; }
+   	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = sd_un_seck_1h_avg;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/292-333;
+					il_main = #armor/365-725;
+	    			il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/348-378;
+	                il_main = #armor/-rare(1)/680-770;
+                    il_main = #*/-rare(1)/348-378;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/348-378;
+	                il_main = #armor/-unique(2)/680-770;
+                    il_main = #*/-unique(2)/348-378;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 552484;
+					min = 435504;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:ut3W_seck_mage]
+{
+	category_name = "3W_evil_a";
+	doc = "3W_Seck Mage";
+	specializes = 3W_base_seck;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  57.1, 0;
+			intelligence 	=  66.7, 0;
+			dexterity 		=  53.3, 0;
+            combat_magic 	=  127, 0;
+            nature_magic 	=  87, 0;
+		}
+		drops_spellbook = false;
+	}
+	[aspect]
+	{
+		experience_value = 5115000;
+		life = 2452.1;
+		max_life = 2452.1;
+        mana = 7704.5;
+        max_mana = 7704.5;
+		model = m_c_eam_sm_pos_1;
+		[textures] { 0=b_c_eam_sm; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 713.4;
+		damage_min = 399.5;
+		damage_bonus_min_cmagic = 221;
+		damage_bonus_max_cmagic = 300;
+	}
+	[body]
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_eam_sm_fs;
+			[chore_attack]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0000 = at;
+					0001 = at-02;
+					qffg = dff;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 5;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 5;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 5;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = a_c_eam_sm_fs5_dfs;
+					wake = a_c_eam_sm_fs5_ds;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+		}
+		[weapon_scales]
+		{
+			as_single_melee	= 1.3, 1.3, 1.3;
+		}
+	}
+	[common]
+	{
+		screen_name="Seck Annihilator";
+	}
+	[defend] { defense=951.9; }
+   	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				es_weapon_hand = st_un_seck_mage;
+			}
+
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.55;
+					il_main = #*/256-288;
+					il_main = #armor/138-686;
+	                il_main = #nmagic/102-120;
+	                il_main = #cmagic/102-120;
+	    			il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/290-315;
+	                il_main = #armor/-rare(1)/680-770;
+                    il_main = #*/-rare(1)/290-315;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/290-315;
+	                il_main = #armor/-unique(2)/680-770;
+                    il_main = #*/-unique(2)/290-315;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 567449;
+					min = 451925;
+				}
+			}
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell = spell_flame_blades;
+		}
+	}
+	[mind]
+	{
+        actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= true;
+
+		melee_engage_range = 8;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social	= 0.45
+			&still	= false;
+
+	}
+}
+
+[t:template,n:ut3W_seck_mage_high]
+{
+	category_name = "3W_evil_a";
+	doc = "3W_Seck_mage_high";
+	specializes = 3W_base_seck;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  54.5, 0;
+			intelligence 	=  65.6, 0;
+			dexterity 		=  51.5, 0;
+            combat_magic 	=  133, 0;
+            nature_magic 	=  85, 0;
+		}
+		drops_spellbook = false;
+	}
+	[aspect]
+	{
+		experience_value = 12090000;
+		life = 3434.7;
+		max_life = 3434.7;
+        mana = 7382.3;
+        max_mana = 7382.3;
+		model = m_c_eam_sm_pos_1;
+		[textures] { 0=b_c_eam_sm-02; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 786.8;
+		damage_min = 512;
+		damage_bonus_min_cmagic = 228;
+		damage_bonus_max_cmagic = 307;
+	}
+	[body]
+	{
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_eam_sm_fs;
+			[chore_attack]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files]d
+				{
+					0000 = at;
+					0001 = at-02;
+					qffg = dff;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 5;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 5;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 5;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = a_c_eam_sm_fs5_dfs;
+					wake = a_c_eam_sm_fs5_ds;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+		}
+		[weapon_scales]
+		{
+			as_single_melee	= 1.3, 1.3, 1.3;
+		}
+	}
+	[common]
+	{
+		screen_name="Seck Banecaster";
+	}
+	[defend] { defense=1075.7; }
+   	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				es_weapon_hand = st_un_seck_mage;
+			}
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell = spell_flame_blades;
+		}
+	}
+	[mind]
+	{
+        actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= true;
+
+		melee_engage_range = 8;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+[t:template,n:ut3W_seck_archer_elite]
+{
+	category_name = "3W_evil_a";
+	doc = "3W_Seck_archer_elite";
+	specializes = 3W_base_seck;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	56.2, 0;
+			intelligence =  27.4, 0;
+			dexterity =  	72.6, 0;
+			ranged =  		116, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 6417000;
+		life = 1815;
+		max_life = 1815;
+		mana = 62.9;
+		max_mana = 62.9;
+		model = m_c_eam_sa_pos_1;
+		[textures] { 0=b_c_eam_sa-02; }
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 804.9;
+		damage_min = 469.8;
+		damage_bonus_min_ranged = 165;
+		damage_bonus_max_ranged = 299;
+	}
+	[common] { screen_name="Seck Undiviner"; }
+	[defend] { defense=1510.1; }
+	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				es_shield_hand = bw_un_seck_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/229-304;
+					il_main = #armor/140-688;
+	                il_main = #spell/100-124;
+	    			il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/269-328;
+	                il_main = #armor/-rare(1)/777-888;
+                    il_main = #*/-rare(1)/269-328;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/269-328;
+	                il_main = #armor/-unique(2)/777-888;
+                    il_main = #*/-unique(2)/269-328;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 607426;
+					min = 534974;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party		= true
+			&actor_joins_existing_party		= true
+			&stop_flee_alive_party_size		= 1
+			&party_template					= "party_seck";
+
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?still		= false;
+
+		on_enemy_entered_ocz_flee 	= true;
+		on_enemy_entered_ocz_attack = false;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 					= 1;
+	}
+}
+
+[t:template,n:ut3W_seck_guard_elite]
+{
+	category_name = "3W_evil_a";
+	doc = "3W_Seck Elite Guard";
+	specializes = 3W_base_seck;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	101, 0;
+			intelligence =  25.7, 0;
+			dexterity =  	48, 0;
+			melee =  		109, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 13950000;
+		life = 3759.6;
+		max_life = 3759.6;
+		mana = 55.7;
+		max_mana = 55.7;
+		model = m_c_eam_sg_pos_1;
+		[textures] { 0=b_c_eam_sa-02; }
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 507;
+		damage_min = 268.2;
+	}
+	[common] { screen_name="Seck Darkener"; }
+	[defend] { defense=1755.7; }
+    [inventory]
+	{
+		selected_active_location = IL_ACTIVE_MELEE_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = sd_un_seck_1h_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/216-287;
+					il_main = #armor/138-700;
+	                il_main = #spell/94-117;
+	    			il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/289-314;
+	                il_main = #armor/-rare(1)/733-838;
+                    il_main = #*/-rare(1)/289-314;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/289-314;
+	                il_main = #armor/-unique(2)/733-838;
+                    il_main = #*/-unique(2)/289-314;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 690828;
+					min = 561550;
+				}
+			}
+		}
+	}
+}

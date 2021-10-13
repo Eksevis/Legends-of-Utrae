@@ -1,0 +1,42 @@
+[t:emt_sound,n:0x081000a1]
+{
+	[placement]
+	{
+	  q orientation = 0,0.788011,0,0.615661;
+	  p position = 1.09417,0.224602,1.2458,0xa297c605;
+	}
+	[sound_emitter]
+	{
+		event_sound = "env_rats_sqeakskitter";
+	  f max_repeat_rate = 20;
+	  f repeat_rate = 7;
+	}
+}
+[t:emt_sound,n:0x081000a0]
+{
+	[placement]
+	{
+	  q orientation = 0,0.992546,0,-0.12187;
+	  p position = 1.88928,0.371592,-1.10511,0xdefa0328;
+	}
+	[sound_emitter]
+	{
+		event_sound = "env_rats_sqeakskitter";
+	  f max_repeat_rate = 20;
+	  f repeat_rate = 7;
+	}
+}
+[t:emt_sound,n:0x0810009d]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.615661,0,0.788011;
+	  p position = 0.820821,1.02157,-1.99057,0x709fcade;
+	}
+	[sound_emitter]
+	{
+		event_sound = "env_rats_sqeakskitter";
+	  f max_repeat_rate = 20;
+	  f repeat_rate = 7;
+	}
+}

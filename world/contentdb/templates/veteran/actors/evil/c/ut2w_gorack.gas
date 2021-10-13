@@ -1,0 +1,543 @@
+[t:template,n:ut2W_gorack]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_gorack";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  51.2, 0;
+			intelligence =  6.9, 0;
+			dexterity =  33.2, 0;
+			melee =  61, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 69108;
+		mana = 32.7;
+		max_mana = 32.7;
+		life = 2945.5;
+		max_life = 2945.5;
+		model = m_c_ecm_ga_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_gorack; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_gorack_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_gorack_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_gorack_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_gorack_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 356.4;
+		damage_min = 279.8;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.120000;
+		max_move_velocity = 4.2;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = weapon_grip;
+			weapon_bone = shield_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_ga_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		membership = party_gorack_boss, monster;
+	}
+	[inventory]
+	{
+		//selected_active_location = il_active_primary_spell;
+		//[other] { il_active_primary_spell=spell_gorack_deathball; }
+	}
+	[common] { screen_name="Gorack Bruiser"; }
+	[defend] { defense=481.1; }
+   	[inventory]
+	{
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/36-52;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/173-202;
+					il_main = #armor/88-461;
+	                il_main = #weapon/173-202;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/192-250;
+	                il_main = #armor/-rare(1)/589-736;
+                    il_main = #*/-rare(1)/192-250;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/192-250;
+	                il_main = #armor/-unique(2)/589-736;
+                    il_main = #*/-unique(2)/192-250;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 98471;
+					min = 72440;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+
+		jat_attack_object_melee = world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 			= 1.0;
+
+		actor_auto_switches_to_magic = true;
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+	}
+}
+
+[t:template,n:ut2W_gorack_boss_01]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_gorack boss 01";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  53.6, 0;
+			intelligence =  5.5, 0;
+			dexterity =  35.1, 0;
+			melee =  68, 0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_ecm_ga-04;
+		experience_value = 85722;
+		mana = 32.7;
+		max_mana = 32.7;
+		life = 3937.1;
+		max_life = 3937.1;
+		model = m_c_ecm_ga_pos_1;
+		[voice]
+		{
+			[die]
+			{
+				* = s_e_die_gorack;
+			}
+			[hit_critical]
+			{
+				* = s_e_hit_gorack;
+			}
+			[hit_glance]
+			{
+				* = s_e_hit_gorack;
+			}
+			[hit_solid]
+			{
+				* = s_e_hit_gorack;
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 367.2;
+		damage_min = 285.7;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.120000;
+		max_move_velocity = 4.2;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = weapon_grip;
+			weapon_bone = shield_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_ga_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Urgolhm The Crazed";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_purple(sgx)");
+			}
+		}
+	}
+	[defend] { defense=947.5; }
+   	[inventory]
+	{
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.1;
+	                il_main = #spell/75-82;
+				}
+				[oneof*]
+				{
+					chance = 0.694;
+					il_main = #*/202-214;
+					il_main = #armor/651-736;
+	                il_main = #weapon/202-214;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/227-263;
+	                il_main = #armor/-rare(1)/753-867;
+                    il_main = #*/-rare(1)/227-263;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/227-263;
+	                il_main = #armor/-unique(2)/753-867;
+                    il_main = #*/-unique(2)/227-263;
+	            }
+				[gold*]
+				{
+					chance = 0.2;
+					max = 196877;
+					min = 131996;
+					min_pile = 275;
+					piles = 3 - 5;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.9
+			&friend_template	= false
+			&friends			= party_gorack_boss
+			&still				= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_gorack_boss";
+
+		jat_attack_object_melee = world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 			= 1.0;
+
+		actor_auto_switches_to_magic = true;
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+	}
+}
+[t:template,n:ut2W_gorack_magic]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_gorack";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	36.3, 0;
+			intelligence =  13.8, 0;
+			dexterity =  	20.7, 0;
+            		ranged =  	55,  0;
+			combat_magic =  61, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 157936;
+		life = 2438.1;
+        	max_life = 2438.1;
+		mana = 18.7;
+		max_mana = 18.7;
+		model = m_c_ecm_ga_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_gorack; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_gorack_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_gorack_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_gorack_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_gorack_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 356.4;
+		damage_min = 279.8;
+		damage_bonus_min_cmagic = 44;
+		damage_bonus_max_cmagic = 95;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.120000;
+		max_move_velocity = 4.2;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = weapon_grip;
+			weapon_bone = shield_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_ga_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Desert Gorack Nomad";
+		membership = party_gorack_boss, monster;
+	}
+	[defend] { defense=781.1; }
+   	[inventory]
+	{
+  		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_gorack_boulder; }
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/202-217;
+					il_main = #armor/108-544;
+	                il_main = #nmagic/65-84;
+	                il_main = #cmagic/65-84;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/213-236;
+	                il_main = #armor/-rare(1)/673-697;
+                    il_main = #*/-rare(1)/213-236;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/213-236;
+	                il_main = #armor/-unique(2)/673-697;
+                    il_main = #*/-unique(2)/213-236;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 154045;
+					min = 118342;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.9
+			&friend_template	= false
+			&friends		= party_gorack
+			&still		= false;
+
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&party_template		= "party_gorack";
+
+		jat_attack_object_melee = world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 			= 1.0;
+
+		actor_weapon_preference		= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee		= false;
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+	}
+}

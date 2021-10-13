@@ -1,0 +1,280 @@
+[t:template,n:ut3w_utraean_melee]
+{
+	doc = "utraean_melee";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	38.8, 0;
+			intelligence =  13.3, 0;
+			dexterity =  	15.5, 0;
+			melee =  	111,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3488120;
+		life = 3058;
+		max_life = 3058;
+		mana = 43.1;
+		max_mana = 43.1;
+
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin_03;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[common]
+	{
+		screen_name="Utraean Elite Guard";
+		membership = monster, party_utraean, utraean;
+
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_g_c_dsx_hst_avg;
+                		es_weapon_hand = st_g_c_dsx_mn_avg;
+                		es_weapon_hand = ax_g_c_dsx_ptr_avg;
+                		es_weapon_hand = ax_g_c_dsx_psc_avg;
+                		es_weapon_hand = ax_g_c_dsx_pfk_avg;
+                		es_weapon_hand = ax_g_c_dsx_png_avg;
+                		es_weapon_hand = ax_g_c_dsx_pzc_avg;
+                		es_weapon_hand = ax_g_c_dsx_pbd_avg;
+                		es_weapon_hand = ax_g_c_dsx_pcl_avg;
+			}
+			[oneof*]
+			{
+ 				es_chest = bd_ch_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_zaurask_dsx;
+  				es_chest = bd_ba_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_ba_f_g_c_avg_zpad_dsx;
+  				es_chest = bd_pl_f_g_c_avg_alloy_dsx;
+  				es_chest = bd_le_f_g_c_avg_zcured_dsx;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_sh_sc_m_g_c_avg_woven_dsx;
+                		es_feet = bo_bo_sc_m_g_c_avg_beaded_dsx;
+                		es_feet = bo_bo_sc_m_g_c_avg_geared_dsx;
+                		es_feet = bo_bo_sc_m_g_c_avg_ceramic_dsx;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_sc_m_g_c_avg_woven_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-687;
+        	        il_main = #nmagic/40-77;
+            	    il_main = #cmagic/40-74;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 429.2;
+		damage_min = 347.9;
+	}
+   	[defend] { defense=1475; }
+   	[mind]
+   	{
+
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+	}
+
+}
+[t:template,n:ut3w_utraean_ranged]
+{
+	doc = "utraean_ranged";
+	specializes = base_evil_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  36.5, 0;
+			intelligence =  13.3, 0;
+			dexterity =  21.3, 0;
+			ranged =  110,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3072000;
+		life = 1980;
+		max_life = 1980;
+		mana = 47.7;
+		max_mana = 47.7;
+
+		[textures]
+		{
+			0 = b_c_gan_utraean_skin_01;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="Utraean Artillerist";
+		membership = monster, party_bandit_ranged, bandit;
+
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//        		custom_head = m_c_gah_fb_hlmt_head-05;
+    		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_dragon;
+				ES_WEAPON_HAND = minigun_flamethrower;
+				ES_WEAPON_HAND = minigun_lightning;
+				ES_WEAPON_HAND = minigun_grenade_launcher;
+				es_weapon_hand = dsx_minigun_gas_monster;
+				ES_WEAPON_HAND = minigun_napalm;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_br_r_g_c_avg_rubber_dsx;
+  				es_chest = bd_br_r_g_c_avg_culeaf_dsx;
+  				es_chest = bd_br_r_g_c_avg_hassat_dsx;
+  				es_chest = bd_br_r_g_c_avg_bark_dsx;
+  				es_chest = bd_br_r_g_c_avg_flywing_dsx;
+  				es_chest = bd_br_r_g_c_avg_laleaf_dsx;
+  				es_chest = bd_br_r_g_c_avg_zaurask_dsx;
+  				es_chest = bd_br_r_g_c_avg_thessic_dsx;
+  				es_chest = bd_br_r_g_c_avg_knleaf_dsx;
+  				es_chest = bd_br_r_g_c_avg_releaf_dsx;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_sh_sc_m_g_c_avg_woven_dsx;
+                		es_feet = bo_bo_sc_m_g_c_avg_beaded_dsx;
+                		es_feet = bo_bo_sc_m_g_c_avg_geared_dsx;
+                		es_feet = bo_bo_sc_m_g_c_avg_ceramic_dsx;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_sc_m_g_c_avg_woven_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/233-275;
+					il_main = #armor/140-687;
+        	        il_main = #nmagic/40-77;
+            	    il_main = #cmagic/40-74;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/248-296;
+	                il_main = #armor/-rare(1)/682-745;
+                    il_main = #*/-rare(1)/248-296;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/248-296;
+	                il_main = #armor/-unique(2)/682-745;
+                    il_main = #*/-unique(2)/248-296;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 523747;
+					min = 439873;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 524.2;
+		damage_min = 376.7;
+		damage_bonus_min_ranged = 249;
+		damage_bonus_max_ranged = 301;
+	}
+	[defend] { defense=1050; }
+	[mind]
+    	{
+
+  		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template			= "party_utraean";
+
+    		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		on_enemy_entered_icz_switch_to_melee	= false;
+		on_enemy_entered_ocz_flee 		= true;
+		on_enemy_entered_ocz_attack 		= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 2;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_distance = 10;
+    	}
+
+}
+

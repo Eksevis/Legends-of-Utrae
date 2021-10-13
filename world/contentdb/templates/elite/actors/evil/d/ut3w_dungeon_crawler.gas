@@ -1,0 +1,193 @@
+[t:template,n:ut3W_dungeon_crawler]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_dungeon crawler";
+	specializes = 3W_base_dungeon_crawler;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	66.1, 0;
+			intelligence =  11.5, 0;
+			dexterity =  	21.7, 0;
+			melee =  		101, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4650000;
+		life = 5071.4;
+		max_life = 5071.4;
+		mana = 14.4;
+        max_mana = 14.4;
+    }
+    [attack]
+	{
+		attack_range = 0.5;
+		damage_max = 526.3;
+		damage_min = 335.9;
+	}
+	[common] 
+	{ 
+		screen_name="Mutilated Crawler"; 
+
+	}
+	[defend] { defense=660.2; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+					chance = 0.35;
+					il_main = #*/138-298;
+					il_main = #armor/139-688;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/322-356;
+	                il_main = #armor/-rare(1)/1014-1040;
+                    il_main = #*/-rare(1)/322-356;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/322-356;
+	                il_main = #armor/-unique(2)/1014-1040;
+                    il_main = #*/-unique(2)/322-356;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 583485;
+					min = 504082;
+				}
+			}
+		}
+	}
+ 
+}
+[t:template,n:ut3W_tortured_corpse]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_tortured_corpse";
+	specializes = 3W_base_dungeon_crawler;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  60.8, 0;
+			intelligence =  5.3, 0;
+			dexterity =  9.1, 0;
+			melee =  90, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 699030;
+		life = 532.7;
+		max_life = 532.7;
+		mana = 94;
+        max_mana = 94;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 194;
+		damage_min = 111;
+	}
+	[common] 
+	{ 
+		screen_name="Shambling Decayed Corpse"; 
+
+	}
+	[defend] { defense=141; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #weapon/71-99;
+                	il_main = #armor/125-642;
+				}
+        		[oneof*]
+				{
+	        		chance = 0.002;
+	            	il_main = #weapon/-rare(1)/113-141;
+	            	il_main = #armor/-rare(1)/251-345;
+                }
+	        }
+        }
+	}
+
+}
+[t:template,n:ut3W_grave_crawler]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_grave_crawler";
+	specializes = 3W_base_dungeon_crawler;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  		40.6, 0;
+			intelligence =  	6.3, 0;
+			dexterity =  		9.1, 0;
+			melee =  			93, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2084000;
+		life = 2560;
+		max_life = 2560;
+		mana = 24;
+        max_mana = 24;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 616;
+		damage_min = 457.2;
+	}
+	[common] 
+	{ 
+		screen_name="Coffin Crawler"; 
+
+	}
+	[defend] { defense=685.3; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #weapon/31-51;
+                il_main = #armor/136-664;
+			}
+            [oneof*]
+				{
+	            chance = 0.004;
+	            il_main = #weapon/-rare(1)/47-82;
+	            il_main = #armor/-rare(1)/80-204;
+                il_main = #*/-rare(1)/47-82;
+            }
+			[oneof*]
+				{
+            	chance = 0.002;
+	            il_main = #weapon/-unique(2)/47-82;
+	            il_main = #armor/-unique(2)/80-204;
+                il_main = #*/-unique(2)/47-82;
+	        }
+		}
+	}
+
+}

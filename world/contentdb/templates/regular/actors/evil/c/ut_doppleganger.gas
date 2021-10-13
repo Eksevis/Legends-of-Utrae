@@ -1,0 +1,260 @@
+[t:template,n:ut_doppelganger]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_doppelganger";
+	specializes = dsx_doppelganger_base;
+	[actor]
+	{
+		[skills]
+			{
+				strength 	=  15, 0;
+				intelligence = 8, 0;
+				dexterity 	=  11, 0;
+				melee 		=  33, 0;
+			}
+	}
+	[aspect]
+	{
+		experience_value = 748;
+		life = 753;
+		max_life = 753;
+		mana = 1;
+		max_mana = 1;
+	}
+	[common]
+	{
+		screen_name = "Doppelganger";
+		membership = monster,immune_freeze;
+	}
+	[doppelganger]{ statsMultiplier = 0.8; }
+	[defend] { defense=574; }
+	[inventory]
+	{
+		drop_at_use_point = true;
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 19, Medium */
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 1663;
+					max = 2316;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = potion_mana_medium;
+					il_main = potion_health_medium;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/89-112;
+					il_main = #armor/215-318;
+					il_main = #*/89-112;
+				}
+				[oneof*]
+				{
+					chance = 0.0075;
+					il_main = #weapon/-rare(1)/101-128;
+					il_main = #armor/-rare(1)/290-374;
+					il_main = #*/-rare(1)/101-128;
+				}
+				
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 186;
+		damage_min = 180;
+	}
+
+}
+
+[t:template,n:ut_doppelganger_2]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_doppelganger_2";
+	specializes = dsx_doppelganger_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  15, 0;
+			intelligence 	= 8, 0;
+			dexterity 	=  11, 0;
+			melee 		=  34, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 692;
+		life = 869;
+		max_life = 869;
+		mana = 1;
+		max_mana = 1;
+	}
+
+	[common]
+	{
+		screen_name = "Doppelganger Knave";
+		membership = monster,immune_freeze;
+	}
+	[doppelganger]{ statsMultiplier = 1.0; }
+	[defend] { defense=556; }
+	[inventory]
+	{
+		drop_at_use_point = true;
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 19, Strong */
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 1663;
+					max = 2316;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = potion_mana_medium;
+					il_main = potion_health_medium;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/89-112;
+					il_main = #armor/215-318;
+					il_main = #*/89-112;
+				}
+				[oneof*]
+				{
+					chance = 0.0075;
+					il_main = #weapon/-rare(1)/101-128;
+					il_main = #armor/-rare(1)/290-374;
+					il_main = #*/-rare(1)/101-128;
+				}
+				[oneof*]
+				{
+					chance = 0.005;
+					il_main = #weapon/-unique(2)/105-123;
+					il_main = #armor/-unique(2)/300-384;
+					il_main = #*/-unique(2)/105-123;
+				}			
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 202;
+		damage_min = 196;
+	}
+}
+
+[t:template,n:ut_doppelganger_boss]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_doppelganger_boss";
+	specializes = dsx_doppelganger_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		= 15, 0;
+			intelligence 	=  8, 0;
+			dexterity 		= 11, 0;
+			melee 			= 43, 0;
+		}
+	}
+	[aspect]
+	{
+		scale_base = 2.0;
+		experience_value = 920;
+		life = 2553;
+		max_life = 2553;
+		mana = 1;
+		max_mana = 1;
+	}
+	[common]
+	{
+		screen_name = "Shadrel The Shapeshifter";
+		membership = monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;		
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("doppelganger_body_boss");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_blue(sgx)");
+			}
+		}
+	}
+	[inventory]
+	{
+		drop_at_use_point = true;
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 19, Special */
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 3663;
+					max = 4316;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #weapon/101-125;
+					il_main = #armor/223-328;
+					il_main = #*/101-125;
+				}
+				[oneof*]
+				{
+					chance = 0.01;
+					il_main = #weapon/-rare(1)/105-123;
+					il_main = #armor/-rare(1)/300-384;
+					il_main = #*/-rare(1)/105-123;
+				}
+				[oneof*]
+				{
+					chance = 0.005;
+					il_main = #weapon/-unique(2)/105-123;
+					il_main = #armor/-unique(2)/300-384;
+					il_main = #*/-unique(2)/105-123;
+				}			
+			}
+		}
+	}
+	[defend] { defense=884; }
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 239;
+		damage_min = 223;
+	}
+	
+	[doppelganger]
+	{ 
+		statsMultiplier = 2.5;
+		effect_script = doppelganger_glow_boss;
+	}
+}

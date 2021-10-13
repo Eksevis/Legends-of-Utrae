@@ -1,0 +1,256 @@
+[t:template,n:ut2w_swarmling]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_swarmling";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  4.2, 0;
+			intelligence =  1.5, 0;
+			dexterity =  23.9, 0;
+			ranged =  53, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3129;
+		life = 244;
+        	max_life = 244;
+        	mana = 108;
+		max_mana = 108;
+		model = m_c_edm_st_pos_1;
+		scale_base = 0.5;
+		textures:0 = b_c_edm_st-02;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_swarmling_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_insectoid_SED; }
+			//[hit_critical]	{ priority = low;	* = s_e_hit_phrak;		}
+			//[hit_glance]	{ priority = low;	* = s_e_hit_phrak;		}
+			[hit_solid]		{ priority = low;	* = s_e_hit_phrak;		}
+		}	
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 195.4;
+		damage_min = 150.4;
+	}
+	[body]
+	{
+		avg_move_velocity = 3.930000;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_st_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Deepdweller Stalker";
+		membership = swarmling, monster; //--
+	}
+	[defend] { defense = 654; }
+	
+	[mind]
+	{
+			
+		on_enemy_spotted_alert_friends 		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true
+		&actor_creates_own_party		= true
+		&party_template				= "party_dsx_swarmling";
+		com_channels				= dyn_party, swarmling;
+		com_range				= 14.0;
+		melee_engage_range = 14;
+		personal_space_range = 0.5;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_swarmling_01 = 1;
+			frag_glb_swarmling_02 = 1;
+			frag_glb_swarmling_03 = 2;
+			frag_glb_swarmling_04 = 1;
+			frag_glb_swarmling_05 = 2;
+		}
+	}
+}
+[t:template,n:ut2w_swarmling_01]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_swarmling";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  4.2, 0;
+			intelligence =  1.5, 0;
+			dexterity =  23.9, 0;
+			ranged =  53, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3129;
+		life = 444;
+        	max_life = 444;
+        	mana = 108;
+		max_mana = 108;
+		model = m_c_edm_st_pos_1;
+		scale_base = 0.5;
+		textures:0 = b_c_edm_st-02;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_swarmling_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_insectoid_SED; }
+			//[hit_critical]	{ priority = low;	* = s_e_hit_phrak;		}
+			//[hit_glance]	{ priority = low;	* = s_e_hit_phrak;		}
+			[hit_solid]		{ priority = low;	* = s_e_hit_phrak;		}
+		}	
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 195.4;
+		damage_min = 150.4;
+	}
+	[body]
+	{
+		avg_move_velocity = 3.930000;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_st_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Deepdweller Toxicator";
+		membership = swarmling, monster; //--
+	}
+	[defend] { defense = 654; }
+	
+	[mind]
+	{
+			
+		on_enemy_spotted_alert_friends 		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true
+		&actor_creates_own_party		= true
+		&party_template				= "party_dsx_swarmling";
+		com_channels				= dyn_party, swarmling;
+		com_range				= 14.0;
+		melee_engage_range = 14;
+		personal_space_range = 0.5;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_swarmling_01 = 1;
+			frag_glb_swarmling_02 = 1;
+			frag_glb_swarmling_03 = 2;
+			frag_glb_swarmling_04 = 1;
+			frag_glb_swarmling_05 = 2;
+		}
+	}
+}

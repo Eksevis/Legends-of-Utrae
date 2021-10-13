@@ -1,0 +1,227 @@
+[t:cmd_camera_command,n:0x0270027a]
+{
+	[cmd_camera_command]
+	{
+	  f duration = 6;
+	  x next_scid = 0x0270027B;
+	}
+	[placement]
+	{
+	  q orientation = 0.310704,0.272134,-0.0933337,0.905922;
+	  p position = 1.59755,26.6174,-1.40191,0x1b875473;
+	}
+}
+[t:cmd_camera_command,n:0x0270027b]
+{
+	[cmd_camera_command]
+	{
+	  f duration = 6;
+	  x next_scid = 0x02700273;
+	}
+	[placement]
+	{
+	  q orientation = 0.322937,0.603712,-0.291923,0.667851;
+	  p position = -1.98032,15.7192,0.196782,0xc2ee075f;
+	}
+}
+[t:cmd_animation_command,n:0x0270072d]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1936290865;
+	  x client_scid = 0x02700718;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = 6.80842,-9.53674e-007,0.454052,0xe0488034;
+	}
+}
+[t:cmd_animation_command,n:0x0270072e]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1936290866;
+	  x client_scid = 0x0270072C;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = 6.2327,0,-2.60754,0xe0488034;
+	}
+}
+[t:cmd_animation_command,n:0x0270072f]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1936290865;
+	  x client_scid = 0x027005F0;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = 8.64513,-4.76837e-007,-2.54881,0xe0488034;
+	}
+}
+[t:cmd_animation_command,n:0x02700733]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1936290866;
+	  x client_scid = 0x02700732;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = 1.25909,0,6.59502,0xe0488034;
+	}
+}
+[t:cmd_animation_command,n:0x02700749]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1936290865;
+	  x client_scid = 0x02700743;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = 1.53119,-3.5,-0.286598,0x8c5d049b;
+	}
+}
+[t:cmd_animation_command,n:0x0270074a]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1936290865;
+	  x client_scid = 0x02700748;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = -0.0605445,-3.5,-1.16821,0x8c5d049b;
+	}
+}
+[t:cmd_camera_command,n:0x02700279]
+{
+	[cmd_camera_command]
+	{
+	  f duration = 6;
+	  x next_scid = 0x0270027A;
+	}
+	[placement]
+	{
+	  q orientation = -0.145573,0.834494,-0.263084,-0.461753;
+	  p position = -0.402596,9.5646,0.923481,0x5ecdfa45;
+	}
+}
+[t:cmd_camera_command,n:0x02700277]
+{
+	[cmd_camera_command]
+	{
+	  f duration = 6;
+	  x next_scid = 0x02700279;
+	}
+	[placement]
+	{
+	  q orientation = -0.0182358,0.931,-0.361527,-0.0469607;
+	  p position = -3.16527,14.0306,-1.86419,0x1bccf2c5;
+	}
+}
+[t:cmd_camera_command,n:0x02700276]
+{
+	[cmd_camera_command]
+	{
+	  f duration = 6;
+	  x next_scid = 0x02700277;
+	}
+	[placement]
+	{
+	  q orientation = 0.152189,0.847752,-0.353834,0.364631;
+	  p position = -4.09529,9.2846,-4.91814,0xf50c5ee6;
+	}
+}
+[t:cmd_camera_command,n:0x02700275]
+{
+	[cmd_camera_command]
+	{
+	  f duration = 6;
+	  x next_scid = 0x02700276;
+	}
+	[placement]
+	{
+	  q orientation = 0.261232,-0.70141,0.313565,0.584345;
+	  p position = 0.970449,11.3943,0.301208,0x78d54c58;
+	}
+}
+[t:cmd_camera_command,n:0x02700274]
+{
+	[cmd_camera_command]
+	{
+	  f duration = 6;
+	  x next_scid = 0x02700275;
+		order = cor_snap;
+	}
+	[placement]
+	{
+	  q orientation = 0.439768,-0.0138275,0.00677173,0.89798;
+	  p position = 1.0561,25.8399,-6.79324,0xc0413662;
+	}
+}
+[t:cmd_enter_nis,n:0x02700272]
+{
+	[cmd_enter_nis]
+	{
+	  x next_scid = 0x02700274;
+	}
+	[placement]
+	{
+	  p position = 0.805627,-9.53674e-007,-0.88726,0x8b3548cc;
+	}
+}
+[t:cmd_leave_nis,n:0x02700273]
+{
+	[placement]
+	{
+	  p position = -1.21241,0,-1.17874,0x8b3548cc;
+	}
+}
+[t:cmd_animation_command,n:0x02700726]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1650811956;
+	  x client_scid = 0x02700725;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = -0.959728,-2.95,2.12382,0x35b5304d;
+	}
+}
+[t:cmd_animation_command,n:0x02700740]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1936290866;
+	  x client_scid = 0x0270073B;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = -9.87875,-1.4,5.83462,0x8a2b94b4;
+	}
+}
+[t:cmd_animation_command,n:0x02700741]
+{
+	[cmd_animation_command]
+	{
+	  i animation = 1936290865;
+	  x client_scid = 0x0270073F;
+	  b initially_active = true;
+	}
+	[placement]
+	{
+	  p position = -9.71202,-1.4,3.81004,0x8a2b94b4;
+	}
+}

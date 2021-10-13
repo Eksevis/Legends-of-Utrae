@@ -1,0 +1,87 @@
+[t:template,n:ut_hell_boar]
+{
+	category_name = "1W_evil_d";
+	doc = "hell_boar";
+	specializes = base_boar;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  17, 0;
+			intelligence =  6, 0;
+			dexterity =  12, 0;
+            		melee =  18,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 764;
+		life = 315;
+        max_life = 315;
+        mana = 8;
+		max_mana = 8;
+		model = m_c_edm_hb_pos_1;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 132;
+		damage_min = 120;
+	}
+	[common] { screen_name="Hell Boar"; }
+   	[defend] { defense=470; }
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social			= 0.30
+			&wander			= 0.60
+			&approach_dist 	= 2.50
+			&still			= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_snow_boar]
+{
+	category_name = "1W_evil_d";
+	doc = "snow_boar";
+	specializes = base_boar;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  13, 0;
+			intelligence =  4, 0;
+			dexterity =  10, 0;
+            		melee =  22,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 142;
+		life = 440;
+        	max_life = 440;
+        	mana = 8;
+		max_mana = 8;
+		model = m_c_edm_hb_pos_1;
+		[textures]		{ 0 = b_c_edm_hb-02; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 126;
+		damage_min = 98;
+	}
+	[common] { screen_name="Dread Snow Boar"; }
+    	[defend] { defense=252; }
+	[mind]
+	{
+		melee_engage_range = 10;
+		personal_space_range = 0.7;
+		ranged_engage_range = 10.0;
+		sight_range = 10.0;
+	}
+}

@@ -1,0 +1,28 @@
+[t:emitter_glb_smoke_01,n:0x00c000b3]
+{
+	[placement]
+	{
+	  q orientation = 0,0.976296,0,-0.21644;
+	  p position = -4.81121,4.03983,-0.826086,0x7f90c19e;
+	}
+}
+[t:emitter_glb_smoke_01,n:0x00c00083]
+{
+	[placement]
+	{
+	  q orientation = 0,0.990268,0,-0.139175;
+	  p position = 1.96683,0.622292,0.755452,0xbd469bbb;
+	}
+}
+[t:emt_sound_act,n:0x00c003e0]
+{
+	[placement]
+	{
+	  p position = 0.087883,-1.23838,0.0961575,0x38565792;
+	}
+	[sound_emitter_act]
+	{
+		event_sound = "env_shrine_health";
+	  b start_on_creation = false;
+	}
+}

@@ -1,0 +1,348 @@
+[t:chest_csl_05_dl_r1_use_toggle,n:0x0a100042]
+{
+	[common]
+	{
+		dev_instance_text = "TREASURE CHEST 2";
+	}
+	[inventory]
+	{
+	  b drop_at_use_point = true;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.833886,0,0.551937;
+	  p position = -12.9011,18.4,-23.237,0x4a217ab7;
+		use_point_scids = 0x0a100046;
+	}
+}
+[t:chest_dragon_use_toggle,n:0x0a100043]
+{
+	[common]
+	{
+		dev_instance_text = "STONE CHEST";
+	}
+	[inventory]
+	{
+	  b drop_at_use_point = true;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = -6.17395,20.3191,-10.5781,0x4a217ab7;
+		use_point_scids = 0x0a100047;
+	}
+}
+[t:chest_csl_05_dl_r1_use_toggle,n:0x0a100044]
+{
+	[common]
+	{
+		dev_instance_text = "TREASURE CHEST 1";
+	}
+	[inventory]
+	{
+	  b drop_at_use_point = true;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.833886,0,0.551937;
+	  p position = 2.56606,19.9875,-19.386,0x4a217ab7;
+		use_point_scids = 0x0a100049;
+	}
+}
+[t:3W_chest_csl_02_dl_r1,n:0x0a10004a]
+{
+	[inventory]
+	{
+	  b drop_at_use_point = true;
+	}
+	[placement]
+	{
+	  q orientation = -0.0816363,0.933107,-0.0305227,-0.348876;
+	  p position = -1.38796,19.9238,-9.18694,0x4a217ab7;
+		use_point_scids = 0x0a100048;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a10005e]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.984863;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.866026,0,0.5;
+	  p position = -14.6954,20.097,-39.3367,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a10005f]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.913709;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.34202,0,-0.939693;
+	  p position = -15.5512,22.0931,-38.0854,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a10006b]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.97476;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("wake dragon");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_exploded",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.902585,0,-0.430511;
+	  p position = -8.04386,20.0179,-12.0545,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a100077]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.11652;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("wake dragon");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_exploded",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.182236,0,0.983255;
+	  p position = -9.02774,19.9684,-14.7053,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a100079]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.08678;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("wake dragon");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_exploded",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.333807,0,0.942641;
+	  p position = -6.9291,19.6541,-18.2156,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a10007a]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.18077;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("wake dragon");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_exploded",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.991444,0,-0.130526;
+	  p position = -6.35115,19.949,-17.3593,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a10007b]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.34537;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("wake dragon");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_exploded",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.147809,0,0.989016;
+	  p position = 0.394645,19.9413,-11.7971,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a10007c]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.35533;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.406736,0,-0.913546;
+	  p position = 18.8711,20.5842,-32.682,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a10007d]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.20674;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.748957,0,-0.66262;
+	  p position = 21.4641,21.0309,-32.801,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_05_dl_r1,n:0x0a10007e]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.08272;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.999658,0,0.0261764;
+	  p position = 22.4663,20.7107,-32.758,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_02_dl_r1,n:0x0a100080]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.31008;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("wake dragon");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_exploded",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.838671,0,0.544639;
+	  p position = 1.1118,19.9698,-14.3834,0x4a217ab7;
+	}
+}
+[t:3W_pot_des_clay_01_dl_r1,n:0x0a10008b]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.972597;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("wake dragon");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_exploded",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.67559,0,0.737277;
+	  p position = 0.535689,19.9914,-15.5764,0x4a217ab7;
+	}
+}

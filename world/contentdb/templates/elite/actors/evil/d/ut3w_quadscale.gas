@@ -1,0 +1,122 @@
+[t:template,n:ut3W_quadscale]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_quadscale";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	59.3, 0;
+			intelligence =  25.5, 0;
+			dexterity =  	47.2, 0;
+            melee  =        114, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 9300000;
+		life = 2344.7;
+		max_life = 2344.7;
+		mana = 22.5;
+		max_mana = 22.5;
+		model = m_c_edm_qs_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_quadscale; }
+			[hit_critical]	{ priority = low; * = s_e_hit_quadscale_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_quadscale_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_quadscale_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 446.4;
+		damage_min = 324.7;
+		reload_delay = 0;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.370000;
+		[bone_translator]
+		{
+			body_anterior = bone12;
+			body_mid = bone02;
+			body_posterior = bone03;
+			kill_bone = bone08;
+			shield_bone = bone02;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_qs_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Quadscale Stalker"; 
+
+	}
+    [defend] { defense=1101.3; }
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?meander			= false
+			&still				= false;
+
+		melee_engage_range = 12;
+		personal_space_range = 0.7;
+		ranged_engage_range	= 12.0;
+		sight_range = 12.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_quadscale_01 = 1;
+			frag_glb_quadscale_02 = 2;
+			frag_glb_quadscale_03 = 4;
+			frag_glb_quadscale_04 = 2;
+			frag_glb_quadscale_05 = 4;
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+property bool _server_only$ = false;
+
+property string head$ 	= "";
+property string race$	= "";
+
+property string limit_es_feet_sum$ 	= "";
+property string limit_es_feet_set$ 	= "";
+
+property string limit_es_chest_sum$ 	= "";
+property string limit_es_chest_set$ 	= "";
+
+property string limit_es_head_sum$ 	= "";
+property string limit_es_head_set$ 	= "";
+
+property string limit_es_forearms_sum$ 	= "";
+property string limit_es_forearms_set$ 	= "";
+
+owner = GoSkritComponent;

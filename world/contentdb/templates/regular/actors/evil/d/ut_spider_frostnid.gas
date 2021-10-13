@@ -1,0 +1,83 @@
+[t:template,n:ut_spider_frostnid]
+{
+	category_name = "1W_evil_d";
+	doc = "spider_frostnid";
+	specializes = spider_frostnid_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  10, 0;
+			intelligence =  4, 0;
+			dexterity =  15, 0;
+            melee =  8,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 228;
+		life = 177;
+        	max_life = 177;
+        	mana = 8;
+		max_mana = 8;
+		textures:0 = b_c_edm_fn-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 36;
+		damage_min = 30;
+	}
+	[common] { screen_name="Frostnid"; }
+    [defend] { defense=60; }
+}
+[t:template,n:ut_spider_frostnid_ranged]
+{
+	category_name = "1W_evil_d";
+	doc = "spider_frostnid_ranged";
+	specializes = spider_frostnid_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  10, 0;
+			intelligence =  5, 0;
+			dexterity =  16, 0;
+            ranged =  10,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 198;
+		life = 108;
+        max_life = 108;
+        mana = 8;
+		max_mana = 8;
+		[voice]
+		{
+			[cast]			{ * = s_e_attack_frostnid; }
+			[die]			{ priority = high; * = s_e_die_spider; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 40;
+		damage_min = 38;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_frostnid_freeze; }
+	}
+	[common] { screen_name="Frost Spitter"; }
+    [defend] { defense=58; }
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+}

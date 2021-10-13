@@ -1,0 +1,67 @@
+[t:door_csl_dungeon_06,n:0x09400063]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x09400070;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.0132735,-2.25,-0.00194931,0x18c88065;
+	}
+}
+[t:door_csl_dungeon_06,n:0x0940006f]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x09400071;
+	}
+	[placement]
+	{
+	  p position = 0.00160217,-2.25,-0.0264339,0x84b07672;
+	}
+}
+[t:door_csl_dungeon_02_use_toggle,n:0x09400053]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x09400051;
+	}
+	[placement]
+	{
+	  q orientation = 0,-1.49012e-007,0,1;
+	  p position = -1.99969,0.400001,1.8448,0x406b5dba;
+	}
+}
+[t:door_csl_dungeon_06,n:0x0940006e]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x09400071;
+	}
+	[placement]
+	{
+	  p position = 0.0279083,-2.22398,-0.000885967,0x36c40b8e;
+	}
+}
+[t:lever_glb_06,n:0x09400046]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x08700058;
+	  x on_scid = 0x08700058;
+	  f reset_time = 7;
+	  f reset_time_2 = 7;
+	}
+	[placement]
+	{
+	  q orientation = -0.707107,0,0,0.707107;
+	  p position = -1.72968,1.64735,-1.47168,0xd6060287;
+		use_point_scids = 0x09400056,0x087001D9;
+	}
+}

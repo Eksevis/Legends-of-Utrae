@@ -1,0 +1,135 @@
+[t:template,n:ut3W_cyclops]
+{
+	category_name = "3W_evil_c";
+	doc = "3W_cyclops";
+	specializes = 3W_base_cyclops;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	58.7, 0;
+			intelligence =  15.1, 0;
+			dexterity =  	22.3, 0;
+            melee =  		100,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3186176;
+		life = 3787;
+		max_life = 3787;
+		mana = 55;
+		max_mana = 55;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 614.1;
+		damage_min = 434.7;
+		reload_delay = 0;
+	}
+	[common] 
+	{ 
+		screen_name="Cyclops Lord"; 
+
+	}
+    [defend] { defense=817; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					es_weapon_hand = cb_un_2h_cyclops;
+				}
+				[oneof*]
+				{
+					chance = 0.5;
+					il_main = #*/222-305;
+					il_main = #armor/138-705;
+                	il_main = #nmagic/45-90;
+                	il_main = #cmagic/45-90;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/267-326;
+	                il_main = #armor/-rare(1)/867-1029;
+                    il_main = #*/-rare(1)/267-326;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/267-326;
+	                il_main = #armor/-unique(2)/867-1029;
+                    il_main = #*/-unique(2)/267-326;
+	            }
+			}
+        }
+	}
+	[mind]
+	{
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+[t:template,n:ut3W_cave_giant]
+{
+	category_name = "3W_evil_c";
+	doc = "3W_cave_giant";
+	specializes = 3W_base_cyclops;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  80.6, 0;
+			intelligence =  9.8, 0;
+			dexterity =  27.2, 0;
+            melee =  93,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1704500;
+		life = 3900;
+		max_life = 3900;
+		mana = 93.6;
+		max_mana = 93.6;
+		textures:0 = b_c_ecm_cy-02;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_cave_giant; }
+			[hit_critical]	{ priority = low; * = s_e_hit_cave_giant_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_cave_giant_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_cave_giant_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 543.4;
+		damage_min = 397.8;
+		reload_delay = 0;
+	}
+	[common] 
+	{ 
+		screen_name="Cave Giant"; 
+
+	}
+    [defend] { defense=553.8; }
+	[mind]
+	{
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}

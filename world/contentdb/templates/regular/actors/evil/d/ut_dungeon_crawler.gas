@@ -1,0 +1,179 @@
+[t:template,n:ut_dungeon_crawler]
+{
+	category_name = "1W_evil_d";
+	doc = "dungeon crawler";
+	specializes = base_dungeon_crawler;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	32, 0;
+			intelligence =  8, 0;
+			dexterity =  	12, 0;
+			melee =  		30, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 50000;
+		life = 2120;
+		max_life = 2120;
+		mana = 6;
+        max_mana = 6;
+    }
+    [attack]
+	{
+		attack_range = 0.5;
+		damage_max = 200;
+		damage_min = 156;
+	}
+	[common] { screen_name="Dungeon Crawler"; }
+	[defend] { defense=260; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+					chance = 0.35;
+					il_main = #*/64-138;
+					il_main = #armor/64-316;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/149-165;
+	                il_main = #armor/-rare(1)/466-478;
+                    il_main = #*/-rare(1)/149-165;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/149-165;
+	                il_main = #armor/-unique(2)/466-478;
+                    il_main = #*/-unique(2)/149-165;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 26006;
+					min = 22467;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:ut_grave_crawler]
+{
+	category_name = "1W_evil_d";
+	doc = "grave_crawler";
+	specializes = base_dungeon_crawler;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  		14, 0;
+			intelligence =  	4, 0;
+			dexterity =  		4, 0;
+			melee =  			12, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2000;
+		life = 640;
+		max_life = 640;
+		mana = 6;
+        max_mana = 6;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 140;
+		damage_min = 127;
+	}
+	[common] { screen_name="Grave Crawler"; }
+	[defend] { defense=170; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #weapon/8-13;
+                il_main = #armor/34-166;
+			}
+            [oneof*]
+				{
+	            chance = 0.004;
+	            il_main = #weapon/-rare(1)/12-21;
+	            il_main = #armor/-rare(1)/20-51;
+                il_main = #*/-rare(1)/12-21;
+            }
+			[oneof*]
+				{
+            	chance = 0.002;
+	            il_main = #weapon/-unique(2)/12-21;
+	            il_main = #armor/-unique(2)/20-51;
+                il_main = #*/-unique(2)/12-21;
+	        }
+		}
+	}
+}
+[t:template,n:ut_tortured_corpse]
+{
+	category_name = "1W_evil_d";
+	doc = "tortured_corpse";
+	specializes = base_dungeon_crawler;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  12, 0;
+			intelligence =  3, 0;
+			dexterity =  3, 0;
+			melee =  2, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 54;
+		life = 34;
+		max_life = 34;
+		mana = 6;
+        max_mana = 6;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 13;
+		damage_min = 10;
+	}
+	[common] { screen_name="Tortured Corpse"; }
+	[defend] { defense=8; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #weapon/5-7;
+                	il_main = #armor/8-41;
+				}
+        		[oneof*]
+				{
+	        		chance = 0.002;
+	            	il_main = #weapon/-rare(1)/8-10;
+	            	il_main = #armor/-rare(1)/16-22;
+                }
+	        }
+        }
+	}
+}

@@ -1,0 +1,39 @@
+[t:emt_sound,n:0x07e0004a]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.822232,0.546019,0.327199,0x5e2c4a0d;
+	}
+	[sound_emitter]
+	{
+		event_sound = "env_haunting";
+	  f max_repeat_rate = 8;
+	}
+}
+[t:emt_sound,n:0x07e0004b]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -0.686215,0.579515,0.337358,0x5e2c4a0d;
+	}
+	[sound_emitter]
+	{
+		event_sound = "env_moaning";
+	  f max_repeat_rate = 8;
+	}
+}
+[t:emt_sound,n:0x07e0004c]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -0.00983191,0.546019,0.350886,0x5e2c4a0d;
+	}
+	[sound_emitter]
+	{
+		event_sound = "env_maniacal_laughter";
+	  f max_repeat_rate = 8;
+	}
+}

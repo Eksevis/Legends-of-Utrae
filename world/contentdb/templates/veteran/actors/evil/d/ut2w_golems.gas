@@ -1,0 +1,560 @@
+[t:template,n:ut2W_molten_golem]
+{
+	category_name = "2W_evil_d";
+	doc = "summoned 2W_molten_golem";
+	specializes = 2W_base_golem;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		80, 0;
+			intelligence = 	11, 0;
+			dexterity = 	27.8, 0;
+            melee =         76, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 360000;
+		life = 2316.4;
+		max_life = 2316.4;
+		mana = 1290.5;
+        max_mana = 1290.5;
+        textures:0 = b_c_edm_rg-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 364;
+		damage_min = 223.4;
+		reload_delay = 0.0;
+	}
+	[common]
+	{
+		screen_name="Slag";
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("fire_elemental_glow");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+    [defend] { defense=1889.6; }
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 1.0;
+		inner_comfort_zone_range = 2.5;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_molten_golem_01 = 1;
+			frag_glb_molten_golem_02 = 1;
+			frag_glb_molten_golem_03 = 1;
+			frag_glb_molten_golem_04 = 1;
+			frag_glb_molten_golem_05 = 1;
+		}
+	}
+}
+[t:template,n:ut2W_rock_golem]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_rock_golem";
+	specializes = 2W_dsx_golem_frost_ranged;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 	71, 0;
+			intelligence = 	14.6, 0;
+			dexterity = 	22.3, 0;
+            		melee =         84, 0;
+			nature_magic = 	35, 0;
+			combat_magic = 	35, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 169000;
+		life = 1720.7;
+		max_life = 1720.7;
+		mana = 1638;
+        	max_mana = 1638;
+		textures:0	= b_c_edm_rg-04;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 418.6;
+		damage_min = 297.8;
+		reload_delay = 0;
+	}
+	[common] { screen_name="Stone Golem"; }
+    	[defend] { defense=1256.3; }
+	[inventory] 
+	{	
+		drop_at_use_point = true;
+		selected_active_location = il_active_primary_spell;
+		[other] 
+		{ 
+			il_active_primary_spell=spell_gorack_boulder; 
+		}
+	}
+	[mind]
+	{
+		jat_guard = world\ai\jobs\common\job_guard.skrit;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_effect = mine_worm_die_dust;
+		[break_particulate]
+		{
+			frag_glb_rock_golem_01 = 1;
+			frag_glb_rock_golem_02 = 6;
+			frag_glb_rock_golem_03 = 1;
+			frag_glb_rock_golem_04 = 2;
+			frag_glb_rock_golem_05 = 1;
+		}
+	}
+}
+
+[t:template,n:ut2W_golem_frost]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_golem_frost";
+	specializes = 2W_base_golem;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		54.8, 0;
+			intelligence = 	7.2, 0;
+			dexterity =		14.6, 0;
+            melee =         60, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 43164;
+		life = 1005;
+		max_life = 1005;
+		mana = 51.5;
+        max_mana = 51.5;
+		textures:0 = b_c_edm_rg-02;
+		material = ice;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 317.5;
+		damage_min = 231.9;
+		reload_delay = 0;
+	}
+	[common] { screen_name="Ice Golem"; }
+    [defend] { defense=486.2; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #nmagic/26-62;
+	                il_main = #cmagic/26-62;
+				}
+				[oneof*]
+				{
+					chance = 0.3;
+					il_main = #*/148-188;
+                    il_main = #armor/82-407;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/183-247;
+	                il_main = #armor/-rare(1)/320-675;
+                    il_main = #*/-rare(1)/183-247;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/183-247;
+	                il_main = #armor/-unique(2)/320-675;
+                    il_main = #*/-unique(2)/183-247;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 80332;
+					min = 46476;
+				}
+			}
+		}
+	}
+
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+		jat_guard	= world\ai\jobs\common\job_guard.skrit;
+		melee_engage_range = 13;
+		personal_space_range = 0.7;
+		ranged_engage_range = 13.0;
+		sight_range = 13.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		explosion_magnitude = 1.0;
+		[break_particulate]
+		{
+			frag_glb_frost_golem_01 = 1;
+			frag_glb_frost_golem_02 = 6;
+			frag_glb_frost_golem_03 = 1;
+			frag_glb_frost_golem_04 = 2;
+			frag_glb_frost_golem_05 = 1;
+		}
+	}
+}
+[t:template,n:ut2w_golem_crystal_one]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_golem_crystal_one";
+	specializes = dsx_golem_base;
+	[actor]
+		{
+			[skills]
+				{
+					strength = 		90, 0;
+					intelligence = 	90, 0;
+					dexterity = 	90, 0;
+					melee =         90, 0;
+				}
+		}
+	[aspect]
+		{
+		experience_value = 37932;
+		life = 1829.5;
+        	max_life = 1829.5;
+        	mana = 82.7;
+        	max_mana = 82.7;
+		textures:0 = b_c_edm_crg-02;
+			material = ice;
+			[voice]
+				{
+					[die]			{ priority = high;	* = s_e_die_rector;		}
+			[enemy_spotted]	{ priority = high; * = s_e_attack_rock_beast; }
+
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 400;
+			damage_min = 400;
+			reload_delay = 0;
+		}
+	[common] { screen_name="Crystal Golem"; }
+	[defend] { defense=2275; }
+	[mind]
+		{
+			jat_guard = world\ai\jobs\common\job_guard.skrit;
+			melee_engage_range = 14;
+			personal_space_range = 0.7;
+			ranged_engage_range = 14.0;
+			sight_range = 14.0;
+		}
+	[physics]
+    {
+		explode_when_killed = true;
+		explosion_magnitude = .25;
+		gib_gore_good = false;
+
+		[break_particulate]
+		{
+			frag_glb_frag_crg2_01 = 1;
+			frag_glb_frag_crg2_02 = 1;
+			frag_glb_frag_crg2_03 = 1;
+			frag_glb_frag_crg2_04 = 1;
+			frag_glb_frag_crg2_05 = 1;
+			frag_glb_frag_crg2_06 = 1;
+			frag_glb_frag_crg2_07 = 1;
+			frag_glb_frag_crg2_08 = 1;
+			frag_glb_frag_crg2_09 = 1;
+		}
+    }
+}
+[t:template,n:ut2w_golem_crystal_two]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_golem_crystal_two";
+	specializes = dsx_golem_base;
+	[actor]
+		{
+			[skills]
+				{
+					strength = 		90, 0;
+					intelligence = 	90, 0;
+					dexterity = 	90, 0;
+					melee =         90, 0;
+				}
+		}
+	[aspect]
+		{
+		experience_value = 37932;
+		life = 1429.5;
+        	max_life = 1429.5;
+        	mana = 82.7;
+        	max_mana = 82.7;
+		textures:0	= b_c_edm_crg-01;
+			material = ice;
+			[voice]
+				{
+					[die]			{ priority = high;	* = s_e_die_rector;		}
+			[enemy_spotted]	{ priority = high; * = s_e_attack_rock_beast; }
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 400;
+			damage_min = 400;
+			reload_delay = 0;
+		}
+	[common] { screen_name="Diamond Golem"; }
+	[defend] { defense=4275; }
+	[mind]
+		{
+			jat_guard = world\ai\jobs\common\job_guard.skrit;
+			melee_engage_range = 14;
+			personal_space_range = 0.7;
+			ranged_engage_range = 14.0;
+			sight_range = 14.0;
+		}
+	[physics]
+    {
+		explode_when_killed = true;
+		explosion_magnitude = .25;
+		gib_gore_good = false;
+
+		[break_particulate]
+		{
+			frag_glb_frag_crg2_01 = 1;
+			frag_glb_frag_crg2_02 = 1;
+			frag_glb_frag_crg2_03 = 1;
+			frag_glb_frag_crg2_04 = 1;
+			frag_glb_frag_crg2_05 = 1;
+			frag_glb_frag_crg2_06 = 1;
+			frag_glb_frag_crg2_07 = 1;
+			frag_glb_frag_crg2_08 = 1;
+			frag_glb_frag_crg2_09 = 1;
+		}
+    }
+}
+
+[t:template,n:ut2w_golem_marble]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_golem_marble";
+	specializes = base_golem;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		= 84, 0;
+			intelligence 	=  48, 0;
+			dexterity 		= 80, 0;
+			melee 			= 83, 0;
+		}
+		}
+	[aspect]
+	{
+		experience_value = 37932;
+		life = 1629.5;
+        	max_life = 1629.5;
+        	mana = 82.7;
+        	max_mana = 82.7;
+		model = m_c_edm_mrblg;
+		material = stone;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_explode_rockbeast;		}
+			[enemy_spotted]	{ priority = high; * = s_e_attack_rock_beast; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max 	= 408;
+		damage_min 	= 400;
+		reload_delay = 0;
+	}
+	[common] { screen_name="Marble Golem"; }
+	[defend] { defense=3156; }
+	[mind]
+	{
+		jat_guard = world\ai\jobs\common\job_guard.skrit;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_effect = mine_worm_die_dust;
+		/*
+			[break_particulate]
+			{
+			frag_glb_dsx_golem_marble_01 = 1;
+			frag_glb_dsx_golem_marble_02 = 6;
+			frag_glb_dsx_golem_marble_03 = 1;
+			frag_glb_dsx_golem_marble_04 = 2;
+			frag_glb_dsx_golem_marble_05 = 1;
+			}
+		*/
+	}
+}
+[t:template,n:ut2w_clay_golem]
+{
+	category_name = "1W_evil_d";
+	doc = "clay_golem";
+	specializes = actor_evil;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength = 	71, 0;
+			intelligence = 	14.6, 0;
+			dexterity = 	22.3, 0;
+            		melee =         84, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 169000;
+		life = 1620.7;
+		max_life = 1620.7;
+		mana = 1638;
+        	max_mana = 1638;
+		model=m_c_edm_cg_pos_1;
+		material = stone;
+		scale_base = 1.5;
+		[textures] { 0=b_c_edm_cg; }
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_rector; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 418.6;
+		damage_min = 297.8;
+		reload_delay = 0;
+	}
+
+	[body]
+	{
+		avg_move_velocity = 3.95000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = Bip01_L_Hand;
+			weapon_bone = Bip01_R_Hand;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_cg_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					qffg=dsf-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00=dsf;
+				  	01=dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+		}
+	}
+	[inventory] {}
+    	[defend] { defense=1150; }
+	[common] { screen_name="Clay Golem"; }
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 1.0;
+		inner_comfort_zone_range = 2.5;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+    {
+		explode_when_killed = true;
+		explosion_magnitude = .25;
+		gib_gore_good = false;
+
+		[break_particulate]
+		{
+			frag_glb_frag_crg2_01 = 1;
+			frag_glb_frag_crg2_02 = 1;
+			frag_glb_frag_crg2_03 = 1;
+			frag_glb_frag_crg2_04 = 1;
+			frag_glb_frag_crg2_05 = 1;
+			frag_glb_frag_crg2_06 = 1;
+			frag_glb_frag_crg2_07 = 1;
+			frag_glb_frag_crg2_08 = 1;
+			frag_glb_frag_crg2_09 = 1;
+		}
+    }
+}

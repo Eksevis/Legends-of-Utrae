@@ -1,0 +1,205 @@
+[t:sign_glb_01,n:0x07100503]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Grescal, 15";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.991445,0,-0.130527;
+	  p position = 3.46763,-4.76837e-007,-2.77292,0x59504de0;
+	}
+}
+[t:sign_glb_01,n:0x07100505]
+{
+	[common]
+	{
+		dev_instance_text = "sign_2";
+		screen_name = "Town of Grescal, 17";
+	}
+	[placement]
+	{
+	  q orientation = 0,1.04308e-007,0,-1;
+	  p position = -0.297791,4.17233e-007,0.497746,0xaccfe080;
+	}
+}
+[t:lever_des_01,n:0x0710037d]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0710037C,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707106;
+	  p position = 2.06201,0,-3.34963,0xaca8d648;
+		use_point_scids = 0x0710037f,0x07100380;
+	}
+}
+[t:sign_glb_01,n:0x07100500]
+{
+	[common]
+	{
+		dev_instance_text = "sign_4";
+		screen_name = "Town of Hiroth, 47";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.793354,0,0.608762;
+	  p position = 0.967667,-1.90735e-006,2.55666,0x0ea1916c;
+	}
+}
+[t:sign_glb_01,n:0x07100501]
+{
+	[common]
+	{
+		screen_name = "Town of Grescal, 30";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1.04308e-007,0,1;
+	  p position = 1.20199,-0.296432,3.12325,0x0ea1916c;
+	}
+}
+[t:sign_glb_01,n:0x071004e2]
+{
+	[common]
+	{
+		dev_instance_text = "sign_5";
+		screen_name = "Town of Grescal, 21";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1.04308e-007,0,1;
+	  p position = 2.56779,9.53674e-007,1.64473,0x92623dba;
+	}
+}
+[t:sign_glb_01,n:0x071004f2]
+{
+	[common]
+	{
+		screen_name = "Town of Hiroth, 60";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.04308e-007;
+	  p position = 2.76818,-0.261265,0.876785,0x92623dba;
+	}
+}
+[t:statue_cav_spin_02,n:0x071005f0]
+{
+	[common]
+	{
+		screen_name = "Mesa Desert to Hiroth Displacer";
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0710047A;
+	  x on_scid = 0x0710047A;
+	  f reset_time = 30;
+	  f reset_time_2 = 30;
+	}
+	[placement]
+	{
+	  p position = -0.0171204,0.2,0.0483818,0x4a598d2c;
+		use_point_scids = 0x071005f1;
+	}
+}
+[t:respawn_statue,n:0x0710040f]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.978808;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.12187,0,0.992546;
+	  p position = 0.457592,0.108762,-1.36254,0xfc10758d;
+		use_point_scids = 0x071005f2;
+	}
+}
+[t:lever_des_01,n:0x0710037e]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0710037C,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-2.98023e-008,0,1;
+	  p position = -1.43502,-0.0691334,1.65433,0xec1eed74;
+		use_point_scids = 0x0710037f,0x07100381;
+	}
+}
+[t:sign_glb_01,n:0x07100445]
+{
+	[common]
+	{
+		dev_instance_text = "sign_3";
+		screen_name = "Town of Hiroth, 55";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.608762,0,0.793353;
+	  p position = -3.60002,0,-0.500309,0x5cc3bffd;
+	}
+}
+[t:sign_glb_01,n:0x071004fd]
+{
+	[common]
+	{
+		dev_instance_text = "sign_3";
+		screen_name = "Town of Quillrabe, 64";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.608762,0,0.793353;
+	  p position = -3.60002,-0.570816,-0.500309,0x5cc3bffd;
+	}
+}
+[t:sign_glb_01,n:0x071004fe]
+{
+	[common]
+	{
+		screen_name = "Town of Grescal, 54";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -3.06595,-0.295795,-0.38184,0x5cc3bffd;
+	}
+}

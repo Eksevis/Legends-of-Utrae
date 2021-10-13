@@ -1,0 +1,216 @@
+[t:template,n:ut3w_scarthrall]
+{
+	category_name = "1W_evil_d";
+	doc = "Base Scarthrall";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		62, 0;
+			intelligence = 	11.5, 0;
+			dexterity = 	27.1, 0;
+            		melee =  		99,  0;
+		}
+	}
+	[aspect]
+	{
+		material = stone;
+		experience_value =4836000;
+		life = 2462;
+		max_life = 2462;
+		mana = 38.3;
+		max_mana = 38.3;
+		model = m_c_edm_SCARTHRALL_pos_1;
+		textures:0 = b_c_edm_scarthrall;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_gargoyle;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_gargoyle_small_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = .5;
+		damage_max = 580.1;
+		damage_min = 376.6;
+	}
+
+    [defend] { defense=1060; }
+
+	[body]
+	{
+		avg_move_velocity = 4.990000;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_ga_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+                    00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+                    00 = mg;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_misc]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = ds;
+					wake = rv;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = basic_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Twisted Scarthrall";
+		membership = gargoyle, monster;
+
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("we_anim_sfx",1);
+				action* = call_sfx_script("gargoyle_hand_glow");
+
+			}
+			
+
+		}
+	}
+	[mind]
+	{
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit;
+
+		melee_engage_range 		= 14;
+		personal_space_range 	= 0.5;
+		ranged_engage_range 	= 14.0;
+		sight_range 			= 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		explosion_magnitude = .05;
+		fire_effect = human_physics_fire;
+		fire_resistance = 0.0;
+        fire_burn_threshold = 20;
+        gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_scarthrall_01 = 1;
+			frag_glb_scarthrall_02 = 1;
+			frag_glb_scarthrall_03 = 1;
+			frag_glb_scarthrall_04 = 1;
+			frag_glb_scarthrall_05 = 1;
+			frag_glb_scarthrall_06 = 1;
+		}
+	}
+
+}
+[t:template,n:ut3w_ranged_scarthrall]
+{
+	category_name = "1W_evil_d";
+	doc = "Base Ranged Scarthrall";
+	specializes = base_scarthrall;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 	53.7, 0;
+			intelligence = 	12.9, 0;
+			dexterity = 	48.8, 0;
+            		melee =  	98, 0;
+            		ranged = 	98, 0;
+  			combat_magic =  98,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 7161000;
+		life = 1860;
+		max_life = 1860;
+		mana = 38.3;
+		max_mana = 38.3;
+   		[voice]
+   		{
+   			[cast]		{ * = s_e_attack_gargoyle;	}
+   			[die]		{ priority = high; * = s_e_die_gargoyle;		}
+   		}
+	}
+	[attack]
+	{
+		attack_range = .5;
+		damage_max = 640.4;
+		damage_min = 393.6;
+		damage_bonus_min_ranged = 140;
+		damage_bonus_max_ranged = 243;
+	}
+   	[common]
+	{
+		screen_name="Unbroken Scarthrall";
+
+	}
+
+
+    [defend] { defense=49; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_gargoyle_spear; }
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+
+}

@@ -1,0 +1,59 @@
+[t:template,n:ut3w_chitterskrag_boss]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_chitterskrag_boss";
+	specializes = dsx_chitterskrag_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 77.1, 0;
+			intelligence = 19.1, 0;
+			dexterity    = 43.5, 0;
+			melee        = 116, 0;
+		}
+    	}
+	[aspect]
+	{
+		experience_value = 9692530;
+		life             = 10797;
+		max_life         = 10797;
+		mana             = 68.2;
+		max_mana         = 68.2;
+		scale_base 		= 1.5
+		model = m_c_edm_chs_pos_3;
+		textures:0 = b_c_edm_chs-02;
+		material = flesh;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_chitterskrag_boss_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_chitterskrag_boss_SED; }
+		}
+	    }
+  [attack]
+	{
+		attack_range = 0.5;
+		damage_max 	= 548;
+		damage_min 	= 420;
+	}
+	[common]
+	{
+		screen_name = "Chitterskrag Queen";
+		membership = chitterskrag,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_purple");
+			}
+		}
+    }
+	[defend] { defense = 1256; }
+
+}
+ 
+

@@ -1,0 +1,55 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xF032F3FC;
+	source_region_name = grs_dry_hard_r1;
+	[t:stitch_editor,n:fd_r4]
+	{
+		dest_region = fd_r4;
+		[node_ids]
+		{
+			0x0000acc1 = 0xDB75ACA8,10;
+		}
+	}
+	[t:stitch_editor,n:grs2des]
+	{
+		dest_region = grs2des;
+		[node_ids]
+		{
+			0x0000aca1 = 0x024A1CB0,6;
+			0x0000aca2 = 0x86F1D0B6,4;
+			0x0000aca3 = 0xAE70CAEC,3;
+			0x0000aca4 = 0x2B811602,1;
+			0x0000aca5 = 0x2B811602,2;
+			0x0000aca6 = 0xC5CED20D,1;
+			0x0000aca7 = 0xEC7BD0C2,3;
+			0x0000aca8 = 0xE9FF71A4,3;
+		}
+	}
+	[t:stitch_editor,n:mine_town]
+	{
+		dest_region = mine_town;
+		[node_ids]
+		{
+			0x0000acb1 = 0x7FCB25E9,3;
+			0x0000acb2 = 0x25E301D0,2;
+			0x0000acb3 = 0xCD71D58C,5;
+			0x0000acb4 = 0xCD71D58C,4;
+			0x0000acb5 = 0xBDB4D69C,1;
+			0x0000acb6 = 0x61C6BEB7,2;
+			0x0000acb7 = 0x61C6BEB7,1;
+			0x0000acb8 = 0x5405468E,3;
+		}
+	}
+	[t:stitch_editor,n:river_canyon]
+	{
+		dest_region = river_canyon;
+		[node_ids]
+		{
+			0x0000adb1 = 0x4BDA0957,6;
+			0x0000adb2 = 0xDD947B5F,3;
+			0x0000adb3 = 0x9C84884C,4;
+			0x0000adb4 = 0x5D1FDAC1,3;
+			0x0000adb5 = 0x21D8CE7F,3;
+		}
+	}
+}

@@ -1,0 +1,570 @@
+[t:template,n:ut_scorpion]
+{
+	category_name = "1W_evil_d";
+	doc = "scorpion";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  13, 0;
+			intelligence =  3, 0;
+			dexterity =  9, 0;
+			melee =  5,  0;
+
+		}
+	}
+	[aspect]
+	{
+		experience_value = 73;
+		life = 73;
+		max_life = 73;
+		mana = 6;
+		max_mana = 6;
+		model = m_c_edm_sc_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_scorpion; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_insectoid_SED;  }
+			[hit_critical]	{ priority = low; * = s_e_hit_scorpion_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_scorpion_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_scorpion_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 42;
+		damage_min = 40;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.350000;
+		max_move_velocity = 4.75;
+		[bone_translator]
+		{
+			body_anterior = Bone01;
+			body_mid = Bone01;
+			body_posterior = Bone01;
+			kill_bone = Bone01;
+			shield_bone = lt_pincher;
+			weapon_bone = rt_pincher;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_sc_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Scorpion";
+		membership = party_scorpion_boss, monster;
+	}
+	[defend] { defense=132; }
+	[inventory]
+	{
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #armor/20-60;
+	                il_main = #weapon/24-30;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?approach_dist		= 2.5
+			&min_distance		= 3.5
+			&wander_limit_dist	= 2.1
+			&still				= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_scorpion_01 = 1;
+			frag_glb_scorpion_02 = 2;
+			frag_glb_scorpion_03 = 1;
+			frag_glb_scorpion_04 = 4;
+			frag_glb_scorpion_05 = 4;
+		}
+	}
+}
+[t:template,n:ut_scorpion_boss_01]
+{
+	category_name = "1W_evil_d";
+	doc = "scorpion boss";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  16, 0;
+			intelligence	=  3, 0;
+			dexterity 		=  12, 0;
+			melee 			=  5,  0;
+
+		}
+	}
+	[aspect]
+	{
+		experience_value = 130;
+		life = 296;
+		max_life = 296;
+		mana = 6;
+		max_mana = 6;
+		model = m_c_edm_sc_pos_1;
+		textures:0 = b_c_edm_sc-02;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_scorpion; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider;  }
+			[hit_critical]	{ priority = low; * = s_e_hit_scorpion; }
+			[hit_glance]	{ priority = low; * = s_e_hit_scorpion; }
+			[hit_solid]		{ priority = low; * = s_e_hit_scorpion; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 46;
+		damage_min = 44;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.350000;
+		max_move_velocity = 4.75;
+		[bone_translator]
+		{
+			body_anterior = Bone01;
+			body_mid = Bone01;
+			body_posterior = Bone01;
+			kill_bone = Bone01;
+			shield_bone = lt_pincher;
+			weapon_bone = rt_pincher;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_sc_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Venom Fiend";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_red(sgx)");
+			}
+		}
+	}
+	[defend] { defense=155; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #weapon/27-29;
+                    il_main = #armor,f/70-75;
+				}
+                [oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/36-42;
+	                   il_main = #armor/-rare(1)/84-94;
+                       il_main = #*/-rare(1)/36-42;
+                }
+				[gold*]
+				{
+					max = 254;
+					min = 191;
+					min_pile = 39;
+					piles = 3 - 4;
+				}
+			}
+		}
+	}
+
+	[mind]
+	{
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_scorpion_boss";
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.8
+			&social_limit		= 2
+			&social_limit_dist	= 2.5
+			&approach_dist		= 2.5
+			&friend_template	= false
+			&friends			= "party_scorpion_boss"
+			&still				= false;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_scorpion_01 = 1;
+			frag_glb_scorpion_02 = 2;
+			frag_glb_scorpion_03 = 1;
+			frag_glb_scorpion_04 = 4;
+			frag_glb_scorpion_05 = 4;
+		}
+	}
+}
+
+[t:template,n:ut_scorpion_sm]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_scorpion_sm";
+	specializes = dsx_scorpion_base;
+	[aspect]
+	{
+		[textures]	{ 0 = b_c_edm_sm_scorpion; }
+		experience_value = 28573;
+		life = 468;
+		max_life = 468;
+		model = m_c_edm_sc_pos_1;
+		scale_base = 0.4;
+	}
+	[actor]
+	{
+		[skills]
+		{
+			strength =  47, 0;
+			intelligence =  8, 0;
+			dexterity =  51, 0;
+			melee =  55,  0;
+
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 201;
+		damage_min = 192;
+	}
+	[common]
+	{
+		screen_name="Lesser Scrub Scorpion";
+	}
+	[defend] { defense=1021; }
+	[inventory]
+	{
+		
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_smscorpion_01 = 1;
+			frag_glb_smscorpion_02 = 2;
+			frag_glb_smscorpion_03 = 1;
+			frag_glb_smscorpion_04 = 4;
+			frag_glb_smscorpion_05 = 4;
+		}
+	}
+
+}
+
+[t:template,n:ut_scorpion_lg]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_scorpion_lg";
+	specializes = dsx_scorpion_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  48, 0;
+			intelligence =  8, 0;
+			dexterity =  32, 0;
+			melee =  56,  0;
+
+		}
+	}
+	[aspect]
+	{
+		experience_value = 42400;
+		life = 1392;
+		max_life = 1392;
+		model = m_c_edm_sc_pos_1;
+		scale_base = 0.6;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 221;
+		damage_min = 205;
+	}	
+	[common]
+	{
+		screen_name="Greater Scrub Scorpion";
+	}
+	[defend] { defense=884; }
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_lgscorpion_01 = 1;
+			frag_glb_lgscorpion_02 = 2;
+			frag_glb_lgscorpion_03 = 1;
+			frag_glb_lgscorpion_04 = 4;
+			frag_glb_lgscorpion_05 = 4;
+		}
+	}
+}
+
+
+[t:template,n:ut_scorpion_boss]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_scorpion_boss";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  12, 0;
+			intelligence	=  7, 0;
+			dexterity 	=  9, 0;
+			melee 		=  8,  0;
+
+		}
+	}
+	[aspect]
+	{
+		experience_value = 88;
+		life = 129;
+		max_life = 129;
+		mana = 6;
+		max_mana = 6;
+		scale_base = 1.0;
+		model = m_c_edm_sc_pos_1;
+		textures:0 = b_c_edm_sc-02;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_scorpion; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider;  }
+			[hit_critical]	{ priority = low; * = s_e_hit_scorpion; }
+			[hit_glance]	{ priority = low; * = s_e_hit_scorpion; }
+			[hit_solid]		{ priority = low; * = s_e_hit_scorpion; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 63;
+		damage_min = 59;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.350000;
+		max_move_velocity = 4.75;
+		[bone_translator]
+		{
+			body_anterior = Bone01;
+			body_mid = Bone01;
+			body_posterior = Bone01;
+			kill_bone = Bone01;
+			shield_bone = lt_pincher;
+			weapon_bone = rt_pincher;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_sc_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Cave Scorpion";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+	}
+	[defend] { defense=140; }
+
+
+	[mind]
+	{
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_scorpion_boss";
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.8
+			&social_limit		= 2
+			&social_limit_dist	= 2.5
+			&approach_dist		= 2.5
+			&friend_template	= false
+			&friends			= "party_scorpion_boss"
+			&still				= false;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_scorpion_01 = 1;
+			frag_glb_scorpion_02 = 2;
+			frag_glb_scorpion_03 = 1;
+			frag_glb_scorpion_04 = 4;
+			frag_glb_scorpion_05 = 4;
+		}
+	}
+}

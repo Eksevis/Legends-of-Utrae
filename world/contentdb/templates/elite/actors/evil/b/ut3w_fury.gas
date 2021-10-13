@@ -1,0 +1,434 @@
+[t:template,n:ut3w_fury]
+{
+	category_name = "1W_evil_b";
+	doc = "fury";
+	specializes = base_fury;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	50.8, 0;
+			intelligence =  19.3, 0;
+			dexterity =  	37, 0;
+			combat_magic = 	115, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4550090;
+		life = 11780.5;
+		max_life = 11780.5;
+		max_mana = 2159.8;
+		mana = 2159.8;
+	}
+	[attack]
+	{
+		attack_range = 10;
+		damage_max = 617.1;
+		damage_min = 429.1;
+		damage_bonus_min_cmagic = 179;
+		damage_bonus_max_cmagic = 258;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+//			il_active_primary_spell=spell_fury_spin;
+
+			il_active_primary_spell=spell_fury_zap_1;
+			il_spell_2 = spell_fury_zap_2;
+			il_spell_3 = spell_fury_zap_3;
+			il_spell_4 = spell_fury_slam;
+			il_spell_5 = spell_fury_spin;
+			il_spell_6 = spell_fury_gas;
+			il_spell_7 = spell_fury_spit;
+
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+            	    		il_main = #spell/114-119;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/276-308;
+					il_main = #armor/677-920;
+					max = 1;
+					min = 1;
+   	    			}
+    				[gold*]
+				{
+					max = 2592023;
+					min = 1612517;
+                    piles = 8 - 12;
+				}
+				[oneof*]
+				{
+	            	il_main = #weapon/-rare(1)/276-308;
+	                il_main = #armor/-rare(1)/731-920;
+                    il_main = #*/-rare(1)/276-308;
+					max = 2;
+					min = 2;
+
+                		}
+				[oneof*]
+                		{
+	                il_main = #weapon/-unique(2)/276-308;
+	                il_main = #armor/-unique(2)/731-920;
+                    il_main = #*/-unique(2)/276-308;
+					max = 1;
+					min = 1;
+	            		}
+
+			}
+
+		}
+	}
+	[common]
+	{
+		screen_name="Fury Demigod";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+
+	}
+	[defend] { defense=450; }
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+		jat_die = world\ai\jobs\actors\evil\job_die_explode.skrit;
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&check_range				= true
+			&spell_chances				= "0.15,            0.14,            0.14,           0.15, 			  0.14, 			0.14,             0.14"
+			&spells						= "spell_fury_slam, spell_fury_spin, spell_fury_gas, spell_fury_spit, spell_fury_zap_1, spell_fury_zap_2, spell_fury_zap_3";
+
+		on_engaged_lost_consciousness_abort_attack = true;
+	}
+
+}
+
+[t:template,n:ut3w_fury_eye]
+{
+	category_name = "1W_evil_b";
+	doc = "fury";
+	specializes = base_fury;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	50.8, 0;
+			intelligence =  19.3, 0;
+			dexterity =  	37, 0;
+			combat_magic = 	115, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4550090;
+		life = 11780.5;
+		max_life = 11780.5;
+		max_mana = 2159.8;
+		mana = 2159.8;
+	}
+	[attack]
+	{
+		attack_range = 10;
+		damage_max = 617.1;
+		damage_min = 429.1;
+		damage_bonus_min_cmagic = 179;
+		damage_bonus_max_cmagic = 258;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+//			il_active_primary_spell=spell_fury_spin;
+
+			il_active_primary_spell=spell_fury_zap_1;
+			il_spell_2 = spell_fury_zap_2;
+			il_spell_3 = spell_fury_zap_3;
+			il_spell_4 = spell_fury_slam;
+			il_spell_5 = spell_fury_spin;
+			il_spell_6 = spell_fury_gas;
+			il_spell_7 = spell_fury_spit;
+
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+            	    			il_main = fury_eye_ut;
+				}
+				[all*]
+				{
+            	    		il_main = #spell/114-119;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/276-308;
+					il_main = #armor/677-920;
+					max = 1;
+					min = 1;
+   	    			}
+    				[gold*]
+				{
+					max = 2592023;
+					min = 1612517;
+                    piles = 8 - 12;
+				}
+				[oneof*]
+				{
+	            	il_main = #weapon/-rare(1)/276-308;
+	                il_main = #armor/-rare(1)/731-920;
+                    il_main = #*/-rare(1)/276-308;
+					max = 2;
+					min = 2;
+
+                		}
+				[oneof*]
+                		{
+	                il_main = #weapon/-unique(2)/276-308;
+	                il_main = #armor/-unique(2)/731-920;
+                    il_main = #*/-unique(2)/276-308;
+					max = 1;
+					min = 1;
+	            		}
+
+			}
+
+		}
+	}
+	[common]
+	{
+		screen_name="Fury Demigod";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+
+	}
+	[defend] { defense=450; }
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+		jat_die = world\ai\jobs\actors\evil\job_die_explode.skrit;
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&check_range				= true
+			&spell_chances				= "0.15,            0.14,            0.14,           0.15, 			  0.14, 			0.14,             0.14"
+			&spells						= "spell_fury_slam, spell_fury_spin, spell_fury_gas, spell_fury_spit, spell_fury_zap_1, spell_fury_zap_2, spell_fury_zap_3";
+
+		on_engaged_lost_consciousness_abort_attack = true;
+	}
+
+}
+[t:template,n:ut3W_fury_lesser_01]
+{
+	category_name = "3W_evil_b";
+	doc = "3W_fury_spawn";
+	specializes = 3W_base_fury;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	39.2, 0;
+			intelligence =  17.8, 0;
+			dexterity =  	48.7, 0;
+			melee =  		109, 0;
+			combat_magic = 	109, 0;
+
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4352000;
+		life = 5497.6;
+		max_life = 5497.6;
+		max_mana = 925.6;
+		mana = 925.6;
+		scale_base = 0.25;
+	}
+	[attack]
+	{
+		attack_range = 10;
+		damage_max = 521.4;
+		damage_min = 376.1;
+		damage_bonus_min_cmagic = 179;
+		damage_bonus_max_cmagic = 258;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_fury_zap_1;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #weapon/276-308;
+					il_main = #armor/141-696;
+					max = 1;
+					min = 1;
+   	    			}
+    				[gold*]
+				{
+					max = 624195;
+					min = 431820;
+				}
+				[oneof*]
+				{
+                    			chance = 0.01;
+	            			il_main = #weapon/-rare(1)/276-308;
+	                		il_main = #armor/-rare(1)/677-920;
+                    			il_main = #*/-rare(1)/276-308;
+					max = 1;
+					min = 1;
+
+                		}
+				[oneof*]
+                		{
+                    			chance = 0.01;
+	                		il_main = #weapon/-unique(2)/276-308;
+	                		il_main = #armor/-unique(2)/677-920;
+                    			il_main = #*/-unique(2)/276-308;
+					max = 1;
+					min = 1;
+	            		}
+
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Fury Minion"; 
+
+	}
+	[defend] { defense=901.8; }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_fury_09	= 1;
+			frag_glb_fury_10	= 1;
+			frag_glb_fury_11	= 1;
+			frag_glb_fury_12	= 1;
+			frag_glb_fury_13	= 1;
+			frag_glb_fury_14	= 1;
+			frag_glb_fury_15	= 1;
+			frag_glb_fury_16	= 1;
+		}
+	}
+
+
+}
+[t:template,n:ut3W_fury_lesser_02]
+{
+	category_name = "3W_evil_b";
+	doc = "3W_fury_pest";
+	specializes = 3W_base_fury;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	39.2, 0;
+			intelligence =  17.8, 0;
+			dexterity =  	48.7, 0;
+			melee =  		109, 0;
+			combat_magic = 	109, 0;
+
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4352000;
+		life = 5497.6;
+		max_life = 5497.6;
+		max_mana = 925.6;
+		mana = 925.6;
+		scale_base = 0.25;
+	}
+	[attack]
+	{
+		attack_range = 10;
+		damage_max = 521.4;
+		damage_min = 376.1;
+		damage_bonus_min_cmagic = 179;
+		damage_bonus_max_cmagic = 258;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_fury_zap_1;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #weapon/276-308;
+					il_main = #armor/141-696;
+					max = 1;
+					min = 1;
+   	    		}
+    			[gold*]
+				{
+					max = 624195;
+					min = 431820;
+					min_pile = 1719;
+					piles = 1 - 3;
+				}
+				[oneof*]
+				{
+                    chance = 0.01;
+	            	il_main = #weapon/-rare(1)/276-308;
+	                il_main = #armor/-rare(1)/677-920;
+                    il_main = #*/-rare(1)/276-308;
+					max = 1;
+					min = 1;
+
+                		}
+				[oneof*]
+                		{
+                    chance = 0.01;
+	                il_main = #weapon/-unique(2)/276-308;
+	                il_main = #armor/-unique(2)/677-920;
+                    il_main = #*/-unique(2)/276-308;
+					max = 1;
+					min = 1;
+	            		}
+
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Fury Minion"; 
+
+	}
+	[defend] { defense=901.8; }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_fury_17	= 1;
+			frag_glb_fury_18	= 1;
+			frag_glb_fury_19	= 1;
+			frag_glb_fury_20	= 1;
+			frag_glb_fury_21	= 1;
+			frag_glb_fury_22	= 1;
+			frag_glb_fury_23	= 1;
+			frag_glb_fury_24	= 1;
+		}
+	}
+
+}

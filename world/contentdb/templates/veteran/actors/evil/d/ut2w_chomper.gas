@@ -1,0 +1,157 @@
+[t:template,n:ut2w_chomper]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_chomper_base";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  40.7, 0;
+			intelligence =  8.3, 0;
+			dexterity =  22.5, 0;
+            		melee =  59,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 52716;
+		life = 1180;
+        	max_life = 1180;
+        	mana = 27.4;
+		max_mana = 27.4;
+		model = m_c_ecm_db_pos_1;
+		textures:0 = b_c_ecm_db-02;
+		material = flesh;
+		[voice]
+		{
+			[attack]		{	* = s_e_attack_chomper_SED;	}
+			[die]			{ priority = high; * = s_e_die_chomper_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_chomper_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 233.8;
+		damage_min = 185.1;
+	}
+	[body]
+	{
+		min_move_velocity = 3.0;
+		avg_move_velocity = 3.750000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_two_handed_melee	= 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_db_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,3;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,3;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,3;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,3;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,3;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Chomper Beastman";
+		membership = monster;
+	}
+	[defend] { defense = 637; }
+	[inventory]
+{
+	drop_at_use_point = true;
+	[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 6, Medium */
+		[oneof*]
+		{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #nmagic/17-57;
+	                il_main = #cmagic/17-57;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/159-198;
+					il_main = #armor/88-436;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/178-225;
+	                il_main = #armor/-rare(1)/423-683;
+                    il_main = #*/-rare(1)/178-225;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/178-225;
+	                il_main = #armor/-unique(2)/609-683;
+                    il_main = #*/-unique(2)/178-225;
+	            }
+			
+		}
+	}
+}
+	[mind]
+	{
+		jat_brain = world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party	= true;		
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit;	
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

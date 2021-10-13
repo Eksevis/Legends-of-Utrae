@@ -1,0 +1,786 @@
+[t:template,n:bd_un_bl_r_leaf_quest]
+{
+	doc = "Woodland Leather";
+	specializes = base_body_armor_leather;
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Woodland Leather";
+	}
+	[defend]
+	{
+		armor_style = 051;
+		armor_type = a2;
+	  f defense = 72.000000;
+	}
+	[gui]
+	{
+		equip_requirements = strength:14;
+		inventory_height = 2;
+		inventory_icon = b_gui_ig_i_a_pos_a2_051;
+		inventory_width = 2;
+		tooltip_color = unique;
+	}
+	[pcontent]
+	{
+		[base]
+		{
+		  f modifier_max = 13.000000;
+		  f modifier_min = 3.000000;
+		}
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 30 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 30;
+			}
+			[*]
+			{
+				alteration = alter_armor;
+				description = "Adds 20 to Armor";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 20;
+			}
+			[*]
+			{
+				alteration = alter_block_combat_magic_damage;
+				description = "Magic Damage Reduced by 7%";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 7;
+			}
+		}
+	}
+}
+[t:template,n:bd_ra_sc_m_g_c_quest]
+{
+	doc = "Shadow Scale";
+	specializes = base_body_armor_chain;
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Shadow Scale";
+	}
+	[defend]
+	{
+		armor_style = 028;
+		armor_type = a2;
+	  	f defense = 72.000000;
+	}
+	[gui]
+	{
+		equip_requirements = strength:12;
+		inventory_height = 2;
+		inventory_icon = b_gui_ig_i_a_pos_a2_061;
+		inventory_width = 2;
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 34 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 34;
+			}
+			[*]
+			{
+				alteration = alter_armor;
+				description = "Adds 25 to Armor";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 25;
+			}
+			[*]
+			{
+				alteration = alter_block_combat_magic_damage;
+				description = "Magic Damage Reduced by 8%";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 8;
+			}
+		}
+	}
+}
+[t:template,n:bd_ro_m_g_c_avg_hewoven_quest]
+{
+	doc = "DSX Steel Thread Robe";
+	specializes = dsx_base_robe;
+	[common]
+		{
+			screen_name = "Steel Thread Robe";
+			is_pcontent_allowed = false;
+		}
+	[defend]
+		{
+			armor_style = 237;
+			armor_type = a7;
+			f defense = 207;
+		}
+	[gui]
+		{
+			equip_requirements = intelligence:46;
+			inventory_icon = b_gui_ig_i_a_pos_a7_237;
+			inventory_height = 2;
+			inventory_width = 2;
+			tooltip_color = unique;
+		}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 61 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 61;
+			}
+			[*]
+			{
+				alteration = alter_max_mana;
+				description = "Adds 50 to Mana";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 50;
+			}
+			[*]
+			{
+				alteration = alter_armor;
+				description = "Adds 15 to Armor";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 15;
+			}
+			[*]
+			{
+				alteration = alter_block_combat_magic_damage;
+				description = "Magic Damage Reduced by 10%";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 10;
+			}
+		}
+	}
+}
+[t:template,n:sh_un_m_o_r_m_aurora_quest]
+{
+	doc = "Aurora Shield";
+	specializes = base_shield;
+	[aspect]
+	{
+		model = m_a_shd_10;
+		[textures]
+		{
+			0 = b_a_shd_070;
+		}
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Aurora Shield";
+	}
+	[defend]
+	{
+	  f defense = 59.000000;
+	}
+	[gui]
+	{
+		equip_requirements = strength:43;
+		inventory_height = 2;
+		inventory_icon = b_gui_ig_i_a_shd_070;
+		inventory_width = 2;
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_chance_to_block_melee_damage;
+				description = "20% Chance to Block Melee Attack";
+				duration = #infinite;
+				innate_enchantment = true;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 20;
+			}
+			[*]
+			{
+				alteration = alter_chance_to_block_ranged_damage;
+				description = "15% Chance to Block Ranged Attack";
+				duration = #infinite;
+				innate_enchantment = true;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 15;
+			}
+			[*]
+			{
+				alteration = alter_block_combat_magic_damage;
+				description = "Magic Damage Reduced by 10%";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 10;
+			}
+		}
+	}
+}
+[t:template,n:bw_dsx_shadjump_2_quest]
+{
+	doc = "DSX Shadow Jumper 2 Fire Bow";
+	specializes = dsx_base_bow;
+	[aspect]
+		{
+			model = m_w_bow_301;
+		}
+	[attack]
+		{
+			ammo_template = arrow_fire;
+			attack_range = 12;
+			f damage_max = 112; 
+			f damage_min = 105;
+			reload_delay = 0;
+		}
+	[common]
+		{
+			is_pcontent_allowed = false;
+			screen_name = "Fire Bow";
+		}
+	[gui]
+		{
+			active_icon = b_gui_ig_i_ic_bow_004;
+			inventory_icon = b_gui_ig_i_w_bow_301;
+			equip_requirements = strength:15,dexterity:22;
+			inventory_height = 4;
+			inventory_width = 1;
+			tooltip_color = unique;
+		}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 32 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 32;
+			}
+			[*]
+			{
+				alteration = alter_melee_damage_min;
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 10;
+			}
+			[*]
+			{
+				alteration = alter_melee_damage_max;
+				description = "Adds 10 to 21 Damage";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 21;
+			}
+		}
+	}
+}
+[t:template,n:bw_ra_g_c_c_l_4_quest]
+{
+	category_name = "weapon";
+	doc = "Long Backed Bow";
+	specializes = base_bow;
+	[aspect]
+	{
+		model = m_w_bow_028;
+	}
+	[attack]
+	{
+		attack_range = 13;
+	  f damage_max = 117.000000;
+	  f damage_min = 99.000000;
+		reload_delay = 0.3;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Long Butcher Bow";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_bow_002;
+		equip_requirements = strength:16,dexterity:26;
+		inventory_height = 4;
+		inventory_icon = b_gui_ig_i_w_bow_132;
+		inventory_width = 1;
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 34 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 34;
+			}
+			[*]
+			{
+				alteration = alter_ranged_damage_min;
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 14;
+			}
+			[*]
+			{
+				alteration = alter_ranged_damage_max;
+				description = "Adds 14 to 26 Damage";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 26;
+			}
+		}
+	}
+}
+[t:template,n:cw_ra_g_o_m_p_quest]
+{
+	doc = "Slayer Crossbow";
+	specializes = base_projectile;
+	[aspect]
+	{
+		model = m_w_csb_001;
+		[voice]
+		{
+			[put_down]
+			{
+				* = s_e_gui_put_down_bow;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_template = bolt;
+		attack_range = 12;
+	  f damage_max = 164.000000;
+	  f damage_min = 122.000000;
+		reload_delay = 0.5;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Slayer Crossbow";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_csb_001;
+		equip_requirements = strength:25,dexterity:47;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_csb_017;
+		inventory_width = 2;
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 48 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 48;
+			}
+			[*]
+			{
+				alteration = alter_ranged_damage_min;
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 12;
+			}
+			[*]
+			{
+				alteration = alter_ranged_damage_max;
+				description = "Adds 12 to 28 Damage";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 28;
+			}
+		}
+	}
+	[physics]
+	{
+		velocity = 75;
+	}
+}
+[t:template,n:minigun_gas_quest]
+{
+	doc = "DSX Gas Gun";
+	specializes = base_minigun_gas;
+	
+	[attack]
+	{
+		f damage_max = 105.0;
+		f damage_min = 90.0;
+	}
+	[common]
+	{
+		screen_name = "Gas Gun";
+	}
+	[gui]
+	{
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 32 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 32;
+			}
+			[*]
+			{
+				alteration = alter_block_combat_magic_damage;
+				description = "Magic Damage Reduced by 10%";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 10;
+			}
+		}
+	}
+}
+[t:template,n:mc_sc_g_o_f_1h_quest]
+{
+	doc = "Dragon Scepter";
+	specializes = base_mace;
+	[aspect]
+	{
+		model = m_w_mce_029;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+	  f damage_max = 166.000000;
+	  f damage_min = 128.000000;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Dragon Scepter";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_msc_003;
+		equip_requirements = strength:42;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_mce_029;
+		inventory_width = 1;
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 62 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 62;
+			}
+			[*]
+			{
+				alteration = alter_melee_damage_min;
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 17;
+			}
+			[*]
+			{
+				alteration = alter_melee_damage_max;
+				description = "Adds 17 to 29 Damage";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 29;
+			}
+		}
+	}
+}
+[t:template,n:st_un_ice_c_d_b_quest]
+{
+	doc = "Ice Staff";
+	specializes = base_staff;
+	[aspect]
+	{
+		model = m_w_stf_013;
+	}
+	[attack]
+	{
+	  f damage_max = 106.000000;
+	  f damage_min = 70.000000;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Ice Staff";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_stf_006;
+		equip_requirements = intelligence:23;
+		inventory_height = 4;
+		inventory_icon = b_gui_ig_i_w_stf_013;
+		inventory_width = 1;
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_chance_to_block_melee_damage;
+				description = "10% Chance to Block Melee Attack";
+				duration = #infinite;
+				innate_enchantment = true;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 10;
+			}
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 52 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 52;
+			}
+			[*]
+			{
+				alteration = alter_max_mana;
+				description = "Adds 100 to Mana";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 100;
+			}
+			[*]
+			{
+				alteration = alter_block_combat_magic_damage;
+				description = "Magic Damage Reduced by 6%";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 6;
+			}
+			[*]
+			{
+				alteration = alter_nature_magic;
+				description = "Adds 1 to Nature Magic Skill";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 1;
+			}
+			[*]
+			{
+				alteration = alter_combat_magic;
+				description = "Adds 1 to Combat Magic Skill";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 1;
+			}
+		}
+	}
+}
+[t:template,n:sd_un_big_2h_g_eye_quest]
+{
+	doc = "Onyx Sword";
+	specializes = base_sword;
+	[aspect]
+	{
+		model = m_w_swd_054;
+	}
+	[attack]
+	{
+	  f damage_max = 225.000000;
+	  f damage_min = 139.000000;
+		is_two_handed = true;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Onyx Sword";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_swd_007;
+		equip_requirements = strength:40;
+		inventory_height = 4;
+		inventory_icon = b_gui_ig_i_w_swd_087;
+		inventory_width = 1;
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_melee_damage_min;
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 18;
+			}
+			[*]
+			{
+				alteration = alter_melee_damage_max;
+				description = "Adds 18 to 28 Damage";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 28;
+			}
+		}
+	}
+}
+[t:template,n:minigun_napalm_quest]
+{
+	doc = "DSX Napalm Gun";
+	specializes = dsx_base_projectile;
+	[aspect]
+	{
+		mana = 100;
+		mana_recovery_period = 1;
+		mana_recovery_unit = 10;
+		max_mana = 100;
+		
+		model = m_w_misc_302;
+		[voice]
+		{
+			[put_down]
+			{
+				* = s_e_gui_put_down_bow;
+			}
+		}
+	}
+	[attack]
+	{
+		aiming_error_range_x = 2.5;
+		aiming_error_range_y = 2.5;
+		ammo_template = grenade_napalm;
+		attack_range = 15;
+		ammo_appears_jit = true;
+		ammo_template = grenade_napalm;
+		reload_delay = 2;
+		f damage_max = 178.0;
+		f damage_min = 140.0;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Napalm Gun";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_msc_001;
+		inventory_icon = b_gui_ig_i_w_msc_302;
+		equip_requirements = strength:14,dexterity:19;
+		inventory_height = 3;
+		inventory_width = 2;
+		tooltip_color = unique;
+	}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration = alter_max_life;
+				description = "Adds 42 to Health";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 42;
+			}
+			[*]
+			{
+				alteration = alter_ranged_damage_min;
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 18;
+			}
+			[*]
+			{
+				alteration = alter_ranged_damage_max;
+				description = "Adds 12 to 28 Damage";
+				duration = #infinite;
+				is_permanent = true;
+				is_single_instance = false;
+				value = 24;
+			}
+		}
+	}
+	[minigun_magic]
+	{
+		mana_per_shot = 30.0;
+		use_mana = true;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}

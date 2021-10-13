@@ -1,0 +1,29 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xD7924B69;
+	source_region_name = river_canyon;
+	[t:stitch_editor,n:grs_dry_hard_r1]
+	{
+		dest_region = grs_dry_hard_r1;
+		[node_ids]
+		{
+			0x0000adb1 = 0x72E98200,2;
+			0x0000adb2 = 0x3D27DBFB,1;
+			0x0000adb3 = 0xB5E485D3,1;
+			0x0000adb4 = 0x1B7FCB31,3;
+			0x0000adb5 = 0x3E6DA807,3;
+		}
+	}
+	[t:stitch_editor,n:path2crypts]
+	{
+		dest_region = path2crypts;
+		[node_ids]
+		{
+			0x0000ada1 = 0x9833C775,6;
+			0x0000ada2 = 0x0F4B6BD4,6;
+			0x0000ada3 = 0xC23C4934,4;
+			0x0000ada4 = 0x1F2633F2,3;
+			0x0000ada5 = 0x838E1D57,2;
+		}
+	}
+}

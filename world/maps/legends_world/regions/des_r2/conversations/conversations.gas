@@ -1,0 +1,38 @@
+[conversation_nalin]
+{
+	
+	[text*]
+	{
+	        order = 0;
+		choice = shop;
+
+		screen_text = "The Quillrabe Droog warned me there'd be drakes ahead, but why would I have ever believed them? Drakes are the stuff out of the old legends, like unicorns! I still wouldn't have thought them real had I not seen one for myself. I do hope poor Elsie will recover after that terrible fall she took when the beast roared at us.";
+	}
+	[text*]
+	{
+		order = 1;
+		choice = shop;
+
+		screen_text = "Drat it all. I came all the way out here to study the strange monument across the bridge, but with my mare so lame, I'll be stuck out here for weeks now! I could use a few more provisions if you have any to spare, and I've picked up a few items you might be interested in.";
+	}
+
+	[text*]
+	{
+
+		choice = shop;
+
+		screen_text = "Maybe it's a good thing you're down here, after all; an intrepid adventurer such as yourself might be in the mood for a bit of drake hunting, no? You'll be better prepared with a few of the items I found if you care to trade. They should last you 'til you reach Hiroth, I'm sure.";
+	}
+
+}
+[conversation_nalin_red]
+{
+	[text*]
+	{
+		screen_text = "By the gods above, I've never seen anything like this haze! This could only come from the release of magicks more powerful than the world has ever known!";
+			
+	}
+}
+
+
+

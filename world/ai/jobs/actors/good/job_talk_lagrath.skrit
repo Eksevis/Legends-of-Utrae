@@ -1,0 +1,118 @@
+/*
+  ============================================================================
+  ----------------------------------------------------------------------------
+
+	File		: 	job_talk_ada.skrit
+
+	Author(s)	: 	Eric Tams, David Tomandl, Chad Queen, Bartosz Kijanka
+
+	Purpose		: 	Custom talk job for the the lady who gets a message from her sister quest.
+
+	(C)opyright 2001 Gas Powered Games, Inc.
+
+  ----------------------------------------------------------------------------
+  ============================================================================
+*/
+
+Go		m_Go$;
+GoMind	m_Mind$;
+GoBody  m_Body$;
+Job		m_Job$;
+Goid	m_Target$;
+
+#include "k_job_c_mcp_fidget_utils"
+#include "k_job_c_talk_utils"
+
+startup state STARTUP$
+{
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//	init
+event OnJobInitPointers$( Job job$ )
+{
+	m_Job$		= job$;
+	m_Go$		= job$.Go;
+	m_Mind$		= job$.Go.Mind;
+	m_Body$		= job$.Go.Body;
+}
+
+
+event OnJobInit$( Job job$ )
+{
+	OnJobInitPointers$( job$ );
+
+	m_Target$	= job$.GoalObject;
+
+	SetState Talk$;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//	blab blab away... pretend you're Lee on coffee
+state Talk$
+{
+	transition
+	{
+		-> Exiting$:	OnWorldMessage( WE_REQ_TALK_END ) =
+		{
+			if( m_Go$.Mind.ActorAutoFidgets )
+			{
+				StartFidgetIfRequired$();
+			}
+		}
+	}
+	
+	trigger OnWorldMessage$( WE_ANIM_DONE )
+	{
+		TryAnim$('talk');
+	}
+
+	event OnEnterState$
+	{
+		if Victory.IsQuestActive( "quest_lagrath_quest" )
+		{
+			if( !GameAuditor.GetDb.GetBool( "alda_gave_staff" ) )
+			{
+				if( m_Target$.IsValid() ) 
+				{	
+					GameAuditor.GetDb.SetBool( "alda_gave_staff", true );
+					
+					SiegePos SpawnPos$;
+					
+					GoCloneReq cloneReq$ = MakeGoCloneReq( "st_un_ice_c_d_b_quest" );
+					
+					SpawnPos$ = m_Target$.go.placement.position;
+					cloneReq$.StartingPos	= SpawnPos$;
+				    
+					If( m_Target$.Go.Hasmind )
+					{
+						if( AIQuery.FindSpotRelativeToSource( m_Target$.Go, 1, 1.5, 2.0, m_Target$.Go.Mind.TempPos1 ) )
+				   		{
+				   			cloneReq$.StartingPos = m_Target$.Go.Mind.TempPos1;
+				   		}
+				   	}	
+					cloneReq$.SnapToTerrain = true;
+			        GoDb.SCloneGo( cloneReq$ );
+				}
+			}
+			m_Go$.GetConversation.RSSelectConversation( "conversation_lagrath" );
+			Victory.RSCompletedQuest( "quest_lagrath_quest", m_Target$ );
+			TryAnim$('talk');
+		} else {
+			m_Go$.GetConversation.RSSelectConversation( "conversation_noquest_lagrath" );
+			TryAnim$('talk');
+		}
+		m_Go$.GetConversation.RSActivateDialogue();
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//	finish blabbing
+state Exiting$
+{
+	event OnEnterState$
+	{
+		m_Job$.MarkForDeletion();
+	}
+}

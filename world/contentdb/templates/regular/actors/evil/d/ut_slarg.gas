@@ -1,0 +1,39 @@
+[t:template,n:ut_slarg]
+{
+	category_name = "1W_evil_d";
+	doc = "slarg";
+	specializes = base_slarg;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  18, 0;
+			intelligence =  4, 0;
+			dexterity =  8, 0;
+            melee =  24,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 299;
+		life = 273;
+        max_life = 273;
+        mana = 8;
+		max_mana = 8;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 124;
+		damage_min = 110;
+	}
+	[common] { screen_name="Slarg"; }
+    [defend] { defense=169; }
+    [mind]
+    {
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.35
+			&meander	= false
+			&still		= false;
+	}
+}

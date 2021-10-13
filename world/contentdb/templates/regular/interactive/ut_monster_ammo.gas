@@ -1,0 +1,159 @@
+[t:template,n:knife_ammo]
+{
+	specializes = base_grenade;
+	[aspect]
+	{
+		material = metal;
+		model=m_w_dag_003;
+		is_selectable	= false;
+		scale_base = 1.0;
+	}
+	[attack]
+	{
+		damage_max = 2;
+		damage_min = 2;
+		skill_class = "Combat Magic";
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("star_sparks");
+				condition* = receive_world_message("we_glanced");
+			}
+		}
+	}
+	[physics]
+	{
+		gravity = 4;
+		orient_to_trajectory = true;
+		angular_velocity = 60,0,0;
+		elasticity = 0.95;
+		break_effect = star_sparks;
+		explode_if_hit_go = true;
+		explode_if_hit_terrain = false;
+		explode_when_expired = false;
+	}
+}
+[t:template,n:axe_ammo]
+{
+	specializes = base_grenade;
+	[aspect]
+	{
+		material = metal;
+		model=m_w_axe_029;
+		is_selectable	= false;
+		scale_base = 1.0;
+	}
+	[attack]
+	{
+		damage_max = 2;
+		damage_min = 2;
+		skill_class = "Combat Magic";
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("star_sparks");
+				condition* = receive_world_message("we_glanced");
+			}
+		}
+	}
+	[physics]
+	{
+		gravity = 4;
+		orient_to_trajectory = true;
+		angular_velocity = 60,0,0;
+		elasticity = 0.95;
+		break_effect = star_sparks;
+		explode_if_hit_go = true;
+		explode_if_hit_terrain = false;
+		explode_when_expired = false;
+	}
+}
+[t:template,n:tomahawk_ammo]
+{
+	specializes = base_grenade;
+	[aspect]
+	{
+		material = metal;
+		model=m_w_axe_017;
+		is_selectable	= false;
+		scale_base = 0.8;
+	}
+	[attack]
+	{
+		damage_max = 2;
+		damage_min = 2;
+		skill_class = "Combat Magic";
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("star_sparks");
+				condition* = receive_world_message("we_glanced");
+			}
+		}
+	}
+	[physics]
+	{
+		gravity = 4;
+		orient_to_trajectory = true;
+		angular_velocity = 60,0,0;
+		elasticity = 0.95;
+		break_effect = star_sparks;
+		explode_if_hit_go = true;
+		explode_if_hit_terrain = false;
+		explode_when_expired = false;
+	}
+}
+[t:template,n:assassin_star]
+{
+	specializes = base_grenade;
+	[aspect]
+	{
+		material = metal;
+		model=m_w_misc_027;
+		is_selectable	= false;
+		scale_base = 1.0;
+	}
+	[attack]
+	{
+		damage_max = 2;
+		damage_min = 2;
+		skill_class = "Combat Magic";
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("star_sparks");
+				condition* = receive_world_message("we_glanced");
+			}
+		}
+	}
+	[physics]
+	{
+		gravity = 4;
+		angular_velocity = 0,60,0;
+		elasticity = 0.95;
+		break_effect = star_sparks;
+		explode_if_hit_go = true;
+		explode_if_hit_terrain = false;
+		explode_when_expired = false;
+	}
+}

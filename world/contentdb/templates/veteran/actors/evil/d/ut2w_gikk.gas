@@ -1,0 +1,316 @@
+[t:template,n:ut2W_base_gikk]
+{
+	category_name = "3W_ambients";
+	doc = "3W_Gikk";
+	specializes = actor_evil;
+	[aspect] { model = m_c_edm_gk_pos_1; }
+
+	[body]
+	{
+		avg_move_velocity = 3.50000;
+		[bone_translator]
+		{
+			body_anterior = bip01;
+			body_mid = bip01;
+			body_posterior = bip01;
+			kill_bone = bip01;
+			shield_bone = bip01;
+			weapon_bone = beakbone;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_gk_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Gikk"; }
+	[mind]
+	{
+		actor_weapon_preference		= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut2W_ranged_evil_gikk]
+{
+	category_name = "3W_evil_b";
+	doc = "3W_chicken_red_super";
+	specializes = ut2W_base_gikk;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	104.5,  0;
+			intelligence =  1.1,  0;
+			dexterity =  	65.3, 0;
+			melee =  	78, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 13950000;
+		life = 28075.5;
+		max_life = 28075.5;
+		mana = 11698.1;
+		max_mana = 11698.1;
+	}
+    	[defend] { defense=3716.5; }
+	[attack]
+	{
+		damage_max = 707.7;
+		damage_min = 484.3;
+		damage_bonus_min_cmagic = 61;
+		damage_bonus_max_cmagic = 103;
+	}
+	body:avg_move_velocity = 4.000000;
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0940008F,0f,"default","every",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_killed",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_chicken_fry; }
+		[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+					chance = 0.5;
+            	    il_main = #spell/68-116;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/251-335;
+					il_main = #armor/545-733;
+					max = 2;
+					min = 1;
+   	    		}
+    			[gold*]
+				{
+					chance = 0.5;
+					max = 683288;
+					min = 136658;
+                    piles = 5 - 10;
+				}
+				[oneof*]
+				{
+	            	il_main = #weapon/-rare(1)/251-335;
+	                il_main = #armor/-rare(1)/628-838;
+                    il_main = #*/-rare(1)/251-335;
+					max = 3;
+					min = 2;
+
+                }
+				[oneof*]
+                {
+	                il_main = #weapon/-unique(2)/251-335;
+	                il_main = #armor/-unique(2)/628-838;
+                    il_main = #*/-unique(2)/251-335;
+					max = 2;
+					min = 1;
+	            }
+
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference		= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_commander_01 = 1;
+			  frag_glb_krug_commander_02 = 1;
+			  frag_glb_krug_commander_03 = 1;
+			  frag_glb_krug_commander_04 = 1;
+			  frag_glb_krug_commander_05 = 1;
+			  frag_glb_krug_commander_06 = 1;
+			  frag_glb_krug_commander_07 = 1;
+			  frag_glb_krug_commander_08 = 1;
+		}
+	}
+}
+[t:template,n:ut2W_evil_gikk]
+{
+	category_name = "3W_evil_b";
+	doc = "3W_chicken_white_super";
+	specializes = ut2W_base_gikk;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	74.6,  0;
+			intelligence =  1.1,  0;
+			dexterity =  	55.2, 0;
+			melee =  	66, 0;
+		}
+	}
+    	[defend] { defense=3147.4; }
+	[aspect]
+	{
+		experience_value = 10230000;
+		life = 18389.4;
+		max_life = 18389.4;
+		mana = 9358.5;
+		max_mana = 9358.5;
+	}
+	[attack]
+	{
+		damage_max = 540.5;
+		damage_min = 358;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0940008F,0f,"default","every",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_killed",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+					chance = 0.5;
+            	    il_main = #spell/68-110;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/251-335;
+					il_main = #armor/628-785;
+					max = 4;
+					min = 2;
+   	    		}
+    			[gold*]
+				{
+					chance = 0.5;
+					max = 683288;
+					min = 136658;
+                    piles = 3 - 7;
+				}
+				[oneof*]
+				{
+	            	il_main = #weapon/-rare(1)/251-335;
+	                il_main = #armor/-rare(1)/628-785;
+                    il_main = #*/-rare(1)/251-335;
+					max = 2;
+					min = 1;
+
+                }
+				[oneof*]
+                {
+	                il_main = #weapon/-unique(2)/251-335;
+	                il_main = #armor/-unique(2)/628-785;
+                    il_main = #*/-unique(2)/251-335;
+					max = 1;
+					min = 0;
+	            }
+
+			}
+		}
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_commander_01 = 1;
+			  frag_glb_krug_commander_02 = 1;
+			  frag_glb_krug_commander_03 = 1;
+			  frag_glb_krug_commander_04 = 1;
+			  frag_glb_krug_commander_05 = 1;
+			  frag_glb_krug_commander_06 = 1;
+			  frag_glb_krug_commander_07 = 1;
+			  frag_glb_krug_commander_08 = 1;
+		}
+	}
+}
+

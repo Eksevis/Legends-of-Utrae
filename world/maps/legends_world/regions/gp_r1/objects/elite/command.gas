@@ -1,0 +1,150 @@
+[t:camera_quake,n:0x08700080]
+{
+	[camera_quake]
+	{
+	  f duration = 13;
+	  f magnitude_x = 0.075;
+	  f magnitude_y = 0.075;
+	  f magnitude_z = 0.075;
+	  b self_destruct = true;
+	}
+	[placement]
+	{
+	  p position = -3.18801,-32.2,-3.47956,0xf676bd47;
+	}
+}
+[t:cmd_selection_toggle,n:0x087001bf]
+{
+	[cmd_selection_toggle]
+	{
+	  x object_scid = 0x087001BD;
+	  i start_state = 1;
+	  b toggle_selection = false;
+	  b toggle_visability = true;
+	}
+	[placement]
+	{
+	  p position = 1.98717,12,0.355877,0x60e4b6cf;
+	}
+}
+[t:camera_quake,n:0x0870006e]
+{
+	[camera_quake]
+	{
+	  f magnitude_x = 0.25;
+	  f magnitude_y = 0.25;
+	  f magnitude_z = 0.25;
+	}
+	[placement]
+	{
+	  p position = -1.05914,0.05,-1.09457,0xd36273e5;
+	}
+}
+[t:cmd_delete_object,n:0x08700040]
+{
+	[placement]
+	{
+	  p position = 2.16052,-2.98023e-008,2.72009,0xbbf8b524;
+	}
+}
+[t:cmd_delete_object,n:0x08700041]
+{
+	[placement]
+	{
+	  p position = 2.20254,0,-1.18762,0xbbf8b524;
+	}
+}
+[t:cmd_delete_object,n:0x08700042]
+{
+	[placement]
+	{
+	  p position = 2.10756,-2.98023e-008,-5.16118,0xbbf8b524;
+	}
+}
+[t:light_enable,n:0x0870006f]
+{
+	[light_enable]
+	{
+	  b initially_active = false;
+	  x siege_light = 0xA1C42B50;
+	  b use_fizzle = true;
+	  b use_flare = true;
+	}
+	[placement]
+	{
+	  p position = -2.37212,1.90735e-006,-5.22915,0xbbf8b524;
+	}
+}
+[t:light_enable,n:0x08700070]
+{
+	[light_enable]
+	{
+	  b initially_active = false;
+	  x siege_light = 0xEB3E42BC;
+	  b use_fizzle = true;
+	  b use_flare = true;
+	}
+	[placement]
+	{
+	  p position = -2.29407,0,-1.37611,0xbbf8b524;
+	}
+}
+[t:light_enable,n:0x08700071]
+{
+	[light_enable]
+	{
+	  b initially_active = false;
+	  x siege_light = 0x133B5148;
+	  b use_fizzle = true;
+	  b use_flare = true;
+	}
+	[placement]
+	{
+	  p position = -2.21502,0,2.66921,0xbbf8b524;
+	}
+}
+[t:animate_elevator,n:0x08700097]
+{
+	[nodal_tex_anim]
+	{
+	  x siege_node = 0x9457BC23;
+	}
+	[placement]
+	{
+	  p position = 1.1088,0.12854,0.464812,0xfc90e6f3;
+	}
+}
+[t:animate_elevator,n:0x087001bb]
+{
+	[nodal_tex_anim]
+	{
+	  x siege_node = 0x612ECD93;
+	}
+	[placement]
+	{
+	  p position = 1.38923,0.139322,0.281522,0xf3ca5686;
+	}
+}
+[t:animate_elevator,n:0x087001bc]
+{
+	[nodal_tex_anim]
+	{
+	  x siege_node = 0xD39107D5;
+	}
+	[placement]
+	{
+	  p position = 1.34909,0.139874,0.272158,0x17d345a2;
+	}
+}
+[t:camera_quake,n:0x087000fb]
+{
+	[camera_quake]
+	{
+	  f duration = 0.8;
+	  f magnitude_y = 0.2;
+	}
+	[placement]
+	{
+	  p position = 1.18343,5.95,1.06927,0x1c0b5fd1;
+	}
+}

@@ -1,0 +1,14 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0x21CC2965;
+	source_region_name = orchard_cellar;
+	[t:stitch_editor,n:town_center]
+	{
+		dest_region = town_center;
+		[node_ids]
+		{
+			0x000affb1 = 0x796F0A5E,4;
+			0x000affb2 = 0x796F0A5E,3;
+		}
+	}
+}

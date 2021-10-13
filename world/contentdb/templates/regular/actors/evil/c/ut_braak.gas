@@ -1,0 +1,537 @@
+[t:template,n:ut_braak]
+{
+	category_name = "1W_evil_c";
+	doc = "braak, melee";
+	specializes = base_braak;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	12, 0;
+			intelligence =  9, 0;
+			dexterity =  11, 0;
+            melee =  8,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 113;
+		life = 189;
+        max_life = 189;
+		mana = 10;
+		max_mana = 10;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 42;
+		damage_min = 38;
+	}
+	[common]
+	{
+		screen_name="Braak";
+		membership = party_braak_boss, monster;
+	}
+	[defend] { defense=52; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                il_main = #weapon/30-38;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/32-44;
+	                il_main = #armor/-rare(1)/72-104;
+                    il_main = #*/-rare(1)/32-44;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/32-44;
+	                il_main = #armor/-unique(2)/72-104;
+                    il_main = #*/-unique(2)/32-44;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+	}
+}
+[t:template,n:ut_braak_boss_01]
+{
+	category_name = "1W_evil_c";
+	doc = "braak, melee boss";
+	specializes = base_braak;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  	13, 0;
+			intelligence =  10, 0;
+			dexterity 	=  11, 0;
+            melee 		=  10,  0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_ecm_bk-03;
+		experience_value = 180;
+		life = 479;
+        max_life = 479;
+		mana = 10;
+		max_mana = 10;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 48;
+		damage_min = 42;
+	}
+	[common]
+	{
+		screen_name="Pitiful Braak";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_blue(sgx)");
+			}
+		}
+	}
+	[defend] { defense=188; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+	                il_main = #spell/12-14;
+				}
+				[oneof*]
+				{
+					il_main = #armor,f/90-108;
+	                il_main = #weapon/35-38;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/41-52;
+	                il_main = #armor/-rare(1)/109-127;
+                    il_main = #*/-rare(1)/41-52;
+                }
+				[oneof*]
+				{
+                	chance = 0.2;
+	                il_main = #weapon/-unique(2)/41-52;
+	                il_main = #armor/-unique(2)/109-127;
+                    il_main = #*/-unique(2)/41-52;
+	            }
+				[gold*]
+				{
+					max = 364;
+					min = 221;
+					min_pile = 57;
+					piles = 2 - 3;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.75
+			&friend_template 	= false
+			&friends			= party_braak_boss
+			&still				= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_braak_boss";
+	}
+}
+[t:template,n:braak_magic_ut]
+{
+	category_name = "1W_evil_c";
+	doc = "braak, magic";
+	specializes = base_braak;
+	[common] { screen_name="Ice Braak"; }
+	[actor]
+	{
+		[skills]
+		{
+			strength =  9, 0;
+			intelligence =  10, 0;
+			dexterity =  10, 0;
+            nature_magic =  7,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 85;
+		life = 137;
+        max_life = 137;
+		mana = 40;
+		max_mana = 40;
+        scale_base = 0.7;
+        [textures] { 0 = b_c_ecm_bk-02; }
+        [voice]
+		{
+			[cast]			{ * = s_e_attack_braak_mage; }
+			[die]			{ priority = high; * = s_e_die_braak; }
+			[hit_glance]	{ priority = low; * = s_e_hit_braak; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 28;
+		damage_min = 24;
+	}
+	[common] { screen_name="Braak Mage"; }
+	[defend] { defense=36; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_braak_iceblast; }
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/25-32;
+					il_main = #armor/13-66;
+	                il_main = #weapon/25-32;
+                    il_main = #body,ro/30-66;
+                }
+                [oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/29-38;
+	                   il_main = #armor/-rare(1)/52-91;
+                       il_main = #*/-rare(1)/29-38;
+                }
+				[oneof*]
+				{
+                       chance = 0.002;
+	                   il_main = #weapon/-unique(2)/29-38;
+	                   il_main = #armor/-unique(2)/52-91;
+                       il_main = #*/-unique(2)/29-38;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 147;
+					min = 88;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.5
+			&meander						= false
+			&still							= false;
+	}
+}
+[t:template,n:ut_braak_magic]
+{
+	category_name = "1W_evil_c";
+	doc = "braak magic";
+	specializes = braak_magic_ut;
+}
+
+[t:template,n:ut_braak_magic_reveal]
+{
+	category_name = "1W_evil_c";
+	doc = "revealing braak magic";
+	specializes = braak_magic_ut;
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("braak_magic_reveal");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+}
+[t:template,n:ut_braak_magic_reveal_act]
+{
+	category_name = "1W_evil_c";
+	doc = "revealing braak magic activate";
+	specializes = braak_magic_ut;
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true
+			&activate = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("braak_magic_reveal");
+				condition* = receive_world_message("we_req_activate");
+			}
+		}
+	}
+}
+
+[t:template,n:ut_braak_desert]
+{
+	category_name = "1W_evil_c";
+	doc = "braak, melee (desert)";
+	specializes = base_braak;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	22, 0;
+			intelligence =  11, 0;
+			dexterity =  	14, 0;
+            ranged =  		15,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 39484;
+		life = 1732;
+        max_life = 1732;
+		mana = 10;
+		max_mana = 10;
+		[textures] { 0 = b_c_ecm_bk-02; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 228;
+		damage_min = 122;
+	}
+	[body]
+	{
+		max_move_velocity = 7.0;
+	}
+	[common]
+	{
+		screen_name="Desert Braak";
+		membership = party_braak_desert_boss, monster;
+	}
+	[defend] { defense=365; }
+	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_braak_boulder; }
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/109-117;
+					il_main = #armor/58-291;
+	                il_main = #nmagic/35-45;
+	                il_main = #cmagic/35-45;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/115-127;
+	                il_main = #armor/-rare(1)/360-373;
+                    il_main = #*/-rare(1)/115-127;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/115-127;
+	                il_main = #armor/-unique(2)/360-373;
+                    il_main = #*/-unique(2)/115-127;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 16620;
+					min = 12768;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+}
+
+[t:template,n:ut_braak_desert_boss_01]
+{
+	category_name = "1W_evil_c";
+	doc = "braak, melee (desert)boss 01";
+	specializes = base_braak;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	22, 0;
+			intelligence =  11, 0;
+			dexterity =  	17, 0;
+            ranged =  		32,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 74254;
+		life = 2276;
+        max_life = 2276;
+		mana = 10;
+		max_mana = 10;
+		[textures] { 0 = b_c_ecm_bk-04; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 228;
+		damage_min = 172;
+	}
+	[body]
+	{
+		max_move_velocity = 7.0;
+	}
+	[common]
+	{
+		screen_name="Kaabrud The Ambusher";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_yellow(sgx)");
+			}
+		}
+	}
+	[defend] { defense=524; }
+	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_braak_boulder; }
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #*/130-150;
+					il_main = #armor/367-420;
+                }
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/149-163;
+	                il_main = #armor/-rare(1)/422-434;
+                    il_main = #*/-rare(1)/149-163;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/149-163;
+	                il_main = #armor/-unique(2)/422-434;
+                    il_main = #*/-unique(2)/149-163;
+	            }
+				[gold*]
+				{
+					max = 35123;
+					min = 29890;
+					min_pile = 3050;
+					piles = 4 - 6;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.7
+			&friend_template 	= false
+			&friends			= party_braak_desert_boss
+			&still				= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_braak_desert_boss";
+
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+}

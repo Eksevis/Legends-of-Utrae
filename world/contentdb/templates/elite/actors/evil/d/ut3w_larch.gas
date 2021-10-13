@@ -1,0 +1,514 @@
+[t:template,n:ut3W_larch]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_larch";
+	specializes = 3W_base_larch;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	66, 0;
+			intelligence =  7.6, 0;
+			dexterity =  	18.2, 0;
+            melee =  		96,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3390000;
+		life = 2712;
+		max_life = 2712;
+		mana = 30.5;
+		max_mana = 30.5;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_larch; }
+			[hit_critical]	{ priority = low; * = s_e_hit_larch_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_larch_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_larch_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 621.5;
+		damage_min = 481;
+		reload_delay = 0;
+	}
+	[common]
+	{
+		screen_name="Infested Larch";
+		membership = party_larch_boss, monster;
+
+	}
+   	[defend] { defense=1475.1; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.4;
+				il_main = #*/148-296;
+				il_main = #armor/138-705;
+                il_main = #nmagic/15-111;
+                il_main = #cmagic/15-111;
+			}
+            [oneof*]
+			{
+	        	chance = 0.004;
+	            il_main = #weapon/-rare(1)/163-329;
+	            il_main = #armor/-rare(1)/372-1026;
+                il_main = #*/-rare(1)/163-329;
+            }
+			[oneof*]
+			{
+            	chance = 0.002;
+	            il_main = #weapon/-unique(2)/163-329;
+	            il_main = #armor/-unique(2)/372-1026;
+                il_main = #*/-unique(2)/163-329;
+            }
+		}
+	}
+   	[mind]
+	{
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true;
+
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?meander						= false
+			&still							= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 1.0; //0.7
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+[t:template,n:ut3W_larch_boss_01]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_larch boss 01";
+	specializes = 3W_base_larch;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	80.7, 0;
+			intelligence =  7.6, 0;
+			dexterity =  	24.3, 0;
+            melee =  		106,  0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_edm_la-06;
+		experience_value = 3880000;
+		life = 4602.5;
+		max_life = 4602.5;
+		mana = 30.5;
+		max_mana = 30.5;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_larch; }
+			[hit_critical]	{ priority = low; * = s_e_hit_larch_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_larch_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_larch_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 621.5;
+		damage_min = 481;
+		reload_delay = 0;
+	}
+	[common]
+	{
+		screen_name="Larch Primeleader";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_green(sgx)");
+			}
+		}
+	}
+   	[defend] { defense=2180.6; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.994;
+					il_main = #*/296-355;
+					il_main = #armor/1020-1140;
+                	il_main = #nmagic/111-120;
+                	il_main = #cmagic/111-120;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/341-367;
+	                il_main = #armor/-rare(1)/1053-1197;
+                    il_main = #*/-rare(1)/341-367;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/341-367;
+	                il_main = #armor/-unique(2)/1053-1197;
+                    il_main = #*/-unique(2)/341-367;
+	            }
+			}
+		}
+    }
+   	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.8
+			&friend_template				= false
+			&friends						= party_larch_boss
+			&still							= false;
+
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_larch_boss";
+
+		melee_engage_range = 14;
+		personal_space_range = 1.0; //0.7
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+[t:template,n:ut3W_swamp_creature]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_swamp creature";
+	specializes = 3W_base_larch;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  63.8, 0;
+			intelligence =  12.7, 0;
+			dexterity =  15.9, 0;
+            melee =  	93,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1967500;
+		life = 4160;
+		max_life = 4160;
+		mana = 40;
+		max_mana = 40;
+		textures:0 = b_c_edm_la-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 638;
+		damage_min = 486;
+		reload_delay = 0;
+	}
+	[common]
+	{
+		screen_name	="Murk Stomper";
+		membership	= monster, party_swamp_slinger, party_swamp_creature_boss;
+
+	}
+   	[defend] { defense=569.3; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/48-72;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/235-294;
+					il_main = #armor/136-688;
+	                il_main = #weapon/235-294;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/267-337;
+	                il_main = #armor/-rare(1)/784-1088;
+                    il_main = #*/-rare(1)/267-337;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/267-337;
+	                il_main = #armor/-unique(2)/784-1088;
+                    il_main = #*/-unique(2)/267-337;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 322271;
+					min = 271912;
+				}
+			}
+		}
+	}
+   	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?still							= false;
+
+		jat_brain						 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+
+		melee_engage_range = 14;
+		personal_space_range = 1.0; //0.7
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+
+[t:template,n:ut3W_swamp_creature_boss_01]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_swamp creature boss";
+	specializes = 3W_base_larch;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  69.6, 0;
+			intelligence =  14.3, 0;
+			dexterity =  20.4, 0;
+            melee =  	101,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2882088;
+		life = 4608;
+		max_life = 4608;
+		mana = 40;
+		max_mana = 40;
+		textures:0 = b_c_edm_la-05;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 638;
+		damage_min = 486;
+		reload_delay = 0;
+	}
+	[common]
+	{
+		screen_name	="Corporeal Shadow";
+		membership=monster,party_swamp_slinger,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_green(sgx)");
+			}
+		}
+	}
+   	[defend] { defense=1260; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.794;
+					il_main = #*/294-314;
+					il_main = #armor/1020-1160;
+	                il_main = #weapon/294-314;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/322-377;
+	                il_main = #armor/-rare(1)/1064-1240;
+                    il_main = #*/-rare(1)/322-377;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/322-377;
+	                il_main = #armor/-unique(2)/1064-1240;
+                    il_main = #*/-unique(2)/322-377;
+	            }
+				[gold*]
+				{
+					chance = 0.2;
+					max = 637015;
+					min = 302565;
+					min_pile = 225;
+					piles = 5 - 7;
+				}
+			}
+		}
+	}
+   	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 1.0
+			&friend_template	= false
+			&friends			= party_swamp_creature_boss
+			&still				= false;
+
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&form_party_on_friend_entered_OCZ	= true
+			&form_party_on_friend_entered_ICZ	= true
+			&party_template						= "party_swamp_creature_boss";
+
+		melee_engage_range = 14;
+		personal_space_range = 1.0; //0.7
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+
+[t:template,n:ut3W_swamp_slinger]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_swamp slinger";
+	specializes = 3W_base_larch;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  49.3, 0;
+			intelligence =  14.3, 0;
+			dexterity =  18.1, 0;
+			combat_magic =  90,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2071500;
+		life = 1120;
+		max_life = 1120;
+		mana = 64;
+		max_mana = 64;
+		textures:0 = b_c_edm_la-03;
+        scale_base = 0.55;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 457.6;
+		damage_min = 324;
+		damage_bonus_min_cmagic = 176;
+		damage_bonus_max_cmagic = 221;
+	}
+	[common]
+	{
+		screen_name	="Muck Tosser";
+		membership	= monster, party_swamp_slinger;
+
+	}
+   	[defend] { defense=490.7; }
+   	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_swamp_slinger_ball; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/48-72;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/235-286;
+					il_main = #armor/136-664;
+	                il_main = #weapon/235-286;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/279-326;
+	                il_main = #armor/-rare(1)/608-984;
+                    il_main = #*/-rare(1)/279-326;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/279-326;
+	                il_main = #armor/-unique(2)/608-984;
+                    il_main = #*/-unique(2)/279-326;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 368935;
+					min = 340608;
+				}
+			}
+		}
+
+	}
+   	[mind]
+	{
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true
+			&actor_creates_own_party	= true
+			&party_template				= party_swamp_slinger;
+
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.30
+			&wander		= 0.50
+			&still 		= false;
+
+		actor_weapon_preference     = wp_magic;
+		actor_auto_switches_to_magic     = true;
+		melee_engage_range          = 2;
+		personal_space_range        = 0.7;
+		on_enemy_entered_ocz_attack = true;
+		ranged_engage_range         = 14.0;
+		sight_range                 = 14.0;
+	}
+
+}
+

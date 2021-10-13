@@ -1,0 +1,32 @@
+
+ [zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "Are you crazy, lost or both? If you keep on that-away you'll end up in Lang sooner or later. If you go back the way you came you can find the entrance to the Crystal Caverns which will take you to Meren. You won't find me going that way though, I'm giving up and returning to Fallraen.";
+	}
+}
+
+[conversation_glilahan]
+{
+	
+    [text*]
+	{
+		choice = shop;
+
+		screen_text = "Well we meet again. I was trying to find my way to Meren to get away from the freezing cold in Fallraen & got lost. This way goes to Lang, you don't wanna go that way, especially if you're trying to get to Meren. I was just trying of think of a dignified way of dying when you came along and save me. In return I can offer you access to my stock. Interested?";
+		button_1_text = "Directions";
+       		button_1_value = d_0x06b004f2;
+	}
+}
+[conversation_glilahan_red]
+{
+	[text*]
+	{
+	
+		choice = shop;	
+		screen_text = "Can't a lad go anywhere in this dratted excuse of a town to get a good night's sleep?";
+		button_1_text = "Directions";
+       		button_1_value = d_0x06b004f2;
+	}
+}

@@ -1,0 +1,113 @@
+/*
+//////////////////////////////////////////////////////////////////////////////////////
+// File: job_fidget_mosey.skrit
+// This skrit makes an npc wander around town freely
+// Author: Madigan
+// Credits:  GPG
+// This skrit (C)2002 Michael DeWitt, All Rights Reserved.
+// Permission is granted for non-profit use.please give credit to the author
+// Commercial use without written permission is expressly prohibited.
+//////////////////////////////////////////////////////////////////////////////////////
+//    notes: altered by Wizardo55 to include timeout script
+*/
+
+
+Go      m_Go$;
+GoMind   m_Mind$;
+GoBody  m_Body$;
+Job      m_Job$;
+float   m_Move_Distance$;
+float   m_Min_Distance$;
+float   m_Delay_Min$;
+float   m_Delay_Max$;
+
+
+#include "k_job_c_mcp_fidget_utils"
+
+////////////////////////////////////////////////////////////////////////////////
+
+startup state Unknown$
+{
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//   init
+event OnJobInitPointers$( Job job$ )
+{
+   m_Job$               = job$;
+   m_Go$               = job$.Go;
+   m_Mind$               = job$.Go.Mind;
+   m_Body$               = job$.Go.Body;
+   m_Move_Distance$      = 35.0;            // How far we will move from where we started
+   m_Min_Distance$         = 10.0;            // minimum distance to move from where we started
+   m_Delay_Min$         = 5.0;
+   m_Delay_Max$         = 10.0;
+}
+
+event OnJobInit$( Job job$ )
+{
+   OnJobInitPointers$( job$ );
+
+   SetState RequestAction$;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//   so if i do this, whenever the condition is met, the transition will occur?   -->  state RequestAction$ {  transition -> Timeout$: OnTimer( 2 );   <more code stuff and events and such>  }
+state RequestAction$
+{
+	transition -> Timeout$: OnTimer( 2 );
+   	event OnEnterState$
+   	{
+    	StartFidgetIfRequired$();
+
+      	This.CreateTimer( 1 , Math.RandomFloat( m_Delay_Min$, m_Delay_Max$ ) );
+   	}
+   	trigger OnWorldMessage$( WE_ANIM_DONE )
+   	{
+      StartFidgetIfRequired$();
+   	}
+  	trigger OnTimer$( 1 )
+   	{
+      	if( ( m_Mind$.MovementOrders == MO_FREE ) && m_Go$.WasInViewFrustumRecently )
+      	{
+         	if( m_Mind$.MovementOrders != MO_HOLD )
+         	{
+            	MCPManager.Flush(m_Go$.Goid);
+            	if( AIQuery.FindSpotRelativeToSource(    m_Job$.InitPosition,
+                                          1,
+                                          m_Min_Distance$,
+                                          m_Move_Distance$,
+                                           2.0,
+                                          m_Go$.IsHuded,
+                                          m_Mind$.TempPos1 ) )
+               {
+               MCPManager.MakeRequest( m_Go$.Goid, PL_APPROACH, m_Mind$.TempPos1, 0.2 );
+               This.CreateTimer( 2, 10 );
+	           }
+         	}
+      	}
+      	This.CreateTimer( 1 , Math.RandomFloat( m_Delay_Min$, m_Delay_Max$ ) );
+   	}
+
+}
+state Timeout$
+{
+	event OnEnterState$
+	{
+		//clear our mind, forget where we are going, and learn were we will go
+        MCPManager.Flush(m_Go$.Goid);
+      	StartFidgetIfRequired$();
+		setstate RequestAction$;
+	}
+}
+/*Type         : Error
+Module       : C:\Program Files\Dungeon Siege Tool Kit\SiegeEditor.exe
+Location     : <Unknown>
+Fail Count   : 1 (w:17, e:14, x:0)
+Exe timestamp: Aug  7 2002 17:52:58
+
+job_fidget_mosey.skrit(79,13) error: syntax error
+
+world\ai\jobs\actors\good\job_fidget_mosey.skrit - 0 fatals, 1 error, 0 warnings
+
+*/

@@ -1,0 +1,35 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xAAA90100;
+	source_region_name = grs2des;
+	[t:stitch_editor,n:des_r1]
+	{
+		dest_region = des_r1;
+		[node_ids]
+		{
+			0x00afffa1 = 0xE714959E,8;
+			0x00afffa2 = 0x6CEBF4A5,3;
+			0x00afffa3 = 0x127C1BDE,4;
+			0x00afffa4 = 0x127C1BDE,5;
+			0x00afffa5 = 0x8DFA6FD3,3;
+			0x00afffa6 = 0x02005837,1;
+			0x00afffa7 = 0x1E07AB9F,3;
+			0x00afffa8 = 0x1E07AB9F,4;
+		}
+	}
+	[t:stitch_editor,n:grs_dry_hard_r1]
+	{
+		dest_region = grs_dry_hard_r1;
+		[node_ids]
+		{
+			0x0000aca1 = 0xA4C99C90,3;
+			0x0000aca2 = 0x3DBC44A0,2;
+			0x0000aca3 = 0x3DBC44A0,1;
+			0x0000aca4 = 0x8821239A,1;
+			0x0000aca5 = 0x3639F5BF,3;
+			0x0000aca6 = 0x43BE69D0,4;
+			0x0000aca7 = 0x95BAA747,3;
+			0x0000aca8 = 0x2E130599,4;
+		}
+	}
+}

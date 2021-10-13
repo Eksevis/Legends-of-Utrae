@@ -1,0 +1,60 @@
+[t:template,n:ut2w_sandskreech]
+//balanced to Level 16
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_sandskreech";
+	specializes = dsx_sandskreech_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	15, 0;
+			intelligence =  8, 0;
+			dexterity =  	11, 0;
+            melee = 		14, 0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_edm_sandskreech;
+		experience_value = 460;
+		life = 184;
+		max_life = 184;
+		mana = 10;
+		max_mana = 10;
+		[voice]
+		{
+			[die]	{ priority = high; * = s_e_die_spider; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 70;
+		damage_min = 66;
+		reload_delay = 0;
+	}
+	[common] { screen_name="Sandskreech"; }
+	[defend] { defense=101; }
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?meander	= false
+			&still		= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_sandskreech_01 = 1;
+			frag_glb_sandskreech_02 = 1;
+			frag_glb_sandskreech_03 = 3;
+			frag_glb_sandskreech_04 = 2;
+			frag_glb_sandskreech_05 = 3;
+		}
+	}
+}

@@ -1,0 +1,161 @@
+[t:template,n:ut2w_fleshrender]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_fleshrender";
+	specializes = dsx_fleshrender_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =  26.4, 0;
+			intelligence =  18.3, 0;
+			dexterity =  9.9, 0;
+            		melee =  59,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 47432;
+		life = 1183.5;
+        	max_life = 1183.5;
+        	mana = 110.5;
+        	max_mana = 110.5;
+
+		material = flesh;
+		draw_shadow = false;
+		[voice]
+		{
+			[die] 			{ priority = high;	* = s_e_call_wraith_SED;			}
+			[enemy_spotted] { priority = high;	* = s_e_call_zombie_ground_SED;	}
+			[hit_critical]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_glance]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_solid]		{ priority = low;	* = s_e_hit_dead_SED;			}
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 266.5;
+		damage_min = 202.7; 
+	}
+
+	[common]
+		{
+			screen_name = "Vile Fleshrender"; //--
+			membership = monster; //--
+		}
+
+	[defend] { defense = 400; }
+
+}
+[t:template,n:ut2w_fleshrender_01]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_fleshrender";
+	specializes = dsx_fleshrender_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength = 	35.3, 0;
+			intelligence = 	6.8, 0;
+			dexterity = 	16.1, 0;
+			melee =  	61,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 67600;
+		life = 1095.6;
+		max_life = 1095.6;
+		mana = 29.6;
+		max_mana = 29.6;
+
+		material = flesh;
+		draw_shadow = false;
+		[voice]
+		{
+			[die] 			{ priority = high;	* = s_e_call_wraith_SED;			}
+			[enemy_spotted] { priority = high;	* = s_e_call_zombie_ground_SED;	}
+			[hit_critical]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_glance]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_solid]		{ priority = low;	* = s_e_hit_dead_SED;			}
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 328;
+		damage_min = 250; 
+	}
+
+	[common]
+		{
+			screen_name = "Swamp Fleshrender"; //--
+			membership = monster; //--
+		}
+
+	[defend] { defense = 500; }
+
+}
+
+[t:template,n:ut2w_ice_render]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_fleshrender";
+	specializes = dsx_fleshrender_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  	38.4, 0;
+			intelligence =  14.4, 0;
+			dexterity 	=  23.1, 0;
+            		melee 		=  64,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 39240;
+		life = 1234.5;
+        	max_life = 1234.5;
+		mana = 55;
+		max_mana = 55;
+
+		material = flesh;
+		draw_shadow = false;
+		textures:0 = b_c_edm_frender-01;
+		[voice]
+		{
+			[die] 			{ priority = high;	* = s_e_call_wraith_SED;			}
+			[enemy_spotted] { priority = high;	* = s_e_call_zombie_ground_SED;	}
+			[hit_critical]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_glance]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_solid]		{ priority = low;	* = s_e_hit_dead_SED;			}
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 268;
+		damage_min = 250; 
+	}
+
+	[common]
+		{
+			screen_name = "Fleshgrinder Ripper"; //--
+			membership = monster; //--
+		}
+
+	[defend] { defense = 540; }
+
+}
+
+
+

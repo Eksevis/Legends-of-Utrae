@@ -1,0 +1,176 @@
+[t:sign_glb_01,n:0x0750016a]
+{
+	[common]
+	{
+		dev_instance_text = "sign 3";
+		screen_name = "Town of Quillrabe,337";
+	}
+	[placement]
+	{
+	  q orientation = 0,4.32134e-007,0,-0.999999;
+	  p position = 3.41139,6,1.56103,0x2dbbe108;
+	}
+}
+[t:sign_glb_01,n:0x07500243]
+{
+	[common]
+	{
+		dev_instance_text = "sign 7";
+		screen_name = "Town of Quillrabe, 235";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,5.96046e-007;
+	  p position = -1.83877,6,-0.213684,0x92922cec;
+	}
+}
+[t:respawn_statue,n:0x0750028c]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 0.50383,4,-0.564636,0xb225a953;
+		use_point_scids = 0x0750014e;
+	}
+}
+[t:sign_glb_01,n:0x075001b1]
+{
+	[common]
+	{
+		dev_instance_text = "sign 4";
+		screen_name = "Town of Quillrabe, 332";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707106;
+	  p position = -1.06115,0,-0.917539,0x6e5260f2;
+	}
+}
+[t:sign_glb_01,n:0x0750023c]
+{
+	[common]
+	{
+		dev_instance_text = "sign 5";
+		screen_name = "Town of Quillrabe, 304";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707107;
+	  p position = -1.75076,1.9,-1.44726,0xb01b747a;
+	}
+}
+[t:respawn_statue,n:0x0750028b]
+{
+	[placement]
+	{
+	  q orientation = 0,0.382684,0,0.923879;
+	  p position = -0.591232,6,1.80447,0xbed6ea70;
+		use_point_scids = 0x07500150;
+	}
+}
+[t:sign_glb_01,n:0x07500168]
+{
+	[common]
+	{
+		dev_instance_text = "sign 2";
+		screen_name = "Town of Quillrabe, 344";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.93715e-007;
+	  p position = -1.61598,6,-0.285132,0x681229ea;
+	}
+}
+[t:sign_glb_01,n:0x0750007a]
+{
+	[common]
+	{
+		dev_instance_text = "sign 1";
+		screen_name = "Town of Quillrabe, 368";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.93715e-007;
+	  p position = 1.06115,4,-0.0824737,0xcf690599;
+	}
+}
+[t:respawn_statue,n:0x075001af]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.382683,0,0.92388;
+	  p position = -0.0674405,-2.00664,0.248222,0x798643b0;
+		use_point_scids = 0x07500151;
+	}
+}
+[t:door_gob_metal_05,n:0x04b0002e]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.05;
+	  f use_range = 2;
+	}
+	[door_basic]
+	{
+	  x second_door = 0x075002D1;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,3.55271e-015;
+	  p position = -0.243429,-4,-20.0748,0x851b992a;
+		use_point_scids = 0x075001b3,0x075001b4;
+	}
+}
+[t:valve_gob_03,n:0x0750006f]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x07500079;
+	  f on_message_delay = 1;
+	  x on_scid = 0x07500079;
+	  f reset_time = 6;
+	  f reset_time_2 = 6;
+	}
+	[placement]
+	{
+	  p position = 7.2151,0.25,10.1105,0x851b992a;
+	}
+}
+[t:door_gob_metal_05_right,n:0x075002d1]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.05;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x07500075;
+	  x second_door = 0x04B0002E;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,5.96046e-008;
+	  p position = -0.239274,-4,-20.0761,0x851b992a;
+		use_point_scids = 0x075001b3,0x075001b4;
+	}
+}
+[t:valve_gob_03,n:0x07500071]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x07500079;
+	  f on_message_delay = 1;
+	  x on_scid = 0x07500079;
+	  f reset_time = 6;
+	  f reset_time_2 = 6;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -9.50729,30.5,-0.557755,0x6a7879b2;
+	}
+}

@@ -1,0 +1,130 @@
+[t:template,n:ut2W_unguis]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_unguis";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	43.2, 0;
+			intelligence =  2.6, 0;
+			dexterity =  	26.7, 0;
+			melee =  		77,  0;
+		}
+	}
+	[aspect]
+	{
+		draw_shadow = false;
+		experience_value = 120000;
+		life = 1364.2;
+		max_life = 1364.2;
+		max_mana = 21.3;
+		mana = 21.3;
+		model = m_c_edm_ug_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_unguis; }
+			[hit_critical]	{ priority = low; * = s_e_hit_unguis_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_unguis_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_unguis_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 3;
+		damage_max = 351.7;
+		damage_min = 268.6;
+	}
+	[body]
+	{
+		avg_move_velocity = 0;
+		[bone_translator]
+		{
+			body_anterior = bone20;
+			body_mid = bone13;
+			body_posterior = bone04;
+			kill_bone = bone09;
+			shield_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			initial_chore = chore_none;
+			chore_prefix = a_c_edm_ug_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_misc]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = ds;
+					wake = rv;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=dfs; }
+			}
+		}
+	}
+	[common] 	
+	{ 
+		screen_name="Hungry Unguis"; 
+		membership=monster,immune_freeze;
+	}
+   	[defend] { defense=1243.8; }
+	[mind]
+	{
+		jat_die 					= world\ai\jobs\actors\evil\job_die_delete.skrit;
+		jat_startup 							= world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible 							= true;
+		
+		jat_flee_from_object		= jat_none;
+		jat_guard         			= jat_none;
+		jat_move          			= jat_none;
+		jat_patrol         			= jat_none;
+
+		actor_auto_fidgets 			= false;
+		movement_orders 			= mo_hold;
+		melee_engage_range 			= 3.0;
+		personal_space_range 		= 0.7;
+		on_enemy_entered_ocz_attack = true;
+		sight_origin_height			= 2.5;
+		melee_engage_range 			= 3;
+		ranged_engage_range 		= 3.0;
+		sight_range 				= 3.0;
+		inner_comfort_zone_range 	= 3.0;
+		outer_comfort_zone_range 	= 3.0;
+		com_range				 	= 3.0;
+	}
+}

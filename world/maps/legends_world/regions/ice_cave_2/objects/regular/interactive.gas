@@ -1,0 +1,138 @@
+[t:sign_ice_01,n:0x04f00138]
+{
+	[common]
+	{
+		screen_name = "Town of Fallraen, 17";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.831469,0,-0.55557;
+	  p position = 3.05355,-0.318449,3.04663,0x8416d89a;
+	}
+}
+[t:sign_ice_01,n:0x04f00139]
+{
+	[common]
+	{
+		dev_instance_text = "sign 4";
+		screen_name = "Town of Meren, 206";
+	}
+	[placement]
+	{
+	  p position = 2.96215,0,3.43077,0x8416d89a;
+	}
+}
+[t:generator_ice_stalagmite,n:0x04f00176]
+{
+	[generator_breakable]
+	{
+		child_template_name = "ice_fly";
+	  x initial_command = 0x04F00178;
+	  i max_alive_children = 2;
+	  i num_children_incubating = 5;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.748956,0,0.66262;
+	  p position = -1.92966,0,0.497965,0x1cdb2678;
+	}
+}
+[t:sign_ice_01,n:0x04f0012f]
+{
+	[common]
+	{
+		screen_name = "Town of Fallraen, 37";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.980785,0,-0.19509;
+	  p position = 1.33014,-1,-3.8179,0xfaab3492;
+	}
+}
+[t:sign_ice_01,n:0x04f00133]
+{
+	[common]
+	{
+		dev_instance_text = "sign 2";
+		screen_name = "Town of Meren, 186";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.19509,0,0.980785;
+	  p position = 0.980072,-1,-3.56795,0xfaab3492;
+	}
+}
+[t:respawn_statue,n:0x04f000a6]
+{
+	[placement]
+	{
+	  p position = -1.62369,-0.215532,1.12164,0xb3b4bade;
+		use_point_scids = 0x04f000aa;
+	}
+}
+[t:sign_ice_01,n:0x04f00124]
+{
+	[common]
+	{
+		screen_name = "Town of Fallraen, 47";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -0.845306,-0.33021,3.94537,0xea6e0bb6;
+	}
+}
+[t:sign_ice_01,n:0x04f00123]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Meren, 176";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.258819,0,0.965926;
+	  p position = 0.457703,-4,-3.97459,0xb506bb44;
+	}
+}
+[t:respawn_statue,n:0x04f0011d]
+{
+	[placement]
+	{
+	  q orientation = 0,0.382684,0,0.92388;
+	  p position = -1.44444,0,-1.20931,0xeeaf8be8;
+		use_point_scids = 0x04f000d8;
+	}
+}
+[t:sign_ice_01,n:0x04f00135]
+{
+	[common]
+	{
+		screen_name = "Town of Fallraen, 24";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.55557,0,-0.831469;
+	  p position = 1.18211,0.0669856,-1.33014,0x601d1b64;
+	}
+}
+[t:sign_ice_01,n:0x04f00136]
+{
+	[common]
+	{
+		dev_instance_text = "sign 3";
+		screen_name = "Town of Meren, 200";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.83147,0,0.55557;
+	  p position = 1.43207,0.0567932,-0.980073,0x601d1b64;
+	}
+}
+[t:gen_stone_glb_fallraen_01,n:0x04f0008a]
+{
+	[placement]
+	{
+	  p position = 0.856705,0,-0.548508,0x690259ca;
+	}
+}

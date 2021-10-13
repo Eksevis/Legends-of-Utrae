@@ -1,0 +1,175 @@
+[t:trigger_fade_nodes_box,n:0x07d00084]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,1,-1,"out:black");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -3.94582,0,0.441167,0x4f11fc75;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x07d00085]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,1,-1,"in");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -2.60463,0,0.349789,0x4f11fc75;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x07d00047]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0x43BD2207,1,-1,-1,"out:black"), doc("island");
+				action* = fade_nodes(0x43BD2207,2,-1,-1,"in"), doc("island_stairs");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -0.114928,-0.5,2.24018,0xda2e0858;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x07d00048]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0x43BD2207,1,-1,-1,"in"), doc("island");
+				action* = fade_nodes(0x43BD2207,2,-1,-1,"out:black"), doc("island_stairs");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -0.0571494,0.3,3.81575,0xda2e0858;
+	}
+}
+[t:use_point,n:0x07d00066]
+{
+	[placement]
+	{
+	  p position = 0.562589,0,-1.04556,0x6ec85d65;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x07d00049]
+{
+	[common]
+	{
+		dev_instance_text = "FADE, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,-1,-1,"out:black");
+				action* = set_player_world_location("pyramid_of_spirits");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 0.000401556,-1.1,1.13152,0x0cedf11e;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x07d0004a]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,-1,-1,"in");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -0.0333641,-0.3,2.70686,0x0cedf11e;
+	}
+}

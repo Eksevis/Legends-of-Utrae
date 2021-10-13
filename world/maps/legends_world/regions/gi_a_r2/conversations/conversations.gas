@@ -1,0 +1,55 @@
+[conversation_goblin_accept]
+{
+	[text*]
+	{
+		screen_text = "Bravo! Together we will be invincible. Let's hurry, I've a few scores to settle with a couple of Goblins who dared to call me a greenhorn. Especially one smart alek gobbot general! Everyone knows that Goblins don't have horns!";
+	activate_quest* = quest_gobbot_quest;
+	quest_dialog = true;
+	}
+}
+[conversation_goblin_disband]
+{
+	[text*]
+	{
+		screen_text = "Unthinkable! You'll not get far without me backing you up. You'll be back soon. Mark my words.";
+	}
+}
+[conversation_goblin_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		screen_text = "See I told you so. Without me you're nothing. All brawn needs some brains telling them what to do. You're lucky that I'm very forgiving. For a Goblin, that is. Well shall we get to it?";
+	}
+}
+[conversation_goblin_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		screen_text = "Please don't attack me! I'm called Tikklan and I'm trying to escape from here. My brethren have gone mad and will bring disaster to all Goblins with this jihad against you humans. I found out that it is a plot that has been developed long ago to help set the scene for the return of an ancient evil that will kill us all!. I tried to convince my brethren about this but they won't believe me and have instead accused me of being a traitor and sentenced me to death! I barely escaped with my life and now I need to stop this evil force for the sake of all Goblins, even if it means that I must kill those Goblins who try to stop me. Will you aid me? We will be a lot stronger with my intellect and your brawn.";
+	}
+}
+[conversation_goblin_reject]
+{
+	[text*]
+	{
+		screen_text = "Why not! Aren't I intelligent enough? Or perhaps you're jealous of my surperior intellect? Aah, that's it. You're jealous. Well not everyone can be as smart as me. Even amongst Goblins I'm held in high regard as the smartest since the Inventor. Well when you find that you need me after all, come back. I'll wait here until you thin out these inferior Goblins around us, errr, I mean until you find out that you need me to help you thin out these pathetic Goblins around us. Hah.";
+	}
+}
+[conversation_goblin_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		screen_text = "See I told you so. Without me you're nothing. All brawn needs some brains telling them what to do. You're lucky that I'm very forgiving. For a Goblin, that is. Well shall we get to it?";
+	}
+}
+[conversation_peddler]
+{
+	[text*]
+	{
+		choice = shop;
+		screen_text = "Ack, you frightened me, poor old Tippla. No fight, no blood, please. All I wish is to be left alone. If you don't hurt poor old Tippla, I'll trade with you, yes I will. I got stuff, good stuff that I scavenged from the bodies of your kind who trespass through here. Err, forget that, I joke. Me no hurt anyone. Still you wanna trade, yes?";
+	}
+}

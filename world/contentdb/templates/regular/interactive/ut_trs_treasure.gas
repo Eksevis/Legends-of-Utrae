@@ -1,0 +1,57 @@
+[t:template,n:fury_eye_ut]
+{
+	specializes			= treasure;
+	doc					= "fury_eye";
+    category_name       = "treasure";
+
+	[aspect]
+	{
+		model		= m_i_glb_frag-fury-eye;
+		textures:0	= b_i_glb_fury-frag-eye;
+		gold_value	= 1000;
+	}
+
+	common:screen_name	= "Fury's Eye";
+
+	[gui]
+	{
+		inventory_icon		= b_gui_ig_i_it_fury-eye;
+		inventory_width		= 2;
+		inventory_height	= 2;
+		can_sell = false;
+	}
+}
+[t:template,n:ut_azunite_scholar_artifact_01]
+{
+	specializes			= artifact_glb_01;
+	doc					= "ut_azunite_scholar_quest_artifact";
+    category_name       = "treasure";
+
+	[common] 
+	{ 
+		screen_name	= "Azunite Artifact"; 
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_artifact_quest","active",0);
+				b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+				f delay = 0.000000;
+				b flip_flop = false;
+				b multi_player = true;
+				b no_trig_bits = false;
+				occupants_group = ;
+				f reset_duration = 0.000000;
+				b single_player = true;
+				b single_shot = true;
+				b start_active = true;
+			}
+		}		
+	}
+	[gui] 
+	{ 
+		can_sell = false; 
+		tooltip_color = unique;
+	}
+}

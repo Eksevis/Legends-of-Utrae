@@ -1,0 +1,338 @@
+[t:template,n:ut3W_horrid]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_horrid";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  89.6, 0;
+			intelligence =  10.3, 0;
+			dexterity =  25.3, 0;
+			melee =  93,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1189427;
+		life = 3136;
+        max_life = 3136;
+        mana = 106.9;
+		max_mana = 106.9;
+		model = m_c_edm_hd_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_horrid;		}
+			[hit_critical]	{ priority = low; * = s_e_hit_horrid_SED;	}
+			[hit_glance]	{ priority = low; * = s_e_hit_horrid_SED;	}
+			[hit_solid]		{ priority = low; * = s_e_hit_horrid_SED;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 664.8;
+		damage_min = 508.2;
+	}
+	[body]
+	{
+		avg_move_velocity = 3;
+		[bone_translator]
+		{
+			body_anterior = Head_Bone;
+			body_mid = Bip01_Spine2;
+			body_posterior = Bip01_Pelvis;
+			kill_bone = Bip01_Pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee	= 1.7, 1.7, 1.7;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_hd_fs;
+			[chore_attack]
+			{
+				chore_stances = 1;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 1;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 1;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 1;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00=dff;
+					01=dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 1;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Grim Horrid"; 
+
+	}
+    [defend] { defense=516.7; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = cb_un_2h_horrid;
+			}
+
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.03;
+	                il_main = #spell/62-98;
+				}
+
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/169-253;
+					il_main = #armor/116-650;
+	                il_main = #weapon/253-295;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/320-396;
+	                il_main = #armor/-rare(1)/748-944;
+                    il_main = #*/-rare(1)/320-396;
+                }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 205741;
+					min = 85206;
+					min_pile = 12;
+					piles = 2 - 3;
+				}
+			}
+		}
+	}
+
+	[mind]
+	{
+
+		jat_fidget 	= world\ai\jobs\common\job_fidget.skrit
+			?curious	= 0.75
+			&delay_min	= 7.0
+			&interest	= interest
+			&meander	= false
+			&still		= false;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}
+[t:template,n:ut3w_ice_horrid]
+{
+	category_name = "1W_evil_d";
+	doc = "horrid";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  68.9, 0;
+			intelligence =  13.8, 0;
+			dexterity =  28.3, 0;
+            		melee =  97,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1189427;
+		life = 3436;
+        	max_life = 3436;
+        	mana = 106.9;
+		max_mana = 106.9;
+		model = m_c_edm_hd_pos_1;
+		[textures]
+		{
+			0 = b_c_edm_hd-01;
+		}
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_horrid;		}
+			[hit_critical]	{ priority = low; * = s_e_hit_horrid_SED;	}
+			[hit_glance]	{ priority = low; * = s_e_hit_horrid_SED;	}
+			[hit_solid]		{ priority = low; * = s_e_hit_horrid_SED;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 570;
+		damage_min = 458;
+	}
+	[body]
+	{
+		avg_move_velocity = 3;
+		[bone_translator]
+		{
+			body_anterior = Head_Bone;
+			body_mid = Bip01_Spine2;
+			body_posterior = Bip01_Pelvis;
+			kill_bone = Bip01_Pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee	= 1.7, 1.7, 1.7;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_hd_fs;
+			[chore_attack]
+			{
+				chore_stances = 1;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 1;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 1;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 1;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00=dff;
+					01=dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 1;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Frost Horrid Ravager"; 
+
+	}
+    [defend] { defense=855; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = cb_un_2h_horrid;
+			}
+
+			[all*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/63-99;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/255-306;
+					il_main = #armor/117-657;
+	                il_main = #weapon/255-306;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	            	il_main = #weapon/-rare(1)/289-375;
+	                il_main = #armor/-rare(1)/306-1053;
+                    il_main = #*/-rare(1)/289-375;
+                }
+				[oneof*]
+                {
+					chance = 0.002;
+	                il_main = #weapon/-unique(2)/289-375;
+	                il_main = #armor/-unique(2)/306-1053;
+                    il_main = #*/-unique(2)/289-375;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 321092;
+					min = 196103;
+				}
+			}
+		}
+	}
+
+	[mind]
+	{
+
+		jat_fidget 	= world\ai\jobs\common\job_fidget.skrit
+			?curious	= 0.75
+			&delay_min	= 7.0
+			&interest	= interest
+			&meander	= false
+			&still		= false;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+}

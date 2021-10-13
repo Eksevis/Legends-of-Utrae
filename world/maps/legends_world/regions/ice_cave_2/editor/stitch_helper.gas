@@ -1,0 +1,23 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xC78F92E7;
+	source_region_name = ice_cave_2;
+	[t:stitch_editor,n:sf_r2]
+	{
+		dest_region = sf_r2;
+		[node_ids]
+		{
+			0x000afff1 = 0xF7FF9DE9,8;
+		}
+	}
+	[t:stitch_editor,n:snow_town]
+	{
+		dest_region = snow_town;
+		[node_ids]
+		{
+			0x00000dd1 = 0x28C60C3E,6;
+			0x00000dd2 = 0x0B130EF4,6;
+			0x00000dd3 = 0x1FDCD679,6;
+		}
+	}
+}

@@ -1,0 +1,448 @@
+[t:sign_glb_01,n:0x005003c0]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 171";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0654034,0,0.997859;
+	  p position = -1.75478,-7.62939e-006,-0.823451,0xdf5e007d;
+	}
+}
+[t:sign_glb_01,n:0x005003c1]
+{
+	[common]
+	{
+		dev_instance_text = "sign_7";
+		screen_name = "Town of Crystwind, 27";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.24622,-0.240292,-1.03094,0xdf5e007d;
+	}
+}
+[t:lever_des_01,n:0x0050037c]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00500036,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.97259,0,-1.99711,0xee796f4d;
+		use_point_scids = 0x00500485,0x00500489;
+	}
+}
+[t:sign_glb_01,n:0x005003c5]
+{
+	[common]
+	{
+		dev_instance_text = "sign_8";
+		screen_name = "Town of Elddim, 184";
+	}
+	[placement]
+	{
+	  q orientation = -0.0951459,0.839241,-0.337333,-0.415723;
+	  p position = 2.72661,5.28609,4.38491,0x971d4e47;
+	}
+}
+[t:lever_des_01,n:0x0050037d]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00500036,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-2.38419e-007,0,1;
+	  p position = 0.315336,-8,0.579655,0x68974472;
+		use_point_scids = 0x00500485,0x00500488;
+	}
+}
+[t:sign_glb_01,n:0x005003c3]
+{
+	[common]
+	{
+		dev_instance_text = "sign_2";
+		screen_name = "Town of Crystwind, 14";
+	}
+	[placement]
+	{
+	  q orientation = -0.381864,-0.0250283,-0.0604244,0.921902;
+	  p position = -4.37502,-7.63414,0.888493,0x68974472;
+	}
+}
+[t:sign_glb_01,n:0x005003c6]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 184";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.659346,0,0.75184;
+	  p position = 2.8617,-0.250004,-1.88149,0x93a127ba;
+	}
+}
+[t:sign_glb_01,n:0x005003bd]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Crystwind, 17";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.19509,0,0.980785;
+	  p position = -3.65703,-0.240273,-0.813261,0xc9a9f81b;
+	}
+}
+[t:sign_glb_01,n:0x005003bc]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 181";
+	}
+	[placement]
+	{
+	  q orientation = -0.130247,0.0648437,-0.0085368,0.989322;
+	  p position = 0.85783,0.177218,-1.78477,0x99405bd5;
+	}
+}
+[t:respawn_statue,n:0x0050040e]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -3.55738,-0.300001,2.58977,0xc223447f;
+		use_point_scids = 0x00500423;
+	}
+}
+[t:sign_glb_01,n:0x005003f9]
+{
+	[common]
+	{
+		dev_instance_text = "sign_7";
+		screen_name = "Town of Quillrabe, 105";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707106;
+	  p position = 1.17315,-8.58307e-006,0.545517,0x8d33fdc5;
+	}
+}
+[t:sign_glb_01,n:0x005003fc]
+{
+	[common]
+	{
+		screen_name = "Town of Crystwind, 15";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.997859,0,-0.0654035;
+	  p position = 1.01037,-0.203893,0.266273,0x8d33fdc5;
+	}
+}
+[t:sign_glb_01,n:0x005003b9]
+{
+	[common]
+	{
+		dev_instance_text = "sign_3";
+		screen_name = "Town of Quillrabe, 69";
+	}
+	[placement]
+	{
+	  q orientation = 0,-7.45058e-008,0,1;
+	  p position = -0.736489,-0.956554,-3.33286,0xd4372a08;
+	}
+}
+[t:sign_glb_01,n:0x005003ba]
+{
+	[common]
+	{
+		screen_name = "Town of Crystwind, 44";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.965926,0,0.258819;
+	  p position = -0.55659,-1.18872,-3.80592,0xd4372a08;
+	}
+}
+[t:lever_des_01,n:0x00500380]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00500047,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-2.95043e-006,0,1;
+	  p position = -2.04728,-0.240283,0.134155,0x2a647ca5;
+		use_point_scids = 0x005004d1,0x005004d2;
+	}
+}
+[t:lever_glb_04,n:0x00500042]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.03133;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00500031;
+	  x on_scid = 0x00500031;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.999962,0,0.00872656;
+	  p position = 1.07861,-31.2068,1.79346,0xdbed544c;
+	}
+}
+[t:lever_des_01,n:0x00500381]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00500047,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707106;
+	  p position = -1.96982,0,-1.66269,0x53f1ae19;
+		use_point_scids = 0x005004d1,0x005004d3;
+	}
+}
+[t:sign_glb_01,n:0x005003c9]
+{
+	[common]
+	{
+		dev_instance_text = "sign_5";
+		screen_name = "Town of Quillrabe, 96";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707106,0,0.707106;
+	  p position = -1.4081,-3.57628e-007,1.7891,0x89f1b026;
+	}
+}
+[t:sign_glb_01,n:0x005003cc]
+{
+	[common]
+	{
+		screen_name = "Town of Crystwind, 16";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.997859,0,-0.0654035;
+	  p position = -1.19203,-0.203884,1.84275,0x89f1b026;
+	}
+}
+[t:lever_des_01,n:0x0050037e]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00500031,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707106;
+	  p position = 1.86095,0,-2.01946,0x3864f38e;
+		use_point_scids = 0x0050048e,0x00500499;
+	}
+}
+[t:sign_glb_01,n:0x005003cf]
+{
+	[common]
+	{
+		dev_instance_text = "sign_6";
+		screen_name = "Town of Quillrabe, 79";
+	}
+	[placement]
+	{
+	  q orientation = 0.183013,-0.683013,0.092296,0.701057;
+	  p position = 1.92751,3.7974,1.75241,0x86e4691a;
+	}
+}
+[t:lever_des_01,n:0x0050037f]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00500031,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-2.38419e-007,0,1;
+	  p position = 0.278549,0.00558853,1.96482,0x22d1056e;
+		use_point_scids = 0x0050048e,0x005004a9;
+	}
+}
+[t:sign_glb_01,n:0x005003fe]
+{
+	[common]
+	{
+		dev_instance_text = "sign_8";
+		screen_name = "Town of Quillrabe, 72";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,1.02818e-006;
+	  p position = 3.99848,0.399639,-2.70003,0x99f6f2fb;
+	}
+}
+[t:sign_glb_01,n:0x005003ff]
+{
+	[common]
+	{
+		screen_name = "Town of Crystwind, 34";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.608762,0,0.793353;
+	  p position = 3.87645,0.0726967,-2.52762,0x99f6f2fb;
+	}
+}
+[t:sign_glb_01,n:0x00500342]
+{
+	[common]
+	{
+		dev_instance_text = "sign_4";
+		screen_name = "Town of Quillrabe, 109";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 1.52034,-0.188934,0.614069,0x1e499a67;
+	}
+}
+[t:sign_glb_01,n:0x00500307]
+{
+	[common]
+	{
+		screen_name = "Town of Crystwind, 12";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707107;
+	  p position = -0.314572,-4.76837e-007,-1.99213,0x730c7052;
+	}
+}
+[t:sign_glb_01,n:0x005003b1]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 186";
+	}
+	[placement]
+	{
+	  q orientation = 0,-8.9407e-008,0,1;
+	  p position = -0.646692,-0.490438,-1.90692,0x730c7052;
+	}
+}
+[t:respawn_statue,n:0x005004d5]
+{
+	[placement]
+	{
+	  q orientation = 0,-3.8743e-007,0,1;
+	  p position = 2.83411,9.53674e-007,0.490067,0x2b931abc;
+		use_point_scids = 0x005003f8;
+	}
+}

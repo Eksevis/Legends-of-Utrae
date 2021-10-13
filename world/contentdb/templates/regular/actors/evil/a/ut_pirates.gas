@@ -1,0 +1,2056 @@
+[t:template,n:ut_pirate_melee_01]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 360;
+		max_life = 360;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_008;
+			1 = b_c_pos_a1_024;
+		}
+	}
+	[common]
+	{
+		screen_name = "Pirate";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_pirate_melee_02]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 370;
+		max_life = 370;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_009;
+			1 = b_c_pos_a1_030;
+		}
+	}
+	[common]
+	{
+		screen_name = "Pirate";		
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_pirate_melee_03]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 380;
+		max_life = 380;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_05;
+			1 = b_c_pos_a1_060;
+		}
+	}
+	[common]
+	{
+		screen_name = "Pirate";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_pirate_melee_04]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 390;
+		max_life = 390;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_08;
+			1 = b_c_pos_a1_064;
+		}
+	}
+	[common]
+	{
+		screen_name = "Pirate";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_pirate_melee_05]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 400;
+		max_life = 400;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_09;
+			1 = b_c_pos_a2_005;
+		}
+	}
+	[common]
+	{
+		screen_name = "Buccaneer";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_pirate_melee_06]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 410;
+		max_life = 410;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_10;
+			1 = b_c_pos_a2_013;
+		}
+	}
+	[common]
+	{
+		screen_name = "Buccaneer";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_pirate_melee_07]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 420;
+		max_life = 420;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_20;
+			1 = b_c_pos_a2_015;
+		}
+	}
+	[common]
+	{
+		screen_name = "Corsair";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_pirate_melee_08]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 430;
+		max_life = 430;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_21;
+			1 = b_c_pos_a2_008;
+		}
+	}
+	[common]
+	{
+		screen_name = "Corsair";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=175; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+
+[t:template,n:ut_pirate_melee_boss_01]
+{
+	doc = "bandit_melee_boss_01";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   16, 0;
+			intelligence 	=  11, 0;
+			dexterity 	=   13, 0;
+			melee 		=  19,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1020;
+		max_life = 1020;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 2230;
+		model = m_c_gah_fb_pos_a1;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_24;
+			1 = b_c_pos_a3_015;
+		}
+	}
+	[common]
+	{
+		membership = monster, party_bandit_ranged, bandit;
+        	screen_name = "Pirate Captain";
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_blue(sgx)");
+			}
+		}
+	}
+
+	[inventory]
+	{
+
+		[pcontent]
+		{
+			[all*]
+			{
+				es_feet = bo_bo_le_light;
+ 	               		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_boss;
+			}
+			[all*]
+			{
+				il_main = book_glb_lore_ut_treasure;
+			}
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #*/66-70;
+					il_main = #armor/200-250;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/75-89;
+	                		il_main = #armor/-rare(1)/226-287;
+                    			il_main = #*/-rare(1)/75-89;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/75-89;
+	                		il_main = #armor/-unique(2)/226-287;
+                    			il_main = #*/-unique(2)/75-89;
+	            		}
+				[gold*]
+				{
+					max = 3488;
+					min = 2560;
+					min_pile = 397;
+					piles = 2 - 4;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 35;
+		damage_min = 20;
+	}
+   	[defend] { defense=505; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true
+			&actor_creates_own_party		= true
+			&form_party_on_friend_entered_ICZ	= true
+			&form_party_on_friend_entered_ICZ	= true
+			&party_template				= "party_bandit_ranged";
+
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+
+[t:template,n:ut_pirate_melee_female_01]
+{
+	doc = "bandit_melee";
+	specializes = base_evil_female_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 330;
+		max_life = 330;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_04;
+			1 = b_c_pos_a1_024;
+		}
+	}
+	[common]
+	{
+		screen_name = "Pirate";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=205; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		on_life_ratio_low_flee                           = true;
+	}
+}
+[t:template,n:ut_pirate_melee_female_02]
+{
+	doc = "bandit_melee";
+	specializes = base_evil_female_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 345;
+		max_life = 345;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_05;
+			1 = b_c_pos_a1_030;
+		}
+	}
+	[common]
+	{
+		screen_name = "Pirate";		
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=205; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		on_life_ratio_low_flee                           = true;
+	}
+}
+[t:template,n:ut_pirate_melee_female_03]
+{
+	doc = "bandit_melee";
+	specializes = base_evil_female_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 365;
+		max_life = 365;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_06;
+			1 = b_c_pos_a1_060;
+		}
+	}
+	[common]
+	{
+		screen_name = "Pirate";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=205; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		on_life_ratio_low_flee                           = true;
+	}
+}
+[t:template,n:ut_pirate_melee_female_04]
+{
+	doc = "bandit_melee";
+	specializes = base_evil_female_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 375;
+		max_life = 375;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_09;
+			1 = b_c_pos_a1_064;
+		}
+	}
+	[common]
+	{
+		screen_name = "Pirate";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=205; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		on_life_ratio_low_flee                           = true;
+	}
+}
+[t:template,n:ut_pirate_melee_female_05]
+{
+	doc = "bandit_melee";
+	specializes = base_evil_female_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 385;
+		max_life = 385;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_10;
+			1 = b_c_pos_a2_005;
+		}
+	}
+	[common]
+	{
+		screen_name = "Buccaneer";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=215; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		on_life_ratio_low_flee                           = true;
+	}
+}
+[t:template,n:ut_pirate_melee_female_06]
+{
+	doc = "bandit_melee";
+	specializes = base_evil_female_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 395;
+		max_life = 395;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_15;
+			1 = b_c_pos_a2_013;
+		}
+	}
+	[common]
+	{
+		screen_name = "Cutthroat";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=215; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		on_life_ratio_low_flee                           = true;
+	}
+}
+[t:template,n:ut_pirate_melee_female_07]
+{
+	doc = "bandit_melee";
+	specializes = base_evil_female_utraean;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=   15, 0;
+			intelligence 	=  10, 0;
+			dexterity 	=   11, 0;
+			melee 		=  15,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 405;
+		max_life = 405;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 1300;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_16;
+			1 = b_c_pos_a2_015;
+		}
+	}
+	[common]
+	{
+		screen_name = "Cutthroat";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_04;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_03;
+                		es_weapon_hand = sd_g_c_sc_1h_cutlass_pirate_02;
+                		es_weapon_hand = sd_g_c_fa_1h_avg;
+                		es_weapon_hand = sd_g_c_sc_1h_avg;
+				es_weapon_hand = dg_g_c_ut_sb_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_le_f_g_c_pirate_01;
+  				es_chest = bd_ra_le_f_g_c_pirate_02;
+  				es_chest = bd_ra_le_f_g_c_pirate_03;
+  				es_chest = bd_ra_le_f_g_c_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_01;
+  				es_chest = bd_ra_bl_r_g_o_pirate_02;
+  				es_chest = bd_ra_bl_r_g_o_pirate_03;
+  				es_chest = bd_ra_bl_r_g_o_pirate_04;
+  				es_chest = bd_ra_bl_r_g_o_pirate_05;
+  				es_chest = bd_ra_bl_r_g_o_pirate_06;
+  				es_chest = bd_ra_bl_r_g_o_pirate_07;
+  				es_chest = bd_ra_bl_r_g_o_pirate_08;
+  				es_chest = bd_ra_bl_r_g_o_pirate_09;
+  				es_chest = bd_un_bl_f_g_c_pirate_01;
+  				es_chest = bd_un_bl_f_g_c_pirate_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_medium;
+				   	il_main = potion_mana_medium;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-12;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/50-66;
+					il_main = #armor/29-147;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/60-78;
+	                		il_main = #armor/-rare(1)/144-225;
+                    			il_main = #*/-rare(1)/60-78;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/60-78;
+	                		il_main = #armor/-unique(2)/144-225;
+                    			il_main = #*/-unique(2)/60-78;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 1744;
+					min = 1456;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+   	[defend] { defense=215; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold  = 0.5;
+		actor_life_ratio_high_threshold = 0.8;
+		on_life_ratio_low_flee                           = true;
+	}
+}

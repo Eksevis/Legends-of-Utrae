@@ -1,0 +1,1491 @@
+[t:template,n:base_asparagon]
+{
+	category_name = "1W_evil_a";
+	doc = "Base template for bandits.";
+	specializes = actor_evil;
+	[aspect]
+	{
+		model = m_c_gah_fb_pos_a3;
+		experience_value = 96;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_toreck; }
+			[hit_critical]	{ priority = low; * = s_e_hit_toreck_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_toreck_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_toreck_SED; }
+		}
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[common]
+	{
+		screen_name="Bandit";
+		// $ removed blood effect, it is now controlled with the guts manager. -ET
+	}
+	[defend] { defense=18; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #*/10-13;
+			}
+		}
+	}
+	[body]
+	{
+		armor_version = gah_fb;
+		avg_move_velocity = 4.500000;
+		min_move_velocity = 3.5;
+		initial_chore = chore_fidget;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gah_fb_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					extr = at-04;
+					qffg = dff;
+				}
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.750;
+					fs2 = 0.750;
+					fs3 = 1.500;
+					fs4 = 1.000;
+					fs5 = 1.333;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 1;
+				skrit = simple_loop;
+				[anim_files] { 00=dff; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gah_fb_fs1_dk;
+					gtup = a_c_gah_fb_fs0_up;
+					look = a_c_gah_fb_fs0_dsf;
+					wyme = a_c_gah_fb_fs0_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files] { 05=rl; }
+			}
+		}
+	}
+	[mind]
+	{
+		com_channels = dyn_party, bandit;
+		com_range = 8.0;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+        job_travel_distance_limit = 30;
+        on_job_reached_travel_distance_abort_attack = true;
+	}
+}
+
+[t:template,n:ut_asparagorn__melee_01]
+{
+	doc = "bandit_melee";
+	specializes = base_asparagon;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	= 	37, 0;
+			intelligence 	= 	14, 0;
+			dexterity 	= 	38, 0;
+			melee 		=  	30, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 1360;
+		max_life = 1360;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81300;
+		model = m_c_gah_fb_pos_a4;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a4_003;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Soldier";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+		[pcontent]
+		{
+			[all*]
+			{
+				es_feet = bo_bo_le_light;
+                		es_weapon_hand = sd_g_c_gl_1h_avg;
+			}
+			[oneof*]
+			{
+                		es_weapon_hand = ax_g_c_dsx_pcl_avg;
+                		es_weapon_hand = ax_g_c_dsx_pbd_avg;
+                		es_weapon_hand = ax_g_c_dsx_pfk_avg;
+                		es_weapon_hand = ax_g_c_dsx_ptr_avg;
+				es_weapon_hand = ax_d_d_dsx_goblin_mutant;
+				es_weapon_hand = ax_g_c_2h2b_avg;
+				es_weapon_hand = ax_ra_g_c_2h1b_fin;
+				es_weapon_hand = ax_ra_g_c_2h2b_fin;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 90;
+	}
+   	[defend] { defense=775; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_asparagorn__melee_02]
+{
+	doc = "bandit_melee";
+	specializes = base_asparagon;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	= 	37, 0;
+			intelligence 	= 	14, 0;
+			dexterity 	= 	38, 0;
+			melee 		=  	30, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 1480;
+		max_life = 1480;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 87300;
+		model = m_c_gah_fb_pos_a5;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a5_012;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Knight";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_sd_2h_avg;
+                		es_weapon_hand = sd_g_c_sd_2h_fun;
+                		es_weapon_hand = sd_g_c_sd_2h_fun_trog;
+                		es_weapon_hand = sd_g_c_st_2h_avg;
+                		es_weapon_hand = sd_ra_g_c_sd_2h_fin;
+                		es_weapon_hand = sd_ra_g_o_st_2h_avg;
+                		es_weapon_hand = sd_un_big_1h_g_breaker;
+                		es_weapon_hand = sd_un_big_1h_g_cleaver;
+                		es_weapon_hand = sd_un_big_2h_g_eye;
+                		es_weapon_hand = sd_un_g_2h_angle;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 90;
+	}
+   	[defend] { defense=895; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_asparagorn__melee_03]
+{
+	doc = "bandit_melee";
+	specializes = base_asparagon;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	= 	37, 0;
+			intelligence 	= 	14, 0;
+			dexterity 	= 	38, 0;
+			melee 		=  	30, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 1620;
+		max_life = 1620;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 91300;
+		model = m_c_gah_fb_pos_a6;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a6_002;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Lord";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_gl_1h_avg;
+                		es_weapon_hand = sd_ra_g_c_bl_1h_fin;
+                		es_weapon_hand = sd_ra_g_o_bl_1h_avg;
+                		es_weapon_hand = sd_ra_g_o_gl_1h_avg;
+                		es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+                		es_weapon_hand = ss_ra_g_c_st_1h_fin;
+                		es_weapon_hand = ss_ra_g_c_gl_1h_fin;
+				es_weapon_hand = ss_g_c_st_1h_avg;
+			}
+			[oneof*]
+			{
+                		es_shield_hand = sh_w_f_g_c_t_s_avg_hide_hassat_dsx;
+                		es_shield_hand = sh_w_f_g_c_t_m_avg_hide_skelldra_dsx;
+                		es_shield_hand = sh_w_f_g_c_t_l_avg_hide_kraken_dsx;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 180;
+		damage_min = 130;
+	}
+   	[defend] { defense=1075; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+	}
+}
+[t:template,n:ut_asparagorn_ranged_01]
+{
+	doc = "bandit_ranged";
+	specializes = base_asparagon;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	= 	31, 0;
+			intelligence 	= 	18, 0;
+			dexterity 	= 	46, 0;
+			melee 		=  	20, 0;
+   			ranged 		=  	29, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 965;
+		max_life = 965;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81138;
+		model = m_c_gah_fb_pos_a2;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a2_049;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Ranger";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+    	selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                				es_shield_hand = bw_ra_g_c_c_s_4_avg;
+                				es_shield_hand = bw_ra_g_c_s_s_c_stopper;
+                				es_shield_hand = bw_ra_g_o_s_s_r_avg;
+                				es_shield_hand = bw_g_c_s_s_r_avg_dsx;
+                				es_shield_hand = bw_g_c_dsx_cry_avg;
+                				es_shield_hand = bw_g_c_dsx_ltn_avg;
+                				es_shield_hand = bw_g_c_dsx_spd_avg;
+                				es_shield_hand = bw_ra_g_c_c_m_4_fin;
+                				es_shield_hand = bw_ra_g_c_c_m_r_avg;
+                				es_shield_hand = bw_ra_g_c_s_m_c_fin;
+                				es_shield_hand = bw_ra_g_c_s_m_r_fin;
+                				es_shield_hand = bw_g_c_c_m_4_avg;
+                				es_shield_hand = bw_g_c_c_m_r_avg;
+                				es_shield_hand = bw_g_c_c_m_r_fun;
+                				es_shield_hand = bw_g_c_s_m_r_avg;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 180;
+		damage_min = 150;
+	}
+	[defend] { defense=750; }
+	[mind]
+    	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+    	}
+}
+[t:template,n:ut_asparagorn_ranged_02]
+{
+	doc = "bandit_ranged";
+	specializes = base_asparagon;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	= 	31, 0;
+			intelligence 	= 	18, 0;
+			dexterity 	= 	46, 0;
+			melee 		=  	20, 0;
+   			ranged 		=  	29, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 955;
+		max_life = 955;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81138;
+		model = m_c_gah_fb_pos_a2;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a2_047;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Punisher";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+    	selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[all*]
+			{
+				es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+                		es_weapon_hand = cw_g_c_dsx_bon_avg;
+                		es_weapon_hand = cw_g_c_dsx_clk_avg;
+                		es_weapon_hand = cw_g_c_m_p_avg;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 200;
+		damage_min = 150;
+	}
+	[defend] { defense=850; }
+	[mind]
+    	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+    	}
+}
+[t:template,n:ut_asparagorn_ranged_03]
+{
+	doc = "bandit_ranged";
+	specializes = base_asparagon;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	= 	31, 0;
+			intelligence 	= 	18, 0;
+			dexterity 	= 	46, 0;
+			melee 		=  	20, 0;
+   			ranged 		=  	29, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 1015;
+		max_life = 1015;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81138;
+		model = m_c_gah_fb_pos_a3;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a3_025;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Gadgeteer";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+    	selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[all*]
+			{
+				es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_flamethrower;
+				ES_WEAPON_HAND = minigun_grenade_launcher;
+				es_weapon_hand = dsx_minigun_gas_monster;
+				ES_WEAPON_HAND = minigun_napalm;
+				ES_WEAPON_HAND = minigun_dragon;
+				ES_WEAPON_HAND = minigun_lightning;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 200;
+		damage_min = 150;
+	}
+	[defend] { defense=850; }
+	[mind]
+    	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+    	}	
+}
+[t:template,n:ut_asparagorn_ranged_04]
+{
+	doc = "bandit_ranged";
+	specializes = base_asparagon;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	= 	31, 0;
+			intelligence 	= 	18, 0;
+			dexterity 	= 	46, 0;
+			melee 		=  	20, 0;
+   			ranged 		=  	29, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 920;
+		max_life = 920;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81138;
+		model = m_c_gah_fb_pos_a2;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a2_014;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Assassin";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+    	selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[all*]
+			{
+				es_feet = bo_bo_le_light;
+			}
+			[oneof*]
+			{
+				es_weapon_hand = ut_rock_assassin_star;
+				es_weapon_hand = ut_rock_assassin_axe;
+				es_weapon_hand = ut_rock_assassin_knife;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_sh_sc_r_g_c_avg_rubber_dsx;
+                		es_feet = bo_bo_sc_r_g_c_avg_flywing_dsx;
+                		es_feet = bo_sh_sc_r_g_c_avg_bug_dsx;
+                		es_feet = bo_bo_sc_r_g_c_avg_rubber_dsx;
+                		es_feet = bo_sh_sc_r_g_c_avg_flywing_dsx;
+                		es_feet = bo_sh_sc_r_g_c_avg_bug2_dsx;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 200;
+		damage_min = 170;
+	}
+	[defend] { defense=850; }
+	[mind]
+    	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+    	}
+}
+[t:template,n:ut_asparagorn_magic_01]
+{
+	doc = "bandit_ranged";
+	specializes = base_asparagon;
+	[actor]
+	{
+         	drops_spellbook = false;
+		[skills]
+		{
+			strength 	= 	30, 0;
+			intelligence 	= 	25, 0;
+			dexterity 	= 	35, 0;
+			melee 		=  	15, 0;
+            		combat_magic 	= 	33, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 915;
+		max_life = 915;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81138;
+		model = m_c_gah_fb_pos_a7;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a7_003;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Wizard";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+		selected_active_location = il_active_primary_spell;
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+		}
+		[other]
+		{
+			il_active_primary_spell=spell_utraean_iceblast;
+			il_active_secondary_spell = spell_utraean_lightning_blast;
+			il_spell_3 = spell_utraean_dragon_fire;
+			il_spell_4 = spell_utraean_firebomb;
+			il_spell_5 = ut_spell_asparagorn_orb2;
+			il_spell_6 = spell_utraean_fireskull;
+			il_spell_7 = spell_utraean_flame_blades;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_un_toothpick;
+                		es_weapon_hand = st_un_tiger;
+                		es_weapon_hand = st_un_skull;
+                		es_weapon_hand = st_un_pudgel;
+				es_weapon_hand = st_ra_g_o_r_avg;
+                		es_weapon_hand = st_ra_g_c_s_fin;
+                		es_weapon_hand = st_ra_g_c_b_fin;
+                		es_weapon_hand = st_g_o_b_low;
+                		es_weapon_hand = st_g_o_b_fun;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_sc_m_g_c_avg_woven_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_electric_dsx;
+				es_forearms = gl_gl_sc_m_g_c_avg_woven2_dsx;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 50;
+	}
+	[defend] { defense=750; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.15,0.15,0.15,0.15, 0.15, 0.15, 0.10"
+			&spells				= "spell_utraean_iceblast, spell_utraean_dragon_fire, spell_utraean_firebomb, ut_spell_asparagorn_orb2, spell_utraean_lightning_blast, spell_utraean_fireskull, spell_utraean_flame_blades";
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}
+[t:template,n:ut_asparagorn_magic_02]
+{
+	doc = "bandit_ranged";
+	specializes = base_asparagon;
+	[actor]
+	{
+         	drops_spellbook = false;
+		[skills]
+		{
+			strength 	= 	30, 0;
+			intelligence 	= 	25, 0;
+			dexterity 	= 	35, 0;
+			melee 		=  	15, 0;
+            		combat_magic 	= 	33, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 945;
+		max_life = 945;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81138;
+		model = m_c_gah_fb_pos_a7;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a7_049;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Priest";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+		  selected_active_location = il_active_primary_spell;
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+		}
+		[other]
+		{
+			  il_active_primary_spell   = spell_utraean_sun_ray;
+			  il_active_secondary_spell = spell_resurrect_monster_full;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_un_toothpick;
+                		es_weapon_hand = st_un_tiger;
+                		es_weapon_hand = st_un_skull;
+                		es_weapon_hand = st_un_pudgel;
+				es_weapon_hand = st_ra_g_o_r_avg;
+                		es_weapon_hand = st_ra_g_c_s_fin;
+                		es_weapon_hand = st_ra_g_c_b_fin;
+                		es_weapon_hand = st_g_o_b_low;
+                		es_weapon_hand = st_g_o_b_fun;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_sc_m_g_c_avg_woven_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_electric_dsx;
+				es_forearms = gl_gl_sc_m_g_c_avg_woven2_dsx;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 50;
+	}
+	[defend] { defense=850; }
+	[mind]
+    	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&party_template			= "party_dwarf";
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_weapon_preference              = WP_MAGIC;
+		actor_auto_switches_to_magic         = true;
+		actor_auto_reanimates_friends        = true;
+		actor_auto_uses_stored_items         = true;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}
+[t:template,n:ut_asparagorn_magic_03]
+{
+	doc = "bandit_ranged";
+	specializes = base_asparagon;
+	[actor]
+	{
+         	drops_spellbook = false;
+		[skills]
+		{
+			strength 	= 	30, 0;
+			intelligence 	= 	25, 0;
+			dexterity 	= 	35, 0;
+			melee 		=  	15, 0;
+            		combat_magic 	= 	33, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 975;
+		max_life = 975;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81138;
+		model = m_c_gah_fb_pos_a7;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a7_045;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Sorceror";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+ 		selected_active_location = il_active_primary_spell;
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+		}
+		[other]
+		{
+			il_active_primary_spell=ut_spell_liche_nosirrom;
+			il_active_secondary_spell = spell_liche_killing_fist;
+			il_spell_3 = spell_liche_pillar_fire;
+			il_spell_4 = ut_spell_glyph_flaming;
+			il_spell_5 = spell_utraean_orb;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_un_toothpick;
+                		es_weapon_hand = st_un_tiger;
+                		es_weapon_hand = st_un_skull;
+                		es_weapon_hand = st_un_pudgel;
+				es_weapon_hand = st_ra_g_o_r_avg;
+                		es_weapon_hand = st_ra_g_c_s_fin;
+                		es_weapon_hand = st_ra_g_c_b_fin;
+                		es_weapon_hand = st_g_o_b_low;
+                		es_weapon_hand = st_g_o_b_fun;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_sc_m_g_c_avg_woven_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_electric_dsx;
+				es_forearms = gl_gl_sc_m_g_c_avg_woven2_dsx;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 50;
+	}
+	[defend] { defense=750; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.20,0.20,0.20,0.20,0.20"
+			&spells				= "ut_spell_liche_nosirrom, spell_liche_killing_fist, spell_liche_pillar_fire, ut_spell_glyph_flaming, spell_utraean_orb";
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}
+[t:template,n:ut_asparagorn_magic_04]
+{
+	doc = "bandit_ranged";
+	specializes = base_asparagon;
+	[actor]
+	{
+         	drops_spellbook = false;
+		[skills]
+		{
+			strength 	= 	30, 0;
+			intelligence 	= 	25, 0;
+			dexterity 	= 	35, 0;
+			melee 		=  	15, 0;
+            		combat_magic 	= 	33, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 955;
+		max_life = 955;
+		mana = 20;
+		max_mana = 20;
+   		experience_value = 81138;
+		model = m_c_gah_fb_pos_a7;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_asparagorn;
+			1 = b_c_pos_a7_043;
+		}
+	}
+	[common]
+	{
+		screen_name="Asparagon Necromancer";
+		membership = monster, party_dwarf, dwarf;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-asparagorn;
+		selected_active_location = il_active_primary_spell;
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+		}
+		[other] 
+		{ 
+			il_active_primary_spell=spell_asparagorn_pestilence; 
+			il_active_secondary_spell = ut_spell_glyph_asparagorn;
+			il_spell_3 = ut_spell_summon_asparagorn;
+			il_spell_4 = ut_spell_asparagorn_orb;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_un_toothpick;
+                		es_weapon_hand = st_un_tiger;
+                		es_weapon_hand = st_un_skull;
+                		es_weapon_hand = st_un_pudgel;
+				es_weapon_hand = st_ra_g_o_r_avg;
+                		es_weapon_hand = st_ra_g_c_s_fin;
+                		es_weapon_hand = st_ra_g_c_b_fin;
+                		es_weapon_hand = st_g_o_b_low;
+                		es_weapon_hand = st_g_o_b_fun;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_sc_m_g_c_avg_woven_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_electric_dsx;
+				es_forearms = gl_gl_sc_m_g_c_avg_woven2_dsx;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+   				    il_main = potion_health_large;
+				    il_main = potion_mana_large;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 50;
+	}
+	[defend] { defense=750; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+			?rand_spell			= true
+			&check_range			= true
+			&spell_chances			= "0.25,0.25,0.25,0.25"
+			&spells				= "spell_asparagorn_pestilence, ut_spell_glyph_asparagorn, ut_spell_summon_asparagorn, ut_spell_asparagorn_orb";
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}
+
+
+
+
+
+
+
+

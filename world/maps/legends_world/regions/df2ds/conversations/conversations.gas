@@ -1,0 +1,35 @@
+[conversation_endar]
+{
+	[text*]
+	{
+		choice = shop;
+		order = 0;
+		screen_text = "It's not often travellers come through the mountain territory and past all those nasty creatures just ready to pounce on unsuspecting travelers. Would be a shame to leave them nothing to take off your corpse. Heh heh.";
+	}
+	[text*]
+	{
+		choice = shop;
+		order = 1;
+		screen_text = "I was once a bit of a bandit myself. Now I trade with all and pick up the trinkets lying about after they kill each other. Touchy folk, bandits are.";
+	}
+	[text*]
+	{
+		choice = shop;
+		screen_text = "Here on the lower slopes of Mt. Utrae it's Belwar and his band who choose if you live or die. You might escape them at the tree line near the summit, but the coven of swamp witches on the southern slopes will never let you pass alive. Still, with gold in your pockets, perhaps you could bribe them?";
+	}
+}
+[conversation_endar_red]
+{
+	[text*]
+	{
+		screen_text = "Blech, my stomach's all queasy. Who would have thought that pure mountain air could become so vile?";
+	}
+}
+[conversation_top_intro]
+{
+	[text*]
+	{
+		screen_text = "The snow swept peak of Mount Utrae, the highest point in the Peninsula.\nPerhaps an ideal place to take a repose and contemplate the recent events.\nWhat portent does the difficulties besieging the towns of the Peninsula mean?\nThe Krug abandoning the forests to attack Elddim & Crystwind, the Duergar emergeance in the Dwarven Mines, the unseasonable blizzard of Fallraen and the Pirates of Meren?\nAnd the Utraean Priests call for the reunification of the Stones of Utrae?\nIs it a massive coincidence that this has occurred just now, or is there a deeper meaning that ties it all together?";
+	  f scroll_rate = 5.000000;
+	}
+}

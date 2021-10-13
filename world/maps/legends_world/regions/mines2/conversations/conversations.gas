@@ -1,0 +1,28 @@
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "Are yea mad! Use your damn eyes for pete's sake. The displacer will take yea back to town and if you keep going that-a-way you'll reach Fallraen sooner or later no doubt. Any more help than that and I'll have to charge you double me usual fee.";
+	}
+}
+[conversation_hagnar]
+{
+	[text*]
+	{
+		choice = shop;
+
+		screen_text = "Arghh. Thanks To yea. It's hard to pretend to be a statue with all of this mine dust hangin' round. Ahhh Choo. .......Ah, anyhow with all of these monsters around, the tavern run out of the good stuff and it'll take some time to restock. The dastardly Tavern Keeper has put up the price and is making a small fortune. That's why I've gone into business on me own and was trying to get to Fallraen. With the Mines out of action a laddies gotta make some dough some way if he's to enjoy a sip of the old ale. So I do have some knick knacks that may be of use. Care to look at them?";
+		button_1_text = "Directions";
+       		button_1_value = d_0x03500245;
+	}
+}
+[conversation_hagnar_red]
+{
+	[text*]
+	{
+		choice = shop;
+		screen_text = "I'm blinded, auggggg!";
+		button_1_text = "Directions";
+       		button_1_value = d_0x03500245;
+	}
+}

@@ -1,0 +1,1636 @@
+//////////////////////////////////////////////
+//AUTOMATED GENERATORS SORTED BY MONSTER TYPE
+
+//Ice
+[t:template,n:gen_explode_ice_01-ut3w_ice_warrior]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_warrior";
+	aspect:scale_base	= .6;
+
+    aspect:model	= m_i_ice_spire-01;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_warrior;
+	}
+}
+[t:template,n:gen_explode_ice_02-ut3w_ice_warrior]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_warrior";
+	aspect:scale_base	= .7;
+
+    aspect:model	= m_i_ice_spire-02;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_warrior;
+	}
+}
+[t:template,n:gen_explode_ice_03-ut3w_ice_warrior]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_warrior";
+	aspect:scale_base	= .7;
+
+    aspect:model	= m_i_ice_spire-03;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_warrior;
+	}
+}
+[t:template,n:gen_explode_ice_04-ut3w_ice_warrior]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_warrior";
+	aspect:scale_base	= .7;
+
+    aspect:model	= m_i_ice_spire-04;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_warrior;
+	}
+}
+[t:template,n:gen_explode_ice_05-ut3w_ice_warrior]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_warrior";
+	aspect:scale_base	= .8;
+
+    aspect:model	= m_i_ice_spire-05;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_warrior;
+	}
+}
+[t:template,n:gen_explode_ice_06-ut3w_ice_warrior]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_warrior";
+
+    aspect:model	= m_i_ice_spire-06;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_warrior;
+	}
+}
+[t:template,n:gen_explode_ice_01-ut3w_ice_archer]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_archer";
+	aspect:scale_base	= .6;
+
+    aspect:model	= m_i_ice_spire-01;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_archer;
+	}
+}
+[t:template,n:gen_explode_ice_02-ut3w_ice_archer]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_archer";
+	aspect:scale_base	= .7;
+
+    aspect:model	= m_i_ice_spire-02;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_archer;
+	}
+}
+[t:template,n:gen_explode_ice_03-ut3w_ice_archer]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_archer";
+	aspect:scale_base	= .7;
+
+    aspect:model	= m_i_ice_spire-03;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_archer;
+	}
+}
+[t:template,n:gen_explode_ice_04-ut3w_ice_archer]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_archer";
+	aspect:scale_base	= .7;
+
+    aspect:model	= m_i_ice_spire-04;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_archer;
+	}
+}
+[t:template,n:gen_explode_ice_05-ut3w_ice_archer]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_archer";
+	aspect:scale_base	= .8;
+
+    aspect:model	= m_i_ice_spire-05;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_archer;
+	}
+}
+[t:template,n:gen_explode_ice_06-ut3w_ice_archer]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_archer";
+
+    aspect:model	= m_i_ice_spire-06;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_archer;
+	}
+}
+//Old Ice
+[t:template,n:gen_explode_ice-ut3w_ice_warrior]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_warrior";
+	aspect:scale_base	= .7;
+
+    aspect:model	= m_i_ice_spire-02;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_warrior;
+	}
+}
+[t:template,n:gen_explode_ice-ut3w_ice_archer]
+{
+	specializes		= generator_base_exploding_stone_ice;
+	doc				= "gen_explode_ice-ice_archer";
+	aspect:scale_base	= .7;
+
+    aspect:model	= m_i_ice_spire-01;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_ice_archer;
+	}
+}
+
+//Goblin Boxes
+    //BOX 1 - heater?, blaster?
+[t:template,n:gen_explode_box1-ut3w_heater]
+{
+	specializes		= generator_base_exploding_wood_box1;
+	doc				= "gen_explode_box1-heater";
+	aspect:scale_base	= 1.5;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_heater;
+	}
+}
+[t:template,n:gen_explode_box1-ut3w_blaster]
+{
+	specializes		= generator_base_exploding_wood_box1;
+	doc				= "gen_explode_box1-blaster";
+	aspect:scale_base	= 1.5;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_blaster;
+	}
+}
+[t:template,n:gen_explode_box1-ut3w_scorpiot_melee]
+{
+	specializes		= generator_base_exploding_wood_box1;
+	doc				= "gen_explode_box1-blaster";
+	aspect:scale_base	= 1.5;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_scorpiot_melee;
+	}
+}
+    //BOX 2 - perforator, proxo
+[t:template,n:gen_explode_box2-ut3w_perforator]
+{
+	specializes		= generator_base_exploding_wood_box2;
+	doc				= "gen_explode_box2-perforator";
+	aspect:scale_base	= 1.2;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_perforator;
+	}
+}
+
+	//BOX 3 - Gobbots, kill_bot, hunter
+[t:template,n:gen_explode_box3-ut3w_gobbot_flamethrower]
+{
+	specializes		= generator_base_exploding_wood_box3;
+	doc				= "gen_explode_box3-gobbot_flamethrower";
+	aspect:scale_base	= .9;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_gobbot_flamethrower;
+	}
+}
+[t:template,n:gen_explode_box3-ut3w_gobbot_grenade]
+{
+	specializes		= generator_base_exploding_wood_box3;
+	doc				= "gen_explode_box3-gobbot_grenade";
+	aspect:scale_base	= .9;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_gobbot_grenade;
+	}
+}
+[t:template,n:gen_explode_box3-ut3w_gobbot_lightning]
+{
+	specializes		= generator_base_exploding_wood_box3;
+	doc				= "gen_explode_box3-gobbot_lightning";
+	aspect:scale_base	= .9;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_gobbot_lightning;
+	}
+}
+[t:template,n:gen_explode_box3-ut3w_gobbot_minigun]
+{
+	specializes		= generator_base_exploding_wood_box3;
+	doc				= "gen_explode_box3-gobbot_minigun";
+	aspect:scale_base	= .9;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_gobbot_minigun;
+	}
+}
+[t:template,n:gen_explode_box3-ut3w_kill_bot]
+{
+	specializes		= generator_base_exploding_wood_box3;
+	doc				= "gen_explode_box3-kill_bot";
+	aspect:scale_base	= .9;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_kill_bot;
+	}
+}
+[t:template,n:gen_explode_box3-ut3w_hunter]
+{
+	specializes		= generator_base_exploding_wood_box3;
+	doc				= "gen_explode_box3-hunter";
+	aspect:scale_base	= .9;
+
+    [generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_hunter;
+	}
+}
+
+//Tents
+[t:template,n:gen_tent_flap-ut3w_zaurask_adept]
+{
+	specializes		= generator_base_tent_flap;
+	doc 			= "gen_tent_flap-krug_grunt";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_adept;
+	}
+}
+[t:template,n:gen_tent_flap-ut3w_zaurask_claw]
+{
+	specializes		= generator_base_tent_flap;
+	doc 			= "gen_tent_flap-krug_scout";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_claw;
+	}
+}
+[t:template,n:gen_tent_flap-ut3w_krug_grunt]
+{
+	specializes		= generator_base_tent_flap;
+	doc 			= "gen_tent_flap-krug_grunt";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_grunt;
+	}
+}
+[t:template,n:gen_tent_flap-ut3w_krug_scout]
+{
+	specializes		= generator_base_tent_flap;
+	doc 			= "gen_tent_flap-krug_scout";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_scout;
+	}
+}
+[t:template,n:gen_tent_flap-ut3w_krug_shaman]
+{
+	specializes		= generator_base_tent_flap;
+	doc 			= "gen_tent_flap-krug_shaman";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_shaman;
+	}
+}
+[t:template,n:gen_tent_flap-ut3w_krug_raider]
+{
+	specializes		= generator_base_tent_flap;
+	doc 			= "gen_tent_flap-krug_raider";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_raider;
+	}
+}
+[t:template,n:gen_tent_flap_glb-ut3w_bandit_melee_05]
+{
+	specializes		= generator_base_glb_tent_flap;
+	doc 			= "gen_tent_flap_glb-bandit_melee";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_melee_05;
+	}
+}
+[t:template,n:gen_tent_flap_glb-ut3w_bandit_melee]
+{
+	specializes		= generator_base_glb_tent_flap;
+	doc 			= "gen_tent_flap_glb-bandit_melee";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_melee;
+	}
+}
+[t:template,n:gen_tent_flap_glb-ut3w_bandit_ranged]
+{
+	specializes		= generator_base_glb_tent_flap;
+	doc 			= "gen_tent_flap_glb-bandit_ranged";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_ranged;
+	}
+}
+[t:template,n:gen_tent_flap_glb-ut3w_hassat_commander]
+{
+	specializes		= generator_base_glb_tent_flap;
+	doc 			= "gen_tent_flap_glb-bandit_melee";
+
+    [generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_commander;
+	}
+}
+//Bushes
+
+	//GRASS - GREAT NORTHERN FOREST
+[t:template,n:gen_bush_grass-ut3w_pygmy]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_pygmy;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_ztrool]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scout";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_ztrool;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_kikclaw]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_grunt";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_kikclaw;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_mhulliq_two]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_dog";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_mhulliq_two;
+	}
+}
+	//GRASS - FARMHOUSE MONSTERS
+[t:template,n:gen_bush_grass-ut3w_lizard_thunder]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_lizard_thunder;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bubber]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bubber;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_zaurask_caster]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_caster;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_zaurask_archer]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_archer;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_zaurask_fighter]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_fighter;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_zaurask_adept]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_adept;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_zaurask_fang]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_fang;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_zaurask_apprentice]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_apprentice;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_zaurask_claw]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_zaurask_claw;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_snake_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_snake_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_snake_02]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_snake_02;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_scavenger]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_scavenger;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_scavenger_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scavenger";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_scavenger_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_scout]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scout";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_scout;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_scout_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_scout";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_scout_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_grunt]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_grunt";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_grunt;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_dog]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_dog";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_dog;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_dog_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_dog";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_dog_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_apprentice]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_apprentice";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_apprentice;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_apprentice_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_apprentice";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_apprentice_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_shaman]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_shaman";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_shaman;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_raider]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_raider";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_raider;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_guard]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_guard";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_guard;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_krug_throw]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-krug_throw";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_krug_throw;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_wolf_gray]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-wolf_gray";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_wolf_gray;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_swarmling]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-phrak";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_swarmling;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_phrak_piercer]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-phrak";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_phrak_piercer;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_phrak]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-phrak";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_phrak;
+	}
+}
+
+    //GRASS - DARK FOREST MONSTERS
+[t:template,n:gen_bush_grass-ut3w_spiked_maw]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-spiked_maw";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_spiked_maw;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_troll_forest]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-troll_forest";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_troll_forest;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_forest_klaw]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-forest_klaw";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_forest_klaw;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hell_boar]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-hell_boar";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hell_boar;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_gorack]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-gorack";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_gorack;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_scavenger]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_scavenger;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_panther]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_panther;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_grunt]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_grunt;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_fighter]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_fighter;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_bowman]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_bowman;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_archer]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_archer;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_ranger]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_ranger;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_caster]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_caster;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_hassat_mage]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_mage;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_ranged_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_ranged_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_ranged_02]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_ranged_02;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_ranged_03]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_ranged_03;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_magic_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_magic_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_magic_02]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_ranged";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_magic_02;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_melee_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_melee";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_melee_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_melee_02]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_melee";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_melee_02;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_melee_03]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_melee";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_melee_03;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_melee_04]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_melee";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_melee_04;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bandit_melee_05]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_melee";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_melee_05;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_pirate_melee_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_melee";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_pirate_melee_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_pirate_melee_02]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_melee";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_pirate_melee_02;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_pirate_melee_03]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-bandit_melee";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_pirate_melee_03;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_wolf_black]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-wolf_black";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_wolf_black;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_wolf_black_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-wolf_black";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_wolf_black_01;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_spiked_dweller]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-spiked_dweller";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_spiked_dweller;
+	}
+}
+[t:template,n:gen_bush_grass-ut3w_bookas]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_grass-spiked_dweller";
+
+	[aspect]
+	{
+	    [textures] { 0=b_i_grs_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bookas;
+	}
+}
+
+	//SNOW
+[t:template,n:gen_bush_snow-ut3w_klaw]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-klaw";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_klaw;
+	}
+}
+[t:template,n:gen_bush_snow-ut3w_wolf_white]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-wolf_white";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_wolf_white;
+	}
+}
+[t:template,n:gen_bush_snow-ut3w_wolf_white_small]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-wolf_white";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_wolf_white_small;
+	}
+}
+[t:template,n:gen_bush_snow-ut3w_braak_magic]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-braak_magic";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_braak_magic;
+	}
+}
+[t:template,n:gen_bush_snow-ut3w_braak]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-braak";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_braak;
+	}
+}
+[t:template,n:gen_bush_snow-ut3w_bandit_ranged_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-bandit_ranged";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_ranged_02;
+	}
+}
+[t:template,n:gen_bush_snow-ut3w_bandit_melee_01]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-bandit_melee";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_bandit_melee_01;
+	}
+}
+[t:template,n:gen_bush_snow-ut3w_hassat_ranger]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-bandit_ranged";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_ranger;
+	}
+}
+[t:template,n:gen_bush_snow-ut3w_hassat_fighter]
+{
+	specializes = generator_base_generic_bush;
+	doc = "generator_bush_snow-bandit_melee";
+
+	[aspect]
+	{
+		[textures] { 0=b_i_ice_bush-rhod; }
+	}
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_hassat_fighter;
+	}
+}
+
+	//MOUNT UTRAE - REGULAR BUSH
+[t:template,n:gen_bush_swamp-ut3w_troll_mountain]
+{
+	specializes = generator_base_swp_bush;
+	doc = "generator_bush_swamp-troll_swamp";
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_troll_mountain;
+	}
+}
+
+	//SWAMP - REGULAR BUSH
+[t:template,n:gen_bush_swamp-ut3w_swamp_witch]
+{
+	specializes = generator_base_swp_bush;
+	doc = "generator_bush_swamp-swamp_witch";
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_swamp_witch;
+	}
+}
+[t:template,n:gen_bush_swamp-ut3w_troll_swamp]
+{
+	specializes = generator_base_swp_bush;
+	doc = "generator_bush_swamp-troll_swamp";
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_troll_swamp;
+	}
+}
+[t:template,n:gen_bush_swamp-ut3w_midge_swirling]
+{
+	specializes = generator_base_swp_bush;
+	doc = "generator_bush_swamp-troll_swamp";
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_midge_swirling;
+	}
+}
+[t:template,n:gen_bush_swamp-ut3w_swamp_slinger]
+{
+	specializes = generator_base_swp_bush;
+	doc = "generator_bush_swamp-swamp_slinger";
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_swamp_slinger;
+	}
+}
+[t:template,n:gen_bush_swamp-ut3w_mangler]
+{
+	specializes = generator_base_swp_bush;
+	doc = "generator_bush_swamp-mangler";
+
+	[generator_advanced_a2]
+	{
+        Child_Template_Name = ut3w_mangler;
+	}
+}
+
+//Cocoon - Mucosa
+[t:template,n:gen_egg_mucosa-ut3w_twisted_mucosa]
+{
+	specializes = generator_base_exploding_mucosa_egg;
+	doc = "generator_mucosa_egg-mucosa";
+    aspect:model	= m_i_glb_cocoon-mucosa-02;
+	aspect:scale_base	= 1.5;
+
+	[generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_twisted_mucosa;
+	}
+}
+[t:template,n:gen_egg_mucosa-ut3w_twisted_mucosa_small]
+{
+	specializes = generator_base_exploding_mucosa_egg;
+	doc = "generator_mucosa_egg-mucosa_small";
+    aspect:model	= m_i_glb_cocoon-mucosa-02;
+	aspect:scale_base	= 1.2;
+
+	[generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_twisted_mucosa_small;
+	}
+}
+[t:template,n:gen_egg_mucosa-ut3w_mucosa]
+{
+	specializes = generator_base_exploding_mucosa_egg;
+	doc = "generator_mucosa_egg-mucosa";
+    aspect:model	= m_i_glb_cocoon-mucosa-02;
+	aspect:scale_base	= 1.5;
+
+	[generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_mucosa;
+	}
+}
+[t:template,n:gen_egg_mucosa-ut3w_mucosa_small]
+{
+	specializes = generator_base_exploding_mucosa_egg;
+	doc = "generator_mucosa_egg-mucosa_small";
+    aspect:model	= m_i_glb_cocoon-mucosa-02;
+	aspect:scale_base	= 1.2;
+
+	[generator_auto_object_exploding]
+	{
+        Child_Template_Name = ut3w_mucosa_small;
+	}
+}
+[t:template,n:ut3W_emitter_gom_die]
+{
+	specializes 		= point;
+	doc 				= "emitter Gom Die, don't place me.";
+    category_name       = "emitter";
+    
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				action*    = call_sfx_script("gom_switch");
+			}
+		}
+	}
+	[self_destruct] 
+	{
+		delete_time = 25.0;
+	}
+	[generator_in_object]
+	{
+		child_template_name = ut3W_gom_super;
+		spawn_event = WE_ENTERED_WORLD;
+		spawn_chance = 1.0;
+		spawn_delay = 20.0;
+		invis_kid = true;
+	}
+}

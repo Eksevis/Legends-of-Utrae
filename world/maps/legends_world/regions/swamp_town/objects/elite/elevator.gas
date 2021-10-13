@@ -1,0 +1,129 @@
+[t:elevator_instant_4s_1c,n:0x04e00a4d]
+{
+	[elevator_instant_4s_1c]
+	{
+	  i connect_door_location1_level1 = 9;
+	  i connect_door_location1_level2 = 11;
+	  i connect_door_location2_level1 = 12;
+	  i connect_door_location2_level2 = 10;
+	  x connect_node_location1 = 0x0D62B522;
+	  x connect_node_location2 = 0xD14939A3;
+	  f duration_location1_moving_to_lv1 = 16;
+	  f duration_location2_moving_to_lv1 = 16;
+	  i e2_connect_door_location1_level1 = 10;
+	  i e2_connect_door_location1_level2 = 12;
+	  i e2_connect_door_location2_level1 = 11;
+	  i e2_connect_door_location2_level2 = 9;
+	  i e2_elevator_door_location1_level1 = 2;
+	  i e2_elevator_door_location1_level2 = 2;
+	  i e2_elevator_door_location2_level1 = 2;
+	  i e2_elevator_door_location2_level2 = 2;
+	  x e2_elevator_node = 0x0BF53F4E;
+	  x elevator_node = 0x33B8F42B;
+		location1_moving_to_lv1_actioninfo = "utraean_world_swamp_town_teleport";
+		location1_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		location2_moving_to_lv1_actioninfo = "utraean_world_new_hub_teleport";
+		location2_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		material = "hub";
+	  x other_elevator = 0x07F00040;
+	}
+	[placement]
+	{
+	  p position = 0,5,0,0x33b8f42b;
+	}
+}
+[t:elevator_2s_1c_2n,n:0x04e00a81]
+{
+	[elevator_2s_1c_2n]
+	{
+	  i connect_door_level1 = 10;
+	  i connect_door_level2 = 2;
+	  x connect_node_level1 = 0x9E341D35;
+	  x connect_node_level2 = 0x449FC183;
+	  f duration = 5;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0x5544D2D3;
+		material = "dm_small";
+		moving1_actioninfo = "0x5E970790,4,-1,-1,in,4.5;0xDB65ABDE,2,1,-1,in,4.5;0xADA50100,3,1,-1,in,4.5";
+		moving2_actioninfo = "0x5E970790,4,-1,-1,out:black;0xDB65ABDE,2,1,-1,out:black;0xADA50100,3,1,-1,out:black";
+	}
+	[placement]
+	{
+	  p position = -0.0366082,2.68654,0.163132,0x5544d2d3;
+	}
+}
+[t:elevator_instant_4s_1c,n:0x04e002f7]
+{
+	[elevator_instant_4s_1c]
+	{
+	  i connect_door_location1_level1 = 11;
+	  i connect_door_location1_level2 = 12;
+	  i connect_door_location2_level1 = 5;
+	  i connect_door_location2_level2 = 6;
+	  x connect_node_location1 = 0x449FC183;
+	  x connect_node_location2 = 0xF069CD16;
+		down_effect = "displacer_plate_down";
+	  f duration_location1_moving_to_lv1 = 16;
+	  f duration_location2_moving_to_lv1 = 16;
+	  i e2_connect_door_location1_level1 = 13;
+	  i e2_connect_door_location1_level2 = 14;
+	  i e2_connect_door_location2_level1 = 7;
+	  i e2_connect_door_location2_level2 = 8;
+	  i e2_elevator_door_location1_level1 = 2;
+	  i e2_elevator_door_location1_level2 = 2;
+	  i e2_elevator_door_location2_level1 = 2;
+	  i e2_elevator_door_location2_level2 = 2;
+	  x e2_elevator_node = 0x3D080F49;
+	  x elevator_node = 0xAB816774;
+		location1_moving_to_lv1_actioninfo = "utraean_world_swamp_town_teleport_2";
+		location1_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		location2_moving_to_lv1_actioninfo = "utraean_world_gi_a_r2_teleport";
+		location2_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		material = "hub";
+	  x other_elevator = 0x08F001C7;
+		up_effect = "displacer_plate_up";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.174604,5,0.0537872,0xab816774;
+	}
+}
+[t:elevator_instant_4s_1c,n:0x04e005b4]
+{
+	[elevator_instant_4s_1c]
+	{
+	  i connect_door_location1_level1 = 3;
+	  i connect_door_location1_level2 = 4;
+	  i connect_door_location2_level1 = 5;
+	  i connect_door_location2_level2 = 6;
+	  x connect_node_location1 = 0x449FC183;
+	  x connect_node_location2 = 0x51D9CD93;
+		down_effect = "displacer_plate_down";
+	  f duration_location1_moving_to_lv1 = 16;
+	  f duration_location2_moving_to_lv1 = 16;
+	  i e2_connect_door_location1_level1 = 5;
+	  i e2_connect_door_location1_level2 = 6;
+	  i e2_connect_door_location2_level1 = 7;
+	  i e2_connect_door_location2_level2 = 8;
+	  i e2_elevator_door_location1_level1 = 2;
+	  i e2_elevator_door_location1_level2 = 2;
+	  i e2_elevator_door_location2_level1 = 2;
+	  i e2_elevator_door_location2_level2 = 2;
+	  x e2_elevator_node = 0x218F181C;
+	  x elevator_node = 0x833E8C9E;
+		location1_moving_to_lv1_actioninfo = "utraean_world_swamp_town_teleport_2";
+		location1_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		location2_moving_to_lv1_actioninfo = "utraean_world_of_r1_teleport";
+		location2_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		material = "hub";
+	  x other_elevator = 0x05A0130E;
+		up_effect = "displacer_plate_up";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 0,5,0,0x833e8c9e;
+	}
+}

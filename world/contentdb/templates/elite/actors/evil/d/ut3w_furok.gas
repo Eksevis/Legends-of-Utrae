@@ -1,0 +1,279 @@
+[t:template,n:ut3W_furok]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_furok";
+	specializes = 3W_base_furok;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  68.9, 0;
+			intelligence =  13.8, 0;
+			dexterity =  28.3, 0;
+            melee =  97,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1012680;
+		life = 2025;
+        max_life = 2025;
+        mana = 126;
+        max_mana = 126;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 673.2;
+		damage_min = 486;
+	}
+	[common]
+	{
+		screen_name="Furok Wendigo";
+		membership = party_furok_boss, monster;
+
+	}
+	[defend] { defense=837; }
+	[inventory]
+	{
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/63-99;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/255-306;
+					il_main = #armor/117-657;
+	                il_main = #weapon/255-306;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	            	il_main = #weapon/-rare(1)/289-375;
+	                il_main = #armor/-rare(1)/306-1053;
+                    il_main = #*/-rare(1)/289-375;
+                }
+				[oneof*]
+                {
+					chance = 0.002;
+	                il_main = #weapon/-unique(2)/289-375;
+	                il_main = #armor/-unique(2)/306-1053;
+                    il_main = #*/-unique(2)/289-375;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 321092;
+					min = 196103;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+	}
+
+}
+
+[t:template,n:ut3W_furok_boss_01]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_furok boss";
+	specializes = 3W_base_furok;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  68.9, 0;
+			intelligence =  13.8, 0;
+			dexterity 	=  34, 0;
+            melee 		=  98,  0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_edm_fr-03;
+		experience_value = 1100582;
+		life = 2367;
+        max_life = 2367;
+        mana = 126;
+        max_mana = 126;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 712.8;
+		damage_min = 550.8;
+	}
+	[common]
+	{
+		screen_name="Furok Bigfoot";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_cyan(sgx)");
+			}
+		}
+	}
+	[defend] { defense=1170; }
+	[inventory]
+	{
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.7;
+					il_main = #body,f/882-1003;
+	                il_main = #weapon/298-323;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/349-392;
+	                il_main = #armor/-rare(1)/1098-1251;
+                    il_main = #*/-rare(1)/349-392;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/349-392;
+	                il_main = #armor/-unique(2)/1098-1251;
+                    il_main = #*/-unique(2)/349-392;
+	            }
+				[gold*]
+				{
+					chance = 0.294;
+					max = 805964;
+					min = 454701;
+					min_pile = 35;
+					piles = 3 - 5;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.9
+			&friend_template	= false
+			&friends			= party_furok_boss
+			&still				= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_furok_boss";
+	}
+
+}
+
+[t:template,n:ut3W_furok_slasher]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_furok slasher";
+	specializes = 3W_base_furok;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  72.7, 0;
+			intelligence =  13.6, 0;
+			dexterity =  27.4, 0;
+            melee =  97,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1148245;
+		life = 2407.7;
+        max_life = 2407.7;
+        mana = 107.7;
+        max_mana = 107.7;
+        [textures] { 0 = b_c_edm_fr-02; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 710.8;
+		damage_min = 484.6;
+	}
+	[common] 
+	{ 
+		screen_name="Furok Destroyer"; 
+
+	}
+	[defend] { defense=669.2; }
+	[inventory]
+	{
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/54-85;
+				}
+				[oneof*]
+				{
+					chance = 0.4;
+					il_main = #*/250-286;
+					il_main = #armor/123-654;
+	                il_main = #weapon/250-286;
+				}
+				[oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/279-323;
+	                   il_main = #armor/-rare(1)/515-946;
+                       il_main = #*/-rare(1)/279-323;
+                }
+				[oneof*]
+				{
+                       chance = 0.002;
+	                   il_main = #weapon/-unique(2)/279-323;
+	                   il_main = #armor/-unique(2)/515-946;
+                       il_main = #*/-unique(2)/279-323;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 249293;
+					min = 194037;
+					min_pile = 39;
+					piles = 1 - 3;
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,692 @@
+[t:trigger_generic,n:0x0a100045]
+{
+	[common]
+	{
+		dev_instance_text = "QUEST SCRIPTED EVENT";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_quillrabe","active",1);
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(8.000000,2.000000,8.000000,"while_inside"), doc("[*converted to one-shot*]");
+				condition* = has_go_in_inventory("local",0x00000000,"stone_glb_quillrabe_01"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.681999,0,0.731354;
+	  p position = -11.3956,18.4,-24.2032,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100046]
+{
+	[placement]
+	{
+	  p position = -11.0233,18.4,-24.0262,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100047]
+{
+	[placement]
+	{
+	  p position = -4.42122,20.2552,-11.0466,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100048]
+{
+	[placement]
+	{
+	  p position = -2.46658,20.1528,-9.95205,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100049]
+{
+	[placement]
+	{
+	  p position = 0.594035,20.0547,-19.7274,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a10004b]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_quillrabe","active",1);
+			  b can_self_destruct = true;
+				condition* = has_go_in_inventory("local",0x00000000,"stone_glb_quillrabe_01");
+				condition* = party_member_within_bounding_box(7.000000,0.500000,5.000000,"while_inside");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.382683,0,0.92388;
+	  p position = -5.21263,20.2971,-11.8049,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a10004c]
+{
+	[placement]
+	{
+	  p position = -0.214887,17.9,-2.06118,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a10004d]
+{
+	[placement]
+	{
+	  p position = -2.13243,17.9,-1.95715,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a10004e]
+{
+	[placement]
+	{
+	  p position = -5.43522,17.9,-2.06979,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a10004f]
+{
+	[placement]
+	{
+	  p position = -4.76843,17.9,-2.20627,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100050]
+{
+	[placement]
+	{
+	  p position = -2.98638,17.9,-2.27387,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100053]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD - FIGHT DRAGON";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,1.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = false;
+			}
+		}
+	}
+	[gizmo]
+	{
+	  v diffuse_color = 1,0,0;
+	}
+	[placement]
+	{
+	  q orientation = 4.32567e-011,0.707107,3.89485e-011,0.707107;
+	  p position = 24.9291,20.0533,-30.4596,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100054]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD - DRAGON DEAD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_3");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,1.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = false;
+			}
+		}
+	}
+	[gizmo]
+	{
+	  v diffuse_color = 0,0,1;
+	}
+	[placement]
+	{
+	  q orientation = 4.32567e-011,0.707107,3.89485e-011,0.707107;
+	  p position = 24.883,20.6851,-30.5494,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100059]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD - CAVE (NORMAL)";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.250000,1.000000,3.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_1");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_activate",0,"on_every_message"), doc("from dragon mood triggers");
+				condition* = party_member_within_bounding_box(3.250000,1.000000,3.000000,"wait_for_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1.86265e-009,0,1;
+	  p position = 29.7299,20.2317,-29.814,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100074]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD (DRAGON DEAD)";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_3"), doc("dragon dead mood");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_activate",0,"on_first_message");
+				condition* = party_member_within_node(0xAAA70101,2,-1,-1,"wait_for_every_message"), doc("[*one-shot check (trigger is one-shot)*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[gizmo]
+	{
+	  v diffuse_color = 0,0,1;
+	}
+	[placement]
+	{
+	  p position = -13.1479,19.5529,-32.7322,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100075]
+{
+	[common]
+	{
+		dev_instance_text = "SCRIPTED EVENT DRAGON WAKES";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100068,0f,"default","",0), doc("wake dragon");
+				action* = send_world_message("we_req_activate",0x0A10014B,0f,"default","",0), delay(1), doc("flash room for dragon fight mood");
+				action* = send_world_message("we_req_deactivate",0x0A100177,0f,"default","",0), doc("stop snoring sound");
+				action* = send_world_message("we_req_activate",0x0A100178,0f,"default","",0), delay(1.8), doc("light dragon front");
+				action* = send_world_message("we_trigger_activate",0x0A100198,0f,"default","",0), doc("activate door fight mood trigger");
+				action* = send_world_message("we_req_activate",0x0A100197,0f,"default","every",0), delay(1.1), doc("ensure anyone outside room doesn't get red mood");
+				action* = send_world_message("we_trigger_activate",0x0A100053,0f,"default","every",0), doc("activate door2 fight mood trigger");
+				action* = send_world_message("we_req_activate",0x0A100059,0f,"default","every",0), delay(1.1), doc("ensure anyone outside door2 doesn't get red mood");
+				action* = send_world_message("we_trigger_activate",0x0A100068,0f,"default","every",0), doc("activate wake-up trigger on dragon");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_activate",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707108;
+	  p position = -2.18961,20.0577,-10.2201,0x4a217ab7;
+	}
+}
+[t:trigger_fade_node_box,n:0x0a100144]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(2.000000,2.000000,2.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = dl_r1_fade_1;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = fade_nodes(0xAAA70101,1,3,-1,"out:black"), group(1);
+				action* = fade_nodes(0xAAA70101,1,3,-1,"in"), group(2);
+			  b can_self_destruct = true;
+				condition* = party_member_entered_trigger_group("dl_r1_fade_1","on_every_enter"), group(1);
+				condition* = party_member_left_trigger_group("dl_r1_fade_1","on_every_leave"), group(2);
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.014,20.0903,-36.8688,0x4a217ab7;
+	}
+}
+[t:trigger_fade_node_box,n:0x0a10014a]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(2.000000,2.000000,2.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = dl_r1_fade_2;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = fade_nodes(0xAAA70101,1,4,-1,"out:black"), group(1);
+				action* = fade_nodes(0xAAA70101,1,4,-1,"in"), group(2);
+			  b can_self_destruct = true;
+				condition* = party_member_entered_trigger_group("dl_r1_fade_2","on_every_enter"), group(1);
+				condition* = party_member_left_trigger_group("dl_r1_fade_2","on_every_leave"), group(2);
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 24.7636,19.9961,-29.3908,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a10014b]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD (DRAGON FIGHT)";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_2"), doc("dragon alive mood");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_activate",0,"on_first_message");
+				condition* = party_member_within_node(0xAAA70101,2,-1,-1,"wait_for_every_message"), doc("[*one-shot check (trigger is one-shot)*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[gizmo]
+	{
+	  v diffuse_color = 1,0,0;
+	}
+	[placement]
+	{
+	  p position = -14.3882,19.568,-32.7699,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100174]
+{
+	[common]
+	{
+		dev_instance_text = "SCRIPTED EVENT DRAGON WAKES";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("dragon activation");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(1.000000,2.000000,4.000000,"on_first_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707108;
+	  p position = -3.18302,20.0536,-10.2738,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100176]
+{
+	[common]
+	{
+		dev_instance_text = "START TREASURE SPARKLE";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A10017E,0f,"default","",0), doc("start treasure sparkle");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,1.000000,1.000000,"on_first_enter"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.994,18.6082,-29.6966,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100185]
+{
+	[placement]
+	{
+	  p position = -0.715385,17.9,-1.49364,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100186]
+{
+	[placement]
+	{
+	  p position = -1.56151,17.9,-1.17649,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100187]
+{
+	[placement]
+	{
+	  p position = -2.64505,17.9,-1.12531,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100188]
+{
+	[placement]
+	{
+	  p position = -3.55974,17.9,-1.11235,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a100189]
+{
+	[placement]
+	{
+	  p position = -4.46994,17.9,-1.30307,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a10018a]
+{
+	[placement]
+	{
+	  p position = -5.4949,17.9,-1.36161,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a10018b]
+{
+	[placement]
+	{
+	  p position = -3.98382,17.9,-1.83737,0x4a217ab7;
+	}
+}
+[t:use_point,n:0x0a10018c]
+{
+	[placement]
+	{
+	  p position = -1.18927,17.9,-2.27776,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100197]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD - CAVE (NORMAL)";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,1.000000,3.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_1");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_activate",0,"on_every_message"), doc("from dragon mood triggers");
+				condition* = party_member_within_bounding_box(4.000000,1.000000,3.000000,"wait_for_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1.86265e-009,0,1;
+	  p position = -13.0886,20.2317,-40.5335,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100198]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD - FIGHT DRAGON";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,1.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = false;
+			}
+		}
+	}
+	[gizmo]
+	{
+	  v diffuse_color = 1,0,0;
+	}
+	[placement]
+	{
+	  q orientation = 3.04635e-012,3.72529e-009,5.81279e-011,1;
+	  p position = -13.0459,20.1406,-35.4705,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100199]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD - DRAGON DEAD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dragon_3");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,1.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = false;
+			}
+		}
+	}
+	[gizmo]
+	{
+	  v diffuse_color = 0,0,1;
+	}
+	[placement]
+	{
+	  q orientation = 3.04635e-012,3.72529e-009,5.81279e-011,1;
+	  p position = -13.0959,20.7724,-35.4771,0x4a217ab7;
+	}
+}
+[t:trigger_generic,n:0x0a100052]
+{
+	[common]
+	{
+		dev_instance_text = "CLIENT MESSAGES FROM WE_KILLED";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100071,0f,"default","",0), doc("quake");
+				action* = send_world_message("we_req_activate",0x0A100074,0f,"default","",0), delay(2.5), doc("flash room for dead dragon mood");
+				action* = send_world_message("we_req_activate",0x0A100197,0f,"default","every",0), delay(2.6), doc("ensure anyone outside doesn't get red fog mood");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_activate",0,"on_first_message"), doc("using this for client actions since we_killed does not send to clients");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -4.58387,15.9,-21.0687,0xd8ad5d4b;
+	}
+}

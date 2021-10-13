@@ -1,0 +1,25 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0x15976A34;
+	source_region_name = dunes2island;
+	[t:stitch_editor,n:dunes]
+	{
+		dest_region = dunes;
+		[node_ids]
+		{
+			0x0000aef1 = 0xDA2E0858,4;
+			0x0000aef2 = 0xDA2E0858,5;
+			0x0000aef3 = 0xDA2E0858,6;
+		}
+	}
+	[t:stitch_editor,n:island]
+	{
+		dest_region = island;
+		[node_ids]
+		{
+			0x0000aef4 = 0x0CEDF11E,4;
+			0x0000aef5 = 0x0CEDF11E,5;
+			0x0000aef6 = 0x0CEDF11E,6;
+		}
+	}
+}

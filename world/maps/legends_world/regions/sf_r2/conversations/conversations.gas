@@ -1,0 +1,30 @@
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "Well if you go back the way you came you'll reach Fallraen of course. Though I'd take the displacer if I were you now that those ice monsters are gone. If you travel through the Ancient Temple you'll eventually reach Meren one way or another. You'd sure to bump into someone who could give better directions than me on the other side of the Temple.";
+	}
+}
+[conversation_wilak]
+{
+	
+    [text*]
+	{
+		choice = shop;
+
+		screen_text = "Thanks to Azunai that you arrived when you did! I used the displacer to travel here when I was ambushed by a group of ice monsters. Why did I come here? Good question, I was going to search for rare artifacts that are rumoured to be hidden in the Temple. However now I'm just going to beat a dignified exit from here before I become some monster's lunch snack! But before I go I have some items that may warm you up. Interested?";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0270045c;
+	}
+}
+[conversation_wilak_red]
+{
+	[text*]
+	{
+	
+		choice = shop;	
+		screen_text = "Can't a lad go anywhere in this dratted excuse of a town to get a good night's sleep?";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0270045c;
+	}
+}

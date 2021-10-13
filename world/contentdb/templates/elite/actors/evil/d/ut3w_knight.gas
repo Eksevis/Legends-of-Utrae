@@ -1,0 +1,63 @@
+[t:template,n:ut3w_knight_death]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_knight_death";
+	specializes = dsx_knight_death_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	38.8, 0;
+			intelligence =  13.3, 0;
+			dexterity =  	15.5, 0;
+			melee =  	111,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 488120;
+		life = 2173;
+		max_life = 2173;
+		mana = 27.6;
+		max_mana = 27.6;
+
+		model = m_c_ecm_sk_pos_2;
+		//		model = m_c_edm_iw_pos_1;
+		//		textures:0 = b_c_edm_ph_melee;
+		material = steel;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_wraith; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_skeleton_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_skeleton_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_skeleton_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_skeleton_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 404;
+		damage_min = 265;
+	}
+	[common]
+	{
+		screen_name="Undead Utraean";
+
+	}
+	[defend] { defense = 1028; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.25;
+   				il_main = potion_health_super;
+				il_main = potion_mana_super;
+			}
+		}
+	}
+}
+

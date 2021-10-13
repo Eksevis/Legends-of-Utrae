@@ -1,0 +1,450 @@
+[t:door_glb_crypt_01,n:0x0080000a]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0080000B;
+	}
+	[placement]
+	{
+	  p position = -0.00834761,-1.5,4.0142,0x1bcdd7b2;
+		use_point_scids = 0x008000c6;
+	}
+}
+[t:door_glb_crypt_01,n:0x0080000c]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0080000D;
+	}
+	[placement]
+	{
+	  p position = 0.0368676,-1.5,3.8916,0xc4295199;
+		use_point_scids = 0x00800106 , 0x00800105;
+	}
+}
+[t:door_glb_crypt_01,n:0x0080000f]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0080000E;
+	}
+	[placement]
+	{
+	  p position = -0.0485008,-1.5,4.10849,0xa7858409;
+		use_point_scids = 0x00800103 , 0x00800104;
+	}
+}
+[t:door_glb_crypt_01,n:0x00800011]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00800010;
+	}
+	[placement]
+	{
+	  p position = 0.0282275,-1.5,3.94287,0x2be132ec;
+		use_point_scids = 0x00800102 , 0x008000fd;
+	}
+}
+[t:sign_glb_01,n:0x008001f0]
+{
+	[common]
+	{
+		screen_name = "Hovart Marsh, 24";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -1.84417,-0.1,0.0765103,0xb050b02a;
+	}
+}
+[t:sign_glb_01,n:0x008001f1]
+{
+	[common]
+	{
+		screen_name = "Illiarth Divide, 16";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,-0.707107;
+	  p position = -1.85028,-0.1,0.0691594,0xb050b02a;
+	}
+}
+[t:door_glb_crypt_01,n:0x00800013]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00800012;
+	}
+	[placement]
+	{
+	  p position = -0.0415989,-1.5,0.111656,0xaed7b733;
+		use_point_scids = 0x008000fb , 0x008000fa;
+	}
+}
+[t:lever_glb_01,n:0x008001c0]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x000000F6;
+		on_message_3 = we_trigger_activate;
+	  x on_scid = 0x000000F6;
+	  x on_scid_2 = 0x0080002D;
+	  x on_scid_3 = 0x0080001E;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -0.738685,0.334789,-6.97078,0xba14cc6b;
+		use_point_scids = 0x008001c2;
+	}
+}
+[t:lever_glb_01,n:0x008001c1]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x000000F6;
+		on_message_3 = we_trigger_activate;
+	  x on_scid = 0x000000F6;
+	  x on_scid_2 = 0x0080002D;
+	  x on_scid_3 = 0x0080001E;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,-0.707107;
+	  p position = 1.8075,0.334789,-1.76488,0xba14cc6b;
+		use_point_scids = 0x008001c3;
+	}
+}
+[t:lever_cav_stone_01,n:0x000000bd]
+{
+	[body]
+	{
+		terrain_movement_permissions = lf_none;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x000000F6;
+		on_message_3 = we_trigger_activate;
+	  x on_scid = 0x000000F6;
+	  x on_scid_2 = 0x0080002D;
+	  x on_scid_3 = 0x0080001E;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 0.464092,-0.394199,-0.242502,0x23daa4c5;
+		use_point_scids = 0x800170;
+	}
+}
+[t:door_glb_crypt_01,n:0x0080001c]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0080001D;
+	}
+	[placement]
+	{
+	  q orientation = 0,3.57628e-007,0,-1;
+	  p position = 0.00720999,-1.5,0.0685386,0x9d424faf;
+		use_point_scids = 0x008000ec , 0x008000ee;
+	}
+}
+[t:door_glb_crypt_01,n:0x00800027]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0080002B;
+	}
+	[placement]
+	{
+	  q orientation = -1.14049e-008,1,0,-2.75338e-008;
+	  p position = -0.020676,-1.49999,-0.109405,0xbdefbc1a;
+		use_point_scids = 0x008000ef , 0x008000f3;
+	}
+}
+[t:door_glb_crypt_01,n:0x00800186]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0080002C;
+	}
+	[placement]
+	{
+	  p position = -0.0830076,-1.5,0.0719817,0x267a0e05;
+		use_point_scids = 0x008000f6 , 0x008000f7;
+	}
+}
+[t:lever_glb_01,n:0x008001b3]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0080029E;
+	  x on_scid = 0x0080029E;
+	}
+	[placement]
+	{
+	  q orientation = -2.73955e-007,0.707107,2.73954e-007,0.707107;
+	  p position = -2.47014,0.0479813,0.962768,0xb5e85b5e;
+		use_point_scids = 0x008001b4,0x008000a8;
+	}
+}
+[t:lightstand_lightable,n:0x0080017f]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00800171,0f,"default","receive_world_message",0);
+				action* = send_world_message("we_req_activate",0x008000B8,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[light_enable]
+	{
+	  x siege_light = 0x3D57D7B4;
+	}
+	[light_flicker]
+	{
+	  x siege_light = 0x3D57D7B4;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = 6.8389,-0.63663,-0.595585,0x9cd555f8;
+		use_point_scids = 0x0080008a;
+	}
+}
+[t:lever_glb_01,n:0x008001b5]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00000105;
+		on_message_3 = we_trigger_activate;
+	  x on_scid = 0x00000105;
+	  x on_scid_2 = 0x0080002E;
+	  x on_scid_3 = 0x0000012D;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,-0.707106;
+	  p position = -1.8229,1.24043,-1.77579,0x86504da0;
+		use_point_scids = 0x008001bd;
+	}
+}
+[t:lever_glb_01,n:0x008001b8]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00000105;
+		on_message_3 = we_trigger_activate;
+	  x on_scid = 0x00000105;
+	  x on_scid_2 = 0x0080002E;
+	  x on_scid_3 = 0x0000012D;
+	  x on_scid_4 = 0x008001BB;
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.49012e-007;
+	  p position = 0.160337,0.564592,-3.82856,0x86504da0;
+		use_point_scids = 0x008001bc;
+	}
+}
+[t:lever_cav_stone_01,n:0x00000106]
+{
+	[body]
+	{
+		terrain_movement_permissions = lf_none;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x00000105;
+		on_message_3 = we_trigger_activate;
+	  x on_scid = 0x00000105;
+	  x on_scid_2 = 0x0080002E;
+	  x on_scid_3 = 0x0000012D;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 0.422569,-0.103169,0.041473,0x4a7adcfd;
+		use_point_scids = 0x0080009e;
+	}
+}
+[t:door_glb_crypt_01,n:0x00800025]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00800021;
+	}
+	[placement]
+	{
+	  p position = -0.0386358,-0.5,-4.12916,0x0987a718;
+		use_point_scids = 0x008000e0 , 0x008000e7;
+	}
+}
+[t:door_glb_crypt_01,n:0x00800020]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x0080001F;
+	}
+	[placement]
+	{
+	  p position = -0.0353085,-1.5,0.110582,0x8dcfab9c;
+		use_point_scids = 0x008000eb , 0x008000e9;
+	}
+}
+[t:door_glb_crypt_01,n:0x0080001b]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00800030;
+	}
+	[placement]
+	{
+	  p position = 1.06728,-0.5,-4.39935,0xacdae716;
+		use_point_scids = 0x008000c7 , 0x008000bc;
+	}
+}
+[t:respawn_statue,n:0x008000b9]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.382684,0,-0.92388;
+	  p position = -0.0992528,-1.5,0.122224,0xeabf566f;
+		use_point_scids = 0x008000e4;
+	}
+}
+[t:door_glb_crypt_01,n:0x00800031]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00800032;
+	}
+	[placement]
+	{
+	  p position = -0.0427808,-1.5,0.118599,0x9e955cdf;
+		use_point_scids = 0x008000b3 , 0x008000ba;
+	}
+}
+[t:door_glb_crypt_use_toggle,n:0x00800184]
+{
+	[common]
+	{
+		description = "this door seems to be magically sealed.";
+		dev_instance_text = "SCRIPTED EVENT - use toggle door";
+	}
+	[door_basic]
+	{
+	  x msg_scid_open = 0x00800000;
+	  x msg_scid_opening = 0x00800113;
+	}
+	[placement]
+	{
+	  p position = 0.0143526,0.8,0.0863645,0xe6e03ac5;
+		use_point_scids = 0x00800138;
+	}
+}
+[t:lightstand_lightable,n:0x0080017e]
+{
+	[light_enable]
+	{
+	  b is_toggle = true;
+	  x siege_light = 0x5CCAB1D3;
+	}
+	[light_flicker]
+	{
+	  x siege_light = 0x5CCAB1D3;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.66244e-007;
+	  p position = -0.950824,-0.522354,0.230236,0x90886a1c;
+		use_point_scids = 0x00800195;
+	}
+}
+[t:fountain_csl_mana,n:0x0080010b]
+{
+	[fountain]
+	{
+	  f heal_amount = 80;
+	  f health_left = 80;
+	  f health_regen = 0.14625;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-8.9407e-008;
+	  p position = 0.0263649,-0.60015,-0.117531,0x1279c2b5;
+	}
+}
+[t:fountain_csl_health,n:0x0080010a]
+{
+	[fountain]
+	{
+	  f heal_amount = 50;
+	  f health_left = 78.4;
+	  f health_regen = 0.083;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-2.08616e-007;
+	  p position = 0.122007,-0.633749,-0.107069,0xc3a1d50a;
+	}
+}
+[t:door_glb_crypt_01,n:0x00800015]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x00800009;
+	}
+	[placement]
+	{
+	  p position = 0.0499739,-0.5,-4.38371,0x547f8fa1;
+		use_point_scids = 0x008000d6,0x008000d8;
+	}
+}
+[t:sign_glb_01,n:0x008001f2]
+{
+	[common]
+	{
+		screen_name = "Hovart Marsh, 22";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 1.00082,0,-0.413773,0x223c1b6c;
+	}
+}
+[t:sign_glb_01,n:0x008001f3]
+{
+	[common]
+	{
+		screen_name = "Illiarth Divide, 18";
+	}
+	[placement]
+	{
+	  q orientation = 0,2.98023e-007,0,-1;
+	  p position = 1.26435,9.53674e-007,-0.0513751,0x223c1b6c;
+	}
+}

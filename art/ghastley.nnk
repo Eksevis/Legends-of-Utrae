@@ -1,0 +1,36 @@
+#
+# This NNK file was generated from within Siege Max by the dsExtendNamingKey utility function
+#
+# After editing this file (and saving!) you can use the following commmands in the Maxscript
+# Listener Console to verify your changes:
+#
+#  dsLoadNamingKey()                      -- will reload the Naming Key (including your changes)
+#  dsBuildContentLocation "valid_name"    -- returns the location of the file specified by <valid_name>
+#  dsBuildContentDescription "valid_name" -- returns the description of the file specified by <valid_name>
+#
+#  For reference, here are some examples of Naming Key index tree definitions:
+#
+# 	Prefix		Sub-Directory		Description
+# ----------------------------------------------------------------------------
+# TREE = m_i_bid ,	Biddle ,		"Biddle's Item Meshes"
+# TREE = m_c_bid ,	Biddle ,		"Biddle's Character Meshes"
+# TREE = t_bid ,	Biddle ,		"Biddle's Terrain"
+# TREE = b_bid ,	Biddle ,		"Biddle's Bitmaps"
+#
+#========== Enter your additional TREE definitions below =====================
+TREE = m_c_gs ,		Ghastley ,		"Ghastley Character meshes"
+TREE = m_c_gs_sn ,	Snake ,			"Snake"
+TREE = m_c_gs_na ,      Naja ,              	"Snake goddess"
+TREE = m_c_gs_na_gntl , Gauntlets ,				"Naja gloves"
+TREE = m_c_gs_na_boot , Boots ,					"Naja boots (sic)"
+TREE = m_c_gs_na_hlmt , Helmets ,				"Naja Helmets (sic)"
+
+TREE = a_c_gs ,		Ghastley ,		"Ghastley animations"
+TREE = a_c_gs_sn ,	Snake ,			"Snake" , fs0
+TREE = a_c_gs_na ,	Naja ,			"Snake Goddess" , fs0, fs1, fs2, fs3, fs4, fs5, fs6, fs7, fs8
+
+TREE = b_c_gs ,       	Ghastley ,      	"Ghastley maps"
+TREE = b_c_gs_sn ,	Snake ,			"Snake"
+TREE = b_c_gs_na ,	Naja ,			"Snake goddess"
+
+

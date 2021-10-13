@@ -1,0 +1,1455 @@
+[t:trigger_fade_node_box,n:0x07700038]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.5632,3.97032,-21.1342,0x5c110ee3;
+	}
+}
+[t:use_point,n:0x07700213]
+{
+	[placement]
+	{
+	  q orientation = 0,0.398749,0,0.91706;
+	  p position = -34.7734,2.23263,-37.7243,0x55c4a7b4;
+	}
+}
+[t:trigger_fade_node_box,n:0x077000e4]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 9.57663,-4.84505,-29.3255,0x42a93967;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007ff]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_4");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -12.7925,6.48669,-41.4923,0x996a2d51;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f6]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_3");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -5.30737,5.80811,-49.0145,0xdff44ce2;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007e0]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 8.59677,-5.86318,-43.2119,0xb64d79f9;
+	}
+}
+[t:trigger_fade_node_box,n:0x077000e5]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -40.1259,6.58194,-26.2996,0xfd18d8e0;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007fe]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_4");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -0.639832,6.257,-48.1271,0xee6807cb;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f5]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -36.4318,-7.12982,-22.7807,0x941ceb86;
+	}
+}
+[t:use_point,n:0x077000bb]
+{
+	[placement]
+	{
+	  p position = -15.1514,-5.69845,-21.7227,0x29740b9e;
+	}
+}
+[t:use_point,n:0x077000bc]
+{
+	[placement]
+	{
+	  p position = -38.6529,3.62709,-46.9665,0x7203d9e5;
+	}
+}
+[t:trigger_fade_node_box,n:0x077000e0]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 3.71733,6.05813,-24.8883,0xa86b8de7;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f4]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 6.21155,6.17076,5.8255,0x417df1f9;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007ec]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -33.2795,5.86855,-51.5142,0x54da779e;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f7]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_3");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -11.5109,-6.81306,-52.9257,0x1acfb003;
+	}
+}
+[t:use_point,n:0x077000bd]
+{
+	[placement]
+	{
+	  p position = -10.7197,-6.03266,-15.4435,0x7d5d61e5;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f8]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_3");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -31.5334,6.24454,-27.4595,0xc74e5101;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007fd]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_4");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -6.99921,-2.03362,-8.47809,0x5353b2d3;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077000c2]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.382683,0,0.923879;
+	  p position = -9.04321,6.56355,-48.2374,0xffc27225;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077000c3]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,0.923879;
+	  p position = -18.7251,5.93598,-48.913,0xffc27225;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x07700801]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.9564,7.90832,-49.8298,0xffc27225;
+	}
+}
+[t:trigger_generic,n:0x07700106]
+{
+	[common]
+	{
+		dev_instance_text = "quest";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_pyramids_quest","completed",0);
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,0.500000,1.000000,"on_first_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.703,7.943,-51.7807,0xffc27225;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x07700074]
+{
+	[common]
+	{
+		dev_instance_text = "FADE, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,-1,-1,"out:black"), doc("dunes_all");
+				action* = set_player_world_location("pyramid_of_spirits");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -14.0403,8.75,-39.3124,0x5a31357c;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077000e3]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,-1,-1,"in"), doc("dunes_all");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.9385,8.75,-41.8432,0x5a31357c;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077007e8]
+{
+	[common]
+	{
+		dev_instance_text = "FADE, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,1,-1,"out:black"), doc("dunes_roof");
+				action* = set_player_world_location("endless_dunes");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(2.200000,2.000000,2.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.9453,8.75,-45.2491,0x5a31357c;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077007e9]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes2island_1");
+				action* = fade_nodes(0xEA1CCCA8,1,1,-1,"in"), doc("dunes_roof");
+				action* = fade_nodes(0xA6495190,1,-1,-1,"out:black"), doc("dunes2hades");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -14.0153,7.89993,-48.1878,0x5a31357c;
+	}
+}
+[t:trigger_mana_shrine,n:0x077007e5]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x077007EA,0f,"16386","party_member_within_sphere",0), doc("[*labelled condition (party_member_within_sphere)*]");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(1.800000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.100000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = when_false send_world_message("we_req_deactivate",0x077007EA,0f,"default","",0);
+				action* = send_world_message("we_req_activate",0x077007E6,0f,"default","",0);
+				action* = when_false send_world_message("we_req_deactivate",0x077007E6,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(1.800000,"while_inside");
+			  f delay = 0.000000;
+			  b flip_flop = true;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.953717,0,0.300705;
+	  p position = 0.0288391,-0.750001,-0.120361,0x939064ef;
+	}
+}
+[t:mana_shrine,n:0x077007ea]
+{
+	[fountain]
+	{
+	  f heal_amount = 15.6;
+	  f health_left = 2140;
+	  f health_regen = 1.0051;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.870357,0,0.492422;
+	  p position = 0.00662994,-0.0458016,-0.0993652,0x939064ef;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077000c6]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, FADE";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+				action* = fade_nodes(0xA6495190,1,-1,-1,"out:black"), doc("dunes2hades");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.250000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.290285,0,0.95694;
+	  p position = -8.60735,6.35066,-48.867,0xf4e59008;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077000c7]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, FADE";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+				action* = fade_nodes(0xA6495190,1,-1,-1,"out:black"), doc("dunes2hades");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.250000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.290285,0,0.95694;
+	  p position = -19.2069,5.60073,-48.905,0xf4e59008;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x07700802]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, FADE";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+				action* = fade_nodes(0xA6495190,1,-1,-1,"out:black"), doc("dunes2hades");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.250000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.9207,7.94028,-50.0554,0xf4e59008;
+	}
+}
+[t:trigger_generic,n:0x07700107]
+{
+	[common]
+	{
+		dev_instance_text = "quest";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_pyramids_quest","completed",0);
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.000000,0.500000,1.000000,"on_first_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.8435,8.00684,-51.1231,0xf4e59008;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077007df]
+{
+	[common]
+	{
+		dev_instance_text = "FADE, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,-1,-1,"out:black");
+				action* = set_player_world_location("pyramid_of_dead");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.9587,8.75,-38.6301,0x1b2c0bec;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077007e1]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,-1,-1,"in");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,2.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -14.0185,8.75,-40.9639,0x1b2c0bec;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077007e4]
+{
+	[common]
+	{
+		dev_instance_text = "FADE, MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes2hades_1");
+				action* = fade_nodes(0xEA1CCCA8,1,2,-1,"in");
+				action* = fade_nodes(0x39735938,1,-1,-1,"in");
+				action* = fade_nodes(0xA6495190,1,-1,-1,"in"), doc("dunes2hades");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.050000,2.000000,1.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -14.0029,8.01449,-47.7985,0x1b2c0bec;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x077007e7]
+{
+	[common]
+	{
+		dev_instance_text = "FADE, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xEA1CCCA8,1,2,-1,"out:black");
+				action* = fade_nodes(0x39735938,1,-1,-1,"out:black");
+				action* = set_player_world_location("endless_dunes");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(2.200000,2.000000,2.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -13.8691,8.75,-44.5226,0x1b2c0bec;
+	}
+}
+[t:use_point,n:0x077002a7]
+{
+	[placement]
+	{
+	  p position = -16.0099,-5.50186,-20.8956,0x50e4adac;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007ed]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -33.1118,5.26133,-49.3497,0x50e4adac;
+	}
+}
+[t:use_point,n:0x077002a6]
+{
+	[placement]
+	{
+	  p position = -16.6442,-5.18962,-21.6845,0xb8aee7f4;
+	}
+}
+[t:use_point,n:0x077000be]
+{
+	[placement]
+	{
+	  p position = -12.3862,-6.04626,-18.1295,0x7209132a;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f3]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 7.04425,7.80559,-46.6177,0x6eeb0bb9;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007fb]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_4");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -37.6382,-6.12712,5.72095,0xc37cf83b;
+	}
+}
+[t:use_point,n:0x077000bf]
+{
+	[placement]
+	{
+	  p position = 10.3051,3.05415,-0.85495,0x4639c19e;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f1]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_2");
+				action* = set_player_world_location("endless_dunes");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -34.3521,-7.74002,-25.0894,0x84fe5c73;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007fa]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_3");
+				action* = set_player_world_location("endless_dunes");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 2.55176,3.73863,0.882584,0xb538ee70;
+	}
+}
+[t:use_point,n:0x077000c0]
+{
+	[placement]
+	{
+	  p position = -35.3955,2.13266,-35.7512,0xe2f87f2a;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007ef]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+				action* = set_player_world_location("endless_dunes");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 13.555,-4.83647,-23.5371,0x602430b1;
+	}
+}
+[t:use_point,n:0x077002aa]
+{
+	[placement]
+	{
+	  p position = -8.94373,-1.69872,-26.2196,0x674d8fdc;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f2]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -15.8628,-4.9891,-14.0458,0x67ae733a;
+	}
+}
+[t:use_point,n:0x077002a8]
+{
+	[placement]
+	{
+	  p position = -13.9957,-5.61005,-17.9506,0xd733820f;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007ee]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -38.3275,-5.16023,1.79735,0x8489a7d2;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f9]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_3");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -31.0311,4.95295,-43.6056,0xb3713a63;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007fc]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_4");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -16.4745,-5.01725,-17.3737,0xabbb0036;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007e3]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 2.75632,-3.20325,-19.4893,0xec75c79d;
+	}
+}
+[t:use_point,n:0x077002a9]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -1.52893,9.53674e-007,-1.11334,0xca3c8310;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007f0]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+				action* = set_player_world_location("endless_dunes");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -26.1309,-5.10374,-48.3448,0x886c73cd;
+	}
+}
+[t:use_point,n:0x077002ab]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -0.412598,0,0.997681,0xd5e47b77;
+	}
+}
+[t:trigger_fade_node_box,n:0x077007e2]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -24.3539,-3.16231,-43.6939,0xc88409b5;
+	}
+}
+[t:trigger_fade_node_box,n:0x07700800]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_dunes_4");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 10.0032,6.61554,8.14872,0xcc0ff078;
+	}
+}
+[t:use_point,n:0x077002ac]
+{
+	[placement]
+	{
+	  p position = -35.009,3.59985,-36.2193,0x9d6f9579;
+	}
+}

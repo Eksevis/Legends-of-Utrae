@@ -1,0 +1,182 @@
+[t:template,n:ut_king_fire]
+{
+	category_name = "1W_evil_b";
+	doc = "world3 fire king";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  52, 0;
+			intelligence =  19, 0;
+			dexterity =  10, 0;
+			melee =  19,  0;
+            		combat_magic = 34, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 10740;
+		max_life = 10740;
+		mana = 5100;
+		max_mana = 5100;
+		experience_value = 274700;
+		model = m_c_ebb_fk_pos_1;
+		textures:0 = b_c_ebb_fk;
+		scale_base = 1.1;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 50;
+		damage_min = 40;
+		damage_bonus_min_cmagic = 138;
+		damage_bonus_max_cmagic = 184;
+	}
+	[body]
+	{
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ebb_fk_fs;
+			[chore_default]
+			{
+				chore_stances = 3;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 3;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 3;
+				skrit = select_fidget;
+				[anim_files] 
+				{ 
+					00=dff;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 3;
+				skrit = select_transition;
+				[anim_files] 
+				{ 
+					00=mg;
+					01=mg-02;
+					02=mg-03;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 3;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+		[weapon_scales]
+		{
+			as_two_handed_melee	= 1.3, 1.3, 1.3;
+		}
+	}
+	[common] 
+	{
+		screen_name="Fire Giant";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		forced_expiration_class = decay_fresh;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("fire_king_death_flames");
+				condition* = receive_world_message("we_killed");
+			}
+		}
+	}
+	[defend] { defense=1880; }
+	[inventory]
+	{
+		spew_equipped_kill_count = ;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = gpg_hammer_fire_king;
+			}
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #armor,f/165-335;
+	                		il_main = #weapon/125-139;
+					max = 2;
+					min = 1;
+				}
+				[oneof*]
+				{
+	                		il_main = #weapon/-rare(1)/128-145;
+	                		il_main = #armor/-rare(1)/330-445;
+                    			il_main = #*/-rare(1)/128-145;
+                		}
+				[oneof*]
+				{
+	                		il_main = #weapon/-unique(2)/128-145;
+	                		il_main = #armor/-unique(2)/330-445;
+                    			il_main = #*/-unique(2)/128-145;
+	            		}
+				[gold*]
+				{
+					max = 31100;
+					min = 20900;
+					piles = 2 - 4;
+				}
+			}
+		}
+		[other]
+		{
+			il_active_primary_spell=gpg_spell_fire_king_toss;
+			il_spell_2 = gpg_spell_fire_king_swipe;
+			il_spell_3 = gpg_spell_fire_king_smash;
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+
+		jat_cast 		= world\ai\jobs\common\job_cast.skrit
+			?rand_spell		= true
+			&use_base_duration	= false
+			&spell_chances		= "0.33, 0.34, 0.33"
+			&spells						= "gpg_spell_fire_king_smash, gpg_spell_fire_king_swipe, gpg_spell_fire_king_toss";
+			
+		jat_die = world\ai\jobs\actors\evil\job_die_explode.skrit;	
+			
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range 		= 20;
+		personal_space_range 		= 1.3;
+		ranged_engage_range 		= 20.0;
+		sight_range 			= 20.0;
+	}
+	[physics]
+	{
+		break_effect = fire_king_explosion;
+	}
+}
+

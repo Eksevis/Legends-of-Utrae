@@ -1,0 +1,157 @@
+[t:potion_health_large,n:0x00c003c6]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  f lodfi_lower = 0;
+	  f lodfi_upper = 0;
+	}
+	[placement]
+	{
+	  p position = 1.56295,-0.883432,0.0486422,0xe4ac454a;
+	}
+}
+[t:potion_mana_small,n:0x00c003cb]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  f lodfi_lower = 0;
+	  f lodfi_upper = 0;
+	}
+	[placement]
+	{
+	  p position = 1.73412,-0.880814,-0.254293,0xe4ac454a;
+	}
+}
+[t:charm_glb_01,n:0x00c003cc]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  f lodfi_lower = 0;
+	  f lodfi_upper = 0;
+	}
+	[placement]
+	{
+	  p position = 1.39838,-0.836595,-0.373917,0xe4ac454a;
+	}
+}
+[t:cross_glb_01,n:0x00c003ce]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  f lodfi_lower = 0;
+	  f lodfi_upper = 0;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.382683,0,0.92388;
+	  p position = 1.71326,-0.837939,0.32005,0xe4ac454a;
+	}
+}
+[t:book_glb_magic_01,n:0x00c003cf]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  f lodfi_lower = 0;
+	  f lodfi_upper = 0;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,0.92388;
+	  p position = 1.40439,-0.849878,0.606457,0xe4ac454a;
+	}
+}
+[t:blacksmith_hammer,n:0x00c00067]
+{
+	[aspect]
+	{
+	  b is_selectable = false;
+	  f lodfi_lower = 0;
+	  f lodfi_upper = 0;
+	  f scale_multiplier = 0.950981;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707104,0,0.70711;
+	  p position = -0.288442,-1.44386,1.34388,0xbd469bbb;
+	}
+}
+[t:gl_gl_sc_f_g_c_avg,n:0x00c003e3]
+{
+	[aspect]
+	{
+	  b is_selectable = false;
+	  f lodfi_lower = 0.6;
+	  f lodfi_upper = 0.6;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,0.92388;
+	  p position = 1.32882,-1.42278,1.66585,0xbd469bbb;
+	}
+}
+[t:sh_w_g_c_r_m_avg,n:0x00c003e1]
+{
+	[aspect]
+	{
+	  b is_selectable = false;
+	  f lodfi_lower = 0;
+	  f lodfi_upper = 0;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -0.578751,0.564603,1.77516,0x4c5f05a8;
+	}
+}
+[t:blacksmith_hammer,n:0x00c00065]
+{
+	[aspect]
+	{
+	  b is_selectable = false;
+	  f scale_multiplier = 0.955336;
+	}
+	[placement]
+	{
+	  p position = -0.521477,-7346.41,-0.380867,0xf2a212d8;
+	}
+}
+[t:pickaxe,n:0x00c0003d]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  f scale_multiplier = 0.910423;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,-0.92388;
+	  p position = 1.48699,-0.925135,-0.190037,0x4fee08b9;
+	}
+}
+[t:meat_bone,n:0x00c00062]
+{
+	[aspect]
+	{
+	  b interest_only = true;
+	  b is_selectable = false;
+	  f lodfi_lower = 0;
+	  f lodfi_upper = 0;
+	  f scale_multiplier = 0.94688;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = 1.11266,-0.713324,-1.90713,0x63e0eda7;
+	}
+}

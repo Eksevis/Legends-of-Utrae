@@ -1,0 +1,220 @@
+[t:sign_glb_01,n:0x08401045]
+{
+	[common]
+	{
+		dev_instance_text = "sign 5";
+		screen_name = "Ancient Crypt, 101";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 3.62391,0,3.83082,0x04988aa3;
+	}
+}
+[t:sign_glb_01,n:0x0840105c]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 8";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 3.5889,-0.534944,3.75212,0x04988aa3;
+	}
+}
+[t:lever_glb_07,n:0x0840103f]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0840103B;
+	  x on_scid = 0x0840103B;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = 1.32865,0,2.2016,0x087e0dbc;
+		use_point_scids = 0x0840118d, 0x084010c9;
+	}
+}
+[t:lever_glb_07,n:0x084007d9]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0840103B;
+	  x on_scid = 0x0840103B;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 0.0058279,-0.599999,3.27532,0x007eeaa4;
+		use_point_scids = 0x0840118d, 0x084010c7, 0x0840103d;
+	}
+}
+[t:door_grs_peasant_right,n:0x084015d7]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x08401485;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.983255,0,-0.182235;
+	  p position = 0.0336456,-3.65,-2.89999,0xaf2a83ca;
+	}
+}
+[t:sign_glb_01,n:0x08401053]
+{
+	[common]
+	{
+		dev_instance_text = "sign 7";
+		screen_name = "Ancient Crypt, 82";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.55557,0,0.83147;
+	  p position = -2.46831,4.76837e-007,1.52777,0xfa2dd545;
+	}
+}
+[t:sign_glb_01,n:0x08401064]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 25";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -2.53477,-0.534943,1.37483,0xfa2dd545;
+	}
+}
+[t:sign_glb_01,n:0x084011a7]
+{
+	[common]
+	{
+		dev_instance_text = "sign_2";
+		screen_name = "Town of Elddim, 20";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.94693,0,0.321439;
+	  p position = 0.0030899,-0.517098,1.66002,0xd2690a81;
+	}
+}
+[t:sign_glb_01,n:0x084011bb]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 87";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.0654029,0,0.997859;
+	  p position = 0.102947,-1.90735e-006,1.66627,0xd2690a81;
+	}
+}
+[t:respawn_statue,n:0x084015a8]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.559193,0,0.829038;
+	  p position = 1.17092,-9.53674e-007,-0.259796,0x6ec9ecbd;
+		use_point_scids = 0x084015ac;
+	}
+}
+[t:sign_glb_01,n:0x0840104a]
+{
+	[common]
+	{
+		dev_instance_text = "sign 5";
+		screen_name = "Ancient Crypt, 91";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.831469,0,0.55557;
+	  p position = -3.41415,-1,-2.222,0x396c9c21;
+	}
+}
+[t:sign_glb_01,n:0x08401063]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 18";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.195091,0,0.980785;
+	  p position = -3.47079,-1.41604,-2.33639,0x396c9c21;
+	}
+}
+[t:sign_glb_01,n:0x08401047]
+{
+	[common]
+	{
+		dev_instance_text = "sign 6";
+		screen_name = "Ancient Crypt, 97";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,1.63913e-007;
+	  p position = 2.8295,1,3.52552,0x2e6710e7;
+	}
+}
+[t:sign_glb_01,n:0x0840105f]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 12";
+	}
+	[placement]
+	{
+	  q orientation = 0,-2.38419e-007,0,1;
+	  p position = 2.86604,0.44391,3.71191,0x2e6710e7;
+	}
+}
+[t:statue_cav_spin_02,n:0x08401043]
+{
+	[common]
+	{
+		dev_instance_text = "RIVER_FOREST TO PATH2MINES";
+		screen_name = "Elddim to Elddim Glade Displacer";
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0840107E;
+	  x on_scid = 0x0840107E;
+	  f reset_time = 25;
+	  f reset_time_2 = 25;
+	}
+	[placement]
+	{
+	  p position = -0.0236912,0.2,0.0210223,0xa2b5d4e4;
+		use_point_scids = 0x08401044;
+	}
+}
+[t:statue_cav_spin_02,n:0x0840104e]
+{
+	[common]
+	{
+		dev_instance_text = "RIVER_FOREST TO PATH2CRYPTS";
+		screen_name = "Elddim to Iliarth Divide Displacer";
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x08401050;
+	  x on_scid = 0x08401050;
+	  f reset_time = 25;
+	  f reset_time_2 = 25;
+	}
+	[placement]
+	{
+	  q orientation = 0,-5.96046e-008,0,1;
+	  p position = 0.00892448,0.199384,-0.00934935,0x39aea885;
+		use_point_scids = 0x0840104f;
+	}
+}

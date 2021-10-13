@@ -1,0 +1,13 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0x82EF8A87;
+	source_region_name = hub_quest_dun;
+	[t:stitch_editor,n:castle_town]
+	{
+		dest_region = castle_town;
+		[node_ids]
+		{
+			0x000affe1 = 0x12EC73AF,10;
+		}
+	}
+}

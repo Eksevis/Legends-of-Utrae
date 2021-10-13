@@ -1,0 +1,136 @@
+/*
+  ============================================================================
+  ----------------------------------------------------------------------------
+
+	File		: 	job_talk_sanctuary_keeper.skrit
+
+	Author(s)	: 	David Tomandl, Eric Tams, Chad Queen, Bartosz Kijanka
+
+	Purpose		: 	Custom talk job for the multiplayer-world NPC by the
+					flooded sanctuary.
+
+	(C)opyright 2001 Gas Powered Games, Inc.
+
+  ----------------------------------------------------------------------------
+  ============================================================================
+*/
+
+Go		m_Go$;
+GoMind	m_Mind$;
+GoBody  m_Body$;
+Job		m_Job$;
+Goid	m_Target$;
+
+#include "k_job_c_mcp_fidget_utils"
+#include "k_job_c_talk_utils"
+
+startup state STARTUP$
+{
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//	init
+event OnJobInitPointers$( Job job$ )
+{
+	m_Job$		= job$;
+	m_Go$		= job$.Go;
+	m_Mind$		= job$.Go.Mind;
+	m_Body$		= job$.Go.Body;
+}
+
+event OnJobInit$( Job job$ )
+{
+	OnJobInitPointers$( job$ );
+
+	m_Target$	= job$.GoalObject;
+
+	SetState Talk$;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//	blab blab away... pretend you're Lee on coffee... and you're upset about your dungeon
+state Talk$
+{
+	transition
+	{
+		-> Exiting$:	OnWorldMessage( WE_REQ_TALK_END ) =
+		{
+			if( m_Go$.Mind.ActorAutoFidgets )
+			{
+				StartFidgetIfRequired$();
+			}
+		}
+		-> Exiting$:	OnWorldMessage( WE_ANIM_DONE ) =
+		{
+			if( m_Go$.Mind.ActorAutoFidgets )
+			{
+				StartFidgetIfRequired$();
+			}
+		}
+	}
+
+	event OnEnterState$
+	{
+		if 	( 
+				( Victory.IsQuestCompleted( "quest_orchard_quest" )) &&
+				( !GameAuditor.GetDb.GetBool( "orchard_quest_gave_reward" ))
+			)
+		{
+			m_Go$.GetConversation.RSSelectConversation( "conversation_orchard_quest_complete" );
+
+			//give reward
+			GameAuditor.GetDb.SetBool( "orchard_quest_gave_reward", true );
+
+			int i$ = 0;
+			int iend$ = Player.GetHumanPlayerCount;
+			
+			while( i$ < iend$ )
+			{
+				SiegePos SpawnPos$;
+				GoCloneReq cloneReq$ = MakeGoCloneReq( "bo_bo_le_f_g_c_healthy" );
+				
+				SpawnPos$ = m_Target$.go.placement.position;
+				cloneReq$.StartingPos	= SpawnPos$;
+			    
+				If( m_Target$.Go.Hasmind )
+				{
+					if( AIQuery.FindSpotRelativeToSource( m_Target$.Go, .25, .5, 2.0, m_Target$.Go.Mind.TempPos1 ) )
+			   		{
+						cloneReq$.StartingPos = m_Target$.Go.Mind.TempPos1;
+			   		}
+			   	}	
+				cloneReq$.SnapToTerrain = true;
+				GoDb.SCloneGo( cloneReq$ );
+				i$ += 1;
+			}
+		}
+		else if ( GameAuditor.GetDb.GetBool( "turn_world_red" ))
+		{
+			m_Go$.GetConversation.RSSelectConversation( "conversation_orchard_quest_red" );
+		}
+		else if ( Victory.IsQuestCompleted( "quest_orchard_quest" ))
+		{
+			m_Go$.GetConversation.RSSelectConversation( "conversation_orchard_quest_complete" );
+		}
+		else
+		{
+			m_Go$.GetConversation.RSSelectConversation( "conversation_orchard_quest" );
+		}
+			if( m_Go$.Mind.ActorAutoFidgets )
+			{
+				StartFidgetIfRequired$();
+			}
+		m_Go$.GetConversation.RSActivateDialogue();
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//	finish blabbing
+state Exiting$
+{
+	event OnEnterState$
+	{
+		m_Job$.MarkForDeletion();
+	}
+}

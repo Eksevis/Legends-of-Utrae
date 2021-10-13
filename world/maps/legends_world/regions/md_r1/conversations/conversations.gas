@@ -1,0 +1,49 @@
+[conversation_bones_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+//		sample = s_v_jharmaya_select_01;
+		screen_text = "Howdy there. Is the elevator working now? My name? I don't rightly know, I've been stuck down here for so long that I've forgotten. I came down here for adventure and got stuck when the elevator stopped working. I've been down here so long that the flesh has rotted off my bones and my eyeballs have fallen out. WHAT, IT WAS A BUG! AND THEY FIXED IT IN THE PATCH! Waaaaah, I knew I should have patched my game but I kept putting it off. WHAT! LEGENDS OF ARANNA is out! I must get that. AND DUNGEON SIEGE 2 IS DUE EARLY NEXT YEAR. Wait, will you please take me with you. I don't need much feeding anymore and you can keep all the gold & treasure we find. I just what to finish this game so I can play Legends of Aranna before Dungeon Siege 2 comes out.";
+	}
+}
+[conversation_bones_accept]
+{
+	[text*]
+	{
+//		sample = s_v_jharmaya_select_02;
+		screen_text = "Thank you, thank you, now I can finish this game and then rush out and buy Legends of Aranna. I can't wait!";
+	}
+}
+[conversation_bones_reject]
+{
+	[text*]
+	{
+		screen_text = "Okay no problems. I must agree that I'm not the most attractive guy around. You should have seen me in my prime when I had some hair left. I'll just stay here a bit and say goodbye to some of the friends that I made down here. Assuming of course that you leave any of them alive!";
+	}
+}
+[conversation_bones_disband]
+{
+	[text*]
+	{
+		screen_text = "Okay I understand. It's hard putting up with the creaking of these old bones. It's not my fault, I used to have such magnificent muscle tone. Anyhow this game's patched, right? So I'll have no problems finishing it then? Good, well have a pleasant adventure, I might see you sometime on the net!";
+	}
+}
+[conversation_bones_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+//		sample = s_v_jharmaya_select_01;
+		screen_text = "Great, it's so much more fun with a party. It's a bit lonesome on my own you know!";
+	}
+}
+[conversation_bones_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+//		sample = s_v_jharmaya_select_01;
+		screen_text = "Great, it's so much more fun with a party. It's a bit lonesome on my own you know!";
+	}
+}

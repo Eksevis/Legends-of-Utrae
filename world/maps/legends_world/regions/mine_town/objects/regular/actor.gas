@@ -1,0 +1,1101 @@
+[t:mp_dwarf_worker,n:0x00c003bb]
+{
+	[common]
+	{
+		screen_name = "Guld Hammerfist";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_guld;
+			* = conversation_guld_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.882947,0,-0.469472;
+	  p position = 1.84631,0,1.76224,0xc73af851;
+	}
+}
+[t:utraean_priest_sarden,n:0x00c00377]
+{
+	[common]
+	{
+		dev_instance_text = "QUEST NPC";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_sarden;
+			* = conversation_sarden_all_complete;
+			* = conversation_sarden_complete;
+			* = conversation_sarden_goto;
+			* = conversation_sarden_quest;
+			* = conversation_sarden_red;
+			* = conversation_sarden_ring;
+			* = conversation_sarden_stone;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+	  b actor_auto_fidgets = false;
+		jat_talk = world\ai\jobs\actors\good\job_talk_sarden.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.92388,0,0.382683;
+	  p position = 0.413684,-1.5,1.24525,0xe4ac454a;
+	}
+}
+[t:conjuror_orkin_umberdeep,n:0x00c003c1]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_orkin;
+			* = conversation_orkin_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.382683,0,0.92388;
+	  p position = 0.25468,-1.5,-1.97625,0xe4ac454a;
+	}
+}
+[t:narrator,n:0x00c000df]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_narrator_crystwind;
+		}
+	}
+	[placement]
+	{
+	  p position = 1.28712,-0.0499992,-0.356225,0x06bf7e9e;
+	}
+}
+[t:mp_townfolk_f_06,n:0x00c0033a]
+{
+	[common]
+	{
+		screen_name = "Cindra Garther";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_cindra;
+			* = conversation_cindra_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+	  b actor_auto_fidgets = false;
+		jat_face = jat_none;
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.731354,0,0.681998;
+	  p position = -4.35835,-0.699999,3.90732,0x7f90c19e;
+		use_point_scids = 0x00c003a9;
+	}
+}
+[t:mp_dwarf,n:0x00c003cd]
+{
+	[common]
+	{
+		screen_name = "Jarl Rockpicker";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_jarl;
+			* = conversation_jarl_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+	  b actor_auto_fidgets = false;
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.731353,0,0.681998;
+	  p position = -3.29991,-0.700001,4.07775,0x7f90c19e;
+		use_point_scids = 0x00c003a9;
+	}
+}
+[t:karn,n:0x00c003d2]
+{
+	[common]
+	{
+	  b is_multi_player = false;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_karn_accept_have_money;
+			* = conversation_karn_accept_no_money;
+			* = conversation_karn_disband;
+			* = conversation_karn_disband_rejoin;
+			* = conversation_karn_join;
+			* = conversation_karn_reject;
+			* = conversation_karn_rejoin;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\actors\good\job_talk_karn.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.948323,0,0.317304;
+	  p position = 0.164539,-1.5,2.63767,0x7f90c19e;
+		use_point_scids = 0x00c0039e;
+	}
+}
+[t:mp_dwarf_legionnaire_guard,n:0x00c003d4]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_tavern_guard;
+			* = conversation_tavern_guard_red;
+			* = zconversation_directions;
+		}
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_un_pl_f_g_c_fun;
+			es_feet = bo_bo_ch_f_g_c_avg;
+			es_forearms = gl_ga_bl_f_g_c_avg;
+		}
+		[other]
+		{
+			il_active_melee_weapon = cb_g_c_r_1h_avg;
+			il_main = ax_g_c_2h1b_avg;
+			il_main = ax_g_c_2h1b_avg;
+		}
+	}
+	[mind]
+	{
+	  b actor_auto_fidgets = false;
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.207912,0,0.978148;
+	  p position = -4.18988,-0.699999,2.99694,0x7f90c19e;
+		use_point_scids = 0x00c003a9;
+	}
+}
+[t:mp_peasant_male_big,n:0x00c003d7]
+{
+	[common]
+	{
+		screen_name = "Kamb Dornick";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_kamb;
+			* = conversation_kamb_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0174524,0,0.999848;
+	  p position = 1.51528,-1.5,0.66601,0x7f90c19e;
+		use_point_scids = 0x00c0039e;
+	}
+}
+[t:mp_npc_dwarf_02,n:0x00c00362]
+{
+	[common]
+	{
+		screen_name = "Flint Stoneforge";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_crystwind_quest;
+			* = conversation_crystwind_quest_complete;
+			* = conversation_crystwind_quest_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\actors\good\job_talk_crystwind_quest.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.725374,0,0.688355;
+	  p position = -0.85587,0,1.03319,0x5595d544;
+	}
+}
+[t:guard_captain_of_crystwind,n:0x00c0036e]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.06818;
+	}
+	[common]
+	{
+		dev_instance_text = "QUEST NPC";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_captain;
+			* = conversation_captain_hovart;
+			* = conversation_captain_hovart_gavel;
+			* = conversation_captain_red;
+			* = zconversation_directions;
+		}
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_chest = bd_un_pl_f_g_c_avg;
+			es_feet = bo_bo_ch_f_g_c_avg;
+			es_forearms = gl_ga_bl_f_g_c_avg;
+			es_head = he_op_pl_roman;
+			es_weapon_hand = ax_g_c_2h1b_avg;
+		}
+		[other]
+		{
+			il_main = ax_g_c_2h1b_avg;
+			il_shield = sh_w_g_c_r_m_avg;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\actors\good\job_talk_guard_captain_cr;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.809017,0,0.587786;
+	  p position = 3.22256,-4.29153e-006,1.74189,0xc2626a4a;
+	}
+}
+[t:mp_townfolk_f_05,n:0x00c00349]
+{
+	[common]
+	{
+		dev_instance_text = "QUEST NPC";
+		screen_name = "Trella Lauron";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_trella;
+			* = conversation_trella_crystwind;
+			* = conversation_trella_goodbye_crystwind;
+			* = conversation_trella_quest_complete;
+			* = conversation_trella_quest_complete_crystwind;
+			* = conversation_trella_red;
+			* = conversation_trella_with_rune;
+			* = conversation_trella_with_rune_crystwind;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\actors\good\job_talk_trella.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.08059,-2,0.418256,0xbd469bbb;
+	}
+}
+[t:smith_jerena_strongblade,n:0x00c003d0]
+{
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_jerena;
+			* = conversation_jerena_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.923879,0,-0.382685;
+	  p position = 0.125552,-2.00001,0.368065,0xbd469bbb;
+	}
+}
+[t:mp_dwarf_legionnaire_guard,n:0x00c00352]
+{
+	[check_level]
+	{
+	  b check_level = true;
+	  f high_level = 12;
+	  f high_level_2w = 62;
+	  f high_level_3w = 94;
+	  f low_level = 7;
+	  f low_level_2w = 58;
+	  f low_level_3w = 89;
+	}
+	[common]
+	{
+		dev_instance_text = "EAST";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_guard_east_entrance;
+			* = conversation_guard_east_entrance_high;
+			* = conversation_guard_east_entrance_low;
+			* = conversation_guard_east_entrance_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.0610485,0,0.998135;
+	  p position = -3.37679,0.050441,3.17742,0xcf6d940e;
+	}
+}
+[t:mp_townfolk_female_01,n:0x00c0036c]
+{
+	[common]
+	{
+		screen_name = "Orla Riverstarn";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_orla;
+			* = conversation_orla_2;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\actors\good\job_talk_orla.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,-0.382684;
+	  p position = 1.77368,0,2.32065,0xf2a212d8;
+	}
+}
+[t:mp_dwarf_legionnaire_guard,n:0x00c0034a]
+{
+	[check_level]
+	{
+	  b check_level = true;
+	  f high_level = 11;
+	  f high_level_2w = 61;
+	  f high_level_3w = 92;
+	  f low_level = 7;
+	  f low_level_2w = 58;
+	  f low_level_3w = 89;
+	}
+	[common]
+	{
+		dev_instance_text = "NORTH";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_guard_north_entrance;
+			* = conversation_guard_north_entrance_high;
+			* = conversation_guard_north_entrance_low;
+			* = conversation_guard_north_entrance_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.190809,0,0.981627;
+	  p position = 0.982069,-6,0.0946159,0x5cdc5789;
+	}
+}
+[t:jenna,n:0x00c00351]
+{
+	[common]
+	{
+	  b is_multi_player = false;
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_jenna_accept_have_money;
+			* = conversation_jenna_accept_no_money;
+			* = conversation_jenna_disband;
+			* = conversation_jenna_disband_rejoin;
+			* = conversation_jenna_join;
+			* = conversation_jenna_reject;
+			* = conversation_jenna_rejoin;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\actors\good\job_talk_jenna.skrit;
+	}
+	[placement]
+	{
+	  p position = 0.621445,-1.35,-0.485477,0x63e0eda7;
+	}
+}
+[t:ut_krug_guard,n:0x00c00383]
+{
+	[placement]
+	{
+	  q orientation = 0,0.970296,0,-0.241922;
+	  p position = -0.876817,0,-3.49529,0x3da8fd64;
+	}
+}
+[t:ut_krug_guard,n:0x00c0037b]
+{
+	[placement]
+	{
+	  q orientation = 0,0.857167,0,0.515038;
+	  p position = 3.31992,0,0.638068,0xe2ee8ff5;
+	}
+}
+[t:ut_krug_shaman_01,n:0x00c0038e]
+{
+	[placement]
+	{
+	  q orientation = 0,0.848048,0,-0.529919;
+	  p position = 2.57721,-8.05,-1.85931,0x815f467f;
+	}
+}
+[t:ut_krug_shaman_01,n:0x00c0038d]
+{
+	[placement]
+	{
+	  q orientation = 0,0.788011,0,0.615661;
+	  p position = 2.71515,-8.05,-0.91,0x2521fcef;
+	}
+}
+[t:ut_krug_throw,n:0x00c00369]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.559193,0,0.829038;
+	  p position = 0.859169,0,-2.40491,0x19452579;
+	}
+}
+[t:ut_krug_shieldbearer,n:0x00c00368]
+{
+	[placement]
+	{
+	  q orientation = 0,0.976296,0,-0.21644;
+	  p position = 3.36629,-0.3,-0.870491,0xb4deca0d;
+	}
+}
+[t:ut_krug_shieldbearer,n:0x00c00366]
+{
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = -0.0186615,-0.0522385,1.01122,0x396f520e;
+	}
+}
+[t:ut_krug_throw,n:0x00c00365]
+{
+	[placement]
+	{
+	  q orientation = 0,0.878817,0,-0.477159;
+	  p position = 3.61331,0,-1.65335,0xaa031452;
+	}
+}
+[t:ut_krug_throw,n:0x00c00367]
+{
+	[placement]
+	{
+	  q orientation = 0,0.731354,0,0.681998;
+	  p position = 1.03675,0,0.630058,0xaa031452;
+	}
+}
+[t:ut_krug_commander_boss_01,n:0x00c00356]
+{
+	[common]
+	{
+		dev_instance_text = "QUEST ITEM IN INVENTORY";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.913545,0,-0.406737;
+	  p position = 0.317415,-0.0403814,-0.497153,0x2d887e15;
+	}
+}
+[t:ut_skeleton_archer,n:0x00c003f6]
+{
+	[placement]
+	{
+	  p position = 1.40759,0.00246334,-3.00318,0x2d887e15;
+	}
+}
+[t:ut_skeleton_archer,n:0x00c003f7]
+{
+	[placement]
+	{
+	  p position = -2.60741,-0.0500011,0.397141,0x2d887e15;
+	}
+}
+[t:ut_skeleton_archer,n:0x00c003f8]
+{
+	[placement]
+	{
+	  p position = 1.47498,-0.0436291,-3.87895,0x2d887e15;
+	}
+}
+[t:ut_skeleton_guard,n:0x00c0037d]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.82659,0,0.562805;
+	  p position = -1.65419,-1.55,-1.87833,0xf5425d9a;
+	}
+}
+[t:ut_krug_raider,n:0x00c00376]
+{
+	[placement]
+	{
+	  q orientation = 0,0.970296,0,-0.241922;
+	  p position = -2.36057,0,-0.0666138,0x607640d2;
+	}
+}
+[t:ut_krug_shieldbearer,n:0x00c00385]
+{
+	[placement]
+	{
+	  q orientation = 0,0.309017,0,-0.951057;
+	  p position = -0.947911,-1.90735e-006,0.98598,0x607640d2;
+	}
+}
+[t:ut_krug_dog_killer,n:0x00c00375]
+{
+	[placement]
+	{
+	  q orientation = 0,0.803857,0,-0.594823;
+	  p position = 3.90738,0,-0.846376,0xbdbd0c44;
+	}
+}
+[t:ut_krug_shaman_01,n:0x00c00358]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.21644,0,0.976296;
+	  p position = 0.512672,0.024769,3.95868,0x3830f61f;
+	}
+}
+[t:ut_krug_shaman_01,n:0x00c00363]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.948324,0,0.317305;
+	  p position = 0.72869,-0.040143,0.378959,0x3830f61f;
+	}
+}
+[t:ut_krug_shaman_01,n:0x00c00357]
+{
+	[placement]
+	{
+	  q orientation = 0,0.819152,0,0.573576;
+	  p position = -2.69698,1.7,1.04012,0x1da77d51;
+	}
+}
+[t:ut_skeleton_guard,n:0x00c0037e]
+{
+	[placement]
+	{
+	  q orientation = 0,0.446198,0,0.894934;
+	  p position = 2.84085,0,-1.28876,0x446856fc;
+	}
+}
+[t:ut_skeleton_guard,n:0x00c0037f]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.649448,0,0.760406;
+	  p position = 3.38587,0,-0.318611,0x446856fc;
+	}
+}
+[t:ut_skeleton_guard,n:0x00c0033c]
+{
+	[placement]
+	{
+	  q orientation = 0,0.97437,0,0.224951;
+	  p position = 2.95872,0,1.96108,0xae163e66;
+	}
+}
+[t:ut_skeleton_archer,n:0x00c00360]
+{
+	[placement]
+	{
+	  p position = 5.59469,-1.5,-0.865471,0xea33ecfd;
+	}
+}
+[t:ut_skeleton_guard,n:0x00c00380]
+{
+	[placement]
+	{
+	  q orientation = 0,0.965926,0,-0.258819;
+	  p position = 2.18001,-1.5,-0.0237312,0xea33ecfd;
+	}
+}
+[t:ut_skeleton_archer,n:0x00c003fa]
+{
+	[placement]
+	{
+	  p position = 4.24401,-1.5,-1.4558,0xea33ecfd;
+	}
+}
+[t:ut_skeleton_archer,n:0x00c003fc]
+{
+	[placement]
+	{
+	  p position = -1.5525,-1.5,-0.0984802,0xea33ecfd;
+	}
+}
+[t:ut_krug_shieldbearer,n:0x00c00393]
+{
+	[placement]
+	{
+	  q orientation = 0,0.325568,0,-0.945519;
+	  p position = 2.59048,0,0.120135,0x907db2f8;
+	}
+}
+[t:ut_krug_throw,n:0x00c00394]
+{
+	[placement]
+	{
+	  q orientation = 0,0.990268,0,-0.139173;
+	  p position = 0.0692537,0,-0.428253,0x907db2f8;
+	}
+}
+[t:ut_krug_grunt,n:0x00c00395]
+{
+	[placement]
+	{
+	  q orientation = 0,0.997564,0,-0.0697566;
+	  p position = 1.22933,0,0.306005,0x907db2f8;
+	}
+}
+[t:ut_krug_throw,n:0x00c00340]
+{
+	[placement]
+	{
+	  q orientation = 0,0.996195,0,0.0871556;
+	  p position = -0.167953,0,3.01584,0x781c926d;
+	}
+}
+[t:ut_krug_shieldbearer,n:0x00c0037c]
+{
+	[placement]
+	{
+	  q orientation = 0,0.996195,0,0.0871556;
+	  p position = -0.294899,0,-0.675051,0x781c926d;
+	}
+}
+[t:ut_krug_throw,n:0x00c00392]
+{
+	[placement]
+	{
+	  q orientation = 0,0.996195,0,0.0871556;
+	  p position = 0.0111694,0,1.11167,0x781c926d;
+	}
+}
+[t:mp_dwarf_legionnaire_archer,n:0x00c00329]
+{
+	[check_level]
+	{
+	  b check_level = true;
+	  f high_level = 12;
+	  f high_level_2w = 62;
+	  f high_level_3w = 94;
+	  f low_level = 7;
+	  f low_level_2w = 58;
+	  f low_level_3w = 89;
+	}
+	[common]
+	{
+		dev_instance_text = "WEST";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_archer_west_gate;
+			* = conversation_archer_west_gate_high;
+			* = conversation_archer_west_gate_low;
+			* = conversation_archer_west_gate_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.771624,0,0.636078;
+	  p position = -0.414768,-2.38419e-007,1.86315,0xb3870832;
+	}
+}
+[t:mp_dwarf_legionnaire_guard,n:0x00c0032a]
+{
+	[check_level]
+	{
+	  b check_level = true;
+	  f high_level = 12;
+	  f high_level_2w = 62;
+	  f high_level_3w = 94;
+	  f low_level = 7;
+	  f low_level_2w = 58;
+	  f low_level_3w = 89;
+	}
+	[common]
+	{
+		dev_instance_text = "WEST";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_guard_west_gate;
+			* = conversation_guard_west_gate_high;
+			* = conversation_guard_west_gate_low;
+			* = conversation_guard_west_gate_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.430511,0,0.902585;
+	  p position = -0.704147,-0.0500014,-1.9526,0xb3870832;
+	}
+}
+[t:ut_krug_shieldbearer,n:0x00c00396]
+{
+	[placement]
+	{
+	  q orientation = 0,0.642788,0,0.766044;
+	  p position = 1.1044,-0.6,-0.36058,0xabdccbab;
+	}
+}
+[t:ut_krug_throw,n:0x00c00345]
+{
+	[placement]
+	{
+	  q orientation = 0,0.642788,0,0.766044;
+	  p position = 1.85073,-0.6,-0.751934,0xc8750049;
+	}
+}
+[t:ut_krug_throw,n:0x00c0034b]
+{
+	[inventory]
+	{
+		[equipment]
+		{
+			es_shield_hand = rock_krug;
+		}
+		[other]
+		{
+			il_main = book_glb_lore_ut_wonders;
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.642788,0,0.766044;
+	  p position = -0.928996,-0.6,-0.791752,0xc8750049;
+	}
+}
+[t:ut_krug_throw,n:0x00c00359]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.0871556,0,0.996195;
+	  p position = -3.37338,-0.05,1.08221,0x3bd0a3c2;
+	}
+}
+[t:ut_krug_throw,n:0x00c0035f]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.0871556,0,0.996195;
+	  p position = 3.51857,-0.05,1.13873,0x3bd0a3c2;
+	}
+}
+[t:ut_krug_shieldbearer,n:0x00c00441]
+{
+	[placement]
+	{
+	  p position = 3.24341,1,3.52025,0x5138c38b;
+	}
+}
+[t:ut_krug_throw,n:0x00c00440]
+{
+	[placement]
+	{
+	  p position = -2.32252,0.982561,3.3605,0x892755e4;
+	}
+}
+[t:ut_krug_throw,n:0x00c00442]
+{
+	[placement]
+	{
+	  p position = 3.16093,0,-1.25323,0x2fc97cf2;
+	}
+}
+[t:ut_krug_raider,n:0x00c00438]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 1.98713,1.00644,3.98183,0x9b5e5206;
+	}
+}
+[t:ut_krug_raider,n:0x00c0034d]
+{
+	[placement]
+	{
+	  q orientation = 0,0.866026,0,0.5;
+	  p position = 1.88202,-6,-2.02017,0x69e25862;
+	}
+}
+[t:ut_krug_dog_killer,n:0x00c0034c]
+{
+	[placement]
+	{
+	  q orientation = 0,0.615662,0,0.788011;
+	  p position = 0.202214,0,0.797079,0x12524c34;
+	}
+}
+[t:ut_krug_raider,n:0x00c00434]
+{
+	[placement]
+	{
+	  p position = -0.0765572,0,3.16005,0x12524c34;
+	}
+}
+[t:ut_krug_shieldbearer,n:0x00c00435]
+{
+	[placement]
+	{
+	  p position = -1.40017,0,2.6678,0x12524c34;
+	}
+}
+[t:ut_krug_dog_killer,n:0x00c00372]
+{
+	[placement]
+	{
+	  q orientation = 0,0.121869,0,0.992546;
+	  p position = 0.89278,-1.90735e-006,-2.86208,0xc556d451;
+	}
+}
+[t:ut_krug_dog_killer,n:0x00c00373]
+{
+	[placement]
+	{
+	  q orientation = 0,0.986286,0,0.165047;
+	  p position = -0.32145,0,-1.70657,0xc556d451;
+	}
+}
+[t:ut_krug_shaman_01,n:0x00c00342]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.970296,0,0.241922;
+	  p position = -2.83186,0,-1.8778,0xc57a1398;
+	}
+}
+[t:ut_krug_shaman_01,n:0x00c0033f]
+{
+	[placement]
+	{
+	  q orientation = 0,0.96363,0,-0.267238;
+	  p position = 2.8153,0,0.757565,0x9ce14c03;
+	}
+}
+[t:ut_krug_dog_killer,n:0x00c00347]
+{
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = -0.848526,0,-1.79234,0x9ce14c03;
+	}
+}
+[t:ut_krug_dog_killer,n:0x00c00348]
+{
+	[placement]
+	{
+	  q orientation = 0,0.994522,0,0.104528;
+	  p position = -0.0851135,0,-0.656406,0x9ce14c03;
+	}
+}
+[t:mp_dwarf_legionnaire_archer,n:0x00c00328]
+{
+	[check_level]
+	{
+	  b check_level = true;
+	  f high_level = 12;
+	  f high_level_2w = 62;
+	  f high_level_3w = 94;
+	  f low_level = 7;
+	  f low_level_2w = 58;
+	  f low_level_3w = 89;
+	}
+	[common]
+	{
+		dev_instance_text = "SOUTH";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_archer_south_gate;
+			* = conversation_archer_south_gate_high;
+			* = conversation_archer_south_gate_low;
+			* = conversation_archer_south_gate_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.83867,0,-0.544639;
+	  p position = 2.90699,-7.15256e-007,1.39086,0x93b89c45;
+	}
+}
+[t:mp_dwarf_legionnaire_guard,n:0x00c0032b]
+{
+	[check_level]
+	{
+	  b check_level = true;
+	  f high_level = 12;
+	  f high_level_2w = 62;
+	  f high_level_3w = 94;
+	  f low_level = 7;
+	  f low_level_2w = 58;
+	  f low_level_3w = 89;
+	}
+	[common]
+	{
+		dev_instance_text = "SOUTH";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_guard_south_gate;
+			* = conversation_guard_south_gate_high;
+			* = conversation_guard_south_gate_low;
+			* = conversation_guard_south_gate_red;
+			* = zconversation_directions;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.891006,0,-0.453991;
+	  p position = -1.52586,-0.849999,0.503433,0xb9e4fc52;
+	}
+}
+[t:ut_krug_throw,n:0x00c00343]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.766044,0,0.642788;
+	  p position = -0.75338,-0.6,-1.49387,0x52f63d24;
+	}
+}
+[t:ut_krug_guard,n:0x00c00364]
+{
+	[placement]
+	{
+	  q orientation = 0,0.981627,0,0.190809;
+	  p position = 1.28554,-1.5,1.08586,0x4215b817;
+	}
+}
+[t:ut_krug_dog_killer,n:0x00c003a0]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.866025,0,0.5;
+	  p position = 3.21101,-0.566239,-1.45933,0xbfad39f3;
+	}
+}
+[t:ut_krug_dog_killer,n:0x00c0035d]
+{
+	[placement]
+	{
+	  q orientation = 0,0.430511,0,0.902585;
+	  p position = -0.0227555,-0.322283,1.19721,0x7d04ca92;
+	}
+}
+[t:ut_krug_shaman_01,n:0x00c00355]
+{
+	[placement]
+	{
+	  q orientation = 0,0.00872672,0,0.999962;
+	  p position = -1.70048,-1.55,-1.94428,0x5476923c;
+	}
+}

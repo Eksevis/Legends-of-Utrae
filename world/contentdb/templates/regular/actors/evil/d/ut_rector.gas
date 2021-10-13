@@ -1,0 +1,191 @@
+[t:template,n:ut_rector]
+{
+	category_name = "1W_evil_d";
+	doc = "rector";
+	specializes = base_rector;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	12, 0;
+			intelligence =  7, 0;
+			dexterity =  	2, 0;
+            combat_magic =  4,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 44;
+		life = 41;
+        max_life = 41;
+        mana = 14;
+        max_mana = 14;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 18;
+		damage_min = 14;
+	}
+	[common] { screen_name="Rector"; }
+	[defend] { defense=25; }
+	[inventory]
+	{
+   		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_rector_burn; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+            	[oneof*]
+				{
+					chance = 0.1;
+					il_main = #ring/12-20;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	            	il_main = #weapon/-rare(1)/19-28;
+	                il_main = #armor/-rare(1)/18-66;
+                    il_main = #*/-rare(1)/19-28;
+                }
+			}
+		}
+	}
+}
+[t:template,n:ut_punisher]
+{
+	category_name = "1W_evil_d";
+	doc = "punisher";
+	specializes = base_rector;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	15, 0;
+			intelligence =  13, 0;
+			dexterity =  	15, 0;
+            combat_magic =  18,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 40000;
+		life = 880;
+        max_life = 880;
+        mana = 14;
+        max_mana = 14;
+        textures:0 = b_c_edm_rt-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 320;
+		damage_min = 260;
+	}
+	[common] { screen_name="Punisher"; }
+	[defend] { defense=210; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_punisher_burn; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.55;
+					il_main = #*/64-138;
+	                il_main = #nmagic/45-53;
+	                il_main = #cmagic/45-53;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 24007;
+					min = 20100;
+				}
+			}
+		}
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_punisher_01 = 1;
+			frag_glb_punisher_02 = 1;
+			frag_glb_punisher_03 = 1;
+			frag_glb_punisher_04 = 1;
+			frag_glb_punisher_05 = 1;
+		}
+	}
+}
+
+[t:template,n:ut_possessed_skull]
+{
+	category_name = "1W_evil_d";
+	doc = "possessed_skull";
+	specializes = base_rector;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	13, 0;
+			intelligence =  11, 0;
+			dexterity =  	11, 0;
+            combat_magic =  33,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 23000;
+		life = 1180;
+        max_life = 1180;
+        mana = 14;
+        max_mana = 14;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 108;
+		damage_min = 104;
+	}
+	[common] { screen_name="Possessed Skull"; }
+	[defend] { defense=380; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_possessed_skull_burn; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.55;
+					il_main = #*/84-106;
+	                il_main = #nmagic/35-43;
+	                il_main = #cmagic/35-43;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 284;
+					min = 51;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_entered_ocz_flee 	= true;
+		on_enemy_entered_ocz_attack = false;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 					= 1;
+	}
+}

@@ -1,0 +1,64 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xBCE27414;
+	source_region_name = castle_town;
+	[t:stitch_editor,n:castle]
+	{
+		dest_region = castle;
+		[node_ids]
+		{
+			0x0000acd1 = 0x1AABB55B,6;
+			0x0000acd2 = 0x01BBE0AB,2;
+			0x0000acd3 = 0x01BBE0AB,1;
+			0x0000acd4 = 0x5FD0CA4F,2;
+			0x0000acd5 = 0x5FD0CA4F,1;
+			0x0000acd6 = 0xB0E8D3DF,4;
+			0x0000acd7 = 0xB0E8D3DF,3;
+			0x0000acd8 = 0x39EF1A41,6;
+			0x0000acd9 = 0x39EF1A41,5;
+			0x000acd10 = 0xF1E8A135,4;
+			0x000acd11 = 0xF1E8A135,3;
+			0x000acd12 = 0x4C281DAC,4;
+			0x000acd13 = 0x4C281DAC,3;
+			0x000acd14 = 0x1DD15FE7,2;
+			0x000acd15 = 0x1DD15FE7,1;
+			0x000acd16 = 0xE5D84951,6;
+			0x000acd17 = 0x98C8E734,2;
+			0x000acd18 = 0x7A41154F,2;
+			0x000acd19 = 0xB5234903,2;
+			0x000acd20 = 0xB5234903,1;
+			0x000acd21 = 0x12BB26C6,3;
+			0x000acd22 = 0x88D6A134,4;
+			0x000acd23 = 0x88D6A134,3;
+			0x000acd24 = 0xA0465981,4;
+			0x000acd25 = 0xA0465981,3;
+			0x000acd26 = 0xA8955B43,2;
+			0x000acd27 = 0xA8955B43,1;
+			0x000acd28 = 0x1464F163,8;
+			0x000acd29 = 0x1464F163,7;
+			0x000acd30 = 0xB68A07C6,6;
+			0x000acd31 = 0xB68A07C6,5;
+			0x000acd32 = 0xEBF91D3C,4;
+			0x000acd33 = 0xEBF91D3C,3;
+			0x000acd34 = 0x379FDC88,4;
+			0x000acd35 = 0x379FDC88,3;
+			0x000acd36 = 0x5D62723F,3;
+		}
+	}
+	[t:stitch_editor,n:dragon_r2]
+	{
+		dest_region = dragon_r2;
+		[node_ids]
+		{
+			0x0000ace1 = 0x13533555,10;
+		}
+	}
+	[t:stitch_editor,n:hub_quest_dun]
+	{
+		dest_region = hub_quest_dun;
+		[node_ids]
+		{
+			0x000affe1 = 0xE0CA8E02,36;
+		}
+	}
+}

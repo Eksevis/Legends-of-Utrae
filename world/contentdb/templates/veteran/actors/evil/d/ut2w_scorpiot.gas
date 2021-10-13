@@ -1,0 +1,247 @@
+[t:template,n:ut2w_scorpiot_melee]
+{
+	doc = "dsx_scorpiot_melee";
+	specializes = dsx_scorpiot_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =     49, 0;
+			intelligence = 48, 0;
+			dexterity =    52, 0;
+			melee =        69, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 106546;
+		life = 1667.3;
+		max_life = 1667.3;
+		mana = 23.6;
+		max_mana = 23.6;
+		
+		model = m_c_edm_scorpiot;
+		textures:0 = b_c_edm_scorpiot;	
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 323; //! Do by hand, on a curve.  For low values, ~==XP (6xp => 6damage; 90xp=> 50damage)
+		damage_min = 263; //! Same as damage_max
+	}
+	[common]
+	{
+		screen_name = "Scorpiot Stinger"; //--
+	}
+	[defend] { defense = 1212; }
+
+  [generator_in_object]
+  {
+		child_template_name = dsx_scorpiot_skeleton;
+		spawn_event = WE_EXPLODED;
+		spawn_chance = 1.0;
+  }
+
+  [physics]
+    {
+		explode_when_killed = true;
+		explosion_magnitude = 4.25;
+		gib_gore_good = true;
+		break_effect=generic_explosion;
+
+		[break_particulate]
+		{
+			frag_glb_scorpiot_head = 1;
+			frag_glb_scorpiot_back = 1;
+			frag_glb_scorpiot_shoulder = 2;
+			frag_glb_scorpiot_leg = 4;
+			frag_glb_scorpiot_rarm = 1;
+			frag_glb_scorpiot_larm = 1;
+			frag_glb_scorpiot_piston = 2;
+			frag_glb_scorpiot_blade = 1;
+		}
+    }
+
+}
+
+[t:template,n:ut2w_scorpiot_ranged]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_scorpiot_ranged";
+	specializes = dsx_scorpiot_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		44.3, 0;
+			intelligence = 	14.4, 0;
+			dexterity = 	23, 0;
+			ranged =  		70, 0;
+		  	combat_magic =  59, 0;
+		  	nature_magic =  59, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 106546;
+		life = 1407.3;
+		max_life = 1407.3;
+		mana = 23.6;
+		max_mana = 23.6;
+
+		model = m_c_edm_scorpigun;
+		textures:0 = b_c_edm_scorpiot;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 166.4;
+		damage_min = 119.1;
+		damage_bonus_min_cmagic = 101;
+		damage_bonus_max_cmagic = 132;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.0;
+		[bone_translator]
+		{
+			body_anterior = BoneHead;
+			body_mid = BoneBody;
+			body_posterior = BoneBody;
+			kill_bone = BoneBody;
+			shield_bone = Bone_LHand;
+			weapon_bone = Bone28;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_scorpigun_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=mg-01; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] {
+					00 = mg-01; // tail beam
+					01 = mg-03; // left cannon
+					02 = mg-02; // right cannon
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di-01; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+//			Not finding the effect for this one, for some reason.
+			il_active_primary_spell = dsx_spell_scorpigun_laser;
+			il_spell_1 = dsx_spell_scorpigun_lcannon;
+			il_spell_2 = dsx_spell_scorpigun_zap_rcannon;
+		}
+	}
+
+	[common]
+	{
+	  screen_name = "Scorpiot Shooter"; //--
+	}
+
+	[generator_in_object]
+    	{
+		child_template_name = dsx_scorpiot_skeleton;
+		spawn_event = WE_EXPLODED;
+		spawn_chance = 1.0;
+	}
+
+	[physics]
+    	{
+		explode_when_killed = true;
+		explosion_magnitude = 4.25;
+		gib_gore_good = true;
+		break_effect=generic_explosion;
+
+		[break_particulate]
+		{
+			frag_glb_scorpiot_head = 1;
+			frag_glb_scorpiot_back = 1;
+			frag_glb_scorpiot_shoulder = 2;
+			frag_glb_scorpiot_leg = 4;
+			frag_glb_scorpiot_piston = 2;
+		}
+	}
+
+ 
+	[defend] { defense = 962; }
+
+
+	[mind]
+	{
+		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+		?curious				= 0.75
+		&wander					= 0.8
+		&social					= 0.2
+		&interest				= interest
+		&delay_min				= 1
+		&delay_max				= 6
+		&still					= false;
+		on_enemy_spotted_alert_friends 		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true
+		&actor_creates_own_party		= true
+		&party_template				= "party_dsx_automaton";
+		com_channels				= dyn_party, automaton;
+		com_range				= 14.0;
+		melee_engage_range			= 14.0;
+		ranged_engage_range	 		= 14.0;
+		personal_space_range 			= 1.0;
+		sight_range				= 14.0;
+		actor_life_ratio_low_threshold 		= 0.5;
+		jat_die					= world\ai\jobs\actors\evil\job_die_explode.skrit;
+		jat_startup				= world\ai\jobs\common\job_startup_reveal.skrit
+		?try_face				= false;
+		jat_cast 				= world\ai\jobs\common\job_cast.skrit
+		?rand_spell 				= true;
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		// he has a laser! why does he flee?!?!
+		// because it looks silly when he fires the laser from
+		// 0.25 meters away
+//		on_enemy_entered_ocz_flee 	= true;
+//		on_enemy_entered_ocz_attack = false;
+//		on_enemy_entered_icz_flee 	= true;
+//		on_enemy_entered_icz_attack = false;
+//		flee_count 					= 1;
+	}
+}

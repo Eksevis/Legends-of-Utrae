@@ -1,0 +1,480 @@
+[t:template,n:ut_gobbot_minigun]
+{
+	category_name = "1W_evil_d";
+	doc = "gobbot_minigun";
+	specializes = base_gobbot;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  15,0;
+			intelligence 	=  8, 0;
+			dexterity 		=  9, 0;
+           		ranged		=  30,0;
+            		combat_magic	=  30,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4200;
+		life = 660;
+        max_life = 660;
+        mana = 14;
+        max_mana = 14;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 169;
+		damage_min = 122;
+	}
+	[common]
+	{
+		screen_name="Gobbot Gunner";
+	}
+
+	[defend] { defense=420; }
+
+	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_dragon;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+       				chance = 0.02;
+               		il_main = #nmagic/5-18;
+               		il_main = #cmagic/5-18;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/85-90;
+					il_main = #armor/41-210;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/88-98;
+	                il_main = #armor/-rare(1)/267-299;
+                    il_main = #*/-rare(1)/88-98;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/88-98;
+	                il_main = #armor/-unique(2)/267-299;
+                    il_main = #*/-unique(2)/88-98;
+	            }
+			}
+		}
+	}
+}
+[t:template,n:ut_gobbot_flamethrower]
+{
+	category_name = "1W_evil_d";
+	doc = "gobbot_flamethrower";
+	specializes = base_gobbot;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  15,0;
+			intelligence 	=  8, 0;
+			dexterity 		=  9, 0;
+           		ranged		=  30,0;
+            		combat_magic	=  30,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4200;
+		life = 660;
+        max_life = 660;
+        mana = 14;
+        max_mana = 14;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 169;
+		damage_min = 122;
+	}
+	[defend] { defense=420; }
+
+	[common]
+	{
+		screen_name="Gobbot Igniter";
+	}
+
+	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_flamethrower;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+       				chance = 0.02;
+               		il_main = #nmagic/5-18;
+               		il_main = #cmagic/5-18;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/85-90;
+					il_main = #armor/39-197;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/88-98;
+	                il_main = #armor/-rare(1)/267-299;
+                    il_main = #*/-rare(1)/88-98;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/88-98;
+	                il_main = #armor/-unique(2)/267-299;
+                    il_main = #*/-unique(2)/88-98;
+	            }
+			}
+		}
+	}
+}
+[t:template,n:ut_gobbot_lightning]
+{
+	category_name = "1W_evil_d";
+	doc = "gobbot_lightning";
+	specializes = base_gobbot;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  15,0;
+			intelligence 	=  8, 0;
+			dexterity 		=  9, 0;
+           		ranged		=  30,0;
+            		combat_magic	=  30,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4200;
+		life = 660;
+        max_life = 660;
+        mana = 14;
+        max_mana = 14;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 169;
+		damage_min = 122;
+	}
+	[defend] { defense=420; }
+
+	[common]
+	{
+		screen_name="Gobbot Shocker";
+	}
+
+	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_lightning;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+       				chance = 0.02;
+               		il_main = #nmagic/5-18;
+               		il_main = #cmagic/5-18;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/85-90;
+					il_main = #armor/39-197;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/88-98;
+	                il_main = #armor/-rare(1)/267-299;
+                    il_main = #*/-rare(1)/88-98;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/88-98;
+	                il_main = #armor/-unique(2)/267-299;
+                    il_main = #*/-unique(2)/88-98;
+	            }
+			}
+		}
+	}
+}
+[t:template,n:ut_gobbot_grenade]
+{
+	category_name = "1W_evil_d";
+	doc = "gobbot_grenade";
+	specializes = base_gobbot;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  15,0;
+			intelligence 	=  8, 0;
+			dexterity 		=  9, 0;
+           		ranged		=  30,0;
+            		combat_magic	=  30,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4200;
+		life = 660;
+        max_life = 660;
+        mana = 14;
+        max_mana = 14;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 169;
+		damage_min = 122;
+	}
+	[defend] { defense=420; }
+
+  	[common]
+	{
+		screen_name="Gobbot Grenadier";
+	}
+
+
+	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_grenade_launcher;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+       				chance = 0.02;
+               		il_main = #nmagic/5-18;
+               		il_main = #cmagic/5-18;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/85-90;
+					il_main = #armor/39-197;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/88-98;
+	                il_main = #armor/-rare(1)/267-299;
+                    il_main = #*/-rare(1)/88-98;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/88-98;
+	                il_main = #armor/-unique(2)/267-299;
+                    il_main = #*/-unique(2)/88-98;
+	            }
+			}
+		}
+    }
+}
+[t:template,n:ut_gobbot_general]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_gobbot_general";
+	specializes = dsx_base_gobbot;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  19,0;
+			intelligence 	=  8, 0;
+			dexterity 	=  12, 0;
+           		ranged		=  30,0;
+			combat_magic	=  38, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4732;
+		life = 3784;
+        	max_life = 3784;
+        	mana = 14;
+        	max_mana = 14;
+        	[textures]	
+        	{ 
+        		0 = b_c_edm_px_3; 
+        	}    	
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 320;
+		damage_min = 290;
+		damage_bonus_min_ranged = 83;
+
+		damage_bonus_max_ranged = 101;
+	}
+	[common]
+	{
+		screen_name="General Autumkin the Automatic";
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_purple(sgx)");
+			}
+		}
+	}
+
+	[defend] { defense=1007; }
+
+	[inventory]
+	{
+		// Has the monster weapon equipped
+		spew_equipped_kill_count = <ignore>;
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[equipment]
+		{
+			// this is balanced for the monster to use
+			es_weapon_hand = dsx_minigun_gas_monster;
+		}
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 28, Strong */
+			[oneof*]
+			{
+				il_main = minigun_gas_quest;
+				chance = 1.0;
+			}
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 2165;
+				max = 4298;
+			}
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #weapon/63-79;
+				il_main = #armor/38-202;
+				il_main = #*/63-79;
+			}
+			[oneof*]
+			{
+				chance = 0.01;
+				il_main = #weapon/-rare(1)/79-87;
+				il_main = #armor/-rare(1)/165-268;
+				il_main = #*/-rare(1)/79-87;
+			}
+			[oneof*]
+			{
+				chance = 0.005;
+				il_main = #weapon/-unique(2)/79-87;
+				il_main = #armor/-unique(2)/165-268;
+				il_main = #*/-unique(2)/79-87;
+			}		
+		}
+	}
+
+		// drops a player version
+		
+	}
+}
+[t:template,n:ut_gobbot_napalm]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_gobbot_flamethrower";
+	specializes = dsx_base_gobbot;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  15,0;
+			intelligence 	=  8, 0;
+			dexterity 	=  9, 0;
+            		combat_magic	=  30,0;
+           		ranged		=  30,0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4170;
+		life = 678;
+        	max_life = 678;
+        	mana = 14;
+        	max_mana = 14;
+        	[textures]	
+        	{ 
+        		0 = b_c_edm_px_2; 
+        	}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 161.8;
+		damage_min = 127.7;
+	}
+	[defend] { defense=430; }
+
+	[common]
+	{
+		screen_name="Gobbot Scorcher";
+	}
+
+	[inventory]
+	{
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_napalm;
+			}
+		}
+	}
+}

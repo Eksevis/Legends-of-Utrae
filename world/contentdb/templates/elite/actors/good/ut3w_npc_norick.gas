@@ -1,0 +1,123 @@
+[t:template,n:ut3W_colonel_norick]
+{
+	category_name = "3W_character";
+	doc = "3W_colonel norick";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	137.8, 0;
+			intelligence =  162.4, 0;
+			dexterity =  	78.8, 0;
+			melee =  		125, 0;
+			combat_magic = 	124, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 32550000;
+		life = 81886.8;
+		max_life = 81886.8;
+		mana = 1.2;
+		max_mana = 1.2;
+		model = m_c_gbn_pmo_pos_1;
+		[voice]
+		{
+			[die] { * = s_e_die_norick; }
+			[hit_glance]
+			{
+				* = s_e_hit_male_old_cough;
+				* = s_e_hit_male_old_cough02;
+				* = s_e_hit_male_old_moan;
+
+				* = s_e_hit_male_old_breath_SED;
+				* = s_e_hit_male_old_breath_SED;
+				* = s_e_hit_male_old_breath_SED;
+				* = s_e_hit_male_old_breath_SED;
+				* = s_e_hit_male_old_breath_SED;
+				* = s_e_hit_male_old_breath_SED;
+				* = s_e_hit_male_old_breath_SED;
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 849.3;
+		damage_min = 568.5;
+	}
+	[body]
+	{
+		avg_move_velocity = 0.520000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gbn_pmo_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=di; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					hurt = a_c_gbn_pmo_fs0_dsf-02;
+					dead = a_c_gbn_pmo_fs0_di-02;
+					fall = a_c_gbn_pmo_fs0_dsf-03;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Colonel Norick"; }
+    [defend] { defense=4362.2; }
+	[inventory]
+	{
+		[other]
+		{
+			il_main = chicken_gun;
+		}
+	}
+	[mind]
+	{
+		melee_engage_range					= 14.0;
+		ranged_engage_range					= 14.0;
+		sight_range							= 14.0;
+	}
+}

@@ -1,0 +1,84 @@
+[conversation_horty]
+{
+	[text*]
+	{
+		order = 0;
+		choice = shop;
+
+		screen_text = "Them spiders to the north of here will leave you alone if you leave them alone, I've found. No reason why respectable people like you and me can't do a little business, just because old Lord Hovart won't stay dead like decent folk.";
+	}
+	[text*]
+	{
+	    order = 1;
+		choice = shop;
+
+		screen_text = "Young people should settle down and learn a useful skill, not go gallivanting off into the wilderness to get themselves killed by some hideous beast. Although, I do admit it's not particularly restful having all these nasty Zaurask for neighbors.";
+	}
+
+	[text*]
+	{
+
+		choice = shop;
+
+		screen_text = "Back again. Should have known.";
+	}
+
+}
+[conversation_horty_red]
+{
+	[text*]
+	{
+		screen_text = "When I was a boy, there was lightning five times brighter than this! And thunder twenty times louder! We had real storms then, I tell you. Blech, the air never smelt this rancid, though.";
+	}
+}
+[conversation_gargoyle_accept]
+{
+	[text*]
+	{
+//		sample = s_v_jharmaya_select_02;
+		screen_text = "Thank you for your faith in me! Let us find out the truth and prove that there can be trust and co-operation between mankind and gargoyles!";
+		activate_quest* = quest_gargoyle_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_gargoyle_disband]
+{
+	[text*]
+	{
+		screen_text = "I'm so devastated. Guess it proves humans can't be trusted after all!";
+	}
+}
+[conversation_gargoyle_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+//		sample = s_v_jharmaya_select_01;
+		screen_text = "Good you give us another chance to prove that mankind and gargoyles can live in harmony!";
+	}
+}
+[conversation_gargoyle_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+//		sample = s_v_jharmaya_select_01;
+		screen_text = "Please don't attack me, I won't fight you. My name is Tiamut and I'm an intelligent gargoyle. I know you killed my brethren only in self defense and didn't know better. Once all Gargoyles were intelligent like me but over time we became as we are now, nothing more than mindless animals. I would join with you to find out the truth about what happened to us. I can not do it on my own. What say you?";
+	}
+}
+[conversation_gargoyle_reject]
+{
+	[text*]
+	{
+		screen_text = "I understand. I guess it was just wishfull thinking that there could ever be friendship between our two races!";
+	}
+}
+[conversation_gargoyle_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+//		sample = s_v_jharmaya_select_01;
+		screen_text = "Do you still want my services? I'll be glad to help out!";
+	}
+}

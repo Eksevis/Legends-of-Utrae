@@ -1,0 +1,75 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xAAA10200;
+	source_region_name = path2crypts;
+	[t:stitch_editor,n:abc_r1]
+	{
+		dest_region = abc_r1;
+		[node_ids]
+		{
+			0x00000ca1 = 0x3BFE3E7B,8;
+		}
+	}
+	[t:stitch_editor,n:mega_forest_r3]
+	{
+		dest_region = mega_forest_r3;
+		[node_ids]
+		{
+			0x0000afc1 = 0x7A0BF4D1,2;
+			0x0000afc2 = 0xE55A289C,1;
+			0x0000afc3 = 0xAE8317B1,6;
+			0x0000afc4 = 0xAE8317B1,5;
+			0x0000afc5 = 0xB2D6C774,4;
+			0x0000afc6 = 0xB2D6C774,3;
+			0x0000afc7 = 0x9A9E954B,4;
+			0x0000afc8 = 0x9A9E954B,3;
+			0x0000afc9 = 0x171833FB,2;
+			0x000afc10 = 0x171833FB,1;
+			0x000afc11 = 0x3B1E0F4B,8;
+			0x000afc12 = 0x3B1E0F4B,7;
+			0x000afc13 = 0xE6C6389D,3;
+			0x000afc14 = 0xEAB4E408,3;
+			0x000afc15 = 0xD170CC47,5;
+		}
+	}
+	[t:stitch_editor,n:river_canyon]
+	{
+		dest_region = river_canyon;
+		[node_ids]
+		{
+			0x0000ada1 = 0xEA10B9D2,2;
+			0x0000ada2 = 0xA4F2239D,2;
+			0x0000ada3 = 0x9F72A84B,1;
+			0x0000ada4 = 0xAD989450,3;
+			0x0000ada5 = 0x7CD8D451,6;
+		}
+	}
+	[t:stitch_editor,n:river_forest_r2]
+	{
+		dest_region = river_forest_r2;
+		[node_ids]
+		{
+			0x00000c23 = 0x42F5F61A,3;
+			0x00000c24 = 0x539C39BC,7;
+			0x00000c25 = 0x539C39BC,8;
+			0x00000c26 = 0xF4D800FA,1;
+			0x00000c27 = 0xF4D800FA,2;
+			0x00000c28 = 0x967A1FDF,3;
+			0x00000c29 = 0x967A1FDF,4;
+			0x00000c30 = 0xF8152B55,5;
+			0x00000c31 = 0xF8152B55,6;
+			0x00000c32 = 0x29511136,7;
+			0x00000c33 = 0x29511136,8;
+			0x00000c34 = 0x074929E4,1;
+			0x00000c35 = 0x074929E4,2;
+			0x00000c36 = 0xACDF0956,1;
+			0x00000c37 = 0xACDF0956,2;
+			0x00000c38 = 0xB403A550,6;
+			0x00000c39 = 0x367AF07A,3;
+			0x00000c40 = 0x779709D3,4;
+			0x00000c41 = 0xFA445E4B,3;
+			0x00000c42 = 0x33828474,3;
+			0x00000c43 = 0x7C539E03,3;
+		}
+	}
+}

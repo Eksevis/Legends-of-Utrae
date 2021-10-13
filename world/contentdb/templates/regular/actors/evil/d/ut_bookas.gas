@@ -1,0 +1,174 @@
+[t:template,n:ut_bookas]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_bookas";
+	specializes = base_swamp_witch;
+	[actor]
+		{
+			[skills]
+				{
+					strength     = 10, 0;
+					intelligence =  17, 0;
+					dexterity    =	8, 0;
+					melee 	     =	6, 0;
+					combat_magic =  36, 0;
+					nature_magic =  6, 0;
+				}
+		}
+	[aspect]
+		{
+			model = m_c_edm_dg_pos_1;
+			experience_value 	= 5488;
+			life				= 298;
+			max_life			= 298;
+			mana				= 18;
+			max_mana			= 18;
+			textures:0 = b_c_edm_bookas;
+		
+			[voice]
+				{
+					[die]		{ priority = high; * = s_e_die_booka_SED; }
+					[enemy_spotted]	{ priority = high; * = s_e_call_booka_SED; }
+					[hit_glance]
+						{
+							* = s_e_hit_booka_SED;
+							priority = low;
+						}
+				}
+		}
+	[body]
+	{
+		avg_move_velocity = 4;
+		[bone_translator]
+		{
+			body_anterior = Bip01_Head;
+			body_mid = Bip01_Spine;
+			body_posterior = Bip01_Pelvis;
+			kill_bone = Bip01_Pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			initial_chore = chore_none;
+			chore_prefix = a_c_edm_dg_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=mg; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = a_c_edm_dg_fs0_dfs;
+					wake = a_c_edm_dg_fs0_ds;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=rl; }
+			}
+		}
+	}
+	[attack]
+		{
+			attack_range = .5;
+			damage_max = 235;
+			damage_min = 225;
+			reload_delay = 3;
+		}
+	[common]
+		{
+			screen_name="Bookas";
+		}
+	[defend] { defense=562; }
+	[mind]
+		{
+			jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+				?social							= 0.35
+				&meander						= false
+				&still							= false;
+			
+
+			on_enemy_entered_ocz_flee		= true;
+			on_enemy_entered_ocz_attack = false;
+			on_enemy_entered_icz_flee		= true;
+			on_enemy_entered_icz_attack = false;
+			flee_count					= 1;
+		}
+
+	[inventory]
+		{
+			selected_active_location = il_active_primary_spell;
+			[other] { il_active_primary_spell=ut_spell_booka; }
+			[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 10, Weak */
+		[oneof*]
+		{
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/66-104;
+					il_main = #armor/49-241;
+                	il_main = #nmagic/25-40;
+                	il_main = #cmagic/25-40;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/94-112;
+	                il_main = #armor/-rare(1)/214-264;
+                    il_main = #*/-rare(1)/94-112;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/94-112;
+	                il_main = #armor/-unique(2)/214-264;
+                    il_main = #*/-unique(2)/94-112;
+
+				}
+			
+		}
+	}	
+		}
+
+	[physics]
+		{
+			gib_gore_good = true;
+			break_effect = fairy_explosion;
+			explode_when_killed = false;
+		}
+}

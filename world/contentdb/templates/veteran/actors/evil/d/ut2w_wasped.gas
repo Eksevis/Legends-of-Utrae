@@ -1,0 +1,111 @@
+[t:template,n:ut2W_wasped]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_wasped";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	13.5, 0;
+			intelligence =  7.6, 0;
+			dexterity =  	19.6, 0;
+			melee =  		61, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 117000;
+		life = 1390.9;
+		max_life = 1390.9;
+		mana = 23.2;
+		max_mana = 23.2;
+		model = m_c_edm_wp_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_wasped; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_insectoid_SED;  }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 233.8;
+		damage_min = 156.5;
+	}
+	[body]
+	{
+		min_move_velocity = 3.000000;
+		avg_move_velocity = 4.000000;
+		[bone_translator]
+		{
+			body_anterior = head_top;
+			body_mid = root_to_abdom;
+			body_posterior = abdomend;
+			kill_bone = root_bone;
+			shield_bone = lf_end;
+			weapon_bone = rf_end;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_wp_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}
+	[common] { screen_name="Giant Wasp Drone"; }
+	[defend] { defense=681; }
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.4;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_wasped_01 = 1;
+			frag_glb_wasped_02 = 1;
+			frag_glb_wasped_03 = 1;
+			frag_glb_wasped_04 = 2;
+			frag_glb_wasped_05 = 5;
+		}
+	}
+}

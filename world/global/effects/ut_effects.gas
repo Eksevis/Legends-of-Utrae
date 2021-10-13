@@ -1,0 +1,209 @@
+[effect_script*]
+{
+	name	=un_ghost_sound;
+
+	script =[[
+
+		sound play s_e_die_ghost at #TARGET_POSITION dist 3 20;	
+			
+	]];
+}
+[effect_script*]
+{
+	name	=ut_giant_spider_eye_glow;
+
+	script	=[[	
+			if ( #LODFI > 0.7 )
+			{
+				sfx create fireb  #TARGET 
+					"start_rate(10)offset(-.1,-2.15,-0.85)velocity(-20,15,10)
+					scale(.2)color0(.75,1,.25)alphafade(4)lower_r0(0)lower_r1(0)
+					upper_r0(0)upper_r1(0)count(15)fctrl(0,0,-.1)flamesize(1.5)
+					bone_orient()";
+				sfx attach_point #PEEK headbone target;
+				sfx start #POP;
+				
+				sfx create fireb  #TARGET 
+					"start_rate(10)offset(.1,-2.15,-0.85)velocity(20,15,10)
+					scale(.2)color0(.75,1,.25)alphafade(4)lower_r0(0)lower_r1(0)
+					upper_r0(0)upper_r1(0)count(15)fctrl(0,0,-.1)flamesize(1.5)
+					bone_orient()";
+				sfx attach_point #PEEK headbone target;
+				sfx start #POP;
+				
+				sfx create fireb  #TARGET 
+					"start_rate(10)offset(-.11,-2.05,-0.75)velocity(-20,15,10)
+					scale(.3)color0(.75,1,.25)alphafade(4)lower_r0(0)lower_r1(0)
+					upper_r0(0)upper_r1(0)count(15)fctrl(0,0,-.1)flamesize(1.5)
+					bone_orient()";
+				sfx attach_point #PEEK headbone target;
+				sfx start #POP;
+				
+				sfx create fireb  #TARGET 
+					"start_rate(10)offset(.11,-2.05,-0.75)velocity(20,15,10)
+					scale(.3)color0(.75,1,.25)alphafade(4)lower_r0(0)lower_r1(0)
+					upper_r0(0)upper_r1(0)count(15)fctrl(0,0,-.1)flamesize(1.5)
+					bone_orient()";
+				sfx attach_point #PEEK headbone target;
+				sfx start #POP;
+				
+				sfx create fireb  #TARGET 
+					"start_rate(10)offset(-.14,-1.97,-0.6)velocity(-20,15,10)
+					scale(.4)color0(.75,1,.25)alphafade(4)lower_r0(0)lower_r1(0)
+					upper_r0(0)upper_r1(0)count(15)fctrl(0,0,-.1)flamesize(1.5)
+					bone_orient()";
+				sfx attach_point #PEEK headbone target;
+				sfx start #POP;
+				
+				sfx create fireb  #TARGET 
+					"start_rate(10)offset(.14,-1.97,-0.6)velocity(20,15,10)
+					scale(.4)color0(.75,1,.25)alphafade(4)lower_r0(0)lower_r1(0)
+					upper_r0(0)upper_r1(0)count(15)fctrl(0,0,-.1)flamesize(1.5)
+					bone_orient()";
+				sfx attach_point #PEEK headbone target;
+				sfx start #POP;
+			}
+			]];
+}
+[effect_script*]
+{
+	name	=utraean_heal;
+
+	script	=[[
+			sfx create cylinder #TARGET
+			"hp0(8,-3,-35)hp1(20,8,-1)rp1(0,0,0)rp0(.3,5,.2)dur(2.5)
+			texture(b_sfx_lightray_01)spin(2)color0(1,.4,.4)";
+			
+				
+			sfx start #POP;
+			sfx create cylinder #TARGET
+			"hp0(8,-3,-35)hp1(20,8,-1)rp1(0,0,0)rp0(.3,5,.2)dur(2.5)
+			texture(b_sfx_lightray_02)spin(-1)color0(1,.6,.6)";
+			
+				
+			sfx start #POP;
+
+			pause .5;
+			
+			call healing_base s<b_sfx_sblueflare_02> s<.6,.6,.6>;
+			call healing_base s<b_sfx_moon_01> s<.3,.1,.3>;
+
+			sound play s_e_spell_major_heal_cast at #TARGET_POSITION;
+			
+			sfx create fire #TARGET
+				"texture(b_sfx_sparkle01)color0(1,.6,.6)radius(.375)
+				offset(0,1,0)count(30)flamesize(.2)velocity(0,-16,0)
+				accel(0,10,0)alphafade(.75)dur(.85)";
+				
+					
+			sfx start #POP;
+
+			sfx create fire #TARGET
+				"texture(b_sfx_sparkle01)color0(1,.8,.8)radius(.375)offset(0,-1,0)
+				count(30)flamesize(.2)velocity(0,16,0)accel(0,-10,0)
+				alphafade(.75)dur(.85)";
+				
+					
+			sfx start #POP;
+
+			worldmsg WE_SPELL_SYNC_END #INVALID_GOID #OWNER_GOID #TARGET_GOID;
+			]];
+}
+
+[effect_script*]
+{
+	name	=skeleton_mage_fire;
+
+	script	=[[
+			sfx create fire #TARGET
+				"count(15)color0(.9,.5,.1)velocity(0,2,0)accel(0,0,0)
+				alphafade(1)scale(.5)";
+			sfx attach_point #PEEK @weapon_bone target;
+			sfx start #POP;
+
+			sfx create fire #TARGET
+				"count(15)color0(.9,.5,.1)velocity(0,2,0)accel(0,0,0)
+				alphafade(1)scale(.5)";
+			sfx attach_point #PEEK @shield_bone target;
+			sfx start #POP;
+			]];
+}
+[effect_script*]
+{
+	name	=skeleton_mage_cold;
+
+	script	=[[
+			sfx create fire #TARGET
+				"count(15)color0(.2,.7,1)velocity(0,2,0)accel(0,0,0)
+				alphafade(1)scale(.5)";
+			sfx attach_point #PEEK @weapon_bone target;
+			sfx start #POP;
+
+			sfx create fire #TARGET
+				"count(15)color0(.2,.7,1)velocity(0,2,0)accel(0,0,0)
+				alphafade(1)scale(.5)";
+			sfx attach_point #PEEK @shield_bone target;
+			sfx start #POP;
+			]];
+}
+[effect_script*]
+{
+	name	=skeleton_mage_lightning;
+
+	script	=[[
+			sfx create fire #TARGET
+				"count(15)color0(1,1,1)velocity(0,2,0)accel(0,0,0)
+				alphafade(1)scale(.5)";
+			sfx attach_point #PEEK @weapon_bone target;
+			sfx start #POP;
+
+			sfx create fire #TARGET
+				"count(15)color0(1,1,1)velocity(0,2,0)accel(0,0,0)
+				alphafade(1)scale(.5)";
+			sfx attach_point #PEEK @shield_bone target;
+			sfx start #POP;
+			]];
+}
+[effect_script*]
+{
+	name	=skeleton_mage_poison;
+
+	script	=[[
+			sfx create fire #TARGET
+				"count(15)color0(.4,.8,.2)velocity(0,2,0)accel(0,0,0)
+				alphafade(1)scale(.5)";
+			sfx attach_point #PEEK @weapon_bone target;
+			sfx start #POP;
+
+			sfx create fire #TARGET
+				"count(15)color0(.4,.8,.2)velocity(0,2,0)accel(0,0,0)
+				alphafade(1)scale(.5)";
+			sfx attach_point #PEEK @shield_bone target;
+			sfx start #POP;
+			]];
+}
+[effect_script*]
+{
+	name	=hell_hound_fire;
+
+	script	=[[
+			sfx create fire #TARGET 
+				"scale(.75)count(15)color0(.9,.5,.1)velocity(0,5,0)accel(0,5,0)
+				alphafade(.75)flamesize(.66)";
+			sfx attach_point #PEEK @body_mid target;
+			sfx start #POP;
+			
+			sfx create fire #TARGET 
+				"scale(.75)count(15)color0(.9,.5,.1)velocity(0,5,0)accel(0,5,0)
+				alphafade(.75)flamesize(.66)";
+			sfx attach_point #PEEK @body_posterior target;
+			sfx start #POP;
+			
+			sfx create fire #TARGET 
+				"scale(.75)count(15)color0(.9,.5,.1)velocity(0,5,0)accel(0,5,0)
+				alphafade(.75)flamesize(.66)";
+			sfx attach_point #PEEK @body_anterior target;
+			sfx start #POP;
+			
+			]];
+}

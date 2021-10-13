@@ -1,0 +1,142 @@
+[t:template,n:ut_pygmy]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_pygmy";
+	specializes = dsx_base_pygmy;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		= 10,0;
+			intelligence 	= 7,0;
+			dexterity 		= 8,0;
+			melee 			= 6,0;
+		}
+	}
+	[aspect]
+	{
+		scale_base = 1.4;
+		experience_value = 18;
+		life = 246;
+		max_life = 246;
+		mana = 6;
+		max_mana = 6;
+		model = m_c_edm_PYGMY_pos_1;
+		[textures] { 0=b_c_edm_pygmy; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 87;
+		damage_min = 84;
+	}
+	[common]
+	{
+		screen_name="Gulik";
+		membership = monster, party_lava_imp_02;
+	}
+	[defend] { defense=250; }
+	[inventory]
+	{
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 10, Weak */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 15;
+				max = 29;
+			}
+			[oneof*]
+			{
+				chance = 0.1;
+				il_main = #weapon/7-18;
+				il_main = #armor/6-33;
+				il_main = #*/17-28;
+			}
+			[oneof*]
+			{
+				chance = 0.005;
+				il_main = #weapon/-rare(1)/7-20;
+				il_main = #armor/-rare(1)/24-33;
+				il_main = #*/-rare(1)/17-30;
+			}
+			
+		}
+	}
+	}
+}
+[t:template,n:ut_pygmy_gnf]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_pygmy";
+	specializes = dsx_base_pygmy;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		= 10,0;
+			intelligence 	= 7,0;
+			dexterity 		= 8,0;
+			melee 			= 6,0;
+		}
+	}
+	[aspect]
+	{
+		scale_base = 1.4;
+		experience_value = 18;
+		life = 46;
+		max_life = 46;
+		mana = 6;
+		max_mana = 6;
+		model = m_c_edm_PYGMY_pos_1;
+		[textures] { 0=b_c_edm_pygmy; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 27;
+		damage_min = 24;
+	}
+	[common]
+	{
+		screen_name="Gulik";
+		membership = monster, party_lava_imp_02;
+	}
+	[defend] { defense=50; }
+	[inventory]
+	{
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 10, Weak */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 15;
+				max = 29;
+			}
+			[oneof*]
+			{
+				chance = 0.1;
+				il_main = #weapon/7-18;
+				il_main = #armor/6-33;
+				il_main = #*/17-28;
+			}
+			[oneof*]
+			{
+				chance = 0.005;
+				il_main = #weapon/-rare(1)/7-20;
+				il_main = #armor/-rare(1)/24-33;
+				il_main = #*/-rare(1)/17-30;
+			}
+			
+		}
+	}
+	}
+}

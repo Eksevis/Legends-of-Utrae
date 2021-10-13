@@ -1,0 +1,610 @@
+[t:sign_glb_magic_left,n:0x0270030c]
+{
+	[common]
+	{
+		screen_name = "Lyceum Magicus Arcani";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 0.834338,-3.57628e-007,-1.90066,0xa9905a73;
+	}
+}
+[t:lever_glb_06_message,n:0x02700767]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0270035D;
+	  x on_scid = 0x0270035D;
+	  f required_level = 9;
+	  f required_level_2 = 59;
+	  f required_level_3 = 90;
+	  f reset_time = 20;
+	  f reset_time_2 = 20;
+	}
+	[placement]
+	{
+	  q orientation = -0.653282,-0.270598,-0.270598,0.653281;
+	  p position = -0.0307159,1.14927,0.026659,0xaaef999b;
+		use_point_scids = 0x02700234, 0x02700236;
+	}
+}
+[t:door_ice_peasant_right,n:0x02700248]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02700005;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-2.08616e-007;
+	  p position = -0.449763,-1.5,-7.77079,0x0e8099da;
+	}
+}
+[t:sign_ice_magicshop_02,n:0x02700584]
+{
+	[common]
+	{
+		screen_name = "Lyceum Magicus Arcani";
+	}
+	[placement]
+	{
+	  p position = -6.55827,-4.5,-11.5131,0x0e8099da;
+	}
+}
+[t:sign_glb_blacksmith_right,n:0x0270030e]
+{
+	[common]
+	{
+		screen_name = "Fire and Ice Forge";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.551937,0,0.833886;
+	  p position = -0.992177,0,1.83974,0x8c417df6;
+	}
+}
+[t:lever_glb_04,n:0x02700118]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x0270013A;
+	  f on_message_delay = 1;
+	  x on_scid = 0x0270013A;
+	  f reset_time = 5;
+	  f reset_time_2 = 5;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.313164,0,0.949699;
+	  p position = -1.61116,12.2659,2.34831,0xbeeaeb41;
+		use_point_scids = 0x02700241,0x02700242,0x02700243;
+	}
+}
+[t:lever_glb_04,n:0x0270013c]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x0270013A;
+	  f on_message_delay = 1;
+	  x on_scid = 0x0270013A;
+	  f reset_time = 5;
+	  f reset_time_2 = 5;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.594823,0,0.803857;
+	  p position = -3.09313,1.44462,1.51542,0xbeeaeb41;
+		use_point_scids = 0x02700241,0x0270023f;
+	}
+}
+[t:door_ice_peasant_left,n:0x0270024f]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02700036;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-2.08616e-007;
+	  p position = -5.59908,-1,-7.65493,0xe0488034;
+		use_point_scids = 0x0270023e , 0x0270023d;
+	}
+}
+[t:sign_ice_inn_03,n:0x02700583]
+{
+	[common]
+	{
+		screen_name = "The Golden Boar";
+	}
+	[placement]
+	{
+	  p position = -3.3963,-2.76392,-9.62666,0xe0488034;
+	}
+}
+[t:door_ice_peasant_left,n:0x0270024d]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02700001;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.965926,0,-0.258819;
+	  p position = -1.38435,-3.48337,-2.78699,0x8c5d049b;
+	}
+}
+[t:sign_ice_01,n:0x02700761]
+{
+	[common]
+	{
+		screen_name = "Town of Meren, 208";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.130526,0,0.991445;
+	  p position = -0.966141,-0.218849,-3.36262,0x83bfeb54;
+	}
+}
+[t:sign_ice_01,n:0x02700766]
+{
+	[common]
+	{
+		dev_instance_text = "sign_2";
+		screen_name = "Town of Fallraen, 14";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.608762,0,0.793353;
+	  p position = -0.539536,0,-3.14246,0x83bfeb54;
+	}
+}
+[t:lever_cav_stone_01,n:0x027008a1]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x027008A9;
+	  x on_scid = 0x027008A9;
+	}
+	[placement]
+	{
+	  q orientation = -0.707107,0,0,0.707107;
+	  p position = 1.28951,-4.76837e-007,2.19753,0xcb010827;
+		use_point_scids = 0x027008a5,0x027008a6;
+	}
+}
+[t:lever_cav_stone_01,n:0x027008a2]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x027008A9;
+	  x on_scid = 0x027008A9;
+	}
+	[placement]
+	{
+	  q orientation = -0.5,-0.5,-0.5,0.5;
+	  p position = 0.0351105,-0.6,3.35394,0xdd8694b5;
+		use_point_scids = 0x027008a5,0x027008a7,0x027008a8;
+	}
+}
+[t:sign_ice_01,n:0x027004b9]
+{
+	[common]
+	{
+		screen_name = "Town of Meren, 217";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,0.92388;
+	  p position = -2.78774,-2.86102e-006,0.292667,0x0099451d;
+	}
+}
+[t:sign_ice_01,n:0x027005e7]
+{
+	[common]
+	{
+		screen_name = "Town of Fallraen";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -3.16673,-0.338711,0.0313492,0x0099451d;
+	}
+}
+[t:door_ice_gate,n:0x02700306]
+{
+	[door_basic]
+	{
+	  x second_door = 0x02700730;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-2.08616e-007;
+	  p position = -0.0100288,-6,0.799126,0xc690807a;
+		use_point_scids = 0x02700311,0x02700312;
+	}
+}
+[t:sign_ice_fallraen,n:0x027005ed]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = -6.73721,-4.60462,-1.19563,0xc690807a;
+	}
+}
+[t:door_ice_gate_right,n:0x02700730]
+{
+	[door_basic]
+	{
+	  x second_door = 0x02700306;
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.55754e-007;
+	  p position = -0.00207901,-6,0.794571,0xc690807a;
+		use_point_scids = 0x02700311,0x02700312;
+	}
+}
+[t:lever_glb_04,n:0x0270013f]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x02700139;
+	  f on_message_delay = 1;
+	  x on_scid = 0x02700139;
+	  f reset_time = 5;
+	  f reset_time_2 = 5;
+	}
+	[placement]
+	{
+	  q orientation = -0.0262506,-0.601242,-0.0348357,0.797876;
+	  p position = -3.22097,1.52152,1.21473,0x214e9b0c;
+		use_point_scids = 0x02700785,0x02700787;
+	}
+}
+[t:door_ice_peasant_right,n:0x0270024a]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02700013;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-5.96046e-008,0,1;
+	  p position = 1.80467,-3.17239,7.67259,0x98cc870a;
+		use_point_scids = 0x0270071e,0x02700782;
+	}
+}
+[t:door_ice_peasant_right,n:0x0270024b]
+{
+	[door_basic]
+	{
+	  b can_use = false;
+	  x msg_scid_opening = 0x02700015;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -3.64154,-5.15,0.403927,0x98cc870a;
+	}
+}
+[t:door_ice_peasant_left,n:0x0270024c]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02700015;
+		msg_type_opening = we_trigger_activate;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -3.64954,-5.15,-2.39621,0x98cc870a;
+		use_point_scids = 0x0270075f , 0x02700760;
+	}
+}
+[t:sign_ice_blacksmith_01,n:0x02700587]
+{
+	[common]
+	{
+		screen_name = "Fire and Ice Forge";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -4.88728,-4.87086,-4.11079,0x98cc870a;
+	}
+}
+[t:lever_glb_04,n:0x02700140]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x02700139;
+	  f on_message_delay = 1;
+	  x on_scid = 0x02700139;
+	  f reset_time = 5;
+	  f reset_time_2 = 5;
+	}
+	[placement]
+	{
+	  q orientation = -0.0291868,-0.529414,-0.0324153,0.847241;
+	  p position = -2.25706,12.3726,1.69167,0xf5d4c36d;
+		use_point_scids = 0x02700785,0x02700784,0x02700786;
+	}
+}
+[t:sign_ice_01,n:0x0270085a]
+{
+	[common]
+	{
+		screen_name = "Town of Meren, 229";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,1.19209e-007;
+	  p position = -1.75814,15.95,1.81493,0xbc728d4d;
+	}
+}
+[t:sign_glb_blacksmith_left,n:0x027005ce]
+{
+	[common]
+	{
+		screen_name = "Fire and Ice Forge";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.461748,0,0.887011;
+	  p position = 0.442101,2.86102e-006,-0.576361,0xa3f17332;
+	}
+}
+[t:sign_ice_01,n:0x0270077c]
+{
+	[common]
+	{
+		screen_name = "Town of Meren, 226";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,8.9407e-008;
+	  p position = 1.30028,-0.350002,1.19245,0xf5358dc0;
+	}
+}
+[t:sign_ice_01,n:0x02700890]
+{
+	[common]
+	{
+		screen_name = "Town of Meren, 228";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.515037,0,0.857168;
+	  p position = 3.55369,-1.90735e-006,-0.775547,0x5a7db413;
+	}
+}
+[t:sign_glb_magic_right,n:0x02700440]
+{
+	[common]
+	{
+		screen_name = "Lyceum Magicus Arcani";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.60636,1.90735e-006,-1.26039,0x42bc523c;
+	}
+}
+[t:sign_ice_01,n:0x02700860]
+{
+	[common]
+	{
+		screen_name = "Town of Meren, 227";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.981627,0,-0.190809;
+	  p position = -1.67094,0,-1.8644,0x78d54c58;
+	}
+}
+[t:lever_glb_04,n:0x0270011c]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x0270011B;
+	  f on_message_delay = 1;
+	  x on_scid = 0x0270011B;
+	  f reset_time = 5;
+	  f reset_time_2 = 5;
+	}
+	[placement]
+	{
+	  q orientation = -0.0566585,-0.613109,-0.044242,0.786721;
+	  p position = -3.11304,1.75871,1.47499,0x30310dca;
+		use_point_scids = 0x02700244,0x02700245;
+	}
+}
+[t:lever_glb_04,n:0x0270011f]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  f off_message_delay = 1;
+	  x off_scid = 0x0270011B;
+	  f on_message_delay = 1;
+	  x on_scid = 0x0270011B;
+	  f reset_time = 5;
+	  f reset_time_2 = 5;
+	}
+	[placement]
+	{
+	  q orientation = -0.0686579,-0.294611,-0.0212986,0.95291;
+	  p position = -1.46303,12.4895,2.51945,0x30310dca;
+		use_point_scids = 0x02700244,0x02700246,0x02700247;
+	}
+}
+[t:door_ice_peasant_left,n:0x0270024e]
+{
+	[placement]
+	{
+	  q orientation = 0,0.983255,0,0.182235;
+	  p position = 1.50339,-2.88472,-0.688278,0x35b5304d;
+	}
+}
+[t:sign_ice_01,n:0x0270088e]
+{
+	[common]
+	{
+		screen_name = "Town of Meren, 230";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = -1.88937,15.95,1.49841,0xf634c922;
+	}
+}
+[t:door_ice_gate,n:0x02700303]
+{
+	[door_basic]
+	{
+	  x second_door = 0x02700728;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-2.08616e-007;
+	  p position = 0.0226777,-6,0.802782,0x3e77f432;
+		use_point_scids = 0x02700259,0x02700301;
+	}
+}
+[t:sign_ice_fallraen,n:0x027006d6]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,1.19209e-007;
+	  p position = -6.63383,-4.71923,-1.16626,0x3e77f432;
+	}
+}
+[t:door_ice_gate_right,n:0x02700728]
+{
+	[door_basic]
+	{
+	  x second_door = 0x02700303;
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.60478e-007;
+	  p position = 0.0241673,-6,0.802109,0x3e77f432;
+		use_point_scids = 0x02700259,0x02700301;
+	}
+}
+[t:sign_ice_01,n:0x027002c8]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Crystwind, 107";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.936672,0,-0.350208;
+	  p position = -2.64881,-0.190669,-1.5,0xb1138da2;
+	}
+}
+[t:sign_ice_01,n:0x0270077b]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Fallraen";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -2.01216,4.76837e-007,-1.3451,0xb1138da2;
+	}
+}
+[t:statue_cav_spin_02,n:0x027008a0]
+{
+	[common]
+	{
+		dev_instance_text = "FALLRAEN - CRYSTAL CAVERNS";
+		screen_name = "Fallraen to Crystal Caverns Displacer";
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0270043A;
+	  x on_scid = 0x0270043A;
+	  f reset_time = 25;
+	  f reset_time_2 = 25;
+	}
+	[placement]
+	{
+	  p position = -0.00860977,0.2,-0.0201416,0xcb99dc32;
+		use_point_scids = 0x027008a4;
+	}
+}
+[t:statue_cav_spin_02,n:0x0270089f]
+{
+	[common]
+	{
+		dev_instance_text = "FALLRAEN - MT UTRAE FOREST";
+		screen_name = "Fallraen to Mount Utrae Forest Displacer";
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x027002B1;
+	  x on_scid = 0x027002B1;
+	  f reset_time = 25;
+	  f reset_time_2 = 25;
+	}
+	[placement]
+	{
+	  p position = 0.0540695,0.2,-0.0387268,0x68fa69ef;
+		use_point_scids = 0x027008a3;
+	}
+}
+[t:door_grs_peasant_right,n:0x02700252]
+{
+	[placement]
+	{
+	  q orientation = 0,-1.49012e-008,0,1;
+	  p position = 3.30315,-1.4,0.53986,0x8a2b94b4;
+		use_point_scids = 0x0270035e,0x0270035f;
+	}
+}
+[t:door_grs_peasant_right,n:0x02700254]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707108,0,0.707107;
+	  p position = -4.93411,-1.4,-3.19856,0x8a2b94b4;
+	}
+}
+[t:door_grs_queensmen_right,n:0x02700783]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -4.95979,-1.4,5.81038,0x8a2b94b4;
+	}
+}

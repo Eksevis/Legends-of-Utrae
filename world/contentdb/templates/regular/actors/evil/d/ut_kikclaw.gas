@@ -1,0 +1,180 @@
+[t:template,n:ut_kikclaw]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 	=  15, 0;
+			intelligence   		=  8, 0;
+			dexterity 	 	=  10, 0;
+			melee 	 		=  13, 0;
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		
+		damage_max = 82;
+		damage_min = 74;
+	}
+	[defend] { defense = 240; }
+	[aspect] 
+	{
+		experience_value = 20;
+		life = 242;
+		max_life = 242;
+		mana = 10;
+		max_mana = 10;
+		model = m_c_edm_kc_pos_1; 
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_SED;  }
+		}	
+		scale_base	= 0.7;
+	}
+	
+	[common] { screen_name = "Skitterclaw"; }
+	
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+}
+
+[t:template,n:ut_kikclaw_2]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw_2";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 	=  5, 0;
+			intelligence   	=  8, 0;
+			dexterity 	 	=  10, 0;
+		}
+	}
+	
+	[aspect] 
+	{
+		textures: 0 = b_c_edm_klik-2;
+		scale_base	= 0.4;
+		
+		experience_value = 8;
+		life 			= 17;
+		max_life 		= 17;
+		mana 			= 10;
+		max_mana 		= 10;
+		
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw_baby;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_baby_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw__baby_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 8;
+		damage_min = 6;
+	}
+	[body]
+	{
+		avg_move_velocity = 5.00000;
+	}
+	
+	[common] 
+	{ 
+		screen_name = "Skitterling";
+	}
+	
+	[defend] { defense = 8; }
+
+	[mind]  
+	{  
+		jat_fidget                              = world\ai\jobs\common\job_fidget.skrit  
+		?social                                   = 0.5  
+		&delay_min                              = 4.0  
+		&delay_max                              = 10.0  
+		&still                                   = false;  
+	}
+}	
+[t:template,n:ut_kikclaw_3]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_kikclaw_2";
+	specializes = kikclaw_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 	=  2, 0;
+			intelligence   	=  4, 0;
+			dexterity 	 	=  4, 0;
+		}
+	}
+	
+	[aspect] 
+	{
+		textures: 0 = b_c_edm_klik-2;
+		scale_base	= 0.4;
+		
+		experience_value = 8;
+		life 			= 12;
+		max_life 		= 12;
+		mana 			= 10;
+		max_mana 		= 10;
+		
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kikclaw_baby;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_kikclaw_baby_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kikclaw__baby_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_kikclaw_baby_SED;  }
+		}
+	}
+	
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 4;
+		damage_min = 3;
+	}
+	[body]
+	{
+		avg_move_velocity = 5.00000;
+	}
+	
+	[common] 
+	{ 
+		screen_name = "Skitterling";
+	}
+	
+	[defend] { defense = 4; }
+
+	[mind]  
+	{  
+		jat_fidget                              = world\ai\jobs\common\job_fidget.skrit  
+		?social                                   = 0.5  
+		&delay_min                              = 4.0  
+		&delay_max                              = 10.0  
+		&still                                   = false;  
+	}
+}	

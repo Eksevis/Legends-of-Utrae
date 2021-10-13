@@ -1,0 +1,673 @@
+[t:template,n:rhiannon]
+{
+	doc = "rhiannon";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_rhiannon;
+		[skills]
+		{
+			dexterity 	= 8.64, 0, 10;
+			intelligence 	= 35.04, 0, 10;
+			strength 	= 4.32, 0, 10;
+			nature_magic 	= 48,0,0;
+			uber 		= 48,0,0;
+		}
+		screen_class = "Scribe";
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+
+		model = m_c_gah_fg_pos_a1;
+        	gold_value = 364500;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_14;
+			1 = b_c_pos_a1_007;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[common] { screen_name="Rhiannon"; }
+
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_fg_hlmt_head-03;
+		[equipment]
+		{
+             	es_spellbook = book_glb_magic_01;
+		es_chest = bd_le_m_g_c_avg_magesilk_dsx;
+		es_feet = bo_bo_sc_m_g_c_avg_geared_dsx;
+		}
+        [other]
+        {
+			il_spell_1 = spell_healing_wind;
+			il_spell_2 = spell_shock_wave;
+	         	il_main = st_g_c_dsx_cry_avg;
+			il_main = book_glb_lore_ut_rhiannon;
+        }
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+[t:template,n:mia]
+{
+	doc = "mia";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_mia;
+		[skills]
+		{
+			strength 	=	0.18, 0, 10;
+			intelligence	= 	1.46, 0, 10;
+			dexterity	= 	0.36, 0, 10;
+			nature_magic 	= 	2,0,0;
+			uber 		= 	2,0,0;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_fg_pos_a1;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_03;
+			1 = b_c_pos_a1_026;
+		}
+		[voice]
+		{
+//			[die] { *=s_e_die_female; }
+			[die]		{ priority = high; * = s_v_jharmaya_die; }
+		}
+		[vo_voice]
+			{
+							[select_char]
+							{ 
+							priority = vo; 
+							* = s_v_jharmaya_select_01;
+							* = s_v_jharmaya_select_02;
+							* = s_v_jharmaya_select_03;
+							* = s_v_jharmaya_select_04;
+							* = s_v_jharmaya_select_05;
+							* = s_v_jharmaya_select_06;
+							* = s_v_jharmaya_select_07;
+							* = s_v_jharmaya_select_08;
+							* = s_v_jharmaya_select_09;
+							* = s_v_jharmaya_select_10;
+							* = s_v_jharmaya_select_11;
+							* = s_v_jharmaya_select_12;
+							* = s_v_jharmaya_select_13;
+							* = s_v_jharmaya_select_14;
+							* = s_v_jharmaya_select_15;
+							}
+							[order_move]
+							{
+							priority = vo; 
+							* = s_v_jharmaya_ack_01;
+							* = s_v_jharmaya_ack_02;
+							* = s_v_jharmaya_ack_03;
+							* = s_v_jharmaya_ack_04;
+							* = s_v_jharmaya_ack_05;
+							* = s_v_jharmaya_ack_06;
+							* = s_v_jharmaya_ack_07;
+							* = s_v_jharmaya_ack_08;
+							* = s_v_jharmaya_ack_09;
+							* = s_v_jharmaya_ack_10;
+							* = s_v_jharmaya_ack_11;
+							* = s_v_jharmaya_ack_12;
+							* = s_v_jharmaya_ack_13;
+							* = s_v_jharmaya_ack_14;
+							* = s_v_jharmaya_ack_15;
+							}
+							[order_attack]
+							{
+							priority = vo; 
+							* = s_v_jharmaya_attack_01;
+							* = s_v_jharmaya_attack_02;
+							* = s_v_jharmaya_attack_03;
+							* = s_v_jharmaya_attack_04;
+							* = s_v_jharmaya_attack_05;
+							* = s_v_jharmaya_attack_06;
+							* = s_v_jharmaya_attack_07;
+							* = s_v_jharmaya_attack_08;
+							* = s_v_jharmaya_attack_09;
+							* = s_v_jharmaya_attack_10;
+							* = s_v_jharmaya_attack_11;
+							* = s_v_jharmaya_attack_12;
+							* = s_v_jharmaya_attack_13;
+							* = s_v_jharmaya_attack_14;
+							* = s_v_jharmaya_attack_15;
+							}
+				}
+	}
+	[common] { screen_name="Mia"; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//		custom_head = m_c_gah_fg_hlmt_head-01;
+		[equipment]
+		{
+                es_spellbook = book_glb_magic_01;
+		es_chest = bd_le_m_g_c_avg;
+		}
+        [other]
+        {
+			il_spell_1 = spell_healing_hands;
+			il_spell_2 = spell_zap;
+			il_main = book_glb_lore_ut_mia;
+        }
+
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+
+[t:template,n:megumi]
+{
+	doc = "megumi";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_megumi;
+		[skills]
+		{
+			dexterity 		= 12.96, 0, 10;
+			intelligence 		= 4.32, 0, 10;
+			strength 		= 30.72, 0, 10;
+			melee 			= 48, 0, 0;
+			uber 			= 48, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_fg_pos_a1;
+        	gold_value = 518000;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_20;
+			1 = b_c_pos_a1_012;
+		}
+		[voice]
+		{
+//			[die] { *=s_e_die_female; }
+			[die]		{ priority = high; * = s_v_mheagan_die; }
+		}
+      [vo_voice]
+	{
+	  [select_char]
+	    { 
+	      priority = vo; 
+	      * = s_v_mheagan_select_01;
+	      * = s_v_mheagan_select_02;
+	      * = s_v_mheagan_select_03;
+	      * = s_v_mheagan_select_04;
+	      * = s_v_mheagan_select_05;
+	      * = s_v_mheagan_select_06;
+	      * = s_v_mheagan_select_07;
+	      * = s_v_mheagan_select_08;
+	      * = s_v_mheagan_select_09;
+	      * = s_v_mheagan_select_10;
+	      * = s_v_mheagan_select_11;
+	      * = s_v_mheagan_select_12;
+	      * = s_v_mheagan_select_13;
+	      * = s_v_mheagan_select_14;
+	      * = s_v_mheagan_select_15;
+	    }
+	  [order_move]
+	    {
+	      priority = vo; 
+	      * = s_v_mheagan_ack_01;
+	      * = s_v_mheagan_ack_02;
+	      * = s_v_mheagan_ack_03;
+	      * = s_v_mheagan_ack_04;
+	      * = s_v_mheagan_ack_05;
+	      * = s_v_mheagan_ack_06;
+	      * = s_v_mheagan_ack_07;
+	      * = s_v_mheagan_ack_08;
+	      * = s_v_mheagan_ack_09;
+	      * = s_v_mheagan_ack_10;
+	      * = s_v_mheagan_ack_11;
+	      * = s_v_mheagan_ack_12;
+	      * = s_v_mheagan_ack_13;
+	      * = s_v_mheagan_ack_14;
+	      * = s_v_mheagan_ack_15;
+	    }
+	  [order_attack]
+	    {
+	      priority = vo; 
+	      * = s_v_mheagan_attack_01;
+	      * = s_v_mheagan_attack_02;
+	      * = s_v_mheagan_attack_03;
+	      * = s_v_mheagan_attack_04;
+	      * = s_v_mheagan_attack_05;
+	      * = s_v_mheagan_attack_06;
+	      * = s_v_mheagan_attack_07;
+	      * = s_v_mheagan_attack_08;
+	      * = s_v_mheagan_attack_09;
+	      * = s_v_mheagan_attack_10;
+	      * = s_v_mheagan_attack_11;
+	      * = s_v_mheagan_attack_12;
+	      * = s_v_mheagan_attack_13;
+	      * = s_v_mheagan_attack_14;
+	      * = s_v_mheagan_attack_15;
+	    }
+	}
+	}
+	[common] { screen_name="Megumi"; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_fg_hlmt_head-02;
+		[equipment]
+		{
+			es_chest = bd_ra_fp_r_g_c_avg;
+			es_feet = #boots/-no_mod/27-50;
+             		es_spellbook = book_glb_magic_01;
+		}
+        [other]
+        {
+			il_main = sd_ra_g_o_st_1h_fin;
+            		il_main = sh_ra_w_c_c_m_strike;
+			il_main = book_glb_lore_ut_megumi;
+        }
+
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+[t:template,n:jenna]
+{
+	doc = "jenna";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_jenna;
+		[skills]
+		{
+			combat_magic 	= 8, 0, 0;
+			dexterity 	= 1.4, 0, 10;
+			intelligence 	= 5.6, 0, 10;
+			strength 	= 1.0, 0, 10;
+			uber 		= 8, 0, 0;
+		}
+		screen_class = "Scribe";
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_fg_pos_a1;
+        	gold_value = 5200;
+
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_10;
+			1 = b_c_pos_a1_065;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[common] { screen_name="Jenna"; }
+
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//		custom_head = m_c_gah_fg_hlmt_head-01;
+		[equipment]
+		{
+			es_chest = bd_le_m_g_c_avg_woven_dsx;
+			es_feet = #boots/-no_mod/8-12;
+             		es_spellbook = book_glb_magic_01;
+		}
+        [other]
+        {
+			il_spell_1 = spell_explosive_powder;
+	         	il_main = st_g_c_r_fun;
+			il_main = book_glb_lore_ut_jenna;
+        }
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+[t:template,n:mikhaela]
+{
+	doc = "mikhaela";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_mikhaela1;
+		[skills]
+		{
+			dexterity	 = 4.4, 0, 10;
+			intelligence 	= 17.5, 0, 10;
+			strength 	 = 2.1, 0, 10;
+			nature_magic 	= 24,0, 0;
+			uber 		 = 24,0, 0;
+		}
+		screen_class = "Scribe";
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_fg_pos_a1;
+        	gold_value = 29500;
+
+		[textures]
+		{
+//			0 = b_c_gah_fg_skin_04;
+			0 = b_c_gah_fg_skin_07;
+			1 = b_c_pos_a1_035;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[common] { screen_name="Mikhaela"; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_fg_hlmt_head-03;
+		[equipment]
+		{
+		es_chest 	= bd_ro_un_merik;
+		es_feet 	= bo_bo_le_f_g_c_satin;
+             	es_spellbook = book_glb_magic_01;
+		}
+        [other]
+        {
+			il_spell_1 = spell_healing_wind;
+            		il_spell_2 = spell_lightning;
+			il_main = book_glb_lore_ut_mikhaela;
+        }
+
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+
+[t:template,n:rebekkah]
+{
+	doc = "rebekkah";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_chynna;
+		[skills]
+		{
+			dexterity 		= 5.44, 0, 10;
+			intelligence 		= 22.4, 0, 10;
+			strength 		= 4.16, 0, 10;
+			combat_magic 		= 32, 0, 0;
+            		uber 			= 32, 0, 0;
+		}
+		screen_class = "Scribe";
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+        	gold_value = 47500;
+		model = m_c_gah_fg_pos_a1;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_02;
+			1 = b_c_pos_a1_026;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[common] { screen_name="Rebekkah"; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_fg_hlmt_head-05;
+		[equipment]
+		{
+		es_chest = bd_le_m_g_c_avg_beaded_dsx;
+		es_spellbook = book_glb_magic_01;
+		}
+        	[other]
+        	{
+			il_spell_1 = spell_fire_wall;
+	         	il_main = st_g_c_s_avg;
+ 	       }
+
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+[t:template,n:chynna]
+{
+	doc = "chynna";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_rebekkah;
+		[skills]
+		{
+			strength 		= 7.7, 0, 10;
+			dexterity 		= 3.2, 0, 10;
+			intelligence 		= 1.1, 0, 10;
+			melee 			= 12, 0, 0;
+			uber 			= 12, 0, 0;
+		}
+		screen_class = "Scribe";
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_fg_pos_a1;
+        	gold_value = 19000;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_25;
+			1 = b_c_pos_a1_026;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[common] { screen_name="Chynna"; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_fg_hlmt_head-04;
+		[equipment]
+		{
+			es_chest = bd_ch_m_g_c_avg;
+			es_feet = #boots/-no_mod/7-10;
+		}
+        	[other]
+        	{
+		il_main = sd_g_c_bl_1h_low;
+            	il_main = sh_w_g_c_r_m_avg;
+			il_main = book_glb_lore_ut_chynna;
+ 	       }
+
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+[t:template,n:sheba]
+{
+	doc = "sheba";
+	specializes = base_pm_fg;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_sheba1;
+		[skills]
+		{
+			strength 	=	1.7, 0, 10;
+			intelligence	= 	12.3, 0, 10;
+			dexterity	= 	3.0, 0, 10;
+			combat_magic 	= 	13,0, 0;
+			nature_magic 	= 	13,0, 0;
+			uber 		= 	16,0, 0;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+        	gold_value = 24500;
+		model = m_c_gah_fg_pos_a1;
+
+		[textures]
+		{
+			0 = b_c_gah_fg_skin_15;
+			1 = b_c_pos_a1_008;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+//			[die]		{ priority = high; * = s_v_jharmaya_die; }
+		}
+	}
+	[common] { screen_name="Sheba"; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_fg_hlmt_head-02;
+		[equipment]
+		{
+                es_spellbook = book_glb_magic_01;
+		es_chest = bd_le_m_g_c_avg_crmech_dsx;
+		}
+        [other]
+        {
+			il_spell_1 = spell_healing_wind;
+			il_spell_2 = spell_acid_cloud;
+			il_main = book_glb_lore_ut_sheba;
+        }
+
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}

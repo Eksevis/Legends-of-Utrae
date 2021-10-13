@@ -1,0 +1,220 @@
+[t:elevator_2s_2c_2n,n:0x08700062]
+{
+	[elevator_2s_2c_2n]
+	{
+	  i additional_door_level1 = 1;
+	  x additional_node_level1 = 0xC67C5085;
+	  i connect_door_level1 = 10;
+	  i connect_door_level2 = 9;
+	  x connect_node_level1 = 0xF676BD47;
+	  x connect_node_level2 = 0xF676BD47;
+	  f duration = 13;
+	  i elevator_additionaldoor_level1 = 2;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 2;
+	  x elevator_node = 0xD36273E5;
+	  f level1_message_delay = 0;
+	  x level1_scid = 0x0870006E;
+	  f level2_message_delay = 0;
+	  x level2_scid = 0x0870006E;
+		material = "floatplate";
+	}
+	[placement]
+	{
+	  p position = -1.46449,0.05,0.0436554,0xd36273e5;
+	}
+}
+[t:elevator_2s_1c_1n_act_deact,n:0x08700066]
+{
+	[elevator_2s_1c_1n_act_deact]
+	{
+	  i connect_door_level1 = 11;
+	  i connect_door_level2 = 12;
+	  x connect_node = 0xBBF8B524;
+	  f duration = 0.65;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0xF606BFCA;
+		level1_message = we_req_deactivate;
+	  x level1_scid = 0x08700063;
+	  x level2_scid = 0x08700063;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707107;
+	  p position = -2.48278,0.200005,4.18069,0xbbf8b524;
+	}
+}
+[t:elevator_2s_1c_1n_act_deact,n:0x08700067]
+{
+	[elevator_2s_1c_1n_act_deact]
+	{
+	  i connect_door_level1 = 13;
+	  i connect_door_level2 = 14;
+	  x connect_node = 0xBBF8B524;
+	  f duration = 0.65;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0x906818EA;
+		level1_message = we_req_deactivate;
+	  x level1_scid = 0x08700063;
+	  x level2_scid = 0x08700063;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707107;
+	  p position = -2.5869,0.200005,-0.0359154,0xbbf8b524;
+	}
+}
+[t:elevator_2s_1c_1n_act_deact,n:0x08700068]
+{
+	[elevator_2s_1c_1n_act_deact]
+	{
+	  i connect_door_level1 = 15;
+	  i connect_door_level2 = 16;
+	  x connect_node = 0xBBF8B524;
+	  f duration = 0.65;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0x4ABE7A42;
+		level1_message = we_req_deactivate;
+	  x level1_scid = 0x08700063;
+	  x level2_scid = 0x08700063;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707107;
+	  p position = -2.46234,0.200005,-3.92707,0xbbf8b524;
+	}
+}
+[t:elevator_2s_2c_2n,n:0x08700045]
+{
+	[elevator_2s_2c_2n]
+	{
+	  i additional_door_level1 = 8;
+	  i additional_door_level2 = 10;
+	  x additional_node_level1 = 0x2A615E8D;
+	  x additional_node_level2 = 0x11ADA5F9;
+	  i connect_door_level1 = 7;
+	  i connect_door_level2 = 9;
+	  x connect_node_level1 = 0x2A615E8D;
+	  x connect_node_level2 = 0x11ADA5F9;
+	  f duration = 5;
+	  i elevator_additionaldoor_level1 = 2;
+	  i elevator_additionaldoor_level2 = 3;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0xFC90E6F3;
+		level1_message = we_req_deactivate;
+	  f level1_message_delay = 0;
+	  x level1_scid = 0x08700097;
+		level2_message = we_req_deactivate;
+	  f level2_message_delay = 0;
+	  x level2_scid = 0x08700097;
+		material = "dc_pulley";
+	  f moving1_message_delay = 0;
+	  x moving1_scid = 0x08700097;
+	  f moving2_message_delay = 0;
+	  x moving2_scid = 0x08700097;
+	}
+	[placement]
+	{
+	  p position = -0.0696335,0.149994,0.0884704,0xfc90e6f3;
+	}
+}
+[t:elevator_2s_2c_2n,n:0x08700048]
+{
+	[elevator_2s_2c_2n]
+	{
+	  i additional_door_level1 = 8;
+	  i additional_door_level2 = 10;
+	  x additional_node_level1 = 0xE944A6DE;
+	  x additional_node_level2 = 0x8991C224;
+	  i connect_door_level1 = 7;
+	  i connect_door_level2 = 9;
+	  x connect_node_level1 = 0xE944A6DE;
+	  x connect_node_level2 = 0x8991C224;
+	  f duration = 5;
+	  i elevator_additionaldoor_level1 = 2;
+	  i elevator_additionaldoor_level2 = 3;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0xF3CA5686;
+		level1_message = we_req_deactivate;
+	  f level1_message_delay = 0;
+	  x level1_scid = 0x087001BB;
+		level2_message = we_req_deactivate;
+	  f level2_message_delay = 0;
+	  x level2_scid = 0x087001BB;
+		material = "dc_pulley";
+	  f moving1_message_delay = 0;
+	  x moving1_scid = 0x087001BB;
+	  f moving2_message_delay = 0;
+	  x moving2_scid = 0x087001BB;
+	}
+	[placement]
+	{
+	  q orientation = 0,4.76837e-007,0,1;
+	  p position = 0.123156,0.15,-0.000946044,0xf3ca5686;
+	}
+}
+[t:elevator_2s_2c_2n,n:0x08700047]
+{
+	[elevator_2s_2c_2n]
+	{
+	  i additional_door_level1 = 8;
+	  i additional_door_level2 = 10;
+	  x additional_node_level1 = 0x04E2F431;
+	  x additional_node_level2 = 0xD081BF1B;
+	  i connect_door_level1 = 7;
+	  i connect_door_level2 = 9;
+	  x connect_node_level1 = 0x04E2F431;
+	  x connect_node_level2 = 0xD081BF1B;
+	  f duration = 5;
+	  i elevator_additionaldoor_level1 = 2;
+	  i elevator_additionaldoor_level2 = 3;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0x17D345A2;
+		level1_message = we_req_deactivate;
+	  f level1_message_delay = 0;
+	  x level1_scid = 0x087001BC;
+		level2_message = we_req_deactivate;
+	  f level2_message_delay = 0;
+	  x level2_scid = 0x087001BC;
+		material = "dc_pulley";
+	  f moving1_message_delay = 0;
+	  x moving1_scid = 0x087001BC;
+	  f moving2_message_delay = 0;
+	  x moving2_scid = 0x087001BC;
+	}
+	[placement]
+	{
+	  q orientation = 0,4.76837e-007,0,1;
+	  p position = -0.0472317,0.15,0.0170441,0x17d345a2;
+	}
+}
+[t:elevator_2s_1c_2n,n:0x08700058]
+{
+	[elevator_2s_1c_2n]
+	{
+	  i connect_door_level1 = 8;
+	  i connect_door_level2 = 8;
+	  x connect_node_level1 = 0xA963A9C7;
+	  x connect_node_level2 = 0xD4535DCA;
+	  f duration = 7;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 1;
+	  x elevator_node = 0x1C0B5FD1;
+	  f level2_message_delay = 0;
+	  x level2_scid = 0x087000FB;
+		material = "dm_small";
+		moving1_actioninfo = "utraean_world_gp_r2_1;0x2284EBC3,1,-1,-1,out:black;0xFC8EB6A1,1,-1,-1,in,5";
+		moving2_actioninfo = "utraean_world_gp_r1_3,7;0x2284EBC3,1,-1,-1,in,7;0xFC8EB6A1,1,-1,-1,out:black,3";
+	}
+	[placement]
+	{
+	  q orientation = 0,1.78814e-007,0,1;
+	  p position = -0.119179,5.95,-0.203804,0x1c0b5fd1;
+	}
+}

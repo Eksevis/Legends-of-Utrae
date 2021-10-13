@@ -1,0 +1,461 @@
+[t:template,n:ut_deathknight]
+{
+	category_name = "1W_evil_b";
+	doc = "dsx_deathknight aka cicatrix";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength		= 6, 0;
+			intelligence		= 8, 0;
+			dexterity		= 6, 0;
+			melee			= 6, 0;
+            			combat_magic  	= 6, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 38;
+		life			= 178;
+		max_life		= 178;
+		mana			= 1000;
+		max_mana		= 1000;
+		model = m_c_ebb_dk_pos_1;
+		[voice]
+		{
+			[attack] { * = s_e_attack_igniter;	}
+			[die]		{ priority = high;	* = s_e_die_centaur;		}
+			[enemy_spotted] { priority = high;	* = s_e_call_centaur;	}
+
+		} 
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_min = 25;
+		damage_max = 35;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.5;
+		max_move_velocity = 3.0;
+		[bone_translator]
+		{
+			body_anterior = headbone;
+			body_mid = bip01_spine3;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine3;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ebb_dk_fs;
+			[chore_attack]
+			{
+				chore_stances = 2;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+					02 = at-03;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 2;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 2;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 2;
+				skrit = select_fidget;
+				[anim_files] 
+				{ 
+					00=dff; 
+					01=dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 2;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				// need all anim files here for nis control
+				[anim_files]
+				{
+					// fidgets/boredom
+					dff0 = a_c_ebb_dk_fs2_dff;
+					dff1 = a_c_ebb_dk_fs2_at-02;
+					dff2 = a_c_ebb_dk_fs2_dff-02;
+					dff3 = a_c_ebb_dk_fs2_at;
+				 }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Canfallon the Keeper"; //--
+		membership = monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode; //--
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("death_knight_fire");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_red(sgx)");
+			}
+			[*]
+			{
+				action* = call_sfx_script("death_knight_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+	[physics]
+	{
+		break_sound = s_e_spiderdie_small;
+		explode_when_killed = false;
+		explosion_magnitude = 10;
+		fire_effect = human_physics_fire;
+		fire_resistance = 0.0;
+		fire_burn_threshold = 20;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_bone_dirty_01 = 1;
+			frag_glb_bone_dirty_02 = 1;
+			frag_glb_bone_dirty_03 = 1;
+			frag_glb_bone_dirty_04 = 4;
+			frag_glb_bone_dirty_05 = 1;
+			frag_glb_bone_dirty_06 = 1;
+		}
+	}
+	[defend] { defense = 120; }
+	[inventory]
+	{
+		//his sword is two-handed when used by the player, one handed when
+		//used by him.
+		
+		// TAT 8/1/2003 - I set the one handed sword template to not be droppable
+		//	so it can never drop, and the shield WILL drop - the 2-handed version
+		//	will get dropped as a reward on death
+
+		// JPC 5aug2003 - I did the same for the shield (because they need
+		// to be different scales)
+
+		[equipment]
+		{
+			es_weapon_hand = st_un_ut_reaper;
+			es_shield_hand = sh_w_f_g_c_t_s_avg_deathknight_monster;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+                		min = 1;
+                		max = 1;
+	                	il_main = #weapon/-rare(1)/10-19;
+	                	il_main = #armor/-rare(1)/20-40;
+                    		il_main = #*/-rare(1)/10-19;
+			}
+			[all*]
+			{
+       		   	    	il_main = bw_g_c_dsx_spd_avg_dsx_set_guiseppi;
+                	}
+		}
+	}
+	[mind]
+	{
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit;
+		
+		
+		jat_attack_object_melee				= world\ai\jobs\common\job_attack_object_melee.skrit
+			?persistence=0.0;	// we don't try too hard to follow enemies	
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?still=true;	// no wandering about
+
+        	actor_weapon_preference		= WP_MELEE;
+		actor_auto_switches_to_magic	= false;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= true;
+
+		on_enemy_entered_icz_switch_to_melee = true;
+
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		personal_space_range = 0.7;
+		sight_range = 14.0;
+	}
+	
+	// Skrit component for making him explode a few seconds through his death animation.
+	[effect_aftereffect]
+	{
+		explodeObject=true;
+		explodeDelay=3;
+
+		effect=death_knight_die_explode;
+		effectDelay=2.5;
+
+		lifeSpan=5;
+	}
+}
+[t:template,n:ut_centaur]
+{
+	category_name = "1W_evil_b";
+	doc = "dsx_deathknight aka cicatrix";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength	= 46, 0;
+			intelligence	= 8, 0;
+			dexterity	= 16, 0;
+			melee		= 46, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 51038;
+		life			= 1078;
+		max_life		= 1078;
+		mana			= 1000;
+		max_mana		= 1000;
+		model = m_c_ebb_dk_pos_1;
+		[voice]
+		{
+			[attack] { * = s_e_attack_igniter;	}
+			[die]		{ priority = high;	* = s_e_die_centaur;		}
+			[enemy_spotted] { priority = high;	* = s_e_call_centaur;	}
+
+		} 
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_min = 165;
+		damage_max = 145;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.5;
+		max_move_velocity = 3.0;
+		[bone_translator]
+		{
+			body_anterior = headbone;
+			body_mid = bip01_spine3;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine3;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ebb_dk_fs;
+			[chore_attack]
+			{
+				chore_stances = 2;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+					02 = at-03;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 2;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 2;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 2;
+				skrit = select_fidget;
+				[anim_files] 
+				{ 
+					00=dff; 
+					01=dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 2;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				// need all anim files here for nis control
+				[anim_files]
+				{
+					// fidgets/boredom
+					dff0 = a_c_ebb_dk_fs2_dff;
+					dff1 = a_c_ebb_dk_fs2_at-02;
+					dff2 = a_c_ebb_dk_fs2_dff-02;
+					dff3 = a_c_ebb_dk_fs2_at;
+				 }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Skeletal Centaur"; //--
+		membership = monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode; //--
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("death_knight_fire");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+			[*]
+			{
+				action* = call_sfx_script("death_knight_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+	[physics]
+	{
+		break_sound = s_e_spiderdie_small;
+		explode_when_killed = false;
+		explosion_magnitude = 10;
+		fire_effect = human_physics_fire;
+		fire_resistance = 0.0;
+		fire_burn_threshold = 20;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_bone_dirty_01 = 1;
+			frag_glb_bone_dirty_02 = 1;
+			frag_glb_bone_dirty_03 = 1;
+			frag_glb_bone_dirty_04 = 4;
+			frag_glb_bone_dirty_05 = 1;
+			frag_glb_bone_dirty_06 = 1;
+		}
+	}
+	[defend] { defense = 520; }
+	[inventory]
+	{
+		//his sword is two-handed when used by the player, one handed when
+		//used by him.
+		
+		// TAT 8/1/2003 - I set the one handed sword template to not be droppable
+		//	so it can never drop, and the shield WILL drop - the 2-handed version
+		//	will get dropped as a reward on death
+
+		// JPC 5aug2003 - I did the same for the shield (because they need
+		// to be different scales)
+
+		[equipment]
+		{
+			es_weapon_hand = sd_d_c_dsx_skl_1h_mag;
+			es_shield_hand = sh_w_f_g_c_t_s_avg_deathknight_monster;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/102-127;
+                    			il_main = #armor/64-316;
+				}
+				[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/123-135;
+	                		il_main = #armor/-rare(1)/478-489;
+                    			il_main = #*/-rare(1)/123-135;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/123-135;
+	                		il_main = #armor/-unique(2)/478-489;
+                    			il_main = #*/-unique(2)/123-135;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 23879;
+					min = 20034;
+				}
+			}
+
+		}
+	}
+	[mind]
+	{
+		jat_brain			= world\ai\jobs\common\brain_hero.skrit;
+		
+		
+		jat_attack_object_melee		= world\ai\jobs\common\job_attack_object_melee.skrit
+			?persistence=0.0;	// we don't try too hard to follow enemies	
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?meander	= true
+			&still		= false;
+
+        	actor_weapon_preference		= WP_MELEE;
+		actor_auto_switches_to_magic	= false;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= true;
+
+		on_enemy_entered_icz_switch_to_melee = true;
+
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		personal_space_range = 0.7;
+		sight_range = 14.0;
+	}
+	// Skrit component for making him explode a few seconds through his death animation.
+	[effect_aftereffect]
+	{
+		explodeObject=true;
+		explodeDelay=3;
+
+		effect=death_knight_die_explode;
+		effectDelay=2.5;
+
+		lifeSpan=5;
+	}
+}
+

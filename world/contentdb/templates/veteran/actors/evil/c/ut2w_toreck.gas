@@ -1,0 +1,151 @@
+[t:template,n:ut2W_toreck]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_toreck";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	55, 0;
+			intelligence =  16, 0;
+			dexterity =  	30.1, 0;
+			melee =  		68, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 200000;
+		life = 2233.7;
+		max_life = 2233.7;
+		mana = 24.4;
+		max_mana = 24.4;
+		model = m_c_ecm_to_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_toreck; }
+			[hit_critical]	{ priority = low; * = s_e_hit_toreck_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_toreck_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_toreck_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.9;
+		damage_max = 253.1;
+		damage_min = 137;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.340000;
+		max_move_velocity = 3.7;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_to_fs;
+			[chore_attack]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files]
+					{
+						00 = at;
+						01 = at-02;
+					}
+			}
+			[chore_default]
+			{
+				chore_stances = 5;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 5;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 5;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+		[weapon_scales]
+		{
+			as_staff	= 1.8, 1.8, 1.8;
+		}
+	}
+	[common] { screen_name="Toreck Tormentor"; }
+	[defend] { defense=850.7; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = st_un_toreck;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/111-222;
+					il_main = #armor/112-562;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/212-241;
+	                il_main = #armor/-rare(1)/698-777;
+                    il_main = #*/-rare(1)/212-241;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/212-241;
+	                il_main = #armor/-unique(2)/698-777;
+                    il_main = #*/-unique(2)/212-241;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 186554;
+					min = 148775;
+				}
+    		}
+		}
+	}
+	[mind]
+	{
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+		jat_fidget							= world\ai\jobs\common\job_fidget.skrit
+			?curious							= 0.75
+			&interest							= interest
+			&meander							= false
+			&still								= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+	}
+}

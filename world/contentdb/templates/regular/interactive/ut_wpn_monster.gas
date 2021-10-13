@@ -1,0 +1,1052 @@
+[t:template,n:st_un_ut_reaper]
+{
+	doc = "Reaper";
+	specializes = base_staff;
+	[aspect]
+	{
+		model = m_w_stf_035;
+	}
+	[attack]
+	{
+		damage_max = 15;
+		damage_min = 10;
+		is_two_handed = false;
+	}
+	[common]
+	{
+		allow_modifiers = false;
+		is_pcontent_allowed = false;
+		screen_name = "Reaper";
+	}
+	[gui]
+	{
+		is_droppable = false;
+		active_icon = b_gui_ig_i_ic_stf_004;
+		inventory_height = 4;
+		inventory_icon = b_gui_ig_i_w_stf_082;
+		inventory_width = 1;
+	}
+}
+[t:template,n:st_g_c_bl_1h_fun_nossirom_ut]
+//unique for Nossirom; he used to have a sword.
+{
+	doc = "Nossirom's staff";
+	specializes = dsx_base_staff;
+	[aspect]
+		{
+			model = m_w_stf_402;
+			scale_base	 = 1.0;
+		}
+	[attack]
+		{
+			f damage_max = 22.000000;
+			f damage_min = 18.000000;
+		}
+	[common]
+		{
+			
+			is_pcontent_allowed = false;
+			b allow_modifiers = false;
+			screen_name = "Nosirrom's Staff";
+		}
+	[magic]
+	{
+		[enchantments]
+		{
+			[*]
+			{
+				alteration		= alter_max_life;
+				value			= 0;
+				duration			= #infinite;
+				is_permanent		= true;
+				is_single_instance	= false;
+				effect_script_hit   = nosirrom_staff_hit;
+			}
+		}
+	}
+	gui:is_droppable = false;
+	[gui]
+		{ //not intended for players to ever have, so most of this should not ever matter.
+			active_icon = b_gui_ig_i_ic_stf_004;
+			equip_requirements = strength:5;
+			inventory_height = 4;
+			inventory_icon = b_gui_ig_i_w_stf_010;
+			inventory_width = 1;
+		}
+}
+[t:template,n:ax_d_d_ut_goblin_mutant]
+{
+	doc = "DSX Mutant Goblin Cutter";
+	specializes = dsx_base_hammer;
+	[aspect]
+	{
+		model = m_w_hmr_warmallet;
+		selection_indicator_scale = 0.65;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+	  f damage_max = 55.000000;
+	  f damage_min = 48.000000;
+		is_two_handed = true;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Goblin Cutter";
+	}
+	[gui]
+	{
+		//active_icon = b_gui_ig_i_ic_axe_003;
+		equip_requirements = strength:17;
+		inventory_icon = b_gui_ig_i_w_hmr_303;
+		inventory_height = 3;
+		inventory_width = 2;
+	}
+}
+
+[t:template,n:ut_rock_goblin]
+{
+	doc = "dsx_rock_goblin";
+	specializes = base_bow;
+	[aspect]
+	{
+		is_selectable = false;
+		model = m_w_misc_017;
+		[voice]
+		{
+			[attack]
+			{
+				* = s_e_swing_01;
+				* = s_e_swing_03;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_appears_jit = true;
+		ammo_template = rock_krug_ammo;
+		damage_max = 28;
+		damage_min = 24;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Rock";
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+//////// snowball chucker bow and arrow.
+
+[t:template,n:gpg_snowball_krug]
+{
+	doc = "gpg_snowball_krug";
+	specializes = base_bow;
+	[aspect]
+	{
+		is_selectable = false;
+		model = m_w_misc_017;
+		is_visible = false;
+		[voice]
+		{
+			[attack]
+			{
+				* = s_e_swing_01;
+				* = s_e_swing_03;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_appears_jit = true;
+		ammo_template = gpg_snowball_krug_ammo;
+		damage_max = 12;
+		damage_min = 11;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Snowball";
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("snowball_tracer");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+[t:template,n:gpg_snowball_krug_ammo]
+{
+	specializes = base_arrow;
+	[aspect]
+	{
+		material = stonesmall;
+		model=m_w_misc_018;
+		is_selectable	= false;
+		force_no_render = true;
+		[voice]
+		{
+			[attack] { * = s_e_swing_01; }
+		}
+	}
+	[attack]
+	{
+		damage_max = 0;
+		damage_min = 0;
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		screen_name = "Snowball";
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("snowball_tracer");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+
+	[physics]
+	{
+		angular_velocity = 8,8,8;
+		randomize_velocity = TRUE;
+		elasticity = 0.5;
+		deflection_angle = .2;
+		orient_to_trajectory = FALSE;
+		explode_if_hit_go = true;
+		explode_if_hit_terrain = true;
+		explode_when_expired = true;
+		break_effect = snowball_explosion;
+	}
+}
+[t:template,n:gpg_fire_king_skull]
+{
+	doc = "gpg_fire_king_skull";
+	specializes = base_arrow;
+	[aspect]
+	{
+		model=m_w_misc_029;
+//		textures:0=m_w_misc_fireskull;
+		scale_base = 4.0;
+	}
+	[attack]
+	{
+		damage_max = 1;
+		damage_min = 1;
+		skill_class = "Combat Magic";
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		screen_name = "Skull";
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("fire_king_skull_flames");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+	[physics]
+	{
+		orient_to_trajectory = true;
+		angular_velocity = 0,0,0;
+		break_effect = fire_king_swipe_hit;
+		explode_if_hit_go		= true;
+		explode_if_hit_terrain	= true;
+		explode_when_expired 	= true;
+		gravity = 20;
+	}
+}
+[t:template,n:gpg_hammer_fire_king]
+{
+	doc = "Fire King Hammer";
+	specializes = base_hammer;
+	[aspect]
+	{
+		model = m_w_hmr_fireking;
+		textures:0 = b_w_misc_fkhammer;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+	  f damage_max = 30.000000;
+	  f damage_min = 20.000000;
+	  	is_two_handed = true;
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		screen_name = "Hammer";
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+}
+
+/////////////////////PIRATES//////////////////////////////////
+[t:template,n:dg_g_c_ut_sb_avg]
+{
+	doc = "DSX Barong";
+	specializes = dsx_base_dagger;
+	[aspect]
+		{
+			model = m_w_dag_303;
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+		  	f damage_max = 54.000000;
+		  	f damage_min = 42.000000;
+			is_two_handed = false;
+		}
+	[common]
+		{
+			screen_name = "Barong";
+			is_pcontent_allowed = false;
+		}
+	[gui]
+		{
+      			equip_requirements = strength:17;
+			inventory_icon = b_gui_ig_i_w_dgr_303;
+			inventory_height = 2;
+			inventory_width = 1;
+		}
+}
+[t:template,n:sd_g_c_fa_1h_avg_pirate]
+{
+	doc = "Falchion";
+	specializes = base_sword;
+	[aspect]
+	{
+		model = m_w_swd_026;
+	}
+	[attack]
+	{
+		  f damage_max = 54.000000;
+		  f damage_min = 42.000000;
+	}
+	[common]
+	{
+		screen_name = "Falchion";
+		is_pcontent_allowed = false;
+	}
+	[gui]
+	{
+		equip_requirements = strength:26;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_swd_059;
+		inventory_width = 1;
+	}
+	[pcontent]
+	{
+		[base]
+		{
+		  f modifier_max = 11.000000;
+		  f modifier_min = 1.000000;
+		}
+	}
+}
+[t:template,n:sd_g_c_sc_1h_avg_pirate]
+{
+	doc = "Scimitar";
+	specializes = base_sword;
+	[aspect]
+	{
+		model = m_w_swd_032;
+	}
+	[attack]
+	{
+		  f damage_max = 54.000000;
+		  f damage_min = 42.000000;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Scimitar";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_swd_006;
+		equip_requirements = strength:24;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_swd_065;
+		inventory_width = 1;
+	}
+	[pcontent]
+	{
+		[base]
+		{
+		  f modifier_max = 9.000000;
+		  f modifier_min = 1.000000;
+		}
+	}
+}
+[t:template,n:sd_g_c_sc_1h_cutlass_pirate_01]
+{
+	doc = "Scimitar";
+	specializes = base_sword;
+	[aspect]
+	{
+		model = m_w_swd_005;
+	}
+	[attack]
+	{
+		  f damage_max = 54.000000;
+		  f damage_min = 42.000000;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Scimitar";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_swd_006;
+		equip_requirements = strength:24;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_swd_065;
+		inventory_width = 1;
+//		is_droppable = false;
+	}
+	[pcontent]
+	{
+		[base]
+		{
+		  f modifier_max = 9.000000;
+		  f modifier_min = 1.000000;
+		}
+	}
+}
+[t:template,n:sd_g_c_sc_1h_cutlass_pirate_02]
+{
+	doc = "Scimitar";
+	specializes = base_sword;
+	[aspect]
+	{
+		model = m_w_swd_006;
+	}
+	[attack]
+	{
+		  f damage_max = 54.000000;
+		  f damage_min = 42.000000;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Scimitar";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_swd_006;
+		equip_requirements = strength:24;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_swd_065;
+		inventory_width = 1;
+//		is_droppable = false;
+	}
+	[pcontent]
+	{
+		[base]
+		{
+		  f modifier_max = 9.000000;
+		  f modifier_min = 1.000000;
+		}
+	}
+}
+[t:template,n:sd_g_c_sc_1h_cutlass_pirate_03]
+{
+	doc = "Scimitar";
+	specializes = base_sword;
+	[aspect]
+	{
+		model = m_w_swd_007;
+	}
+	[attack]
+	{
+		  f damage_max = 54.000000;
+		  f damage_min = 42.000000;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Scimitar";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_swd_006;
+		equip_requirements = strength:24;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_swd_065;
+		inventory_width = 1;
+//		is_droppable = false;
+	}
+	[pcontent]
+	{
+		[base]
+		{
+		  f modifier_max = 9.000000;
+		  f modifier_min = 1.000000;
+		}
+	}
+}
+[t:template,n:sd_g_c_sc_1h_cutlass_pirate_04]
+{
+	doc = "Scimitar";
+	specializes = base_sword;
+	[aspect]
+	{
+		model = m_w_swd_030;
+	}
+	[attack]
+	{
+		  f damage_max = 54.000000;
+		  f damage_min = 42.000000;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Scimitar";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_swd_006;
+		equip_requirements = strength:24;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_swd_065;
+		inventory_width = 1;
+//		is_droppable = false;
+	}
+	[pcontent]
+	{
+		[base]
+		{
+		  f modifier_max = 9.000000;
+		  f modifier_min = 1.000000;
+		}
+	}
+}
+//////////////////////BANDITS////////////////////////
+[t:template,n:dg_g_c_sai_avg_bandit]
+{
+	doc = "DSX Sai";
+	specializes = dsx_base_dagger;
+	[aspect]
+		{
+			model = m_w_dag_claw_03;
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			f damage_max = 30;
+			f damage_min = 20;
+			is_two_handed = false;
+			attack_class = ac_beastfu; //punch style
+		}
+	[common]
+		{
+			screen_name = "Sai";
+			is_pcontent_allowed = false;
+		}
+	[gui]
+		{
+      			active_icon = b_gui_ig_i_ic_dg_302;
+			equip_requirements = strength:24;
+			inventory_icon = b_gui_ig_i_w_dgr_302;
+			inventory_height = 2;
+			inventory_width = 1;
+		}
+	[pcontent]
+		{
+			[base]
+				{
+					f modifier_max = 17;
+					f modifier_min = 0;
+				}
+		}
+}
+//////////////////THROW//////////////////////////
+[t:template,n:base_monster_throw]
+{
+	doc = "Bow";
+	specializes = weapon_ranged;
+	[aspect]
+	{
+		material = arrow;
+		[voice]
+		{
+			[put_down]
+			{
+				* = s_e_gui_put_down_bow;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_attach_bone = weapon_grip;
+		ammo_template = arrow;
+		attack_class = ac_bow;
+		attack_range = 9.0;
+		damage_max = 4;
+		damage_min = 2;
+		is_projectile = true;
+		is_two_handed = false;
+		reload_delay = 0.0;
+		skill_class = ranged;
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_bow_001;
+		equip_slot = es_shield_hand;
+	}
+	[physics]
+	{
+		velocity = 14.0;
+	}
+}
+[t:template,n:ut_rock_dwarf_throw]
+{
+	doc = "dsx_rock_goblin";
+	specializes = base_monster_throw;
+	[aspect]
+	{
+		is_selectable = false;
+		model = m_w_misc_017;
+		[voice]
+		{
+			[attack]
+			{
+				* = s_e_swing_01;
+				* = s_e_swing_03;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_appears_jit = true;
+		ammo_template = rock_krug_ammo;
+		damage_max = 28;
+		damage_min = 24;
+		reload_delay = 1.0;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Rock";
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+[t:template,n:ut_rock_assassin_star]
+{
+	doc = "dsx_rock_goblin";
+	specializes = base_monster_throw;
+	[aspect]
+	{
+		is_selectable = false;
+		model = m_w_misc_027;
+		[voice]
+		{
+			[attack]
+			{
+				* = s_e_swing_01;
+				* = s_e_swing_03;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_appears_jit = true;
+		ammo_template = assassin_star;
+		damage_max = 28;
+		damage_min = 24;
+		reload_delay = 1.0;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Rock";
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+[t:template,n:ut_rock_assassin_explosives]
+{
+	doc = "dsx_rock_goblin";
+	specializes = base_monster_throw;
+	[aspect]
+	{
+		is_selectable = false;
+		model = m_w_misc_grenade;
+		[voice]
+		{
+			[attack]
+			{
+				* = s_e_swing_01;
+				* = s_e_swing_03;
+			}
+		}
+	}
+	[attack]
+	{
+		aiming_error_range_x = 2.5;
+		aiming_error_range_y = 2.5;
+		ammo_appears_jit = true;
+		ammo_template = grenade_magic_small;
+		area_damage_radius = 2;
+		damage_max = 28;
+		damage_min = 24;
+		reload_delay = 1.0;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Rock";
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+[t:template,n:ut_rock_assassin_knife]
+{
+	doc = "dsx_rock_goblin";
+	specializes = base_monster_throw;
+	[aspect]
+	{
+		is_selectable = false;
+		model = m_w_dag_003;
+		[voice]
+		{
+			[attack]
+			{
+				* = s_e_swing_01;
+				* = s_e_swing_03;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_appears_jit = true;
+		ammo_template = knife_ammo;
+		damage_max = 28;
+		damage_min = 24;
+		reload_delay = 1.0;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Rock";
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+[t:template,n:ut_rock_assassin_axe]
+{
+	doc = "dsx_rock_goblin";
+	specializes = base_monster_throw;
+	[aspect]
+	{
+		is_selectable = false;
+		model = m_w_axe_029;
+		[voice]
+		{
+			[attack]
+			{
+				* = s_e_swing_01;
+				* = s_e_swing_03;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_appears_jit = true;
+		ammo_template = axe_ammo;
+		damage_max = 28;
+		damage_min = 24;
+		reload_delay = 1.0;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Rock";
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+[t:template,n:ut_rock_krug_tomahawk]
+{
+	doc = "dsx_rock_goblin";
+	specializes = base_monster_throw;
+	[aspect]
+	{
+		is_selectable = false;
+		model = m_w_axe_017;
+		[voice]
+		{
+			[attack]
+			{
+				* = s_e_swing_01;
+				* = s_e_swing_03;
+			}
+		}
+	}
+	[attack]
+	{
+		ammo_appears_jit = true;
+		ammo_template = tomahawk_ammo;
+		damage_max = 28;
+		damage_min = 24;
+		reload_delay = 0.25;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Rock";
+	}
+	[gui]
+	{
+		is_droppable = false;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+[t:template,n:minigun_rock_launcher]
+{
+	doc = "Grenade Launcher";
+	specializes = base_projectile;
+	[aspect]
+	{
+		mana = 100;
+		mana_recovery_period = 1;
+		mana_recovery_unit = 10;
+		max_mana = 100;
+		model = m_w_misc_grenadelauncher;
+	}
+	[attack]
+	{
+		aiming_error_range_x = 2.5;
+		aiming_error_range_y = 2.5;
+		ammo_appears_jit = true;
+		ammo_template = rock_krug_ammo;
+		area_damage_radius = 3.5;
+		attack_range = 10;
+		damage_max = 39;
+		damage_min = 30;
+		reload_delay = 2;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+		screen_name = "Rock Launcher";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_msc_001;
+		equip_requirements = strength:18;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_msc_015;
+		inventory_width = 2;
+	}
+	[minigun_magic]
+	{
+		mana_per_shot = 30.0;
+		use_mana = true;
+	}
+	[physics]
+	{
+		velocity = 10;
+	}
+}
+[t:template,n:ut_spear_ammo]
+{
+	specializes = base_arrow;
+	[aspect]
+	{
+		material = metal;
+		model = m_w_stf_048;
+//		model = m_w_stf_076;
+		is_selectable	= false;
+		scale_base = 1.2;
+	}
+	[attack]
+	{
+		damage_max = 2;
+		damage_min = 2;
+		skill_class = ranged;
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("star_sparks");
+				condition* = receive_world_message("we_glanced");
+			}
+		}
+	}
+	[physics]
+	{
+		gravity = 4;
+		orient_to_trajectory = true;
+		angular_velocity = 0,0,0;
+		elasticity = 0.95;
+		break_effect = star_sparks;
+		explode_if_hit_go = true;
+		explode_if_hit_terrain = false;
+		explode_when_expired = false;
+	}
+}
+[t:template,n:ut_hg_spear]
+{
+	category_name = "weapon";
+	doc = "Long Backed Bow";
+	specializes = base_bow;
+	[aspect]
+	{
+		model = m_w_stf_076;
+	}
+	[attack]
+	{
+		ammo_appears_jit = true;
+		ammo_template = ut_spear_ammo;
+		attack_range = 13;
+	  	f damage_max = 110.000000;
+	  	f damage_min = 94.000000;
+		 is_two_handed = false;
+	}
+	[common]
+	{
+		is_pcontent_allowed = FALSE;
+		screen_name = "Javelin";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_stf_003;
+		equip_requirements = strength:16,dexterity:26;
+		inventory_height = 4;
+		inventory_icon = b_gui_ig_i_w_stf_117;
+		inventory_width = 1;
+		 equip_slot = es_weapon_hand;
+	}
+	[physics]
+	{
+		 velocity = 14;
+	}
+}
+[t:template,n:ss_g_c_bl_1h_fun_zaur_ut]
+//unique for zaurask Zombie stinger in Area 9
+{
+	doc = "Zaurask Stinger Blade";
+	specializes = base_sword;
+	[aspect]
+	{
+      		model = m_w_swd_048;
+	}
+	[attack]
+	{
+	  f damage_max = 18.000000;
+	  f damage_min = 14.000000;
+	}
+	[common]
+	{
+		is_pcontent_allowed = false;
+	  b allow_modifiers = false;
+		screen_name = "Tempered Blade";
+	}
+	[gui]
+	{
+		active_icon = b_gui_ig_i_ic_swd_001;
+		equip_requirements = strength:13;
+		inventory_height = 3;
+		inventory_icon = b_gui_ig_i_w_swd_006;
+		inventory_width = 1;
+	}
+}
+[t:template,n:bw_ut_zau_2_a]
+{
+	category_name = "weapon";
+	doc = "DSX Zaurask Long Bow";
+	specializes = dsx_base_bow;
+	[aspect]
+		{
+			model = m_w_bow_025;
+		}
+	[attack]
+		{
+			attack_range = 15;
+			f damage_max = 20.000000;
+			f damage_min = 16.000000;
+			reload_delay = 0;
+		}
+	[common]
+		{
+		is_pcontent_allowed = false;
+			b allow_modifiers = false;
+			screen_name = "Zaurask Long Bow";
+		}
+	[gui]
+		{
+			active_icon = b_gui_ig_i_ic_bow_002;
+			equip_requirements = strength:15,dexterity:22;
+			inventory_height = 4;
+			inventory_icon = b_gui_ig_i_w_bow_014;
+			inventory_width = 1;
+		}
+}

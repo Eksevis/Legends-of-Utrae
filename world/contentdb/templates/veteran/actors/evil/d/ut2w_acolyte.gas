@@ -1,0 +1,168 @@
+[t:template,n:ut2w_acolyte_dark]
+{
+// Balanced for level 13, medium melee
+	category_name = "1W_evil_d";
+	doc = "dsx_acolyte_dark";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		31.6, 0;
+			intelligence = 	11.5, 0;
+			dexterity = 	13.9, 0;
+   			melee =  		77,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 160000;
+		life = 2068;
+		max_life = 2068;
+		mana = 36.9;
+		max_mana = 36.9;
+
+		model = m_c_ecm_wr_pos_1;
+		textures:0 = b_c_ecm_dacolyte;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_acolyte_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_acolyte_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_acolyte_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_acolyte_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_acolyte_SED; }
+
+		}
+	}
+	[defend] { defense = 915; }
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 378;
+		damage_min = 262;
+	}
+	[body]
+		{
+			avg_move_velocity = 2.5;
+			[bone_translator]
+				{
+					body_anterior = head_bone;
+					body_mid = mid_torso;
+					body_posterior = spine_end;
+					kill_bone = spine_02;
+					shield_bone = shield_grip;
+					weapon_bone = weapon_grip;
+				}
+			[chore_dictionary]
+				{
+					chore_prefix = a_c_ecm_wr_fs;
+					[chore_attack]
+						{
+							chore_stances = 0;
+							skrit = select_attack;
+							[anim_files]
+								{
+									00 = at;
+									01 = at-02;
+								}
+						}
+					[chore_default]
+						{
+							chore_stances = 0;
+							skrit = infinite_loop;
+							[anim_files] { 00=dfs; }
+						}
+					[chore_die]
+						{
+							chore_stances = 0;
+							skrit = select_transition;
+							[anim_files] { 00=di; }
+						}
+					[chore_misc]
+						{
+							chore_stances = ignore;
+							skrit = select_transition;
+							[anim_files]
+								{
+									slep = a_c_ecm_wr_fs3_ds;
+									wake = a_c_ecm_wr_fs3_up;
+								}
+						}
+					[chore_fidget]
+						{
+							chore_stances = 0;
+							skrit = select_fidget;
+							[anim_files]
+								{
+									00=dff;
+									01=dff-02;
+								}
+						}
+					[chore_walk]
+						{
+							chore_stances = 0;
+							skrit = select_walk;
+							[anim_files] { 00=wl; }
+						}
+				}
+		}
+	[common]
+	{
+		screen_name = "Wraith Phantom"; //--
+		membership = monster, undead; //--
+	}
+
+
+	[mind]
+		{
+			jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+				? actor_joins_existing_party	= true;
+
+			jat_fidget = world\ai\jobs\common\job_fidget.skrit;
+			melee_engage_range = 14;
+			personal_space_range = 0.7;
+			ranged_engage_range = 14.0;
+			sight_range = 14.0;
+		}
+	// @TODO - wrong level $$$
+	[inventory]
+	{
+		drop_at_use_point = true;
+		[pcontent]
+		{
+		[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/100-211;
+					il_main = #armor/103-519;
+                	il_main = #nmagic/31-86;
+                	il_main = #cmagic/31-86;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/177-234;
+	                il_main = #armor/-rare(1)/658-750;
+                    il_main = #*/-rare(1)/177-234;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/177-234;
+	                il_main = #armor/-unique(2)/658-750;
+                    il_main = #*/-unique(2)/177-234;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 116717;
+					min = 102341;
+				}
+			
+			}
+		}
+	}
+
+}

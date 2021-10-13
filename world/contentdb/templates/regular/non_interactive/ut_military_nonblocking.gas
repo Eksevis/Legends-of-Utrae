@@ -1,0 +1,126 @@
+[t:template,n:body_glb_hg_01]
+{
+	category_name = "dead";
+	doc = "body_guard_leather_front_a";
+	specializes = non_interactive_nonblocking;
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		scale_base = 1.5;
+		model = m_i_glb_dead_gaurd-01;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_01;
+			1 = b_c_pos_a1_100;
+		}
+	}
+}
+[t:template,n:body_glb_hg_02]
+{
+	category_name = "dead";
+	doc = "body_knight_scale_back_a";
+	specializes = non_interactive_nonblocking;
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		scale_base = 1.5;
+		model = m_i_glb_dead_gaurd-02;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_02;
+			1 = b_c_pos_a1_200;
+		}
+	}
+}
+[t:template,n:body_glb_hg_03]
+{
+	category_name = "dead";
+	doc = "body_guard_leather_front_c";
+	specializes = non_interactive_nonblocking;
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		scale_base = 1.5;
+		model = m_i_glb_dead_gaurd-03;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_03;
+			1 = b_c_pos_a1_300;
+		}
+	}
+}
+[t:template,n:body_glb_hg_04]
+{
+	category_name = "dead";
+	doc = "body_knight_chain_side_b";
+	specializes = non_interactive_nonblocking;
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		scale_base = 1.5;
+		model = m_i_glb_dead_gaurd-04;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_04;
+			1 = b_c_pos_a2_226;
+		}
+	}
+}
+[t:template,n:body_glb_hg_05]
+{
+	category_name = "dead";
+	doc = "body_guard_leather_front_b";
+	specializes = non_interactive_nonblocking;
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		scale_base = 1.5;
+		model = m_i_glb_dead_knight-01;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_05;
+			1 = b_c_pos_a3_014;
+		}
+	}
+}
+[t:template,n:body_glb_hg_06]
+{
+	category_name = "dead";
+	doc = "body_knight_scale_back_b";
+	specializes = non_interactive_nonblocking;
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		scale_base = 1.5;
+		model = m_i_glb_dead_knight-02;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_06;
+			1 = b_c_pos_a3_015;
+		}
+	}
+}
+[t:template,n:body_glb_hg_07]
+{
+	category_name = "dead";
+	doc = "body_knight_chain_side_a";
+	specializes = non_interactive_nonblocking;
+	[aspect]
+	{
+		lodfi_lower = 0.8;
+		lodfi_upper = 1;
+		scale_base = 1.5;
+		model = m_i_glb_dead_knight-03;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_07;
+			1 = b_c_pos_a1_102;
+		}
+	}
+}

@@ -1,0 +1,678 @@
+[t:template,n:base_elfgirl]
+{
+	doc = "Elf girl base template";
+	specializes = hero;
+	[actor]
+	{
+		can_level_up = true;
+		is_male = false;
+		race = human; //in case there are target type flagging issues with 'elf'...
+	}
+	[aspect]
+	{
+		//is_invincible = true; //testing only
+		life_recovery_unit   = 1;
+		life_recovery_period = 5;
+		mana_recovery_unit   = 1;
+		mana_recovery_period = 2;
+		model = m_c_gah_eg_h1_pos_a0;
+		voice:die:* = s_e_die_female;
+	}
+	[body]
+	{
+		armor_version = gah_eg_h1;
+		avg_move_velocity = 5.000000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee		= 0.8, 0.8, 0.8;
+			as_two_handed_melee	= 0.8, 0.8, 0.8;
+			as_two_handed_sword	= 0.8, 0.8, 0.8;
+			as_staff		= 1.0, 1.0, 1.0;
+			as_bow_and_arrow	= 0.8, 0.8, 0.8;
+			as_minigun		= 0.8, 0.8, 0.8;
+			as_shield_only		= 0.8, 0.8, 0.8;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gah_eg_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					extr = at-04;
+					qffg = dff;
+					
+					//DS REVIVED
+					rat0 = at2-01;
+					rat1 = at2-02;
+					sffg = dff2;
+					
+					//SPELLCASTING GAUNTLETS
+					tat0 = f0-at;
+					tat1 = f0-at-02;
+					tffg = f0-dff;
+				}
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = simple_loop_rv;
+				[anim_files] 
+				{ 
+					00=dff; 
+					
+					//DS REVIVED
+					01 = dff2;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					//default
+					00 = dff;
+					01 = dff-02;
+					
+					//DS REVIVED
+					02 = dff2;
+					03 = dff2-02;
+					
+					//SPELLCASTING GAUNTLETS
+					fgt0 = f0-fidget;
+					fgt1 = f0-fidget-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gah_eg_fs1_dk;
+					gtup = a_c_gah_eg_fs0_up;
+					look = a_c_gah_eg_fs0_dsf;
+					talk = a_c_gah_eg_fs0_dsf-02;
+					wyme = a_c_gah_eg_fs0_dsf-03;
+					ulor = a_c_gah_eg_fs0_dsf-04;
+					hddl = a_c_gah_eg_fs0_dsf-05;
+					hdup = a_c_gah_eg_fs0_dsf-06;
+					knee = a_c_gah_eg_fs1_dsf-03;
+					lstn = a_c_gah_eg_fs1_dsf-04;
+                    			frtd = a_c_gah_eg_fs0_dsf-03;
+                    			ulo1 = a_c_gah_eg_fs0_dsf-04;
+                    			sit1 = a_c_gah_eg_fs0_dsf-08;
+					hoe1 = a_c_gah_eg_fs5_dsf-03;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files] 
+				{ 
+					00 = rl; 
+					
+					//DS REVIVED
+					rvwk = rl2;
+					
+					//SPELLCASTING GAUNTLETS
+					w0k1 = f0-rl;
+				}
+			}
+		}
+	}
+	[common] { screen_name = "Elf Girl"; }
+	[mind] 
+	{ 
+		melee_engage_range = 4.5;
+		ranged_engage_range = 10.0; 
+	}
+	[player_custom]
+	{
+		race = "elf";
+		equip_es_feet = true;
+	}
+}
+[t:template,n:elfgirl_shizune]//first recruitable elf near ancient crypts
+{
+	doc = "shizune";
+	specializes = base_elfgirl;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_shizune1;
+		[skills]
+		{
+			strength 		=   	1.0, 0, 10;
+			intelligence 		=  	0.52, 0, 10;
+			dexterity 		=   	2.48, 0, 10;
+            		Ranged 			= 	4, 0, 0;
+            		uber 			= 	4, 0, 0;
+			elf		=	0, 0, 1;
+			
+			light_elf	= 	0, 0, 1;
+			
+			female		=	0, 0, 1;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_eg_h1_pos_a0;
+//        	gold_value = 900;
+
+		[textures]
+		{
+			0 = b_c_gah_eg_skin_siobhan;
+			1 = b_c_pos_a1_062;
+		}
+		[voice]
+		{
+//			[die] { *=s_e_die_female; }
+			[die]		{ priority = high; * = s_v_lyssa_die; }
+		}
+		[vo_voice]
+		{
+			[select_char]
+			{ 
+				priority = vo; 
+				* = s_v_lyssa_select_01;
+				* = s_v_lyssa_select_02;
+				* = s_v_lyssa_select_03;
+				* = s_v_lyssa_select_04;
+				* = s_v_lyssa_select_05;
+				* = s_v_lyssa_select_06;
+				* = s_v_lyssa_select_07;
+				* = s_v_lyssa_select_08;
+				* = s_v_lyssa_select_09;
+				* = s_v_lyssa_select_10;
+				* = s_v_lyssa_select_11;
+				* = s_v_lyssa_select_12;
+				* = s_v_lyssa_select_13;
+				* = s_v_lyssa_select_14;
+				* = s_v_lyssa_select_15;
+			}
+			[order_move]
+			{
+				priority = vo; 
+				* = s_v_lyssa_ack_01;
+				* = s_v_lyssa_ack_02;
+				* = s_v_lyssa_ack_03;
+				* = s_v_lyssa_ack_04;
+				* = s_v_lyssa_ack_05;
+				* = s_v_lyssa_ack_06;
+				* = s_v_lyssa_ack_07;
+				* = s_v_lyssa_ack_08;
+				* = s_v_lyssa_ack_09;
+				* = s_v_lyssa_ack_10;
+				* = s_v_lyssa_ack_11;
+				* = s_v_lyssa_ack_12;
+				* = s_v_lyssa_ack_13;
+				* = s_v_lyssa_ack_14;
+				* = s_v_lyssa_ack_15;
+			}
+			[order_attack]
+			{
+				priority = vo; 
+				* = s_v_lyssa_attack_01;
+				* = s_v_lyssa_attack_02;
+				* = s_v_lyssa_attack_03;
+				* = s_v_lyssa_attack_04;
+				* = s_v_lyssa_attack_05;
+				* = s_v_lyssa_attack_06;
+				* = s_v_lyssa_attack_07;
+				* = s_v_lyssa_attack_08;
+				* = s_v_lyssa_attack_09;
+				* = s_v_lyssa_attack_10;
+				* = s_v_lyssa_attack_11;
+				* = s_v_lyssa_attack_12;
+				* = s_v_lyssa_attack_13;
+				* = s_v_lyssa_attack_14;
+				* = s_v_lyssa_attack_15;
+			}
+		}
+	}
+	[body] 
+	{ 
+		armor_version = gah_eg_h1; 
+	}
+
+	[common] { screen_name="Shalindra"; }
+	[conversation]
+	{
+	}
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_eg_h1_hlmt_head-01;
+		[equipment]
+		{
+			es_chest = bd_br_r_g_c_avg_culeaf_dsx;
+		}
+		[other]
+        	{
+			il_main = bw_g_c_s_s_r_avg;
+			il_main = dg_g_d_1h_ut_fun;
+			il_main = book_glb_lore_ut_shalindra;
+			il_main = spell_resurrect;
+        	}
+
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+		ranged_engage_range             = 15.5;
+		sight_range                     = 20.0;
+	}
+	[store]
+	{
+		can_sell_self = true;
+	}
+	[water_effects] {}
+	[player_custom] { head = "h1"; }
+
+}
+[t:template,n:elfgirl_siobhan]//second recruitable elf in meren
+{
+	doc = "siobhan";
+	specializes = base_elfgirl;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_siobhan1;
+		[skills]
+		{
+			strength 		=   	5.75, 0, 10;
+			intelligence 		=  	3.0, 0, 10;
+			dexterity 		=   	14.25, 0, 10;
+            		ranged 			= 	23,0, 0;
+            		uber 			= 	23,0, 0;
+			elf		=	0, 0, 1;
+			
+			light_elf	= 	0, 0, 1;
+			
+			female		=	0, 0, 1;
+
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_eg_h2_pos_a0;
+
+		[textures]
+		{
+			0 = b_c_gah_eg_skin_fiathna;
+			1 = b_c_pos_a1_061;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[body] 
+	{ 
+		armor_version = gah_eg_h2; 
+	}
+
+	[common] 
+	{ 
+		screen_name="Fiathna"; 
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_fiathna_quest","completed",0);
+				b can_self_destruct = true;
+				condition* = receive_world_message("we_req_talk_begin",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+				f delay = 0.000000;
+				b flip_flop = false;
+				b multi_player = true;
+				b no_trig_bits = false;
+				occupants_group = ;
+				f reset_duration = 0.000000;
+				b single_player = true;
+				b single_shot = true;
+				b start_active = true;
+			}
+		}
+	}
+
+	[conversation] { }
+   	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_eg_h2_hlmt_head-01;
+		[equipment]
+		{
+			es_chest = bd_br_r_g_c_avg_knleaf_dsx;
+		}
+        	[other]
+        	{
+			il_main = bw_g_d_s_l_c_avg;
+			il_main = book_glb_lore_ut_fiathna;
+        	}
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+		ranged_engage_range             = 15.5;
+		sight_range                     = 20.0;
+	}
+	[store]
+	{
+		can_sell_self = true;
+	}
+	[water_effects] {}
+	[player_custom] { head = "h2"; }
+
+}
+[t:template,n:elfgirl_wilder]//third recruitable elf in great northern forest
+{
+	doc = "wilder";
+	specializes = base_elfgirl;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_zaidhla;
+		[skills]
+		{
+			strength 		=   	13.0, 0, 10;
+			intelligence 		=  	6.76, 0, 10;
+			dexterity 		=   	32.24, 0, 10;
+            		ranged 			= 	52,0, 0;
+            		uber 			= 	52,0, 0;
+			elf		=	0, 0, 1;
+			
+			light_elf	= 	0, 0, 1;
+			
+			female		=	0, 0, 1;
+
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_eg_h3_pos_a0;
+//		gold_value = 33590;
+
+		[textures]
+		{
+			0 = b_c_gah_eg_skin_zaidhla;
+			1 = b_c_pos_a1_040;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[body] 
+	{ 
+		armor_version = gah_eg_h3; 
+	}
+
+	[common]
+	{
+		screen_name = "Zaidhla";
+	}
+	[conversation]
+	{
+	}
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_eg_h3_hlmt_head-01;
+		[equipment]
+		{
+			es_chest = bd_br_r_g_c_avg_releaf_dsx;
+			es_feet = #boots/40-50;
+            		es_forearms = #gloves/40-50;
+		}
+        	[other]
+        	{
+			il_main = cw_ra_g_c_l_p_fin;
+			il_main = book_glb_lore_ut_zaidhla;
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+	[store]
+	{
+		can_sell_self = true;
+	}
+	[water_effects] {}
+	[player_custom] { head = "h3"; }
+
+}
+[t:template,n:elfgirl_darandriel]//npc elf in great northern forest
+{
+	doc = "shizune";
+	specializes = base_elfgirl;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_shizune1;
+		[skills]
+		{
+			strength 		=   	1.0, 0, 10;
+			intelligence 		=  	0.52, 0, 10;
+			dexterity 		=   	2.48, 0, 10;
+            		Ranged 			= 	4, 0, 0;
+            		uber 			= 	4, 0, 0;
+			elf		=	0, 0, 1;
+			
+			light_elf	= 	0, 0, 1;
+			
+			female		=	0, 0, 1;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_eg_h1_pos_a0;
+//        	gold_value = 900;
+
+		[textures]
+		{
+			0 = b_c_gah_eg_skin_elf-01;
+			1 = b_c_pos_a1_062;
+		}
+		[voice]
+		{
+//			[die] { *=s_e_die_female; }
+			[die]		{ priority = high; * = s_v_lyssa_die; }
+		}
+	}
+	[body] 
+	{ 
+		armor_version = gah_eg_h1; 
+	}
+
+	[common] { screen_name="Darandriel"; }
+	[conversation] { }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_eg_h1_hlmt_head-01;
+		[equipment]
+		{
+			es_chest = bd_br_r_g_c_avg_laleaf_dsx;
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+		ranged_engage_range             = 15.5;
+		sight_range                     = 20.0;
+	}
+	[water_effects] {}
+	[player_custom] { head = "h1"; }
+
+}
+[t:template,n:shaelin]//npc elf in great northern forest
+{
+	doc = "siobhan";
+	specializes = base_elfgirl;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_siobhan1;
+		[skills]
+		{
+			strength 		=   	5.75, 0, 10;
+			intelligence 		=  	3.0, 0, 10;
+			dexterity 		=   	14.25, 0, 10;
+            		ranged 			= 	23,0, 0;
+            		uber 			= 	23,0, 0;
+			elf		=	0, 0, 1;
+			
+			light_elf	= 	0, 0, 1;
+			
+			female		=	0, 0, 1;
+
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_eg_h2_pos_a0;
+
+		[textures]
+		{
+			0 = b_c_gah_eg_skin_elf-02;
+			1 = b_c_pos_a1_061;
+		}
+		[voice]
+		{
+			[die] { *=s_e_die_female; }
+		}
+	}
+	[body] 
+	{ 
+		armor_version = gah_eg_h2; 
+	}
+
+	[common] 
+	{ 
+		screen_name="Shaelin"; 
+	}
+
+	[conversation] { }
+   	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		custom_head = m_c_gah_eg_h2_hlmt_head-01;
+		[equipment]
+		{
+			es_chest = bd_br_r_g_c_avg_laleaf_dsx;
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+		ranged_engage_range             = 15.5;
+		sight_range                     = 20.0;
+	}
+	[water_effects] {}
+	[player_custom] { head = "h2"; }
+
+}

@@ -1,0 +1,218 @@
+/*
+  ============================================================================
+  ----------------------------------------------------------------------------
+
+	File		: 	job_talk_guard_captain_el.skrit
+
+	Author(s)	: 	David Tomandl, Eric Tams, Chad Queen, Bartosz Kijanka
+
+	Purpose		: 	Custom talk job for the guard captain of Elddim, for
+					the Lord Hovart quest.
+
+	(C)opyright 2001 Gas Powered Games, Inc.
+
+  ----------------------------------------------------------------------------
+  ============================================================================
+*/
+
+Go		m_Go$;
+GoMind	m_Mind$;
+GoBody  m_Body$;
+Job		m_Job$;
+Goid	m_Target$;
+
+#include "k_job_c_mcp_fidget_utils"
+#include "k_job_c_talk_utils"
+
+startup state STARTUP$
+{
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//	init
+event OnJobInitPointers$( Job job$ )
+{
+	m_Job$		= job$;
+	m_Go$		= job$.Go;
+	m_Mind$		= job$.Go.Mind;
+	m_Body$		= job$.Go.Body;
+}
+
+event OnJobInit$( Job job$ )
+{
+	OnJobInitPointers$( job$ );
+
+	m_Target$	= job$.GoalObject;
+
+	SetState Talk$;
+}
+
+void Reward$()
+{
+	// Give the reward
+	SiegePos SpawnPos$;
+	GoCloneReq cloneReq$;
+	Goid gold$;
+	
+	cloneReq$ = MakeGoCloneReq( "gold" );
+
+	SpawnPos$ = m_Target$.go.placement.position;
+    cloneReq$.StartingPos = SpawnPos$;
+
+	if( m_Target$.Go.Hasmind )
+	{
+		if( AIQuery.FindSpotRelativeToSource( m_Target$.Go, .25, .5, 2, m_Target$.Go.Mind.TempPos1 ) )
+   		{
+   			cloneReq$.StartingPos = m_Target$.Go.Mind.TempPos1;
+   		}
+   	}
+    cloneReq$.SnapToTerrain = true;
+
+    gold$ = GoDb.SCloneGo( cloneReq$ );
+	gold$.Go.Aspect.SetGoldValue( 500 );
+	gold$.go.PlayVoiceSound( "sell", 5, 10, false );
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//	blab blab away... pretend you're Lee on coffee
+state Talk$
+{
+	transition
+	{
+		-> Exiting$:	OnWorldMessage( WE_REQ_TALK_END ) =
+		{
+			if( m_Go$.Mind.ActorAutoFidgets )
+			{
+				StartFidgetIfRequired$();
+			}
+		}
+		-> Exiting$:	OnWorldMessage( WE_ANIM_DONE ) =
+		{
+			if( m_Go$.Mind.ActorAutoFidgets )
+			{
+				StartFidgetIfRequired$();
+			}
+		}
+		
+	}
+
+	event OnEnterState$
+	{
+		#only( game )
+		[[
+			if( GameAuditor.GetDb.GetBool( "d_0x03200da1" ) )
+			{
+				m_Go$.GetConversation.RSSelectConversation( "zconversation_directions" );
+				GameAuditor.GetDb.SetBool( "d_0x03200da1", false );
+			}
+			else if ( Victory.GetQuestOrder( "quest_zabar_hovart" ) == 4 )
+			{
+				m_Go$.GetConversation.RSSelectConversation( "conversation_guard_captain_hub_quest_complete" );
+				if ( Goid.InValidGoid != UIPartyManager.DoesActivePartyHaveTemplate( "stone_glb_gavel_01", m_Target$ ) )
+				{
+					// Take (delete) the gavel
+					goid temp_gavel$ = UIPartyManager.DoesActivePartyHaveTemplate( "stone_glb_gavel_01", m_Target$ );
+					temp_gavel$.Go.Parent.Mind.SDoJob( MakeJobReq( JAT_DROP, JQ_ACTION, QP_FRONT, AO_REFLEX, temp_gavel$ ) );
+					PostWorldMessage( WE_REQ_DELETE, temp_gavel$, temp_gavel$, .1 );
+                    Reward$();
+				}
+			}
+			else if	(
+						( Goid.InValidGoid != UIPartyManager.DoesActivePartyHaveTemplate( "bd_un_bl_f_g_c_blood", m_Target$ ) ) &&
+						( Goid.InValidGoid != UIPartyManager.DoesActivePartyHaveTemplate( "stone_glb_gavel_01", m_Target$ ) )
+					)
+			{
+				m_Go$.GetConversation.RSSelectConversation( "conversation_guard_captain_hub_quest_complete" );
+				// give them the quest, and put them at stage 4
+				Victory.RSActivateQuest( "quest_zabar_hovart", 0 );	// give quest, and
+				Victory.RSActivateQuest( "quest_zabar_hovart", 1 );	// ...
+				Victory.RSActivateQuest( "quest_zabar_hovart", 2 );	// ...
+				Victory.RSActivateQuest( "quest_zabar_hovart", 3 );	// ...
+				Victory.RSActivateQuest( "quest_zabar_hovart", 4 );	// update quest to order 4
+
+				// Take (delete) the gavel
+				goid temp_gavel$ = UIPartyManager.DoesActivePartyHaveTemplate( "stone_glb_gavel_01", m_Target$ );
+				temp_gavel$.Go.Parent.Mind.SDoJob( MakeJobReq( JAT_DROP, JQ_ACTION, QP_FRONT, AO_REFLEX, temp_gavel$ ) );
+				PostWorldMessage( WE_REQ_DELETE, temp_gavel$, temp_gavel$, .1 );
+                Reward$();
+			}
+			else if (
+						( Victory.GetQuestOrder( "quest_zabar_hovart" ) == 1 ) ||
+						( Victory.GetQuestOrder( "quest_zabar_hovart" ) == 2 ) ||
+						( Victory.GetQuestOrder( "quest_zabar_hovart" ) == 3 )
+					)
+			{
+				m_Go$.GetConversation.RSSelectConversation( "conversation_guard_captain_hub_generic" );
+			}
+			else if ( Goid.InValidGoid != UIPartyManager.DoesActivePartyHaveTemplate( "stone_glb_gavel_01", m_Target$ ))
+			{
+				m_Go$.GetConversation.RSSelectConversation( "conversation_guard_captain_hub_generic" );
+				Victory.RSActivateQuest( "quest_zabar_hovart", 0 );	// give quest, and 
+				Victory.RSActivateQuest( "quest_zabar_hovart", 1 );	// update quest to order 2
+				Victory.RSActivateQuest( "quest_zabar_hovart", 2 );	// update quest to order 2
+			}
+			else if ( Victory.IsQuestActive( "quest_zabar_hovart" ))
+			{
+				if ( GameAuditor.GetDb.GetBool( "town_center_talked_to_hub_guard_about_quest" ) && !GameAuditor.GetDb.GetBool( "town_center_got_guard_book" ) )
+				{
+					//give book
+					if( m_Target$.IsValid() ) 
+					{	
+						GameAuditor.GetDb.SetBool( "town_center_got_guard_book", true );
+						
+						SiegePos SpawnPos$;
+						
+						GoCloneReq cloneReq$ = MakeGoCloneReq( "book_glb_lore_hovart_ut" );
+						
+						SpawnPos$ = m_Target$.go.placement.position;
+						cloneReq$.StartingPos	= SpawnPos$;
+					    
+						If( m_Target$.Go.Hasmind )
+						{
+							if( AIQuery.FindSpotRelativeToSource( m_Target$.Go, .25, .5, 2.0, m_Target$.Go.Mind.TempPos1 ) )
+					   		{
+					   			cloneReq$.StartingPos = m_Target$.Go.Mind.TempPos1;
+					   		}
+					   	}	
+						cloneReq$.SnapToTerrain = true;
+				        GoDb.SCloneGo( cloneReq$ );
+					}
+				}
+				// Give the book to the player only on the second conversation in "conversation_guard_captain_hub_quest"
+				if ( !GameAuditor.GetDb.GetBool( "town_center_talked_to_hub_guard_about_quest" ))
+				{
+					GameAuditor.GetDb.SetBool( "town_center_talked_to_hub_guard_about_quest", true);
+				}
+				m_Go$.GetConversation.RSSelectConversation( "conversation_guard_captain_hub_quest" );
+			}
+			else if ( GameAuditor.GetDb.GetBool( "turn_world_red" ) )
+			{
+				m_Go$.GetConversation.RSSelectConversation( "conversation_guard_captain_red" );
+			}
+			else if ( Victory.IsQuestCompleted( "quest_zabar_hovart" ))
+			{
+				m_Go$.GetConversation.RSSelectConversation( "conversation_guard_captain_hub_quest_complete" );
+			}
+			else
+			{
+				m_Go$.GetConversation.RSSelectConversation( "conversation_guard_captain_hub" );
+			}
+			if( m_Go$.Mind.ActorAutoFidgets )
+			{
+				StartFidgetIfRequired$();
+			}
+			m_Go$.GetConversation.RSActivateDialogue();
+		]]
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//	finish blabbing
+state Exiting$
+{
+	event OnEnterState$
+	{
+		m_Job$.MarkForDeletion();
+	}
+}

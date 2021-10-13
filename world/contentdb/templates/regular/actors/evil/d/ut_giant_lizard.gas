@@ -1,0 +1,208 @@
+[t:template,n:ut_giant_lizard]
+{
+	category_name = "1W_evil_d";
+	doc = "giant_lizard";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	25, 0;
+			intelligence =  13, 0;
+			dexterity =  	7, 0;
+            melee =         25, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 34634;
+		life = 1200;
+		max_life = 1200;
+		mana = 10;
+        max_mana = 10;
+		model = m_c_edm_gz_pos_1;
+		[voice]
+		{
+			[die] { * = s_e_die_giant_lizard; }
+			[hit_glance] { * = s_e_hit_giant_lizard; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 180;
+		damage_min = 150;
+		reload_delay = 0;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.090000;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = root_bone;
+			body_posterior = bone01;
+			kill_bone = bone09;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_gz_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Giant Lizard"; }
+   	[defend] { defense=400; }
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social			= 0.35
+			&meander		= false
+			&approach_dist	= 3.00
+			&still			= false;
+
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_lizard_thunder]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_lizard_thunder";
+	specializes = dsx_lizard_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  35, 0;
+			intelligence 	=  8, 0;
+			dexterity 		=  11, 0;
+			melee 		=  33,  0;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 196;
+		damage_min = 180;
+	}    
+	[defend] { defense=474; }
+	[common]
+	{
+		screen_name="Thunder Lizard";
+		membership = monster;
+	}
+	[aspect]
+    	{
+		experience_value = 20000;
+		life = 435;
+		max_life = 435;
+		mana = 8;
+		max_mana = 8;
+//		model = m_c_edm_lt_pos_1;
+	
+		material = claw;
+		[voice]
+		{
+			[die]	{ priority = high; * = s_e_die_lectar;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_thunder_lizard_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_lectar_SED;	}
+			[hit_glance]	{ priority = low; * = s_e_hit_lectar_SED;	}
+			[hit_solid]		{ priority = low; * = s_e_hit_lectar_SED;			}
+	}
+		model = m_c_edm_giantlizard_pos_1;
+		textures: 0 = b_c_edm_gz-01;
+    	} 
+	[body]
+    	{
+		avg_move_velocity = 2.090000;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = root_bone;
+			body_posterior = bone01;
+			kill_bone = bone09;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_gz_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?meander	= true
+			&still		= false;
+
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

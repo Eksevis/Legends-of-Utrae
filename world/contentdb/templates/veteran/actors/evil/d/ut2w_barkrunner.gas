@@ -1,0 +1,121 @@
+[t:template,n:ut2w_barkrunner]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_barkrunner";
+	specializes = dsx_barkrunner_base;
+
+	[actor]
+		{
+			[skills]
+				{
+			strength =  	49.6, 0;
+			intelligence =  6.5, 0;
+			dexterity =  	14.3, 0;
+            		melee =  	64,  0;
+				}
+		}
+	[aspect]
+		{
+			[textures]	{ 0 = b_c_edm_barkrunner; }
+			experience_value = 130244;
+			life = 1929;
+			max_life = 1929;
+			mana = 10;
+			max_mana = 10;
+			[voice]
+				{
+					[die]			{ priority = high; * = s_e_die_larch; }
+					[hit_critical]	{ priority = low; * = s_e_hit_larch_SED; }
+					[hit_glance]	{ priority = low; * = s_e_hit_larch_SED; }
+					[hit_solid]		{ priority = low; * = s_e_hit_larch_SED; }
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 447;
+			damage_min = 345;
+			reload_delay = 0;
+		}
+	[common]
+		{
+			screen_name="Barkrunner Puncher";
+		
+		}
+	[defend] { defense=1002; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.25;
+   				il_main = potion_health_large;
+				il_main = potion_mana_large;
+			}
+		}
+	}	
+}
+
+
+[t:template,n:ut2w_willow]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_barkrunner";
+	specializes = dsx_barkrunner_base;
+
+	[actor]
+		{
+			[skills]
+				{
+			strength = 	55.9, 0;
+			intelligence = 	17, 0;
+			dexterity = 	52.9, 0;
+			melee =  	66, 0;
+				}
+		}
+	[aspect]
+		{
+			[textures]	{ 0 = b_c_edm_barkrunner; }
+		experience_value = 261000;
+		life = 2853.1;
+		max_life = 2853.1;
+		mana = 1843.2;
+		max_mana = 1843.2;
+        		scale_base = 1.8;
+			[voice]
+				{
+					[die]			{ priority = high; * = s_e_die_larch; }
+					[hit_critical]	{ priority = low; * = s_e_hit_larch_SED; }
+					[hit_glance]	{ priority = low; * = s_e_hit_larch_SED; }
+					[hit_solid]		{ priority = low; * = s_e_hit_larch_SED; }
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 357;
+			damage_min = 345;
+			reload_delay = 0;
+		}
+	[common]
+		{
+			screen_name="Haunted Willow";
+		
+		}
+	[defend] { defense=1802; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.25;
+   				il_main = potion_health_super;
+				il_main = potion_mana_super;
+			}
+		}
+	}
+		
+}
+

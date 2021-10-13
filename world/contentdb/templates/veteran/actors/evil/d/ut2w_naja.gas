@@ -1,0 +1,452 @@
+[t:template,n:ut2w_snake_woman_magic]
+{
+	category_name = "1W_evil_d";
+	doc = "Snake woman mage";
+	specializes = base_snake_woman;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 	45.3, 0;
+			intelligence = 	30.4, 0;
+			dexterity = 	48.7, 0;
+			melee =  	51, 0;
+            		combat_magic = 	69, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 152038;
+		life			= 1278;
+		max_life		= 1278;
+		mana			= 1000;
+		max_mana		= 1000;
+		scale_base = 0.80;
+		[textures]
+		{
+			0 = b_c_gs_na_skin_green;
+		}
+	}
+	[attack]
+	{
+		attack_range = 5;
+		damage_max = 327.6;
+		damage_min = 208.5;
+		damage_bonus_min_cmagic = 80;
+		damage_bonus_max_cmagic = 119;
+	}
+	[effect_manager]
+	{
+		start_msg = WE_ENTERED_WORLD;
+		stop_msg = WE_LEFT_WORLD;
+		stop_msg2 = WE_KILLED;
+
+		effect_name = "";
+		rep_effect_name = "kell_balls";
+
+		repeat_rate = .5;
+		repeat_rate_max = .7;
+
+		run_once = true;
+	}
+	[common]
+	{
+		screen_name="Naji Slithress";
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				action* = call_sfx_script("kell_hand_glow");
+			}
+			[*]
+			{
+				condition* = receive_world_message("we_anim_sfx",1);
+				action* = call_sfx_script("kell_hand_spark");
+			}
+			[*]
+			{
+				condition* = receive_world_message("we_anim_sfx",2);
+				action* = call_sfx_script("kell_hand_charge");
+			}
+		}
+	}
+	[defend] { defense=538; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+    		selected_active_location = il_active_primary_spell;
+		[other] 
+		{
+			il_active_primary_spell=spell_kell_shot;
+			il_spell_1=spell_kell_blast;
+			il_spell_2=spell_kell_bolt;
+		}
+    		[pcontent]
+		{
+			[oneof*]
+			{
+				es_chest = bd_ra_ro_m_g_c_014;
+				es_chest = bd_ra_ro_m_g_c_018;
+				es_chest = bd_ro_m_g_c_029;
+				es_chest = bd_ro_m_g_c_037;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/138-211;
+					il_main = #armor/99-491;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/211-230;
+	                il_main = #armor/-rare(1)/579-662;
+                    il_main = #*/-rare(1)/211-230;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/211-230;
+	                il_main = #armor/-unique(2)/579-662;
+                    il_main = #*/-unique(2)/211-230;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 145627;
+					min = 110992;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			&meander		= true
+			&still			= false;
+
+		on_enemy_entered_ocz_flee 	= true;
+		on_enemy_entered_ocz_attack = false;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 			= 1;
+		jat_cast 		= world\ai\jobs\common\job_cast.skrit
+			?rand_spell	= true;
+		melee_engage_range			= 13.2;
+		ranged_engage_range	 		= 13.5;
+		sight_range				= 14.0;
+
+	}
+}
+
+[t:template,n:ut2w_snake_woman_ranged]
+{
+	category_name = "1W_evil_d";
+	doc = "Snake woman mage";
+	specializes = base_snake_woman;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		46.8, 0;
+			intelligence = 	21.9, 0;
+			dexterity = 	64, 0;
+			melee =  		56, 0;
+   			ranged =  		65, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 152038;
+		life			= 1478;
+		max_life		= 1478;
+		mana			= 1000;
+		max_mana		= 1000;
+		scale_base = 0.80;
+		[textures]
+		{
+			0 = b_c_gs_na_skin_grey;
+		}
+	}
+	[attack]
+	{
+		attack_range = 5;
+		damage_max = 327.6;
+		damage_min = 223.4;
+		damage_bonus_min_cmagic = 80;
+		damage_bonus_max_cmagic = 112;
+	}
+	[common]
+	{
+		screen_name="Naji Huntress";
+	}
+	[defend] { defense=938; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+    		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					es_shield_hand = #bow/120-150;
+				}
+				es_chest = #body,f/210-280;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/165-214;
+					il_main = #armor/199-496;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/211-230;
+	                il_main = #armor/-rare(1)/579-662;
+                    il_main = #*/-rare(1)/211-230;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/211-230;
+	                il_main = #armor/-unique(2)/579-662;
+                    il_main = #*/-unique(2)/211-230;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 135402;
+					min = 123016;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			&meander		= true
+			&still			= false;
+
+		on_enemy_entered_ocz_flee 	= true;
+		on_enemy_entered_ocz_attack = false;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 			= 1;
+		melee_engage_range			= 13.2;
+		ranged_engage_range	 		= 13.5;
+		sight_range				= 14.0;
+	}
+}
+
+[t:template,n:ut2w_snake_woman_melee_01]
+{
+	category_name = "1W_evil_d";
+	doc = "Snake woman mage";
+	specializes = base_snake_woman;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		55.9, 0;
+			intelligence = 	17, 0;
+			dexterity = 	52.9, 0;
+			melee =  		66, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 152038;
+		life			= 2078;
+		max_life		= 2078;
+		mana			= 1000;
+		max_mana		= 1000;
+		scale_base = 0.80;
+		[textures]
+		{
+			0 = b_c_gs_na_skin_brown;
+		}
+	}
+	[attack]
+	{
+		attack_range = 5;
+		damage_max = 385;
+		damage_min = 280;
+	}
+	[common]
+	{
+		screen_name="Naji Myrmidon";
+	}
+	[defend] { defense=1488; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+    		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+    				es_weapon_hand = mc_d_c_s_1h_mag;
+				es_weapon_hand = sd_ra_g_c_fa_1h_fin;
+    				es_weapon_hand = sd_ra_g_o_sd_1h_avg;
+				es_weapon_hand = ax_ra_g_c_1h2b_fin;
+    				es_weapon_hand = sd_g_c_dsx_zkt_1h_avg;
+				es_weapon_hand = hm_g_c_dsx_cry_avg;
+    				es_weapon_hand = cb_g_c_dsx_cry_avg;
+				es_weapon_hand = ax_g_c_dsx_clv_avg;
+				}
+				es_shield_hand = #shield/210-280;
+				es_chest = #body,f/210-280;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/138-211;
+					il_main = #armor/265-491;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/211-230;
+	                il_main = #armor/-rare(1)/579-662;
+                    il_main = #*/-rare(1)/211-230;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/211-230;
+	                il_main = #armor/-unique(2)/579-662;
+                    il_main = #*/-unique(2)/211-230;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 150524;
+					min = 123209;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			&meander		= true
+			&still			= false;
+		melee_engage_range			= 13.2;
+		ranged_engage_range	 		= 13.5;
+		sight_range				= 14.0;
+	}
+}
+
+[t:template,n:ut2w_snake_woman_melee_02]
+{
+	category_name = "1W_evil_d";
+	doc = "Snake woman mage";
+	specializes = base_snake_woman;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		55.9, 0;
+			intelligence = 	17, 0;
+			dexterity = 	52.9, 0;
+			melee =  		66, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 152038;
+		life			= 2278;
+		max_life		= 2278;
+		mana			= 1000;
+		max_mana		= 1000;
+		scale_base = 0.80;
+		[textures]
+		{
+			0 = b_c_gs_na_skin_brown;
+		}
+	}
+	[attack]
+	{
+		attack_range = 5;
+		damage_max = 365;
+		damage_min = 210;
+	}
+	[common]
+	{
+		screen_name="Naji Myrmidon";
+	}
+	[defend] { defense=1488; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+    		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+    				es_weapon_hand = sd_g_c_st_2h_avg;
+				es_weapon_hand = hm_ra_g_c_2h1m_fin;
+    				es_weapon_hand = ax_d_c_2h2b_avg;
+				es_weapon_hand = ax_d_d_2h2b_avg;
+    				es_weapon_hand = ax_g_c_2h2b_avg;
+				es_weapon_hand = ax_ra_g_c_2h2b_fin;
+    				es_weapon_hand = st_g_c_dsx_mn_avg;
+				es_weapon_hand = ax_g_c_dsx_pbd_avg;
+				}
+				es_chest = #body,f/210-280;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/138-211;
+					il_main = #armor/265-491;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/211-230;
+	                il_main = #armor/-rare(1)/579-662;
+                    il_main = #*/-rare(1)/211-230;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/211-230;
+	                il_main = #armor/-unique(2)/579-662;
+                    il_main = #*/-unique(2)/211-230;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 150524;
+					min = 123209;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			&meander		= true
+			&still			= false;
+		melee_engage_range			= 13.2;
+		ranged_engage_range	 		= 13.5;
+		sight_range				= 14.0;
+	}
+}
+

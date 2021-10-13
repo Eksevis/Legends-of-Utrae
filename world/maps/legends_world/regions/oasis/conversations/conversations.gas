@@ -1,0 +1,411 @@
+[conversation_alwyn]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076001c3;
+		screen_text = "I spent a few months lost in the endless dunes. Somehow I reached the Mesa Desert and its towering cliffs, and while they were amazing to see, they were just as lifeless as the dunes. I've also heard a rumour that there's an amazing tropical island not far from here. Right, someone's obviously got a bit much sun and began seeing mirages.";
+		activate_quest* = quest_island_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_alwyn_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076001c3;
+		screen_text = "What's the world coming to?";
+	}
+}
+[conversation_birutir]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076006de;
+		screen_text = "It's said that you can reach the town of Hiroth far to the west of here, but who would be fool enough to set out into the desert for a trip that takes weeks of travel? One good sandstorm, and you're a goner.";
+	}
+}
+[conversation_birutir_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076006de;
+		screen_text = "I heard a rumor that one of the Lost Pyramids leads into the fiery depths of the earth! If it's anything like the air up here now, I don't want to ever see it!";
+	}
+}
+[conversation_calixtica]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076006fa;
+		screen_text = "I had a strange dream last night. I was lost in the Endless Desert and came upon two huge pyramids! I entered the first and found myself in a dim hallway that seemed to go on forever. I must have been nearing the end, because I heard seagulls and waves lapping at a shore... I saw sunlight at the end of the tunnel, growing brighter and brighter... and then I awoke.";
+		activate_quest* = quest_pyramids_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_calixtica_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076006fa;
+		screen_text = "I am going to find that place in my dreams by the sea where the air is cool, even if it kills me! No one can be expected to stay here with the air so foul!";
+	}
+}
+[conversation_damog]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0760068d;
+		screen_text = "I've traveled extensively through these parts, and I can tell you all that's out there is empty rolling dunes that go on forever. Still I like it here and wouldn't want to leave for anything. I'd give a great reward to anyone who could stop the threat to this town";
+		activate_quest* = quest_grescal_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_damog_complete]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0760068d;
+		screen_text = "That's incredible news about the abandoned ruins. Who could have imagine what was living down there. To think all these years we've been living here above all of that. Incredible!";
+	}
+}
+[conversation_damog_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x0760068d;
+		screen_text = "I live way out here at the edge of the world to escape from the catastrophes caused by ignoramuses. Apparently this isn't far enough.";
+	}
+}
+[conversation_felix_accept]
+{
+	[text*]
+	{
+		sample = s_v_nardulo_select_13;
+		screen_text = "Well done friend! Come, let's strike while the sun's up, for I'm an early riser.";
+	}
+}
+[conversation_felix_accept_no_money]
+{
+	[text*]
+	{
+		screen_text = "While I'd like to join, I can't just disappear and not pay my debts!";
+	}
+}
+[conversation_felix_disband]
+{
+	[text*]
+	{
+		screen_text = "Fine. I'll make my own way then.";
+	}
+}
+[conversation_felix_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_nardulo_select_10;
+		screen_text = "Well, why not. We stand a better chance to survive together after all.";
+	}
+}
+[conversation_felix_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_nardulo_select_10;
+		screen_text = "Hey there, I'm Felix and I've been looking for my sister Jenna, when I run out of money and got stuck here. I don't suppose you could help my out could you?. I need 534500 gold to pay my Inn tab and then I'm in. Interested?";
+	}
+}
+[conversation_felix_reject]
+{
+	[text*]
+	{
+		screen_text = "I see. No regrets then. I'll just have to wait.";
+	}
+}
+[conversation_felix_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_nardulo_select_10;
+		screen_text = "Well I see that you have proven resourcefull enough for me to give you a chance. Well then, let's go. The early bird gets the worm.";
+	}
+}
+[conversation_kylira]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x076004cd;
+		choice = more;
+		order = 0;
+		screen_text = "You look like a resourceful sort of person. The Circle might have need of one such as yourself, if you're in the mood. Interested?";
+	}
+	[text*]
+	{
+		activate_quest* = goto_elddim;
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		order = 1;
+		screen_text = "Grescal has need of a brave adventurer, but how do I know you won't just rob us blind? I'm not so good at reading people, myself. If you travel to Elddim, speak with Utraean Priestess Kelti in the Shrine of Passion there. She is seeking one with a strong soul and daring heart, and she is much better equipped to deal with those who...don't quite fit the mold.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		screen_text = "If Priestess Kelti deems you trustworthy, I may have something for you later.";
+	}
+}
+[conversation_kylira_all_complete]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		screen_text = "You are truly a hero. Perhaps we will change our town name to honor you as is fitting. If there is ever anything I can do for you, I am at your service.";
+	}
+}
+[conversation_kylira_complete]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x076004cd;
+		choice = more;
+		order = 0;
+		screen_text = "You have the Palm Stone! The Gods favor you, my child. I am glad we will no longer fear for our safety with the ruined temple so close. I was certain our fate would be sealed, even if we did have enough water to spare. I give you my heartfelt thanks.";
+	}
+	[text*]
+	{
+		activate_quest* = goto_hiroth_b;
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		complete_quest* = quest_grescal;
+		order = 1;
+		screen_text = "Please accept this small trifle as thanks for a task well done. Grescal's citizens will be praying for you on your journey to Hiroth.";
+	}
+}
+[conversation_kylira_goto]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		order = 0;
+		quest_dialog = true;
+		screen_text = "The mausoleum below Castle Hiroth exits into the desert cliffs to the far west of here. It is not a journey I would advise, however. Most can't stand being out on the dunes for more than a few minutes, let alone days. Since you are able, you'd fare much better traveling through the Basilicus, and it's faster, too!";
+	}
+	[text*]
+	{
+		activate_quest* = goto_hiroth_b;
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		screen_text = "High Priest Kavaren is waiting for your arrival in Hiroth. May Azunai bless you and give you courage!";
+	}
+}
+[conversation_kylira_quest]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		order = 0;
+		quest_dialog = true;
+		screen_text = "It is usually very quiet around here. But strange noises have been heard coming from the ruined Utraean temple to the northeast, so I suggest you start there.";
+	}
+}
+[conversation_kylira_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		screen_text = "We are doomed! I should have known that red tinge to my dreams was ill-fated. It is my fault for not heeding the warning! It was not a lake of water, but poison!";
+	}
+}
+[conversation_kylira_ring]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x076004cd;
+		choice = more;
+		complete_quest* = goto_grescal;
+		complete_quest* = goto_grescal_b;
+		order = 0;
+		screen_text = "If this drought keeps up, there will not be much here other than dust and blowing sand. That's why we must succeed in assembling the Circle in Hiroth. I have dreamt of a vast reservoir of water hidden beneath the land. I am certain the Utraeans stockpiled it just for times like these. When the Circle is complete, we will finally be able to use it, and the town of Grescal will be saved.";
+	}
+	[text*]
+	{
+		activate_quest* = quest_grescal;
+		activate_quest* = quest_townstones;
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		order = 1;
+		screen_text = "The Grescal Palm Stone was stolen from us a few nights back. I fear there is something living in the ruined Utraean temple northeast of town. We found the Stone Guardian with his throat slashed and the Townstone gone from its resting place. I have heard tales of your bravery -- I am certain you are the one who can find our Stone and carry it safely to Hiroth. Please do not fail us now!";
+	}
+}
+[conversation_kylira_stone]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x076004cd;
+		choice = more;
+		complete_quest* = goto_grescal_b;
+		complete_quest* = goto_grescal;
+		order = 0;
+		screen_text = "You have the Palm Stone! The gods favor you, my child. I am glad we will no longer fear for our safety with the ruined temple so close. I was certain our fate would be sealed, even if the Circle was completed and the vast reservoir I dreamt about beneath the land was opened for our use. I give you my heartfelt thanks.";
+	}
+	[text*]
+	{
+		activate_quest* = goto_hiroth_b;
+		button_1_text = "Directions";
+		button_1_value = d_0x076004cd;
+		order = 1;
+		screen_text = "Please accept this small trifle as thanks for your bravery in returning safety to our town. Grescal's citizens will be praying for you on your journey to Hiroth.";
+	}
+}
+[conversation_reena]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076001bd;
+		screen_text = "Welcome to Grescal, capital of the sandy nether lands! It's a great place to be if you've got nowhere else to go. And even if you do have somewhere else to be, you'll never get there from here. Heh heh heh.";
+	}
+}
+[conversation_reena_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076001bd;
+		screen_text = "I knew I should have escaped to Meren when I had the chance. Now I'm stuck in the hottest place in the Utraean Peninsula, and the air reeks of brimstone to boot!";
+	}
+}
+[conversation_sultrin]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076000b6;
+		choice = shop;
+		order = 0;
+		screen_text = "I've been crafting out here in Grescal going on thirty years. It's quiet, all right, but that's what we prefer. You won't find anyone who'd spend any length of time here who isn't a bit of a hermit. You're welcome to take a look at my wares if you like.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076000b6;
+		choice = shop;
+		order = 1;
+		screen_text = "Still in town, are you? You'll burn your feet on the sand if you stay in one place for too long. You'll find my boots will keep you cool. Just don't head into the dunes if you value your sanity, eh?";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076000b6;
+		choice = shop;
+		screen_text = "I can see you're no fool. If you head north to the edge of the village and then east, you'll come across what's left of a ruined Utraean temple. It's said to be haunted, so take care if you venture near it.";
+	}
+}
+[conversation_sultrin_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076000b6;
+		choice = shop;
+		screen_text = "Must be one fierce sandstorm to turn the sky so red!";
+	}
+}
+[conversation_trissa]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076001bc;
+		screen_text = "It's said there are ancient pyramids far to the southeast, somewhere in the Endless Desert.";
+	}
+}
+[conversation_trissa_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076001bc;
+		screen_text = "Ohh, my head is splitting! I'm not sure which is worse, the smell or the lightning.";
+	}
+}
+[conversation_vielle]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076000ba;
+		choice = shop;
+		order = 0;
+		screen_text = "I bet Sultrin's already filled your head with tales of woe about the southern dunes. And he's right - you won't get very far without a goodly supply of my healing elixirs.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076000ba;
+		choice = shop;
+		screen_text = "You look the sort who'd be interested in seeking the lost pyramids. They're out there, you know. It's said they contain long lost magics and hold unbelievable power.";
+	}
+}
+[conversation_vielle_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076000ba;
+		choice = shop;
+		screen_text = "This is no sandstorm -- there's something unnatural at work here!";
+	}
+}
+[conversation_wylie]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076001c1;
+		screen_text = "Them Gikk are good eatin.' Easy to catch and they taste like chicken!";
+	}
+}
+[conversation_wylie_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x076001c1;
+		screen_text = "Bloody stinkin' 'ell. Why can't the weather be normal here for once?";
+	}
+}
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "You want directions? Ha! Grescal is surrounded by desert; you can't go anywhere from here and expect to survive the elements. If you really want to leave, go through the Basilicus. You can find the portal to it on the western edge of the village.";
+	}
+}
+[conversation_grescal_intro]
+{
+	[text*]
+	{
+		screen_text = "Parched desert town of Grescal.\nAn always difficult place to live, Grescal has become almost impossible to survive in once the oasis began to recede.\nThe townsfolk were so joyous too after the priests announced that once the Stones of Utrae were found, so would a hidden reservoir of underground water.\nThe next day the spring feeding the oasis dried up as in punishment for such blasphemous words.\nWhat now will become of this remote, desolate town?\nWill it be swallowed by the dunes, never to be seen again or is there a way of saving the town?\nIt's all up to you.";
+	  f scroll_rate = 5.000000;
+	}
+}

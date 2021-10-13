@@ -1,0 +1,125 @@
+[t:template,n:ut_leetch]
+{
+// Level 12, easy melee
+	category_name = "1W_evil_d";
+	doc = "dsx_leetch";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+		  strength     = 12, 0;
+		  intelligence = 7, 0;
+		  dexterity    = 9, 0;
+		  melee        = 18, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1320;
+		life             = 418;
+		max_life         = 418;
+		mana             = 45;
+		max_mana         = 45;
+
+		model = m_c_edm_sl_pos_1;
+		textures:0 = b_c_edm_leetch;
+		material = flesh;
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_meat_explosion_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_leetch_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 155; 
+		damage_min = 145; 
+	}
+	[defend] { defense = 360; }
+	[common]
+	{
+	  screen_name = "Leetch"; //--
+	  membership = monster; //--
+	}
+
+
+	[body]
+	{
+		avg_move_velocity = 2.010000;
+		/*
+		[bone_translator]
+		{
+			body_anterior = mouth_bone;
+			body_mid = spine_3_bone;
+			body_posterior = spine_6_bone;
+			kill_bone = primary_bone;
+			shield_bone = mouth_bone;
+			weapon_bone = mouth_bone;
+		}
+		*/
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_sl_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[mind]
+	{
+		melee_engage_range = 10;
+		personal_space_range = 0.7;
+		ranged_engage_range = 10.0;
+		sight_range = 10.0;
+		sight_origin_height	= 1;
+	}
+	[water_effects]
+	{
+		shallow_water_effect = water_splashes;
+		deep_water_effect = water_splashes;
+		effect_scale = .8;
+		battle_scale = 0.4;
+	}
+}

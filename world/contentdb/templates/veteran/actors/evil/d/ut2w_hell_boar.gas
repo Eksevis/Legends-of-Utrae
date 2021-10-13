@@ -1,0 +1,88 @@
+[t:template,n:ut2W_hell_boar]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_hell_boar";
+	specializes = 2W_base_boar;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  40.7, 0;
+			intelligence =  8.3, 0;
+			dexterity =  22.5, 0;
+            melee =  59,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 52716;
+		life = 1080;
+        max_life = 1080;
+        mana = 27.4;
+		max_mana = 27.4;
+		model = m_c_edm_hb_pos_1;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 233.8;
+		damage_min = 185.1;
+	}
+	[common] { screen_name="Frenzied Hell Boar"; }
+   	[defend] { defense=637.7; }
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social			= 0.30
+			&wander			= 0.60
+			&approach_dist 	= 2.50
+			&still			= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+[t:template,n:ut2W_snow_boar]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_snow_boar";
+	specializes = 2W_base_boar;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  38.4, 0;
+			intelligence =  5.8, 0;
+			dexterity =  21, 0;
+            melee =  61,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 38808;
+		life = 1320;
+        max_life = 1320;
+        mana = 44;
+		max_mana = 44;
+		model = m_c_edm_hb_pos_1;
+		[textures]		{ 0 = b_c_edm_hb-02; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 278.3;
+		damage_min = 188.1;
+	}
+	[common] { screen_name="Snow Boar"; }
+    	[defend] { defense=335.5; }
+	[mind]
+	{
+		melee_engage_range = 10;
+		personal_space_range = 0.7;
+		ranged_engage_range = 10.0;
+		sight_range = 10.0;
+	}
+}

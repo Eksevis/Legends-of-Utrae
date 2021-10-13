@@ -1,0 +1,151 @@
+[t:template,n:ut2W_hydrack]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_hydrack";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  36.6, 0;
+			intelligence =  12.2, 0;
+			dexterity =  29.9, 0;
+			combat_magic =  55,  0;
+		}
+	}
+	[aspect]
+	{
+
+		draw_shadow     = false;
+		experience_value = 87906;
+		life = 2276.9;
+		max_life = 2276.9;
+		mana = 51.2;
+		max_mana = 51.2;
+		model = m_c_edm_hy_pos_1;
+		[voice]
+		{
+			[die] { * = s_e_die_hydrack; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_hydrack_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 382;
+		damage_min = 256.2;
+		damage_bonus_min_cmagic = 189;
+		damage_bonus_max_cmagic = 240;
+	}
+	[body]
+	{
+		avg_move_velocity = 1;
+		[bone_translator]
+		{
+			body_anterior = headbone;
+			body_mid = neckbone05;
+			body_posterior = neckbone02;
+			kill_bone = neckbone05;
+			shield_bone = jawfin;
+			weapon_bone = jawbone;
+		}
+		[chore_dictionary]
+		{
+			initial_chore = chore_none;
+			chore_prefix = a_c_edm_hy_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_misc]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = ds;
+					wake = rv;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=rv; }
+			}
+		}
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_hydrack_fire; }
+	}
+	[common] 
+	{ 
+		screen_name="Plated Hydrack"; 
+		membership=monster,immune_freeze;
+	}
+	[defend] { defense=1078.4; }
+	[mind]
+	{
+		jat_die							= world\ai\jobs\actors\evil\job_die_delete.skrit;
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible 					= true;
+		jat_flee_from_object			= jat_none;
+		jat_guard         				= jat_none;
+		jat_move          				= jat_none;
+		jat_patrol         				= jat_none;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		actor_auto_fidgets 				= false;
+		movement_orders 				= mo_hold;
+		melee_engage_range 				= 1;
+		personal_space_range 			= 0.7;
+		on_enemy_entered_ocz_attack 	= true;
+		ranged_engage_range 			= 12.0;
+		sight_range 					= 12.0;
+		sight_origin_height				= 3;
+	}
+}

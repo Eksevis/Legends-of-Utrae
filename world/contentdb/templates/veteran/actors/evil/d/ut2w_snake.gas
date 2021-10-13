@@ -1,0 +1,258 @@
+[t:template,n:ut2w_snake_1]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 14, 0;
+			intelligence = 4, 0;
+			dexterity    = 14, 0;
+			combat_magic = 4, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5;
+		life = 66;
+		max_life = 4;
+		mana = 6;
+		max_mana = 66;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 33;
+		damage_min = 31;
+	}
+	[common]
+	{
+		screen_name="Brown Snake";
+	}
+	[defend] { defense=75; }
+}
+
+[t:template,n:ut2w_snake_01]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  12.6, 0;
+			intelligence =  1.5, 0;
+			dexterity =  14.4, 0;
+			melee =  54,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 15669;
+		life = 268;
+		max_life = 268;
+		mana = 108;
+		max_mana = 108;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin-01;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 148;
+		damage_min = 126;
+	}
+	[common]
+	{
+		screen_name="Grass Serpent";
+	}
+	[defend] { defense=548; }
+}
+
+[t:template,n:ut2w_snake_02]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 13.4, 0;
+			  intelligence = 5.8, 0;
+			  melee = 56,  0;
+			  strength = 31.7, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 16226;
+		  life = 448.2;
+		  mana = 91.2;
+		  max_life = 448.2;
+		  max_mana = 91.2;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin-02;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		  damage_max = 244;
+		  damage_min = 191.7;
+	}
+	[common]
+	{
+		screen_name="Deadly Viper";
+	}
+	[defend] { defense=355; }
+}
+
+[t:template,n:ut2w_snake_03]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 4, 0;
+			intelligence = 4, 0;
+			dexterity    = 4, 0;
+			combat_magic = 4, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5;
+		life = 6;
+		max_life = 4;
+		mana = 6;
+		max_mana = 6;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin-03;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 3;
+		damage_min = 1;
+	}
+	[common]
+	{
+		screen_name="Snake3";
+	}
+	[defend] { defense=5; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					  chance = 0.15;						  max = 9;
+					  min = 4;
+				}
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.05;
+   	        	    il_main = #spell/0-2;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+        	   	    il_main = #bow/1-3;
+				}
+				[oneof*]
+				{
+       				chance = 0.12;
+        	   	    il_main = #melee/1-3;
+      				    il_main = potion_health_small;
+				    il_main = potion_mana_small;
+				}
+				[all*]
+				{
+       				chance = 0.03;
+            	    il_main = #body/1-6;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:ut2w_snake_04]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 34, 0;
+			intelligence = 14, 0;
+			dexterity    = 54, 0;
+			combat_magic = 74, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 150000;
+		life = 1240;
+		max_life = 1240;
+		mana = 6;
+		max_mana = 60;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin-04;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 327.6;
+		damage_min = 208.5;
+		damage_bonus_min_cmagic = 80;
+		damage_bonus_max_cmagic = 119;
+	}
+	[common]
+	{
+		screen_name="Dune Asp";
+	}
+	[defend] { defense=700; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_chitterskrag_poison; }
+	}
+   	[mind]
+	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		personal_space_range = 0.75;
+	}
+}
+

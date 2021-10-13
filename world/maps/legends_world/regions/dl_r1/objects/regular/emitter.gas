@@ -1,0 +1,83 @@
+[t:emt_generic_act,n:0x0a10017e]
+{
+	[generic_emitter_act]
+	{
+		other_effect = "item_sparkles";
+	}
+	[placement]
+	{
+	  q orientation = -0.5,0.5,0.5,0.5;
+	  p position = -1.46492,20.1611,-9.28483,0x4a217ab7;
+	}
+}
+[t:emt_sound,n:0x0a100194]
+{
+	[placement]
+	{
+	  p position = -2.55655,31.3863,-2.66789,0x4a217ab7;
+	}
+	[sound_emitter]
+	{
+		event_sound = "env_crypt";
+	  f max_dist = 35;
+	}
+}
+[t:emt_go,n:0x0a10006e]
+{
+	[go_emitter]
+	{
+	  f avz = 0;
+	  f avz_var = 0;
+	  i count = 3;
+	  f duration = 1.5;
+	  f end_radius_max = 0.6;
+	  f end_radius_min = 0.1;
+	  f interval = 0.5;
+	  f lvz = 0.4;
+	  f lvz_var = 0.6;
+		model = "frag_cav_boulder_01";
+	  f random_delay = 0.7;
+	}
+	[placement]
+	{
+	  q orientation = 0.579229,-0.405581,0.405581,0.579229;
+	  p position = -10.6968,26.7383,-5.32228,0x26b536ed;
+	}
+}
+[t:emt_go,n:0x0a100073]
+{
+	[go_emitter]
+	{
+	  f avz = 0;
+	  f avz_var = 0;
+	  i count = 3;
+	  f duration = 1.5;
+	  f end_radius_max = 0.5;
+	  f end_radius_min = 0.1;
+	  f interval = 0.5;
+	  f lvz = 0.33;
+	  f lvz_var = 0.8;
+		model = "frag_cav_boulder_02";
+	  f random_delay = 0.7;
+	}
+	[placement]
+	{
+	  q orientation = 0.572062,0.415628,-0.415628,0.572062;
+	  p position = 10.1955,26.7133,-6.19118,0x26b536ed;
+	}
+}
+[t:emt_sound_act,n:0x0a100177]
+{
+	[placement]
+	{
+	  p position = -2.46153,3.90519,-15.243,0x26b536ed;
+	}
+	[sound_emitter_act]
+	{
+	  b continual_loop = true;
+		event_sound = "env_dragon_breath";
+	  f max_dist = 55;
+	  f min_dist = 5;
+	  b stop_instantly = true;
+	}
+}

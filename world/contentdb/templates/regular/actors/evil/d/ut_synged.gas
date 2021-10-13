@@ -1,0 +1,116 @@
+[t:template,n:ut_synged]
+{
+	category_name = "1W_evil_d";
+	doc = "synged";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	11, 0;
+			intelligence =  7, 0;
+			dexterity =  	16, 0;
+			melee =  		18,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 35000;
+		life = 640;
+		max_life = 640;
+		mana = 14;
+		max_mana = 14;
+		model = m_c_edm_sy_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_synged; }
+			[hit_critical]	{ priority = low; * = s_e_hit_synged_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_synged_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_synged_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 250;
+		damage_min = 230;
+	}
+	[body]
+	{
+		avg_move_velocity = 5.000000;
+		[bone_translator]
+		{
+			body_anterior = mandible_root;
+			body_mid = root_bone;
+			body_posterior = root_bone;
+			kill_bone = body_bone1;
+			shield_bone = ll_mand_1;
+			weapon_bone = lr_mand_1;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_sy_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}
+	[common] { screen_name="Synged"; }
+	[defend] { defense=700; }
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?meander	= false
+			&still		= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.5;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		[break_particulate]
+		{
+			frag_glb_synged_01 = 1;
+			frag_glb_synged_02 = 1;
+			frag_glb_synged_03 = 1;
+			frag_glb_synged_04 = 2;
+			frag_glb_synged_05 = 2;
+		}
+	}
+}

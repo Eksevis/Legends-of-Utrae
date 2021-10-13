@@ -1,0 +1,80 @@
+[t:trp_firetrap,n:0x000000bb]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,-1e-006;
+	  p position = -0.04557,-0.487762,0.313786,0x99708db7;
+	}
+	[trp_firetrap]
+	{
+	  i ammo_count = 2;
+	  f area_damage_radius = 1.5;
+	  f damage_max_hit = 11;
+	  f damage_min_hit = 8;
+	  f reload_duration = 1;
+	}
+}
+[t:trp_firetrap,n:0x00000111]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.047198,-0.473526,0.2108,0xd4553a11;
+	}
+}
+[t:trp_firetrap,n:0x0000010f]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.039158,-0.573513,0.342438,0x0c507f50;
+	}
+}
+[t:trp_firetrap,n:0x0000010b]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.018143,-0.473526,0.331345,0x69483637;
+	}
+	[trp_firetrap]
+	{
+	  f reload_duration = 1.8;
+	}
+}
+[t:trp_firetrap,n:0x0000010d]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.038075,-0.573512,0.282211,0x9cf2c0e0;
+	}
+	[trp_firetrap]
+	{
+	  f reload_duration = 1.6;
+	}
+}
+[t:trp_firetrap,n:0x00000112]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.003309,-0.573512,0.288216,0x5e362a31;
+	}
+	[trp_firetrap]
+	{
+	  f reload_duration = 1.6;
+	}
+}
+[t:trp_firetrap,n:0x00000113]
+{
+	[placement]
+	{
+	  q orientation = -3.43767e-007,-1,6.25849e-007,-5.11541e-008;
+	  p position = 0.033086,-0.573513,0.289505,0x628230ba;
+	}
+	[trp_firetrap]
+	{
+	  f reload_duration = 1.3;
+	}
+}

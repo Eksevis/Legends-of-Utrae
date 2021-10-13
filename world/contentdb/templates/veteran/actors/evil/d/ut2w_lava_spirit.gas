@@ -1,0 +1,162 @@
+[t:template,n:ut2W_lava_spirit]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lava_spirit";
+	specializes = 2W_base_lava_spirit;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		80, 0;
+			intelligence = 	19, 0;
+			dexterity = 	31, 0;
+			melee =  		91, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 360000;
+		life = 2536;
+		max_life = 2536;
+		mana = 1140;
+		max_mana = 1140;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 440.6;
+		damage_min = 384.2;
+	}
+	[defend] { defense=1383.7; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.45;
+					il_main = #*/175-265;
+					il_main = #armor/112-552;
+	                il_main = #cmagic/45-59;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/262-290;
+	                il_main = #armor/-rare(1)/570-712;
+                    il_main = #*/-rare(1)/262-290;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/262-290;
+	                il_main = #armor/-unique(2)/570-712;
+                    il_main = #*/-unique(2)/262-290;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 293331;
+					min = 213496;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}
+[t:template,n:ut2W_lava_spirit_magic]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lava_spirit";
+	specializes = 2W_base_lava_spirit;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		78.1, 0;
+			intelligence = 	19.9, 0;
+			dexterity = 	37.7, 0;
+			combat_magic = 	92, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 360000;
+		life = 2136;
+		max_life = 2136;
+		mana = 24.9;
+		max_mana = 24.9;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 440.6;
+		damage_min = 184.2;
+		damage_bonus_min_cmagic = 144;
+		damage_bonus_max_cmagic = 210;
+	}
+	[defend] { defense=1183.7; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_lava_spirit_fire;
+		}
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.45;
+					il_main = #*/175-265;
+					il_main = #armor/112-552;
+	                il_main = #cmagic/45-59;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/262-290;
+	                il_main = #armor/-rare(1)/570-712;
+                    il_main = #*/-rare(1)/262-290;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/262-290;
+	                il_main = #armor/-unique(2)/570-712;
+                    il_main = #*/-unique(2)/262-290;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 263331;
+					min = 223496;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}
+

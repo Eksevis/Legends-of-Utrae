@@ -1,0 +1,145 @@
+[t:template,n:ut2W_proxo]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_robot_proxo";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	13.9, 0;
+			intelligence =  	2.6, 0;
+			dexterity =  	5, 0;
+			melee =  		49,  0;
+   			combat_magic =  72,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 60500;
+		life = 99.4;
+		max_life = 99.4;
+		mana = 9.9;
+		max_mana = 9.9;
+		model = m_c_edm_px_pos_1;
+		material = steel;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_proxo;				}
+			[enemy_spotted]	{ priority = high; * = s_e_call_mechanoid_small_SED;	}
+		}
+	}
+	[attack]
+	{
+		area_damage_radius = 4.25;
+		attack_range = 0.5;
+		damage_max = 655.7;
+		damage_min = 491.8;
+	}
+	[body]
+	{
+		avg_move_velocity = 1.970000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = bip01_l_hand;
+			weapon_bone = bip01_r_hand;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_px_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=ds; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[effect_manager]
+	{
+		start_msg = WE_ENTERED_WORLD;
+		stop_msg = WE_LEFT_WORLD;
+		stop_msg2 = WE_KILLED;
+
+		effect_name = "";
+		rep_effect_name = "proxo_blink";
+
+		repeat_rate = .3;
+		repeat_rate_max = .3;
+
+		run_once = true;
+	}
+	[common]
+	{
+		screen_name="Heavy Proxo";
+	}
+	[defend] { defense=126.7; }
+	[mind]
+	{
+		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+			?meander				= false
+			&still					= false;
+		jat_attack_object_melee = world\ai\jobs\common\job_attack_object_suicide_bomb.skrit;
+		melee_engage_range = 9;
+		personal_space_range = 0.7;
+		ranged_engage_range = 10.0;
+		sight_range = 11.0;
+	}
+	[physics]
+	{
+		break_effect = proxo_explosion;
+		damage_all = true;
+		explode_when_killed = true;
+		explosion_magnitude = 4.25;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_metal_01 = 1;
+			frag_glb_metal_02 = 2;
+			frag_glb_metal_03 = 3;
+			frag_glb_metal_04 = 1;
+			frag_glb_metal_05 = 3;
+			frag_glb_metal_06 = 3;
+			frag_glb_proxo_01 = 3;
+			frag_glb_proxo_02 = 2;
+			frag_glb_proxo_03 = 3;
+			frag_glb_proxo_04 = 2;
+			frag_glb_proxo_05 = 1;
+			frag_glb_proxo_06 = 2;
+			frag_glb_wood_01 = 1;
+			frag_glb_wood_02 = 1;
+			frag_glb_wood_03 = 2;
+			frag_glb_wood_04 = 2;
+			frag_glb_wood_05 = 4;
+			frag_glb_wood_06 = 3;
+		}
+	}
+}

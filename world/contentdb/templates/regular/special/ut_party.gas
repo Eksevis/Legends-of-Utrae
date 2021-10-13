@@ -1,0 +1,136 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+//Go		m_Go$;
+//GoMind	m_Mind$;
+//GoParty m_Party$;
+//Job		m_Job$;
+//
+//property	int		min_party_size$			= 2			doc = "How many friends must be nearby to form a party";
+//property	int		max_party_size$			= 8			doc = "What is the larget size I will leat a party be to join, or add into my own.?";
+//
+//property	float	heal$					= 0.30		doc = "What ratio of the time will the party try to heal members";
+//property	int		heal_charges$			= 2			doc	= "How many times the party can heal before it must recharge";
+//property	float	heal_recharge$			= 15.00		doc = "Seconds before the party will try to heal members";
+//
+//property	float	reanimate$				= 0.30		doc = "What ratio of the time will the party try to re-animate dead members";
+//property	int		reanimate_charges$		= 2			doc	= "How many times the party can re-animate before it must recharge";
+//property	float	reanimate_recharge$		= 15.00		doc = "Seconds before the party will try to re-animate dead members";
+//
+//property	float	formation_change$		= 0.02		doc	= "Chance to change the formation shape each time it moves.";
+//property	int		formation_charges$		= 1			doc	= "How many times the party can move in formation before it must recharge";
+//property	float	formation_recharge$		= 5.00		doc = "Seconds before the party will try to move in formation again";
+//
+//property	float	approach_distance$		= 1.66		doc = "Meters to try to approach by when approaching in formation.";
+//property	float	min_approach_distance$	= 5.00		doc = "Minimum distance before the party will approach.";
+//
+//property	float	party_sight_distance$	= -1.0		doc	= "Set to a positive value to allow the party to see an enemy farther away (usefull for get friends) -1 to use sight range.";
+//
+//property	bool	free_move_on_enemy_enter_ICZ$	 	= true 	doc = "if enemy enters ICZ allow party to freely attack";
+//property	bool	free_move_on_enemy_enter_OCZ$	 	= false	doc = "if enemy enters OCZ allow party to freely attack";
+//property	bool	free_move_on_life_low$	 			= false	doc = "if a party reaches life low allow party to freely attack";
+//property	bool	free_move_if_cant_respond$ 			= true 	doc = "allow characters to move freely if the can't attack back when in formation.";
+//property	bool	move_ranged_in_formation$ 			= true 	doc = "move ranged attackers in formation even if they are allowed free movment.";
+//
+//property	bool	free_move$ 							= false doc = "allow free movement by default";
+//property	bool	use_loose_formation$ 				= false doc = "move in a disorganized formation (used for archers to prevent them from standing on each other)";
+//property	string	formation_list$ 							doc = "comma delimited list of possible formations to use (If empty will use default monster formations)";
+//
+//property	int		required_party_members_to_hold_formation$		= 2 	doc = "Number of party members required to approach in formation.";
+//property	int		required_ranged_attackers_to_hold_formation$	= 1 	doc = "Number of ranged attackers required in the party to approach in formation.";
+//property	int		required_ranged_attackers_to_hold_ground$		= 9 	doc = "Number of ranged attackers required in the party to hold ground in formation.";
+//property	int		required_members_for_all_out_attack$			= -1	doc = "Mumber of party members required for an all out attack. (useful for getting friends or pack attacks.";		
+//property	int		required_alive_members_for_all_out_attack$		= -1	doc = "Mumber of alive party members required for an all out attack. (useful for getting friends or pack attacks.";
+//
+//property	bool	flee_when_member_killed$						= false	doc = "Party members flee when a party member is killed.";
+
+
+//This file contains party AI information that is referenced inside specific actor templates
+[t:template,n:party_zaurask_shaman]
+{
+	specializes = party_computer;
+	doc = "Party formed by a zaurask shaman.";
+
+	[common]
+	{
+		membership = party_zaurask_shaman;
+	}
+	[mind]
+	{
+		jat_brain				= world\ai\jobs\common\brain_party.skrit
+			?use_loose_formation							= true
+			&reanimate_charges		= 1
+			&reanimate_recharge		= 9
+			&min_approach_distance		= 8
+			&free_move_on_enemy_enter_OCZ		= true
+			&required_ranged_attackers_to_hold_formation	= 1
+			&formation_recharge			= 2.4;
+	}
+}
+[t:template,n:party_droog_mage]
+{
+	specializes = party_computer;
+	doc = "Party formed by a droog mage.";
+
+	[common]
+	{
+		membership = party_droog_mage;
+	}
+	[mind]
+	{
+		jat_brain				= world\ai\jobs\common\brain_party.skrit
+			?use_loose_formation							= true
+			&reanimate_charges		= 1
+			&reanimate_recharge		= 9
+			&min_approach_distance		= 8
+			&free_move_on_enemy_enter_OCZ			= true
+			&required_ranged_attackers_to_hold_formation	= 1
+			&formation_recharge			= 2.4;
+	}
+}
+[t:template,n:party_utraean]
+{
+	specializes = party_computer;
+	doc = "Party formed by a droog mage.";
+
+	[common]
+	{
+		membership = party_utraean;
+	}
+	[mind]
+	{
+		jat_brain				= world\ai\jobs\common\brain_party.skrit
+			?use_loose_formation							= true
+			&reanimate_charges		= 1
+			&reanimate_recharge		= 9
+			&heal_by_range			= true
+			&heal_charges			= 2
+			&heal_recharge			= 6.00
+			&min_approach_distance		= 8
+			&free_move_on_enemy_enter_OCZ			= true
+			&required_ranged_attackers_to_hold_formation	= 1
+			&formation_recharge			= 2.4;
+	}
+}
+[t:template,n:party_dwarf]
+{
+	specializes = party_computer;
+	doc = "Party formed by a droog mage.";
+
+	[common]
+	{
+		membership = party_dwarf;
+	}
+	[mind]
+	{
+		jat_brain				= world\ai\jobs\common\brain_party.skrit
+			?use_loose_formation							= true
+			&reanimate_charges		= 1
+			&reanimate_recharge		= 9
+			&min_approach_distance		= 8
+			&free_move_on_enemy_enter_OCZ			= true
+			&required_ranged_attackers_to_hold_formation	= 1
+			&formation_recharge			= 2.4;
+	}
+}
+							
+//////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,101 @@
+[t:template,n:ut_grim_reaper]
+{
+	doc = "Base template for all ambient chickens.";
+	specializes = actor_evil;
+	[actor]
+	{
+		alignment = aa_good;
+		portrait_icon = b_gui_ig_i_ic_c_reaper;
+	}
+	[aspect]
+	{
+		model = m_c_edm_rp_pos_1;
+		draw_selection_indicator = TRUE;
+		is_ghost_usable = TRUE;
+		use_range = 1;
+	}
+	[body]
+	{
+		avg_move_velocity = 0.000000;
+		[bone_translator]
+		{
+			body_anterior = bone03;
+			body_mid = bone02;
+			body_posterior = bone06;
+			kill_bone = bone02;
+			shield_bone = bone02;
+			weapon_bone = bone03;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_rp_fs;
+			[chore_attack]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_default]
+			{
+				chore_stances = 5;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files] { 00=dsf; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files] { 00=ds; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 5;
+				skrit = select_fidget;
+				[anim_files] { 00 = dsf; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 5;
+				skrit = select_walk;
+				[anim_files] { 00=ds; }
+			}
+		}
+	}
+	[common] { screen_name="Grim Reaper"; }
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+                		es_weapon_hand = st_un_reaper;
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?still	= true;
+		on_enemy_spotted_alert_friends 				= false;
+		on_enemy_spotted_attack 				= false;
+		on_enemy_entered_ocz_attack 				= false;
+		on_enemy_entered_icz_attack 				= false;
+		on_enemy_entered_ocz_flee 				= false;
+		on_friend_entered_ocz_flee 				= false;
+		on_enemy_entered_weapon_engage_range_attack 		= false;
+		inner_comfort_zone_range 				= 0.1;
+		melee_engage_range 					= 0.1;
+		outer_comfort_zone_range 				= 5.0;
+		personal_space_range 					= 0.4;
+		sight_range 						= 16.0;
+	}
+}

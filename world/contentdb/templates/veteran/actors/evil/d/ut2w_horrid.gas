@@ -1,0 +1,316 @@
+[t:template,n:ut2W_horrid]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_horrid";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  62.8, 0;
+			intelligence =  8.6, 0;
+			dexterity =  18.9, 0;
+			melee =  59,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 44394;
+		life = 2048;
+        max_life = 2048;
+        mana = 69.8;
+		max_mana = 69.8;
+		model = m_c_edm_hd_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_horrid;		}
+			[hit_critical]	{ priority = low; * = s_e_hit_horrid_SED;	}
+			[hit_glance]	{ priority = low; * = s_e_hit_horrid_SED;	}
+			[hit_solid]		{ priority = low; * = s_e_hit_horrid_SED;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 423.4;
+		damage_min = 321.8;
+	}
+	[body]
+	{
+		avg_move_velocity = 3;
+		[bone_translator]
+		{
+			body_anterior = Head_Bone;
+			body_mid = Bip01_Spine2;
+			body_posterior = Bip01_Pelvis;
+			kill_bone = Bip01_Pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee	= 1.7, 1.7, 1.7;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_hd_fs;
+			[chore_attack]
+			{
+				chore_stances = 1;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 1;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 1;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 1;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00=dff;
+					01=dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 1;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Horrid Mauler"; }
+    [defend] { defense=337.5; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = cb_un_2h_horrid;
+			}
+
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.03;
+	                il_main = #spell/41-64;
+				}
+
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/110-166;
+					il_main = #armor/76-425;
+	                il_main = #weapon/166-193;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/210-260;
+	                il_main = #armor/-rare(1)/489-617;
+                    il_main = #*/-rare(1)/210-260;
+                }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 44996;
+					min = 18635;
+					min_pile = 12;
+					piles = 2 - 3;
+				}
+			}
+		}
+	}
+
+	[mind]
+	{
+		jat_fidget 	= world\ai\jobs\common\job_fidget.skrit
+			?curious	= 0.75
+			&delay_min	= 7.0
+			&interest	= interest
+			&meander	= false
+			&still		= false;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut2w_ice_horrid]
+{
+	category_name = "1W_evil_d";
+	doc = "horrid";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  62.8, 0;
+			intelligence =  8.6, 0;
+			dexterity =  18.9, 0;
+			melee =  59,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 44394;
+		life = 2048;
+        	max_life = 2048;
+        	mana = 69.8;
+		max_mana = 69.8;
+		model = m_c_edm_hd_pos_1;
+		[textures]
+		{
+			0 = b_c_edm_hd-01;
+		}
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_horrid;		}
+			[hit_critical]	{ priority = low; * = s_e_hit_horrid_SED;	}
+			[hit_glance]	{ priority = low; * = s_e_hit_horrid_SED;	}
+			[hit_solid]		{ priority = low; * = s_e_hit_horrid_SED;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 423.4;
+		damage_min = 321.8;
+	}
+	[body]
+	{
+		avg_move_velocity = 3;
+		[bone_translator]
+		{
+			body_anterior = Head_Bone;
+			body_mid = Bip01_Spine2;
+			body_posterior = Bip01_Pelvis;
+			kill_bone = Bip01_Pelvis;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_single_melee	= 1.7, 1.7, 1.7;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_hd_fs;
+			[chore_attack]
+			{
+				chore_stances = 1;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00=at;
+					01=at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 1;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 1;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 1;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00=dff;
+					01=dff-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 1;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Frost Horrid Berserker"; }
+    [defend] { defense=355; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = cb_un_2h_horrid;
+			}
+
+			[all*]
+			{
+				[all*]
+				{
+       				chance = 0.03;
+	                il_main = #spell/41-64;
+				}
+
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/110-166;
+					il_main = #armor/76-425;
+	                il_main = #weapon/166-193;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/210-260;
+	                il_main = #armor/-rare(1)/489-617;
+                    il_main = #*/-rare(1)/210-260;
+                }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 44996;
+					min = 18635;
+					min_pile = 12;
+					piles = 2 - 3;
+				}
+			}
+		}
+	}
+
+	[mind]
+	{
+		jat_fidget 	= world\ai\jobs\common\job_fidget.skrit
+			?curious	= 0.75
+			&delay_min	= 7.0
+			&interest	= interest
+			&meander	= false
+			&still		= false;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

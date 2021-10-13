@@ -1,0 +1,169 @@
+[t:template,n:ut3w_zepheryl]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_zepheryl";
+	specializes = dsx_zepheryl_base;
+
+	[common]
+	{
+		membership = gargoyle,monster;
+	}
+	[aspect]
+	{
+		force_no_render = true;
+		experience_value = 3564585;
+		life = 1262.2;
+		max_life = 1262.2;
+		mana = 50.5;
+		max_mana = 50.5;
+		draw_shadow = false;
+		model = m_c_edm_ga_pos_1;
+		scale_base = 1;	 
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_zepheryl_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_zepheryl_SED; }
+			[hit_critical]	{ priority = low;	* = s_e_hit_zepheryl_SED;		}
+			[hit_glance]	{ priority = low;	* = s_e_hit_zepheryl_SED;		}
+			[hit_solid]		{ priority = low;	* = s_e_hit_zepheryl_SED;		}
+		}
+	}
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		39.2, 0;
+			intelligence = 	17.8, 0;
+			dexterity = 	17.5, 0;
+   			combat_magic =  104,  0;
+			nature_magic 	=	103, 0;
+				
+		}
+	}
+	[attack]
+	{
+		attack_range = .5;
+		damage_max = 332;
+		damage_min = 270.1;
+		damage_bonus_min_cmagic = 195;
+		damage_bonus_max_cmagic = 278;
+	}
+	[common]
+	{
+		screen_name="Will o' Wisp";
+		membership = gargoyle, monster, immune_polymorph;
+
+		[template_triggers]
+			{
+				[*]
+					{
+						action* = call_sfx_script("zepheryl_fire");
+						condition* = receive_world_message("WE_ENTERED_WORLD");
+						single_shot = true;
+					}
+			}
+	}
+	[defend] { defense=974; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_zepheryl_zap; }
+	}
+	[mind]
+	{
+		actor_weapon_preference		= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+
+}
+[t:template,n:ut3w_zepheryl_dark]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_zepheryl_dark";
+	specializes = dsx_zepheryl_dark_base;
+
+	[common]
+	{
+		membership = gargoyle,monster;
+	}
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		39.2, 0;
+			intelligence = 	17.8, 0;
+			dexterity = 	17.5, 0;
+   			combat_magic =  104,  0;
+			nature_magic 	=	105, 0;
+				
+		}
+	}
+
+	[aspect]
+	{
+		experience_value = 3564585;
+		life = 1462.2;
+		max_life = 1462.2;
+		mana = 50.5;
+		max_mana = 50.5;
+		scale_base = 1; 
+		[voice]
+		{
+			[die]			{ priority = high;	* = s_e_die_zepheryl_two_SED;		}
+			[enemy_spotted]	{ priority = high; * = s_e_call_zepheryl_SED; }
+			[hit_critical]	{ priority = low;	* = s_e_hit_zepheryl_SED;		}
+			[hit_glance]	{ priority = low;	* = s_e_hit_zepheryl_SED;		}
+			[hit_solid]		{ priority = low;	* = s_e_hit_zepheryl_SED;		}
+		} 
+	}
+
+	[attack]
+	{
+		attack_range = .5;
+		damage_max = 432;
+		damage_min = 270.1;
+		damage_bonus_min_cmagic = 195;
+		damage_bonus_max_cmagic = 278;
+	}
+	[common]
+	{
+		screen_name="Haunting Will o' Wisp";
+		membership = gargoyle, monster, immune_polymorph;
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zepheryl_fire_two");
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+			}
+		}
+	}
+
+	[defend] { defense=1207; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_zepheryl_zap_two; }
+
+			
+	}
+	[mind]
+	{
+		actor_weapon_preference		= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+	[physics]
+	{
+		break_effect = zepheryl_die_two;
+
+			
+	}
+
+}
+

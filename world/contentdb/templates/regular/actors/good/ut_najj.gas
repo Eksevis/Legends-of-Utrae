@@ -1,0 +1,395 @@
+[t:template,n:base_hero_giant]
+{
+	doc = "Giant base template";
+	specializes = hero;
+	[aspect]
+	{
+		scale_base = 1.1;
+		model = m_c_gan_hg_pos_a1;
+	}
+	[body]
+	{
+		armor_version = gan_hg;
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gan_hg_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					extr = at-04;
+					qffg = dff;
+				}
+
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = simple_loop;
+				[anim_files]
+				{
+					00 = dfs;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gan_hg_fs1_dk;
+					frtd = a_c_gan_hg_fs0_dsf;
+					glrn = a_c_gan_hg_fs1_dsf;
+					gtup = a_c_gan_hg_fs0_up;
+					look = a_c_gan_hg_fs1_dff;
+					talk = a_c_gan_hg_fs0_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = rl;
+				}
+			}
+		}
+		[weapon_scales]
+		{
+			as_bow_and_arrow = 1.1, 1.1, 1.1;
+			as_minigun = 1.0, 1.2, 1.0;
+			as_shield_only = 1.1, 1.1, 1.1;
+			as_single_melee = 1.1, 1.1, 1.1;
+			as_staff = 1.1, 1.1, 1.1;
+			as_two_handed_melee = 1.1, 1.2, 1.3;
+			as_two_handed_sword = 1.1, 1.1, 1.1;
+		}
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[inventory]
+	{
+		[equipment]
+		{
+			es_feet = bo_bo_le_light;
+		}
+	}
+ 	mind:sight_origin_height = 1.6;
+	[physics]
+	{
+		fire_effect = human_physics_fire;
+	}
+}
+[t:template,n:base_pm_hero_giant]
+{
+	category_name = "1W_character";
+	doc = "Base template for  giant party members based on the giant.";
+	specializes = base_hero_giant;
+	[actor]
+	{
+		can_level_up = true;
+		race = human;
+	}
+	[aspect]
+	{
+		is_collidable		= true;
+		is_invincible		= false;
+
+		is_collidable		= true;
+		is_invincible		= false;
+		draw_selection_indicator = true;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		reload_delay = 0;
+   		damage_max = 0;
+		damage_min = 0;
+
+	}
+	[common]
+	{
+		auto_expiration_class = never;
+		forced_expiration_class = never;
+		membership = hero;
+	}
+	[inventory]
+	{
+		grid_height = 13;
+		grid_width = 4;
+	}
+	[mind]
+	{
+		jat_brain 	= world\ai\jobs\common\brain_hero.skrit;
+		jat_listen 	= world\ai\jobs\common\job_listen.skrit;
+		actor_weapon_preference         = WP_MAGIC;
+		actor_balanced_attack_preference	= 1.0;
+
+		////////////////////////////////////////
+		//	permissions
+
+		combat_orders                              = CO_FREE;
+		movement_orders                            = MO_FREE;
+
+		actor_auto_switches_to_magic               = true;
+		actor_auto_defends_others                  = true;
+		actor_auto_reanimates_friends        	   = true;
+		actor_auto_heals_others_mana        	   = true;
+		actor_auto_xfers_mana       	   	   = true;
+		actor_auto_heals_self_life                 = false;
+		actor_auto_heals_others_life               = true;
+		actor_auto_switches_to_karate              = false;
+        	actor_auto_switches_to_melee               = false;
+
+		on_alert_projectile_near_missed_attack	   = true;
+		on_enemy_spotted_alert_friends		   = true;
+		on_enemy_entered_icz_switch_to_melee       = false;
+		on_engaged_fled_abort_attack		= true;
+		flee_count 				= 8;
+		flee_distance				= 3;
+	}
+	[physics]
+	{
+		fire_burn_threshold = 9999;
+		fire_effect = human_physics_fire;
+		fire_resistance = 0.0;
+	}
+	[water_effects]
+	{
+	}
+	[store] { can_sell_self = true; }
+}
+[t:template,n:ut_najj]
+{
+	category_name = "1W_character";
+	doc = "tajj";
+	specializes = base_pm_hero_giant;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_tass1;
+		[skills]
+		{
+			strength 		= 14.7, 0, 10;
+			dexterity 		= 6.2, 0, 10;
+			intelligence 		= 2.1, 0, 10;
+			melee 			= 23, 0, 0;
+			uber 			= 23, 0, 0;
+		}
+		can_level_up = true;
+		race = human;
+	}
+	[aspect]
+	{
+		is_collidable		= true;
+		is_invincible		= false;
+		life_recovery_period = 4;
+		life_recovery_unit = 1;
+		mana_recovery_period = 3;
+		mana_recovery_unit = 1;
+
+		is_collidable		= true;
+		is_invincible		= false;
+		draw_selection_indicator = true;
+
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_04;
+			1 = b_c_pos_a1_102;
+		}
+      [voice]
+	{
+	[die]		{ priority = high; * = s_v_najj_die; }
+//	[hit_critical]	{ priority = low; * = s_v_najj_hit_03_SED;  }
+//	[hit_glance]	{ priority = low; * = s_v_najj_hit_01_SED;  }
+//	[hit_solid]	{ priority = low; * = s_v_najj_hit_02_SED;  }
+	}
+      [vo_voice]
+	{
+	  [select_char]
+	    { 
+	      priority = vo; 
+	      * = s_v_najj_select_01;
+	      * = s_v_najj_select_02;
+	      * = s_v_najj_select_03;
+	      * = s_v_najj_select_04;
+	      * = s_v_najj_select_05;
+	      * = s_v_najj_select_06;
+	      * = s_v_najj_select_07;
+	      * = s_v_najj_select_08;
+	      * = s_v_najj_select_09;
+	      * = s_v_najj_select_10;
+	      * = s_v_najj_select_11;
+	      * = s_v_najj_select_12;
+	      * = s_v_najj_select_13;
+	      * = s_v_najj_select_14;
+	      * = s_v_najj_select_15;
+	    }
+	  [order_move]
+	    {
+	      priority = vo; 
+	      * = s_v_najj_ack_01;
+	      * = s_v_najj_ack_02;
+	      * = s_v_najj_ack_03;
+	      * = s_v_najj_ack_04;
+	      * = s_v_najj_ack_05;
+	      * = s_v_najj_ack_06;
+	      * = s_v_najj_ack_07;
+	      * = s_v_najj_ack_08;
+	      * = s_v_najj_ack_09;
+	      * = s_v_najj_ack_10;
+	      * = s_v_najj_ack_11;
+	      * = s_v_najj_ack_12;
+	      * = s_v_najj_ack_13;
+	      * = s_v_najj_ack_14;
+	      * = s_v_najj_ack_15;
+	    }
+	  [order_attack]
+	    {
+	      priority = vo; 
+	      * = s_v_najj_attack_01;
+	      * = s_v_najj_attack_02;
+	      * = s_v_najj_attack_03;
+	      * = s_v_najj_attack_04;
+	      * = s_v_najj_attack_05;
+	      * = s_v_najj_attack_06;
+	      * = s_v_najj_attack_07;
+	      * = s_v_najj_attack_08;
+	      * = s_v_najj_attack_09;
+	      * = s_v_najj_attack_10;
+	      * = s_v_najj_attack_11;
+	      * = s_v_najj_attack_12;
+	      * = s_v_najj_attack_13;
+	      * = s_v_najj_attack_14;
+	      * = s_v_najj_attack_15;
+	    }
+	}
+    }
+	[common]
+	{
+		screen_name = "Tajj";
+		auto_expiration_class = never;
+		forced_expiration_class = never;
+		membership = hero;
+	}
+	[conversation]
+	{
+	}
+   	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_weapon_hand = sd_g_c_sd_1h_fun; //cb_un_2h_cyclops;
+			es_spellbook = book_glb_magic_01;
+			es_chest = bd_ch_f_g_c_fun;
+			es_feet = #boots/-no_mod/7-10;
+		}
+        [other]
+        {
+			il_main = book_glb_lore_ut_tajj;
+        }
+
+		grid_height = 13;
+		grid_width = 4;
+
+	}
+        [mind]
+	{
+		actor_auto_switches_to_karate              = false;
+		actor_auto_switches_to_melee               = false;
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+
+		actor_life_ratio_high_threshold = 0.8;
+		actor_life_ratio_low_threshold = 0.5;
+		actor_mana_ratio_high_threshold = 0.8;
+		actor_mana_ratio_low_threshold = 0.5;
+
+		actor_may_attack = true;
+		actor_may_be_attacked = true;
+
+		jat_brain = world\ai\jobs\common\brain_hero.skrit;
+		jat_listen = world\ai\jobs\common\job_listen.skrit;
+		melee_engage_range = 0.9;
+
+		on_enemy_entered_icz_switch_to_melee = false;
+		on_engaged_lost_consciousness_abort_attack = false;
+
+		ranged_engage_range = 5.5;
+		sensor_scan_period = 0.25;
+		sight_range = 12.0;
+
+		jat_talk = world\ai\jobs\actors\good\job_talk_tajj.skrit;
+ 	}
+
+	[water_effects]
+	{
+	}
+
+}

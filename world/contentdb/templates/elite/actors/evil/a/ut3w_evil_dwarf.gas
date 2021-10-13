@@ -1,0 +1,732 @@
+[t:template,n:ut3w_dwarf_melee_01]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut2w_base_evil_dwarf;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 31.8,  0;
+			  intelligence = 12.1,  0;
+			  melee = 91,  0;
+			  strength = 58.9, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 789645;
+		  life = 786.7;
+		  mana = 149.3;
+		  material = steel;
+		  max_life = 786.7;
+		  max_mana = 149.3;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_14;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 370.8;
+		damage_min = 270.2;
+	}
+	[common]
+	{
+		screen_name = "Duergar Rager";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=855.1; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = pickaxe;
+                		es_weapon_hand = ax_ra_g_c_2h1b_fin;
+                		es_weapon_hand = ax_g_o_2h2b_low;
+                		es_weapon_hand = ax_g_o_2h1b_low;
+				es_weapon_hand = ax_g_d_2h2b_avg;
+                		es_weapon_hand = ax_g_c_2h2b_low;
+                		es_weapon_hand = ax_g_c_2h1b_low;
+                		es_weapon_hand = ax_d_o_2h2b_avg;
+                		es_weapon_hand = ax_d_o_2h1b_avg;
+				es_weapon_hand = ax_d_d_2h2b_avg;
+                		es_weapon_hand = ax_d_d_2h1b_avg;
+                		es_weapon_hand = ax_d_c_2h1b_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_fun;
+  				es_chest = bd_ch_m_g_c_avg;
+  				es_chest = bd_ch_r_g_c_fun;
+  				es_chest = bd_sc_f_g_c_fun;
+  				es_chest = bd_sc_m_g_c_avg;
+  				es_chest = bd_sc_r_g_c_avg;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_br_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+					[gold*]
+					{
+						  chance = 0.2;
+						  max = 275261;
+						  min = 128455;
+					}
+				}
+				[all*]
+				{
+       					chance = 0.03;
+   	        	    		il_main = #spell/32-85;
+				}
+				[oneof*]
+				{
+	    		    		chance = 0.22;
+        	   	    		il_main = #weapon/149-249;
+        	   	    		il_main = #*/149-249;
+            	    			il_main = #armor/117-640;
+    					il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/219-348;
+	                		il_main = #armor/-rare(1)/299-853;
+                    			il_main = #*/-rare(1)/219-348;
+                		}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+		melee_engage_range 			= 12.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}
+[t:template,n:ut3w_dwarf_melee_02]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut2w_base_evil_dwarf;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 31.8,  0;
+			  intelligence = 12.1,  0;
+			  melee = 91,  0;
+			  strength = 58.9, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 789645;
+		  life = 798.7;
+		  mana = 149.3;
+		  material = steel;
+		  max_life = 798.7;
+		  max_mana = 149.3;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_12;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 370.8;
+		damage_min = 270.2;
+	}
+	[common]
+	{
+		screen_name = "Duergar Rager";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=755.1; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = pickaxe;
+                		es_weapon_hand = hm_g_c_2h1m_avg;
+                		es_weapon_hand = hm_g_c_2h1m_fun;
+                		es_weapon_hand = hm_g_c_2h1m_low;
+				es_weapon_hand = hm_g_c_2h2m_avg;
+                		es_weapon_hand = hm_g_c_2h2m_fun;
+                		es_weapon_hand = hm_ra_g_c_2h1m_fin;
+                		es_weapon_hand = hm_ra_g_c_2h2m_fin;
+                		es_weapon_hand = ax_d_d_dsx_goblin_mutant;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_bl_f_g_c_avg;
+  				es_chest = bd_bl_m_g_c_avg;
+  				es_chest = bd_bl_r_g_c_avg;
+  				es_chest = bd_ra_bl_m_g_c_fin;
+  				es_chest = bd_ra_bl_r_g_o_fin;
+  				es_chest = bd_ra_le_f_g_c_fin;
+  				es_chest = bd_ra_le_m_g_o_avg;
+  				es_chest = bd_ra_le_r_g_o_fin;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_bo_sl_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet =bo_ra_bo_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_sl_f_g_c_avg;
+				es_forearms = gl_ra_ga_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+					[gold*]
+					{
+						  chance = 0.2;
+						  max = 275261;
+						  min = 128455;
+					}
+				}
+				[all*]
+				{
+       				chance = 0.03;
+   	        	    il_main = #spell/32-85;
+				}
+				[oneof*]
+				{
+	    		    chance = 0.22;
+        	   	    il_main = #weapon/149-249;
+        	   	    il_main = #*/149-249;
+            	    il_main = #armor/117-640;
+    				il_main = potion_mana_super;
+					il_main = potion_health_super;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/219-348;
+	                il_main = #armor/-rare(1)/299-853;
+                    il_main = #*/-rare(1)/219-348;
+                }
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+		melee_engage_range 			= 12.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}
+[t:template,n:ut3w_dwarf_melee_boss]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut2w_base_evil_dwarf;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 33.7, 0;
+			  intelligence = 15.4, 0;
+			  melee = 93,  0;
+			  strength = 68.3, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 1189427;
+		  life = 1692.7;
+		  mana = 160.4;
+		  material = steel;
+		  max_life = 1692.7;
+		  max_mana = 160.4;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_13;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 700.8;
+		damage_min = 470.2;
+	}
+	[common]
+	{
+		screen_name = "Duergar Berserker";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=905.1; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = ax_d_d_dsx_goblin_mutant;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_bl_f_g_c_avg;
+  				es_chest = bd_bl_m_g_c_avg;
+  				es_chest = bd_bl_r_g_c_avg;
+  				es_chest = bd_ra_bl_m_g_c_fin;
+  				es_chest = bd_ra_bl_r_g_o_fin;
+  				es_chest = bd_ra_le_f_g_c_fin;
+  				es_chest = bd_ra_le_m_g_o_avg;
+  				es_chest = bd_ra_le_r_g_o_fin;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_bo_sl_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet =bo_ra_bo_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_sl_f_g_c_avg;
+				es_forearms = gl_ra_ga_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[gold*]
+				{
+					 chance = 0.2;
+					 max = 301338;
+					 min = 228601;
+				}
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+        				chance = 0.01;
+    	        	    		il_main = #spell/18-36;
+				}
+				[all*]
+				{
+        				chance = 0.02;
+    	        	    		il_main = #spell/45-89;
+				}
+				[all*]
+				{
+					 chance = 0.20;
+		           	    	il_main = #weapon/219-278;
+		                	il_main = #armor/116-650;
+		    			il_main = potion_mana_super;
+					il_main = potion_health_super;
+                    		}
+                    		[oneof*]
+				{
+	                   		chance = 0.004;
+	                   		il_main = #weapon/-rare(1)/270-371;
+	                   		il_main = #armor/-rare(1)/490-882;
+                       			il_main = #*/-rare(1)/270-371;
+                		}
+				[oneof*]
+				{
+                       			chance = 0.002;
+	                   		il_main = #weapon/-unique(2)/270-371;
+	                   		il_main = #armor/-unique(2)/490-882;
+                       			il_main = #*/-unique(2)/270-371;
+                    		}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+		melee_engage_range 			= 12.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}
+[t:template,n:ut3w_dwarf_throw]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut2w_base_evil_dwarf;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 30.7, 0;
+			  intelligence = 12.2, 0;
+			  ranged = 89,  0;
+			  strength = 36.5, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 742014;
+		  life = 323.2;
+		  mana = 110.4;
+		  max_life = 323.2;
+		  max_mana = 110.4;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_15;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		  attack_range = 0.5;
+		damage_bonus_min_cmagic = 104;
+		damage_bonus_max_cmagic = 140;
+		  damage_max = 313;
+		  damage_min = 287.1;
+	}
+	[common]
+	{
+		screen_name = "Duergar Marauder";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=465.1; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		  selected_active_location = il_active_ranged_weapon;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				ES_WEAPON_HAND = minigun_flamethrower;
+				ES_WEAPON_HAND = minigun_lightning;
+				ES_WEAPON_HAND = minigun_grenade_launcher;
+				es_weapon_hand = dsx_minigun_gas_monster;
+				ES_WEAPON_HAND = minigun_napalm;
+				ES_WEAPON_HAND = minigun_dragon;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_bl_f_g_c_avg;
+  				es_chest = bd_bl_m_g_c_avg;
+  				es_chest = bd_bl_r_g_c_avg;
+  				es_chest = bd_ra_bl_m_g_c_fin;
+  				es_chest = bd_ra_bl_r_g_o_fin;
+  				es_chest = bd_ra_le_f_g_c_fin;
+  				es_chest = bd_ra_le_m_g_o_avg;
+  				es_chest = bd_ra_le_r_g_o_fin;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_bo_sl_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet =bo_ra_bo_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_sl_f_g_c_avg;
+				es_forearms = gl_ra_ga_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+			[gold*]
+			{
+				  chance = 0.12;
+				  max = 203273;
+				  min = 156068;
+			}
+			[oneof*]
+			{
+				  chance = 0.15;
+				  il_main = potion_health_super;
+			}
+			[all*]
+			{
+    				chance = 0.03;
+   	        	    il_main = #spell/37-110;
+			}
+			[oneof*]
+			{
+                   chance = 0.002;
+                   il_main = #weapon/-rare(1)/243-292;
+                   il_main = #armor/-rare(1)/552-736;
+            }
+			[oneof*]
+			{
+				  chance = 0.10;
+				  il_main = #weapon/227-276;
+				  il_main = #*/227-276;
+				  il_main = #armor/129-644;
+				  il_main = potion_mana_super;
+				  il_main = potion_health_super;
+			}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.35
+			&still		= false;
+
+		actor_weapon_preference			= WP_RANGED;
+
+		actor_auto_switches_to_ranged	= true;
+		on_enemy_spotted_alert_friends	= true;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}
+[t:template,n:ut3w_dwarf_magic]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut2w_base_evil_dwarf;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			  combat_magic = 70, 0;
+			  dexterity = 12.9, 0;
+			  intelligence = 14.2, 0;
+			  melee = 91, 0;
+			  strength = 47.5, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 716848;
+		  life = 486.5;
+		  mana = 3604.5;
+		  max_life = 486.5;
+		  max_mana = 3604.5;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_11;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		  damage_max = 342.4;
+		  damage_min = 306.4;
+//		damage_bonus_min_cmagic = 64;
+//		damage_bonus_max_cmagic = 100;
+	}
+	[common]
+	{
+		screen_name = "Duergar Chaotist";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=905.1; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		  selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			  il_active_primary_spell   = ut_spell_cluster_bomb;
+			  il_active_secondary_spell = spell_resurrect_monster_full;
+		}
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_un_toothpick;
+                		es_weapon_hand = st_un_tiger;
+                		es_weapon_hand = st_un_skull;
+                		es_weapon_hand = st_un_pudgel;
+				es_weapon_hand = st_ra_g_o_r_avg;
+                		es_weapon_hand = st_ra_g_c_s_fin;
+                		es_weapon_hand = st_ra_g_c_b_fin;
+                		es_weapon_hand = st_g_o_b_low;
+                		es_weapon_hand = st_g_o_b_fun;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_bl_f_g_c_avg;
+  				es_chest = bd_bl_m_g_c_avg;
+  				es_chest = bd_bl_r_g_c_avg;
+  				es_chest = bd_ra_bl_m_g_c_fin;
+  				es_chest = bd_ra_bl_r_g_o_fin;
+  				es_chest = bd_ra_le_f_g_c_fin;
+  				es_chest = bd_ra_le_m_g_o_avg;
+  				es_chest = bd_ra_le_r_g_o_fin;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_bo_sl_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet =bo_ra_bo_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_sl_f_g_c_avg;
+				es_forearms = gl_ra_ga_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[gold*]
+				{
+					  chance = 0.3;
+					  max = 205112;
+					  min = 186697;
+				}
+				[oneof*]
+				{
+					  il_main = potion_mana_super;
+					  il_main = potion_health_super;
+					  max = 2;
+					  min = 1;
+                      chance = 0.3;
+				}
+				[all*]
+				{
+					  chance = 0.3;
+					  il_main = spell_fireshot;
+				}
+				[oneof*]
+				{
+					  chance = 0.1;
+					  il_main = book_glb_magic_01;
+                      il_main = #body,ro/390-480;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&party_template			= "party_dwarf";
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+		actor_weapon_preference              = WP_MAGIC;
+		actor_auto_switches_to_magic         = true;
+		actor_auto_reanimates_friends        = true;
+		actor_auto_uses_stored_items         = true;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}

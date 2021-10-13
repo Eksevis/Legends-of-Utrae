@@ -1,0 +1,25 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0x59306482;
+	source_region_name = df2ds;
+	[t:stitch_editor,n:dark_forest]
+	{
+		dest_region = dark_forest;
+		[node_ids]
+		{
+			0x00affc14 = 0xA9F07DEC,10;
+		}
+	}
+	[t:stitch_editor,n:ds_r2]
+	{
+		dest_region = ds_r2;
+		[node_ids]
+		{
+			0x0000ab34 = 0xBD04E783,4;
+			0x0000ab35 = 0xBD04E783,5;
+			0x0000ab36 = 0x4961DC74,3;
+			0x0000ab37 = 0x39CA2A9C,2;
+			0x0000ab38 = 0x39CA2A9C,3;
+		}
+	}
+}

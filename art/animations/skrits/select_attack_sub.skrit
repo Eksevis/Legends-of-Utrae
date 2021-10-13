@@ -1,0 +1,396 @@
+// Animation Skrit: select_attack_sub
+//
+// History:
+//		VERSION 1.0:	Initial implementation
+//		VERSION 2.0:	Converted to WorldMessages 
+//						Added SFX event tests
+//						Uses owner, rather than ASPECT arg
+//		VERSION 3.0:	Added support for projectile attack elevation
+//		VERSION 4.0:	Added support for blended melee attacks
+//		VERSION 5.0:	Added support for magic casting
+//		VERSION 5.1:	Added support for spinning minigun muzzle
+//		VERSION 5.2:	Added support for melee weapon tracers
+//		VERSION 5.3:	Removed support for melee weapon tracers
+//		VERSION 5.4:	Added blending between successive calls
+//												
+
+property int MAJORVERSION$ = 5;
+property int MINORVERSION$ = 4;
+
+owner = Aspect;
+
+int m_QuickFightingFidget$;	
+		
+int m_Middle$;
+int m_Higher$;
+int m_Lower$;
+float m_PrevRatio$;
+float m_CurrRatio$;
+bool m_NeedThreeAnims$;
+int m_FadeIn$;
+int m_FadeOut$;
+int m_BG$;
+
+float m_ActualTime$;
+float m_ScaledTime$;
+float m_FadeInTime$;
+float m_FadeOutTime$;
+
+float m_ScaledDelta$;
+float m_RandomScale$;
+float m_TimeScale$;
+float m_AttackDuration$;
+float m_RequestedAttackDuration$;
+bool m_ProjectileAnimationHasElevation$;
+
+Goid m_Goid$;
+
+/////////////////////////////////////////////////////////////////////////////
+// Utilities
+
+UpdateDuration$(float delta_time$)
+{
+	m_ActualTime$ += delta_time$;
+	m_ScaledDelta$ = delta_time$ * m_TimeScale$;
+	m_ScaledTime$ += m_ScaledDelta$;
+}
+
+CalculateDurations$ () 
+{
+	int bg$;
+	float fidgettime$ = 0;
+	if (m_AttackDuration$ < (m_RequestedAttackDuration$-m_FadeInTime$))
+	{
+		// Take some time to transition to this anim
+		// and make sure that the animation we use is cyclic
+		fidgettime$ = (m_RequestedAttackDuration$-m_FadeInTime$)-m_AttackDuration$;
+
+		m_FadeOutTime$ = Math.MinFloat(0.2,fidgettime$*0.5);
+
+		bg$ = owner.blender.OpenBlendGroup();
+		owner.blender.AddAnimToBlendGroup(m_QuickFightingFidget$,1,false);
+		owner.blender.CloseBlendGroupWithTransition(m_FadeOutTime$,true);
+		owner.blender.SetBlendGroupWeight(bg$,1);
+
+		m_TimeScale$ = 1;
+	
+	}
+	else
+	{
+		m_TimeScale$ = m_AttackDuration$/m_RequestedAttackDuration$;
+		m_FadeOutTime$ = 0;
+	}
+
+	m_ScaledTime$ = 0;
+}
+
+RestartMelee$ ( int meleeanim$, int flags$ ) 
+{ 
+	// subtract the fidget animation from the total 
+	int numanims$ = owner.Blender.GetNumSubAnims();
+
+	if (numanims$ <= meleeanim$ || (meleeanim$ == m_QuickFightingFidget$ ))
+	{
+		meleeanim$ = 0;
+	}
+
+	m_AttackDuration$ = owner.Blender.GetDuration(meleeanim$);
+
+	m_RequestedAttackDuration$ = DecodeAttackLoopDuration (flags$);
+	if ( m_RequestedAttackDuration$ < 0 )
+	{
+		m_RequestedAttackDuration$ = m_AttackDuration$;
+	}
+
+	m_FadeInTime$ = Math.MinFloat(0.10,m_AttackDuration$*0.25);
+
+	m_BG$ = owner.blender.OpenBlendGroup();
+	owner.blender.AddAnimToBlendGroup(meleeanim$,1,false);
+	owner.blender.CloseBlendGroupWithTransition(m_FadeInTime$,false); // Take some time to merge in this anim
+	owner.blender.SetBlendGroupWeight(m_BG$,1);
+
+	CalculateDurations$();
+
+	// Make sure that we have a little bit of anim to cover the net lag
+	int bg$ = owner.blender.OpenBlendGroup();
+	owner.blender.AddAnimToBlendGroup(m_QuickFightingFidget$, 1, true);
+	owner.blender.CloseBlendGroupWithTransition(0.1, true);
+	owner.blender.SetBlendGroupWeight(bg$, 1);
+
+	owner.UpdateBlender(0);
+}
+
+RecalcBlendRatios$()
+{
+	if (m_ActualTime$ <= Math.MinFloat(1.25,(m_AttackDuration$*0.5)))
+	{
+		float t$ = 0;
+		float dt$ = owner.blender.DurationOfCurrentTimeWarp();
+		if (dt$ != 0)
+		{
+		   	t$ = Math.FilterSmoothStep(0, m_AttackDuration$*0.5, m_ActualTime$);
+		}
+
+		float a$ = t$ * m_CurrRatio$;
+		float b$ = ((1-m_PrevRatio$)*(1-t$)) + ((1-m_CurrRatio$) *t$);
+		float c$ = (1-t$)* m_PrevRatio$;
+
+		owner.blender.SetBlendGroupAnimWeight(m_BG$,0,b$);
+
+		if (m_NeedThreeAnims$)
+		{
+			owner.blender.SetBlendGroupAnimWeight(m_BG$, 1, a$);
+			owner.blender.SetBlendGroupAnimWeight(m_BG$, 2, c$);
+		} 
+		else
+		{
+			a$ += c$;
+			c$ = 0;
+			owner.blender.SetBlendGroupAnimWeight(m_BG$, 1, a$);
+		}
+	}
+	else
+	{
+		if (m_ActualTime$ > m_AttackDuration$)
+		{
+			if (m_TimeScale$ != 0)
+			{
+				m_TimeScale$ = 0.0;
+			}
+
+			float t$ = (m_ActualTime$-m_AttackDuration$)*m_RandomScale$*3.14;
+			t$ = Math.Sin(t$);
+			m_PrevRatio$ = (1-(0.075*t$))*m_CurrRatio$;
+			if (m_PrevRatio$ <= 1.0)
+			{
+				owner.blender.SetBlendGroupAnimWeight( m_BG$, 1, m_PrevRatio$ );
+			}
+		}
+	}
+
+}
+
+RestartProjectile$ ( int flags$ )
+{ 
+	if (owner.ChoreWasRepeated)
+	{
+		m_PrevRatio$ = m_CurrRatio$;
+		m_FadeOut$ = m_FadeIn$;
+	}
+	else
+	{
+		m_PrevRatio$ = 0;
+		m_FadeOut$ = -1;
+	}
+
+	float elevation$ = DecodeAttackElevation(flags$);
+
+	m_AttackDuration$ = owner.Blender.GetDuration(m_Middle$);
+
+	m_RequestedAttackDuration$ = DecodeAttackLoopDuration(flags$);
+	if ( m_RequestedAttackDuration$ <= 0 )
+	{
+		m_RequestedAttackDuration$ = m_AttackDuration$;
+	}
+
+	m_BG$ = owner.blender.OpenBlendGroup();
+	owner.blender.AddAnimToBlendGroup(m_Middle$,1);
+
+	m_CurrRatio$ = 1;
+
+	if (elevation$ >= 0)
+	{
+		m_FadeIn$ = m_Higher$;
+		if (elevation$ <= 0.5)
+		{
+			m_CurrRatio$ = elevation$*1.5;
+		}
+	}
+	else
+	{
+		m_FadeIn$ = m_Lower$;
+		if (elevation$ > -0.5)
+		{
+			m_CurrRatio$ = elevation$*-1.5;
+		}
+	}
+
+	owner.blender.AddAnimToBlendGroup(m_FadeIn$,0);
+
+	if ( (m_FadeOut$ == -1) || (m_FadeIn$ == m_FadeOut$))
+	{
+		m_NeedThreeAnims$ = false;
+	}
+	else
+	{
+		m_NeedThreeAnims$ = true;
+		owner.blender.AddAnimToBlendGroup(m_FadeOut$,0);
+	}
+
+	m_FadeInTime$ = Math.MinFloat(0.25,m_AttackDuration$*0.25);
+	owner.blender.CloseBlendGroupWithTransition(m_FadeInTime$,false); 
+	owner.blender.SetBlendGroupWeight(m_BG$,1);
+
+	RecalcBlendRatios$();
+
+	CalculateDurations$();
+
+	owner.UpdateBlender(0);
+
+}
+
+RestartChore$ ( int subanim$, int flags$ )
+{
+	m_RequestedAttackDuration$ = 0;
+	m_ActualTime$ = 0;
+	m_RandomScale$ = Math.RandomFloat(-2,2);
+
+	if( m_ProjectileAnimationHasElevation$ )
+	{
+		RestartProjectile$(flags$);
+	}
+	else
+	{
+		m_CurrRatio$ = 0;
+		m_FadeOut$ = -1;
+		RestartMelee$(subanim$,flags$);
+	}
+
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// States
+
+//----------------------------
+
+startup state AttackOnce$ 
+{
+	event OnStartChore$ ( int subanim$, int flags$ )
+	{
+		// Both CHORE_ATTACK and CHORE_MAGIC use this skrit 
+		eAnimChore ch$ = owner.GetCurrentChore();
+
+		m_Goid$ = owner.goid;
+		m_QuickFightingFidget$ = owner.Blender.GetSubAnimIndex('qffg');
+
+		// check for fs sub-animation set
+		if(subanim$ > m_QuickFightingFidget$)
+		{
+			m_QuickFightingFidget$ = owner.Blender.GetSubAnimIndex('sffg');			
+		}
+
+		m_ProjectileAnimationHasElevation$ = false;		
+
+		if ((owner.ChoreStance == AS_BOW_AND_ARROW) || (owner.ChoreStance == AS_MINIGUN))
+		{
+			m_Middle$ = owner.Blender.GetSubAnimIndex('0mid');
+			m_Higher$ = owner.Blender.GetSubAnimIndex('high');
+			m_Lower$  = owner.Blender.GetSubAnimIndex('loww');
+
+			if ( (m_Middle$<0) || (m_Higher$<0) || (m_Lower$<0) )
+			{
+				m_Middle$ = 0;
+				m_Higher$ = 0;
+				m_Lower$ = 0;
+			}
+			else
+			{
+			   m_ProjectileAnimationHasElevation$ = true;		
+			}
+			subanim$ = 0;
+		}
+
+		RestartChore$ ( subanim$, flags$ );
+	}
+
+	event OnUpdate$( float delta_t$ )
+	{
+		UpdateDuration$(delta_t$);
+
+		if ( m_ProjectileAnimationHasElevation$ )
+		{
+			RecalcBlendRatios$();
+		}
+
+ 	 	int events$ = owner.UpdateBlender(  m_ScaledDelta$ );
+
+		if (AnimEventBitTest(events$,ANIMEVENT_SFX_1)) {
+			PostWorldMessage( WE_ANIM_SFX, owner.goid, owner.goid,  1, 0 );
+		}
+		if (AnimEventBitTest(events$,ANIMEVENT_SFX_2)) {
+			PostWorldMessage( WE_ANIM_SFX, owner.goid, owner.goid,  2, 0 );
+		}
+		if (AnimEventBitTest(events$,ANIMEVENT_SFX_3)) {
+			PostWorldMessage( WE_ANIM_SFX, owner.goid, owner.goid,  3, 0 );
+		}
+		if (AnimEventBitTest(events$,ANIMEVENT_SFX_4)) {
+			PostWorldMessage( WE_ANIM_SFX, owner.goid, owner.goid,  4, 0 );
+		}
+		if (AnimEventBitTest(events$,ANIMEVENT_ATTACH_AMMO)) {
+			PostWorldMessage( WE_ANIM_ATTACH_AMMO, owner.goid, owner.goid, owner.CurrentReqBlock, 0 );
+		}
+ 		if (AnimEventBitTest(events$,ANIMEVENT_FIRE_WEAPON)) {
+			PostWorldMessage( WE_ANIM_WEAPON_FIRE, owner.goid, owner.goid, owner.CurrentReqBlock, 0 );
+		}
+		if (AnimEventBitTest(events$,ANIMEVENT_HIDE_MESH)) {
+			owner.SetHideMeshFlag(true);
+		}
+		if (AnimEventBitTest(events$,ANIMEVENT_SHOW_MESH)) {
+			owner.SetHideMeshFlag(false);
+		}
+		if (m_RequestedAttackDuration$ > 0)
+		{
+			if (m_RequestedAttackDuration$ <= m_ActualTime$)
+			{
+				PostWorldMessage( WE_ANIM_DONE, owner.goid, owner.goid, owner.CurrentReqBlock, 0 );
+				SetState (LoopAtEnd$);
+			}
+		}
+		else
+		{
+			if (AnimEventBitTest(events$,ANIMEVENT_FINISH)) {
+				PostWorldMessage( WE_ANIM_DONE, owner.goid, owner.goid, owner.CurrentReqBlock, 0 );
+				SetState (HoldAtEnd$);
+			}
+ 		}
+	}
+}
+
+state HoldAtEnd$ 
+{
+	event OnStartChore$ ( int subanim$, int flags$ )
+	{
+		if ( m_ProjectileAnimationHasElevation$ )
+		{
+			subanim$ = 0;
+		}
+		RestartChore$ ( subanim$, flags$ );
+		SetState AttackOnce$;
+	}
+}
+
+state LoopAtEnd$
+{
+	event OnStartChore$ ( int subanim$, int flags$ )
+	{
+		if ( m_ProjectileAnimationHasElevation$ )
+		{
+			subanim$ = 0;
+		}
+		RestartChore$ ( subanim$, flags$ );
+		SetState AttackOnce$;
+	}
+
+	event OnUpdate$( float delta_t$ )
+	{
+
+		UpdateDuration$(delta_t$);
+
+		if ( m_ProjectileAnimationHasElevation$ )
+		{
+			RecalcBlendRatios$();
+		}
+
+ 	 	owner.UpdateBlender( m_ScaledDelta$ );
+	}
+}

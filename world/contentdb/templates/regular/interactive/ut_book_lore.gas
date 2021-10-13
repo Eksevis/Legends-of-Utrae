@@ -1,0 +1,1072 @@
+[t:template,n:book_glb_lore_riddle_ut]
+{
+	category_name = "lorebook";
+	doc = "Gallus Riddle";
+	specializes = base_book_lore;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_book-lore-02;
+		}
+	}
+	[common]
+	{
+		screen_name = "Trial of Gallus";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_riddle;
+		tooltip_color = set_item_complete;
+		can_sell = false;
+	}
+}
+[t:template,n:book_glb_lore_hovart_ut]
+{
+	category_name = "lorebook";
+	doc = "guard relrans journal";
+	specializes = base_book_lore;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_book-lore-02;
+		}
+	}
+	[common]
+	{
+		screen_name = "Guard Relran's Journal";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_hovart;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_hassats]
+{
+	category_name = "lorebook";
+	doc = "history of the azunites";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Hassats in the Peninsula";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_hassats;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_zaurask]
+{
+	category_name = "lorebook";
+	doc = "legend of the circle";
+	specializes = base_book_lore;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_book-lore-02;
+		}
+	}
+	[common]
+	{
+		screen_name = "Zaurasks in the Peninsula";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_zaurask;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_elves]
+{
+	category_name = "lorebook";
+	doc = "legend of the circle";
+	specializes = base_book_lore;
+	[aspect]
+	{
+		[textures]
+		{
+			0 = b_i_glb_book-lore-02;
+		}
+	}
+	[common]
+	{
+		screen_name = "Elves in the Peninsula";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_elves;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_droc]
+{
+	category_name = "lorebook";
+	doc = "tales of the dragons rathe";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Drocs in the Peninsula";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_droc;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_droog]
+{
+	category_name = "lorebook";
+	doc = "history of the droog";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Droog & the Utraeans";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_droog;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_goblins]
+{
+	category_name = "lorebook";
+	doc = "retribution of the droog";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Goblins & the Utraeans";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_goblins;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_utraean]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Last of the Utraeans";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_utraean;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_krug]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Krug Exodus";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_krug;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_hint]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "A Hint of Things to Come";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_torn_note;
+		lore_key = lore_ut_hint;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_mutants]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "A Memento of the Past";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_mutants;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_azunite]
+{
+	category_name = "lorebook";
+	doc = "history of the azunites";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "History of the Azunites";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_azunite;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_empire]
+{
+	category_name = "lorebook";
+	doc = "history of the empire of stars";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "History of the Empire of Stars";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_empire;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_swords]
+{
+	category_name = "lorebook";
+	doc = "swords to plowshares";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Swords to Plowshares";
+	}
+	[gui]
+	{
+		lore_key = lore_ut_swords;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_hint_02]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "A Message of Interest";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_fiathna_quest","active",0);
+				b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+				f delay = 0.000000;
+				b flip_flop = false;
+				b multi_player = true;
+				b no_trig_bits = false;
+				occupants_group = ;
+				f reset_duration = 0.000000;
+				b single_player = true;
+				b single_shot = true;
+				b start_active = true;
+			}
+		}
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_torn_note;
+		lore_key = lore_ut_hint_02;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_pirates]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Pirates of Meren";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_treasure_quest","completed",0);
+				b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+				f delay = 0.000000;
+				b flip_flop = false;
+				b multi_player = true;
+				b no_trig_bits = false;
+				occupants_group = ;
+				f reset_duration = 0.000000;
+				b single_player = true;
+				b single_shot = true;
+				b start_active = true;
+			}
+		}
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_pirates;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_fury]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Fury Den";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_fury;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_hiroth]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Ravaging of Hiroth Castle";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_hiroth;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_naja]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Fall of the Pyramid Builders";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_naja;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_desert]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Lost in the Desert";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_desert;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_dwarves]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Dwarves' Dark Secret";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_crystwind_quest","completed",0);
+				action* = change_quest_state("quest_crystwind_quest","active",1);
+				b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+				f delay = 0.000000;
+				b flip_flop = false;
+				b multi_player = true;
+				b no_trig_bits = false;
+				occupants_group = ;
+				f reset_duration = 0.000000;
+				b single_player = true;
+				b single_shot = true;
+				b start_active = true;
+			}
+		}
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_dwarves;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_trog]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Troggeus Evoluteus";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_trog;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_hiroth_stone]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Where is the Hiroth Stone?";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_torn_note;
+		lore_key = lore_ut_hiroth_stone;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_seck]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Return of the Seck";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_seck;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_history]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "History of Aranna";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_history;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_maljin]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Maljin Fairytales";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_maljin;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_shadowjumper]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Shadowjumper";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_shadowjumper;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_wonders]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The Wonders of the World";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_wonders;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_intro]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "The King needs You";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_intro;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_missing1]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Fallraen";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_missing1;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_missing2]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Chronicles of Utrae";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_missing2;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_treasure]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Treasure Map";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_treasure_quest","active",0);
+				b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+				f delay = 0.000000;
+				b flip_flop = false;
+				b multi_player = true;
+				b no_trig_bits = false;
+				occupants_group = ;
+				f reset_duration = 0.000000;
+				b single_player = true;
+				b single_shot = true;
+				b start_active = true;
+			}
+		}
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_torn_note;
+		lore_key = lore_ut_treasure;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_gargoyle]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Tragedy of the Gargoyles";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_gargoyle_quest","completed",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_gargoyle;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_plans]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Goblin's Secret Plans";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_goblin_quest","active",1);
+				b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+				f delay = 0.000000;
+				b flip_flop = false;
+				b multi_player = true;
+				b no_trig_bits = false;
+				occupants_group = ;
+				f reset_duration = 0.000000;
+				b single_player = true;
+				b single_shot = true;
+				b start_active = true;
+			}
+		}
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_torn_note;
+		lore_key = lore_ut_plans;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_giants]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Fall of the Giants";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_giants;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_explorers]
+{
+	category_name = "lorebook";
+	doc = "missing explorers";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "It's too Late for Us";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_torn_note;
+		lore_key = lore_ut_explorers;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_giants_02]
+{
+	category_name = "lorebook";
+	doc = "missing explorers";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "A Sad Welcome Home";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_torn_note;
+		lore_key = lore_ut_giants_02;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_torg]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Torg's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_torg;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_hadar]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Hadar's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_hadar;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_gareth]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Gareth's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_gareth;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_issac]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Isaac's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_isaac;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_zaidhla]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Zaidhla's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_zaidhla;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_felix]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Felix's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_felix;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_rhiannon]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Rhiannon's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_rhiannon;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_mia]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Mia's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_mia;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_shalindra]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Shalindra's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_shalindra;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_megumi]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Megumi's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_megumi;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_jenna]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Jenna's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_jenna;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_mikhaela]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Mikhaela's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_mikhaela;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_fiathna]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Fiathna's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_fiathna;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_chynna]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Chynna's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_chynna;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_sheba]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Sheba's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_sheba;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_tikklan]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Tikklan's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_tikklan;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_tiamut]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Tiamut's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_tiamut;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_snake]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Naja's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_snake;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_tajj]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Tajj's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_tajj;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_shamblin]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Shamblin's Story";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_shamblin;
+		tooltip_color = set_item_complete;
+	}
+}
+[t:template,n:book_glb_lore_ut_spy]
+{
+	category_name = "lorebook";
+	doc = "coronation of king edvard";
+	specializes = base_book_lore;
+	[common]
+	{
+		screen_name = "Covert Operations";
+	}
+	[gui]
+	{
+		inventory_icon = b_gui_ig_i_it_lore-book-02;
+		lore_key = lore_ut_spy;
+		tooltip_color = set_item_complete;
+	}
+}

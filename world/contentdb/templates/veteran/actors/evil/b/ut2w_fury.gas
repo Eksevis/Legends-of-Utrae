@@ -1,0 +1,414 @@
+[t:template,n:ut2W_fury]
+{
+	category_name = "2W_evil_b";
+	doc = "2W_fury";
+	specializes = 2W_base_fury;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	38.3, 0;
+			intelligence =  16.6, 0;
+			dexterity =  	29.2, 0;
+			combat_magic = 	83, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 155825;
+		life = 8502.4;
+		max_life = 8502.4;
+		max_mana = 1558.8;
+		mana = 1558.8;
+	}
+	[attack]
+	{
+		attack_range = 10;
+		damage_max = 445.4;
+		damage_min = 309.7;
+		damage_bonus_min_cmagic = 101;
+		damage_bonus_max_cmagic = 146;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+//			il_active_primary_spell=spell_fury_spin;
+
+			il_active_primary_spell=spell_fury_zap_1;
+			il_spell_2 = spell_fury_zap_2;
+			il_spell_3 = spell_fury_zap_3;
+			il_spell_4 = spell_fury_slam;
+			il_spell_5 = spell_fury_spin;
+			il_spell_6 = spell_fury_gas;
+			il_spell_7 = spell_fury_spit;
+
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+            	    il_main = #spell/85-89;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/207-231;
+					il_main = #armor/506-688;
+					max = 1;
+					min = 1;
+   	    		}
+    			[gold*]
+				{
+					max = 808226;
+					min = 502803;
+                    piles = 8 - 12;
+				}
+				[oneof*]
+				{
+	            	il_main = #weapon/-rare(1)/207-231;
+	                il_main = #armor/-rare(1)/547-688;
+                    il_main = #*/-rare(1)/207-231;
+					max = 2;
+					min = 2;
+
+                }
+				[oneof*]
+                {
+	                il_main = #weapon/-unique(2)/207-231;
+	                il_main = #armor/-unique(2)/547-688;
+                    il_main = #*/-unique(2)/207-231;
+					max = 1;
+					min = 1;
+	            }
+
+			}
+
+		}
+	}
+	[common]
+	{
+		screen_name="Fury Punisher";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+	}
+	[defend] { defense=993; }
+	[mind]
+	{
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&check_range				= true
+			&spell_chances				= "0.15,            0.14,            0.14,           0.15, 			  0.14, 			0.14,             0.14"
+			&spells						= "spell_fury_slam, spell_fury_spin, spell_fury_gas, spell_fury_spit, spell_fury_zap_1, spell_fury_zap_2, spell_fury_zap_3";
+
+		on_engaged_lost_consciousness_abort_attack = true;
+	}
+}
+[t:template,n:ut2W_fury_eye]//drops the fury eye
+{
+	category_name = "2W_evil_b";
+	doc = "2W_fury";
+	specializes = 2W_base_fury;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	38.3, 0;
+			intelligence =  16.6, 0;
+			dexterity =  	29.2, 0;
+			combat_magic = 	83, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 155825;
+		life = 8502.4;
+		max_life = 8502.4;
+		max_mana = 1558.8;
+		mana = 1558.8;
+	}
+	[attack]
+	{
+		attack_range = 10;
+		damage_max = 445.4;
+		damage_min = 309.7;
+		damage_bonus_min_cmagic = 101;
+		damage_bonus_max_cmagic = 146;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+//			il_active_primary_spell=spell_fury_spin;
+
+			il_active_primary_spell=spell_fury_zap_1;
+			il_spell_2 = spell_fury_zap_2;
+			il_spell_3 = spell_fury_zap_3;
+			il_spell_4 = spell_fury_slam;
+			il_spell_5 = spell_fury_spin;
+			il_spell_6 = spell_fury_gas;
+			il_spell_7 = spell_fury_spit;
+
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+            	    il_main = fury_eye_ut;
+				}
+				[all*]
+				{
+            	    il_main = #spell/85-89;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/207-231;
+					il_main = #armor/506-688;
+					max = 1;
+					min = 1;
+   	    		}
+    			[gold*]
+				{
+					max = 808226;
+					min = 502803;
+                    piles = 8 - 12;
+				}
+				[oneof*]
+				{
+	            	il_main = #weapon/-rare(1)/207-231;
+	                il_main = #armor/-rare(1)/547-688;
+                    il_main = #*/-rare(1)/207-231;
+					max = 2;
+					min = 2;
+
+                }
+				[oneof*]
+                {
+	                il_main = #weapon/-unique(2)/207-231;
+	                il_main = #armor/-unique(2)/547-688;
+                    il_main = #*/-unique(2)/207-231;
+					max = 1;
+					min = 1;
+	            }
+
+			}
+
+		}
+	}
+	[common]
+	{
+		screen_name="Fury Punisher";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+	}
+	[defend] { defense=993; }
+	[mind]
+	{
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&check_range				= true
+			&spell_chances				= "0.15,            0.14,            0.14,           0.15, 			  0.14, 			0.14,             0.14"
+			&spells						= "spell_fury_slam, spell_fury_spin, spell_fury_gas, spell_fury_spit, spell_fury_zap_1, spell_fury_zap_2, spell_fury_zap_3";
+
+		on_engaged_lost_consciousness_abort_attack = true;
+	}
+}
+
+[t:template,n:ut2w_fury_lesser_01]//$$if scale_base is changed from 0.25, frags must also be. -CarlosN
+{
+	category_name = "1W_evil_b";
+	doc = "fury_spawn";
+	specializes = base_fury;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	47, 0;
+			intelligence =  52, 0;
+			dexterity =  	25, 0;
+			melee =  	75, 0;
+			combat_magic = 	75, 0;
+
+		}
+	}
+	[aspect]
+	{
+		experience_value = 170000;
+		life = 3960;
+		max_life = 3960;
+		max_mana = 330;
+		mana = 330;
+		scale_base = 0.25;
+	}
+	[attack]
+	{
+		attack_range = 10;
+		damage_max = 376.3;
+		damage_min = 271.5;
+		damage_bonus_min_cmagic = 101;
+		damage_bonus_max_cmagic = 146;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_fury_zap_1;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #weapon/207-231;
+					il_main = #armor/105-520;
+					max = 1;
+					min = 1;
+   	    			}
+    				[gold*]
+				{
+					max = 194632;
+					min = 134647;
+				}
+				[oneof*]
+				{
+                    			chance = 0.01;
+	            			il_main = #weapon/-rare(1)/207-231;
+	                		il_main = #armor/-rare(1)/506-688;
+                    			il_main = #*/-rare(1)/207-231;
+					max = 1;
+					min = 1;
+
+                		}
+				[oneof*]
+                		{
+                    			chance = 0.01;
+	                		il_main = #weapon/-unique(2)/207-231;
+	                		il_main = #armor/-unique(2)/506-688;
+                    			il_main = #*/-unique(2)/207-231;
+					max = 1;
+					min = 1;
+				}
+
+			}
+		}
+	}
+	[common] { screen_name="Evil Eyes"; }
+	[defend] { defense=1260; }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_fury_09	= 1;
+			frag_glb_fury_10	= 1;
+			frag_glb_fury_11	= 1;
+			frag_glb_fury_12	= 1;
+			frag_glb_fury_13	= 1;
+			frag_glb_fury_14	= 1;
+			frag_glb_fury_15	= 1;
+			frag_glb_fury_16	= 1;
+		}
+	}
+}
+[t:template,n:ut2w_fury_lesser_02]//$$if scale_base is changed from 0.40, frags must also be. -CarlosN
+{
+	category_name = "1W_evil_b";
+	doc = "fury_pest";
+	specializes = base_fury;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	37, 0;
+			intelligence =  52, 0;
+			dexterity =  	25, 0;
+			melee =  		75, 0;
+			combat_magic = 	75, 0;
+
+		}
+	}
+	[aspect]
+	{
+		experience_value = 17000;
+		life = 3960;
+		max_life = 3960;
+		max_mana = 330;
+		mana = 330;
+		scale_base = 0.25;
+	}
+	[attack]
+	{
+		attack_range = 10;
+		attack_range = 10;
+		damage_max = 376.3;
+		damage_min = 271.5;
+		damage_bonus_min_cmagic = 101;
+		damage_bonus_max_cmagic = 146;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_fury_zap_2;
+		}
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #weapon/207-231;
+					il_main = #armor/105-520;
+					max = 1;
+					min = 1;
+   	    			}
+    				[gold*]
+				{
+					max = 194632;
+					min = 134647;
+				}
+				[oneof*]
+				{
+                    			chance = 0.01;
+	            			il_main = #weapon/-rare(1)/207-231;
+	                		il_main = #armor/-rare(1)/506-688;
+                    			il_main = #*/-rare(1)/207-231;
+					max = 1;
+					min = 1;
+
+                		}
+				[oneof*]
+                		{
+                    			chance = 0.01;
+	                		il_main = #weapon/-unique(2)/207-231;
+	                		il_main = #armor/-unique(2)/506-688;
+                    			il_main = #*/-unique(2)/207-231;
+					max = 1;
+					min = 1;
+				}
+
+			}
+		}
+	}
+	[common] { screen_name="Evil Eyes"; }
+	[defend] { defense=1260; }
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_fury_17	= 1;
+			frag_glb_fury_18	= 1;
+			frag_glb_fury_19	= 1;
+			frag_glb_fury_20	= 1;
+			frag_glb_fury_21	= 1;
+			frag_glb_fury_22	= 1;
+			frag_glb_fury_23	= 1;
+			frag_glb_fury_24	= 1;
+		}
+	}
+}

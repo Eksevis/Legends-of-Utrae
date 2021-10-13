@@ -1,0 +1,993 @@
+[t:template,n:base_ut_giant]
+{
+	category_name = "1W_evil_d";
+	doc = "Giant base template";
+	specializes = actor_evil;
+	[aspect]
+	{
+		scale_base = 1.1;
+		model = m_c_gan_hg_pos_a1;
+     		 [voice]
+		{
+			[die]		{ priority = high; * = s_v_najj_die; }
+			[hit_critical]	{ priority = low; * = s_v_najj_hit_03_SED;  }
+			[hit_glance]	{ priority = low; * = s_v_najj_hit_01_SED;  }
+			[hit_solid]		{ priority = low; * = s_v_najj_hit_02_SED;  }
+		}
+	}
+	[body]
+	{
+		armor_version = gan_hg;
+		avg_move_velocity = 4.500000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gan_hg_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					extr = at-04;
+					qffg = dff;
+				}
+
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = simple_loop;
+				[anim_files]
+				{
+					00 = dfs;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+					01 = dff-02;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gan_hg_fs1_dk;
+					frtd = a_c_gan_hg_fs0_dsf;
+					glrn = a_c_gan_hg_fs1_dsf;
+					gtup = a_c_gan_hg_fs0_up;
+					look = a_c_gan_hg_fs1_dff;
+					talk = a_c_gan_hg_fs0_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = rl;
+				}
+			}
+		}
+		[weapon_scales]
+		{
+			as_bow_and_arrow = 1.1, 1.1, 1.1;
+			as_minigun = 1.0, 1.2, 1.0;
+			as_shield_only = 1.1, 1.1, 1.1;
+			as_single_melee = 1.1, 1.1, 1.1;
+			as_staff = 1.1, 1.1, 1.1;
+			as_two_handed_melee = 1.1, 1.2, 1.3;
+			as_two_handed_sword = 1.1, 1.1, 1.1;
+		}
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+	}
+	[mind]
+	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		sight_origin_height = 1.6;
+		melee_engage_range = 14.0;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+       		 job_travel_distance_limit = 30;
+        		on_job_reached_travel_distance_abort_attack = true;
+	}
+	[physics]
+	{
+		fire_effect = human_physics_fire;
+	}
+	[water_effects]
+	{
+	}
+}
+[t:template,n:ut_hg_melee_01]
+{
+	category_name = "1W_evil_d";
+	doc = "ut_hg_melee_01";
+	specializes = base_ut_giant;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		37, 0;
+			intelligence = 	14, 0;
+			dexterity = 	38, 0;
+			melee =  		30, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 87000;
+		life = 1420;
+		max_life = 1420;
+		mana = 1114;
+		max_mana = 1114;
+		material = skin;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_01;
+			1 = b_c_pos_a1_100;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 90;
+	}
+	[common]
+	{
+		screen_name="Half Giant Maurader";
+		membership = monster, party_utraean, utraean;
+	}
+	[defend] { defense=757; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                				es_weapon_hand = ax_g_c_dsx_pcl_avg;
+                				es_weapon_hand = ax_g_c_dsx_pbd_avg;
+                				es_weapon_hand = ax_g_c_dsx_pfk_avg;
+                				es_weapon_hand = ax_g_c_dsx_ptr_avg;
+				es_weapon_hand = ax_d_d_dsx_goblin_mutant;
+				es_weapon_hand = ax_g_c_2h2b_avg;
+				es_weapon_hand = ax_ra_g_c_2h1b_fin;
+				es_weapon_hand = ax_ra_g_c_2h2b_fin;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_zaurask_dsx;
+  				es_chest = bd_ba_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_ba_f_g_c_avg_zpad_dsx;
+  				es_chest = bd_pl_f_g_c_avg_alloy_dsx;
+  				es_chest = bd_le_f_g_c_avg_zcured_dsx;
+  				es_chest = bd_pl_f_g_c_avg_utraean_dsx;
+  				es_chest = bd_le_f_g_c_avg_dragon_dsx;
+  				es_chest = bd_le_f_g_c_avg_nemean_dsx;
+			}
+			[oneof*]
+			{
+                				es_feet = bo_bo_le_f_g_c_avg;
+                				es_feet = bo_gr_bl_f_g_c_avg;
+                				es_feet = bo_ra_bo_le_f_g_c_fin;
+                				es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+	}
+}
+[t:template,n:ut_hg_melee_02]
+{
+	category_name = "1W_evil_d";
+	doc = "ut_hg_melee_01";
+	specializes = base_ut_giant;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		37, 0;
+			intelligence = 	14, 0;
+			dexterity = 	38, 0;
+			melee =  		30, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 87000;
+		life = 1420;
+		max_life = 1420;
+		mana = 1114;
+		max_mana = 1114;
+		material = skin;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_02;
+			1 = b_c_pos_a1_100;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 90;
+	}
+	[common]
+	{
+		screen_name="Half Giant Clubber";
+		membership = monster, party_utraean, utraean;
+	}
+	[defend] { defense=757; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                				es_weapon_hand = cb_un_2h_cyclops;
+                				es_weapon_hand = cb_un_1h_swanny;
+				es_weapon_hand = ax_d_d_dsx_goblin_mutant;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_zaurask_dsx;
+  				es_chest = bd_ba_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_ba_f_g_c_avg_zpad_dsx;
+  				es_chest = bd_pl_f_g_c_avg_alloy_dsx;
+  				es_chest = bd_le_f_g_c_avg_zcured_dsx;
+  				es_chest = bd_pl_f_g_c_avg_utraean_dsx;
+  				es_chest = bd_le_f_g_c_avg_dragon_dsx;
+  				es_chest = bd_le_f_g_c_avg_nemean_dsx;
+			}
+			[oneof*]
+			{
+                				es_feet = bo_bo_le_f_g_c_avg;
+                				es_feet = bo_gr_bl_f_g_c_avg;
+                				es_feet = bo_ra_bo_le_f_g_c_fin;
+                				es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+	}
+}
+[t:template,n:ut_hg_melee_03]
+{
+	category_name = "1W_evil_d";
+	doc = "ut_hg_melee_01";
+	specializes = base_ut_giant;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		37, 0;
+			intelligence = 	14, 0;
+			dexterity = 	38, 0;
+			melee =  		30, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 87000;
+		life = 1420;
+		max_life = 1420;
+		mana = 1114;
+		max_mana = 1114;
+		material = skin;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_03;
+			1 = b_c_pos_a1_100;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 90;
+	}
+	[common]
+	{
+		screen_name="Half Giant Slasher";
+		membership = monster, party_utraean, utraean;
+	}
+	[defend] { defense=757; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                				es_weapon_hand = sd_g_c_sd_2h_avg;
+                				es_weapon_hand = sd_g_c_sd_2h_fun;
+                				es_weapon_hand = sd_g_c_sd_2h_fun_trog;
+                				es_weapon_hand = sd_g_c_st_2h_avg;
+                				es_weapon_hand = sd_ra_g_c_sd_2h_fin;
+                				es_weapon_hand = sd_ra_g_o_st_2h_avg;
+                				es_weapon_hand = sd_un_big_1h_g_breaker;
+                				es_weapon_hand = sd_un_big_1h_g_cleaver;
+                				es_weapon_hand = sd_un_big_2h_g_eye;
+                				es_weapon_hand = sd_un_g_2h_angle;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_zaurask_dsx;
+  				es_chest = bd_ba_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_ba_f_g_c_avg_zpad_dsx;
+  				es_chest = bd_pl_f_g_c_avg_alloy_dsx;
+  				es_chest = bd_le_f_g_c_avg_zcured_dsx;
+  				es_chest = bd_pl_f_g_c_avg_utraean_dsx;
+  				es_chest = bd_le_f_g_c_avg_dragon_dsx;
+  				es_chest = bd_le_f_g_c_avg_nemean_dsx;
+			}
+			[oneof*]
+			{
+                				es_feet = bo_bo_le_f_g_c_avg;
+                				es_feet = bo_gr_bl_f_g_c_avg;
+                				es_feet = bo_ra_bo_le_f_g_c_fin;
+                				es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+	}
+}
+[t:template,n:ut_hg_melee_04]
+{
+	category_name = "1W_evil_d";
+	doc = "ut_hg_melee_01";
+	specializes = base_ut_giant;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		37, 0;
+			intelligence = 	14, 0;
+			dexterity = 	38, 0;
+			melee =  		30, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 87000;
+		life = 1420;
+		max_life = 1420;
+		mana = 1114;
+		max_mana = 1114;
+		material = skin;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_04;
+			1 = b_c_pos_a1_100;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 180;
+		damage_min = 130;
+	}
+	[common]
+	{
+		screen_name="Half Giant Soldier";
+		membership = monster, party_utraean, utraean;
+	}
+	[defend] { defense=757; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                				es_weapon_hand = sd_g_c_gl_1h_avg;
+                				es_weapon_hand = sd_ra_g_c_bl_1h_fin;
+                				es_weapon_hand = sd_ra_g_o_bl_1h_avg;
+                				es_weapon_hand = sd_ra_g_o_gl_1h_avg;
+                				es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+                				es_weapon_hand = ss_ra_g_c_st_1h_fin;
+                				es_weapon_hand = ss_ra_g_c_gl_1h_fin;
+				es_weapon_hand = ss_g_c_st_1h_avg;
+			}
+			[oneof*]
+			{
+                				es_shield_hand = sh_w_f_g_c_t_s_avg_hide_hassat_dsx;
+                				es_shield_hand = sh_w_f_g_c_t_m_avg_hide_skelldra_dsx;
+                				es_shield_hand = sh_w_f_g_c_t_l_avg_hide_kraken_dsx;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_zaurask_dsx;
+  				es_chest = bd_ba_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_le_f_g_c_avg_hassat_dsx;
+  				es_chest = bd_ba_f_g_c_avg_zpad_dsx;
+  				es_chest = bd_pl_f_g_c_avg_alloy_dsx;
+  				es_chest = bd_le_f_g_c_avg_zcured_dsx;
+  				es_chest = bd_pl_f_g_c_avg_utraean_dsx;
+  				es_chest = bd_le_f_g_c_avg_dragon_dsx;
+  				es_chest = bd_le_f_g_c_avg_nemean_dsx;
+			}
+			[oneof*]
+			{
+                				es_feet = bo_bo_le_f_g_c_avg;
+                				es_feet = bo_gr_bl_f_g_c_avg;
+                				es_feet = bo_ra_bo_le_f_g_c_fin;
+                				es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+	}
+}
+[t:template,n:ut_hg_ranged]
+{
+	category_name = "1W_evil_d";
+	doc = "ut_hg_melee_01";
+	specializes = base_ut_giant;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		31, 0;
+			intelligence = 	18, 0;
+			dexterity = 	46, 0;
+			melee =  		20, 0;
+   			ranged =  		29, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 87000;
+		life = 960;
+		max_life = 960;
+		mana = 1104;
+		max_mana = 1104;
+		material = skin;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_05;
+			1 = b_c_pos_a1_100;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 200;
+		damage_min = 170;
+	}
+	[common]
+	{
+		screen_name="Half Giant Ranger";
+		membership = monster, party_utraean, utraean;
+	}
+	[defend] { defense=757; }
+	[inventory]
+	{
+    		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = ut_rock_assassin_axe;
+				es_weapon_hand = ut_hg_spear;
+			}
+			[oneof*]
+			{
+				es_shield_hand = sh_w_r_g_c_t_m_avg_tangled_bucker_dsx;
+				es_shield_hand = sh_w_r_g_c_t_m_avg_barrier_flywing_dsx;
+				es_shield_hand = sh_w_r_g_c_t_m_avg_bug_dsx;
+				es_shield_hand = sh_w_r_g_c_t_m_avg_wall_bark_dsx;
+				es_shield_hand = sh_w_r_g_c_t_m_avg_wall_flywing_dsx
+				es_shield_hand = sh_w_r_g_c_t_m_avg_bug2_dsx;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_br_r_g_c_avg_hassat_dsx;
+  				es_chest = bd_br_r_g_c_avg_bark_dsx;
+  				es_chest = bd_br_r_g_c_avg_flywing_dsx;
+  				es_chest = bd_br_r_g_c_avg_zaurask_dsx;
+  				es_chest = bd_br_r_g_c_avg_thessic_dsx;
+  				es_chest = bd_br_r_g_c_avg_bug_dsx;
+  				es_chest = bd_br_r_g_c_avg_artbug_dsx;
+  				es_chest = bd_br_r_g_c_avg_chitter_dsx;
+  				es_chest = bd_pl_r_g_c_avg_flywing_dsx;
+			}
+			[oneof*]
+			{
+                				es_feet = bo_sh_sc_r_g_c_avg_rubber_dsx;
+                				es_feet = bo_bo_sc_r_g_c_avg_flywing_dsx;
+                				es_feet = bo_sh_sc_r_g_c_avg_bug_dsx;
+                				es_feet = bo_bo_sc_r_g_c_avg_rubber_dsx;
+                				es_feet = bo_sh_sc_r_g_c_avg_flywing_dsx;
+                				es_feet = bo_sh_sc_r_g_c_avg_bug2_dsx;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ra_ga_m_ba_f_g_c_fin_starfield_dsx;
+				es_forearms = gl_gl_sc_r_g_c_avg_flywing_dsx;
+				es_forearms = gl_gl_sc_r_g_c_avg_shell_dsx;
+				es_forearms = gl_gl_sc_r_g_c_avg_rubber_dsx;
+				es_forearms = gl_ga_sc_r_g_c_avg_flywing_dsx;
+				es_forearms = gl_gl_sc_r_g_c_avg_shell2_dsx;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain		= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_count = 4;
+		flee_distance = 10;
+	}
+}
+[t:template,n:ut_hg_magic]
+{
+	category_name = "1W_evil_d";
+	doc = "ut_hg_melee_01";
+	specializes = base_ut_giant;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			strength = 		30, 0;
+			intelligence = 	25, 0;
+			dexterity = 	35, 0;
+			melee =  		15, 0;
+            			combat_magic = 	33, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 87000;
+		life = 900;
+		max_life = 900;
+		mana = 2214;
+		max_mana = 2214;
+		material = skin;
+		[textures]
+		{
+			0 = b_c_gan_hg_skin_06;
+			1 = b_c_pos_a1_100;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 90;
+		damage_bonus_min_cmagic = 90;
+		damage_bonus_max_cmagic = 102;
+	}
+	[common]
+	{
+		screen_name="Half Giant Priest";
+		membership = monster, party_utraean, utraean;
+	}
+	[defend] { defense=757; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] 
+		{ 
+			il_active_primary_spell=ut_spell_glyph_flaming; 
+			  il_active_secondary_spell = spell_resurrect_monster_full;
+		}
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+                				es_weapon_hand = st_un_toothpick;
+                				es_weapon_hand = st_un_tiger;
+                				es_weapon_hand = st_un_skull;
+                				es_weapon_hand = st_un_pudgel;
+				es_weapon_hand = st_ra_g_o_r_avg;
+                				es_weapon_hand = st_ra_g_c_s_fin;
+                				es_weapon_hand = st_ra_g_c_b_fin;
+                				es_weapon_hand = st_g_o_b_low;
+                				es_weapon_hand = st_g_o_b_fun;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ro_m_g_c_avg_woven_dsx;
+  				es_chest = bd_ro_m_g_c_avg_spider_dsx;
+  				es_chest = bd_ro_m_g_c_avg_rubber_dsx;
+  				es_chest = bd_ro_m_g_c_avg_cebead_dsx;
+  				es_chest = bd_ro_m_g_c_avg_elbead_dsx;
+  				es_chest = bd_le_m_g_c_avg_woven_dsx;
+  				es_chest = bd_le_m_g_c_avg_spider_dsx;
+  				es_chest = bd_le_m_g_c_avg_crmech_dsx;
+  				es_chest = bd_le_m_g_c_avg_ltmech_dsx;
+  				es_chest = bd_le_m_g_c_avg_beaded_dsx;
+  				es_chest = bd_le_m_g_c_avg_woven_reinforced_dsx;
+  				es_chest = bd_le_m_g_c_avg_ceramic_dsx;
+			}
+			[oneof*]
+			{
+                				es_feet = bo_sh_sc_m_g_c_avg_woven_dsx;
+                				es_feet = bo_bo_sc_m_g_c_avg_beaded_dsx;
+                				es_feet = bo_bo_sc_m_g_c_avg_geared_dsx;
+                				es_feet = bo_bo_sc_m_g_c_avg_ceramic_dsx;
+                				es_feet = bo_bo_sc_m_g_c_avg_beaded2_dsx;
+                				es_feet = bo_sh_sc_m_g_c_avg_woven2_dsx;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_sc_m_g_c_avg_woven_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_geared_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_beaded2_dsx;
+				es_forearms = gl_ga_sc_m_g_c_avg_electric_dsx;
+				es_forearms = gl_gl_sc_m_g_c_avg_woven2_dsx;
+			}
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/84-128;
+					il_main = #armor/160-297;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/128-140;
+	               				 il_main = #armor/-rare(1)/350-400;
+                   				 il_main = #*/-rare(1)/128-140;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	               				 il_main = #weapon/-unique(2)/128-140;
+	               				 il_main = #armor/-unique(2)/350-400;
+                    				il_main = #*/-unique(2)/128-140;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 25024;
+					min = 20483;
+				}
+			}
+		}
+	}
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+//			&actor_joins_existing_party	= true
+			&party_template		= "party_utraean";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    			?social					= 0.35
+    			&still					= false;
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= false;
+		actor_auto_switches_to_melee		= false;
+		actor_auto_reanimates_friends        	= true;
+		actor_auto_uses_stored_items         	= true;
+		actor_auto_heals_others_life		= true;
+		on_enemy_entered_icz_switch_to_melee	= false;
+		on_enemy_entered_ocz_flee 		= true;
+		on_enemy_entered_ocz_attack 		= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 		= false;
+		flee_count 				= 2;
+		inner_comfort_zone_range		= 4.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+		actor_life_ratio_low_threshold = 0.5;
+		on_life_ratio_low_flee = true;
+		flee_distance = 10;
+    	}
+}

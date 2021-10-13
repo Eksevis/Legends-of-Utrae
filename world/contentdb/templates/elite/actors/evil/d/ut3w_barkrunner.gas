@@ -1,0 +1,125 @@
+[t:template,n:ut3w_barkrunner]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_barkrunner";
+	specializes = dsx_barkrunner_base;
+
+	[actor]
+	{
+			[skills]
+			{
+				
+			strength = 	73.1, 0;
+			intelligence = 	19.8, 0;
+			dexterity = 	66.5, 0;
+			melee =  	99, 0;
+			}
+	}
+	[aspect]
+		{
+			[textures]	{ 0 = b_c_edm_barkrunner; }
+			experience_value = 3390000;
+			life = 2612;
+			max_life = 2612;
+			mana = 30.5;
+			max_mana = 30.5;
+			[voice]
+				{
+					[die]			{ priority = high; * = s_e_die_larch; }
+					[hit_critical]	{ priority = low; * = s_e_hit_larch_SED; }
+					[hit_glance]	{ priority = low; * = s_e_hit_larch_SED; }
+					[hit_solid]		{ priority = low; * = s_e_hit_larch_SED; }
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 521.5;
+			damage_min = 381;
+			reload_delay = 0;
+		}
+	[common]
+		{
+			screen_name="Redwood Barkrunner";
+
+		
+		}
+	[defend] { defense= 1502; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.25;
+   				il_main = potion_health_super;
+				il_main = potion_mana_super;
+			}
+		}
+	}
+		
+}
+
+
+[t:template,n:ut3w_willow]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_barkrunner";
+	specializes = dsx_barkrunner_base;
+
+	[actor]
+		{
+			[skills]
+				{
+					strength =		62, 0;
+					intelligence =	7, 0;
+					dexterity =		8, 0;
+					melee =		58,	0;
+				}
+		}
+	[aspect]
+		{
+			[textures]	{ 0 = b_c_edm_barkrunner; }
+		experience_value = 8091000;
+		life = 4525.1;
+		max_life = 4525.1;
+		mana = 2511.6;
+		max_mana = 2511.6;
+        		scale_base = 1.8;
+			[voice]
+				{
+					[die]			{ priority = high; * = s_e_die_larch; }
+					[hit_critical]	{ priority = low; * = s_e_hit_larch_SED; }
+					[hit_glance]	{ priority = low; * = s_e_hit_larch_SED; }
+					[hit_solid]		{ priority = low; * = s_e_hit_larch_SED; }
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+		damage_max = 596;
+		damage_min = 324.7;
+			reload_delay = 0;
+		}
+	[common]
+		{
+			screen_name="Thundering Willow";
+
+		
+		}
+	[defend] { defense=1802; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.25;
+   				il_main = potion_health_super;
+				il_main = potion_mana_super;
+			}
+		}
+	}
+		
+}
+

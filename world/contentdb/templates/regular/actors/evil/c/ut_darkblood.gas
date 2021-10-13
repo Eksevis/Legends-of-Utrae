@@ -1,0 +1,303 @@
+[t:template,n:ut_darkblood]
+{
+	category_name = "1W_evil_c";
+	doc = "darkblood";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength		 =  18, 0;
+			intelligence	 =  11, 0;
+			dexterity 		=  4, 0;
+			melee 		=  7, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 111;
+		life = 154;
+		max_life = 154;
+		mana = 22;
+		max_mana = 22;
+		model = m_c_ecm_db_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_darkblood; }
+			[hit_critical]	{ priority = low; * = s_e_hit_darkblood_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_darkblood_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_darkblood_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 50;
+	}
+	[body]
+	{
+		min_move_velocity = 3.0;
+		avg_move_velocity = 3.750000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_two_handed_melee	= 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_db_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,3;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,3;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,3;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,3;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,3;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Darkblood"; }
+	[defend] { defense=85; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+            		es_weapon_hand = ax_un_2h1b_darkblood;
+            			}
+
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.05;
+					il_main = #armor/28-84;
+	                				il_main = #nmagic/5-13;
+	                				il_main = #cmagic/5-13;
+				}
+				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/21-43;
+	                				il_main = #armor/-rare(1)/44-100;
+                    				il_main = #*/-rare(1)/21-43;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	                				il_main = #weapon/-unique(2)/21-43;
+	                				il_main = #armor/-unique(2)/44-100;
+                    				il_main = #*/-unique(2)/21-43;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 114;
+					min = 51;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_darkblood_boss_01]
+{
+	category_name = "1W_evil_c";
+	doc = "darkblood";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	18, 0;
+			intelligence =  11, 0;
+			dexterity =  	14, 0;
+			melee =  	21, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 251;
+		life = 454;
+		max_life = 454;
+		mana = 22;
+		max_mana = 22;
+		model = m_c_ecm_db_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_darkblood; }
+			[hit_critical]	{ priority = low; * = s_e_hit_darkblood_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_darkblood_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_darkblood_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 69;
+		damage_min = 50;
+	}
+	[body]
+	{
+		min_move_velocity = 3.0;
+		avg_move_velocity = 3.750000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_two_handed_melee	= 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_db_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,3;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,3;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,3;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,3;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,3;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Bletch Bloodbeek"; 
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_red(sgx)");
+			}
+		}
+		membership = skeleton,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+	}
+	[defend] { defense=125; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+            		es_weapon_hand = ax_g_c_dsx_psc_avg;
+            }
+
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.45;
+					il_main = #*/14-20;
+					il_main = #armor/68-334;
+	                il_main = #nmagic/25-33;
+	                il_main = #cmagic/25-33;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/21-33;
+	                il_main = #armor/-rare(1)/94-110;
+                    il_main = #*/-rare(1)/21-33;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/21-33;
+	                il_main = #armor/-unique(2)/94-110;
+                    il_main = #*/-unique(2)/21-33;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 284;
+					min = 51;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

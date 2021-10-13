@@ -1,0 +1,416 @@
+[t:sign_glb_01,n:0x01d00224]
+{
+	[common]
+	{
+		dev_instance_text = "sign_2";
+		screen_name = "Town of Elddim, 92";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.130527,0,0.991445;
+	  p position = -3.15399,-1.66893e-006,-1.32482,0xd8a2e4a7;
+	}
+}
+[t:sign_glb_01,n:0x01d00235]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 14";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.997859,0,0.0654034;
+	  p position = -2.97757,-0.546972,-1.87862,0xd8a2e4a7;
+	}
+}
+[t:sign_glb_01,n:0x01d006da]
+{
+	[common]
+	{
+		screen_name = "Great Northern Forest";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.793353,0,0.608762;
+	  p position = -3.6007,-0.37304,-1.83133,0xd8a2e4a7;
+	}
+}
+[t:sign_glb_01,n:0x01d001a1]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Elddim, 88";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.83147,0,0.55557;
+	  p position = 1.01547,-0.551295,-0.257963,0x4a60810c;
+	}
+}
+[t:sign_glb_01,n:0x01d001bb]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 16";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.793353,0,-0.608762;
+	  p position = 1.67778,-0.124185,-0.0455656,0x4a60810c;
+	}
+}
+[t:respawn_statue,n:0x01d0018e]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.866026,0,-0.5;
+	  p position = 3.04232,0,0.265884,0xfa297756;
+		use_point_scids = 0x01d00192;
+	}
+}
+[t:cage_glb_breakable,n:0x01d001b2]
+{
+	[placement]
+	{
+	  q orientation = 0,0.909961,0,-0.414694;
+	  p position = -0.423592,0,0.430285,0x640cfe27;
+	}
+}
+[t:cage_glb_breakable,n:0x01d0071f]
+{
+	[placement]
+	{
+	  q orientation = 0,0.700909,0,0.71325;
+	  p position = 1.02636,0,0.0371401,0x9f42e64d;
+	}
+}
+[t:sign_glb_01,n:0x01d006e7]
+{
+	[common]
+	{
+		dev_instance_text = "sign_3";
+		screen_name = "Great Northern Forest, 19";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 1.26469,-0.0341501,1.9142,0x66ae02f9;
+	}
+}
+[t:cage_glb_breakable,n:0x01d00720]
+{
+	[placement]
+	{
+	  q orientation = 0,0.824126,0,0.566406;
+	  p position = 1.10127,0,-0.558777,0xb8eae6e1;
+	}
+}
+[t:cage_glb_breakable,n:0x01d00722]
+{
+	[placement]
+	{
+	  q orientation = 0,0.97237,0,0.233446;
+	  p position = -3.49042,0,-0.970444,0x75412541;
+	}
+}
+[t:sign_glb_01,n:0x01d0019c]
+{
+	[common]
+	{
+		dev_instance_text = "sign 8";
+		screen_name = "Ancient Crypt, 8";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.75184,0,0.659346;
+	  p position = 0.270474,0,-1.09713,0x598fa60e;
+	}
+}
+[t:cage_glb_breakable,n:0x01d00725]
+{
+	[placement]
+	{
+	  q orientation = 0,0.691513,0,-0.722365;
+	  p position = -2.76661,0,0.537178,0x598fa60e;
+	}
+}
+[t:sign_glb_01,n:0x01d001a3]
+{
+	[common]
+	{
+		dev_instance_text = "sign 9";
+		screen_name = "Ancient Crypt";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0654037,0,0.997859;
+	  p position = 0.0286598,-4.76837e-007,-0.709305,0x742fa6a5;
+	}
+}
+[t:cage_glb_breakable,n:0x01d006c9]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.182236,0,0.983255;
+	  p position = -0.723347,0,2.0977,0x3f906aa0;
+	}
+}
+[t:cage_glb_breakable,n:0x01d00724]
+{
+	[placement]
+	{
+	  q orientation = 0,0.995805,0,0.0915021;
+	  p position = -3.76059,0,0.136429,0x8b50dd15;
+	}
+}
+[t:statue_cav_spin_02,n:0x01d00596]
+{
+	[common]
+	{
+		screen_name = "Iliarth Divide to Elddim Displacer";
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x01D001B9;
+	  x on_scid = 0x01D001B9;
+	  f reset_time = 25;
+	  f reset_time_2 = 25;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 0.0289154,0.200003,-0.0208015,0xc95ecd0d;
+		use_point_scids = 0x01d006d0;
+	}
+}
+[t:sign_glb_01,n:0x01d001a4]
+{
+	[common]
+	{
+		dev_instance_text = "sign 10";
+		screen_name = "Ancient Crypt";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.866026,0,0.5;
+	  p position = 1.63644,-2.38419e-007,2.57009,0x2974bdb6;
+	}
+}
+[t:sign_glb_01,n:0x01d0053f]
+{
+	[common]
+	{
+		dev_instance_text = "sign 11";
+		screen_name = "Ancient Crypt, 5";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.0654033,0,0.997859;
+	  p position = -2.70498,-2.02656e-006,2.16002,0xb55d6d26;
+	}
+}
+[t:lever_des_01,n:0x01d00201]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x01D00208,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x01D00208;
+	  x on_scid = 0x01D00208;
+	}
+	[placement]
+	{
+	  p position = 0.34317,0,3.84996,0x42cebdfb;
+		use_point_scids = 0x01d0018c,0x01d0018d;
+	}
+}
+[t:sign_glb_01,n:0x01d0034b]
+{
+	[common]
+	{
+		dev_instance_text = "sign_4";
+		screen_name = "Town of Crystwind, 77";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.793353,0,0.608762;
+	  p position = -1.32327,0,0.59568,0x42cebdfb;
+	}
+}
+[t:sign_glb_01,n:0x01d00580]
+{
+	[common]
+	{
+		screen_name = "Town of Crystwind, 77";
+	}
+	[placement]
+	{
+	  q orientation = 0.248471,-0.733855,0.311056,0.550421;
+	  p position = 2.69889,15.85,-0.100876,0x712e550e;
+	}
+}
+[t:sign_glb_01,n:0x01d00542]
+{
+	[common]
+	{
+		dev_instance_text = "sign_5";
+		screen_name = "Great Northern Forest, 9";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.0654035,0,0.997859;
+	  p position = -0.170639,-4.76837e-007,-1.51658,0x75b5f6eb;
+	}
+}
+[t:sign_glb_01,n:0x01d006c6]
+{
+	[common]
+	{
+		screen_name = "Town of Elddim, 107";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.75184,0,0.659346;
+	  p position = 0.19207,-0.226947,-1.77861,0x75b5f6eb;
+	}
+}
+[t:sign_glb_01,n:0x01d00240]
+{
+	[common]
+	{
+		dev_instance_text = "sign_6";
+		screen_name = "Town of Elddim, 107";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.793354,0,-0.608762;
+	  p position = -1.35206,11.671,0.175575,0x474099bb;
+	}
+}
+[t:sign_glb_01,n:0x01d00250]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 11";
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-8.9407e-008;
+	  p position = -1.39219,12,-0.23761,0x474099bb;
+	}
+}
+[t:sign_glb_01,n:0x01d0026b]
+{
+	[common]
+	{
+		screen_name = "Great Northern Forest, 12";
+	}
+	[placement]
+	{
+	  p position = -1.73906,12,0.440216,0x474099bb;
+	}
+}
+[t:lever_des_01,n:0x01d0020d]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x01D00208,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x01D00208;
+	  x on_scid = 0x01D00208;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -1.95992,9.53674e-007,-1.99608,0xe7271aa9;
+		use_point_scids = 0x01d0018c,0x01d00186;
+	}
+}
+[t:sign_glb_01,n:0x01d00462]
+{
+	[common]
+	{
+		dev_instance_text = "sign_7";
+		screen_name = "Town of Elddim, 109";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.980786,0,0.19509;
+	  p position = -0.28302,1.60347,3.2157,0xe40a48b7;
+	}
+}
+[t:sign_glb_01,n:0x01d00540]
+{
+	[common]
+	{
+		screen_name = "Great Northern Forest";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.659346,0,0.75184;
+	  p position = -0.0747986,1.87425,3.59386,0xe40a48b7;
+	}
+}
+[t:respawn_statue,n:0x01d0077b]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.992055;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.358368,0,0.933581;
+	  p position = -1.65295,0,-1.22732,0x6241b71b;
+		use_point_scids = 0x01d007a6;
+	}
+}

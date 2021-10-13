@@ -1,0 +1,375 @@
+[world_locations]
+{
+//Hiroth
+	[t:location,n:hiroth]
+	{
+		id = 0101;
+		screen_name = "the town of Hiroth";
+	}
+	[t:location,n:castle_hiroth]
+	{
+		id = 0102;
+		screen_name = "Castle Hiroth";
+	}
+	[t:location,n:mausoleum]
+	{
+		id = 0103;
+		screen_name = "the Hiroth Mausoleum";
+	}
+	[t:location,n:drake_nest]
+	{
+		id = 0104;
+		screen_name = "the Drake Nest";
+	}
+	[t:location,n:hiroth_ravine]
+	{
+		id = 0105;
+		screen_name = "Hiroth Ravine";
+	}
+	[t:location,n:utraean_catacombs]
+	{
+		id = 0106;
+		screen_name = "the Utraean Catacombs";
+	}
+	[t:location,n:inner_sanctum]
+	{
+		id = 0107;
+		screen_name = "the Inner Sanctum";
+	}
+//Dark Forest, ocean, gi_a, df2ds, gi_a_r2
+	[t:location,n:cloud_forest]
+	{
+		id = 0201;
+		screen_name = "the Cloud Forest";
+	}
+	[t:location,n:meren]
+	{
+		id = 0202;
+		screen_name = "the town of Meren";
+	}
+	[t:location,n:goblin_warrens]
+	{
+		id = 0203;
+		screen_name = "the Goblin Warrens";
+	}
+	[t:location,n:utrae_north]
+	{
+		id = 0204;
+		screen_name = "the Mount Utrae north slope";
+	}
+	[t:location,n:utrae_summit]
+	{
+		id = 0205;
+		screen_name = "the Mount Utrae summit";
+	}
+	[t:location,n:utrae_alpine]
+	{
+		id = 0206;
+		screen_name = "the Mount Utrae Alpine Reaches";
+	}
+	[t:location,n:goblin_outer]
+	{
+		id = 0207;
+		screen_name = "the Goblin Outer Warrens";
+	}
+	[t:location,n:meren_coast]         
+	{
+		id = 0208;
+		screen_name = "the Meren Coast";
+	} 
+	[t:location,n:foothills_utrae]         
+	{
+		id = 0209;
+		screen_name = "the Mount Utrae Foothills";
+	} 
+	[t:location,n:temple_stars]         
+	{
+		id = 0210;
+		screen_name = "the Temple of Stars";
+	} 
+	
+//Des_R1/Des_R2/Desert, of_r1, wd_r1, gp_r1, gp_r2
+	[t:location,n:quillrabe]
+	{
+		id = 0301;
+		screen_name = "the town of Quillrabe";
+	}
+	[t:location,n:quillrabe_canyons]
+	{
+		id = 0302;
+		screen_name = "Quillrabe Canyons";
+	}
+	[t:location,n:fury_den]
+	{
+		id = 0303;
+		screen_name = "the Fury Den";
+	}
+	[t:location,n:redwood_gap]
+	{
+		id = 0304;
+		screen_name = "Redwood Gap";
+	}
+	[t:location,n:flooded_sanctuary]
+	{
+		id = 0305;
+		screen_name = "the Flooded Sanctuary";
+	}
+	[t:location,n:forgotten_mesas]
+	{
+		id = 0306;
+		screen_name = "the Forgotten Mesas";
+	}
+	[t:location,n:trial_gallus]
+	{
+		id = 0307;
+		screen_name = "the Trial of Gallus";
+	}
+	//ds_r2, dunes, oasis, swamp_town
+	[t:location,n:mesa_desert]
+	{
+		id = 0401;
+		screen_name = "the Mesa Desert";
+	}
+	[t:location,n:endless_dunes]
+	{
+		id = 0402;
+		screen_name = "the Endless Dunes";
+	}
+	[t:location,n:lang_mire]
+	{
+		id = 0403;
+		screen_name = "Lang Mire";
+	}
+	
+	[t:location,n:abandoned_ruins]
+	{
+		id = 0406;
+		screen_name = "the Abandoned Ruins";
+	}
+	[t:location,n:grescal]
+	{
+		id = 0407;
+		screen_name = "the town of Grescal";
+	}
+	[t:location,n:lang]
+	{
+		id = 0408;
+		screen_name = "the town of Lang";
+	}
+	[t:location,n:pit_of_despair]
+	{
+		id = 0409;
+		screen_name = "the Pit of Despair";
+	}
+	[t:location,n:abandoned_mine]
+	{
+		id = 0410;
+		screen_name = "The Abandoned Mine Shaft";
+	}
+//farmhouse_and_chapel, forest, path2mines, town center
+	[t:location,n:elddim_lowlands]
+	{
+		id = 0501;
+		screen_name = "Elddim Lowlands";
+	}
+	[t:location,n:great_northern_forest]
+	{
+		id = 0502;
+		screen_name = "the Great Northern Forest";
+	}
+	[t:location,n:elddim_glade]
+	{
+		id = 0503;
+		screen_name = "Elddim Glade";
+	}
+	[t:location,n:long_glade]
+	{
+		id = 0504;
+		screen_name = "Long Glade";
+	}
+	[t:location,n:elddim]
+	{
+		id = 0505;
+		screen_name = "the town of Elddim";
+	}
+	[t:location,n:the_lowlands] //dupe of elddim_lowlands
+	{
+		id = 0506;
+		screen_name = "Elddim Lowlands";
+	}
+	[t:location,n:orchard_cellar] //dupe of elddim_lowlands
+	{
+		id = 0507;
+		screen_name = "the Orchard House Cellar";
+	}
+	[t:location,n:hovart_marsh] 
+	{
+		id = 0508;
+		screen_name = "Hovart Marsh";
+	}
+//gd_r1, mega_forest
+	[t:location,n:hovarts_folly_north]
+	{
+		id = 0601;
+		screen_name = "Hovart's Folly (North)";
+	}
+	[t:location,n:hovarts_folly_south]
+	{
+		id = 0602;
+		screen_name = "Hovart's Folly (South)";
+	}
+	[t:location,n:great_hall]
+	{
+		id = 0603;
+		screen_name = "Hovart's Folly Great Hall";
+	}
+//grs_dry_hard, path2crypts, river_forest
+	[t:location,n:iliarth_falls]
+	{
+		id = 0701;
+		screen_name = "Iliarth Falls";
+	}
+	[t:location,n:iliarth_divide]
+	{
+		id = 0702;
+		screen_name = "Iliarth Divide";
+	}
+	[t:location,n:ancient_crypts]
+	{
+		id = 0703;
+		screen_name = "the Ancient Crypt";
+	}
+	[t:location,n:iliarth_canyons]
+	{
+		id = 0704;
+		screen_name = "Iliarth Canyon";
+	}
+	[t:location,n:iliarth_valley]
+	{
+		id = 0705;
+		screen_name = "Iliarth Valley";
+	}
+//hades
+	[t:location,n:lava_caverns]
+	{
+		id = 0801;
+		screen_name = "the Volcanic Caverns";
+	}
+//island
+	[t:location,n:island]
+	{
+		id = 0901;
+		screen_name = "the Eastern Island";
+	}
+	[t:location,n:pyramid_of_spirits]
+	{
+		id = 0902;
+		screen_name = "the Lost Pyramid of the Spirits";
+	}
+	[t:location,n:pyramid_of_dead]
+	{
+		id = 0903;
+		screen_name = "the Lost Pyramid of the Dead";
+	}
+//mine_town, mines, mines2, mines3
+	[t:location,n:crystwind]
+	{
+		id = 1001;
+		screen_name = "the town of Crystwind";
+	}
+	[t:location,n:crystwind_mines] //dupe of mines
+	{
+		id = 1002;
+		screen_name = "the Crystwind Mines";
+	}
+	[t:location,n:mines]
+	{
+		id = 1003;
+		screen_name = "the Crystwind Mines";
+	}
+	[t:location,n:old_mines]
+	{
+		id = 1004;
+		screen_name = "the Crystwind Old Mines";
+	}
+	[t:location,n:crystwind_grasslands]
+	{
+		id = 1005;
+		screen_name = "the Crystwind Grasslands";
+	}
+	[t:location,n:miners_haven]
+	{
+		id = 1006;
+		screen_name = "Miner's Haven";
+	}
+//hub
+	[t:location,n:hub]
+	{
+		id = 1101;
+		screen_name = "the Utraean Basilicus";
+	}
+//ocean, sf_r1, snow_town, ice_cave2
+	[t:location,n:crystal_caverns]
+	{
+		id = 1202;
+		screen_name = "the Crystal Caverns";
+	}
+	[t:location,n:alpine_forest]
+	{
+		id = 1203;
+		screen_name = "Mt. Utrae Forest";
+	}
+	[t:location,n:fallraen]
+	{
+		id = 1204;
+		screen_name = "the town of Fallraen";
+	}
+	[t:location,n:glacial_caverns]
+	{
+		id = 1205;
+		screen_name = "the Glacial Caverns";
+	}
+	[t:location,n:furok_cave]
+	{
+		id = 1206;
+		screen_name = "a Furok cave";
+	}
+	[t:location,n:fallraen_barracks]
+	{
+		id = 1207;
+		screen_name = "the Fallraen Barracks";
+	}
+//path2ice, sf_r2, sf_r1
+	[t:location,n:frozen_forest]
+	{
+		id = 1301;
+		screen_name = "Fallraen Forest";
+	}
+	[t:location,n:frozen_rift]
+	{
+		id = 1302;
+		screen_name = "the Frozen Rift";
+	}
+	[t:location,n:ancient_temple]
+	{
+		id = 1303;
+		screen_name = "the Ancient Temple";
+	}
+	[t:location,n:elspen_forest]
+	{
+		id = 1304;
+		screen_name = "Mt. Elspen Forest";
+	}
+//quarry
+	[t:location,n:sulfur_tunnels]
+	{
+		id = 1401;
+		screen_name = "the Sulfur Tunnels";
+	}
+	[t:location,n:dorneks_stone_quarry]
+	{
+		id = 1402;
+		screen_name = "Dornek's Stone Quarry";
+	}
+}
+

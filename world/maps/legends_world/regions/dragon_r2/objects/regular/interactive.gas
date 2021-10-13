@@ -1,0 +1,68 @@
+[t:sign_glb_01,n:0x0a00030b]
+{
+	[common]
+	{
+		screen_name = "Town of Quillrabe, 99";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.999999,0,-1.78814e-007;
+	  p position = 0.59795,-0.348392,1.64323,0xc6c32bf2;
+	}
+}
+[t:sign_glb_01,n:0x0a00030d]
+{
+	[common]
+	{
+		dev_instance_text = "sign 2";
+		screen_name = "Town of Hiroth, 41";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,-0.707106;
+	  p position = 0.282461,0,1.53244,0xc6c32bf2;
+	}
+}
+[t:respawn_statue,n:0x0a00022c]
+{
+	[placement]
+	{
+	  q orientation = -6.66134e-015,-1,1.49012e-008,-5.96046e-007;
+	  p position = 1.35806,-4,-3.65278,0x6ed02749;
+		use_point_scids = 0x0a000314;
+	}
+}
+[t:sign_glb_01,n:0x0a00030e]
+{
+	[common]
+	{
+		screen_name = "Town of Quillrabe, 115";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -1.99842,-0.292639,0.797768,0x0e252ced;
+	}
+}
+[t:sign_glb_01,n:0x0a000310]
+{
+	[common]
+	{
+		dev_instance_text = "sign 3";
+		screen_name = "Town of Hiroth, 25";
+	}
+	[placement]
+	{
+	  q orientation = 0,-8.9407e-008,0,1;
+	  p position = -1.95953,0,1.18098,0x0e252ced;
+	}
+}
+[t:respawn_statue,n:0x0a000315]
+{
+	[placement]
+	{
+	  q orientation = -1.05367e-008,-0.707106,1.05367e-008,-0.707107;
+	  p position = 3.87324,-4,-3.10455,0x2e460213;
+		use_point_scids = 0x0a000316;
+	}
+}

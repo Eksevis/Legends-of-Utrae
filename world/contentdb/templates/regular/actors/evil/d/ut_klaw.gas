@@ -1,0 +1,253 @@
+[t:template,n:ut_klaw]
+{
+	category_name = "1W_evil_d";
+	doc = "klaw";
+	specializes = base_klaw;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  13, 0;
+			intelligence =  8, 0;
+			dexterity =  12, 0;
+            melee =  7,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 130;
+		life = 202;
+        max_life = 202;
+        mana = 18;
+		max_mana = 18;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 54;
+		damage_min = 46;
+	}
+	[common]
+	{
+		screen_name="Klaw";
+		membership = party_klaw_boss, monster;
+	}
+    [defend] { defense=80; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/6-13;
+				}
+
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/26-33;
+					il_main = #armor/13-66;
+	                il_main = #weapon/26-33;
+				}
+				[oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/34-41;
+	                   il_main = #armor/-rare(1)/80-115;
+                       il_main = #*/-rare(1)/34-41;
+                }
+				[oneof*]
+				{
+                       chance = 0.002;
+	                   il_main = #weapon/-unique(2)/34-41;
+	                   il_main = #armor/-unique(2)/80-115;
+                       il_main = #*/-unique(2)/34-41;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 150;
+					min = 80;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+	}
+}
+[t:template,n:ut_klaw_boss_01]
+{
+	category_name = "1W_evil_d";
+	doc = "klaw boss 01";
+	specializes = base_klaw;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  14, 0;
+			intelligence =  9, 0;
+			dexterity 	=  12, 0;
+            melee 		=  9,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 190;
+		life = 740;
+        max_life = 740;
+        mana = 18;
+		max_mana = 18;
+		textures:0 = b_c_edm_kw-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 74;
+		damage_min = 66;
+	}
+	[common]
+	{
+		screen_name="Putrid Klaw";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_purple(sgx)");
+			}
+		}
+	}
+    [defend] { defense=254; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+				[all*]
+				{
+					il_main = #armor,f/100-115;
+	                il_main = #weapon/33-37;
+				}
+				[oneof*]
+				{
+	                   chance = 0.004;
+	                   il_main = #weapon/-rare(1)/44-53;
+	                   il_main = #armor/-rare(1)/112-119;
+                       il_main = #*/-rare(1)/44-53;
+                }
+				[oneof*]
+				{
+                       chance = 0.002;
+	                   il_main = #weapon/-unique(2)/44-53;
+	                   il_main = #armor/-unique(2)/112-119;
+                       il_main = #*/-unique(2)/44-53;
+	            }
+				[gold*]
+				{
+					max = 384;
+					min = 241;
+					min_pile = 41;
+					piles = 2 - 4;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?social				= 0.8
+			&approach_dist		= 2.5
+			&friend_template	= false
+			&friends			= party_klaw_boss
+			&still				= false;
+
+		jat_brain							 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party			= true
+			&party_template						= "party_klaw_boss";
+	}
+}
+[t:template,n:ut_forest_klaw]
+{
+	category_name = "1W_evil_d";
+	doc = "klaw";
+	specializes = base_klaw;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  21, 0;
+			intelligence =  9, 0;
+			dexterity =  15, 0;
+            		melee =  26,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1019;
+		life = 510;
+        max_life = 510;
+        mana = 18;
+		max_mana = 18;
+		textures:0 = b_c_edm_kw-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 129;
+		damage_min = 117;
+	}
+	[common] { screen_name="Forest Klaw"; }
+    [defend] { defense=350; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #nmagic/5-17;
+    	            il_main = #cmagic/5-17;
+        		}
+        		[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/9-12;
+					il_main = #armor/26-129;
+	                il_main = #weapon/9-12;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/14-23;
+	                il_main = #armor/-rare(1)/19-59;
+                    il_main = #*/-rare(1)/14-23;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/14-23;
+	                il_main = #armor/-unique(2)/19-59;
+                    il_main = #*/-unique(2)/14-23;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 1278;
+					min = 876;
+				}
+			}
+		}
+	}
+}

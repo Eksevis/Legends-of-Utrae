@@ -1,0 +1,81 @@
+[t:elevator_instant_4s_1c,n:0x08f001c7]
+{
+	[elevator_instant_4s_1c]
+	{
+	  i connect_door_location1_level1 = 7;
+	  i connect_door_location1_level2 = 8;
+	  i connect_door_location2_level1 = 13;
+	  i connect_door_location2_level2 = 14;
+	  x connect_node_location1 = 0xF069CD16;
+	  x connect_node_location2 = 0x449FC183;
+		down_effect = "displacer_plate_down";
+	  f duration_location1_moving_to_lv1 = 16;
+	  f duration_location2_moving_to_lv1 = 16;
+	  i e2_connect_door_location1_level1 = 5;
+	  i e2_connect_door_location1_level2 = 6;
+	  i e2_connect_door_location2_level1 = 11;
+	  i e2_connect_door_location2_level2 = 12;
+	  x e2_elevator_node = 0xAB816774;
+	  i elevator_door_location1_level1 = 2;
+	  i elevator_door_location1_level2 = 2;
+	  i elevator_door_location2_level1 = 2;
+	  i elevator_door_location2_level2 = 2;
+	  x elevator_node = 0x3D080F49;
+		location1_moving_to_lv1_actioninfo = "utraean_world_gi_a_r2_teleport";
+		location1_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		location2_moving_to_lv1_actioninfo = "utraean_world_swamp_town_teleport_2";
+		location2_moving_to_lv2_actioninfo = "utraean_world_teleport";
+		material = "hub";
+	  x other_elevator = 0x04E002F7;
+		up_effect = "displacer_plate_up";
+	}
+	[placement]
+	{
+	  p position = 0,5,0,0x3d080f49;
+	}
+}
+[t:elevator_2s_2c_2n,n:0x08f00066]
+{
+	[elevator_2s_2c_2n]
+	{
+	  i additional_door_level2 = 2;
+	  x additional_node_level2 = 0xFD913B37;
+	  i connect_door_level1 = 11;
+	  i connect_door_level2 = 11;
+	  x connect_node_level1 = 0x205915AE;
+	  x connect_node_level2 = 0x205915AE;
+	  f duration = 1;
+	  i elevator_additionaldoor_level2 = 4;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 2;
+	  x elevator_node = 0xFD356B68;
+		material = "gi_slide";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = -0.9431,0,-1.74646,0x355659e8;
+	}
+}
+[t:elevator_2s_2c_2n,n:0x08f00064]
+{
+	[elevator_2s_2c_2n]
+	{
+	  i additional_door_level2 = 2;
+	  x additional_node_level2 = 0x65E98EE3;
+	  i connect_door_level1 = 15;
+	  i connect_door_level2 = 15;
+	  x connect_node_level1 = 0x49C67ABF;
+	  x connect_node_level2 = 0x49C67ABF;
+	  f duration = 1;
+	  i elevator_additionaldoor_level2 = 4;
+	  i elevator_door_level1 = 1;
+	  i elevator_door_level2 = 2;
+	  x elevator_node = 0xEC4F4AE4;
+		material = "gi_slide";
+	}
+	[placement]
+	{
+	  p position = 0.161545,0,0.790108,0xf0268062;
+	}
+}

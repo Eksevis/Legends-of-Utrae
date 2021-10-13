@@ -1,0 +1,23 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xACA10100;
+	source_region_name = abc_r1;
+	[t:stitch_editor,n:crypts2sd]
+	{
+		dest_region = crypts2sd;
+		[node_ids]
+		{
+			0x00000bc1 = 0x19EFEB2B,4;
+			0x00000bc2 = 0x19EFEB2B,5;
+			0x00000bc3 = 0x19EFEB2B,6;
+		}
+	}
+	[t:stitch_editor,n:path2crypts]
+	{
+		dest_region = path2crypts;
+		[node_ids]
+		{
+			0x00000ca1 = 0x97CAAEEC,1;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+[conversation_shair_tullen]
+{
+	[text*]
+	{
+		order = 0;
+		choice = shop;
+
+		screen_text = "This tapestry is a superb example of late Lescanzan textile work. Lord Hovart bought it in 962... such a fascinating man. Well, you look fairly well-equipped for this environment; I can't say the same for myself. I've found a few things in my excavations that I'd be willing to trade; I'll need money to publish my findings.";
+	}
+	[text*]
+	{
+	    order = 1;
+		choice = shop;
+
+		screen_text = "Did you know that Lord Hovart was a great admirer of Emperor Veransk III? I just recently found a collection of books on the Emperor's life; the Librarians in Hiroth Castle should be very interested.";
+	}
+
+	[text*]
+	{
+
+		choice = shop;
+
+		screen_text = "When my book is published, I'll send you a copy. 'The Life and Times of Lord Hovart, the Greatest Man the Kingdom has Ever Known.' Do you like the title?";
+	}
+
+}
+

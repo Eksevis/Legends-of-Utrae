@@ -1,0 +1,75 @@
+[conversation_guard]
+{
+	[text*] 
+	{	
+		order = 0;
+		screen_text = "Hail, friend. It's not often I come across travelers while out on patrol. This area is crawling with monsters, but it's even worse in the Great Northern Forest to the north. If you don't feel up to it, you can always head back to Elddim through Iliarth Valley. However, most travellers out this way are interested in the Ancient Crypt just to the southeast across the bridge.";
+	}
+	[text*] 
+	{
+		screen_text = "One of the Legion's old Displacer Platforms is located just outside the entrance to the Ancient Crypt. We don't use it much these days, but I just checked it a few days ago and it seems to be working as well as can be expected. If you're missing town life, just touch the statuette and you'll be whisked back to Elddim in a blink of an eye. You'll find it up on the plateau southeast across the bridge here.";
+	}
+}
+[conversation_guard_red]
+{
+	[text*]
+	{
+		screen_text = "Phew! I might be forced to cut my patrol short and hop on the Displacer Platform myself if this stench continues. I'm already sick as a dog, and that's not safe with monsters lurking in the bushes everywhere I turn.";
+	}
+}
+[conversation_shizune_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_lyssa_select_07;
+		screen_text = "Halt there. You mustn't past yet. This forest is far too dangerous for you at present. Yet according to our exalted leader, you are the chosen one. My name? Apologies, I'm Shalindra and yes I'm an Elf. We show ourselves very infrequently to outsiders, let alone help them. Yet I've been requested by Calrohir, the leader of the Elves, to assist you. In time if you prove yourself you'll learn the full story and your role to play. Other elves will also assist you later if you need them, but for now I must do. Will you accept my help?";
+	}
+}
+[conversation_shizune_accept]
+{
+	[text*]
+	{
+		sample = s_v_lyssa_select_10;
+		screen_text = "Thank you for your faith in me. Now let us continue on your quest and leave this area. Even I am no match for the denizens who share the forest with us these days. It is best that we come back here later when we are summoned and are more prepared.";
+	}
+}
+[conversation_shizune_reject]
+{
+	[text*]
+	{
+		screen_text = "I understand. It's hard to trust someone who you just met, especially when they're not of your race. I'll always be near here if you need me and heed this warning. Keep clear of the forest until you are summoned to go there. It is much too dangerous for you at present. Thank care and good luck.";
+	}
+}
+[conversation_shizune_disband]
+{
+	[text*]
+	{
+		screen_text = "I understand. It's hard to trust someone who you just met, especially when they're not of your race. I'll always be near here if you need me and heed this warning. Keep clear of the forest until you are summoned to go there. It is much too dangerous for you at present. Thank care and good luck.";
+	}
+}
+[conversation_shizune_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_01;
+		screen_text = "Thank you for your faith in me. Now let us continue on your quest and leave this area. Even I am no match for the denizens who share the forest with us these days. It is best that come back here later when you are summoned and are more prepared.";
+	}
+}
+[conversation_shizune_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jharmaya_select_01;
+		screen_text = "Thank you for your faith in me. Now let us continue on your quest and leave this area. Even I am no match for the denizens who share the forest with us these days. It is best that come back here later when you are summoned and are more prepared.";
+	}
+}
+[conversation_shizune_quest]
+{
+	[text*]
+	{
+		screen_text = "We have been watching you and believe that you have potential. Know that your race is facing a tremendous threat. If you wish to know more, meet me at the old derelict house near the Great Northern Forest, just across from the entrance to the crypts.";
+	}
+}

@@ -1,0 +1,554 @@
+[t:door_glb_spdrdungeon_03,n:0x02c002c1]
+{
+	[door_basic]
+	{
+	  x msg_scid_open = 0x02C0040B;
+	  x msg_scid_opening = 0x02C002A8;
+	}
+	[placement]
+	{
+	  p position = 0.00830841,-4,0.0188141,0xa472c3af;
+		use_point_scids = 0x02c002bb,0x02c002e0;
+	}
+}
+[t:sign_glb_dungeon_right,n:0x02c00377]
+{
+	[common]
+	{
+		dev_instance_text = "sign 3";
+		screen_name = "Hovart's Folly North, 7";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -0.275507,1.15204,-1.10953,0xebdfba31;
+	}
+}
+[t:sign_glb_dungeon_left,n:0x02c00378]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 82";
+	}
+	[placement]
+	{
+	  q orientation = 0,1.49012e-007,0,1;
+	  p position = 1.22063,1.18015,0.396355,0xebdfba31;
+	}
+}
+[t:door_glb_spdrdungeon_03,n:0x02c00172]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A9;
+	}
+	[placement]
+	{
+	  p position = -0.000122106,-3.45,-0.0090332,0xab46b889;
+		use_point_scids = 0x02c002bd,0x02c00319;
+	}
+}
+[t:door_glb_spdrdungeon_02,n:0x02c00168]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A5;
+	}
+	[placement]
+	{
+	  p position = 0.00557336,-3.44673,0.021451,0xa95132c0;
+		use_point_scids = 0x02c00451 , 0x02c00454;
+	}
+}
+[t:generator_cobweb,n:0x02c00021]
+{
+	[generator_breakable]
+	{
+		child_template_name = "spider_adolescent_yellow";
+	  x initial_command = 0x02C00149;
+	  i max_alive_children = 3;
+	  i num_children_incubating = 5;
+	  x spawnpoint = 0x02C00022;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.85264,0,0.522498;
+	  p position = -1.81995,-2.38419e-007,-1.37726,0x539d0867;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00198]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A4;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.014492,-3.25,-0.00968557,0x87b35a00;
+		use_point_scids = 0x02c002ba,0x02c00203;
+	}
+}
+[t:door_glb_spdrdungeon_02,n:0x02c0017f]
+{
+	[aspect]
+	{
+	  f use_range = 1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002B6;
+	}
+	[placement]
+	{
+	  p position = -0.00586698,-3.43685,0.0114365,0x982c1572;
+		use_point_scids = 0x2c00422, 0x2c00423;
+	}
+}
+[t:respawn_statue,n:0x02c0043a]
+{
+	[placement]
+	{
+	  q orientation = 0,0.92388,0,0.382683;
+	  p position = 1.19181,0,-1.21123,0x105f3885;
+		use_point_scids = 0x02c00470;
+	}
+}
+[t:door_glb_spdrdungeon_03,n:0x02c00174]
+{
+	[aspect]
+	{
+	  f use_range = 1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002B3;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.00652313,-3.45,1.52329e-005,0xdb0e0eca;
+		use_point_scids = 0x2c00429, 0x2c00428;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00191]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	  f use_range = 1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002B2;
+	}
+	[placement]
+	{
+	  p position = 0.0172157,-1.75,-1.02345,0x34482ae7;
+		use_point_scids = 0x2c00426, 0x2c00427;
+	}
+}
+[t:door_glb_spdrdungeon_03,n:0x02c00175]
+{
+	[aspect]
+	{
+	  f use_range = 1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002B1;
+	}
+	[placement]
+	{
+	  p position = 0.00202943,-3.45,0.00368499,0x9b1be32b;
+		use_point_scids = 0x2c0042b, 0x2c0042a;
+	}
+}
+[t:sign_glb_dungeon_right,n:0x02c00201]
+{
+	[common]
+	{
+		screen_name = "Hovart's Folly North, 12";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,-0.707107;
+	  p position = -0.323167,1.23652,-1.10889,0x2d744def;
+	}
+}
+[t:sign_glb_dungeon_left,n:0x02c002b8]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 96";
+	}
+	[placement]
+	{
+	  p position = 1.20359,1.2858,0.655669,0x2d744def;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00173]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002AB;
+	}
+	[placement]
+	{
+	  p position = 0.0426861,-2,-0.0981561,0x21e50c75;
+		use_point_scids = 0x02c00327,0x02c00328;
+	}
+}
+[t:fountain_csl_health,n:0x02c0043c]
+{
+	[fountain]
+	{
+	  f heal_amount = 120;
+	  f health_left = 176.4;
+	  f health_regen = 0.195;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 1.56522,1.2587,1.3647,0x641f4614;
+	}
+}
+[t:generator_cobweb,n:0x02c0008b]
+{
+	[generator_breakable]
+	{
+		child_template_name = "spider_adolescent_yellow";
+	  x initial_command = 0x02C0014F;
+	  i max_alive_children = 2;
+	  i num_children_incubating = 6;
+	  x spawnpoint = 0x02C00146;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.97437,0,0.224951;
+	  p position = 1.03208,-1e-005,-1.03159,0xe2147464;
+	}
+}
+[t:fountain_csl_mana,n:0x02c0043b]
+{
+	[fountain]
+	{
+	  f heal_amount = 160;
+	  f health_left = 184;
+	  f health_regen = 0.23025;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 1.57194,1.37413,1.38985,0xce23b683;
+	}
+}
+[t:lever_glb_05,n:0x02c00395]
+{
+	[on_off_lever]
+	{
+		on_message_4 = we_req_deactivate;
+	  x on_scid = 0x02C002AA;
+	  x on_scid_2 = 0x02C00461;
+	  x on_scid_3 = 0x02C001A6;
+	  x on_scid_4 = 0x02C00433;
+	  b one_shot = true;
+	}
+	[placement]
+	{
+	  q orientation = 0,-2.08616e-007,0,1;
+	  p position = -1.22702,-2.14577e-006,-0.950691,0xac6400fc;
+		use_point_scids = 0x02c0032a;
+	}
+}
+[t:door_glb_spdrdungeon_05,n:0x02c00461]
+{
+	[door_basic]
+	{
+	  x msg_scid_open = 0x02C001A6;
+	  x msg_scid_open2 = 0x02C001A5;
+		msg_type_open = we_req_deactivate;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,5.96046e-008;
+	  p position = 0.011261,-0.5,-0.0153341,0xaede065d;
+	}
+}
+[t:lever_glb_05,n:0x02c00433]
+{
+	[on_off_lever]
+	{
+		on_message_4 = we_req_deactivate;
+	  x on_scid = 0x02C002AA;
+	  x on_scid_2 = 0x02C00461;
+	  x on_scid_3 = 0x02C001A6;
+	  x on_scid_4 = 0x02C00395;
+	  b one_shot = true;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -0.99199,-7.15256e-007,-1.05273,0x476d2a3b;
+		use_point_scids = 0x02c00329;
+	}
+}
+[t:door_glb_spdrdungeon_03,n:0x02c00178]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002AF;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.00341039,-3.45,0.0117645,0x4d191a42;
+		use_point_scids = 0x02c00202,0x02c0031a;
+	}
+}
+[t:door_glb_spdrdungeon_03,n:0x02c00179]
+{
+	[aspect]
+	{
+	  f use_range = 1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002B0;
+	}
+	[placement]
+	{
+	  p position = 0.00432582,-3.45,-0.0113602,0x032bf76b;
+		use_point_scids = 0x2c0042f, 0x2c0042e;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00185]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	  f use_range = 1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002AE;
+	}
+	[placement]
+	{
+	  p position = 0.0179181,-1.75,-0.891617,0x5791b4cd;
+		use_point_scids = 0x2c0042d, 0x2c0042c;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00195]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002AD;
+	}
+	[placement]
+	{
+	  p position = 0.697655,-2.38419e-007,0.00992703,0x54d6448e;
+		use_point_scids = 0x2c00430,0x02c00431;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00184]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	  f use_range = 1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002B4;
+	}
+	[placement]
+	{
+	  p position = 0.0354575,-1.75,-0.980377,0xd09b65be;
+		use_point_scids = 0x2c00424, 0x2c00425;
+	}
+}
+[t:door_glb_spdrdungeon_02,n:0x02c0016c]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A5;
+	}
+	[placement]
+	{
+	  p position = 0.00519372,-3.44673,0.00368402,0x8339d137;
+		use_point_scids = 0x02c0044f , 0x02c00452;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00161]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A1;
+	}
+	[placement]
+	{
+	  p position = -0.0269592,-2,-0.0707816,0x2fbf44e9;
+		use_point_scids = 0x02c0032b,0x02c0032c;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00160]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C0029E;
+	}
+	[placement]
+	{
+	  p position = 0.0352517,-1.75,-0.928712,0xe1254a5d;
+		use_point_scids = 0x02c0033a,0x02c0033b;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00166]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A0;
+	}
+	[placement]
+	{
+	  p position = 0.0557548,-2,0.0763358,0xee1b7fb9;
+		use_point_scids = 0x02c0033c,0x02c0033d;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00165]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A3;
+	}
+	[placement]
+	{
+	  p position = 0.0388106,-2,-0.0716935,0x20566d75;
+		use_point_scids = 0x02c00333,0x02c00338;
+	}
+}
+[t:door_glb_spdrdungeon_01,n:0x02c00167]
+{
+	[aspect]
+	{
+	  f scale_base = 1.1;
+	}
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A3;
+	}
+	[placement]
+	{
+	  p position = 0.0325354,-2,-0.0882855,0xc188e463;
+		use_point_scids = 0x02c0032d,0x02c00331;
+	}
+}
+[t:generator_cobweb,n:0x02c0004f]
+{
+	[generator_breakable]
+	{
+		child_template_name = "spider_adolescent_yellow";
+	  x initial_command = 0x02C00024;
+	  i max_alive_children = 3;
+	  i num_children_incubating = 10;
+	  x spawnpoint = 0x02C00050;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.993572,0,0.113203;
+	  p position = 0.856388,-2,-1.36913,0x0d8f6a82;
+		use_point_scids = 0x02c00463;
+	}
+}
+[t:door_glb_spdrdungeon_02,n:0x02c0015f]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A2;
+	}
+	[placement]
+	{
+	  p position = -0.00098904,-3.44302,-0.0232182,0x4d62cdb7;
+		use_point_scids = 0x02c0035b,0x02c0035c;
+	}
+}
+[t:sign_glb_dungeon_right,n:0x02c00199]
+{
+	[common]
+	{
+		screen_name = "Ancient Crypt, 72";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-2.08616e-007;
+	  p position = 1.15429,1.31014,-0.972293,0xc91ae3b9;
+	}
+}
+[t:sign_glb_dungeon_right,n:0x02c001a3]
+{
+	[common]
+	{
+		dev_instance_text = "sign 1";
+		screen_name = "Hovart's Folly North, 24";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,-0.707107;
+	  p position = 0.954798,1.78786,-1.11348,0xc91ae3b9;
+	}
+}
+[t:door_glb_spdrdungeon_02,n:0x02c0016d]
+{
+	[door_basic]
+	{
+	  x msg_scid_opening = 0x02C002A5;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,0;
+	  p position = 0.00104133,-3.44673,-0.0214348,0x99acb81b;
+		use_point_scids = 0x02c00450 , 0x02c00453;
+	}
+}
+[t:respawn_statue,n:0x02c00396]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.894021;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.923879,0,0.382684;
+	  p position = -1.51043,7.45058e-009,2.00786,0x41bbebc7;
+		use_point_scids = 0x02c00472;
+	}
+}

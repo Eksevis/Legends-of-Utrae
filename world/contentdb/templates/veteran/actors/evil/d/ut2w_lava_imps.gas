@@ -1,0 +1,701 @@
+[t:template,n:ut2W_lava_imp_01]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lava_imp_01";
+	specializes = 2W_base_imp;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		57.8, 0;
+			intelligence = 	14.8, 0;
+			dexterity = 	22.8, 0;
+			melee =  		78, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 261000;
+		life = 1592.3;
+		max_life = 1592.3;
+		mana = 24.2;
+		max_mana = 24.2;
+		model = m_c_edm_li_pos_1;
+		[textures] { 0=b_c_edm_li; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 380.8;
+		damage_min = 249.2;
+	}
+	[common]
+	{
+		screen_name="Lesser Maljin";
+		membership = monster, party_lava_imp_02;
+	}
+	[defend] { defense=917.3; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/207-258;
+	                il_main = #spell/78-100;
+   				    il_main = potion_health_super;
+				    il_main = potion_mana_super;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 167101;
+					min = 137305;
+				}
+			}
+         }
+	}
+	[mind]
+	{
+		jat_brain							 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}
+[t:template,n:2W_lava_imp_02_ut]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lava_imp_02";
+	specializes = 2W_base_imp;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		50, 0;
+			intelligence = 	18.5, 0;
+			dexterity = 	25.7, 0;
+			combat_magic = 	78, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 261000;
+		life = 1592.3;
+		max_life = 1592.3;
+		mana = 27.7;
+		max_mana = 27.7;
+		model = m_c_edm_li_pos_2;
+		[textures] { 0=b_c_edm_li-02; }
+	}
+	[common]
+	{
+		screen_name="Lesser Maljin Rascal";
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 361.7;
+		damage_min = 264.8;
+		damage_bonus_min_cmagic = 112;
+		damage_bonus_max_cmagic = 153;
+	}
+	[defend] { defense=929.4; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_lava_imp_bullets; }
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #*/207-258;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/207-258;
+	                il_main = #spell/78-100;
+   				    il_main = potion_health_super;
+				    il_main = potion_mana_super;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 167101;
+					min = 137305;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}
+[t:template,n:ut2W_lava_imp_02]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lava_imp_02";
+	specializes = 2W_lava_imp_02_ut;
+
+	[common]
+	{
+		membership = monster, party_lava_imp_02;
+	}
+	[mind]
+	{
+		jat_brain					= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template				= "party_lava_imp_02";
+	}
+
+}
+
+[t:template,n:ut2W_lava_imp_02_reveal]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_revealing lava_imp_02";
+	specializes = 2W_lava_imp_02_ut;
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("lava_imp_reveal");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+}
+
+[t:template,n:ut2W_lava_imp_02_reveal_act]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_revealing lava_imp_02 activate";
+	specializes = 2W_lava_imp_02_ut;
+	[mind]
+	{
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?activate					= true
+			&invisible					= true;
+    	sight_origin_height = 1;
+    	actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("lava_imp_reveal");
+				condition* = receive_world_message("we_req_activate");
+			}
+		}
+	}
+}
+
+
+
+[t:template,n:2W_lava_imp_03_ut]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lava_imp_03";
+	specializes = 2W_base_imp;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		61.6, 0;
+			intelligence = 	18.4, 0;
+			dexterity = 	28.2, 0;
+			combat_magic = 	80, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 300000;
+		life = 1657.4;
+		max_life = 1657.4;
+		mana = 17;
+		max_mana = 17;
+		model = m_c_edm_li_pos_3;
+		[textures] { 0=b_c_edm_li-03; }
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 373.6;
+		damage_min = 244.5;
+		damage_bonus_min_cmagic = 101;
+		damage_bonus_max_cmagic = 154;
+	}
+	[common]
+	{
+		screen_name="Lesser Maljin Sprite";
+	}
+	[defend] { defense=962.8; }
+	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_lava_imp_ball; }
+
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.35;
+					il_main = #*/203-253;
+	                il_main = #cmagic/76-107;
+   				    il_main = potion_health_super;
+				    il_main = potion_mana_super;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 209985;
+					min = 170715;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}
+[t:template,n:ut2W_lava_imp_03]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lava_imp_03";
+	specializes = 2W_lava_imp_03_ut;
+
+	[common]
+	{
+		membership = monster, party_lava_imp_03;
+	}
+	[mind]
+	{
+		jat_brain					= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template				= "party_lava_imp_03";
+	}
+
+}
+
+[t:template,n:ut2W_lava_imp_03_reveal]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_revealing lava_imp_03";
+	specializes = 2W_lava_imp_03_ut;
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("lava_imp_reveal");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+}
+[t:template,n:ut2W_lava_imp_03_reveal_act]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_revealing lava_imp_03 activate";
+	specializes = 2W_lava_imp_03_ut;
+	[mind]
+	{
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?activate					= true
+			&invisible					= true;
+    	sight_origin_height = 1;
+    	actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("lava_imp_reveal");
+				condition* = receive_world_message("we_req_activate");
+			}
+		}
+	}
+}
+
+[t:template,n:ut2W_lava_imp_04]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lava_imp_04";
+	specializes = 2W_base_imp;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		52.1, 0;
+			intelligence = 	22, 0;
+			dexterity = 	28.1, 0;
+			melee =  		77, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 300000;
+		life = 1685.2;
+		max_life = 1685.2;
+		mana = 16.9;
+		max_mana = 16.9;
+		model = m_c_edm_li_pos_4;
+		[textures] { 0=b_c_edm_li-04; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 370.7;
+		damage_min = 242.7;
+	}
+	[common]
+	{
+		screen_name="Lesser Maljin Familiar";
+		membership = monster, party_lava_imp_03;
+	}
+	[defend] { defense=1001; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/201-251;
+	                il_main = #cmagic/76-106;
+   				    il_main = potion_health_super;
+				    il_main = potion_mana_super;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 204406;
+					min = 166179;
+				}
+			}
+		}
+    }
+	[mind]
+	{
+		jat_brain							 = world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		 = true;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}
+
+[t:template,n:ut2W_sand_ripper]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_sand_ripper";
+	specializes = 2W_base_imp;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		21.9, 0;
+			intelligence = 	12.6, 0;
+			dexterity = 	18.1, 0;
+			melee =  		70, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 154000;
+		life = 1854.5;
+		max_life = 1854.5;
+		mana = 27;
+		max_mana = 27;
+		model = m_c_edm_li_pos_1;
+		[textures] { 0=b_c_edm_li-05; }
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_sand_ripper; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 297.5;
+		damage_min = 208.6;
+	}
+	[common] { screen_name="Sand Slasher"; }
+	[defend] { defense=610.5; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/75-219;
+	                il_main = #nmagic/29-46;
+                	il_main = #cmagic/29-46;
+    			}
+                [gold*]
+				{
+					chance = 0.125;
+                    max = 187097;
+					min = 161155;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}
+[t:template,n:2W_sand_mage_ut]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_sand_mage";
+	specializes = 2W_base_imp;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		21.9, 0;
+			intelligence = 	15.2, 0;
+			dexterity = 	21.1, 0;
+			combat_magic = 	72, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 150000;
+		life = 1541.6;
+		max_life = 1541.6;
+		mana = 30.9;
+		max_mana = 30.9;
+		model = m_c_edm_li_pos_2;
+		[textures] { 0=b_c_edm_li-06; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 318.8;
+		damage_min = 226;
+		damage_bonus_min_cmagic = 111;
+		damage_bonus_max_cmagic = 156;
+	}
+	[common] { screen_name="Sand Caster"; }
+	[defend] { defense=709; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_sand_mage_blast; }
+    	[pcontent]
+		{
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/150-219;
+               		il_main = #nmagic/87-106;
+               		il_main = #cmagic/87-106;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+                    max = 187097;
+					min = 161155;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain					 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party = true
+			&party_template			 = "party_sand_mage";
+
+		jat_fidget					 = world\ai\jobs\common\job_fidget.skrit;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}
+[t:template,n:ut2W_sand_mage]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_sand mage";
+	specializes = 2W_sand_mage_ut;
+}
+
+[t:template,n:ut2W_sand_mage_reveal]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_revealing sand mage";
+	specializes = 2W_sand_mage_ut;
+	[mind]
+	{
+		jat_brain	= world\ai\jobs\common\brain_hero.skrit;
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("sand_mage_reveal");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+}
+[t:template,n:ut2W_sand_basher]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_sand_basher";
+	specializes = 2W_base_imp;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		24.9, 0;
+			intelligence = 	12.6, 0;
+			dexterity = 	17.9, 0;
+			melee =  		70, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 170000;
+		life = 2380;
+		max_life = 2380;
+		mana = 18.9;
+		max_mana = 18.9;
+		model = m_c_edm_li_pos_3;
+		[textures] { 0=b_c_edm_li-07; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 394.8;
+		damage_min = 289;
+	}
+	[common]
+	{
+		screen_name="Sand Knocker";
+		membership = monster, party_sand_mage;
+	}
+	[defend] { defense=714; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+   			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/111-214;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 186983;
+					min = 163238;
+				}
+			}
+		}
+	}
+
+	[mind]
+	{
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true;
+
+		jat_fidget							= world\ai\jobs\common\job_fidget.skrit;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14;
+	}
+}

@@ -1,0 +1,212 @@
+[t:template,n:ut3W_rector]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_rector";
+	specializes = 3W_base_rector;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	61.4, 0;
+			intelligence =  12.3, 0;
+			dexterity =  	6.1, 0;
+            combat_magic =  93,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 810876;
+		life = 649.2;
+        max_life = 649.2;
+        mana = 221.7;
+        max_mana = 221.7;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 313.5;
+		damage_min = 199.5;
+		damage_bonus_min_cmagic = 227;
+		damage_bonus_max_cmagic = 359;
+	}
+	[common] 
+	{ 
+		screen_name="Rector Guardian"; 
+
+	}
+	[defend] { defense=406.4; }
+	[inventory]
+	{
+   		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_rector_burn; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+            	[oneof*]
+				{
+					chance = 0.1;
+					il_main = #ring/171-285;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	            	il_main = #weapon/-rare(1)/271-399;
+	                il_main = #armor/-rare(1)/285-1045;
+                    il_main = #*/-rare(1)/271-399;
+                }
+			}
+		}
+	}
+
+}
+[t:template,n:ut3W_punisher]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_punisher";
+	specializes = 3W_base_rector;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	31.7, 0;
+			intelligence =  18.8, 0;
+			dexterity =  	27.6, 0;
+            combat_magic =  90,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3720000;
+		life = 2173.1;
+        max_life = 2173.1;
+        mana = 34.6;
+        max_mana = 34.6;
+        textures:0 = b_c_edm_rt-03;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 869.2;
+		damage_min = 577.8;
+		damage_bonus_min_cmagic = 344;
+		damage_bonus_max_cmagic = 485;
+	}
+	[common] 
+	{ 
+		screen_name="Cerebral Punisher";
+
+	}
+	[defend] { defense=584; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_punisher_burn; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.55;
+					il_main = #*/144-310;
+	                il_main = #nmagic/102-120;
+	                il_main = #cmagic/102-120;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 602776;
+					min = 504678;
+				}
+			}
+		}
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_punisher_01 = 1;
+			frag_glb_punisher_02 = 1;
+			frag_glb_punisher_03 = 1;
+			frag_glb_punisher_04 = 1;
+			frag_glb_punisher_05 = 1;
+		}
+	}
+
+}
+
+[t:template,n:ut3W_possessed_skull]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_possessed_skull";
+	specializes = 3W_base_rector;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	29.4, 0;
+			intelligence =  16.3, 0;
+			dexterity =  	21.2, 0;
+            combat_magic =  107,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4462000;
+		life = 3210.7;
+        max_life = 3210.7;
+        mana = 38.1;
+        max_mana = 38.1;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 323.2;
+		damage_min = 254.7;
+		damage_bonus_min_cmagic = 232;
+		damage_bonus_max_cmagic = 320;
+	}
+	[common] 
+	{ 
+		screen_name="Possessed Skull"; 
+
+	}
+	[defend] { defense=1068; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_possessed_skull_burn; }
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.55;
+					il_main = #*/215-271;
+	                il_main = #nmagic/90-111;
+	                il_main = #cmagic/90-111;
+				}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 10045;
+					min = 1804;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_entered_ocz_flee 	= true;
+		on_enemy_entered_ocz_attack = false;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 					= 1;
+	}
+
+}

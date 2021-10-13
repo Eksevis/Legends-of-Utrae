@@ -1,0 +1,102 @@
+[t:template,n:ut2W_lectar]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_lectar";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  43.3, 0;
+			intelligence =  5.6, 0;
+			dexterity =  21.4, 0;
+            melee =  67,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 62153;
+		life = 1598.3;
+        max_life = 1598.3;
+        mana = 31.1;
+		max_mana = 31.1;
+		model = m_c_edm_lt_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_lectar;		}
+			[hit_critical]	{ priority = low; * = s_e_hit_lectar_SED;	}
+			[hit_glance]	{ priority = low; * = s_e_hit_lectar_SED;	}
+			[hit_solid]		{ priority = low; * = s_e_hit_lectar_SED;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 316.6;
+		damage_min = 238;
+	}
+	[body]
+	{
+		avg_move_velocity = 0.860000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_neck2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_pelvis;
+			shield_bone = bip01_l_hand;
+			weapon_bone = bip01_r_hand;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_lt_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Lectar Gripper"; }
+    [defend] { defense=515.3; }
+	[mind]
+	{
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit;
+
+		melee_engage_range = 10;
+		personal_space_range = 0.7;
+		ranged_engage_range = 10.0;
+		sight_range = 10.0;
+		
+		sight_origin_height = 1.5;
+	}
+}

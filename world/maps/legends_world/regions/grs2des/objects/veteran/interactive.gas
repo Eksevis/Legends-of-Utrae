@@ -1,0 +1,111 @@
+[t:sign_glb_01,n:0x09200205]
+{
+	[common]
+	{
+		dev_instance_text = "sign 5";
+		screen_name = "Town of Quillrabe, 38";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707106;
+	  p position = 1.03018,0,-1.6834,0x36256f3a;
+	}
+}
+[t:lever_glb_04,n:0x09200148]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x09200141;
+	  x on_scid = 0x09200141;
+	  f reset_time = 8;
+	  f reset_time_2 = 8;
+	}
+	[placement]
+	{
+	  p position = 1.95269,1.72676,0.721764,0xd844bac1;
+		use_point_scids = 0x0920014e,0x0920014d;
+	}
+}
+[t:sign_glb_01,n:0x0920020c]
+{
+	[common]
+	{
+		dev_instance_text = "sign 7";
+		screen_name = "Town of Quillrabe, 23";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707106;
+	  p position = 3.84547,0.4,-0.163889,0x3df03dee;
+	}
+}
+[t:sign_glb_01,n:0x09200209]
+{
+	[common]
+	{
+		dev_instance_text = "sign 6";
+		screen_name = "Town of Quillrabe, 27";
+	}
+	[placement]
+	{
+	  q orientation = 0,1.49012e-008,0,0.999999;
+	  p position = 1.07253,0,-0.0380254,0x2b0ad863;
+	}
+}
+[t:sign_glb_01,n:0x092001f9]
+{
+	[common]
+	{
+		dev_instance_text = "sign 1";
+		screen_name = "Town of Quillrabe, 61";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.980785,0,0.19509;
+	  p position = 1.0733,0,2.10639,0xe69748ec;
+	}
+}
+[t:sign_glb_01,n:0x09200207]
+{
+	[common]
+	{
+		dev_instance_text = "sign 4";
+		screen_name = "Town of Quillrabe, 42";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,-0.707106;
+	  p position = 1.15022,0,0.85917,0x31d4af7b;
+	}
+}
+[t:lever_glb_04,n:0x09200150]
+{
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x09200141;
+	  x on_scid = 0x09200141;
+	  f reset_time = 8;
+	  f reset_time_2 = 8;
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = 0.176731,-2.46673,-0.524544,0x2f24223a;
+		use_point_scids = 0x0920014d,0x09200156;
+	}
+}
+[t:sign_glb_01,n:0x09200203]
+{
+	[common]
+	{
+		dev_instance_text = "sign 3";
+		screen_name = "Town of Quillrabe, 45";
+	}
+	[placement]
+	{
+	  q orientation = 0,4.47035e-008,0,0.999999;
+	  p position = -0.0732728,0,-0.106423,0xc408c55f;
+	}
+}

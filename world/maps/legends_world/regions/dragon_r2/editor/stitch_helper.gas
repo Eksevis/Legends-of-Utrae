@@ -1,0 +1,31 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xAAA70102;
+	source_region_name = dragon_r2;
+	[t:stitch_editor,n:castle_town]
+	{
+		dest_region = castle_town;
+		[node_ids]
+		{
+			0x0000ace1 = 0xA65A4343,10;
+		}
+	}
+	[t:stitch_editor,n:desert]
+	{
+		dest_region = desert;
+		[node_ids]
+		{
+			0x0000ace3 = 0xC5016C1F,10;
+		}
+	}
+	[t:stitch_editor,n:dl_r1]
+	{
+		dest_region = dl_r1;
+		[node_ids]
+		{
+			0x00affff4 = 0xEC350B8F,1;
+			0x00affff5 = 0xEC350B8F,2;
+			0x00affff6 = 0xEC350B8F,3;
+		}
+	}
+}

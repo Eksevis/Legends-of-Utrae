@@ -1,0 +1,25 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xAAA70101;
+	source_region_name = dl_r1;
+	[t:stitch_editor,n:dragon]
+	{
+		dest_region = dragon;
+		[node_ids]
+		{
+			0x00affff1 = 0x4A217AB7,1;
+			0x00affff2 = 0x4A217AB7,2;
+			0x00affff3 = 0x4A217AB7,3;
+		}
+	}
+	[t:stitch_editor,n:dragon_r2]
+	{
+		dest_region = dragon_r2;
+		[node_ids]
+		{
+			0x00affff4 = 0x4A217AB7,6;
+			0x00affff5 = 0x4A217AB7,5;
+			0x00affff6 = 0x4A217AB7,4;
+		}
+	}
+}

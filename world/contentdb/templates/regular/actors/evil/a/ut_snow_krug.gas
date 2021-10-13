@@ -1,0 +1,1797 @@
+//Krug
+[t:template,n:gpg_base_krug]
+{
+	  doc = "Generic Krug";
+	  specializes = actor_evil;
+	[actor]
+	{
+		race = krug;
+	}
+	[aspect]
+	{
+		model = m_c_eam_kg_pos_1;
+		[voice]
+		{
+			[die]			{ * = s_e_die_krug_scout;  }
+			[enemy_spotted]	{ * = s_e_call_krug_scout_SED; }
+			[hit_critical]	{ * = s_e_hit_krug_scout_SED;  }
+			[hit_glance]	{ * = s_e_hit_krug_scout_SED;  }
+			[hit_solid]		{ * = s_e_hit_krug_scout_SED;  }
+		}
+	}
+	[body]
+	{
+		min_move_velocity = 1.500;
+		avg_move_velocity = 2.100;
+		max_move_velocity = 2.700;
+		[bone_translator]
+		{
+			  body_anterior  = bip01_head;
+			  body_mid       = Bip01_Spine3;
+			  body_posterior = bip01_pelvis;
+			  kill_bone      = Bip01_Spine3;
+			  shield_bone    = shield_grip;
+			  weapon_bone    = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			  chore_prefix = a_c_eam_kg_fs;
+			[chore_attack]
+			{
+				  chore_stances = 0,1,3,6;
+				  skrit = select_attack;
+				[anim_files]
+				{
+					  00 = at;
+					  01 = at-04;
+					  02 = at-02;
+					  03 = at-03;
+					  qffg = dff;
+				}
+			}
+			[chore_default]
+			{
+				  chore_stances = 0,1,3,6;
+				  skrit = infinite_loop;
+				[anim_files]
+				{
+					  00 = dfs;
+				}
+			}
+			[chore_die]
+			{
+				  chore_stances = 0,1,3,6;
+				  skrit = select_transition;
+				[anim_files]
+				{
+					  00 = di;
+					  01 = di-02;
+					  02 = di-03;
+					  03 = di-04;
+				}
+			}
+			[chore_fidget]
+			{
+				  chore_stances = 0,1,3,6;
+				  skrit = select_fidget;
+				[anim_files]
+				{
+					  00 = dsf;
+					  01 = dsf-02;
+					  02 = dsf-03;
+				}
+			}
+			[chore_magic]
+			{
+				  chore_stances = 0;
+				  skrit = select_attack;
+				[anim_files]
+				{
+					  00 = mg;
+				}
+			}
+			[chore_misc]
+			{
+				  chore_stances = 1;
+				  skrit = select_transition;
+				[anim_files]
+				{
+					  chrg = hit;
+				}
+			}
+			[chore_walk]
+			{
+				  chore_stances = 0,1,3,6;
+				  skrit = select_walk;
+				[anim_files]
+				{
+					  00 = wl;
+				}
+			}
+		}
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[water_effects] {}
+	[common]
+	{
+		membership = monster;
+	}
+	[mind]
+	{
+		com_channels						= dyn_party, krug;
+		com_range							= 8.0;
+		melee_engage_range					= 14.0;
+		ranged_engage_range					= 14.0;
+		sight_range							= 14.0;
+		jat_fidget							= world\ai\jobs\common\job_fidget.skrit
+			?still							= false;
+	}
+	[physics]
+	{
+		  break_sound = s_e_meat_explosion;
+		  explosion_magnitude = 1.5;
+		  fire_resistance = 0.0;
+          fire_burn_threshold =	20;
+		  gib_gore_good = false;
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+
+[t:template,n:ut_krug_grunt_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug grunt snow";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity 	= 6, 0;
+			  intelligence	 = 4, 0;
+			  melee 	= 18,  0;
+			  strength 	= 22, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 313;
+		  life = 289;
+		  mana = 289;
+		  max_life = 289;
+		  max_mana = 8;
+		  selection_indicator_scale = 0.85;
+		[textures]
+		{
+			0 = b_c_eam_kg-02;
+		}
+	}
+	[attack]
+	{
+		  damage_max = 30;
+		  damage_min = 20;
+	}
+	[common]
+	{
+		  screen_name = "Snow Krug Guard";
+		  membership = krug, party_krug_grunt_boss, monster;
+	}
+	[defend]
+	{
+		  defense = 180;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = ax_g_c_dsx_ptr_avg;
+				  es_weapon_hand = ax_g_c_dsx_psc_avg;
+				  es_weapon_hand = ax_g_c_dsx_png_avg;
+				  es_weapon_hand = ax_g_c_dsx_pzc_avg;
+				  es_weapon_hand = st_g_c_dsx_hst_avg;
+				  es_weapon_hand = st_g_c_dsx_jad_avg;
+				  es_weapon_hand = mc_g_c_dsx_zau_avg;
+				  es_weapon_hand = mc_g_c_dsx_smr_avg;
+				  es_weapon_hand = hm_g_c_dsx_clk_avg;
+				  es_weapon_hand = dg_g_c_dsx_sb_avg;
+				  es_weapon_hand = cb_g_c_dsx_crm_avg;
+				  es_weapon_hand = cb_g_c_dsx_rbr_avg;
+				  es_weapon_hand = cb_g_c_dsx_tet_avg;
+				  es_weapon_hand = cb_g_c_dsx_ltn_avg;
+				  es_weapon_hand = ax_g_c_dsx_slt_avg;
+				  es_weapon_hand = ax_g_c_dsx_clv_avg;
+				  es_weapon_hand = ax_g_c_dsx_chp_avg;
+				  es_weapon_hand = ax_g_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h2b_avg;
+				  es_weapon_hand = ax_ra_g_c_1h1b_fin;
+				  es_weapon_hand = ax_ra_g_c_1h2b_fin;
+				  es_weapon_hand = mc_g_c_s_1h_avg;
+				  es_weapon_hand = mc_ra_g_c_f_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_s_1h_fin;
+				  es_weapon_hand = sd_g_c_bl_1h_avg;
+				  es_weapon_hand = sd_g_c_bl_1h_low;
+				  es_weapon_hand = sd_g_c_gl_1h_avg;
+				  es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+				  es_weapon_hand = ss_ra_g_c_st_1h_fin;
+				  es_weapon_hand = ss_g_c_st_1h_fun;
+				  es_weapon_hand = ss_g_c_st_1h_avg;
+				  es_weapon_hand = ss_g_c_sd_1h_avg;
+				  es_weapon_hand = ss_g_c_bl_1h_avg;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/18-98;
+	                		il_main = #weapon/36-44;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/32-54;
+	                		il_main = #armor/-rare(1)/72-144;
+                    			il_main = #*/-rare(1)/32-54;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/32-54;
+	                		il_main = #armor/-unique(2)/72-144;
+                    			il_main = #*/-unique(2)/32-54;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_spotted_alert_friends 	= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+			?social			= 0.35
+			&still			= false;
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_krug_grunt_boss_01_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug grunt boss 01 snow";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 8, 0;
+			  intelligence = 6, 0;
+			  melee = 20,  0;
+			  strength = 20, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 190;
+		  life = 656;
+		  mana = 8;
+		  max_life = 656;
+		  max_mana = 8;
+		  selection_indicator_scale = 1.15;
+		[textures]
+		{
+			0 = b_c_eam_kg-06;
+		}
+	}
+	[attack]
+	{
+		  damage_max = 37;
+		  damage_min = 25;
+	}
+	[common]
+	{
+		  screen_name = "Wolfmaster Urgud";
+		  membership = krug,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_red(sgx)");
+
+			}
+
+		}
+	}
+	[defend]
+	{
+		  defense = 330;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = ax_g_c_dsx_ptr_avg;
+				  es_weapon_hand = ax_g_c_dsx_psc_avg;
+				  es_weapon_hand = ax_g_c_dsx_png_avg;
+				  es_weapon_hand = ax_g_c_dsx_pzc_avg;
+				  es_weapon_hand = st_g_c_dsx_hst_avg;
+				  es_weapon_hand = st_g_c_dsx_jad_avg;
+				  es_weapon_hand = mc_g_c_dsx_zau_avg;
+				  es_weapon_hand = mc_g_c_dsx_smr_avg;
+				  es_weapon_hand = hm_g_c_dsx_clk_avg;
+				  es_weapon_hand = dg_g_c_dsx_sb_avg;
+				  es_weapon_hand = cb_g_c_dsx_crm_avg;
+				  es_weapon_hand = cb_g_c_dsx_rbr_avg;
+				  es_weapon_hand = cb_g_c_dsx_tet_avg;
+				  es_weapon_hand = cb_g_c_dsx_ltn_avg;
+				  es_weapon_hand = ax_g_c_dsx_slt_avg;
+				  es_weapon_hand = ax_g_c_dsx_clv_avg;
+				  es_weapon_hand = ax_g_c_dsx_chp_avg;
+				  es_weapon_hand = ax_g_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h2b_avg;
+				  es_weapon_hand = ax_ra_g_c_1h1b_fin;
+				  es_weapon_hand = ax_ra_g_c_1h2b_fin;
+				  es_weapon_hand = mc_g_c_s_1h_avg;
+				  es_weapon_hand = mc_ra_g_c_f_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_s_1h_fin;
+				  es_weapon_hand = sd_g_c_bl_1h_avg;
+				  es_weapon_hand = sd_g_c_bl_1h_low;
+				  es_weapon_hand = sd_g_c_gl_1h_avg;
+				  es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+				  es_weapon_hand = ss_ra_g_c_st_1h_fin;
+				  es_weapon_hand = ss_g_c_st_1h_fun;
+				  es_weapon_hand = ss_g_c_st_1h_avg;
+				  es_weapon_hand = ss_g_c_sd_1h_avg;
+				  es_weapon_hand = ss_g_c_bl_1h_avg;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                		il_main = #weapon/30-38;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/32-54;
+	                		il_main = #armor/-rare(1)/72-144;
+                    			il_main = #*/-rare(1)/32-54;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/32-54;
+	                		il_main = #armor/-unique(2)/72-144;
+                    			il_main = #*/-unique(2)/32-54;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_spotted_alert_friends		= true;
+
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&party_template			= "party_krug_grunt_boss";
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+
+[t:template,n:ut_krug_scavenger_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug scavenger snow";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 8, 0;
+			  intelligence = 6, 0;
+			  melee = 8,  0;
+			  strength = 18, 0;	
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 80;
+		  life = 150;
+		  mana = 6;
+		  max_life = 150;
+		  max_mana = 6;
+		  scale_base = 0.9;
+		  selection_indicator_scale = 0.85;
+		[textures]
+		{
+			  0 = b_c_eam_ksv-03;
+		}
+	}
+	[attack]
+	{
+		  damage_max = 20;
+		  damage_min = 10;
+	}
+
+	[common]
+	{
+		  screen_name = "Snow Krug Grunt";
+		  membership = krug, party_krug_shaman, monster;
+	}
+	[defend]
+	{
+		  defense = 65;
+	}
+
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = mc_g_c_dsx_flm_avg;
+				  es_weapon_hand = mc_g_c_dsx_tub_avg;
+				  es_weapon_hand = hm_g_c_dsx_clk_avg;
+				  es_weapon_hand = cb_g_c_dsx_crm_avg;
+				  es_weapon_hand = cb_g_c_dsx_rbr_avg;
+				  es_weapon_hand = cb_g_c_dsx_tet_avg;
+				  es_weapon_hand = ax_g_c_dsx_slt_avg;
+				  es_weapon_hand = ax_g_c_dsx_chp_avg;
+				  es_weapon_hand = ax_d_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h2b_avg;
+				  es_weapon_hand = ax_g_o_1h1b_fun;
+				  es_weapon_hand = ax_g_o_1h2b_low;
+				  es_weapon_hand = ax_ra_g_c_1h1b_fin;
+				  es_weapon_hand = ax_ra_g_c_1h2b_fin;
+				  es_weapon_hand = mc_g_c_f_1h_avg;
+				  es_weapon_hand = mc_g_c_s_1h_avg;
+				  es_weapon_hand = mc_ra_g_c_f_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_m_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_s_1h_fin;
+				  es_weapon_hand = sd_g_c_bl_1h_low;
+				  es_weapon_hand = sd_g_c_gl_1h_low;
+				  es_weapon_hand = ss_g_c_st_1h_fun;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       					chance = 0.02;
+	                				il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                				il_main = #weapon/30-38;
+				}
+                				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/32-44;
+	                				il_main = #armor/-rare(1)/72-104;
+                    				il_main = #*/-rare(1)/32-44;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	                				il_main = #weapon/-unique(2)/32-44;
+	                				il_main = #armor/-unique(2)/72-104;
+                    				il_main = #*/-unique(2)/32-44;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?destructive					= 0.1
+			&still							= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true;
+
+		on_enemy_spotted_alert_friends = true;
+	}
+	[physics]
+	{
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_krug_scavenger_boss_01_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug scavenger boss 01 snow";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 8, 0;
+			  intelligence = 6, 0;
+			  melee = 8,  0;
+			  strength = 18, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 100;
+		  life = 240;
+		  mana = 6;
+		  max_life = 240;
+		  max_mana = 6;
+		  scale_base = 1.1;
+		  selection_indicator_scale = 0.85;
+		[textures]
+		{
+			0 = b_c_eam_kg-04;
+		}
+	}
+	[attack]
+	{
+		  damage_max = 34;
+		  damage_min = 34;
+	}
+	[common]
+	{
+		  screen_name = "Braagdak the Growler";
+		  membership = krug,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_light_cyan(sgx)");
+			}
+		}
+	}
+	[defend]
+	{
+		  defense = 132;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = mc_g_c_dsx_flm_avg;
+				  es_weapon_hand = mc_g_c_dsx_tub_avg;
+				  es_weapon_hand = hm_g_c_dsx_clk_avg;
+				  es_weapon_hand = cb_g_c_dsx_crm_avg;
+				  es_weapon_hand = cb_g_c_dsx_rbr_avg;
+				  es_weapon_hand = cb_g_c_dsx_tet_avg;
+				  es_weapon_hand = ax_g_c_dsx_slt_avg;
+				  es_weapon_hand = ax_g_c_dsx_chp_avg;
+				  es_weapon_hand = ax_d_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h2b_avg;
+				  es_weapon_hand = ax_g_o_1h1b_fun;
+				  es_weapon_hand = ax_g_o_1h2b_low;
+				  es_weapon_hand = ax_ra_g_c_1h1b_fin;
+				  es_weapon_hand = ax_ra_g_c_1h2b_fin;
+				  es_weapon_hand = mc_g_c_f_1h_avg;
+				  es_weapon_hand = mc_g_c_s_1h_avg;
+				  es_weapon_hand = mc_ra_g_c_f_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_m_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_s_1h_fin;
+				  es_weapon_hand = sd_g_c_bl_1h_low;
+				  es_weapon_hand = sd_g_c_gl_1h_low;
+				  es_weapon_hand = ss_g_c_st_1h_fun;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       					chance = 0.02;
+	                				il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                				il_main = #weapon/30-38;
+				}
+                				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/32-44;
+	                				il_main = #armor/-rare(1)/72-104;
+                    				il_main = #*/-rare(1)/32-44;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	                				il_main = #weapon/-unique(2)/32-44;
+	                				il_main = #armor/-unique(2)/72-104;
+                    				il_main = #*/-unique(2)/32-44;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_spotted_alert_friends 		= true;
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party		= true
+			&party_template					= "party_krug_scavenger_boss";
+	}
+	[physics]
+	{
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_krug_scout_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug scout snow";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 8, 0;
+			  intelligence = 6, 0;
+			  melee = 8,  0;
+			  strength = 18, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 96;
+		  life = 172;
+		  mana = 6;
+		  max_life = 172;
+		  max_mana = 6;
+		  scale_base = 0.9;
+		  selection_indicator_scale = 0.85;
+		[textures]
+		{
+			0 = b_c_eam_ksc-05;
+		}
+	}
+	[attack]
+	{
+		  damage_max = 31;
+		  damage_min = 21;
+	}
+
+	[body]
+	{
+		min_move_velocity = 2.500;
+		avg_move_velocity = 3.10;
+		max_move_velocity = 3.8;
+		[bone_translator]
+		{
+			  body_anterior  = bip01_head;
+			  body_mid       = Bip01_Spine3;
+			  body_posterior = bip01_pelvis;
+			  kill_bone      = Bip01_Spine3;
+			  shield_bone    = shield_grip;
+			  weapon_bone    = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			  chore_prefix = a_c_eam_kg_fs;
+			[chore_attack]
+			{
+				  chore_stances = 0,1;
+				  skrit = select_attack;
+				[anim_files]
+				{
+					  00 = at;
+					  01 = at-04;
+					  02 = at-02;
+					  03 = at-03;
+					  qffg = dff;
+				}
+			}
+			[chore_default]
+			{
+				  chore_stances = 0,1;
+				  skrit = infinite_loop;
+				[anim_files]
+				{
+					  00 = dfs;
+				}
+			}
+			[chore_die]
+			{
+				  chore_stances = 0,1;
+				  skrit = select_transition;
+				[anim_files]
+				{
+					  00 = di;
+					  01 = di-02;
+					  02 = di-03;
+					  03 = di-04;
+				}
+			}
+			[chore_fidget]
+			{
+				  chore_stances = 0,1;
+				  skrit = select_fidget;
+				[anim_files]
+				{
+					  00 = dsf;
+					  01 = dsf-02;
+					  02 = dsf-03;
+				}
+			}
+			[chore_magic]
+			{
+				  chore_stances = 0;
+				  skrit = select_attack;
+				[anim_files]
+				{
+					  00 = mg;
+				}
+			}
+			[chore_walk]
+			{
+				  chore_stances = 0,1;
+				  skrit = select_walk;
+				[anim_files]
+				{
+					  00 = wl;
+					  01 = rl;
+				}
+			}
+		}
+	}
+
+	[common]
+	{
+		  screen_name = "Snow Krug Scout";
+		  membership = krug, party_krug_shaman, party_krug_scavenger_boss, party_krug_grunt_boss, monster;
+	}
+	[defend]
+	{
+		  defense = 79;
+	}
+
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = mc_g_c_dsx_flm_avg;
+				  es_weapon_hand = mc_g_c_dsx_tub_avg;
+				  es_weapon_hand = hm_g_c_dsx_clk_avg;
+				  es_weapon_hand = cb_g_c_dsx_crm_avg;
+				  es_weapon_hand = cb_g_c_dsx_rbr_avg;
+				  es_weapon_hand = cb_g_c_dsx_tet_avg;
+				  es_weapon_hand = ax_g_c_dsx_slt_avg;
+				  es_weapon_hand = ax_g_c_dsx_chp_avg;
+				  es_weapon_hand = ax_d_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h2b_avg;
+				  es_weapon_hand = ax_g_o_1h1b_fun;
+				  es_weapon_hand = ax_g_o_1h2b_low;
+				  es_weapon_hand = ax_ra_g_c_1h1b_fin;
+				  es_weapon_hand = ax_ra_g_c_1h2b_fin;
+				  es_weapon_hand = mc_g_c_f_1h_avg;
+				  es_weapon_hand = mc_g_c_s_1h_avg;
+				  es_weapon_hand = mc_ra_g_c_f_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_m_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_s_1h_fin;
+				  es_weapon_hand = sd_g_c_bl_1h_low;
+				  es_weapon_hand = sd_g_c_gl_1h_low;
+				  es_weapon_hand = ss_g_c_st_1h_fun;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       					chance = 0.02;
+	                				il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                				il_main = #weapon/30-38;
+				}
+                				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/32-44;
+	                				il_main = #armor/-rare(1)/72-104;
+                    				il_main = #*/-rare(1)/32-44;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	                				il_main = #weapon/-unique(2)/32-44;
+	                				il_main = #armor/-unique(2)/72-104;
+                    				il_main = #*/-unique(2)/32-44;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		melee_engage_range                   = 20;
+		sight_range                          = 20;
+		on_enemy_spotted_alert_friends 		= true;
+		jat_fidget							= world\ai\jobs\common\job_fidget.skrit
+			?curious							= 0.75
+			&interest							= interest
+			&still								= false;
+
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party			= true;
+
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 						= 1.0;
+	}
+	[physics]
+	{
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_krug_scout_boss_01_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug scout boss 01 snow";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 8, 0;
+			  intelligence = 6, 0;
+			  melee = 8,  0;
+			  strength = 18, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 20;
+		  life = 328;
+		  mana = 6;
+		  max_life = 328;
+		  max_mana = 6;
+		  scale_base = 1.15;
+		  selection_indicator_scale = 0.85;
+		[textures]
+		{
+			0 = b_c_eam_kg-05;
+		}
+	}
+	[attack]
+	{
+		  damage_max = 46;
+		  damage_min = 44;
+	}
+	[body]
+	{
+		min_move_velocity = 2.500;
+		avg_move_velocity = 3.10;
+		max_move_velocity = 4.8;
+		[bone_translator]
+		{
+			  body_anterior  = bip01_head;
+			  body_mid       = Bip01_Spine3;
+			  body_posterior = bip01_pelvis;
+			  kill_bone      = Bip01_Spine3;
+			  shield_bone    = shield_grip;
+			  weapon_bone    = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			  chore_prefix = a_c_eam_kg_fs;
+			[chore_attack]
+			{
+				  chore_stances = 0,1;
+				  skrit = select_attack;
+				[anim_files]
+				{
+					  00 = at;
+					  01 = at-04;
+					  02 = at-02;
+					  03 = at-03;
+					  qffg = dff;
+				}
+			}
+			[chore_default]
+			{
+				  chore_stances = 0,1;
+				  skrit = infinite_loop;
+				[anim_files]
+				{
+					  00 = dfs;
+				}
+			}
+			[chore_die]
+			{
+				  chore_stances = 0,1;
+				  skrit = select_transition;
+				[anim_files]
+				{
+					  00 = di;
+					  01 = di-02;
+					  02 = di-03;
+					  03 = di-04;
+				}
+			}
+			[chore_fidget]
+			{
+				  chore_stances = 0,1;
+				  skrit = select_fidget;
+				[anim_files]
+				{
+					  00 = dsf;
+					  01 = dsf-02;
+					  02 = dsf-03;
+				}
+			}
+			[chore_magic]
+			{
+				  chore_stances = 0;
+				  skrit = select_attack;
+				[anim_files]
+				{
+					  00 = mg;
+				}
+			}
+			[chore_misc]
+			{
+				  chore_stances = 1;
+				  skrit = select_transition;
+				[anim_files]
+				{
+					  chrg = hit;
+				}
+			}
+			[chore_walk]
+			{
+				  chore_stances = 0,1;
+				  skrit = select_walk;
+				[anim_files]
+				{
+					  00 = rl;
+				}
+			}
+		}
+	}
+	[common]
+	{
+		  screen_name = "Gragba the Trapper";
+		  membership = krug,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_green(sgx)");
+			}
+		}
+	}
+	[defend]
+	{
+		  defense = 145;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = mc_g_c_dsx_flm_avg;
+				  es_weapon_hand = mc_g_c_dsx_tub_avg;
+				  es_weapon_hand = hm_g_c_dsx_clk_avg;
+				  es_weapon_hand = cb_g_c_dsx_crm_avg;
+				  es_weapon_hand = cb_g_c_dsx_rbr_avg;
+				  es_weapon_hand = cb_g_c_dsx_tet_avg;
+				  es_weapon_hand = ax_g_c_dsx_slt_avg;
+				  es_weapon_hand = ax_g_c_dsx_chp_avg;
+				  es_weapon_hand = ax_d_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h2b_avg;
+				  es_weapon_hand = ax_g_o_1h1b_fun;
+				  es_weapon_hand = ax_g_o_1h2b_low;
+				  es_weapon_hand = ax_ra_g_c_1h1b_fin;
+				  es_weapon_hand = ax_ra_g_c_1h2b_fin;
+				  es_weapon_hand = mc_g_c_f_1h_avg;
+				  es_weapon_hand = mc_g_c_s_1h_avg;
+				  es_weapon_hand = mc_ra_g_c_f_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_m_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_s_1h_fin;
+				  es_weapon_hand = sd_g_c_bl_1h_low;
+				  es_weapon_hand = sd_g_c_gl_1h_low;
+				  es_weapon_hand = ss_g_c_st_1h_fun;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       					chance = 0.02;
+	                				il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                				il_main = #weapon/30-38;
+				}
+                				[oneof*]
+				{
+	            				chance = 0.004;
+	                				il_main = #weapon/-rare(1)/32-44;
+	                				il_main = #armor/-rare(1)/72-104;
+                    				il_main = #*/-rare(1)/32-44;
+                				}
+				[oneof*]
+				{
+                					chance = 0.002;
+	                				il_main = #weapon/-unique(2)/32-44;
+	                				il_main = #armor/-unique(2)/72-104;
+                    				il_main = #*/-unique(2)/32-44;
+	            			}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_spotted_alert_friends 		= true;
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party		= true
+			&party_template					= "party_krug_scout_boss";
+		jat_attack_object_melee 			= world\ai\jobs\common\job_attack_object_melee.skrit
+			?run_chance 					= 1.0;
+	}
+	[physics]
+	{
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+[t:template,n:gpg_krug_shaman_base]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug shaman base";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		  drops_spellbook = true;
+		  race = krug;
+          drops_spellbook = false;
+	}
+	[aspect]
+	{
+		  model = m_c_eam_ks_pos_1;
+		  selection_indicator_scale = 0.85;
+	}
+	[body]
+	{
+		min_move_velocity = 1.00;
+		avg_move_velocity = 1.16;
+		max_move_velocity = 1.50;
+
+		[bone_translator]
+		{
+			  body_anterior = bip01_head;
+			  body_mid = bip01_spine2;
+			  body_posterior = bip01_pelvis;
+			  kill_bone = bip01_spine2;
+			  shield_bone = weapon_grip;
+			  weapon_bone = shield_grip;
+		}
+	}
+	[common]
+	{
+		  membership = krug, monster;
+	}
+	[inventory]
+	{
+		  selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			  il_active_primary_spell   = spell_fireshot;
+			  il_active_secondary_spell = spell_resurrect_monster;
+		}
+	}
+
+	[mind]
+	{
+		actor_weapon_preference              = WP_MAGIC;
+
+		actor_auto_switches_to_magic         = true;
+		actor_auto_reanimates_friends        = true;
+//		actor_auto_uses_stored_items         = true;
+
+//		Krug shaman looks funny when he runs away. disabling fleeing. -ET
+//		on_enemy_entered_ocz_flee            = true;
+		on_life_ratio_low_flee               = true;
+		actor_life_ratio_low_threshold  	 = 0.25;
+		flee_count							 = 1;
+		flee_distance						 = 20;
+
+		on_enemy_entered_icz_switch_to_melee = true;
+		actor_life_ratio_low_threshold      = 0.5;
+		melee_engage_range                   = 14;
+		ranged_engage_range                  = 14;
+		sight_range                          = 14;
+
+		jat_fidget							= world\ai\jobs\common\job_fidget.skrit
+			?curious						= 0.75
+			&interest						= interest
+			&still							= false;
+
+		jat_flee_from_object				 = world\ai\jobs\common\job_flee_from_object.skrit
+			?run_chance						 = 1.0;
+
+		jat_brain							 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party		 = true
+			&party_template					 = "party_krug_shaman";
+
+		jat_attack_object_melee				= world\ai\jobs\common\job_attack_object_melee.skrit
+			?persistence					= 0.0;
+	}
+	[physics]
+	{
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+
+[t:template,n:ut_krug_apprentice_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug Apprentice snow";
+	  specializes = gpg_krug_shaman_base;
+	[actor]
+	{
+		[skills]
+		{
+			  combat_magic = 18, 0;
+			  dexterity = 4, 0;
+			  intelligence = 18, 0;
+			  melee = 18, 0;
+			  strength = 8, 0;
+		}
+	}
+	[aspect]
+	{
+		  textures:0 = b_c_eam_ks-05; 
+		  experience_value = 312;
+		  life = 212;
+		  mana = 81;
+		  max_life = 212;
+		  max_mana = 81;
+	}
+	[attack]
+	{
+		  damage_max = 57;
+		  damage_min = 46;
+	}
+	[common]
+	{
+		  screen_name = "Snow Krug Disciple";
+	}
+	[defend]
+	{
+		  defense = 162;
+	}
+	[inventory]
+	{
+		  selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			  il_active_primary_spell   = gpg_spell_apprentice_frost;
+			  il_active_secondary_spell = spell_resurrect_monster;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[gold*]
+				{
+					  chance = 0.3;
+					  max = 121;
+					  min = 114;
+				}
+				[oneof*]
+				{
+				il_main = potion_mana_medium;
+				il_main = potion_health_medium;
+					  max = 2;
+					  min = 1;
+                      			  chance = 0.3;
+				}
+				[oneof*]
+				{
+					  chance = 0.1;
+					  il_main = book_glb_magic_01;
+   					  il_main = #body,ro/102-127;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain					 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party		= true
+			&form_party_on_friend_entered_ICZ	= true
+			&form_party_on_friend_entered_OCZ	= true
+			&party_template			= "party_krug_shaman";
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_krug_throw_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug snow, snowball thrower";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 20, 0;
+			  intelligence = 7, 0;
+			  ranged = 18,  0;
+			  strength = 17, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 297;
+		  life = 263;
+		  mana = 6;
+		  max_life = 263;
+		  max_mana = 6;
+		  selection_indicator_scale = 0.85;
+		[textures]
+		{
+			0 = b_c_eam_kg-03;
+		}
+		[voice]
+		{
+			[attack]		{	* = s_e_attack_krug_throw;	}
+			[die]			{	* = s_e_die_krug_scout;		}
+			[hit_critical]	{	* = s_e_hit_krug_scout;		}
+			[hit_glance]	{	* = s_e_hit_krug_scout;		}
+			[hit_solid]		{	* = s_e_hit_krug_scout;		}
+		}
+	}
+	[attack]
+	{
+		  attack_range = 0.5;
+		  damage_max = 39;
+		  damage_min = 37;
+		  reload_delay = 1;
+	}
+	[body]
+	{
+		[weapon_scales]
+		{
+			as_bow_and_arrow	= 0.1, 0.1, 0.1;
+		}
+	}
+	[common]
+	{
+		  screen_name = "Snow Krug Icepelter";
+		  membership = monster, krug;
+	}
+	[defend]
+	{
+		  defense = 172;
+	}
+	[inventory]
+	{
+		  selected_active_location = il_active_ranged_weapon;
+		[equipment]
+		{
+			  es_shield_hand = gpg_snowball_krug;
+		}
+		[pcontent]
+		{
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                		il_main = #weapon/30-38;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/32-54;
+	                		il_main = #armor/-rare(1)/72-144;
+                    			il_main = #*/-rare(1)/32-54;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/32-54;
+	                		il_main = #armor/-unique(2)/72-144;
+                    			il_main = #*/-unique(2)/32-54;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.35
+			&still		= false;
+
+		actor_weapon_preference			= WP_RANGED;
+
+		actor_auto_switches_to_ranged	= true;
+		on_enemy_spotted_alert_friends	= true;
+
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_krug_grunt_summon_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug grunt snow";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity 	= 6, 0;
+			  intelligence	 = 4, 0;
+			  melee 	= 18,  0;
+			  strength 	= 22, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 0;
+		  life = 289;
+		  mana = 289;
+		  max_life = 289;
+		  max_mana = 8;
+		  selection_indicator_scale = 0.85;
+		[textures]
+		{
+			0 = b_c_eam_kg-02;
+		}
+	}
+	[attack]
+	{
+		  damage_max = 10;
+		  damage_min = 10;
+	}
+	[common]
+	{
+		  screen_name = "Krug Hunter";
+		  membership = krug, party_krug_grunt_boss, monster;
+	}
+	[defend]
+	{
+		  defense = 80;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				  es_weapon_hand = ax_g_c_dsx_ptr_avg;
+				  es_weapon_hand = ax_g_c_dsx_psc_avg;
+				  es_weapon_hand = ax_g_c_dsx_png_avg;
+				  es_weapon_hand = ax_g_c_dsx_pzc_avg;
+				  es_weapon_hand = st_g_c_dsx_hst_avg;
+				  es_weapon_hand = st_g_c_dsx_jad_avg;
+				  es_weapon_hand = mc_g_c_dsx_zau_avg;
+				  es_weapon_hand = mc_g_c_dsx_smr_avg;
+				  es_weapon_hand = hm_g_c_dsx_clk_avg;
+				  es_weapon_hand = dg_g_c_dsx_sb_avg;
+				  es_weapon_hand = cb_g_c_dsx_crm_avg;
+				  es_weapon_hand = cb_g_c_dsx_rbr_avg;
+				  es_weapon_hand = cb_g_c_dsx_tet_avg;
+				  es_weapon_hand = cb_g_c_dsx_ltn_avg;
+				  es_weapon_hand = ax_g_c_dsx_slt_avg;
+				  es_weapon_hand = ax_g_c_dsx_clv_avg;
+				  es_weapon_hand = ax_g_c_dsx_chp_avg;
+				  es_weapon_hand = ax_g_c_1h1b_avg;
+				  es_weapon_hand = ax_g_c_1h2b_avg;
+				  es_weapon_hand = ax_ra_g_c_1h1b_fin;
+				  es_weapon_hand = ax_ra_g_c_1h2b_fin;
+				  es_weapon_hand = mc_g_c_s_1h_avg;
+				  es_weapon_hand = mc_ra_g_c_f_1h_fin;
+				  es_weapon_hand = mc_ra_g_c_s_1h_fin;
+				  es_weapon_hand = sd_g_c_bl_1h_avg;
+				  es_weapon_hand = sd_g_c_bl_1h_low;
+				  es_weapon_hand = sd_g_c_gl_1h_avg;
+				  es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+				  es_weapon_hand = ss_ra_g_c_st_1h_fin;
+				  es_weapon_hand = ss_g_c_st_1h_fun;
+				  es_weapon_hand = ss_g_c_st_1h_avg;
+				  es_weapon_hand = ss_g_c_sd_1h_avg;
+				  es_weapon_hand = ss_g_c_bl_1h_avg;
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/18-98;
+	                		il_main = #weapon/36-44;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/32-54;
+	                		il_main = #armor/-rare(1)/72-144;
+                    			il_main = #*/-rare(1)/32-54;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/32-54;
+	                		il_main = #armor/-unique(2)/72-144;
+                    			il_main = #*/-unique(2)/32-54;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_spotted_alert_friends 	= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+			?social			= 0.35
+			&still			= false;
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_krug_throw_summon_snow]
+{
+	  category_name = "1W_evil_a";
+	  doc = "krug snow, snowball thrower";
+	  specializes = gpg_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 20, 0;
+			  intelligence = 7, 0;
+			  ranged = 18,  0;
+			  strength = 17, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 0;
+		  life = 263;
+		  mana = 6;
+		  max_life = 263;
+		  max_mana = 6;
+		  selection_indicator_scale = 0.85;
+		[textures]
+		{
+			0 = b_c_eam_kg-03;
+		}
+		[voice]
+		{
+			[attack]		{	* = s_e_attack_krug_throw;	}
+			[die]			{	* = s_e_die_krug_scout;		}
+			[hit_critical]	{	* = s_e_hit_krug_scout;		}
+			[hit_glance]	{	* = s_e_hit_krug_scout;		}
+			[hit_solid]		{	* = s_e_hit_krug_scout;		}
+		}
+	}
+	[attack]
+	{
+		  attack_range = 0.5;
+		  damage_max = 9;
+		  damage_min = 7;
+		  reload_delay = 1;
+	}
+	[body]
+	{
+		[weapon_scales]
+		{
+			as_bow_and_arrow	= 0.1, 0.1, 0.1;
+		}
+	}
+	[common]
+	{
+		  screen_name = "Krug Icepelter";
+		  membership = monster, krug;
+	}
+	[defend]
+	{
+		  defense = 72;
+	}
+	[inventory]
+	{
+		  selected_active_location = il_active_ranged_weapon;
+		[equipment]
+		{
+			  es_shield_hand = gpg_snowball_krug;
+		}
+		[pcontent]
+		{
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/8-14;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/30-38;
+					il_main = #armor/15-73;
+	                		il_main = #weapon/30-38;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/32-54;
+	                		il_main = #armor/-rare(1)/72-144;
+                    			il_main = #*/-rare(1)/32-54;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/32-54;
+	                		il_main = #armor/-unique(2)/72-144;
+                    			il_main = #*/-unique(2)/32-54;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 196;
+					min = 131;
+				}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.35
+			&still		= false;
+
+		actor_weapon_preference			= WP_RANGED;
+
+		actor_auto_switches_to_ranged	= true;
+		on_enemy_spotted_alert_friends	= true;
+
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			  frag_glb_krug_01 = 1;
+			  frag_glb_krug_02 = 1;
+			  frag_glb_krug_03 = 1;
+			  frag_glb_krug_04 = 1;
+			  frag_glb_krug_05 = 1;
+			  frag_glb_krug_06 = 1;
+			  frag_glb_krug_07 = 1;
+			  frag_glb_krug_08 = 1;
+		}
+	}
+}

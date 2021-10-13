@@ -1,0 +1,108 @@
+[t:template,n:ut2w_bog_beast]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_bog_beast";
+	specializes = dsx_bog_beast_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	49.6, 0;
+			intelligence =  6.5, 0;
+			dexterity =  	14.3, 0;
+            		melee =  		64,  0;
+		}
+	}
+	
+	[aspect]
+	{
+		[textures]	{ 0 = b_c_edm_bog_beast; }
+		material = flesh;
+	
+		experience_value = 72500;
+		life = 2488.9;
+		max_life = 2488.9;
+		mana = 27.8;
+		max_mana = 27.8;
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 447; 
+		damage_min = 348; 
+	}
+	[defend] { defense = 455; }
+	}
+	[common]
+	{
+		screen_name="Bog Beast Hulk";
+		membership = monster;
+	}
+	[inventory]
+	{
+		drop_at_use_point = true;
+		// @TODO - this is the wrong level $$$
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 12, Medium */
+		[oneof*]
+		{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/33-50;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #*/164-205;
+					il_main = #armor/94-478;
+	                il_main = #weapon/164-205;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/186-235;
+	                il_main = #armor/-rare(1)/544-756;
+                    il_main = #*/-rare(1)/186-235;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/186-235;
+	                il_main = #armor/-unique(2)/544-756;
+                    il_main = #*/-unique(2)/186-235;
+	            }
+				[gold*]
+				{
+					chance = 0.15;
+					max = 87628;
+					min = 73935;
+				}	
+		}
+	}
+	}
+   	[mind]
+	{
+		jat_brain			= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+
+		jat_fidget			= world\ai\jobs\common\job_fidget.skrit
+			?meander			= true
+			&still				= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 1.0; //0.7
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

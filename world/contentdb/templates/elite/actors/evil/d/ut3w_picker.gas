@@ -1,0 +1,202 @@
+[t:template,n:ut3W_picker]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_picker";
+	specializes = 3W_base_picker;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	33.8, 0;
+			intelligence =  10.6, 0;
+			dexterity =  	34.2, 0;
+            melee = 		98, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 3593400;
+		life = 2400;
+		max_life = 2400;
+		mana = 30;
+		max_mana = 30;
+		[voice]
+		{
+			[die]	{ priority = high; * = s_e_die_spider; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 412.5;
+		damage_min = 321.3;
+		reload_delay = 0;
+	}
+	[common] 
+	{ 
+		screen_name="Chopping Picker"; 
+
+	}
+	[defend] { defense=1045.5; }
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?meander	= false
+			&still		= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_picker_01 = 1;
+			frag_glb_picker_02 = 1;
+			frag_glb_picker_03 = 3;
+			frag_glb_picker_04 = 2;
+			frag_glb_picker_05 = 3;
+		}
+	}
+
+}
+
+[t:template,n:ut3W_kill_bot]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_kill_bot";
+	specializes = 3W_base_picker;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  32.8, 0;
+			intelligence =  4.7, 0;
+			dexterity =  21.8, 0;
+            melee       = 104, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2268434;
+		life = 1453.3;
+		max_life = 1453.3;
+		mana = 36.3;
+		max_mana = 36.3;
+		textures:0 = b_c_edm_pr-02;
+		material = steel;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_copter; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_mechanoid_small_SED;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 459.6;
+		damage_min = 343.4;
+		reload_delay = 0;
+	}
+	[common] 
+	{ 
+		screen_name="Gibbot"; 
+	}
+	[defend] { defense=1050; }
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?curious	= 0.65
+			&interest	= interest
+			&meander	= false
+			&still		= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_kill_bot_01 = 1;
+			frag_glb_kill_bot_02 = 1;
+			frag_glb_kill_bot_03 = 3;
+			frag_glb_kill_bot_04 = 2;
+			frag_glb_kill_bot_05 = 3;
+			frag_glb_metal_01 = 3;
+			frag_glb_metal_03 = 1;
+			frag_glb_metal_05 = 3;
+			frag_glb_metal_06 = 4;
+		}
+	}
+
+}
+[t:template,n:ut3W_hunter]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_hunter";
+	specializes = 3W_base_picker;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  26.9, 0;
+			intelligence =  14, 0;
+			dexterity =  23.8, 0;
+            melee       = 109, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2268434;
+		life = 1703.2;
+		max_life = 1703.2;
+		mana = 35.5;
+		max_mana = 35.5;
+		textures:0 = b_c_edm_pr-03;
+		material = steel;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_copter; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_mechanoid_small_SED;	}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 507.4;
+		damage_min = 383.2;
+		reload_delay = 0;
+	}
+	[common] 
+	{ 
+		screen_name="Heavy Gibbot"; 
+	}
+	[defend] { defense=1179.8; }
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?curious	= 0.65
+			&interest	= interest
+			&meander	= false
+			&still		= false;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_hunter_01 = 1;
+			frag_glb_hunter_02 = 1;
+			frag_glb_hunter_03 = 3;
+			frag_glb_hunter_04 = 2;
+			frag_glb_hunter_05 = 3;
+			frag_glb_metal_01 = 3;
+			frag_glb_metal_03 = 1;
+			frag_glb_metal_05 = 3;
+			frag_glb_metal_06 = 4;
+		}
+	}
+
+}

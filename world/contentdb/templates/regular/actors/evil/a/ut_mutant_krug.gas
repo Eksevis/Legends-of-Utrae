@@ -1,0 +1,349 @@
+[t:template,n:ut_goblin_mutant]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_goblin_mutant";
+	specializes = dsx_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  strength 	= 18, 0;
+			  dexterity 	=  8, 0;
+			  intelligence  = 12, 0;
+			  melee 	= 8, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 172;
+		life = 186;
+		max_life = 186;
+		mana = 18;
+		max_mana = 18;
+		model = m_c_eam_kc_pos_1;
+		scale_base = 1.2;
+		selection_indicator_scale = 0.85;
+		material = steel;
+		[textures]
+		{
+			  0 = b_c_eam_gobkrg;
+		}
+		[voice]
+		{
+			[die]		{ priority = high; * = s_e_die_mutant_goblin_SED;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_mutant_goblin_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_krug_scout_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_krug_scout_SED;  }
+			[hit_solid]	{ priority = low; * = s_e_hit_krug_scout_SED;  }
+		}
+	}
+	[attack]
+	{
+		damage_max = 30;
+		damage_min = 22;
+	}
+	[body]
+	{
+		min_move_velocity = 1.75;
+		avg_move_velocity = 2;
+	}
+	[common]
+	{
+		  screen_name = "Degenerated Krug Mauler";
+		  membership = goblin, monster, immune_control;
+	}
+	[defend]
+	{
+		  defense = 84;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_weapon_hand = ax_d_d_ut_goblin_mutant;
+		}		
+		
+		[pcontent]
+		{
+		/* Generated: Tue Jun 17 11:13:15 2003
+			Level 26, Medium */
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 115;
+					max = 91;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/25-41;
+					il_main = #armor/23-74;
+					il_main = #*/35-51;
+				}
+				[oneof*]
+				{
+					chance = 0.0075;
+					il_main = #weapon/-rare(1)/38-47;
+					il_main = #armor/-rare(1)/47-100;
+					il_main = #*/-rare(1)/38-47;
+				}
+				
+			}
+		}
+	}
+
+	[physics]
+	{
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_commander_01 = 1;
+			  frag_glb_krug_commander_02 = 1;
+			  frag_glb_krug_commander_03 = 1;
+			  frag_glb_krug_commander_04 = 1;
+			  frag_glb_krug_commander_05 = 1;
+			  frag_glb_krug_commander_06 = 1;
+			  frag_glb_krug_commander_07 = 1;
+			  frag_glb_krug_commander_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_goblin_mutant_boss]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_goblin_mutant";
+	specializes = dsx_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  strength 	= 18, 0;
+			  dexterity 	=  8, 0;
+			  intelligence  = 12, 0;
+			  melee 	= 8, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 272;
+		life = 398;
+		max_life = 398;
+		mana = 18;
+		max_mana = 18;
+		model = m_c_eam_kc_pos_1;
+		scale_base = 1.35;
+		selection_indicator_scale = 0.85;
+		material = steel;
+		[textures]
+		{
+			  0 = b_c_eam_gobkrg;
+		}
+		[voice]
+		{
+			[die]		{ priority = high; * = s_e_die_mutant_goblin_SED;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_mutant_goblin_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_krug_scout_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_krug_scout_SED;  }
+			[hit_solid]	{ priority = low; * = s_e_hit_krug_scout_SED;  }
+		}
+	}
+	[attack]
+	{
+		damage_max = 60;
+		damage_min = 52;
+	}
+	[body]
+	{
+		min_move_velocity = 1.75;
+		avg_move_velocity = 2;
+	}
+	[common]
+	{
+		  screen_name = "Krug Mauler Commander";
+		  membership = goblin, monster, immune_control;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_red(sgx)");
+
+			}
+
+		}
+	}
+	[defend]
+	{
+		  defense = 154;
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_weapon_hand = ax_d_d_ut_goblin_mutant;
+		}		
+		
+		[pcontent]
+		{
+		/* Generated: Tue Jun 17 11:13:15 2003
+			Level 26, Medium */
+			[all*]
+			{
+				[gold*]
+				{
+					chance = 1.0;
+					min = 115;
+					max = 91;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/25-41;
+					il_main = #armor/23-74;
+					il_main = #*/35-51;
+				}
+				[oneof*]
+				{
+					chance = 1.0;
+					il_main = #weapon/-rare(1)/38-47;
+					il_main = #armor/-rare(1)/47-100;
+					il_main = #*/-rare(1)/38-47;
+				}
+				
+			}
+		}
+	}
+
+	[physics]
+	{
+		break_sound = s_e_meat_explosion;
+		explosion_magnitude = 1.5;
+		[break_particulate]
+		{
+			  frag_glb_krug_commander_01 = 1;
+			  frag_glb_krug_commander_02 = 1;
+			  frag_glb_krug_commander_03 = 1;
+			  frag_glb_krug_commander_04 = 1;
+			  frag_glb_krug_commander_05 = 1;
+			  frag_glb_krug_commander_06 = 1;
+			  frag_glb_krug_commander_07 = 1;
+			  frag_glb_krug_commander_08 = 1;
+		}
+	}
+}
+[t:template,n:ut_goblin_mutant_hurler]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_goblin_mutant_hurler";
+	specializes = dsx_base_krug;
+	[actor]
+	{
+		[skills]
+		{
+			  strength 	= 18, 0;
+			  dexterity 	=  8, 0;
+			  intelligence  = 12, 0;
+			  ranged 	= 19, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 42;
+		life 			= 96;
+		max_life 		 = 96;
+		mana 			 = 6;
+		max_mana 		 = 6;
+		scale_base 		 = 1.2;
+		selection_indicator_scale = 0.85;
+		[textures]
+		{
+			  0 = b_c_eam_gobkrg-02;
+		}
+		[voice]
+		{
+			[attack]		{	* = s_e_attack_krug_throw;	}
+			[die]			{ priority = high; * = s_e_die_mutant_goblin_SED;  }
+			[hit_critical]	{ priority = low; * = s_e_hit_krug_scout_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_krug_scout_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_krug_scout_SED;  }
+		}
+	}
+	[attack]
+	{
+		  attack_range  = 0.5;
+		  damage_max 	= 5;
+		  damage_min 	= 4;
+		  reload_delay  = 1;
+	}
+	[common]
+	{
+		  screen_name = "Degenerated Krug Rascal";
+		  membership = monster, goblin, immune_control;
+	}
+	[defend]
+	{
+		  defense = 66;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_ranged_weapon;
+		[equipment]
+		{
+			  es_shield_hand = ut_rock_goblin;
+		}
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 26, Medium */
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 45;
+					max = 31;
+				}
+				[oneof*]
+				{
+				  	chance = 0.15;
+				  il_main = potion_health_small;
+                  			il_main = scroll_resurrect;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/25-41;
+					il_main = #armor/23-74;
+					il_main = #*/25-41;
+				}
+				[oneof*]
+				{
+					chance = 0.0075;
+					il_main = #weapon/-rare(1)/28-47;
+					il_main = #armor/-rare(1)/47-100;
+					il_main = #*/-rare(1)/28-47;
+				}
+				
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.35
+			&still		= false;
+
+		actor_weapon_preference			= WP_RANGED;
+
+		actor_auto_switches_to_ranged	= true;
+		on_enemy_spotted_alert_friends	= true;
+
+	}
+}

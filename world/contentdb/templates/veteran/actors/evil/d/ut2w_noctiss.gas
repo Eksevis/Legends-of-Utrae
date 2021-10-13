@@ -1,0 +1,174 @@
+[t:template,n:ut2w_noctiss]
+//balanced for Level 15
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_noctiss";
+	specializes = noctiss_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		29.6, 0;
+			intelligence = 	15.3, 0;
+			dexterity = 	13.8, 0;
+   			combat_magic =  72,  0;
+		}
+	}
+	[aspect]
+	{			
+		experience_value = 136695;
+		life = 921;
+		max_life = 921;
+		mana = 36.4;
+		max_mana = 36.4;
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 311.8;
+		damage_min = 194.9;
+		damage_bonus_min_cmagic = 81;
+		damage_bonus_max_cmagic = 128;
+	}
+
+	[common]
+	{
+		screen_name="Notiss Gloomdancer";
+		membership=monster;
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("ghost_eye_glow");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+	[defend] { defense=813; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = ;		
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_noctiss_sap; }
+
+			
+	}
+
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+	
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+	
+		actor_auto_fidgets = false;
+		sight_origin_height = 1;
+	
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+
+	[physics]
+	{
+		break_effect = ghost_die;
+		explode_when_killed = true;
+		gib_gore_good = true;
+	}
+}
+
+[t:template,n:ut2w_noctiss_2]
+//balanced to Level 15
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_noctiss_2";
+	specializes = noctiss_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		29.6, 0;
+			intelligence = 	15.3, 0;
+			dexterity = 	13.8, 0;
+   			combat_magic =  72,  0;
+		}
+	}
+	[aspect]
+	{			
+		[textures] { 0=b_c_edm_noctiss_02; }
+		experience_value = 136695;
+		life = 991;
+		max_life = 991;
+		mana = 36.4;
+		max_mana = 36.4;	
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 311.8;
+		damage_min = 194.9;
+		damage_bonus_min_cmagic = 111;
+		damage_bonus_max_cmagic = 158;
+	}
+
+	[common]
+	{
+		screen_name="Notiss Deathdancer";
+		membership=monster,immune_freeze;
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("ghost_eye_glow");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+	[defend] { defense=960; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = ;		
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_noctiss_sap_02; }
+	}
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+	
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+	
+		actor_auto_fidgets = false;
+		sight_origin_height = 1;
+	
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+	[physics]
+		{
+			break_effect = ghost_die;
+			explode_when_killed = true;
+			gib_gore_good = true;
+		}
+}

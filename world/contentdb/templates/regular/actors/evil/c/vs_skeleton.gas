@@ -1,0 +1,187 @@
+[t:template,n:skeleton_hidden]
+{
+	category_name = "1W_evil_c";
+	doc = "Skeleton";
+	specializes = base_skeleton;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  11, 0;
+			intelligence =  1, 0;
+			dexterity =  3, 0;
+			melee =  1,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 16;
+		life = 20;
+		max_life = 20;
+		mana = 2;
+		max_mana = 2;
+		[textures]	{0=b_c_ecm_sk-anc2;}
+	}
+	[attack]
+	{
+		damage_max = 8;
+		damage_min = 7;
+	}
+	[common]
+	{
+		membership = skeleton, party_skeleton_guard_boss, monster;
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_bone_dirty_01 = 1;
+			frag_glb_bone_dirty_02 = 1;
+			frag_glb_bone_dirty_03 = 1;
+			frag_glb_bone_dirty_04 = 4;
+			frag_glb_bone_dirty_05 = 1;
+			frag_glb_bone_dirty_06 = 1;
+		}
+	}
+	[common] { screen_name="Skeleton"; }
+	[defend] { defense=29; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*] { es_weapon_hand=#mace/9; }
+
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.05;
+            	    il_main = #spell/1-4;
+				}
+				[oneof*]
+				{
+					chance = 0.30;
+					il_main = #weapon/8-11;
+					il_main = #armor/3-16;
+   				    il_main = potion_health_small;
+				    il_main = potion_mana_small;
+	    		}
+    			[gold*]
+				{
+					chance = 0.5;
+					max = 19;
+					min = 8;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain									= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party					= true;
+
+		job_travel_distance_limit = 10;
+		melee_engage_range = 8.0;
+		on_job_reached_travel_distance_abort_attack = true;
+		ranged_engage_range							= 8.0;
+		sight_range									= 14.0;
+		jat_fidget									= world\ai\jobs\common\job_fidget.skrit;
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_ancbone_01 = 1;
+			frag_glb_ancbone_02 = 1;
+			frag_glb_ancbone_03 = 1;
+			frag_glb_ancbone_04 = 4;
+			frag_glb_ancbone_05 = 1;
+			frag_glb_ancbone_06 = 1;
+		}
+	}	
+}
+[t:template,n:skeleton_guard_wes]
+{
+	category_name = "1W_evil_c";
+	doc = "Skeleton guard";
+	specializes = base_skeleton;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  14, 0;
+			intelligence =  2, 0;
+			dexterity =  6, 0;
+			melee =  3,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 20;
+		life = 28;
+		max_life = 28;
+		mana = 4;
+		max_mana = 4;
+		model = m_c_ecm_sk_pos_2;
+		textures:0 = b_c_ecm_skg-anc;
+		
+	}
+	[attack]
+	{
+		damage_max = 10;
+		damage_min = 8;
+	}
+	[common]
+	{
+		screen_name="Skeleton Guard";
+		membership = skeleton, party_krug_shaman, monster;
+	}
+	[defend] { defense=37; }
+	[inventory]
+	{
+		[pcontent]
+        {
+			[oneof*] { es_shield_hand = sh_m_g_c_r_s_avg; }
+            [oneof*] { es_weapon_hand = ax_d_c_1h1b_avg; }
+
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.03;
+            	    il_main = #spell/2-4;
+				}
+				[oneof*]
+				{
+					chance = 0.20;
+					il_main = #weapon/10-14;
+					il_main = #armor/5-29;
+				}
+				[gold*]
+				{
+					chance = 0.2;
+					max = 38;
+					min = 20;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain					= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget					= world\ai\jobs\common\job_fidget.skrit;
+	}
+	[physics]
+	{
+		[break_particulate]
+		{
+			frag_glb_ancbone_01 = 1;
+			frag_glb_ancbone_02 = 1;
+			frag_glb_ancbone_03 = 1;
+			frag_glb_ancbone_04 = 4;
+			frag_glb_ancbone_05 = 1;
+			frag_glb_ancbone_06 = 1;
+		}
+	}	
+}

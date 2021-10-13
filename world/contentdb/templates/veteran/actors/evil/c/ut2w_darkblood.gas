@@ -1,0 +1,158 @@
+[t:template,n:ut2W_darkblood]
+{
+	category_name = "2W_evil_c";
+	doc = "2W_darkblood";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	27.6, 0;
+			intelligence =  13.5, 0;
+			dexterity =  	19.7, 0;
+			melee =  		58, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 40662;
+		life = 991;
+		max_life = 991;
+		mana = 37.1;
+		max_mana = 37.1;
+		model = m_c_ecm_db_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_darkblood; }
+			[hit_critical]	{ priority = low; * = s_e_hit_darkblood_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_darkblood_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_darkblood_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 268;
+		damage_min = 216.4;
+	}
+	[body]
+	{
+		min_move_velocity = 3.0;
+		avg_move_velocity = 3.750000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_two_handed_melee	= 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_db_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,3;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,3;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,3;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,3;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,3;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Darkblood Savage"; }
+	[defend] { defense=548.3; }
+   	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+            		es_weapon_hand = ax_un_2h1b_darkblood;
+            }
+
+			[oneof*]
+			{
+					[gold*]
+					{
+						  chance = 0.2;
+						  max = 65904;
+						  min = 49996;
+					}
+				}
+				[oneof*]
+				{
+					[all*]
+					{
+        				chance = 0.01;
+    	        	    il_main = #spell/12-23;
+					}
+					[all*]
+					{
+        				chance = 0.02;
+    	        	    il_main = #spell/29-58;
+					}
+					[all*]
+					{
+					    chance = 0.20;
+		           	    il_main = #weapon/144-182;
+		                il_main = #armor/76-425;
+		    			il_main = potion_mana_large;
+						il_main = potion_health_large;
+                    }
+                    [oneof*]
+					{
+	                   	chance = 0.004;
+	                   	il_main = #weapon/-rare(1)/177-243;
+	                   	il_main = #armor/-rare(1)/320-576;
+                       	il_main = #*/-rare(1)/177-243;
+                	}
+					[oneof*]
+					{
+                       	chance = 0.002;
+	                   	il_main = #weapon/-unique(2)/177-243;
+	                   	il_main = #armor/-unique(2)/320-576;
+                       	il_main = #*/-unique(2)/177-243;
+                    			}
+			}
+		}
+	}
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

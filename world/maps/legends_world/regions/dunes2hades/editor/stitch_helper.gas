@@ -1,0 +1,23 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xA6495190;
+	source_region_name = dunes2hades;
+	[t:stitch_editor,n:dunes]
+	{
+		dest_region = dunes;
+		[node_ids]
+		{
+			0x0000aff1 = 0x560B0E08,3;
+			0x0000aff2 = 0x8FF27E4E,2;
+			0x0000aff3 = 0xD42C221E,2;
+		}
+	}
+	[t:stitch_editor,n:hades]
+	{
+		dest_region = hades;
+		[node_ids]
+		{
+			0x0000aff4 = 0x5E2C4A0D,9;
+		}
+	}
+}

@@ -1,0 +1,1523 @@
+[t:template,n:ut2w_bandit_melee_01]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   34.4, 0;
+			intelligence =  13.7, 0;
+			dexterity =   20.2, 0;
+			melee =  65,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1032.6;
+		max_life = 1032.6;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 67600;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_012;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[common]
+	{
+		screen_name = "Cutthroat";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = dg_g_d_1h_fun;
+                		es_weapon_hand = dg_g_c_1h_fun;
+                		es_weapon_hand = dg_g_c_1h_avg;
+                		es_weapon_hand = dg_g_c_dsx_clw_avg;
+				es_weapon_hand = dg_g_c_sai_avg_bandit;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   	chance = 0.05;
+				   	il_main = potion_health_large;
+				   	il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       					chance = 0.02;
+	                		il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-467;
+				}
+                		[oneof*]
+				{
+	            			chance = 0.004;
+	                		il_main = #weapon/-rare(1)/187-242;
+	                		il_main = #armor/-rare(1)/457-714;
+                    			il_main = #*/-rare(1)/187-242;
+                		}
+				[oneof*]
+				{
+                			chance = 0.002;
+	                		il_main = #weapon/-unique(2)/187-242;
+	                		il_main = #armor/-unique(2)/457-714;
+                    			il_main = #*/-unique(2)/187-242;
+	            		}
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 140.8;
+		damage_min = 130.2;
+	}
+   	[defend] { defense=545.1; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+	}
+}
+[t:template,n:ut2w_bandit_melee_02]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   34.4, 0;
+			intelligence =  13.7, 0;
+			dexterity =   20.2, 0;
+			melee =  65,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1102.6;
+		max_life = 1102.6;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 67600;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_022;
+			1 = b_c_pos_a2_034;
+		}
+	}
+	[common]
+	{
+		screen_name = "Robber";		
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = cb_g_c_dsx_ltn_avg;
+                		es_weapon_hand = cb_g_c_dsx_tet_avg;
+                		es_weapon_hand = cb_g_c_dsx_rbr_avg;
+                		es_weapon_hand = cb_g_c_dsx_crm_avg;
+                		es_weapon_hand = cb_un_2h_troll;
+                		es_weapon_hand = cb_un_2h_troll_forest;
+                		es_weapon_hand = cb_un_2h_troll_rock;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-467;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/457-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/457-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 140.8;
+		damage_min = 120.2;
+	}
+   	[defend] { defense=545.1; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+	}
+}
+[t:template,n:ut2w_bandit_melee_03]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   34.4, 0;
+			intelligence =  13.7, 0;
+			dexterity =   20.2, 0;
+			melee =  65,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1182.6;
+		max_life = 1182.6;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 67600;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_014;
+			1 = b_c_pos_a2_037;
+		}
+	}
+	[common]
+	{
+		screen_name = "Enforcer";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = mc_g_c_f_1h_avg;
+                		es_weapon_hand = mc_g_c_f_1h_fun;
+                		es_weapon_hand = mc_g_c_s_1h_avg;
+                		es_weapon_hand = mc_g_c_s_1h_fun;
+                		es_weapon_hand = mc_ra_g_c_f_1h_fin;
+                		es_weapon_hand = mc_ra_g_c_m_1h_fin;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+  				es_chest = bd_ba_f_g_c_bandit_03;
+  				es_chest = bd_ba_f_g_c_bandit_04;
+  				es_chest = bd_ba_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_04;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_06;
+  				es_chest = bd_ch_f_g_c_bandit_07;
+  				es_chest = bd_ch_f_g_c_bandit_08;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-467;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/457-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/457-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 150.8;
+		damage_min = 130.2;
+	}
+   	[defend] { defense=545.1; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+	}
+}
+[t:template,n:ut2w_bandit_melee_04]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   34.4, 0;
+			intelligence =  13.7, 0;
+			dexterity =   20.2, 0;
+			melee =  65,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1142.6;
+		max_life = 1142.6;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 67600;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_34;
+			1 = b_c_pos_a2_038;
+		}
+	}
+	[common]
+	{
+		screen_name = "Villain";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_gl_1h_avg;
+                		es_weapon_hand = sd_ra_g_c_bl_1h_fin;
+                		es_weapon_hand = sd_ra_g_o_bl_1h_avg;
+                		es_weapon_hand = sd_ra_g_o_gl_1h_avg;
+                		es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+                		es_weapon_hand = ss_ra_g_c_st_1h_fin;
+                		es_weapon_hand = ss_ra_g_c_gl_1h_fin;
+		es_weapon_hand = ss_g_c_st_1h_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+  				es_chest = bd_ba_f_g_c_bandit_03;
+  				es_chest = bd_ba_f_g_c_bandit_04;
+  				es_chest = bd_ba_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_04;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_06;
+  				es_chest = bd_ch_f_g_c_bandit_07;
+  				es_chest = bd_ch_f_g_c_bandit_08;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-467;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/457-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/457-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 160.8;
+		damage_min = 140.2;
+	}
+   	[defend] { defense=545.1; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+	}
+}
+[t:template,n:ut2w_bandit_melee_05]
+{
+	doc = "bandit_melee";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   34.4, 0;
+			intelligence =  13.7, 0;
+			dexterity =   20.2, 0;
+			melee =  65,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1242.6;
+		max_life = 1242.6;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 67600;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_011;
+			1 = b_c_pos_a2_042;
+		}
+	}
+	[common]
+	{
+		screen_name = "Raider";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = sd_g_c_gl_1h_avg;
+                		es_weapon_hand = sd_ra_g_c_bl_1h_fin;
+                		es_weapon_hand = sd_ra_g_o_bl_1h_avg;
+                		es_weapon_hand = sd_ra_g_o_gl_1h_avg;
+                		es_weapon_hand = ss_ra_g_o_sd_1h_avg;
+                		es_weapon_hand = ss_ra_g_c_st_1h_fin;
+                		es_weapon_hand = ss_ra_g_c_gl_1h_fin;
+				es_weapon_hand = ss_g_c_st_1h_avg;
+			}
+			[oneof*]
+			{
+                		es_shield_hand = sh_w_g_c_r_s_elm;
+                		es_shield_hand = sh_w_g_c_r_s_fun;
+                		es_shield_hand = sh_w_g_c_r_s_krohar;
+				es_shield_hand = sh_w_g_c_s_m_fun;
+				es_shield_hand = sh_w_g_c_r_s_avg;
+				es_shield_hand = sh_w_g_c_r_m_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ba_f_g_c_bandit_03;
+  				es_chest = bd_ba_f_g_c_bandit_04;
+  				es_chest = bd_ba_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_04;
+  				es_chest = bd_ch_f_g_c_bandit_06;
+  				es_chest = bd_ch_f_g_c_bandit_07;
+  				es_chest = bd_ch_f_g_c_bandit_08;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-467;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/457-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/457-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 170.8;
+		damage_min = 150.2;
+	}
+   	[defend] { defense=545.1; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+	}
+}
+
+
+[t:template,n:ut2w_bandit_melee_boss_01]
+{
+	doc = "bandit_melee_boss_01";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   36.7, 0;
+			intelligence =  15.1, 0;
+			dexterity =   23.8, 0;
+			melee =  69,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 3933;
+		max_life = 3933;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 86970;
+		model = m_c_gah_fb_pos_a1;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_34;
+			1 = b_c_pos_a1_041;
+		}
+	}
+	[common]
+	{
+		membership = monster, party_bandit_ranged, bandit;
+        	screen_name = "Bandit Lord";
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_blue(sgx)");
+			}
+		}
+	}
+
+	[inventory]
+	{
+
+		[pcontent]
+		{
+			[all*]
+			{
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_weapon_hand = sd_ra_g_o_sd_1h_avg;
+  				es_chest = bd_ba_f_g_c_bandit_boss;
+			}
+			[all*]
+			{
+				[oneof*]
+				{
+					chance = 0.794;
+					il_main = #*/205-218;
+					il_main = #armor/635-793;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/233-277;
+	                il_main = #armor/-rare(1)/717-911;
+                    il_main = #*/-rare(1)/233-277;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/233-277;
+	                il_main = #armor/-unique(2)/717-911;
+                    il_main = #*/-unique(2)/233-277;
+	            }
+				[gold*]
+				{
+					chance = 0.2;
+					max = 206332;
+					min = 151436;
+					min_pile = 397;
+					piles = 2 - 4;
+				}
+			}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 206.7;
+		damage_min = 155.9;
+	}
+   	[defend] { defense=1029.9; }
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true
+			&actor_creates_own_party		= true
+			&form_party_on_friend_entered_ICZ	= true
+			&form_party_on_friend_entered_ICZ	= true
+			&party_template				= "party_bandit_ranged";
+
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= true
+			&still			= false;
+	}
+}
+
+[t:template,n:ut2w_bandit_ranged_01]
+{
+	doc = "bandit_ranged";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   32.1, 0;
+			intelligence = 13.7, 0;
+			dexterity =   22, 0;
+			ranged =  64,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 999.8;
+		max_life = 999.8;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 59176;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_34;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="Headhunter";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-05;
+    		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_shield_hand = bw_ra_g_c_c_s_4_avg;
+                		es_shield_hand = bw_ra_g_c_s_s_c_stopper;
+                		es_shield_hand = bw_ra_g_o_s_s_r_avg;
+                		es_shield_hand = bw_g_c_s_s_r_avg_dsx;
+                		es_shield_hand = bw_g_c_dsx_cry_avg;
+                		es_shield_hand = bw_g_c_dsx_ltn_avg;
+                		es_shield_hand = bw_g_c_dsx_spd_avg;
+                		es_shield_hand = bw_ra_g_c_c_m_4_fin;
+                		es_shield_hand = bw_ra_g_c_c_m_r_avg;
+                		es_shield_hand = bw_ra_g_c_s_m_c_fin;
+                		es_shield_hand = bw_ra_g_c_s_m_r_fin;
+                		es_shield_hand = bw_g_c_c_m_4_avg;
+                		es_shield_hand = bw_g_c_c_m_r_avg;
+                		es_shield_hand = bw_g_c_c_m_r_fun;
+                		es_shield_hand = bw_g_c_s_m_r_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-448;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/444-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/444-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 406.1;
+		damage_min = 293.2;
+		damage_bonus_min_ranged = 150;
+		damage_bonus_max_ranged = 247;
+	}
+	[defend] { defense=506.9; }
+	[mind]
+    	{
+  		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template			= "party_bandit_ranged";
+
+    		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+    	}
+}
+[t:template,n:ut2w_bandit_ranged_02]
+{
+	doc = "bandit_ranged";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   32.1, 0;
+			intelligence = 13.7, 0;
+			dexterity =   22, 0;
+			ranged =  64,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1049.8;
+		max_life = 1049.8;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 59176;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_022;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="Ambusher";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-05;
+    		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_shield_hand = bw_g_c_s_l_c_avg;
+                		es_shield_hand = bw_g_d_s_l_c_avg;
+                		es_shield_hand = bw_dsx_zaurask_2_b;
+				es_shield_hand = bw_dsx_zau_2_b;
+				es_shield_hand = bw_dsx_zau_2;
+				es_shield_hand = bw_dsx_zau_2_a;
+				es_shield_hand = bw_g_c_dsx_qll_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-448;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/444-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/444-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 406.1;
+		damage_min = 293.2;
+		damage_bonus_min_ranged = 150;
+		damage_bonus_max_ranged = 247;
+	}
+	[defend] { defense=506.9; }
+	[mind]
+    	{
+  		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template			= "party_bandit_ranged";
+
+    		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+    	}
+}
+[t:template,n:ut2w_bandit_ranged_03]
+{
+	doc = "bandit_ranged";
+	specializes = base_bandit;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   32.1, 0;
+			intelligence = 13.7, 0;
+			dexterity =   22, 0;
+			ranged =  64,  0;
+		}
+	}
+	[aspect]
+	{
+		life = 1099.8;
+		max_life = 1099.8;
+		mana = 63.5;
+		max_mana = 63.5;
+   		experience_value = 59176;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_014;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="Manhunter";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+        	custom_head = m_c_gah_fb_hlmt_head-05;
+    		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = cw_g_c_dsx_clk_avg;
+                		es_weapon_hand = cw_g_c_m_p_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-448;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/444-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/444-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 406.1;
+		damage_min = 293.2;
+		damage_bonus_min_ranged = 150;
+		damage_bonus_max_ranged = 247;
+	}
+	[defend] { defense=506.9; }
+	[mind]
+    	{
+  		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template			= "party_bandit_ranged";
+
+    		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+    	}
+}
+
+///////////////////////////MAGIC VARIANTS//////////////////////////
+[t:template,n:ut2w_bandit_magic_01]
+{
+	doc = "bandit_ranged";
+	specializes = base_bandit;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			strength =   32.1, 0;
+			intelligence = 13.7, 0;
+			dexterity =   22, 0;
+			ranged =  64,  0;
+			combat_magic =  56, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 999.8;
+		max_life = 999.8;
+		mana = 630.5;
+		max_mana = 630.5;
+   		experience_value = 59176;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_35;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="Deceiver";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+        		custom_head = m_c_gah_fb_hlmt_head-05;
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_soul_lance; }
+		[equipment] { es_spellbook = book_glb_magic_01; }
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_ra_g_o_r_avg;
+                		es_weapon_hand = st_ra_g_c_s_fin;
+                		es_weapon_hand = st_ra_g_c_b_fin;
+                		es_weapon_hand = st_g_c_dsx_cry_avg;
+                		es_weapon_hand = st_g_c_dsx_jad_avg;
+                		es_weapon_hand = st_g_c_dsx_bar_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-448;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/444-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/444-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 406.1;
+		damage_min = 293.2;
+		damage_bonus_min_cmagic = 84;
+		damage_bonus_max_cmagic = 113;
+	}
+	[defend] { defense=506.9; }
+	[mind]
+    	{
+  		jat_brain	 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_bandit_ranged";
+
+    		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+    		?social					= 0.35
+    		&still					= false;
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= true;
+		actor_auto_switches_to_melee			= true;
+		on_enemy_entered_icz_switch_to_melee		= true;
+		inner_comfort_zone_range			= 1.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}
+[t:template,n:ut2w_bandit_magic_02]
+{
+	doc = "bandit_ranged";
+	specializes = base_bandit;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			strength =   32.1, 0;
+			intelligence = 13.7, 0;
+			dexterity =   22, 0;
+			ranged =  64,  0;
+			nature_magic =  56, 0;
+		}
+	}
+	[aspect]
+	{
+		life = 1009.8;
+		max_life = 1009.8;
+		mana = 630.5;
+		max_mana = 630.5;
+   		experience_value = 59176;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_35;
+			1 = b_c_pos_a3_033;
+		}
+	}
+	[common]
+	{
+		screen_name="Shadowdancer";
+		membership = monster, party_bandit_ranged, bandit;
+	}
+	[inventory]
+	{
+        		custom_head = m_c_gah_fb_hlmt_head-05;
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_spark; }
+		[equipment] { es_spellbook = book_glb_magic_01; }
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_ra_g_o_r_avg;
+                		es_weapon_hand = st_ra_g_c_s_fin;
+                		es_weapon_hand = st_ra_g_c_b_fin;
+                		es_weapon_hand = st_g_c_dsx_cry_avg;
+                		es_weapon_hand = st_g_c_dsx_jad_avg;
+                		es_weapon_hand = st_g_c_dsx_bar_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_f_g_c_bandit_01;
+  				es_chest = bd_ch_f_g_c_bandit_02;
+  				es_chest = bd_ch_f_g_c_bandit_03;
+  				es_chest = bd_ch_f_g_c_bandit_05;
+  				es_chest = bd_ch_f_g_c_bandit_09;
+  				es_chest = bd_ch_f_g_c_bandit_10;
+  				es_chest = bd_ba_f_g_c_bandit_01;
+  				es_chest = bd_ba_f_g_c_bandit_02;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_large;
+				   il_main = potion_mana_large;
+				}
+				[all*]
+				{
+	   				chance = 0.02;
+	                il_main = #spell/25-38;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/155-205;
+					il_main = #armor/92-448;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/187-242;
+	                il_main = #armor/-rare(1)/444-714;
+                    il_main = #*/-rare(1)/187-242;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/187-242;
+	                il_main = #armor/-unique(2)/444-714;
+                    il_main = #*/-unique(2)/187-242;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 103166;
+					min = 86129;
+				}
+            		}
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 406.1;
+		damage_min = 293.2;
+		damage_bonus_min_nmagic = 0;
+		damage_bonus_max_nmagic = 0;
+	}
+	[defend] { defense=506.9; }
+	[mind]
+    	{
+  		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&actor_joins_existing_party	= true
+			&party_template		= "party_bandit_ranged";
+
+    		jat_fidget				=  world\ai\jobs\common\job_fidget.skrit
+    		?social				= 0.35
+    		&still				= false;
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic		= true;
+		actor_auto_switches_to_karate		= true;
+		actor_auto_switches_to_melee			= true;
+		on_enemy_entered_icz_switch_to_melee		= true;
+		inner_comfort_zone_range			= 1.9;
+		melee_engage_range 			= 2.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+    	}
+}

@@ -1,0 +1,932 @@
+[t:trigger_change_mood_box,n:0x01d001c1]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD  PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_2");
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,1.000000,25.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.857167,0,0.515038;
+	  p position = 1.48743,0,1.25743,0x1f8e95bf;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001bf]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_1");
+				action* = set_player_world_location("iliarth_valley");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,1.000000,35.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.857167,0,0.515038;
+	  p position = -0.580671,0,-0.25324,0x955f37c2;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001d0]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,2.000000,30.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.390731,0,0.920505;
+	  p position = 0.564774,0.595943,1.47971,0x1188ef0e;
+	}
+}
+[t:use_point,n:0x01d00192]
+{
+	[placement]
+	{
+	  p position = -1.89242,0,0.0670853,0xae19d2c9;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001cf]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD  PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_1");
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(25.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,0.92388;
+	  p position = -3.86507,0,-1.11299,0x377fea39;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001cc]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD  PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_1");
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.382683,0,0.92388;
+	  p position = 2.36017,0,3.25733,0x6f3ac525;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001cd]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,2.000000,4.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.942642,0,0.333807;
+	  p position = -2.60544,0,-1.08059,0x4bc31d14;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001c4]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -0.184669,-1.25,-1.13136,0x5682fcc8;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001c5]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD  PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_1");
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,2.000000,4.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 0.274075,0.75,1.49533,0x5682fcc8;
+	}
+}
+[t:set_quest_bits,n:0x01d00251]
+{
+	[placement]
+	{
+	  p position = 1.17328,0,-0.193708,0x1b7e5140;
+	}
+	[set_quest_bits]
+	{
+		bool_variable = "teleport_river_forest_path2crypts_active";
+	}
+}
+[t:trigger_generic,n:0x01d002fd]
+{
+	[common]
+	{
+		dev_instance_text = "SCRIPTED EVENT, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x01D00251,0f,"default","",0);
+				action* = set_player_world_location("iliarth_divide");
+				action* = fade_nodes(0xE0A672FE,1,-1,-1,"out:black"), doc("gd_r1");
+				action* = fade_nodes(0xE0A672FE,55,-1,-1,"out:black"), doc("gd_r1_bad_nodes");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(6.000000,2.000000,6.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 0.0411377,0.2,1.48232,0xd906c734;
+	}
+}
+[t:check_quest_bits,n:0x01d001b9]
+{
+	[check_quest_bits]
+	{
+		bool_variable = "teleport_river_forest_path2crypts_active";
+	  i level = -1;
+	  i object = -1;
+	  i region = -1432288768;
+	  i section = 2;
+	  x send_to_scid = 0x01D00223;
+	}
+	[placement]
+	{
+	  p position = -0.0249481,2.34834,-0.0615921,0xc95ecd0d;
+	}
+}
+[t:use_point,n:0x01d006d0]
+{
+	[placement]
+	{
+	  p position = 0.486115,0.200003,0.401947,0xc95ecd0d;
+	}
+}
+[t:life_shrine,n:0x01d001be]
+{
+	[fountain]
+	{
+	  f heal_amount = 0.9;
+	  f health_left = 156.8;
+	  f health_regen = 0.078;
+	}
+	[placement]
+	{
+	  q orientation = 0,-1,0,-1.49012e-007;
+	  p position = 0.0219688,-0.600718,-0.00357819,0x88beb4ef;
+	}
+}
+[t:trigger_health_shrine,n:0x01d001e0]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_actor_life(2f,0x00000000);
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(1.400000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x01D001BE,0f,"16389","party_member_within_sphere",0), doc("[*labelled condition (party_member_within_sphere)*]");
+				action* = when_false send_world_message("we_req_deactivate",0x01D001BE,0f,"default","",0);
+				action* = send_world_message("we_req_activate",0x01D001C8,0f,"default","",0);
+				action* = when_false send_world_message("we_req_deactivate",0x01D001C8,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(1.400000,"while_inside");
+			  f delay = 0.000000;
+			  b flip_flop = true;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 0.050478,-1.16878,-0.0419998,0x88beb4ef;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001cb]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,2.000000,2.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.100000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 0.115326,12.5193,-1.26525,0x48484aac;
+	}
+}
+[t:use_point,n:0x01d0018d]
+{
+	[placement]
+	{
+	  p position = 0.477371,0,2.86022,0x42cebdfb;
+	}
+}
+[t:trigger_generic,n:0x01d00257]
+{
+	[common]
+	{
+		dev_instance_text = "PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(1.000000,0.500000,10.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.793353,0,0.608762;
+	  p position = -1.05154,0.550003,2.66579,0x9f72a84b;
+	}
+}
+[t:trigger_generic,n:0x01d0026f]
+{
+	[common]
+	{
+		dev_instance_text = "PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = set_player_world_location("iliarth_falls");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(1.000000,0.500000,10.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.793353,0,0.608762;
+	  p position = -0.702927,0.549999,-0.254089,0x9f72a84b;
+	}
+}
+[t:mana_shrine,n:0x01d0077f]
+{
+	[fountain]
+	{
+	  f heal_amount = 0.3;
+	  f health_left = 156.8;
+	  f health_regen = 0.0332;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.00872605,0,0.999962;
+	  p position = 0.0440063,-0.106256,-0.0685501,0x058ae8bc;
+	}
+}
+[t:trigger_mana_shrine,n:0x01d00780]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x01D0077F,0f,"16386","party_member_within_sphere",0), doc("[*labelled condition (party_member_within_sphere)*]");
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(1.800000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.100000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = when_false send_world_message("we_req_deactivate",0x01D0077F,0f,"default","",0);
+				action* = send_world_message("we_req_activate",0x01D0077E,0f,"default","",0);
+				action* = when_false send_world_message("we_req_deactivate",0x01D0077E,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = party_member_within_sphere(1.800000,"while_inside");
+			  f delay = 0.000000;
+			  b flip_flop = true;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.999391,0,-0.0348997;
+	  p position = 0.0167236,-0.75,-0.134539,0x058ae8bc;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x01d00004]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(1.200000,2.000000,1.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = path2crypts_house_1;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.130526,0,0.991445;
+	  p position = 0.247929,-3,-3.56018,0xe8e82a5e;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x01d00005]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(3.300000,5.000000,3.300000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = path2crypts_house_1;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.130526,0,0.991445;
+	  p position = 0.881523,-3,0.343117,0xe8e82a5e;
+	}
+}
+[t:trigger_generic,n:0x01d00019]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = fade_nodes(0xAAA10200,1,1,-1,"out:black"), group(1);
+				action* = fade_nodes(0xAAA10200,1,1,-1,"in"), group(2);
+			  b can_self_destruct = true;
+				condition* = party_member_left_trigger_group("path2crypts_house_1","on_every_leave"), group(2);
+				condition* = party_member_entered_trigger_group("path2crypts_house_1","on_every_enter"), group(1);
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = -0.267464,-3,0.939301,0xe8e82a5e;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d00216]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD  PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_1");
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(2.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,2.38419e-007;
+	  p position = -0.0228348,12,-1.66099,0x474099bb;
+	}
+}
+[t:use_point,n:0x01d00186]
+{
+	[placement]
+	{
+	  p position = -1.88565,0,-0.635475,0xe7271aa9;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001ca]
+{
+	[common]
+	{
+		dev_instance_text = "PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(15.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.866026,0,-0.5;
+	  p position = -0.271919,-1.90735e-006,-0.480587,0x160c99be;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001de]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD, FADE, PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_1");
+				action* = fade_nodes(0xE0A672FE,2,-1,-1,"in"), doc("gd_r1_stairs");
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(30.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-4.17233e-007,0,1;
+	  p position = 0.337044,0,-0.228729,0xf2618210;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001df]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD  FADE    PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_mega_forest_1");
+				action* = fade_nodes(0xE0A672FE,2,-1,-1,"out:black"), doc("gd_r1_stairs");
+				action* = set_player_world_location("great_northern_forest");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(33.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 0.58873,0,0.213089,0xed0ab6ad;
+	}
+}
+[t:use_point,n:0x01d007a6]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 0.829301;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.139173,0,0.990268;
+	  p position = -1.29064,0,-0.228935,0x6241b71b;
+	}
+}
+[t:use_point,n:0x01d0018c]
+{
+	[placement]
+	{
+	  p position = 0.0942993,0.150003,0.0780067,0xf1533afb;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001c6]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_2");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,0.500000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 0.229546,-1.37777,-1.48209,0x6603e654;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001c7]
+{
+	[common]
+	{
+		dev_instance_text = "MOOD  PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_1");
+				action* = set_player_world_location("iliarth_divide");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,2.000000,4.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 0.35717,0.877786,1.81267,0x6603e654;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d0000a]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_path2crypts_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,1.000000,3.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 1.10962,-5.52442,-7.42774,0x3bfe3e7b;
+	}
+}
+[t:trigger_fade_nodes_box,n:0x01d0000b]
+{
+	[common]
+	{
+		dev_instance_text = "FADE    PLAYER LOCATION";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = set_player_world_location("ancient_crypts");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(4.000000,2.000000,4.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = path2crypts_fade_1;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = fade_nodes(0xAAA10200,1,2,-1,"out:black"), group(1), doc("path2crypts arch");
+				action* = fade_nodes(0xACA10100,1,55,-1,"in"), group(2), doc("abc_r1 arch");
+				action* = fade_nodes(0xACA10100,1,55,-1,"out:black"), group(1), doc("abc_r1 arch");
+				action* = fade_nodes(0xAAA10200,1,2,-1,"in"), group(2), doc("path2crypts arch");
+			  b can_self_destruct = true;
+				condition* = party_member_left_trigger_group("path2crypts_fade_1","on_every_leave"), group(2);
+				condition* = party_member_entered_trigger_group("path2crypts_fade_1","on_every_enter"), group(1);
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  p position = 0.110352,-5.64305,-0.67408,0x3bfe3e7b;
+	}
+}
+[t:trigger_change_mood_box,n:0x01d001d7]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = mood_change("utraean_world_abc_r1_1");
+			  b can_self_destruct = true;
+				condition* = party_member_within_bounding_box(0.500000,1.000000,2.000000,"on_every_enter");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = 1.2845,-5.12996,-6.00851,0x3bfe3e7b;
+	}
+}

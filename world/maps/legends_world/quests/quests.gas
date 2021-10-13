@@ -1,0 +1,1230 @@
+[chapters]
+{
+	[chapter_1]
+	{
+		// Name that will be seen in the listbox with the quests
+		screen_name = "Chapter 1: Elddim Sunrise Stone";
+
+		// Chapter image for the journal
+		chapter_image = b_gui_ig_mnu_jnl_chapter_01;
+		
+		[*]
+		{
+			// Activation state
+			order = 0; 
+				
+			// Text that will serve as the "dialog" portion of the chapter.
+			//description = "";
+
+			// Sound file that plays the description text ( or something similar )
+			//sample = ;
+		}
+	}
+	[chapter_2]
+	{
+		// Name that will be seen in the listbox with the quests
+		screen_name = "Chapter 2: Crystwind Hammer Stone";
+
+		// Chapter image for the journal
+		chapter_image = b_gui_ig_mnu_jnl_chapter_02;
+		
+		[*]
+		{
+			// Activation state
+			order = 0; 
+				
+			// Text that will serve as the "dialog" portion of the chapter.
+			//description = "";
+
+			// Sound file that plays the description text ( or something similar )
+			//sample = ;
+		}
+	}
+	[chapter_3]
+	{
+		// Name that will be seen in the listbox with the quests
+		screen_name = "Chapter 3: Fallraen Snowflake Stone";
+
+		// Chapter image for the journal
+		chapter_image = b_gui_ig_mnu_jnl_chapter_03;
+		
+		[*]
+		{
+			// Activation state
+			order = 0; 
+				
+			// Text that will serve as the "dialog" portion of the chapter.
+			//description = "";
+
+			// Sound file that plays the description text ( or something similar )
+			//sample = ;
+		}
+	}
+	[chapter_4]
+	{
+		// Name that will be seen in the listbox with the quests
+		screen_name = "Chapter 4: Meren Fish Stone";
+
+		// Chapter image for the journal
+		chapter_image = b_gui_ig_mnu_jnl_chapter_04;
+		
+		[*]
+		{
+			// Activation state
+			order = 0; 
+				
+			// Text that will serve as the "dialog" portion of the chapter.
+			//description = "";
+
+			// Sound file that plays the description text ( or something similar )
+			//sample = ;
+		}
+	}
+	[chapter_5]
+	{
+		// Name that will be seen in the listbox with the quests
+		screen_name = "Chapter 5: Lang Mosquito Stone";
+
+		// Chapter image for the journal
+		chapter_image = b_gui_ig_mnu_jnl_chapter_05;
+		
+		[*]
+		{
+			// Activation state
+			order = 0; 
+				
+			// Text that will serve as the "dialog" portion of the chapter.
+			//description = "";
+
+			// Sound file that plays the description text ( or something similar )
+			//sample = ;
+		}
+	}
+	[chapter_6]
+	{
+		// Name that will be seen in the listbox with the quests
+		screen_name = "Chapter 6: Quillrabe Mask Stone";
+
+		// Chapter image for the journal
+		chapter_image = b_gui_ig_mnu_jnl_chapter_06;
+		
+		[*]
+		{
+			// Activation state
+			order = 0; 
+				
+			// Text that will serve as the "dialog" portion of the chapter.
+			//description = "";
+
+			// Sound file that plays the description text ( or something similar )
+			//sample = ;
+		}
+	}
+	[chapter_7]
+	{
+		// Name that will be seen in the listbox with the quests
+		screen_name = "Chapter 7: Hiroth Crown Stone";
+
+		// Chapter image for the journal
+		chapter_image = b_gui_ig_mnu_jnl_chapter_07;
+		
+		[*]
+		{
+			// Activation state
+			order = 0; 
+				
+			// Text that will serve as the "dialog" portion of the chapter.
+			//description = "";
+
+			// Sound file that plays the description text ( or something similar )
+			//sample = ;
+		}
+	}
+	[chapter_8]
+	{
+		// Name that will be seen in the listbox with the quests
+		screen_name = "Chapter 8: Grescal Palm Stone";
+
+		// Chapter image for the journal
+		chapter_image = b_gui_ig_mnu_jnl_chapter_08;
+		
+		[*]
+		{
+			// Activation state
+			order = 0; 
+				
+			// Text that will serve as the "dialog" portion of the chapter.
+			//description = "";
+
+			// Sound file that plays the description text ( or something similar )
+			//sample = ;
+		}
+	}
+}
+
+[quests]
+{
+
+   	[quest_trella_rune]     //Mine_town rune quest
+	{	
+		chapter			= chapter_2;
+		screen_name		= "The Diamond Runestone";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_23;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Trella Lauron";                   // The name of the speaker
+			description = "Find the Diamond Runestone in the ruins near the town of Crystwind.";		          address = mine_town:conversations:conversation_trella;
+		}
+		[*]
+		{
+			order		= 1;
+			description = "Bring the Diamond Runestone to Trella Lauron in the town of Crystwind for a reward.";
+		}
+	}
+
+    [quest_zabar_hovart]    //Elddim Lord Hovart Quest
+    {       
+		chapter			= chapter_1;
+		screen_name      = "Hovart's Folly";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_24;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Blacksmith Zabar Treseck";
+          description   = "Talk to the Guard Captain at the eastern road near the H.U.B. platform.";
+          address = town_center:conversations:conversation_blacksmith_zabar_treseck;
+       }
+       [*]
+       {
+          order         = 1;
+          speaker       = "Guard Captain of Elddim";       	  
+          description   = "Find the Gavel of Convening in the Ancient Crypt to the east.";
+          address = town_center:conversations:conversation_guard_captain_hub_quest;
+       }
+       [*]
+       {
+          order         = 2;
+          speaker       = "";
+          description   = "Take the Gavel of Convening into the underground stronghold known as Hovart's Folly.";
+       }
+       [*]
+       {
+          order         = 3;
+          speaker       = "";
+          description   = "Destroy Lord Hovart and his undead minions.";
+       }
+       [*]
+       {
+          order         = 4;
+          speaker       = "";
+          description   = "Give the Gavel of Convening to the Guard Captain of Crystwind and inform him that Lord Hovart is dead.";
+       }
+	}
+	
+	[quest_townstones]    //Epic Townstone Quest
+    {
+		chapter			= chapter_1;
+		name             = ;
+		screen_name      = "The Utraean Circle";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_25;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priestess Kelti";
+          description   = "Gather all of the eight Townstones, representing all of the towns of the Circle, and bring them to Utraean High Priest Kavaren in Hiroth.";
+          address = town_center:conversations:conversation_kelti;
+       }
+       [*]
+       {
+          order         = 1;   //when you have all 8 stones and are talking to Archmage Kavaren of Hiroth
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Place each Townstone on its corresponding dais in the Utraean Circle on the north edge of the town.";
+          address = castle_town:conversations:conversation_kavaren_ring;
+       }
+       [*]
+       {
+          order         = 2;   //when all 8 stones are placed
+          speaker       = "";
+          description   = "Return to Utraean High Priest Kavaren.";
+       }
+       [*]
+       {
+          order         = 3;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Destroy the Maljin by placing the Legion's Tenstone in the inner sanctum of the Utraean Circle dungeon. Return to High Priest Kavaren when they are defeated.";
+          address = town_center:conversations:conversation_kavaren_state2;
+       }
+    }
+
+    [goto_elddim]    //Goto Elddim Quest
+    {    
+		chapter			= chapter_1;   
+		screen_name      = "Travel to Elddim";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_26;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Society";
+          description   = "Speak with Utraean Priestess Kelti in Elddim.";
+          address 	= swamp_town:conversations:conversation_janeira;
+       }
+    }
+ 
+    [goto_elddim_b]    //Goto Elddim Quest   from Hiroth
+    {  
+		chapter			= chapter_1;      
+       screen_name      = "Journey to Elddim";
+       victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_26;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Speak with Utraean Priestess Kelti in Elddim.";
+          address = castle_town:conversations:conversation_kavaren_no_elddim;
+       }
+    }
+
+    [quest_elddim]    //Elddim Townstone Quest
+    {      
+		chapter			= chapter_1; 
+		screen_name      = "Elddim Townstone";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_27;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priestess Kelti";
+          description   = "Find the Elddim Sunrise Stone in the Ancient Crypt to the east of Elddim.";
+          address = town_center:conversations:conversation_kelti;
+       }
+       [*]
+       {
+          order         = 1;   //when you find the stone
+          speaker       = "";
+          description   = "Return to Priestess Kelti in the town of Elddim.";
+       }
+    }
+ 
+    [goto_crystwind]    //Goto Crystwind Quest
+    {    
+		chapter			= chapter_1;   
+		screen_name      = "Travel to Crystwind";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_28;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priestess Kelti";
+          description   = "Show the Utraean Signet Ring to Utraean Priest Sarden in the town of Crystwind.";
+          address = town_center:conversations:conversation_kelti_stone;
+       }
+    }
+  
+    [goto_crystwind_b]    //Goto Crystwind Quest from hiroth
+    {   
+		chapter			= chapter_2;    
+		screen_name      = "Journey to Crystwind";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_28;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Show the Utraean Signet Ring to Utraean Priest Sarden in the town of Crystwind.";
+          address = castle_town:conversations:conversation_kavaren_no_crystwind;
+       }
+    }
+   
+    [quest_crystwind]    //Crystwind Townstone Quest
+    {  
+		chapter			= chapter_2;     
+		screen_name      = "Crystwind Townstone";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_29;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priest Sarden";
+          description   = "Speak to the townspeople of Crystwind about the Crystwind Hammer Stone.";
+          address = mine_town:conversations:conversation_sarden_quest;
+       }
+       [*]
+       {
+          order         = 1;   //when you find the stone
+          speaker       = "";
+          description   = "Return to Priest Sarden in the town of Crystwind.";
+       }
+    }
+  
+    [goto_fallraen]    //Goto Fallraen Quest
+    { 
+		chapter			= chapter_2;      
+		screen_name      = "Travel to Fallraen";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_30;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priest Sarden";
+          description   = "Show the Utraean Signet Ring to Utraean Apprentice Flessan in the town of Fallraen.";
+          address = mine_town:conversations:conversation_sarden_goto;
+       }
+    }
+   
+    [goto_fallraen_b]    //Goto Fallraen Quest    from hiroth
+    {   
+		chapter			= chapter_3;    
+		screen_name      = "Journey to Fallraen";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_30;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Show the Utraean Signet Ring to Utraean Apprentice Flessan in the town of Fallraen.";
+          address = castle_town:conversations:conversation_kavaren_no_fallraen;
+       }
+    }
+  
+    [quest_fallraen]    //Fallraen Townstone Quest
+    {      
+		chapter			= chapter_3; 
+		screen_name      = "Fallraen Townstone";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_31;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Apprentice Flessan";
+          description   = "Find Utraean Priest Lagreth and the Fallraen Snowflake Stone to the North.";
+          address = snow_town:conversations:conversation_flessan_quest;
+       }
+       [*]
+       {
+          order         = 1;   //when you find the stone
+          speaker       = "";
+          description   = "Return to Apprentice Flessan.";
+       }
+    }
+   
+    [goto_meren]    //Goto meren Quest
+    {     
+		chapter			= chapter_3;  
+		screen_name      = "Travel to Meren";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_32;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Apprentice Flessan";
+          description   = "Show the Utraean Signet Ring to Utraean Priest Tas in the town of Meren.";
+          address = snow_town:conversations:conversation_flessan_goto;
+       }
+    }
+  
+    [goto_meren_b]    //Goto meren Quest from hiroth
+    {   
+		chapter			= chapter_4;    
+		screen_name      = "Journey to Meren";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_32;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Show the Utraean Signet Ring to Utraean Priest Tas in the town of Meren.";
+          address = castle_town:conversations:conversation_kavaren_no_meren;
+       }
+    }
+    
+    [quest_meren]    //Meren Townstone Quest
+    {  
+		chapter			= chapter_4;     
+		screen_name      = "Meren Townstone";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_33;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priest Tas";
+          description   = "Find the Meren Fish Stone in the Temple of the Stars in the Cloud Forest to the South.";
+          address = ocean:conversations:conversation_tas_quest;
+       }
+       [*]
+       {
+          order         = 1;   //when you find the stone
+          speaker       = "";
+          description   = "Return to Priest Tas.";
+       }
+    }
+
+    [goto_lang]    //Goto Lang Quest
+    {     
+		chapter			= chapter_4;  
+		screen_name      = "Travel to Lang";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_34;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priest Tas";
+          description   = "Show the Utraean Signet Ring to Utraean Priestess Janeira in the town of Lang.";
+          address = ocean:conversations:conversation_tas_goto;
+       }
+    }
+  
+    [goto_lang_b]    //Goto Lang Quest  from hiroth
+    {   
+		chapter			 = chapter_5;    
+		screen_name      = "Journey to Lang";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_34;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Show the Utraean Signet Ring to Utraean Priestess Janeira in the town of Lang.";
+          address = castle_town:conversations:conversation_kavaren_no_lang;
+       }
+    }
+   
+    [goto_quillrabe]    //Goto Quillrabe Quest
+    {       
+		chapter			= chapter_5;
+		screen_name      = "Travel to Quillrabe";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_35;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priestess Janeira";
+          description   = "Show the Utraean Signet Ring to Utraean Priest Ferdl in the town of Quillrabe.";
+          address = swamp_town:conversations:conversation_janeira_goto;
+       }
+    }
+  
+    [goto_quillrabe_b]    //Goto Quillrabe Quest from hiroth
+    {   
+		chapter			= chapter_6;    
+		screen_name      = "Journey to Quillrabe";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_35;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Show the Utraean Signet Ring to Utraean Priest Ferdl in the town of Quillrabe.";
+          address = castle_town:conversations:conversation_kavaren_no_quillrabe;
+       }
+    }
+   
+    [quest_quillrabe]    //Quillrabe Townstone Quest
+    {    
+		chapter			= chapter_6;   
+		screen_name      = "Quillrabe Townstone";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_36;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priest Ferdl";
+          description   = "Find the Quillrabe Mask Stone in the Dragon Catacombs south of town.";
+          address = des_r1:conversations:conversation_ferdl_quest;
+       }
+       [*]
+       {
+          order         = 1;   //when you find the stone
+          speaker       = "";
+          description   = "Return to Priest Ferdl.";
+       }
+    }
+   
+    [goto_grescal]    //Goto Grescal Quest
+    {    
+		chapter			= chapter_7;   
+		screen_name      = "Travel to Grescal";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_38;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Show the Utraean Signet Ring to Utraean Priestess Kylira in the town of Grescal.";
+          address = castle_town:conversations:conversation_kavaren_no_grescal;
+       }
+    }
+
+      [goto_grescal_b]    //Goto Grescal from Hiroth
+    {    
+		chapter			= chapter_7;   
+		screen_name      = "Journey to Grescal";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_38;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priest Kavaren";
+          description   = "Show the Utraean Signet Ring to Utraean Priestess Kylira in the town of Grescal.";
+          address = castle_town:conversations:conversation_kavaren_no_grescal;
+       }
+    }
+
+    [quest_grescal]    //Grescal Townstone Quest
+    {      
+		chapter			= chapter_8; 
+		screen_name      = "Grescal Townstone";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_39;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priestess Kylira";
+          description   = "Find the Grescal Palm Stone in the Ancient Ruins to the Northeast";
+          address = oasis:conversations:conversation_kylira_quest;
+       }
+       [*]
+       {
+          order         = 1;   //when you find the stone
+          speaker       = "";
+          description   = "Return to Priestess Kylira.";
+       }
+    }
+
+    [goto_hiroth_a]    //Goto Hiroth Quest  from quillrabe
+    {     
+		chapter			= chapter_6;  
+		screen_name      = "Travel to Hiroth";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_37;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean Priest Ferdl";
+          description   = "Show the Utraean Signet Ring to Utraean High Priest Kavaren in the town of Hiroth.";
+          address = des_r1:conversations:conversation_ferdl_goto;
+       }
+    }
+ 
+    [goto_hiroth_b]    //Goto Hiroth Quest  from grescal
+    {       
+		chapter			= chapter_8;
+		screen_name      = "Journey to Hiroth";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_37;				// Image for the quest
+
+       [*]
+       {
+          order         = 0;
+          speaker       = "Utraean High Priestess Kylira";
+          description   = "Show the Utraean Signet Ring to Utraean High Priest Kavaren in the town of Hiroth.";
+          address = oasis:conversations:conversation_kylira_goto;
+       }
+    }
+ 	[quest_elddim_quest]     //Elddim quest
+	{	
+		chapter			= chapter_1;
+		screen_name		= "Elddim Lowlands";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_swamp;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Meas Alilinidd";                   // The name of the speaker
+			description = "Defeat the Monster terrorizing Elddim Lowlands near the swamps.";		          address = town_center:conversations:conversation_elddim_quest;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Return to Meas Alilinidd in the town of Elddim.";
+       		}
+		
+	}  
+ 	[quest_orchard_quest]     //Orchard quest
+	{	
+		chapter			= chapter_1;
+		screen_name		= "Orchard Cellar";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_spider;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Morn Pelfalador";                   // The name of the speaker
+			description = "Clear the Orchard Cellar of Monsters.";		          address = town_center:conversations:conversation_orchard_quest;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Report your success to Morn Pelfalador.";
+       		}
+		
+	} 
+ 	[quest_shaladar_quest]     //Shaladar quest
+	{	
+		chapter			= chapter_1;
+		screen_name		= "A Powerfull Ally";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_ally;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Cruric Diewyth";                   // The name of the speaker
+			description = "Find a Powerfull Ally near the Ancient Crypts.";		          address = town_center:conversations:conversation_cruric;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Search for the Derelict House to the North of the Crypts.";
+       		}
+		
+	} 
+	[quest_gargoyle_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_1;		
+		screen_name		= "Tragedy of the Gargoyles";
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_gargoyle;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= "Tiamut"; 										
+			description = "Find out what happened to the Gargoyles!"; 	
+			address		= crypts2sd:conversations:conversation_gargoyle_accept;
+		}
+	}
+ 	[quest_crystwind_quest]     //Crystwind quest
+	{	
+		chapter			= chapter_2;
+		screen_name		= "Dwarven Secrets";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_07;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Flint Stoneforge";                   // The name of the speaker
+			description = "Find out what happened to the missing Dwarven Miners.";		          address = mine_town:conversations:conversation_crystwind_quest;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Inform Flint Stoneforge of the bad news.";
+       		}
+		
+	}  
+	[quest_sister_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_2;		
+		screen_name		= "A Sister's Message";
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_03;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= "Orla Riverstarn"; 										
+			description = "Deliver Orla's message to her sister Alda in Fallraen."; 	
+			address		= mine_town:conversations:conversation_orla;
+		}
+	}   
+    [quest_fallraen_barracks]     //Fallraen id_r2 quest
+	{	
+		chapter			= chapter_3;
+		screen_name		= "Fallraen Barracks";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_40;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Barracks Guard";                   // The name of the speaker
+			description = "Investigate the Fallraen Barracks south of Fallraen and kill any creatures found inside.";		// This is the line that appears underneath the speaker name
+          address = snow_town:conversations:conversation_guard_id;
+		}
+		
+	}
+	[quest_apprentice_books]
+	 //Find two books for Onoc's apprentice.  They're in Glacern.
+	{
+		chapter			= chapter_3;		
+		screen_name		= "Book Return";
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_09;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker     = "Lloyd Banough";			
+			description = "Find the missing two books lent by Lloyd Banough.";
+			address		= snow_town:conversations:conversation_apprentice;
+		}
+	}
+	[quest_lagrath_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_3;		
+		screen_name		= "Betrayal!";
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_bandits;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= "Apprentice Pardun"; 						
+			description = "Priest Lagrath has been betrayed. Help Him."; 	
+			address		= snow_town:conversations:conversation_pardun;
+		}
+	} 
+	[quest_displacer_quest]     //Elddim quest
+	{	
+		chapter			= chapter_3;
+		screen_name		= "Clear the Path";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_displacer;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Fallraen Guard";                   // The name of the speaker
+			description = "Clear the path to the Mt. Utrae Forest Displacer.";		          address = snow_town:conversations:conversation_displacer_quest;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Report your Success back to the Guard in Fallraen.";
+       		}
+		
+	} 
+	[quest_snow_quest]     //Elddim quest
+	{	
+		chapter			= chapter_3;
+		screen_name		= "Dornek's Quarry";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_quarry;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Snow Tracker";                   // The name of the speaker
+			description = "Clear the Monsters infesting Dornek's Quarry.";		          address = sf_r1:conversations:conversation_tracker;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Notify the Snow Tracker of your Success.";
+       		}
+		
+	} 
+	[quest_fiathna_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_4;		
+		screen_name		= "Investigation";
+		skrit			= bandit_award;
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_investigate;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= ""; 										
+			description = "Search for the Life Shrine above Meren & find out who sent the message."; 	
+//			address		= ocean:conversations:conversation_giasa;
+		}
+	} 
+	[quest_bandit_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_4;		
+		screen_name		= "Bandit Hunt";
+		skrit			= bandit_award;
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_14;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= "Giasa Sardometh"; 										
+			description = "Find the Bandit's Camp."; 	
+			address		= ocean:conversations:conversation_giasa;
+		}
+	}   
+	[quest_tajj_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_4;		
+		screen_name		= "A Tall Order";
+		skrit			= tajj_award;
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_najj;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= "Tajj the Half Giant"; 										
+			description = "Find Tajj's People."; 	
+			address		= ocean:conversations:conversation_tajj_accept;
+		}
+	}  
+ 	[quest_bird_quest]     //Elddim quest
+	{	
+		chapter			= chapter_4;
+		screen_name		= "Mysterious Forest Bird";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_bird;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Pierin Taered";                   // The name of the speaker
+			description = "Find the Secret Forest Bird.";		          address = ocean:conversations:conversation_bird_quest;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Return to Pierin Taered in the town of Meren.";
+       		}
+		
+	}  
+	[quest_treasure_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_4;		
+		screen_name		= "Hidden Treasure";
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_treasure;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= ""; 										
+			description = "Find the Hidden Treasure!"; 	
+			address		= ocean:conversations:conversation_treasure;
+		}
+	}
+ 	[quest_explorer_quest]     //Elddim quest
+	{	
+		chapter			= chapter_5;
+		screen_name		= "Missing Explorers";		//name in quest log
+		skrit			= explorers_award;
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_15;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Swamp Tracker";                   // The name of the speaker
+			description = "Find the Missing Explorers.";		          address = ds_r2:conversations:conversation_tracker;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "There's nothing more you can do here now. Continue your mission.";
+       		}
+		
+	} 
+	[quest_pit_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_5;		
+		screen_name		= "Pit of Despair";
+		skrit			= pit_award;
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_pit;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= "Jadoc Narnian"; 										
+			description = "Find the Pit of Despair!"; 	
+			address		= swamp_town:conversations:conversation_jadoc;
+		}
+	}
+ 	[quest_goblin_quest]     //Elddim quest
+	{	
+		chapter			= chapter_5;
+		screen_name		= "Goblin's Secret Plans";		//name in quest log
+//		skrit			= gobbot_award;
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_goblin;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Lang Town Guard";                   // The name of the speaker
+			description = "Steal the Goblin's secret plans for World Domination.";		          address = swamp_town:conversations:conversation_goblin_quest;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Report your success back to the Town Guard in Lang.";
+       		}
+		
+	} 
+	[quest_gobbot_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_5;		
+		screen_name		= "Gobbot General";
+		victory_sample	= s_e_level_up_quest;
+		skrit			= gobbot_award;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_gobbot;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= "Tikklan the Goblin"; 										
+			description = "Destroy the Gobbot General!"; 	
+			address		= gi_a_r2:conversations:conversation_goblin_accept;
+		}
+	}
+	[quest_flooded_sanctuary]     //Redwood Gap wd_r1 quest
+	{	
+		chapter			= chapter_5;
+		screen_name		= "Flooded Sanctuary";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_41;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Sanctuary Keeper";                   // The name of the speaker
+			description = "Aid the Sanctuary Keeper by clearing the Flooded Sanctuary of creatures.";		          address = of_r1:conversations:conversation_keeper;
+		}
+		
+	}
+	[quest_artifact_quest]
+	 //Take a message from Ella in Stonebridge to her sister in Glacern
+	{
+		chapter			= chapter_6;		
+		screen_name		= "Unidentified Artifact";
+		victory_sample	= s_e_level_up_quest;
+		quest_image 	= b_gui_ig_mnu_jnl_quest_amulet;              
+		
+		[*]
+		{
+			order		= 0;
+			speaker 	= ""; 										
+			description = "Ask around Quillrabe about this important looking artifact!"; 	
+		}
+	}
+ 	[quest_rebel_quest]     //Elddim quest
+	{	
+		chapter			= chapter_6;
+		screen_name		= "Assassinate the Droog Rebel Leader";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		skrit			= rebel_award;
+		quest_image = b_gui_ig_mnu_jnl_quest_17;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Quillrabe Legionaire Guard";                   // The name of the speaker
+			description = "Assassinate the Droog Rebel Leader so that the Droog will remain submissive.";		          address = des_r1:conversations:conversation_rebel;
+		}
+		
+	} 
+ 	[quest_messager_quest]     //Elddim quest
+	{	
+		chapter			= chapter_6;
+		screen_name		= "Droog Peace Treaty";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_letter;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Tarkrisgh";                   // The name of the speaker
+			description = "Inform the Hiroth Captain of the Guards of the Droog's submission.";		          address = des_r1:conversations:conversation_tarkrisgh;
+		}
+		
+	}
+      	[goto_forest_elddim]    //Goto Grescal from Hiroth
+    	{    
+		chapter			= chapter_7;   
+		screen_name      = "Journey to Great Northern Forest";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_elves;				// Image for the quest
+
+       		[*]
+       		{
+          		order         = 0;
+          		speaker       = "Utraean High Priest Kavaren";
+          		description   = "Find the Elves in the Great Northern Forest.";
+          		address = castle_town:conversations:conversation_kavaren_no_hiroth;
+       		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Return to High Priest Kavaren at Hiroth.";
+       		}
+    	}
+ 	[quest_responsible_quest]     //Elddim quest
+	{	
+		chapter			= chapter_7;
+		screen_name		= "Necromancer of Hiroth";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		skrit			= responsible_award;
+		quest_image = b_gui_ig_mnu_jnl_quest_find;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Megumi";                   // The name of the speaker
+			description = "Find out who's responsible for the skeletal invasion of Hiroth.";		          address = castle_town:conversations:conversation_megumi_accept_have_money;
+		}
+		
+	}
+      	[quest_threat_quest]    //Goto Grescal from Hiroth
+    	{    
+		chapter			= chapter_7;   
+		screen_name      = "Threat to Hiroth";
+		victory_sample   =   s_e_level_up_quest;
+		quest_image = b_gui_ig_mnu_jnl_quest_death;				// Image for the quest
+
+       		[*]
+       		{
+          		order         = 0;
+          		speaker       = "Legionnaire Guard";
+          		description   = "Stop the immediate threat to Hiroth.";
+          		address = castle_town:conversations:conversation_guard_2;
+       		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Report your success to the Legionnaire Guard at Hiroth.";
+       		}
+    	}
+ 	[quest_secret_quest]     //Elddim quest
+	{	
+		chapter			= chapter_7;
+		screen_name		= "Hidden Secrets";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		skrit			= secret_award;
+		quest_image = b_gui_ig_mnu_jnl_quest_19;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Lillian Zane";                   // The name of the speaker
+			description = "Find the secret hidden room in the Castle.";		          address = castle_town:conversations:conversation_lillian;
+		}
+		
+	}
+ 	[quest_naja_quest]     //Elddim quest
+	{	
+		chapter			= chapter_7;
+		screen_name		= "Secret of the Snake Women";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		skrit			= naja_award;
+		quest_image = b_gui_ig_mnu_jnl_quest_naja;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Naja";                   // The name of the speaker
+			description = "Find out what happened to Naja's race.";		          address = castle_dun:conversations:conversation_naja_accept;
+		}
+		
+	}
+ 	[quest_pyramids_quest]     //Elddim quest
+	{	
+		chapter			= chapter_8;
+		screen_name		= "The Lost Pyramids";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		skrit			= pyramid_award;
+		quest_image = b_gui_ig_mnu_jnl_quest_pyramids;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Calixtica d'Orly";                   // The name of the speaker
+			description = "Investigate the truth of Calixtica's dream.";		          address = oasis:conversations:conversation_calixtica;
+		}
+		
+	}
+ 	[quest_island_quest]     //Elddim quest
+	{	
+		chapter			= chapter_8;
+		screen_name		= "Island in the Desert";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		skrit			= island_award;
+		quest_image = b_gui_ig_mnu_jnl_quest_island;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Alwyn Gheldrick";                   // The name of the speaker
+			description = "An Island in the Desert? Can it be true or is it sunstroke.";		          address = oasis:conversations:conversation_alwyn;
+		}
+		
+	}
+ 	[quest_grescal_quest]     //Orchard quest
+	{	
+		chapter			= chapter_8;
+		screen_name		= "Threat to Grescal";		//name in quest log
+		victory_sample	= s_e_level_up_quest;     		//sound to play at quest completion
+		quest_image = b_gui_ig_mnu_jnl_quest_city;				// Image for the quest
+
+		[*]
+		{
+			order		= 0;                                  //order of quest parts
+			speaker     = "Damog Skytrider";                   // The name of the speaker
+			description = "Stop the threat to Grescal.";		          address = oasis:conversations:conversation_damog;
+		}
+       		[*]
+       		{
+          		order         = 1;   //when you find the stone
+          		speaker       = "";
+          		description   = "Report your success to Damog Skytrider in Grescal.";
+       		}
+		
+	}
+}
+

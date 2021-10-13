@@ -1,0 +1,366 @@
+[t:template,n:ut_automaton_one]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_automaton_one";
+	specializes = dsx_automaton_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		= 19, 0;
+			intelligence 	=  8, 0;
+			dexterity 	 	= 12, 0;
+			melee 		 	= 22, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2400;
+		life		 = 1488;
+		max_life	 = 1488;
+		mana		 = 22;
+		max_mana	 = 22;
+		model = m_c_edm_au;
+		[voice]
+		{
+			[attack]	{ priority = high; * = s_e_attack_automaton_SED;	 }
+			[die]	{ priority = high; * = s_e_die_automaton_SED;	 }
+			[enemy_spotted]	{ priority = high; * = s_e_call_mechanoid_big_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 150; //! Do by hand, on a curve.	For low values, ~==XP (6xp => 6damage; 90xp=> 50damage)
+		damage_min = 150; //! Same as damage_max
+	}
+	[common]
+	{
+		screen_name = "Automaton Blade";
+	}
+	[defend] { defense = 720; }
+	[body]
+	{
+		avg_move_velocity = 2.400000;
+	}
+	[inventory]
+	{
+	drop_at_use_point = true;
+	[pcontent]
+	{
+		/* Generated: Tue Jun 17 11:13:15 2003
+		Level 27, Medium */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 2081;
+				max = 4132;
+			}
+			[oneof*]
+			{
+				chance = 0.15;
+				il_main = #weapon/48-54;
+				il_main = #armor/25-184;
+				il_main = #*/48-54;
+			}
+			[oneof*]
+			{
+				chance = 0.111111111111111;
+				il_main = potion_mana_medium;
+				il_main = potion_health_medium;
+			}
+			[oneof*]
+			{
+				chance = 0.0075;
+				il_main = #weapon/-rare(1)/40-59;
+				il_main = #armor/-rare(1)/146-249;
+				il_main = #*/-rare(1)/40-59;
+			}
+			
+		}
+	}
+	}
+	[mind]
+	{
+		jat_fidget				= jat_none;
+		on_enemy_spotted_alert_friends 		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true
+		&actor_creates_own_party		= true
+		&party_template				= "party_dsx_automaton";
+		com_channels				= dyn_party, automaton;
+		com_range				= 14.0;
+		melee_engage_range			= 14.0;
+		ranged_engage_range	 		= 14.0;
+		personal_space_range 			= 0.7;
+		sight_range				= 14.0;
+		actor_life_ratio_low_threshold 		= 0.5;
+		jat_die					= world\ai\jobs\actors\evil\job_die_explode.skrit;
+	}
+}
+
+[t:template,n:ut_automaton_two]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_automaton_two";
+	specializes = dsx_automaton_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		= 19, 0;
+			intelligence 	= 10, 0;
+			dexterity 		= 12, 0;
+			ranged 			= 19, 0;
+			nature_magic 	= 21,0;
+			combat_magic 	= 21,0;
+		}
+	}
+	[aspect]
+	{
+		model = m_c_edm_au2;
+		experience_value = 2052;
+		life		= 1025;
+		max_life	= 1025;
+		mana		= 22;
+		max_mana	= 22;
+		material = steel;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_automaton_SED;	 }
+			[enemy_spotted]	{ priority = high; * = s_e_call_mechanoid_big_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 145;
+		damage_min = 138;
+	}
+	[body]
+	{
+
+		avg_move_velocity = 2.400000;
+
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_au2_fs;
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-01;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{ 
+					00=dsf;
+					01=dsf-01;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+			[chore_misc]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] 
+				{
+					slep=ds-01;
+					wake=rv;
+				}
+			}
+		}
+	}
+	
+	[common]
+	{
+		screen_name = "Automaton Mech";
+	}
+	[generator_in_object]
+	{
+		child_template_name = dsx_automaton_skeleton2;
+		spawn_event = WE_EXPLODED;
+		spawn_chance = 1.0;
+	}
+	[defend] { defense = 682; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] 
+		{ 
+			il_active_primary_spell   = dsx_spell_automoton_minigun; 
+		}
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 27, Strong */
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 2081;
+					max = 4132;
+				}
+				[oneof*]
+				{
+					chance = 0.2;
+					il_main = #weapon/40-57;
+					il_main = #armor/36-193;
+					il_main = #*/40-57;
+				}
+				[oneof*]
+				{
+					chance = 0.111111111111111;
+					il_main = potion_mana_medium;
+					il_main = potion_health_medium;
+				}
+				[oneof*]
+				{
+					chance = 0.01;
+					il_main = #weapon/-rare(1)/57-65;
+					il_main = #armor/-rare(1)/156-259;
+					il_main = #*/-rare(1)/57-65;
+				}
+				[oneof*]
+				{
+					chance = 0.005;
+					il_main = #weapon/-unique(2)/47-65;
+					il_main = #armor/-unique(2)/156-259;
+					il_main = #*/-unique(2)/47-65;
+				}			
+			}
+		}	
+	}
+	[mind]
+	{
+		jat_fidget				= jat_none;
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	
+		on_enemy_entered_ocz_flee 	= true;
+		on_enemy_entered_ocz_attack 	= false;
+		on_enemy_entered_icz_flee 		= true;
+		on_enemy_entered_icz_attack 	= false;
+		flee_count 						= 1;
+	}
+
+	
+}
+
+[t:template,n:ut_golem_clockwork]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_golem_clockwork";
+	specializes = dsx_automaton_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	 = 19, 0;
+			intelligence 	=  8, 0;
+			dexterity 	 = 12, 0;
+			melee 		 = 23, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 2732;
+		life 			= 2764;
+		max_life 		= 2764;
+		mana 			= 275;
+		max_mana 		= 275;
+		model = m_c_edm_au;
+		[textures]	{ 0 = b_c_edm_au-06; }
+		material = steel;
+		scale_base = 1.3;
+		[voice]
+		{
+			[attack]	{ priority = high; * = s_e_attack_automaton_SED;	 }
+			[die]	{ priority = high; * = s_e_die_automaton;	 }
+			[enemy_spotted]	{ priority = high; * = s_e_call_mechanoid_big_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 161;
+		damage_min = 145;
+		reload_delay = 0;
+	}
+	[common] { screen_name="Clockwork Automaton"; }
+	[defend] { defense = 759; }
+	[body]
+	{
+		avg_move_velocity = 3.000;
+	}
+	[mind]
+	{
+		jat_guard = world\ai\jobs\common\job_guard.skrit;
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_effect = mine_worm_die_dust;
+		/*
+			BROKEN
+			[break_particulate]
+			{
+			frag_glb_dsx_golem_crystal_01 = 1;
+			frag_glb_dsx_golem_crystal_02 = 6;
+			frag_glb_dsx_golem_crystal_03 = 1;
+			frag_glb_dsx_golem_crystal_04 = 2;
+			frag_glb_dsx_golem_crystal_05 = 1;
+			}
+		*/
+	}
+	[mind]
+	{
+		jat_fidget				= jat_none;
+		on_enemy_spotted_alert_friends 		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true
+		&actor_creates_own_party		= true
+		&party_template				= "party_dsx_automaton";
+		com_channels				= dyn_party, automaton;
+		com_range				= 14.0;
+		melee_engage_range			= 14.0;
+		ranged_engage_range	 		= 14.0;
+		personal_space_range 			= 0.7;
+		sight_range				= 14.0;
+		actor_life_ratio_low_threshold 		= 0.5;
+		jat_die					= world\ai\jobs\actors\evil\job_die_explode.skrit;
+	}
+}
+

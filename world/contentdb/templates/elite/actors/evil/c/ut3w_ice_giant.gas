@@ -1,0 +1,296 @@
+[t:template,n:ut3w_frost_giant]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_ice_giant";
+	specializes = base_frost_giant;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	50.2, 0;
+			intelligence =  15.4, 0;
+			dexterity =  30.7, 0;
+            		melee =  96,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 890101;
+		life = 1875;
+        	max_life = 1875;
+		mana = 83.3;
+		max_mana = 83.3;
+        	scale_base = 1.25;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_ice_giant; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_ice_giant_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_ice_giant_SED; }
+			[hit_glance]	        { priority = low; * = s_e_hit_ice_giant_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_ice_giant_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 460;
+		damage_min = 340;
+		reload_delay = 0;
+	}
+	
+	[common]
+	{
+		screen_name = "Frost Giant Lord";
+		membership = ice,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+
+	}
+	
+	[defend] { defense = 635; }
+	
+	[inventory]
+	{
+	[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 2, Special */
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/67-117;
+				}
+				[oneof*]
+				{
+					chance = 0.25;
+					il_main = #*/238-301;
+					il_main = #armor/125-608;
+	                il_main = #weapon/238-301;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/253-349;
+	                il_main = #armor/-rare(1)/600-867;
+                    il_main = #*/-rare(1)/253-349;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/253-349;
+	                il_main = #armor/-unique(2)/600-867;
+                    il_main = #*/-unique(2)/253-349;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 328804;
+					min = 219762;
+				}
+			}
+		}	
+	}
+
+	[mind]
+	{
+
+		job_travel_distance_limit 			= 40;	// leash the giant
+		on_job_reached_travel_distance_abort_attack 	= false;
+		jat_fidget					= world\ai\jobs\common\job_fidget.skrit
+		?curious					= 0.75
+		&wander						= 0.8
+		&social						= 0.1
+		&interest					= interest
+		&delay_min					= 6
+		&delay_max					= 16
+		&still						= false;
+		on_enemy_spotted_alert_friends 			= true;
+		jat_brain					= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party			= true
+		&actor_creates_own_party			= true
+		&party_template					= "party_dsx_ice";
+		com_channels					= dyn_party, ice;
+		com_range					= 14.0;
+		melee_engage_range				= 14.0;
+		ranged_engage_range	 			= 14.0;
+		personal_space_range 				= 0.7;
+		sight_range					= 14.0;
+		actor_life_ratio_low_threshold 			= 0.5;
+	}
+
+}
+[t:template,n:ut3w_frost_giant_boss_01]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_ice_giant";
+	specializes = base_frost_giant;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	50.2, 0;
+			intelligence =  15.4, 0;
+			dexterity =  30.7, 0;
+            		melee =  96,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1090101;
+		life = 4575;
+        	max_life = 4575;
+		mana = 83.3;
+		max_mana = 83.3;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_ice_giant; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_ice_giant_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_ice_giant_SED; }
+			[hit_glance]	        { priority = low; * = s_e_hit_ice_giant_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_ice_giant_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 520;
+		damage_min = 400;
+		reload_delay = 0;
+	}
+	
+	[common]
+	{
+		screen_name = "Eldmarf, King of the Mountains";
+		membership = ice,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_purple(sgx)");
+			}
+		}
+	}
+	
+	[defend] { defense = 935; }
+	
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+	                	il_main = #weapon/-unique(2)/253-349;
+	                	il_main = #armor/-unique(2)/600-867;
+                    		il_main = #*/-unique(2)/253-349;
+			}
+		}	
+	}
+
+	[mind]
+	{
+
+		job_travel_distance_limit 			= 40;	// leash the giant
+		on_job_reached_travel_distance_abort_attack 	= false;
+		jat_fidget					= world\ai\jobs\common\job_fidget.skrit
+		?curious					= 0.75
+		&wander						= 0.8
+		&social						= 0.1
+		&interest					= interest
+		&delay_min					= 6
+		&delay_max					= 16
+		&still						= false;
+		on_enemy_spotted_alert_friends 			= true;
+		jat_brain					= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party			= true
+		&actor_creates_own_party			= true
+		&party_template					= "party_dsx_ice";
+		com_channels					= dyn_party, ice;
+		com_range					= 14.0;
+		melee_engage_range				= 14.0;
+		ranged_engage_range	 			= 14.0;
+		personal_space_range 				= 0.7;
+		sight_range					= 14.0;
+		actor_life_ratio_low_threshold 			= 0.5;
+	}
+
+}
+
+[t:template,n:ut3w_troll_masher]
+{
+	category_name = "1W_evil_c";
+	doc = "dsx_troll_masher_base";
+	specializes = base_cyclops;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  18, 0;
+			intelligence =  8, 0;
+			dexterity =  12, 0;
+			melee =  18,  0;
+		}
+	}
+	[aspect]
+	{
+		[textures]	{ 0 = b_c_ecm_troll_masher; }
+		experience_value = 2090;
+		life = 733;
+		max_life = 733;
+		mana = 18;
+		max_mana = 18;
+		scale_base = 1.3;
+		textures:0 = b_c_ecm_cy-02;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_cyclops; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_troll_masher_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_cyclops_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_cyclops_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_cyclops_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 115;
+		damage_min = 105;
+		reload_delay = 0;
+	}
+	[common] 
+	{ 
+		screen_name="Troll Masher"; 
+		membership = troll, monster;
+
+	}
+	[defend] { defense=340; }
+	[mind]
+	{
+
+		jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+		?curious				= 0.75
+		&wander					= 0.8
+		&social					= 0.1
+		&interest				= interest
+		&delay_min				= 6
+		&delay_max				= 16
+		&still					= false;
+		on_enemy_spotted_alert_friends 		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true
+		&actor_creates_own_party		= true
+		&party_template				= "party_dsx_troll";
+		com_channels				= dyn_party, troll;
+		com_range				= 14.0;
+		melee_engage_range			= 14.0;
+		ranged_engage_range	 		= 14.0;
+		personal_space_range 			= 0.7;
+		sight_range				= 14.0;
+		actor_life_ratio_low_threshold 		= 0.5;
+	}
+
+}
+

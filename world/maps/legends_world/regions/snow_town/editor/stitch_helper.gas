@@ -1,0 +1,41 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xABA20100;
+	source_region_name = snow_town;
+	[t:stitch_editor,n:ice_cave_2]
+	{
+		dest_region = ice_cave_2;
+		[node_ids]
+		{
+			0x00000dd1 = 0x51923B42,6;
+			0x00000dd2 = 0xA5180E5C,6;
+			0x00000dd3 = 0x6B7793DE,6;
+		}
+	}
+	[t:stitch_editor,n:id_r2]
+	{
+		dest_region = id_r2;
+		[node_ids]
+		{
+			0x00000dca = 0x9F2449C8,8;
+			0x00000dcb = 0x9F2449C8,7;
+			0x00000dcc = 0x9F2449C8,6;
+		}
+	}
+	[t:stitch_editor,n:path2ice_r2]
+	{
+		dest_region = path2ice_r2;
+		[node_ids]
+		{
+			0x00000dc1 = 0x3DC3BF9A,3;
+			0x00000dc2 = 0xC44C3C02,6;
+			0x00000dc3 = 0x92F2FDB7,3;
+			0x00000dc4 = 0x502ECAAF,1;
+			0x00000dc5 = 0xDB335358,1;
+			0x00000dc6 = 0xAB769D8D,4;
+			0x00000dc7 = 0xEBCF0B18,2;
+			0x00000dc8 = 0xEBCF0B18,1;
+			0x00000dc9 = 0x94D87AB9,4;
+		}
+	}
+}

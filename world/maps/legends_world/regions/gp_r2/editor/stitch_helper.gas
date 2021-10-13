@@ -1,0 +1,13 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xFC8EB6A1;
+	source_region_name = gp_r2;
+	[t:stitch_editor,n:gp_r1]
+	{
+		dest_region = gp_r1;
+		[node_ids]
+		{
+			0x00afffba = 0xD4535DCA,9;
+		}
+	}
+}

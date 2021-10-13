@@ -1,0 +1,30 @@
+[t:stone_glb_hiroth_01,n:0x06501e0b]
+{
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("goto_forest_elddim","active",1);
+				action* = change_quest_state("goto_forest_elddim","completed",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.878817,0,0.477159;
+	  p position = 3.38059,-1.2,-1.87889,0x47b79dcb;
+	}
+}

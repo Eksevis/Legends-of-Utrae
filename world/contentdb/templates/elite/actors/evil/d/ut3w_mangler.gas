@@ -1,0 +1,146 @@
+[t:template,n:ut3W_mangler]
+{
+	doc = "3W_mangler";
+	specializes = 3W_base_mangler;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		48.3, 0;
+			intelligence = 	8, 0;
+			dexterity = 	20.9, 0;
+			melee =  		94,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1795300;
+		life = 1540.8;
+		max_life = 1540.8;
+		mana = 42.8;
+		max_mana = 42.8;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 470.8;
+		damage_min = 346.7;
+	}
+	[common] 
+	{ 
+		screen_name="Dire Shellfish Mangler"; 
+
+	}
+	[defend] { defense=753.3; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #*/247-297;
+			}
+		}
+	}
+
+}
+[t:template,n:ut3W_snapper]
+{
+	doc = "3W_snapper";
+	specializes = 3W_base_mangler;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 	23.7, 0;
+			intelligence = 	3.5, 0;
+			dexterity = 	9.7, 0;
+			melee =  		89,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 330815;
+		life = 211.5;
+		max_life = 211.5;
+		mana = 178;
+		max_mana = 178;
+		scale_base = 0.60;
+		[textures]	{0=b_c_edm_mn-02;}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 153.7;
+		damage_min = 120.2;
+	}
+	[common] 
+	{ 
+		screen_name="Farmland Mangler"; 
+
+	}
+	[defend] { defense=528.5; }
+	[mind] 
+	{ 
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+        personal_space_range = 0.2;
+	}
+
+}
+
+[t:template,n:ut3W_mangler_sea]
+{
+	doc = "3W_mangler_sea";
+	specializes = 3W_base_mangler;
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		45.4, 0;
+			intelligence = 	6.1, 0;
+			dexterity = 	22.8, 0;
+			melee =  		97, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1292000;
+		life = 1804;
+		max_life = 1804;
+		mana = 12.8;
+		material = teeth;
+		max_mana = 12.8;
+		//scale_base = 0.60; // $$ What should his scale be? -CarlosN
+		[textures]	{0=b_c_edm_mn-03;}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 415.4;
+		damage_min = 299.5;
+	}
+	[common] 
+	{ 
+		screen_name="Sea Mangler"; 
+
+	}
+	[defend] { defense=956; }
+	[mind]
+	{
+		jat_attack_object_melee	= world\ai\jobs\common\job_attack_object_melee.skrit
+			?cautious_chance	= 0.75
+			&min_cautious_distance = 3.00
+			&cautious_approach_distance = 1.0
+			&cautious_down_time = 1.1;
+
+
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit
+			?social 		= 0.35
+			&approach_dist 	= 2.00
+			&move_distance 	= 4.00
+			&min_distance 	= 2.00
+			&still 			= false;
+	}
+
+}

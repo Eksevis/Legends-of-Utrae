@@ -1,0 +1,95 @@
+[t:3W_dragon,n:0x0a100068]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1.75;
+	}
+	[common]
+	{
+		screen_name = "Dragon Queen";
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100071,0f,"default","",0), doc("quake");
+				action* = send_world_message("we_req_activate",0x0A10006E,0f,"default","",0), delay(0.2), doc("rubble");
+				action* = send_world_message("we_req_activate",0x0A100073,0f,"default","",0), delay(0.3), doc("small rubble");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_anim_weapon_fire",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = send_world_message("we_trigger_deactivate",0x0A100198,0f,"default","",0), doc("fight mood door trigger deactivate");
+				action* = fade_nodes_global(0xAAA70101,2,1,1,"out:black"), doc("fade dragon node");
+				action* = change_quest_state("quest_slay_dragon","completed",0);
+				action* = send_world_message("we_trigger_activate",0x0A100199,0f,"default","",0), doc("dead dragon mood door trigger activate");
+				action* = send_world_message("we_req_activate",0x0A100044,0f,"default","",0), doc("unlock treasure chest 1");
+				action* = send_world_message("we_req_activate",0x0A100042,0f,"default","",0), doc("unlock treasure chest 2");
+				action* = send_world_message("we_req_activate",0x0A100043,0f,"default","",0), doc("unlock stone chest");
+				action* = send_world_message("we_req_activate",0x0A100051,0f,"default","every",0), doc("send to clientizer gizmo thingy");
+				action* = send_world_message("we_trigger_deactivate",0x0A100053,0f,"default","every",0), doc("fight mood door2 trigger deactivate");
+				action* = send_world_message("we_trigger_activate",0x0A100054,0f,"default","every",0), doc("dead dragon mood door2 trigger activate");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_killed",0,"on_first_message"), doc("using this more reliable condition for server actions");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100075,0f,"default","",0), doc("wake dragon if hit");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_damaged",0,"on_first_message"), doc("[*converted to one-shot*]");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = true;
+			  b start_active = true;
+			}
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x0A100068,0f,"default","every",0), delay(3), doc("wake up self on reload");
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_entered_world",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = false;
+			}
+		}
+	}
+	[mind]
+	{
+	  f personal_space_range = 6;
+	}
+	[placement]
+	{
+	  q orientation = 0,0.99863,0,-0.052336;
+	  p position = -0.56873,3.575,-14.2268,0x26b536ed;
+		use_point_scids = 0x0a100185,0x0a10018c,0x0a100186,0x0a100187,0x0a100188,0x0a10018b,0x0a100189,0x0a10018a,0x0a10004c,0x0a10004d,0x0a10004e,0x0a100050;
+	}
+}

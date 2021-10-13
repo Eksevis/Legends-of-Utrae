@@ -1,0 +1,30 @@
+[conversation_tracker]
+{
+	[text*]
+	{
+		choice = more;
+		order = 0;
+		screen_text = "Seeking yer fortunes in the murky waters of Lang Mire, are ye? Ye'll know this place is seething with danger, then, with only the gods-know-what lurking beneath the muck. I'd never be out this way meself, 'cept someone has to wipe the signs clear of mold and trim the wicks on the torches. Lang is a goodly trudge west o' here. Jes follow yer nose -- them torches burn pure troll fat, an' it stinks worse then a swamp witch's breath.";
+	}
+	[text*]
+	{
+		screen_text = "Oh while you trying to find your way to Lang, could you please keep your eyes open for a group of explorers who went through not long ago? I fear they're not as well equiped as you and could be in difficulty. Thank you.";
+	activate_quest* = quest_explorer_quest;
+	quest_dialog = true;
+	}
+}
+[conversation_tracker_red]
+{
+	[text*]
+	{
+		screen_text = "Pshaw! Betwixt the unholy flashes o' lightning and that powerful stink, I'm not sure which has me more befuddled.";
+	}
+}
+[conversation_kirassa]
+{
+	[text*]
+	{
+		choice = shop;
+		screen_text = "Hi I'm a merchant trying to get to Lang. I was travelling with a party who disregarded the warnings of this good man here and tried to continue on. I'm not quite as brave and will wait here until the relief shift arrives. Since I'm a merchant and have stock to trade, would you like to examine it? You may find something usefull for you.";
+	}
+}

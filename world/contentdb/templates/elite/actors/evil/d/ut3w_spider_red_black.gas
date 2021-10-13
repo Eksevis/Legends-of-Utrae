@@ -1,0 +1,229 @@
+[t:template,n:ut3w_spider_red_black]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_spider_red_black";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  30.1, 0;
+			intelligence =  3.5, 0;
+			dexterity =  21.2, 0;
+			melee =  90, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 608157;
+		life = 744;
+		max_life = 744;
+		mana = 62;
+		max_mana = 62;
+		model = m_c_edm_sp_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_spider; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 249.9;
+		damage_min = 169.3;
+		reload_delay = 1;
+	}
+	[defend] { defense=529; }
+	[body]
+	{
+		avg_move_velocity = 2.350000;
+		[bone_translator]
+		{
+			body_anterior = bone02;
+			body_mid = bone04;
+			body_posterior = bone04;
+			kill_bone = bone04;
+			shield_bone = bone01;
+			weapon_bone = bone02;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_sp_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Gorespinner Spider"; 
+
+	}
+
+	[mind]
+	{
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_effect = spider_guts_black;
+		explode_when_killed = true;
+		explosion_magnitude = 1.0;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_spider_01 = 1;
+			frag_glb_spider_02 = 3;
+			frag_glb_spider_03 = 5;
+			frag_glb_spider_04 = 5;
+			frag_glb_spider_05 = 1;
+		}
+	}
+
+}
+[t:template,n:ut3w_spider_red_black_01]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_spider_red_black";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 13.3, 0;
+			  intelligence = 5.4, 0;
+			  strength = 31.5, 0;
+			  melee = 88, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 422840;
+		  life = 412;
+		  mana = 534;
+		  max_life = 412;
+		  max_mana = 534;
+		model = m_c_edm_sp_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_spider; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		  damage_max = 230.1;
+		  damage_min = 200.9;
+		reload_delay = 1;
+	}
+	[defend] { defense=400.5; }
+	[body]
+	{
+		avg_move_velocity = 2.350000;
+		[bone_translator]
+		{
+			body_anterior = bone02;
+			body_mid = bone04;
+			body_posterior = bone04;
+			kill_bone = bone04;
+			shield_bone = bone01;
+			weapon_bone = bone02;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_sp_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Gorespinner Spider"; 
+
+	}
+
+	[mind]
+	{
+		melee_engage_range = 14.0;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_effect = spider_guts_black;
+		explode_when_killed = true;
+		explosion_magnitude = 1.0;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_spider_01 = 1;
+			frag_glb_spider_02 = 3;
+			frag_glb_spider_03 = 5;
+			frag_glb_spider_04 = 5;
+			frag_glb_spider_05 = 1;
+		}
+	}
+
+}
+

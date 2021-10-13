@@ -1,0 +1,43 @@
+[t:cmd_move_party,n:0x0080029d]
+{
+	[cmd_party]
+	{
+	  f aproach_distance_max = 3;
+	  f aproach_distance_min = 1;
+	}
+	[placement]
+	{
+	  p position = 0.0378392,-9.53674e-007,-0.745713,0xd3048998;
+	}
+}
+[t:cmd_move_party,n:0x008002a0]
+{
+	[placement]
+	{
+	  p position = 0.205882,-1.5,0.66706,0xa8c59a31;
+	}
+}
+[t:light_enable,n:0x008001b9]
+{
+	[light_enable]
+	{
+	  b initially_active = false;
+	  x siege_light = 0xBFDBBD1D;
+	}
+	[placement]
+	{
+	  p position = -2.04383,0,-1.86141,0x86504da0;
+	}
+}
+[t:light_enable,n:0x008001ba]
+{
+	[light_enable]
+	{
+	  b initially_active = false;
+	  x siege_light = 0x617E5303;
+	}
+	[placement]
+	{
+	  p position = -2.86788,-9.53674e-007,-1.99603,0x86504da0;
+	}
+}

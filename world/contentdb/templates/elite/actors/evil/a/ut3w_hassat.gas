@@ -1,0 +1,1485 @@
+// Tiger Melee (unarmed)
+[t:template,n:ut3w_hassat_scavenger]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_hassat_scavenger";
+	specializes = base_hassat_tiger;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =   47.2, 0;
+			intelligence =  16.2, 0;
+			dexterity =   26.2, 0;
+			melee =  98,  0;
+		}
+	}
+
+	[aspect]
+	{
+		scale_base = .8;
+		life = 1659.1;
+		max_life = 1659.1;
+		mana = 92.2;
+		max_mana = 92.2;
+   		experience_value = 1795300;
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 378.6;
+		damage_min = 258.1;
+	}
+
+	[common] 
+	{ 
+		screen_name="Hassat Meddler"; 
+		membership = hassat, monster;
+	}
+
+	[defend] { defense=781; }
+
+  	[inventory]
+  	{
+  		drop_at_use_point = true;
+  		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 10, Strong */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}			
+			}
+		}
+	}
+  	[mind]
+	{
+		on_enemy_spotted_alert_friends		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true;		
+	}
+}
+
+// Tiger Melee (unarmed)
+[t:template,n:ut3w_hassat_panther]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_hassat_panther";
+	specializes = base_hassat_tiger;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =   47.2, 0;
+			intelligence =  16.2, 0;
+			dexterity =   26.2, 0;
+			melee =  98,  0;
+		}
+	}
+
+	[aspect]
+	{
+		scale_base		 = .85;
+		textures:0		 = b_c_eam_hg-02;
+		life = 1859.1;
+		max_life = 1859.1;
+		mana = 92.2;
+		max_mana = 92.2;
+   		experience_value = 1795300;
+		[voice]
+		{
+			[die]		{ priority = high; * = s_e_die_leopard_SED;  }
+			[enemy_spotted]	{ priority = high; * = s_e_call_leopard_SED; }
+//			[hit_critical]	{ priority = low; * = s_e_hit_leopard_SED;  }
+//			[hit_glance]	{ priority = low; * = s_e_hit_leopard_SED;  }
+			[hit_solid]	{ priority = low; * = s_e_hit_leopard_SED;  }
+		}
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 428.6;
+		damage_min = 298.1;
+	}
+
+	[common] 
+	{ 
+		screen_name="Hassat Assassin"; 
+		membership = hassat, monster;
+	}
+
+	[defend] 
+	{ 
+		defense=850; 
+	}
+  	[inventory]
+  	{
+  		drop_at_use_point = true;
+  		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 11, Strong */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}			
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_spotted_alert_friends		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true;		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Leopard with Staff 
+[t:template,n:ut3w_hassat_grunt]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_hassat_grunt";
+	specializes = base_hassat_leopard;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =   47.2, 0;
+			intelligence =  16.2, 0;
+			dexterity =   26.2, 0;
+			melee =  98,  0;
+		}	
+	}
+	
+	[aspect]
+	{
+		life = 2059.1;
+		max_life = 2059.1;
+		mana = 92.2;
+		max_mana = 92.2;
+   		experience_value = 1795300;
+    }
+	[attack]
+	{
+		attack_range = .5;
+		damage_max = 278.6;
+		damage_min = 228.1;
+	}
+	[common] 
+	{ 
+		screen_name="Hassat Zealot"; 
+		membership = hassat, monster;
+	}
+	[defend] { defense = 965; }	
+	[inventory]
+	{
+         spew_equipped_kill_count = <ignore>;
+
+		[equipment]
+		{
+			es_weapon_hand=ax_g_c_1h2b_low_dsx;
+		}
+		[pcontent]
+		{
+		/* Generated: Tue Jun 17 11:13:15 2003
+			Level 18, Strong */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}			
+			}
+		}
+	}
+	
+	[mind]
+	{
+		on_enemy_spotted_alert_friends		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true;		
+	}
+}
+
+// Tiger Melee (sword) 
+[t:template,n:ut3w_hassat_fighter]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_hassat_fighter";
+	specializes = base_hassat_leopard;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =   47.2, 0;
+			intelligence =  16.2, 0;
+			dexterity =   26.2, 0;
+			melee =  98,  0;
+		}
+	}
+
+	[aspect]
+	{
+		model			 = m_c_eam_HS;
+		scale_base 		 = .875;
+		life = 2259.1;
+		max_life = 2259.1;
+		mana = 92.2;
+		max_mana = 92.2;
+   		experience_value = 1795300;
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 308.6;
+		damage_min = 258.1;
+	}
+
+	[common] 
+	{ 
+		screen_name="Hassat Beastslayer"; 
+		membership = hassat, monster;
+	}
+	[defend] { defense = 1066; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_weapon_hand=ss_g_c_bl_1h_fun_02_dsx;
+      	}
+		[pcontent]
+		{
+		/* Generated: Tue Jun 17 11:13:15 2003
+			Level 20, Medium */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}
+				
+			}
+		}
+	}
+	[mind]
+	{
+		on_enemy_spotted_alert_friends		= true;
+		jat_brain							= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party			= true;		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//cheetah archer
+[t:template,n:ut3w_hassat_bowman]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_hassat_bowman";
+	specializes = base_hassat_cheetah;
+
+		[actor]
+		{
+			[skills]
+			{
+			strength =   44.1, 0;
+			intelligence = 16.2, 0;
+			dexterity =   28.6, 0;
+			ranged =  97,  0;
+			}
+		}
+	
+		[aspect]
+		{
+			scale_base = .85;
+			model=m_c_eam_ha-03;
+			
+		life = 1451.7;
+		max_life = 1451.7;
+		mana = 92.2;
+		max_mana = 92.2;
+   		experience_value = 1571578;
+		}
+	
+		[attack]
+		{
+			attack_range = .5;
+		damage_max = 507.1;
+		damage_min = 462.4;
+		damage_bonus_min_ranged = 205;
+		damage_bonus_max_ranged = 303;
+		}
+	
+		[common] 
+		{ 
+			screen_name="Hassat War Scout"; 
+			membership = hassat, monster;
+		}
+	
+		[defend] { defense=655; }
+	
+		[inventory]
+		{
+			spew_equipped_kill_count = <ignore>;
+			selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+			[equipment]
+			{
+				es_shield_hand = bw_dsx_hassat_03;
+			}
+			[pcontent]
+			{
+				/* Generated: Tue Jun 17 11:13:15 2003
+				Level 10, Medium */
+				[oneof*]
+				{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}
+					
+				}
+			}
+	      
+	 	}		
+		
+		[mind]
+		{
+			actor_auto_switches_to_melee         = false;
+			actor_auto_switches_to_ranged        = true;
+			actor_auto_uses_stored_items		 = false;
+			
+			actor_weapon_preference				 = WP_RANGED;
+			on_enemy_spotted_alert_friends		= true;
+			jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true;		
+		}
+}
+
+[t:template,n:ut3w_hassat_archer]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_hassat_archer";
+	specializes = base_hassat_cheetah;
+	[actor]
+	{
+		[skills]
+		{
+			strength =   44.1, 0;
+			intelligence = 16.2, 0;
+			dexterity =   28.6, 0;
+			ranged =  97,  0;
+		}
+	}
+	[aspect]
+	{
+		scale_base = .875;
+		model=m_c_eam_ha-02;
+		
+		life = 1551.7;
+		max_life = 1551.7;
+		mana = 92.2;
+		max_mana = 92.2;
+   		experience_value = 1571578;
+	}
+	[attack]
+	{
+		attack_range = .5;
+		damage_max = 507.1;
+		damage_min = 462.4;
+		damage_bonus_min_ranged = 205;
+		damage_bonus_max_ranged = 303;
+	}
+	[common] 
+	{ 
+		screen_name="Hassat Sharpshooter"; 
+		membership = hassat, monster;		
+	}
+	[defend] { defense = 707; }
+	[inventory]
+	{
+	     spew_equipped_kill_count = <ignore>;
+		selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+		[equipment]
+		{
+			es_shield_hand = bw_dsx_hassat_01; 
+		}
+	[pcontent]
+		{
+		/* Generated: Tue Jun 17 11:13:15 2003
+			Level 18, Medium */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}
+				
+			}
+		}
+	      
+	}
+			
+	[mind]
+	{
+		actor_auto_switches_to_melee         = false;
+		actor_auto_switches_to_ranged        = true;
+		actor_auto_uses_stored_items		 = false;
+		on_enemy_spotted_alert_friends		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true;
+		actor_weapon_preference				 = WP_RANGED;
+	}
+}
+
+[t:template,n:ut3w_hassat_ranger]
+{
+	category_name = "1W_evil_a";
+	doc = "dsx_hassat_ranger";
+	specializes = base_hassat_cheetah;
+		[actor]
+		{
+			[skills]
+			{
+			strength =   44.1, 0;
+			intelligence = 16.2, 0;
+			dexterity =   28.6, 0;
+			ranged =  97,  0;
+			}
+		}
+		[aspect]
+		{
+			scale_base = .9;
+			model=m_c_eam_ha;
+	
+		life = 1651.7;
+		max_life = 1651.7;
+		mana = 92.2;
+		max_mana = 92.2;
+   		experience_value = 1571578;
+		}
+		[attack]
+		{
+			attack_range = .5;
+		damage_max = 507.1;
+		damage_min = 462.4;
+		damage_bonus_min_ranged = 205;
+		damage_bonus_max_ranged = 303;
+		}
+	
+		[common] 
+		{ 
+			screen_name="Hassat Keeper"; 
+			membership = hassat, monster;
+		}
+	
+		[defend] { defense=920; }
+	
+		[inventory]
+		{
+			spew_equipped_kill_count = <ignore>;
+			selected_active_location = IL_ACTIVE_RANGED_WEAPON;
+			[equipment]
+			{
+				es_shield_hand = bw_dsx_hassat_02;
+			}
+	      [pcontent]
+			{
+			/* Generated: Tue Jun 17 11:13:15 2003
+				Level 20, Medium */
+				[oneof*]
+				{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}
+					
+				}
+			}
+		}
+		
+		[mind]
+		{
+			actor_auto_switches_to_melee		= false;
+			actor_auto_switches_to_ranged		= true;
+			actor_auto_uses_stored_items		= false;
+			on_enemy_spotted_alert_friends		= true;
+			jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true;
+			actor_weapon_preference			= WP_RANGED;
+		}
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Lion
+[t:template,n:ut3w_hassat_shaman]
+{
+	category_name = "1w_evil_a";
+	doc="dsx_hassat_shaman";
+	specializes = dsx_hassat_shaman_base;
+
+		[actor]
+		{
+			[skills]
+			{
+				strength 	=  27.6, 0;
+				intelligence 	=  19.8, 0;
+				dexterity 	=  20.1, 0;
+            			nature_magic 	=  91,  0;
+            			combat_magic 	=  91,  0;
+			}
+		}
+	
+		[aspect]
+		{
+		life = 1251.7;
+		max_life = 1251.7;
+		mana = 9200.2;
+		max_mana = 9200.2;
+   		experience_value = 1571578;
+		}
+	
+		[attack]
+		{
+			attack_range = .5;
+		damage_max = 469.6;
+		damage_min = 344.8;
+		damage_bonus_min_cmagic = 190;
+		damage_bonus_max_cmagic = 284;
+		}
+	
+		[common] 
+		{ 
+			screen_name="Hassat Spiritalist"; 
+			membership = hassat, monster;
+		}
+	
+		[defend] { defense=552; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell   = ut_spell_hassat_shaman_fireshot; }    
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 18, Medium */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}
+				
+			}
+		}	
+	}
+	[mind]
+	{
+		actor_weapon_preference              = WP_MAGIC;
+		actor_auto_switches_to_magic         = true;
+		on_enemy_spotted_alert_friends		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true;
+	}
+}
+[t:template,n:ut3w_hassat_caster]
+{
+	category_name = "1w_evil_a";
+	doc="dsx_hassat_caster";
+	specializes = base_hassat_lion;
+	[actor]
+	{
+		[skills]
+		{
+				strength 	=  27.6, 0;
+				intelligence 	=  19.8, 0;
+				dexterity 	=  20.1, 0;
+            			nature_magic 	=  91,  0;
+            			combat_magic 	=  91,  0;
+		}
+    }
+	[aspect]
+	{
+		life = 1351.7;
+		max_life = 1351.7;
+		mana = 9200.2;
+		max_mana = 9200.2;
+   		experience_value = 1571578;
+
+		scale_base = .875;
+		model=m_c_eam_HM;
+	}
+	[attack]
+	{
+		attack_range = .5;
+		damage_max = 469.6;
+		damage_min = 344.8;
+		damage_bonus_min_cmagic = 190;
+		damage_bonus_max_cmagic = 284;
+	}
+	[common] 
+	{ 
+		screen_name = "Hassat Elementalist"; 
+		membership = hassat, monster;
+	}
+	[defend] { defense = 627; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell   = ut_spell_hassat_caster_fireshot; }    
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 18, Medium */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}
+				
+			}
+		}	
+	}
+	[mind]
+	{
+		actor_weapon_preference              = WP_MAGIC;
+		actor_auto_switches_to_magic         = true;
+		on_enemy_spotted_alert_friends		= true;
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= true;
+	}
+}
+
+[t:template,n:ut3w_hassat_mage]
+{
+  category_name = "1w_evil_a";
+  doc="dsx_hassat_mage";
+  specializes = base_hassat_lion;
+
+	[actor]
+    {
+		[skills]
+		{
+				strength 	=  27.6, 0;
+				intelligence 	=  19.8, 0;
+				dexterity 	=  20.1, 0;
+            			nature_magic 	=  91,  0;
+            			combat_magic 	=  91,  0;
+		}
+	}
+	[aspect]
+	{
+		scale_base 		 = .9;
+		model			 = m_c_eam_HM-03;
+
+		life = 1451.7;
+		max_life = 1451.7;
+		mana = 9200.2;
+		max_mana = 9200.2;
+   		experience_value = 1571578;
+	}
+	[attack]
+	{
+		attack_range 	= .5;
+		damage_max = 469.6;
+		damage_min = 344.8;
+		damage_bonus_min_cmagic = 190;
+		damage_bonus_max_cmagic = 284;
+	}
+	[common] 
+	{ 
+		screen_name="Hassat Mancer"; 
+		membership = hassat, monster;
+	}
+	[defend] { defense=847; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		selected_active_location = il_active_primary_spell;
+		[other] 
+		{ 
+			il_active_primary_spell = ut_spell_hassat_mage_fireshot;
+			il_spell_1 = ut_spell_hassat_mage_orb;
+		}
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 20, Strong */
+			[oneof*]
+			{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}			
+			}
+		}		
+	}
+	[mind]
+	{
+		actor_weapon_preference         = WP_MAGIC;
+		actor_auto_switches_to_magic    = true;
+		
+		jat_cast			= world\ai\jobs\common\job_cast.skrit
+		?rand_spell			= true
+		&spell_chances		= "0.5, 0.5"
+		&spells				= "dsx_spell_hassat_mage_fireshot, dsx_spell_hassat_mage_orb";		
+
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+		?curious	= 0.75
+		&wander		= 0.8
+		&social		= 0.1
+		&interest	= interest
+		&delay_min	= 6
+		&delay_max	= 16
+		&still		= false;
+
+		on_enemy_spotted_alert_friends = true;
+
+		jat_brain					= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party	= true
+		&actor_creates_own_party	= true
+		&party_template				= "party_dsx_hassat";
+
+		com_channels			= dyn_party, hassat;
+		com_range				= 14.0;
+		melee_engage_range		= 14.0;
+		ranged_engage_range	 	= 14.0;
+		sight_range				= 14.0;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////White tiger
+[t:template,n:ut3w_hassat_commander]
+{
+  category_name = "1W_evil_a";
+  doc = "dsx_hassat_commander";
+  specializes = actor_evil;
+		[actor]
+	    	{
+	      		[skills]
+			{
+			strength =   47.2, 0;
+			intelligence =  16.2, 0;
+			dexterity =   26.2, 0;
+			melee =  98,  0;
+			}
+		}
+		[aspect]
+		{
+			model=m_c_eam_HC;
+	      
+			life = 3659.1;
+			max_life = 3659.1;
+			mana = 92.2;
+			max_mana = 92.2;
+   			experience_value = 1795300;
+	      		[voice]
+			{
+				[die]			{ priority = high; * = s_e_die_tiger_SED;  }
+				[enemy_spotted]	{ priority = high; * = s_e_call_tiger_SED; }
+	//			[hit_critical]	{ priority = low; * = s_e_hit_tiger_SED;  }
+	//			[hit_glance]	{ priority = low; * = s_e_hit_tiger_SED;  }
+				[hit_solid]		{ priority = low; * = s_e_hit_tiger_SED;  }
+			}
+		}
+	
+		[body]
+		{
+			min_move_velocity	= 1.5;
+			avg_move_velocity	= 3.500;
+		
+			[bone_translator]
+			{
+				body_anterior = Bip01_Head;
+				body_mid = Bip01_Spine2;
+				body_posterior = Bip01_Pelvis;
+				kill_bone = Bip01_Spine2;
+				shield_bone = shield_grip;
+				weapon_bone = Weapon_grip;
+			}
+			[chore_dictionary]
+			{
+				chore_prefix = a_c_eam_hassat_commander_fs;
+				[chore_attack]
+				{
+					chore_stances = 5;
+					skrit = select_attack;
+					[anim_files]
+					{
+						0mid = at;
+						0mid = at-02;
+						high = at-03;
+						qffg = dff;
+					}
+					[anim_durations]
+					{
+						fs5 = 2;			
+					}
+				}
+				[chore_default]
+				{
+					chore_stances = 5;
+					skrit = infinite_loop;
+					[anim_files] { 00=dfs; }
+				}
+				[chore_die]
+				{
+					chore_stances = 5;
+					skrit = select_transition;
+					[anim_files] { 00=di; }
+				}
+				[chore_fidget]
+				{
+					chore_stances = 5;
+					skrit = select_fidget;
+					[anim_files] 
+					{
+						00 = dff;
+						01 = dff-02;
+					}
+				}
+				[chore_walk]
+				{
+					chore_stances = 5;
+					skrit = select_walk;
+					[anim_files] { 00=wl; }
+				}
+				[chore_magic]
+				{
+					chore_stances = 5;
+					skrit = select_attack;
+					[anim_files]
+					{
+						00 = mg;
+					}
+				}
+			}
+		}
+		[attack]
+		{
+			attack_range = .5;
+			damage_max = 278.6;
+			damage_min = 218.1;
+		}
+		[common]
+		{
+			screen_name = "Hassat Chief";
+			membership = hassat,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		}
+	
+		[guts_manager]
+		{
+			effect_name = melee_hit_2;
+		}
+		[defend] { defense = 1590; }
+		[inventory]
+		{
+			spew_equipped_kill_count = <ignore>;
+			[equipment]
+			{
+			  es_weapon_hand = st_g_c_dsx_hst_avg; //formerly staff2_hassat_staff;	//sd_un_ice_avg;
+			}
+		[pcontent]
+			{
+			/* Generated: Tue Jun 17 11:13:15 2003
+				Level 11, Strong */
+				[oneof*]
+				{
+				[oneof*]
+				{
+				   chance = 0.05;
+				   il_main = potion_health_super;
+				   il_main = potion_mana_super;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+	                il_main = #spell/37-55;
+				}
+				[oneof*]
+				{
+					chance = 0.22;
+					il_main = #*/225-297;
+					il_main = #armor/134-677;
+				}
+                [oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/270-351;
+	                il_main = #armor/-rare(1)/664-1037;
+                    il_main = #*/-rare(1)/270-351;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/270-351;
+	                il_main = #armor/-unique(2)/664-1037;
+                    il_main = #*/-unique(2)/270-351;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 390784;
+					min = 326251;
+				}			
+				}
+			}
+	      				
+		}
+		[mind]
+		{
+			jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+			?curious				= 0.75
+			&wander					= 0.8
+			&social					= 0.1
+			&interest				= interest
+			&delay_min				= 6
+			&delay_max				= 16
+			&still					= false;
+			on_enemy_spotted_alert_friends 		= true;
+			jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true
+			&actor_creates_own_party		= true
+			&party_template				= "party_dsx_hassat";
+			com_channels				= dyn_party, hassat;
+			com_range				= 14.0;
+			melee_engage_range			= 14.0;
+			ranged_engage_range	 		= 14.0;
+			sight_range				= 14.0;
+		}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////White tiger
+[t:template,n:ut3w_hassat_commander_boss_01]
+{
+  category_name = "1W_evil_a";
+  doc = "dsx_hassat_commander";
+  specializes = actor_evil;
+		[actor]
+	    	{
+	      		[skills]
+			{
+			strength =   47.2, 0;
+			intelligence =  16.2, 0;
+			dexterity =   26.2, 0;
+			melee =  98,  0;
+			}
+		}
+		[aspect]
+		{
+			model=m_c_eam_HC;
+	      
+			life = 6659.1;
+			max_life = 6659.1;
+			mana = 92.2;
+			max_mana = 92.2;
+   			experience_value = 1795300;
+	      		[voice]
+			{
+				[die]			{ priority = high; * = s_e_die_tiger_SED;  }
+				[enemy_spotted]	{ priority = high; * = s_e_call_tiger_SED; }
+	//			[hit_critical]	{ priority = low; * = s_e_hit_tiger_SED;  }
+	//			[hit_glance]	{ priority = low; * = s_e_hit_tiger_SED;  }
+				[hit_solid]		{ priority = low; * = s_e_hit_tiger_SED;  }
+			}
+		}
+	
+		[body]
+		{
+			min_move_velocity	= 1.5;
+			avg_move_velocity	= 3.500;
+		
+			[bone_translator]
+			{
+				body_anterior = Bip01_Head;
+				body_mid = Bip01_Spine2;
+				body_posterior = Bip01_Pelvis;
+				kill_bone = Bip01_Spine2;
+				shield_bone = shield_grip;
+				weapon_bone = Weapon_grip;
+			}
+			[chore_dictionary]
+			{
+				chore_prefix = a_c_eam_hassat_commander_fs;
+				[chore_attack]
+				{
+					chore_stances = 5;
+					skrit = select_attack;
+					[anim_files]
+					{
+						0mid = at;
+						0mid = at-02;
+						high = at-03;
+						qffg = dff;
+					}
+					[anim_durations]
+					{
+						fs5 = 2;			
+					}
+				}
+				[chore_default]
+				{
+					chore_stances = 5;
+					skrit = infinite_loop;
+					[anim_files] { 00=dfs; }
+				}
+				[chore_die]
+				{
+					chore_stances = 5;
+					skrit = select_transition;
+					[anim_files] { 00=di; }
+				}
+				[chore_fidget]
+				{
+					chore_stances = 5;
+					skrit = select_fidget;
+					[anim_files] 
+					{
+						00 = dff;
+						01 = dff-02;
+					}
+				}
+				[chore_walk]
+				{
+					chore_stances = 5;
+					skrit = select_walk;
+					[anim_files] { 00=wl; }
+				}
+				[chore_magic]
+				{
+					chore_stances = 5;
+					skrit = select_attack;
+					[anim_files]
+					{
+						00 = mg;
+					}
+				}
+			}
+		}
+		[attack]
+		{
+			attack_range = .5;
+			damage_max = 408.6;
+			damage_min = 298.1;
+		}
+		[common]
+		{
+			screen_name = "Ashem The Blademaster";
+			membership = hassat,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode; 
+			[template_triggers]
+			{
+				[*]
+				{
+					condition* = receive_world_message("WE_ENTERED_WORLD");
+					single_shot = true;
+					no_trig_bits = true;
+					action* = call_sfx_script("unique_ray_red(sgx)");
+	
+				}
+			}
+		}
+	
+		[guts_manager]
+		{
+			effect_name = melee_hit_2;
+		}
+		[defend] { defense = 2590; }
+		[inventory]
+		{
+			spew_equipped_kill_count = <ignore>;
+			[equipment]
+			{
+			  es_weapon_hand = st_g_c_dsx_hst_avg; //formerly staff2_hassat_staff;	//sd_un_ice_avg;
+			}
+			[pcontent]
+			{
+			/* Generated: Tue Jun 17 11:13:15 2003
+				Level 11, Strong */
+				[oneof*]
+					{
+                			[oneof*]
+					{
+	                			il_main = #weapon/-rare(1)/270-351;
+	                			il_main = #armor/-rare(1)/664-1037;
+                    				il_main = #*/-rare(1)/270-351;
+                			}
+					[oneof*]
+					{
+	                			il_main = #weapon/-unique(2)/270-351;
+	                			il_main = #armor/-unique(2)/664-1037;
+                    				il_main = #*/-unique(2)/270-351;
+	            			}			
+				}
+			}
+	      				
+		}
+		[mind]
+		{
+			jat_fidget				= world\ai\jobs\common\job_fidget.skrit
+			?curious				= 0.75
+			&wander					= 0.8
+			&social					= 0.1
+			&interest				= interest
+			&delay_min				= 6
+			&delay_max				= 16
+			&still					= false;
+			on_enemy_spotted_alert_friends 		= true;
+			jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party		= true
+			&actor_creates_own_party		= true
+			&party_template				= "party_dsx_hassat";
+			com_channels				= dyn_party, hassat;
+			com_range				= 14.0;
+			melee_engage_range			= 14.0;
+			ranged_engage_range	 		= 14.0;
+			sight_range				= 14.0;
+		}
+}
+

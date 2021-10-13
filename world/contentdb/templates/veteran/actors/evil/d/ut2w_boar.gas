@@ -1,0 +1,54 @@
+[t:template,n:ut2w_boar]
+{
+  category_name = "1W_evil_d";
+  doc = "dsx_boar";
+  specializes = base_boar;
+  [actor]
+    {
+      [skills]
+	{
+			strength =  	35.5, 0;
+			intelligence =  12.9, 0;
+			dexterity =  23.1, 0;
+            		melee =  62,  0;
+	}
+    }
+  [aspect]
+    {
+      experience_value = 82;
+      life = 1046;
+      max_life = 1046;
+      mana = 0;
+      max_mana = 0;
+      model = m_c_edm_hb_pos_2;
+      [textures]		{ 0 = b_c_edm_snow_boar; }
+      		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_hellboar_SED;		}
+			[hit_critical]	{ priority = low; * = s_e_hit_hellboar_SED;	}
+			[hit_glance]	{ priority = low; * = s_e_hit_hellboar_SED;	}
+			[hit_solid]		{ priority = low; * = s_e_hit_hellboar_SED;	}
+		}
+    }
+  [attack]
+    {
+      attack_range = 0.5;
+		damage_max = 254.1;
+		damage_min = 188.1;
+    }
+  [common] { screen_name = "Dire Snow Boar"; }
+  [defend] { defense = 486; }
+  [mind]
+    {
+      melee_engage_range = 10;
+      personal_space_range = 0.7;
+      ranged_engage_range = 10.0;
+      sight_range = 10.0;
+    }
+
+		[inventory] // container: 1 of 6, for level 0.333333333333333, generated: Fri Jun 13 11:41:00 2003
+		{
+				drop_at_use_point = true;
+				
+		}
+}

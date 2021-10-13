@@ -1,0 +1,823 @@
+[t:template,n:ut_spider_emerald]
+{
+  category_name = "1W_evil_d";
+  doc = "dsx_spider_emerald";
+  specializes = actor_evil;
+
+  [actor]
+    {
+      [skills]
+	{
+	  strength =  8, 0;
+	  intelligence =  7, 0;
+	  dexterity =  8, 0;
+	  melee = 3, 0;
+	}
+    }
+  [aspect]
+    {
+      [textures]	{ 0 = b_c_edm_emerald_spider; }
+
+      experience_value = 50;
+      life = 106;
+      max_life = 106;
+      mana = 0;
+      max_mana = 0;
+      model = m_c_edm_sp_pos_1;
+            scale_base = 1.5;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_spider_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_emerald_SED; }
+			[attack]	{ priority = high; * = s_e_attack_spider_SED; }
+		}
+    }
+  [attack]
+    {
+      attack_range = 0.5;
+      damage_min = 18;
+      damage_max = 24;
+      reload_delay = 1;
+    }
+  [defend] { defense = 30; }
+
+  [body]
+    {
+      avg_move_velocity = 2.350000;
+      [bone_translator]
+	{
+	  body_anterior = bone02;
+	  body_mid = bone04;
+	  body_posterior = bone04;
+	  kill_bone = bone04;
+	  shield_bone = bone01;
+	  weapon_bone = bone02;
+	}
+      [chore_dictionary]
+	{
+	  chore_prefix = a_c_edm_sp_fs;
+	  [chore_attack]
+	    {
+	      chore_stances = 0;
+	      skrit = select_attack;
+	      [anim_files] { 00=at; }
+	    }
+	  [chore_default]
+	    {
+	      chore_stances = 0;
+	      skrit = infinite_loop;
+	      [anim_files] { 00=dfs; }
+	    }
+	  [chore_die]
+	    {
+	      chore_stances = 0;
+	      skrit = select_transition;
+	      [anim_files] { 00=di; }
+	    }
+	  [chore_fidget]
+	    {
+	      chore_stances = 0;
+	      skrit = select_fidget;
+	      [anim_files] { 00=dff; }
+	    }
+	  [chore_walk]
+	    {
+	      chore_stances = 0;
+	      skrit = select_walk;
+	      [anim_files] { 00=wl; }
+	    }
+	}
+    }
+
+  [common] { screen_name = "Emerald Spider"; }
+
+  [mind]
+    {
+      melee_engage_range = 14.0;
+      personal_space_range = 0.7;
+      ranged_engage_range = 14.0;
+      sight_range = 14.0;
+    }
+  [physics]
+    {
+      break_effect = spider_guts_black;
+      explode_when_killed = true;
+      explosion_magnitude = 1.0;
+      gib_gore_good = true;
+      [break_particulate]
+				{
+					frag_glb_emerald_spider_01 = 1;
+					frag_glb_emerald_spider_02 = 3;
+					frag_glb_emerald_spider_03 = 5;
+					frag_glb_emerald_spider_04 = 5;
+					frag_glb_emerald_spider_05 = 1;
+				}
+    }
+	[inventory] 
+		{
+			drop_at_use_point = true;
+			[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 4, Strong */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 18;
+				max = 35;
+			}
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #weapon/14-14;
+				il_main = #armor/4-34;
+				il_main = #*/14-14;
+			}
+		}
+	}
+		}
+}
+
+[t:template,n:ut_spider_adolescent]
+{
+	category_name = "1W_evil_d";
+	doc = "spider_pink";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  6, 0;
+			intelligence =  2, 0;
+			dexterity =  7, 0;
+			melee =  3, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 33;
+		life = 48;
+		max_life = 48;
+		mana = 4;
+		max_mana = 4;
+		model = m_c_edm_as_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_spider; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 17;
+		damage_min = 15;
+	}
+	[body]
+	{
+		min_move_velocity = 1.85;
+		avg_move_velocity = 2.430000;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_as_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+					02 = at-03;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+					01 = di-02;
+					02 = di-03;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Arakun Spider"; }
+	[defend] { defense=25; }
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.45
+			&still							= false;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.5;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_effect = spider_guts_pink;
+		break_sound = ;
+		explode_when_killed = true;
+		explosion_magnitude = 1.0;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_adolescent_spider_01 = 1;
+			frag_glb_adolescent_spider_02 = 1;
+			frag_glb_adolescent_spider_03 = 1;
+			frag_glb_adolescent_spider_04 = 2;
+			frag_glb_adolescent_spider_05 = 1;
+		}
+	}
+}
+[t:template,n:ut_spider_emerald_gnf]
+{
+  category_name = "1W_evil_d";
+  doc = "dsx_spider_emerald";
+  specializes = actor_evil;
+
+  [actor]
+    {
+      [skills]
+	{
+	  strength =  8, 0;
+	  intelligence =  7, 0;
+	  dexterity =  8, 0;
+	  melee = 3, 0;
+	}
+    }
+  [aspect]
+    {
+      [textures]	{ 0 = b_c_edm_emerald_spider; }
+
+      experience_value = 50;
+      life = 106;
+      max_life = 106;
+      mana = 0;
+      max_mana = 0;
+      model = m_c_edm_sp_pos_1;
+            scale_base = 1.5;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_spider_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_emerald_SED; }
+			[attack]	{ priority = high; * = s_e_attack_spider_SED; }
+		}
+    }
+  [attack]
+    {
+      attack_range = 0.5;
+      damage_min = 18;
+      damage_max = 24;
+      reload_delay = 1;
+    }
+  [defend] { defense = 30; }
+
+  [body]
+    {
+      avg_move_velocity = 2.350000;
+      [bone_translator]
+	{
+	  body_anterior = bone02;
+	  body_mid = bone04;
+	  body_posterior = bone04;
+	  kill_bone = bone04;
+	  shield_bone = bone01;
+	  weapon_bone = bone02;
+	}
+      [chore_dictionary]
+	{
+	  chore_prefix = a_c_edm_sp_fs;
+	  [chore_attack]
+	    {
+	      chore_stances = 0;
+	      skrit = select_attack;
+	      [anim_files] { 00=at; }
+	    }
+	  [chore_default]
+	    {
+	      chore_stances = 0;
+	      skrit = infinite_loop;
+	      [anim_files] { 00=dfs; }
+	    }
+	  [chore_die]
+	    {
+	      chore_stances = 0;
+	      skrit = select_transition;
+	      [anim_files] { 00=di; }
+	    }
+	  [chore_fidget]
+	    {
+	      chore_stances = 0;
+	      skrit = select_fidget;
+	      [anim_files] { 00=dff; }
+	    }
+	  [chore_walk]
+	    {
+	      chore_stances = 0;
+	      skrit = select_walk;
+	      [anim_files] { 00=wl; }
+	    }
+	}
+    }
+
+  [common] { screen_name = "Emerald Spider"; }
+
+  [mind]
+    {
+      melee_engage_range = 14.0;
+      personal_space_range = 0.7;
+      ranged_engage_range = 14.0;
+      sight_range = 14.0;
+    }
+  [physics]
+    {
+      break_effect = spider_guts_black;
+      explode_when_killed = true;
+      explosion_magnitude = 1.0;
+      gib_gore_good = true;
+      [break_particulate]
+				{
+					frag_glb_emerald_spider_01 = 1;
+					frag_glb_emerald_spider_02 = 3;
+					frag_glb_emerald_spider_03 = 5;
+					frag_glb_emerald_spider_04 = 5;
+					frag_glb_emerald_spider_05 = 1;
+				}
+    }
+	[inventory] 
+		{
+			drop_at_use_point = true;
+			[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 4, Strong */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 18;
+				max = 35;
+			}
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #weapon/14-14;
+				il_main = #armor/4-34;
+				il_main = #*/14-14;
+			}
+		}
+	}
+		}
+}
+[t:template,n:ut_spider_ruby]
+{
+  category_name = "1W_evil_d";
+  doc = "dsx_spider_emerald";
+  specializes = actor_evil;
+
+  [actor]
+    {
+      [skills]
+	{
+	  strength =  8, 0;
+	  intelligence =  7, 0;
+	  dexterity =  8, 0;
+	  melee = 3, 0;
+	}
+    }
+  [aspect]
+    {
+      [textures]	{ 0 = b_c_edm_emerald_spider-02; }
+
+      experience_value = 50;
+      life = 106;
+      max_life = 106;
+      mana = 0;
+      max_mana = 0;
+      model = m_c_edm_sp_pos_1;
+            scale_base = 1.5;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_spider_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_emerald_SED; }
+			[attack]	{ priority = high; * = s_e_attack_spider_SED; }
+		}
+    }
+  [attack]
+    {
+      attack_range = 0.5;
+      damage_min = 18;
+      damage_max = 24;
+      reload_delay = 1;
+    }
+  [defend] { defense = 30; }
+
+  [body]
+    {
+      avg_move_velocity = 2.350000;
+      [bone_translator]
+	{
+	  body_anterior = bone02;
+	  body_mid = bone04;
+	  body_posterior = bone04;
+	  kill_bone = bone04;
+	  shield_bone = bone01;
+	  weapon_bone = bone02;
+	}
+      [chore_dictionary]
+	{
+	  chore_prefix = a_c_edm_sp_fs;
+	  [chore_attack]
+	    {
+	      chore_stances = 0;
+	      skrit = select_attack;
+	      [anim_files] { 00=at; }
+	    }
+	  [chore_default]
+	    {
+	      chore_stances = 0;
+	      skrit = infinite_loop;
+	      [anim_files] { 00=dfs; }
+	    }
+	  [chore_die]
+	    {
+	      chore_stances = 0;
+	      skrit = select_transition;
+	      [anim_files] { 00=di; }
+	    }
+	  [chore_fidget]
+	    {
+	      chore_stances = 0;
+	      skrit = select_fidget;
+	      [anim_files] { 00=dff; }
+	    }
+	  [chore_walk]
+	    {
+	      chore_stances = 0;
+	      skrit = select_walk;
+	      [anim_files] { 00=wl; }
+	    }
+	}
+    }
+
+  [common] { screen_name = "Ruby Spider"; }
+
+  [mind]
+    {
+      melee_engage_range = 14.0;
+      personal_space_range = 0.7;
+      ranged_engage_range = 14.0;
+      sight_range = 14.0;
+    }
+  [physics]
+    {
+      break_effect = spider_guts_black;
+      explode_when_killed = true;
+      explosion_magnitude = 1.0;
+      gib_gore_good = true;
+      [break_particulate]
+				{
+					frag_glb_emerald_spider_01 = 1;
+					frag_glb_emerald_spider_02 = 3;
+					frag_glb_emerald_spider_03 = 5;
+					frag_glb_emerald_spider_04 = 5;
+					frag_glb_emerald_spider_05 = 1;
+				}
+    }
+	[inventory] 
+		{
+			drop_at_use_point = true;
+			[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 4, Strong */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 18;
+				max = 35;
+			}
+			[oneof*]
+			{
+				chance = 0.088888888888889;
+				il_main = potion_mana_small;
+				il_main = potion_health_small;
+			}
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #weapon/14-14;
+				il_main = #armor/4-34;
+				il_main = #*/14-14;
+			}
+		}
+	}
+		}
+}
+
+[t:template,n:ut_spider_sapphire]
+{
+  category_name = "1W_evil_d";
+  doc = "dsx_spider_emerald";
+  specializes = actor_evil;
+
+  [actor]
+    {
+      [skills]
+	{
+	  strength =  8, 0;
+	  intelligence =  7, 0;
+	  dexterity =  8, 0;
+	  melee = 3, 0;
+	}
+    }
+  [aspect]
+    {
+      [textures]	{ 0 = b_c_edm_emerald_spider-05; }
+
+      experience_value = 50;
+      life = 106;
+      max_life = 106;
+      mana = 0;
+      max_mana = 0;
+      model = m_c_edm_sp_pos_1;
+            scale_base = 1.5;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_spider_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_emerald_SED; }
+			[attack]	{ priority = high; * = s_e_attack_spider_SED; }
+		}
+    }
+  [attack]
+    {
+      attack_range = 0.5;
+      damage_min = 18;
+      damage_max = 24;
+      reload_delay = 1;
+    }
+  [defend] { defense = 30; }
+
+  [body]
+    {
+      avg_move_velocity = 2.350000;
+      [bone_translator]
+	{
+	  body_anterior = bone02;
+	  body_mid = bone04;
+	  body_posterior = bone04;
+	  kill_bone = bone04;
+	  shield_bone = bone01;
+	  weapon_bone = bone02;
+	}
+      [chore_dictionary]
+	{
+	  chore_prefix = a_c_edm_sp_fs;
+	  [chore_attack]
+	    {
+	      chore_stances = 0;
+	      skrit = select_attack;
+	      [anim_files] { 00=at; }
+	    }
+	  [chore_default]
+	    {
+	      chore_stances = 0;
+	      skrit = infinite_loop;
+	      [anim_files] { 00=dfs; }
+	    }
+	  [chore_die]
+	    {
+	      chore_stances = 0;
+	      skrit = select_transition;
+	      [anim_files] { 00=di; }
+	    }
+	  [chore_fidget]
+	    {
+	      chore_stances = 0;
+	      skrit = select_fidget;
+	      [anim_files] { 00=dff; }
+	    }
+	  [chore_walk]
+	    {
+	      chore_stances = 0;
+	      skrit = select_walk;
+	      [anim_files] { 00=wl; }
+	    }
+	}
+    }
+
+  [common] { screen_name = "Sapphire Spider"; }
+
+  [mind]
+    {
+      melee_engage_range = 14.0;
+      personal_space_range = 0.7;
+      ranged_engage_range = 14.0;
+      sight_range = 14.0;
+    }
+  [physics]
+    {
+      break_effect = spider_guts_black;
+      explode_when_killed = true;
+      explosion_magnitude = 1.0;
+      gib_gore_good = true;
+      [break_particulate]
+				{
+					frag_glb_emerald_spider_01 = 1;
+					frag_glb_emerald_spider_02 = 3;
+					frag_glb_emerald_spider_03 = 5;
+					frag_glb_emerald_spider_04 = 5;
+					frag_glb_emerald_spider_05 = 1;
+				}
+    }
+	[inventory] 
+		{
+			drop_at_use_point = true;
+			[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 4, Strong */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 18;
+				max = 35;
+			}
+			[oneof*]
+			{
+				chance = 0.088888888888889;
+				il_main = potion_mana_small;
+				il_main = potion_health_small;
+			}
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #weapon/14-14;
+				il_main = #armor/4-34;
+				il_main = #*/14-14;
+			}
+		}
+	}
+		}
+}
+[t:template,n:ut_spider_adolescent_01]
+{
+	category_name = "1W_evil_d";
+	doc = "spider_pink";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 4, 0;
+			  intelligence = 3, 0;
+			  strength = 2, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 4;
+		life = 28;
+		max_life = 28;
+		mana = 4;
+		max_mana = 4;
+		model = m_c_edm_as_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_spider; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 5;
+		damage_min = 3;
+	}
+	[body]
+	{
+		min_move_velocity = 1.85;
+		avg_move_velocity = 2.430000;
+		[bone_translator]
+		{
+			body_anterior = bone01;
+			body_mid = bone01;
+			body_posterior = bone01;
+			kill_bone = bone01;
+			shield_bone = bone01;
+			weapon_bone = bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_as_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+					02 = at-03;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+					01 = di-02;
+					02 = di-03;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] { screen_name="Arakun Spider"; }
+	[defend] { defense=0.5; }
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.45
+			&still							= false;
+
+		melee_engage_range = 14.0;
+		personal_space_range = 0.5;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		break_effect = spider_guts_pink;
+		break_sound = ;
+		explode_when_killed = true;
+		explosion_magnitude = 1.0;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_adolescent_spider_01 = 1;
+			frag_glb_adolescent_spider_02 = 1;
+			frag_glb_adolescent_spider_03 = 1;
+			frag_glb_adolescent_spider_04 = 2;
+			frag_glb_adolescent_spider_05 = 1;
+		}
+	}
+}

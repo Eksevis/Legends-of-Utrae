@@ -1,0 +1,82 @@
+[t:template,n:ut2w_pygmy]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_pygmy";
+	specializes = dsx_base_pygmy;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 9.6, 0;
+			  intelligence = 4.4, 0;
+			  strength = 20.9, 0;
+			  melee = 54, 0;
+		}
+	}
+	[aspect]
+	{
+		scale_base = 1.4;
+		  experience_value = 9088;
+		  life = 448;
+		  mana = 324;
+		  max_life = 448;
+		  max_mana = 324;
+		model = m_c_edm_PYGMY_pos_1;
+		[textures] { 0=b_c_edm_pygmy; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		  damage_max = 261.4;
+		  damage_min = 193.8;
+	}
+	[common]
+	{
+		screen_name="Gulik Robber";
+		membership = monster, party_lava_imp_02;
+	}
+	[defend] { defense=750; }
+	[inventory]
+	{
+		[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 10, Weak */
+		[oneof*]
+		{
+					[gold*]
+					{
+						  chance = 0.15;
+						  max = 24471;
+						  min = 19299;
+					}
+				}
+				[oneof*]
+				{
+					[all*]
+					{
+        				chance = 0.05;
+    	        	    il_main = #spell/52-55;
+					}
+					[all*]
+					{
+        				chance = 0.02;
+	        	   	    il_main = #bow/111-152;
+					}
+					[oneof*]
+					{
+        				chance = 0.12;
+	        	   	    il_main = #melee/111-152;
+       				    il_main = potion_health_large;
+					    il_main = potion_mana_large;
+					}
+					[all*]
+					{
+        				chance = 0.03;
+	            	    il_main = #armor/102-341;
+					}
+			
+		}
+	}
+	}
+}

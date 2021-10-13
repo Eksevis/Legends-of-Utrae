@@ -1,0 +1,353 @@
+[t:template,n:base_ut_snake]
+{
+	category_name = "1W_evil_d";
+	doc = "snake base template";
+	specializes = actor_evil;
+	[aspect]
+	{
+		model = m_c_gs_sn_pos_a1;
+		[voice]
+		{
+			[cast]			{ * = s_e_attack_darkling; }
+			[die]			{ priority = high; * = s_e_die_mucosa; }
+		}
+	}
+	[body]
+	{
+		avg_move_velocity = 3;
+		[bone_translator]
+		{
+			body_anterior = Head;
+			body_mid = Pelvis;
+			body_posterior = Bone26;
+			kill_bone = head;
+			weapon_bone = head;
+		}
+		[chore_dictionary]
+		{
+			initial_chore = chore_none;
+			chore_prefix = a_c_gs_sn_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] 
+				{ 
+					00=at; 
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dff; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] 
+				{ 
+					00=mg; 
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Snake";
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			&meander		= false
+			&still			= false;
+
+		on_enemy_entered_ocz_flee 	= false;
+		on_enemy_entered_ocz_attack = true;
+		on_enemy_entered_icz_flee 	= false;
+		on_enemy_entered_icz_attack = false;
+		flee_count 					= 1;
+		melee_engage_range 			= 14;
+		personal_space_range 		= 0.7;
+		ranged_engage_range 		= 14.0;
+		sight_range 				= 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = false;
+	}
+}
+[t:template,n:ut_snake_1]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 14, 0;
+			intelligence = 4, 0;
+			dexterity    = 14, 0;
+			combat_magic = 4, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5;
+		life = 66;
+		max_life = 4;
+		mana = 6;
+		max_mana = 66;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 33;
+		damage_min = 31;
+	}
+	[common]
+	{
+		screen_name="Brown Snake";
+	}
+	[defend] { defense=75; }
+}
+
+[t:template,n:ut_snake_01]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 5, 0;
+			intelligence = 3, 0;
+			dexterity    = 10, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5;
+		life = 12;
+		max_life = 12;
+		mana = 6;
+		max_mana = 6;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin-01;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 8;
+		damage_min = 6;
+	}
+	[common]
+	{
+		screen_name="Grass Snake";
+	}
+	[defend] { defense=8; }
+}
+
+[t:template,n:ut_snake_02]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 12, 0;
+			intelligence = 4, 0;
+			dexterity    = 16, 0;
+			combat_magic = 4, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 35;
+		life = 66;
+		max_life = 66;
+		mana = 6;
+		max_mana = 6;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin-02;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 33;
+		damage_min = 31;
+	}
+	[common]
+	{
+		screen_name="Rattlesnake";
+	}
+	[defend] { defense=55; }
+}
+
+[t:template,n:ut_snake_03]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 4, 0;
+			intelligence = 4, 0;
+			dexterity    = 4, 0;
+			combat_magic = 4, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 5;
+		life = 6;
+		max_life = 4;
+		mana = 6;
+		max_mana = 6;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin-03;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 3;
+		damage_min = 1;
+	}
+	[common]
+	{
+		screen_name="Snake3";
+	}
+	[defend] { defense=5; }
+	[inventory]
+	{
+    	[pcontent]
+		{
+			[all*]
+			{
+				[gold*]
+				{
+					  chance = 0.15;						  max = 9;
+					  min = 4;
+				}
+			}
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.05;
+   	        	    il_main = #spell/0-2;
+				}
+				[all*]
+				{
+       				chance = 0.02;
+        	   	    il_main = #bow/1-3;
+				}
+				[oneof*]
+				{
+       				chance = 0.12;
+        	   	    il_main = #melee/1-3;
+      				    il_main = potion_health_small;
+				    il_main = potion_mana_small;
+				}
+				[all*]
+				{
+       				chance = 0.03;
+            	    il_main = #body/1-6;
+				}
+			}
+		}
+	}
+}
+
+[t:template,n:ut_snake_04]
+{
+	category_name = "1W_evil_d";
+	doc = "cobra";
+	specializes = base_ut_snake;
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 34, 0;
+			intelligence = 14, 0;
+			dexterity    = 54, 0;
+			combat_magic = 74, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 50000;
+		life = 740;
+		max_life = 740;
+		mana = 6;
+		max_mana = 60;
+		[textures]
+		{
+			0 = b_c_gs_sn_skin-04;
+		}
+	}
+	[attack]
+	{
+		attack_range = 1;
+		damage_max = 183;
+		damage_min = 181;
+	}
+	[common]
+	{
+		screen_name="Spitting Cobra";
+	}
+	[defend] { defense=500; }
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_chitterskrag_poison; }
+	}
+   	[mind]
+	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		personal_space_range = 0.75;
+	}
+}
+

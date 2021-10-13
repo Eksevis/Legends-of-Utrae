@@ -1,0 +1,85 @@
+[t:template,n:ut2W_spider_frostnid]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_spider_frostnid";
+	specializes = 2W_spider_frostnid_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  27.9, 0;
+			intelligence =  5.7, 0;
+			dexterity =  30.6, 0;
+            melee =  61,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 36936;
+		life = 847.1;
+        max_life = 847.1;
+        mana = 38.3;
+		max_mana = 38.3;
+		textures:0 = b_c_edm_fn-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 189.5;
+		damage_min = 129.2;
+	}
+	[common] { screen_name="Dire Frostnid"; }
+    [defend] { defense=414; }
+}
+[t:template,n:ut2W_spider_frostnid_ranged]
+{
+	category_name = "2W_evil_d";
+	doc = "2W_spider_frostnid_ranged";
+	specializes = 2W_spider_frostnid_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  28.9, 0;
+			intelligence =  7.2, 0;
+			dexterity =  33.3, 0;
+            		combat_magic =  54,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 43164;
+		life = 556.6;
+        max_life = 556.6;
+        mana = 41.2;
+		max_mana = 41.2;
+		[voice]
+		{
+			[cast]			{ * = s_e_attack_frostnid; }
+			[die]			{ priority = high; * = s_e_die_spider; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 226.8;
+		damage_min = 176.3;
+		damage_bonus_min_cmagic = 120;
+		damage_bonus_max_cmagic = 171;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_frostnid_freeze; }
+	}
+	[common] { screen_name="Arctic Frostnid"; }
+    [defend] { defense=453.5; }
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+}

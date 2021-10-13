@@ -1,0 +1,113 @@
+[t:template,n:ut3W_gom]
+{
+	category_name = "3W_evil_b";
+	doc = "3W_Gom";
+	specializes = 3W_base_gom;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	118.6, 0;
+			intelligence =  72.2, 0;
+			dexterity =  	40.2, 0;
+			melee =  		154, 0;
+			ranged =  		154, 0;
+            			combat_magic =  154, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 15810000;
+		life = 19105;
+		max_life = 19105;
+        		life_recovery_unit  = 1;
+        		life_recovery_period = 30;
+		mana = 5861.8;
+		max_mana = 5861.8;
+	}
+	[body]
+	{
+		[weapon_scales]
+		{
+			as_staff	= 1.4, 1.4, 1.4;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 350.8;
+		damage_min = 174.4;
+		damage_bonus_min_cmagic = 203;
+		damage_bonus_max_cmagic = 304;
+	}
+
+	[common]
+	{
+		screen_name="Grovosh, Master of Suffering";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("gom_spirits");
+				condition* = receive_world_message("we_anim_sfx",1);
+			}
+		}
+	}
+	[defend] { defense=1978; }
+   	[inventory]
+	{
+    	spew_equipped_kill_count = ;
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = st_un_seck_gom;
+			}
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_gom_force;
+			il_spell_1=spell_gom_flamethrower;
+			il_spell_2=spell_skull_rain;
+			il_spell_3=3w_spell_gom_summon;
+			il_spell_4=spell_gom_icesnake;
+			il_spell_5=spell_gom_ground_lightning;
+		}
+	}
+	[mind]
+	{
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&use_base_duration			= false
+			&spell_chances				= "0.17,            0.17,                   0.17,             0.17, 			0.16, 				0.16"
+			&spells						= "spell_gom_force, spell_gom_flamethrower, spell_skull_rain, 3w_spell_gom_summon, spell_gom_icesnake, spell_gom_ground_lightning";
+		jat_die 						= world\ai\jobs\actors\evil\job_die_explode.skrit;
+//		jat_fidget						= world\ai\jobs\common\job_fidget.skrit;
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?curious=1.0
+			&interest=interest
+			&still=false
+			&approach_dist=1.5;
+
+		melee_engage_range = 10;
+		on_engaged_lost_consciousness_abort_attack = false;
+		personal_space_range = 0.7;
+		ranged_engage_range = 20.0;
+		sight_range = 20.0;
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+
+		actor_auto_fidgets = false;
+		
+		job_travel_distance_limit = 60; //$ #10784 MONSTERS: Gom will not pursue party if they run away, he will turn around and run back to throne. -MM
+	}
+	// watch Eric be bad.... Bad Eric Bad... Should find a different way to do this. -ET
+	[generator_in_object] // This switches gom to super gom when gom runs out of life.
+	{
+		spawn_event = WE_KILLED;
+		child_template_name = ut3W_emitter_gom_die;
+		spawn_chance = 1.0;
+	}
+}

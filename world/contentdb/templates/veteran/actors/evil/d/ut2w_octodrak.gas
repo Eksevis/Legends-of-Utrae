@@ -1,0 +1,164 @@
+[t:template,n:ut2w_octodrak]
+{
+  category_name = "1W_evil_d";
+  doc = "dsx_octodrak";
+  specializes = actor_evil;
+  [actor]
+    {
+      [skills]
+	{
+			strength =  	42.2, 0;
+			intelligence =  16.4, 0;
+			dexterity =  	10.5, 0;
+            		melee =         66, 0;
+	}
+    }
+  [aspect]
+    {
+		
+      [textures]	{ 0 = b_c_edm_octodrak; }
+      draw_shadow = false;
+	experience_value = 173170;
+	life = 1318.2;
+	max_life = 1318.2;
+	mana = 19.3;
+        max_mana = 19.3;
+      model = m_c_edm_ug_pos_1;
+      material = flesh;
+      [voice]
+	{
+	  [attack]		{	* = s_e_attack_whip;	}
+	  [die]			{ priority = high;	* = s_e_die_unguis;		}
+	  [enemy_spotted]	{ priority = high; * = s_e_ground_burst_SED; }
+	  [hit_critical]	{ priority = low;	* = s_e_hit_unguis_SED;		}
+	  [hit_glance]	{ priority = low;	* = s_e_hit_unguis_SED;		}
+	  [hit_solid]		{ priority = low;	* = s_e_hit_unguis_SED;		}
+	}
+
+    }
+
+  [attack]
+    {
+      attack_range = 3;
+		damage_max = 382.5;
+		damage_min = 260.8;
+    }
+
+  [body]
+    {
+      avg_move_velocity = 0;
+      [bone_translator]
+	{
+	  body_anterior = bone20;
+	  body_mid = bone13;
+	  body_posterior = bone04;
+	  kill_bone = bone09;
+	  shield_bone = bone01;
+	}
+      [chore_dictionary]
+	{
+	  initial_chore = chore_none;
+	  chore_prefix = a_c_edm_ug_fs;
+	  [chore_attack]
+	    {
+	      chore_stances = 0;
+	      skrit = select_attack;
+	      [anim_files]
+		{
+		  00=at;
+		  01=at-02;
+		}
+	    }
+	  [chore_default]
+	    {
+	      chore_stances = 0;
+	      skrit = infinite_loop;
+	      [anim_files] { 00=ds; }
+	    }
+	  [chore_misc]
+	    {
+	      chore_stances = 0;
+	      skrit = select_transition;
+	      [anim_files]
+		{
+		  slep = ds;
+		  wake = rv;
+		}
+	    }
+	  [chore_die]
+	    {
+	      chore_stances = 0;
+	      skrit = select_transition;
+	      [anim_files] { 00=di; }
+	    }
+	  [chore_fidget]
+	    {
+	      chore_stances = 0;
+	      skrit = select_fidget;
+	      [anim_files] { 00=dff; }
+	    }
+	  [chore_walk]
+	    {
+	      chore_stances = 0;
+	      skrit = select_walk;
+	      [anim_files] { 00=dfs; }
+	    }
+	}
+    }
+
+	[common] 	
+    { 
+		screen_name="Searching Octodrak"; 
+		membership=monster;
+
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("octodrak_dust");
+				condition* = receive_world_message("we_enemy_spotted");
+				one_shot = true;
+			}
+		}
+	}
+	[generator_in_object]
+	{
+		child_template_name = hole_grs_01;
+		spawn_event = WE_ENEMY_SPOTTED;
+		spawn_chance = 1.0;
+		spawn_delay = 0.5;
+		fade_kid = true;
+	}
+	[defend] { defense=748; }
+
+	[mind]
+    {
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party		= false
+		&actor_creates_own_party		= false;
+		
+		jat_die 					= world\ai\jobs\actors\evil\job_die_delete.skrit;
+		jat_startup 				= world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible 					= true;
+		jat_attack_object_melee = world\ai\jobs\common\job_attack_object_melee.skrit
+			?no_turn			= false
+			&hit_multiple			= true;			
+		jat_flee_from_object		= jat_none;
+		jat_guard         			= jat_none;
+		jat_move          			= jat_none;
+		jat_patrol         			= jat_none;
+
+		actor_auto_fidgets 			= false;
+		movement_orders 			= mo_hold;
+		melee_engage_range 			= 3.0;
+		personal_space_range 		= 0.7;
+		on_enemy_entered_ocz_attack	= true;
+		sight_origin_height			= 2.5;
+		melee_engage_range 			= 3;
+		ranged_engage_range 		= 3.0;
+		sight_range 				= 3.0;
+		inner_comfort_zone_range 	= 3.0;
+		outer_comfort_zone_range 	= 3.0;
+		com_range				 	= 3.0;
+    }
+}

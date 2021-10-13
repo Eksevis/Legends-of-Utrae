@@ -1,0 +1,301 @@
+[t:template,n:ut3W_gom_super]
+{
+	category_name = "3W_evil_b";
+	doc = "3W_Super Gom";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	142.3, 0;
+			intelligence =  89.2, 0;
+			dexterity =  	75.2, 0;
+			melee =  		165, 0;
+			combat_magic = 	165, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 27900000;
+		life = 29389;
+		max_life = 29389;
+       	 	life_recovery_unit  = 1;
+        		life_recovery_period = 20;
+		mana = 7665.5;
+		max_mana = 7665.5;
+		model = m_c_ebb_sg_pos_1;
+		scale_base = 1.3;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_gom_super;  }
+			[hit_critical]	{ priority = low; * = s_e_hit_gom_super_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_gom_super_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_gom_super_SED;  }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 400.4;
+		damage_min = 214.9;
+		damage_bonus_min_cmagic = 203;
+		damage_bonus_max_cmagic = 304;
+	}
+	[body]
+	{
+		[weapon_scales]
+		{
+			as_staff	= 1.35, 1.35, 1.35;
+		}
+
+		avg_move_velocity = 3.590000;
+		max_move_velocity = 5.590000;
+
+		[bone_translator]
+		{
+			body_anterior = Bip01_Head;
+			body_mid = bip01_spine2;
+			body_posterior = Bip01_Pelvis;
+			kill_bone = Bip01_Spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ebb_sg_fs;
+			[chore_attack]
+			{
+				chore_stances = 5;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 5;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 5;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 5;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00=mg;
+					01=mg-02;
+					02=mg-03;
+					03=mg-04;
+					04=mg-05;
+					05=mg-06;
+					06=mg-07;
+					07=mg-08;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = a_c_ebb_sg_fs5_ds;
+					wake = a_c_ebb_sg_fs5_rv;
+					heal = a_c_ebb_sg_fs5_mg;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 5;
+				skrit = select_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Grovosh, Master of Suffering";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("gom_die");
+				condition* = receive_world_message("we_killed");
+			}
+			[*]
+			{
+				action* = call_sfx_script("gom_rise");
+				action* = call_sfx_script("gom_hover");
+				condition* = receive_world_message("we_entered_world");
+				single_shot = true;
+			}
+			[*]
+			{
+				action* = call_sfx_script("gom_punch");
+				condition* = receive_world_message("we_anim_sfx",3);
+			}
+			[*]
+			{
+				action* = call_sfx_script("gom_punch");
+				condition* = receive_world_message("we_anim_sfx",4);
+			}
+		}
+	}
+	[defend] { defense=3485; }
+	[effect_manager]
+	{
+		start_msg = WE_ENTERED_WORLD;
+		stop_msg = WE_LEFT_WORLD;
+		stop_msg2 = WE_KILLED;
+
+		effect_name = "";
+		rep_effect_name = "gom_lightning_support";
+
+		repeat_rate = .4;
+		repeat_rate_max = .5;
+
+		run_once = true;
+	}
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		spew_equipped_kill_count = ;
+    	[other]
+		{
+			il_active_primary_spell=spell_gom_throw;
+			il_spell_1=spell_gom_turret_fire;
+			il_spell_2=spell_gom_turret_lightning;
+			il_spell_3=3w_spell_super_gom_summon;
+			il_spell_4=spell_gom_spikes;
+			il_spell_5=spell_gom_firebreath;
+			il_spell_6=spell_gom_laser;
+			il_spell_7=spell_super_gom_force;
+			il_spell_8=spell_gom_big_bolt;
+			il_spell_9=spell_gom_skull_storm;
+			il_spell_10=spell_gom_heal;
+		}
+
+    	[pcontent]
+		{
+			[oneof*]
+			{
+				es_weapon_hand = st_un_seck_gom;
+			}
+			[all*]
+			{
+				[all*]
+				{
+					chance = 0.5;
+            	    il_main = #spell/131-161;
+				}
+				[oneof*]
+				{
+					il_main = #weapon/301-421;
+					il_main = #armor/646-1413;
+					max = 4;
+					min = 3;
+   	    		}
+    			[gold*]
+				{
+					max = 3362096;
+					min = 1963714;
+                    piles = 15 - 20;
+				}
+				[oneof*]
+				{
+	            	il_main = #weapon/-rare(1)/361-421;
+	                il_main = #armor/-rare(1)/787-928;
+                    il_main = #*/-rare(1)/361-421;
+					max = 3;
+					min = 2;
+
+                }
+				[oneof*]
+                {
+	                il_main = #weapon/-unique(2)/361-421;
+	                il_main = #armor/-unique(2)/787-928;
+                    il_main = #*/-unique(2)/361-421;
+					max = 3;
+					min = 2;
+	            }
+
+			}
+		}
+	}
+	[mind]
+	{
+		jat_brain						= world\ai\jobs\common\brain_hero.skrit
+			?heal_when_idle				= true
+			&heal_chance				= 0.1;
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&use_self_cast_anim			= true
+			&use_base_duration			= false
+			&spell_chances				= "0.1,             0.1,                   0.1,                        0.1,              0.1, 				   0.1, 			0.1,                   0.1,                0.1,                   0.1"
+			&spells						= "spell_gom_throw, spell_gom_turret_fire, spell_gom_turret_lightning, spell_gom_spikes, spell_gom_firebreath, spell_gom_laser, spell_super_gom_force, spell_gom_big_bolt, spell_gom_skull_storm, 3w_spell_super_gom_summon";
+		jat_startup 					= world\ai\jobs\common\job_startup_reveal.skrit
+			?auto_reveal 				= true
+			&invisible					= true;
+    	jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?curious=1.0
+			&interest=interest
+			&still=false
+			&approach_dist=1.5;
+		jat_die 						= world\ai\jobs\actors\evil\job_die_explode.skrit;
+		jat_flee_from_object			= world\ai\jobs\common\job_flee_from_object.skrit
+			?run_chance					= 1.0;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		actor_auto_fidgets				= false;
+
+		melee_engage_range 				= 10;
+		personal_space_range 			= 0.7;
+		ranged_engage_range 			= 20.0;
+		sight_range 					= 20.0;
+		sight_origin_height = 2;
+
+		actor_life_ratio_low_threshold	= 0.25;
+		actor_life_ratio_high_threshold	= 0.75;
+
+		on_engaged_lost_consciousness_abort_attack = false;
+
+		job_travel_distance_limit = 60; //$ #10784 MONSTERS: Gom will not pursue party if they run away, he will turn around and run back to throne. -MM
+	}
+	[physics]
+	{
+		gib_gore_good = true;
+		break_effect = gom_explosion;
+	}
+	[gom_effects]
+	{
+		ratio1 = 0.65;
+		effect1 = gom_flames1;
+
+		ratio2 = 0.55;
+		effect2 = gom_flames2;
+
+		ratio3 = 0.45;
+		effect3 = gom_flames3;
+
+		ratio4 = 0.35;
+		effect4 = gom_flames4;
+		
+		ratio5 = 0.25;
+		effect5 = gom_flames;
+	}
+}

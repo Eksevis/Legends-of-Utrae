@@ -1,0 +1,15 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0x3C6B9BED;
+	source_region_name = id_r2;
+	[t:stitch_editor,n:snow_town]
+	{
+		dest_region = snow_town;
+		[node_ids]
+		{
+			0x00000dca = 0xDEF2700F,3;
+			0x00000dcb = 0x95EB8FCE,3;
+			0x00000dcc = 0xD94E7B38,2;
+		}
+	}
+}

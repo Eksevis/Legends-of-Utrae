@@ -1,0 +1,108 @@
+[t:emitter_glb_smoke_01,n:0x0750016f]
+{
+	[placement]
+	{
+	  p position = -0.043355,0.070013,-0.0351963,0x403c950a;
+	}
+}
+[t:emt_sound,n:0x075002c0]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -0.0913751,0.0999985,-0.103834,0x403c950a;
+	}
+	[sound_emitter]
+	{
+	  b continual_loop = true;
+		event_sound = "env_pipe_steam_constant";
+	}
+}
+[t:emitter_glb_smoke_01,n:0x075002c3]
+{
+	[placement]
+	{
+	  p position = -0.0104065,0.102488,0.0463982,0x7528800b;
+	}
+}
+[t:emt_sound,n:0x075002c4]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 0.0159111,0.1,-0.011158,0x7528800b;
+	}
+	[sound_emitter]
+	{
+	  b continual_loop = true;
+		event_sound = "env_pipe_steam_constant";
+	}
+}
+[t:emitter_glb_smoke_01,n:0x075002c7]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707107;
+	  p position = -1.24694,8.80989,-1.83859,0xee18feb6;
+	}
+}
+[t:emt_sound,n:0x075002c5]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707106,0,0.707107;
+	  p position = -0.0457077,0.0999985,-0.0834274,0x980e6451;
+	}
+	[sound_emitter]
+	{
+	  b continual_loop = true;
+		event_sound = "env_pipe_steam_constant";
+	}
+}
+[t:emitter_glb_smoke_01,n:0x075002c6]
+{
+	[placement]
+	{
+	  p position = 0.0278931,0.214619,-0.0177841,0x980e6451;
+	}
+}
+[t:emitter_glb_smoke_01,n:0x075002c8]
+{
+	[placement]
+	{
+	  p position = -0.0163269,0.0619411,0.0452728,0xeae3e1d4;
+	}
+}
+[t:emt_sound,n:0x075002c9]
+{
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707107;
+	  p position = 0.0231924,0.0999985,-0.0675049,0xeae3e1d4;
+	}
+	[sound_emitter]
+	{
+	  b continual_loop = true;
+		event_sound = "env_pipe_steam_constant";
+	}
+}
+[t:emt_sound,n:0x075002c1]
+{
+	[placement]
+	{
+	  p position = -0.0432739,0.0999985,-0.105466,0x49623fab;
+	}
+	[sound_emitter]
+	{
+	  b continual_loop = true;
+		event_sound = "env_pipe_steam_constant";
+	}
+}
+[t:emitter_glb_smoke_01,n:0x075002c2]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -0.0516739,0.0999985,-0.0738697,0x49623fab;
+	}
+}

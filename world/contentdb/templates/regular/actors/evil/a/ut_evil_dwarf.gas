@@ -1,0 +1,803 @@
+[t:template,n:ut_base_evil_dwarf]
+{
+	doc = "Dwarf base template";
+	specializes = actor_evil;
+	[aspect]
+	{
+		model = m_c_gan_df_pos_a1;
+	}
+	[body]
+	{
+		armor_version = gan_df;
+		min_move_velocity = 3.250000;
+		avg_move_velocity = 3.250000;
+		max_move_velocity = 3.250000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_gan_df_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_attack;
+				[anim_files]
+				{
+					0mid = at;
+					high = at-02;
+					loww = at-03;
+					qffg = dff;
+				}
+
+		 	  	[anim_durations]
+				{
+					fs0 = 1.250;
+					fs1 = 0.830;
+					fs2 = 0.830;
+					fs3 = 1.250;
+					fs4 = 1.250;
+					fs5 = 1.250;
+					fs6 = 1.000;
+					fs7 = 0.125;
+					fs8 = 1.000;
+				}
+
+			}
+			[chore_default]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = infinite_loop;
+				[anim_files]
+				{
+					00 = dfs;
+				}
+			}
+			[chore_die]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_transition;
+				[anim_files]
+				{
+					00 = di;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+				}
+			}
+			[chore_magic]
+			{
+				chore_stances = 0,5;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = mg-02;
+				}
+			}
+			[chore_misc]
+			{
+				chore_stances = ignore;
+				skrit = select_transition;
+				[anim_files]
+				{
+					drnk = a_c_gan_df_fs1_dk;
+					frtd = a_c_gan_df_fs0_dsf;
+					glrn = a_c_gan_df_fs1_dsf;
+					gtup = a_c_gan_df_fs0_up;
+					look = a_c_gan_df_fs1_dff;
+					talk = a_c_gan_df_fs0_dsf-02;
+				}
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,1,2,3,4,5,6,7,8;
+				skrit = select_walk;
+				[anim_files]
+				{
+					00 = rl;
+				}
+			}
+		}
+		[weapon_scales]
+		{
+			as_bow_and_arrow = 0.8, 0.8, 0.8;
+			as_minigun = 0.8, 0.8, 0.8;
+			as_shield_only = 0.8, 1.0, 0.8;
+			as_single_melee = 0.9, 0.9, 0.9;
+			as_staff = 1.0, 1.0, 0.8;
+			as_two_handed_melee = 0.9, 0.9, 0.8;
+			as_two_handed_sword = 1.0, 1.0, 0.8;
+		}
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+    	mind:sight_origin_height = 1.6;
+	[physics]
+	{
+		fire_effect = human_physics_fire;
+	}
+}
+[t:template,n:ut_dwarf_melee_01]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut_base_evil_dwarf;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 13,  0;
+			  intelligence = 10,  0;
+			  melee = 8,  0;
+			  strength = 14, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 172;
+		life = 126;
+		max_life = 126;
+		mana = 18;
+		max_mana = 18;
+		  material = steel;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_14;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		  damage_max = 34;
+		  damage_min = 30;
+	}
+	[common]
+	{
+		screen_name = "Duergar Slayer";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=25; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		  es_weapon_hand = pickaxe;
+				  es_weapon_hand = ax_d_d_2h1b_avg;
+				  es_weapon_hand = ax_d_o_2h1b_avg;
+				  es_weapon_hand = ax_d_o_2h2b_avg;
+				  es_weapon_hand = ax_d_c_2h1b_avg;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_m_g_c_avg;
+  				es_chest = bd_ch_r_g_c_fun;
+  				es_chest = bd_ra_ch_m_g_c_fin;
+  				es_chest = bd_ra_sc_m_g_c_fin;
+  				es_chest = bd_sc_f_g_o_low;
+  				es_chest = bd_sc_m_g_c_avg;
+  				es_chest = bd_sc_r_g_c_avg;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_br_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+                		es_feet = bo_ra_bo_sl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_br_f_g_c_avg;
+				es_forearms = gl_gl_sc_f_g_c_avg;
+				es_forearms = gl_ra_gl_br_f_g_c_fin;
+				es_forearms = gl_ra_gl_sc_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 115;
+					max = 91;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/25-41;
+					il_main = #armor/23-74;
+					il_main = #*/35-51;
+				}
+				[oneof*]
+				{
+					chance = 0.0075;
+					il_main = #weapon/-rare(1)/38-47;
+					il_main = #armor/-rare(1)/47-100;
+					il_main = #*/-rare(1)/38-47;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		melee_engage_range 			= 12.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}
+[t:template,n:ut_dwarf_melee_02]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut_base_evil_dwarf;
+	[actor]
+	{
+		[skills]
+		{
+			  dexterity = 13,  0;
+			  intelligence = 10,  0;
+			  melee = 8,  0;
+			  strength = 14, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 172;
+		life = 128;
+		max_life = 128;
+		mana = 18;
+		max_mana = 18;
+		  material = steel;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_12;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		  damage_max = 14;
+		  damage_min = 10;
+	}
+	[common]
+	{
+		screen_name = "Duergar Maurader";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=85; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = pickaxe;
+                		es_weapon_hand = ax_d_d_ut_goblin_mutant;
+                		es_weapon_hand = hm_g_c_2h2m_avg;
+                		es_weapon_hand = hm_g_c_2h1m_low;
+                		es_weapon_hand = hm_g_c_2h2m_fun;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ch_m_g_c_avg;
+  				es_chest = bd_ch_r_g_c_fun;
+  				es_chest = bd_ra_ch_m_g_c_fin;
+  				es_chest = bd_ra_sc_m_g_c_fin;
+  				es_chest = bd_sc_f_g_o_low;
+  				es_chest = bd_sc_m_g_c_avg;
+  				es_chest = bd_sc_r_g_c_avg;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_bo_sl_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet =bo_ra_bo_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_br_f_g_c_avg;
+				es_forearms = gl_gl_sc_f_g_c_avg;
+				es_forearms = gl_ra_gl_br_f_g_c_fin;
+				es_forearms = gl_ra_gl_sc_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 115;
+					max = 91;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/25-41;
+					il_main = #armor/23-74;
+					il_main = #*/35-51;
+				}
+				[oneof*]
+				{
+					chance = 0.0075;
+					il_main = #weapon/-rare(1)/38-47;
+					il_main = #armor/-rare(1)/47-100;
+					il_main = #*/-rare(1)/38-47;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		melee_engage_range 			= 12.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}
+[t:template,n:ut_dwarf_melee_boss]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut_base_evil_dwarf;
+	[actor]
+	{
+		[skills]
+		{
+			  strength 	= 17, 0;
+			  dexterity 	=  8, 0;
+			  intelligence  = 12, 0;
+			  melee 	= 7, 0;
+		}
+	}
+	[aspect]
+	{
+		  experience_value = 289;
+		  life = 695;
+		  mana = 98;
+		  material = steel;
+		  max_life = 695;
+		  max_mana = 98;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_13;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 20;
+		damage_min = 10;
+	}
+	[common]
+	{
+		screen_name = "Ordgurth Blackstorm";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_red(sgx)");
+
+			}
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+
+		}
+	}
+   	[defend] { defense=105.1; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = ax_d_d_ut_goblin_mutant;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_ra_ch_m_g_c_fin;
+  				es_chest = bd_ra_sc_m_g_c_fin;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_bo_sl_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet =bo_ra_bo_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_br_f_g_c_avg;
+				es_forearms = gl_gl_sc_f_g_c_avg;
+				es_forearms = gl_ra_gl_br_f_g_c_fin;
+				es_forearms = gl_ra_gl_sc_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 1.0;
+					min = 115;
+					max = 91;
+				}
+				[oneof*]
+				{
+					chance = 1.0;
+					il_main = #weapon/25-41;
+					il_main = #armor/23-74;
+					il_main = #*/35-51;
+				}
+				[oneof*]
+				{
+					chance = 1.0;
+					il_main = #weapon/-rare(1)/38-47;
+					il_main = #armor/-rare(1)/47-100;
+					il_main = #*/-rare(1)/38-47;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_joins_existing_party	= true;
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		melee_engage_range 			= 12.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}
+[t:template,n:ut_dwarf_throw]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut_base_evil_dwarf;
+	[actor]
+	{
+		[skills]
+		{
+			  strength 	= 14, 0;
+			  dexterity 	=  8, 0;
+			  intelligence  = 12, 0;
+			  ranged 	= 11, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 142;
+		life 			= 114;
+		max_life 		 = 114;
+		mana 			 = 6;
+		max_mana 		 = 6;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_15;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 9.5;
+		  damage_max = 60;
+		  damage_min = 40;
+	}
+	[common]
+	{
+		screen_name = "Duergar Bombardier";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=20; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+//		  selected_active_location = il_active_ranged_weapon;
+		[equipment]
+		{
+				ES_WEAPON_HAND = minigun_rock_launcher;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+  				es_chest = bd_bl_f_g_c_avg;
+  				es_chest = bd_bl_f_g_c_fun;
+  				es_chest = bd_bl_m_g_c_avg;
+  				es_chest = bd_bl_r_g_c_avg;
+  				es_chest = bd_ra_bl_m_g_c_fin;
+  				es_chest = bd_ra_le_f_g_c_fin;
+  				es_chest = bd_ra_le_m_g_o_avg;
+  				es_chest = bd_ra_le_r_g_o_fin;
+ 				es_chest = bd_ra_sl_m_g_c_avg;
+  				es_chest = bd_ra_sl_r_g_c_avg;
+  				es_chest = bd_un_sl_f_barbarian;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_bo_sl_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet =bo_ra_bo_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_ga_bl_f_g_c_avg;
+				es_forearms = gl_gl_bl_f_g_c_avg;
+				es_forearms = gl_gl_sl_f_g_c_avg;
+				es_forearms = gl_ra_gl_bl_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 115;
+					max = 91;
+				}
+				[oneof*]
+				{
+				  	chance = 0.15;
+				  	il_main = potion_health_small;
+                  			il_main = scroll_resurrect;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/25-41;
+					il_main = #armor/23-74;
+					il_main = #*/35-51;
+				}
+				[oneof*]
+				{
+					chance = 0.0075;
+					il_main = #weapon/-rare(1)/38-47;
+					il_main = #armor/-rare(1)/47-100;
+					il_main = #*/-rare(1)/38-47;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?social		= 0.35
+			&still		= false;
+
+		actor_weapon_preference			= WP_RANGED;
+
+		actor_auto_switches_to_ranged	= true;
+		on_enemy_spotted_alert_friends	= true;
+		melee_engage_range 			= 14.0;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+		on_mana_ratio_low_flee	= true;
+		flee_count				= 1;
+	}
+}
+[t:template,n:ut_dwarf_magic]
+{
+	doc = "ut_base_evil_dwarf";
+	specializes = ut_base_evil_dwarf;
+	[actor]
+	{
+          		drops_spellbook = false;
+		[skills]
+		{
+			  combat_magic = 10, 0;
+			  dexterity = 9, 0;
+			  intelligence = 15, 0;
+			  melee = 6, 0;
+			  strength = 11, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 142;
+		life 			= 86;
+		max_life 		 = 86;
+		mana 			 = 1006;
+		max_mana 		 = 1006;
+		  material = steel;
+
+		[textures]
+		{
+			0 = b_c_gan_df_skin_11;
+			1 = b_c_pos_a3_032;
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		  damage_max = 50;
+		  damage_min = 22;
+
+	}
+	[common]
+	{
+		screen_name = "Duergar Battlemage";
+		membership = monster, party_dwarf, dwarf;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("zaurask_zombie_karate_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+		}
+	}
+   	[defend] { defense=5; }
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		  selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			  il_active_primary_spell   = spell_dwarf_powder;
+			  il_active_secondary_spell = spell_resurrect_monster_full;
+		}
+		[equipment] 
+		{ 
+			es_spellbook = book_glb_magic_01;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+                		es_weapon_hand = st_g_c_s_avg;
+                		es_weapon_hand = st_g_o_r_fun;
+                		es_weapon_hand = st_g_o_s_fun;
+                		es_weapon_hand = st_ra_g_c_s_fin;
+				es_weapon_hand = st_ra_g_o_r_avg;
+                		es_weapon_hand = st_un_pudgel;
+                		es_weapon_hand = st_un_toothpick;
+			}
+			[oneof*]
+			{
+  				es_chest = bd_bl_f_g_c_avg;
+  				es_chest = bd_bl_f_g_c_fun;
+  				es_chest = bd_bl_m_g_c_avg;
+  				es_chest = bd_bl_r_g_c_avg;
+  				es_chest = bd_ra_bl_m_g_c_fin;
+  				es_chest = bd_ra_le_f_g_c_fin;
+  				es_chest = bd_ra_le_m_g_o_avg;
+  				es_chest = bd_ra_le_r_g_o_fin;
+ 				es_chest = bd_ra_sl_m_g_c_avg;
+  				es_chest = bd_ra_sl_r_g_c_avg;
+  				es_chest = bd_un_sl_f_barbarian;
+			}
+			[oneof*]
+			{
+                		es_feet = bo_bo_le_f_g_c_avg;
+                		es_feet = bo_bo_sl_f_g_c_avg;
+                		es_feet = bo_gr_bl_f_g_c_avg;
+                		es_feet = bo_ra_bo_le_f_g_c_fin;
+			}
+			[oneof*]
+			{
+				es_forearms = gl_gl_le_f_g_c_avg;
+				es_forearms = gl_ra_gl_le_f_g_c_fin;
+
+			}
+			[oneof*]
+			{
+				[gold*]
+				{
+					chance = 0.2;
+					min = 115;
+					max = 91;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+					il_main = #weapon/25-41;
+					il_main = #armor/23-74;
+					il_main = #*/35-51;
+				}
+				[oneof*]
+				{
+					chance = 0.0075;
+					il_main = #weapon/-rare(1)/38-47;
+					il_main = #armor/-rare(1)/47-100;
+					il_main = #*/-rare(1)/38-47;
+				}
+			}
+		}
+	}
+   	[mind]
+   	{
+		jat_brain				= world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party	= true
+			&party_template			= "party_dwarf";
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+		actor_weapon_preference              = WP_MAGIC;
+		actor_auto_switches_to_magic         = true;
+		actor_auto_reanimates_friends        = true;
+		actor_auto_uses_stored_items         = true;
+		personal_space_range			= 1.5;
+		ranged_engage_range 			= 14.0;
+		sight_range				= 14.0;
+	}
+}

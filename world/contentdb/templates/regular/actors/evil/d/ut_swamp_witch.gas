@@ -1,0 +1,557 @@
+[t:template,n:swamp_witch_ut]
+{
+	category_name = "1W_evil_d";
+	doc = "Swamp Witch";
+	specializes = base_swamp_witch;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  8, 0;
+			intelligence =  18, 0;
+			dexterity =  9, 0;
+			combat_magic =  20,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1691;
+		life = 210;
+		max_life = 210;
+		mana = 56;
+		max_mana = 56;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 100;
+		damage_min = 95;
+	}
+	[common] { screen_name="Swamp Witch"; }
+	[generator_in_object]
+	{
+		child_template_name = swamp_switch_skeleton;
+		spawn_event = WE_KILLED;
+		spawn_chance = 1.0;
+	}
+
+    [defend] { defense=325; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				chance = 0.2;
+				il_main = #*/60-73;
+				il_main = #armor/32-160;
+                il_main = #body,ro/102-160;
+            }
+            [oneof*]
+			{
+	        	chance = 0.004;
+	            il_main = #weapon/-rare(1)/65-78;
+	            il_main = #armor/-rare(1)/122-241;
+                il_main = #*/-rare(1)/65-78;
+            }
+			[oneof*]
+			{
+            	chance = 0.002;
+	            il_main = #weapon/-unique(2)/65-78;
+	            il_main = #armor/-unique(2)/122-241;
+                il_main = #*/-unique(2)/65-78;
+            }
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_ice_mage_balls;
+			il_spell_1=spell_swamp_witch_summon;
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?social							= 0.35
+			&meander						= false
+			&still							= false;
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&spell_chances				= "0.5,                  0.5"
+			&spells						= "spell_ice_mage_balls, spell_swamp_witch_summon";
+
+        on_enemy_entered_ocz_flee 	= true;
+		on_enemy_entered_ocz_attack = false;
+		on_enemy_entered_icz_flee 	= true;
+		on_enemy_entered_icz_attack = false;
+		flee_count 					= 1;
+	}
+}
+[t:template,n:ut_swamp_witch]
+{
+	category_name = "1W_evil_d";
+	doc = "Swamp Witch";
+	specializes = swamp_witch_ut;
+}
+[t:template,n:ut_swamp_witch_wicked]
+{
+	category_name = "1W_evil_d";
+	doc = "Swamp Witch";
+	specializes = swamp_witch_ut;
+	[common] { screen_name="Wicked Witch"; }
+}
+[t:template,n:ut_swamp_witch_reveal]
+{
+	category_name = "1W_evil_d";
+	doc = "Swamp Witch reveal";
+	specializes = swamp_witch_ut;
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("swamp_witch_reveal");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+}
+[t:template,n:ut_swamp_witch_boss_01]
+{
+	category_name = "1W_evil_d";
+	doc = "Swamp Witch boss";
+	specializes = swamp_witch_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =  9, 0;
+			intelligence =  20, 0;
+			dexterity =  10, 0;
+			combat_magic =  22,  0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_edm_sw-02;
+		experience_value = 3050;
+		life = 650;
+		max_life = 650;
+		mana = 56;
+		max_mana = 56;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 109;
+		damage_min = 99;
+	}
+	[common]
+	{
+		screen_name="Agatha the Wicked";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;				
+				action* = call_sfx_script("unique_ray_purple(sgx)");
+			}
+		}
+	}
+	[generator_in_object]
+	{
+		child_template_name = swamp_switch_skeleton;
+		spawn_event = WE_KILLED;
+		spawn_chance = 1.0;
+	}
+
+    [defend] { defense=287; }
+	[inventory]
+	{
+		[pcontent]
+		{
+            [oneof*]
+			{
+				[all*]
+				{
+					il_main = #*/73-80;
+					il_main = #armor/235-255;
+                    il_main = #body,ro/202-260;
+				}
+	            [oneof*]
+				{
+		        	chance = 0.004;
+		            il_main = #weapon/-rare(1)/78-89;
+		            il_main = #armor/-rare(1)/253-272;
+	                il_main = #*/-rare(1)/78-89;
+	            }
+				[oneof*]
+				{
+	            	chance = 0.002;
+		            il_main = #weapon/-unique(2)/78-89;
+		            il_main = #armor/-unique(2)/253-272;
+	                il_main = #*/-unique(2)/78-89;
+		        }
+            }
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_ice_mage_balls;
+			il_spell_1=spell_swamp_witch_summon;
+		}
+	}
+
+}
+
+[t:template,n:ut_swamp_witch_boss_02]
+{
+	category_name = "1W_evil_d";
+	doc = "Swamp Witch boss 02";
+	specializes = swamp_witch_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength =  9, 0;
+			intelligence =  25, 0;
+			dexterity =  10, 0;
+			combat_magic =  25,  0;
+		}
+	}
+	[aspect]
+	{
+		textures:0 = b_c_edm_sw-03;
+		experience_value = 4050;
+		life = 650;
+		max_life = 650;
+		mana = 856;
+		max_mana = 856;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 109;
+		damage_min = 99;
+	}
+	[common]
+	{
+		screen_name="The Bog Hag";
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_purple(sgx)");
+			}
+		}
+	}
+	[generator_in_object]
+	{
+		child_template_name = swamp_switch_skeleton;
+		spawn_event = WE_KILLED;
+		spawn_chance = 1.0;
+	}
+
+    [defend] { defense=224; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[all*]
+			{
+				[oneof*]
+				{
+					il_main = #*/76-83;
+					il_main = #armor/255-299;
+                    il_main = #body,ro/255-299;
+				}
+	            [oneof*]
+				{
+		        	chance = 0.004;
+		            il_main = #weapon/-rare(1)/87-99;
+		            il_main = #armor/-rare(1)/271-329;
+	                il_main = #*/-rare(1)/87-99;
+	            }
+				[oneof*]
+				{
+	            	chance = 0.002;
+		            il_main = #weapon/-unique(2)/87-99;
+		            il_main = #armor/-unique(2)/271-329;
+	                il_main = #*/-unique(2)/87-99;
+				}
+            }
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_ice_mage_balls;
+			il_spell_1=spell_swamp_witch_summon;
+		}
+	}
+}
+[t:template,n:ice_mage_ut]
+{
+	category_name = "1W_evil_d";
+	doc = "Ice Mage";
+	specializes = base_swamp_witch;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  8, 0;
+			intelligence =  13, 0;
+			dexterity =  9, 0;
+			combat_magic =  8,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 261;
+		life = 100;
+		max_life = 100;
+		mana = 56;
+		max_mana = 56;
+		textures:0 = b_c_edm_img;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 55;
+	}
+	[common] { screen_name="Ice Mage"; }
+    [defend] { defense=74; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.1;
+                    il_main = #cmagic/3-15;
+				}
+				[oneof*]
+				{
+					chance = 0.15;
+                    il_main = #*/36-44;
+                    il_main = #body,ro/70-88;
+				}
+
+			}
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_ice_mage_iceblast;
+			il_spell_1=spell_summon_ice_warriors_monster;
+		}
+	}
+	[mind]
+	{
+		jat_fidget						= world\ai\jobs\common\job_fidget.skrit
+			?meander						= false
+			&still							= false;
+
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true
+			&spell_chances				= "0.5,                     0.5"
+			&spells						= "spell_ice_mage_iceblast, spell_summon_ice_warriors_monster";
+
+		actor_life_ratio_low_threshold  = 0.25;
+		on_life_ratio_low_flee = true;
+		flee_count = 1;
+		flee_distance = 20;
+	}
+}
+[t:template,n:ut_ice_mage]
+{
+	category_name = "1W_evil_d";
+	doc = "ice mage";
+	specializes = ice_mage_ut;
+}
+[t:template,n:ut_ice_mage_reveal]
+{
+	category_name = "1W_evil_d";
+	doc = "ice mage reveal";
+	specializes = ice_mage_ut;
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+		sight_origin_height = 1;
+		actor_auto_fidgets = false;
+	}
+	[common]
+	{
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("ice_mage_reveal");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+}
+[t:template,n:ut_ice_mage_boss_01]
+{
+	category_name = "1W_evil_d";
+	doc = "ice mage boss";
+	specializes = ice_mage_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength 		=  8, 0;
+			intelligence 	=  15, 0;
+			dexterity 		=  11, 0;
+			combat_magic 	=  9,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 400;
+		life = 338;
+		max_life = 338;
+		mana = 56;
+		max_mana = 56;
+		textures:0 = b_c_edm_img-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 55;
+	}
+	[common]
+	{
+		screen_name="Olamar The Frozen";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_blue(sgx)");
+			}
+		}
+	}
+    [defend] { defense=208; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.5;
+                    il_main = #cmagic/13-15;
+				}
+				[oneof*]
+				{
+					chance = 0.5;
+                    il_main = #*/40-46;
+                    il_main = #body,ro/70-88;
+				}
+
+			}
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_ice_mage_iceblast;
+			il_spell_1=spell_summon_ice_warriors_monster;
+		}
+	}
+
+}
+
+[t:template,n:ut_ice_mage_boss_02]
+{
+	category_name = "1W_evil_d";
+	doc = "ice mage boss";
+	specializes = ice_mage_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength 	=  8, 0;
+			intelligence 	=  18, 0;
+			dexterity 	=  11, 0;
+			combat_magic 	=  19,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 400;
+		life = 398;
+		max_life = 398;
+		mana = 56;
+		max_mana = 56;
+		textures:0 = b_c_edm_img-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 60;
+		damage_min = 55;
+	}
+	[common]
+	{
+		screen_name="Ice Disciple";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+	}
+    [defend] { defense=298; }
+	[inventory]
+	{
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[all*]
+				{
+       				chance = 0.5;
+                    il_main = #cmagic/13-20;
+				}
+				[oneof*]
+				{
+					chance = 0.5;
+                    il_main = #*/40-46;
+                    il_main = #body,ro/70-88;
+				}
+
+			}
+		}
+		selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_ice_mage_iceblast;
+			il_spell_1=spell_summon_ice_warriors_krug_monster;
+		}
+	}
+
+}
+

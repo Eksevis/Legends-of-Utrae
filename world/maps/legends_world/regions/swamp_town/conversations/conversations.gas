@@ -1,0 +1,806 @@
+[conversation_belles]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e00142;
+		screen_text = "If you need any advice, ask Ranor here. He's the local expert on anything swamp related. He's even been to the outside as far as the Old Forest!";
+	}
+}
+[conversation_belles_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e00142;
+		screen_text = "I'm blinded, auggggg!";
+	}
+}
+[conversation_darnov]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002cd;
+		screen_text = "Whichever way you go, you're sure to run into a coven of swamp witches. I tried leaving my broom outside to see if they would find it and fly away, but no luck so far.";
+	}
+}
+[conversation_darnov_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002cd;
+		screen_text = "I am lucky if I can hold down a loaf of bread with these awful smells upon the wind.";
+	}
+}
+[conversation_dhoge_first]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "Hah. You noticed my exotic pack animals have you?. You'll not see the likes of these elsewhere on the peninsula. Buy one of these and you'll not just get a dependable pack animal, but a fashion statement as well. What say you, will you buy one of these beasts?.";
+	}
+}
+[conversation_dhoge_no_packmules]
+{
+	[text*]
+	{
+		screen_text = "You're a generous sort my friend, but I've sold off all the tragg that I've in stock. I doubt that I ever obtain any more! Thanks again for your kindness!";
+	}
+}
+[conversation_dhoge_one_packmule]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "It's good to see you again! I still have a tragg left that hasn't been sold yet! For a few gold, she's all yours!";
+	}
+}
+[conversation_dhoge_two_packmules]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "It's good to see you again! I still have a tragg that hasn't been sold yet! For a few gold, she's all yours!";
+	}
+}
+[conversation_filia]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d5;
+		screen_text = "My brother left to explore that abandoned mining cave to the south in Redwood Gap. It's been six months, and he still hasn't returned! Seems all those warning signs weren't enough to knock some common sense into his head.";
+	}
+}
+[conversation_filia_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d5;
+		screen_text = "We should drive those witches Janeira and Ninale out of town, Travelers or no, they will destroy us all!";
+	}
+}
+[conversation_geddoe_accept_have_money]
+{
+	[text*]
+	{
+		sample = s_v_jondar_select_14;
+		screen_text = "Thank you for choosing me, I wont let you down!";
+	}
+}
+[conversation_geddoe_accept_no_money]
+{
+	[text*]
+	{
+		screen_text = "I'm so disappointed! Please come back when you have 51900 gold!";
+	}
+}
+[conversation_geddoe_disband]
+{
+	[text*]
+	{
+		screen_text = "I'm so disappointed! You'll regret this, mark my words!";
+	}
+}
+[conversation_geddoe_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jondar_select_06;
+		screen_text = "Excellent. Let's get to it then!";
+	}
+}
+[conversation_geddoe_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jondar_select_06;
+		screen_text = "I hear you will be exploring the Utraean Peninsula. If you can spare 51900 gold to pay off some debts I've acquired, I'll gladly join you. My name is Isaac and I am a fighter so i'm sure you'll agree that'll be very useful.";
+	}
+}
+[conversation_geddoe_reject]
+{
+	[text*]
+	{
+		screen_text = "I'm so disappointed! You'll regret this, mark my words!";
+	}
+}
+[conversation_geddoe_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_jondar_select_06;
+		screen_text = "I'm so glad that you came to your senses! Let's stick together!";
+	}
+}
+[conversation_guard_1]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d2;
+		screen_text = "I've heard tales of a tower in the northern forest so tall it touches the sky! Of course, I've never seen anything taller than Hiroth Castle. Supposedly the old abandoned mine shaft in Redwood Gap drops into a massive pit! I've only heard of one man who ever made it out alive, and he was as crazy as a bat after being stuck in there alone for years.";
+	}
+}
+[conversation_guard_1_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d2;
+		screen_text = "The Legion survived the fall of the Empire of Stars. We will survive this too.";
+	}
+}
+[conversation_guard_2]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d1;
+		screen_text = "If you know what's good for you, you will stick to the marked walkways. We have a hard enough time keeping them clear, let alone to start venturing into the stinking swamp.";
+	}
+}
+[conversation_guard_2_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d1;
+		screen_text = "Now that the sky has turned red, I have seen just about everything you could imagine floating, dead, up from the swamp. I am sure glad I never had to fight half that stuff while it was alive.";
+	}
+}
+[conversation_guard_3]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d0;
+		screen_text = "I should have known when the town crier announced the wages for this job that there was something amiss. What I wouldn't give to be back in Elddim right now breathing the fresh farmland air.";
+	}
+}
+[conversation_guard_3_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d0;
+		screen_text = "I thought the swamp gas stank. I'd pay a week's wages just to have a full breath of it now that the sky rains death. The stench of brimstone is worse!";
+	}
+}
+[conversation_guard_e]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e00313;
+		screen_text = "There's a whole lot of swamp between here and Elddim to the east. If you keep your armor clean, you should be able to hold off the mold until you get to drier parts.";
+	}
+}
+[conversation_guard_e_high]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e00313;
+		screen_text = "Out for a bit of slashing practice, are you? You won't find much worthy prey out here, I'm afraid. The critters are smarter than you think -- they'll not likely leave the murk to pursue one so highly experienced as yourself.";
+	}
+}
+[conversation_guard_e_low]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e00313;
+		screen_text = "Hahaha, you aren't seriously considering traveling into the swamps, as inexperienced as you clearly are, are you? I don't know what you're doing in these parts, but I highly suggest you rethink it before you die, or worse, dirty up that pretty armor of yours!";
+	}
+}
+[conversation_guard_e_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e00313;
+		screen_text = "Seems there's always something gone wrong wherever I go. First it was famine in Quillrabe, then flooding in Hiroth, and now brimstone on the wind. What disaster will we see next, I wonder?";
+	}
+}
+[conversation_guard_n]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000fd;
+		screen_text = "You look a bit bored with town life. If you wade across the northern island and cross the water to the northwest, you'll come across the Sulfur Tunnels at the edge of the forest. You'd have a grand old time playing with the living crystals there. ";
+	}
+}
+[conversation_guard_n_high]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000fd;
+		screen_text = "Out for a bit of slashing practice, are you? You won't find much worthy prey out here, I'm afraid. The critters are smarter than you think -- they'll not likely leave the murk to pursue one so highly experienced as yourself.";
+	}
+}
+[conversation_guard_n_low]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000fd;
+		screen_text = "Hahaha, you aren't seriously considering traveling into the swamps, as inexperienced as you clearly are, are you? I don't know what you're doing in these parts, but I highly suggest you rethink it before you die, or worse, dirty up that pretty armor of yours!";
+	}
+}
+[conversation_guard_n_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000fd;
+		screen_text = "Oh dear, don't tell me the sulfur tunnels have overflowed into the swamp again. It sure smells like it, though I've never seen the murk turn such a funny color before.";
+	}
+}
+[conversation_guard_s]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002e5;
+		screen_text = "You'll find this area to your liking, I'll bet. Keep your eyes open and your weapons readied, and I'm sure you'll make it through the swamps and forest ahead to the south just fine.";
+	}
+}
+[conversation_guard_s_high]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002e5;
+		screen_text = "Out for a bit of slashing practice, are you? You won't find much worthy prey out here, I'm afraid. The critters are smarter than you think -- they'll not likely leave the murk to pursue one so highly experienced as yourself.";
+	}
+}
+[conversation_guard_s_low]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002e5;
+		screen_text = "Hahaha, you aren't seriously considering traveling into the swamps, as inexperienced as you clearly are, are you? I don't know what you're doing in these parts, but I highly suggest you rethink it before you die, or worse, dirty up that pretty armor of yours!";
+	}
+}
+[conversation_guard_s_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002e5;
+		screen_text = "Phew! I thought swamp gas stank something awful, but this is far worse!";
+	}
+}
+[conversation_guard_sw]
+{
+	[text*]
+	{
+		screen_text = "Heading into the Goblin Warrens, eh? Best take care, those little green vermin have been rather uppity of late. They'd just as soon kill you as trade with you, but you look like the sort of traveller with enough wits to keep your head on your shoulders.";
+	}
+}
+[conversation_guard_sw_high]
+{
+	[text*]
+	{
+		screen_text = "Out for a bit of slashing practice, are you? You won't find much worthy prey out here, I'm afraid. The critters are smarter than you think -- they'll not likely leave the murk to pursue one so highly experienced as yourself.";
+	}
+}
+[conversation_guard_sw_low]
+{
+	[text*]
+	{
+		screen_text = "Hahaha, you aren't seriously considering traveling into the Goblin Warrens, as inexperienced as you clearly are, are you? I don't know what you're doing in these parts, but I highly suggest you rethink it before you die, or worse, dirty up that pretty armor of yours!";
+	}
+}
+[conversation_guard_sw_red]
+{
+	[text*]
+	{
+		screen_text = "Those little green poo-eaters are behind this foul weather, mark my words! The Legion should've run them out of Gonsiir when we had a chance instead of letting them spread all the way down here on the Utraean Peninsula.";
+	}
+}
+[conversation_indine]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e001ea;
+		screen_text = "Don't mind Fari, she's been living here a bit too long. It does strange things to your mind. Doctors recommend only 3 days exposure to swamp air that been contaminated by swamp witch breath!";
+	}
+}
+[conversation_indine_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e001ea;
+		screen_text = "I'm blinded, auggggg!";
+	}
+}
+[conversation_jadoc]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000d6;
+		screen_text = "Howdy there, good to meet such renown adventurers. If you're looking for something interesting, try going East when you meet up with Rhod Emell in the Old Forest past the Goblin Warrens. Just be carefull, it's no longer deserted & the new inhabitants are unfriendly!";
+		activate_quest* = quest_pit_quest;
+		quest_dialog = true;
+	}
+}
+[conversation_jadoc_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000d6;
+		screen_text = "I'm blinded, auggggg!";
+	}
+}
+[conversation_janeira]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x04e003ff;
+		choice = more;
+		order = 0;
+		screen_text = "If I'm not mistaken, you carry the Mark of fire upon you. The Society might have need of one such as yourself, if you're able and willing, interested?";
+	}
+	[text*]
+	{
+		activate_quest* = goto_elddim;
+		button_1_text = "Directions";
+		button_1_value = d_0x04e003ff;
+		order = 1;
+		quest_dialog = true;
+		screen_text = "The Utraean Society is always looking for those with special abilities. If you travel to Elddim, speak with Utraean Priestess Kelti in the Shrine of Passion there.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e003ff;
+		screen_text = "If Priestess Kelti deems you trustworthy, I may have something for you later.";
+	}
+}
+[conversation_janeira_all_complete]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e003ff;
+		screen_text = "Order is restored to the land, but the spirits are still restless. There is yet unfinished business to attend to, in another time and place. There are lessons still to be learned from the Utraeans, but not yet, not now. Enjoy your life, Adventurer, until we meet again.";
+	}
+}
+[conversation_janeira_goto]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e003ff;
+		quest_dialog = true;
+		screen_text = "What are you still doing in this dreary town? Go to Quillrabe and leave an old witch to her ramblings.";
+	}
+}
+[conversation_janeira_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e003ff;
+		screen_text = "So you have returned? The priests are fools as you can see, toddlers cavorting with pretty baubles of which they do not understand the danger. I can understand the secrets of the Utraeans, but the world is not yet ready for them to be revealed. Go back to Kavaren in Hiroth, and end this madness as you have been ordained to do. You and I will meet again someday, and then we shall see who dares ignore an old woman's fancy.";
+	}
+}
+[conversation_janeira_ring]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x04e003ff;
+		choice = more;
+		complete_quest* = goto_lang;
+		complete_quest* = goto_lang_b;
+		order = 0;
+		screen_text = "Ahh, Priestess Kelti spoke to me in my dreams about you. That fool, Priest Lagreth of Fallraen, tried and failed to steal the Lang Mosquito Stone for his own uses. I hear a band of Furoks rewarded him well for his shenanigans. Ha! The old goat seems to think all will be milk and honey once the Circle is built, but mark my words, the man is too senile to remember even what month it is. I have tried to warn the Society, but they do not listen to old witches like they should.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e003ff;
+		order = 1;
+		screen_text = "Aye, I have the Lang Mosquito Stone, and I will give it to you, but take note: all is not as it seems in the Utraean Peninsula.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e003ff;
+		screen_text = "The Stone is yours for the taking to do with what you like. Go ahead and place it in the Circle in Hiroth; it will happen inevitably. You might survive it, you might not, but you'll never know if you don't take it and find out.";
+	}
+}
+[conversation_janeira_stone]
+{
+	[text*]
+	{
+		button_2_text = "Directions";
+		button_2_value = d_0x04e003ff;
+		choice = more;
+		order = 0;
+		screen_text = "Very well, you accept. It is high time the Utraean Society learned not to meddle in things they do not understand. I admit my visions are cloudy, but I fear the omens have been ill lately.";
+	}
+	[text*]
+	{
+		activate_quest* = goto_quillrabe;
+		button_1_text = "Directions";
+		button_1_value = d_0x04e003ff;
+		order = 1;
+		screen_text = "I've frightened you, have I? Well, good. You seemed a tad too cocky there, my friend. Never embark on a journey without being prepared for the worst, that's what I always say! Now then, go to Quillrabe and have a draught of ale next to the river Iliarth. I'm sure it will cheer you up, and you can speak with Utraean Priest Ferdl while you are there.";
+	}
+}
+[conversation_jupithra]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000d6;
+		screen_text = "Are you a trader? No, that's a pity. Not many people will venture all the way out here and if they do you can bet that they'll need new shoes after trekking through all that muck!";
+	}
+}
+[conversation_jupithra_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000d6;
+		screen_text = "I'm blinded, auggggg!";
+	}
+}
+[conversation_karkk]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002cb;
+		screen_text = "I just got chased by a fish the size of a whale into that old abandoned mine shaft in Redwood Gap! Luckily, I managed to grab hold of a beam as I fell in. The sounds coming from that pit were not natural. I hate to think what it was.";
+	}
+}
+[conversation_karkk_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002cb;
+		screen_text = "That old witch Janeira is at the root of this mess, I tell you! We never had any troubles before she came here.";
+	}
+}
+[conversation_marika]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002c7;
+		screen_text = "If you head out into the swamp, look closely at the trees; they don't all get their food from sunlight, if you know what I mean.";
+	}
+}
+[conversation_marika_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002c7;
+		screen_text = "I hear a name whispered on this otherwordly wind...Can you hear it too?";
+	}
+}
+[conversation_megumi_accept_have_money]
+{
+	[text*]
+	{
+		sample = s_v_mheagan_select_09;
+		screen_text = "Thank you for choosing me, I wont let you down!";
+	}
+}
+[conversation_megumi_accept_no_money]
+{
+	[text*]
+	{
+		screen_text = "Please come back when you have 51000 gold!";
+	}
+}
+[conversation_megumi_disband]
+{
+	[text*]
+	{
+		screen_text = "What! Is it because I'm a woman?";
+	}
+}
+[conversation_megumi_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_08;
+		screen_text = "Good. I'm glad that you see that I can hold my own with any male fighter!";
+	}
+}
+[conversation_megumi_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_08;
+		screen_text = "I hear you will be exploring the Ultraen Peninsula. If you can spare 51000 gold to pay off some debts I've acquired, I'll gladly join you. My name is Megumi and I am a fighter so i'm sure you'll agree that'll be very useful.";
+	}
+}
+[conversation_megumi_reject]
+{
+	[text*]
+	{
+		screen_text = "What! Is it because I'm a woman?";
+	}
+}
+[conversation_megumi_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_08;
+		screen_text = "So you see the value of a strong warrior after all! Shall we join together then?";
+	}
+}
+[conversation_ninale]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e0009f;
+		choice = shop;
+		order = 0;
+		screen_text = "Come inside, my child. Now, you'll be looking for a fortune, or perhaps a premonition? Well, I'll tell you this; there are great things in store for you to the north, if you're willing to take the risk. I've seen... visions... of the horrors emerging from the sulfurous caves. Perhaps you are the one to clean them out once and for all?";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e0009f;
+		choice = shop;
+		screen_text = "Travelers are... concerned about those caves. Perhaps it is time to move on to less... infested waters. Well, my herbs and unguents will help you choose your way. My mixtures may not be so pure as those found in Elddim, but that's a long walk east through treacherous swamp. But it's your health at stake, so what will it be?";
+	}
+}
+[conversation_ninale_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e0009f;
+		choice = shop;
+		screen_text = "Janeira has been cackling to herself ever since the sky turned red!";
+	}
+}
+[conversation_owen_lang_first]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "Hah. You noticed my exotic pack animals have you?. You'll not see the likes of these elsewhere on the peninsula. Buy one of these and you'll not just get a dependable pack animal, but a fashion statement as well. What say you, will you buy one of these beasts?";
+	}
+}
+[conversation_owen_lang_no_packmules]
+{
+	[text*]
+	{
+		screen_text = "You're a generous sort my friend, but I've sold off all the tragg that I've in stock. I doubt that I ever obtain any more! Thanks again for your kindness!";
+	}
+}
+[conversation_owen_lang_one_packmule]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "It's good to see you again! I still have a tragg that hasn't been sold yet! For a few gold, she's all yours!";
+	}
+}
+[conversation_owen_lang_two_packmules]
+{
+	[text*]
+	{
+		choice = buy_packmule;
+		screen_text = "It's good to see you again! I still have a tragg that hasn't been sold yet! For a few gold, she's all yours!";
+	}
+}
+[conversation_ranor]
+{
+	[text*]
+	{
+		screen_text = "Need some advice do you. After making your way here, you'll hardly need to be told how to handle these swamp abominations. The goblins can be nasty though, they love trying to sneak behind you and cutting down your mages. Can't say that I blame them if you go treking through their territory. After the Ehb incident, they've become very unfriendly!";
+	}
+}
+[conversation_rebekkah_accept]
+{
+	[text*]
+	{
+		sample = s_v_mheagan_select_03;
+		screen_text = "Thank you for choosing me, I wont let you down!";
+	}
+}
+[conversation_rebekkah_disband]
+{
+	[text*]
+	{
+		screen_text = "How come?";
+	}
+}
+[conversation_rebekkah_disband_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_02;
+		screen_text = "Thank you for giving me another shot, I wont let you down!";
+	}
+}
+[conversation_rebekkah_join]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_02;
+		screen_text = "My name is Rebekkah and I hear you will be exploring the Ultraen Peninsula. Please take me along with you. I'm sick of this boring old town with the stench of the swamp and the mist creating mildrew everywhere you see and I know that I'll be very usefull to you.";
+	}
+}
+[conversation_rebekkah_reject]
+{
+	[text*]
+	{
+		screen_text = "Why not!";
+	}
+}
+[conversation_rebekkah_rejoin]
+{
+	[text*]
+	{
+		choice = potential_member;
+		sample = s_v_mheagan_select_02;
+		screen_text = "Thanks! I see you reconsidered.";
+	}
+}
+[conversation_rumben]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000d0;
+		choice = shop;
+		order = 0;
+		screen_text = "Stars, it's a regular menagerie today! Lang hasn't seen this much business in ages, I tell you. It helps that we serve all kinds; I just ask that you not leave any body parts behind. Not all customers take kindly to that, y'know.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000d0;
+		choice = shop;
+		order = 1;
+		screen_text = "It's your lucky day! A nice zombie chap brought in a shipment of genuine Quillrabe leather today, and I've already got some lovely pieces ready to go. Of course, if you're planning to venture south towards Quillrabe itself, the leather is far cheaper, but I assure you, it'll be nowhere near the quality of mine.";
+	}
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000d0;
+		choice = shop;
+		screen_text = "Still haven't explored all of Lang's charms? Well, if I were you, I'd buy something soon and get out before even your feet go to spore. Everything does, sooner or later. Even if you're... a Traveler.";
+	}
+}
+[conversation_rumben_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e000d0;
+		choice = shop;
+		screen_text = "Red's a far cry from green, at least! I kind of enjoy the change of weather!";
+	}
+}
+[conversation_tarvik]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d4;
+		screen_text = "If you head south into Redwood Gap, stay away from the cave to the east. It may look like an abandoned mine shaft, but no one who enters ever returns.";
+	}
+}
+[conversation_tarvik_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e002d4;
+		screen_text = "Even wandering alone for eternity in the Pit of Despair would be better than choking on this foul air!";
+	}
+}
+[conversation_zroecha]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e001f8;
+		screen_text = "Blasted mosquitoes! At least they're not oversized like the bugs coming out of the Southern Forest. Even the undead won't go that way these days.";
+	}
+}
+[conversation_zroecha_red]
+{
+	[text*]
+	{
+		button_1_text = "Directions";
+		button_1_value = d_0x04e001f8;
+		screen_text = "I've lived in the swamp all of my life, and never seen the sky any other color than green. What could this mean?";
+	}
+}
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "The town of Quillrabe is a nice sight after the dreariness of Lang. You'll be wanting to head south along the boardwalk and then west after the Guard Tower on Grod's Island until you see the entrance to the Goblin Warrens ahead. We do a fair bit of trading with the little green folk, so they might be inclined to let you pass through their tunnels to Redwood Gap. Once in the forest, stay to the south and west. Cross the bridge over the gulch and continue along the forest path until you come to the Fury's Den. If you can avoid the Furies, you should make it out to Iliarth Canyon. Make your way down to the river's side and follow it through Iliarth Falls. There is a footpath down the cliff face to the Canyon floor, narrow though it may be. Stay close to the river through Quillrabe Canyons and eventually you'll come to Quillrabe itself. Might want to pack a fair bit of provisions, as it's a long trip through hostile territory.";
+	}
+}
+[conversation_swamp_intro]
+{
+	[text*]
+	{
+		screen_text = "The Swamp Town of Lang.\nIf the putrid swamp air, mosquitoes & mildrew rotting everything wasn't enough, the town now has to deal with renewed activity from the Goblins.\nThe clangs & clunks of hammers & machinery has increased in intensity ever since the call for the unification of the Stones of Utrae went out.\nDo the Goblins know something that we don't? Are they preparing for some mischief? How will it all end?\nPerhaps the answer is to be found beneath the dank swamps below Lang. In the Goblin Warrens!";
+	  f scroll_rate = 5.000000;
+	}
+}
+[conversation_goblin_quest]
+{
+	[text*] 
+	{	
+	
+		screen_text = "If you are attempting to pass through the Goblin Warrens there's a task which you could do for us. All you need to do is find the Goblin's secret plans for world domination and return them to me. Without the plans, the Goblins will be powerless and no longer a threat.";
+		activate_quest* = quest_goblin_quest;
+		quest_dialog = true;
+	}
+
+}
+
+[conversation_goblin_quest_complete]
+{
+	[text*]
+	{
+		screen_text = "Thank you for your help! Please take this as a reward. We found it near the entrance of the warrens and it should be more usefull to you than us.";
+	}
+}
+[conversation_goblin_quest_red]
+{
+	[text*]
+	{
+		screen_text = "Brimstone's in the air, and fire's upon the wind. 'Tis ill times for us all, I'm afraid.";
+	}
+}

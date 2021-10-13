@@ -1,0 +1,179 @@
+[t:template,n:ut3w_noctiss]
+//balanced for Level 15
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_noctiss";
+	specializes = noctiss_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		39.2, 0;
+			intelligence = 	17.8, 0;
+			dexterity = 	17.5, 0;
+   			combat_magic =  104,  0;
+			nature_magic =	94, 0;
+		}
+	}
+	[aspect]
+	{			
+		experience_value = 3564585;
+		life = 1042.2;
+		max_life = 1042.2;
+		mana = 50.5;
+		max_mana = 50.5;
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 332;
+		damage_min = 270.1;
+		damage_bonus_min_cmagic = 195;
+		damage_bonus_max_cmagic = 248;
+	}
+
+	[common]
+	{
+		screen_name="Fallen Noctiss";
+		membership=monster;
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("ghost_eye_glow");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+	[defend] { defense=913; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = ;		
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_noctiss_sap; }
+
+			
+	}
+
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+	
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+	
+		actor_auto_fidgets = false;
+		sight_origin_height = 1;
+	
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+
+	[physics]
+	{
+		break_effect = ghost_die;
+		explode_when_killed = true;
+		gib_gore_good = true;
+	}
+
+}
+
+[t:template,n:ut3w_noctiss_2]
+//balanced to Level 15
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_noctiss_2";
+	specializes = noctiss_base;
+	
+	[actor]
+	{
+		[skills]
+		{
+			strength = 		39.2, 0;
+			intelligence = 	17.8, 0;
+			dexterity = 	17.5, 0;
+   			combat_magic =  104,  0;
+			nature_magic =	95, 0;
+		}
+	}
+	[aspect]
+	{			
+		[textures] { 0=b_c_edm_noctiss_02; }
+		experience_value = 3564585;
+		life = 1372.2;
+		max_life = 1372.2;
+		mana = 50.5;
+		max_mana = 50.5;	
+	}
+
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 432;
+		damage_min = 270.1;
+		damage_bonus_min_cmagic = 195;
+		damage_bonus_max_cmagic = 278;
+	}
+
+	[common]
+	{
+		screen_name="Noctiss Poltergeist";
+		membership=monster,immune_freeze;
+
+		[template_triggers]
+		{
+			[*]
+			{
+				single_shot = true;
+				action* = call_sfx_script("ghost_eye_glow");
+				condition* = receive_world_message("we_enemy_spotted");
+			}
+		}
+	}
+	[defend] { defense=1260; }
+
+	[inventory]
+	{
+		spew_equipped_kill_count = ;		
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=ut_spell_noctiss_sap_02; }
+	}
+	[mind]
+	{
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit
+			?invisible = true;
+	
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+	
+		actor_auto_fidgets = false;
+		sight_origin_height = 1;
+	
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+	[physics]
+		{
+			break_effect = ghost_die;
+			explode_when_killed = true;
+			gib_gore_good = true;
+		}
+
+}

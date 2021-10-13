@@ -1,0 +1,509 @@
+[t:template,n:sebastian]
+{
+	category_name = "1W_character";
+	doc = "sebastian";
+	specializes = base_pm_fb;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_gareth;
+		[skills]
+		{
+			dexterity 		= 1.08, 0, 10;
+			intelligence 		= 0.36, 0, 10;
+			strength 		= 2.56, 0, 10;
+			melee 			= 4, 0, 0;
+			uber 			= 4, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		gold_value = 900;
+		model = m_c_gah_fb_pos_a1;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_15;
+			1 = b_c_pos_a1_034;
+		}
+		[voice]
+		{
+//			[die] { *=s_e_die_male; }
+	[die]		{ priority = high; * = s_v_algher_die; }
+		}
+      [vo_voice]
+	{
+	  [select_char]
+	    { 
+	      priority = vo; 
+	      * = s_v_algher_select_01;
+	      * = s_v_algher_select_02;
+	      * = s_v_algher_select_03;
+	      * = s_v_algher_select_04;
+	      * = s_v_algher_select_05;
+	      * = s_v_algher_select_06;
+	      * = s_v_algher_select_07;
+	      * = s_v_algher_select_08;
+	      * = s_v_algher_select_09;
+	      * = s_v_algher_select_10;
+	      * = s_v_algher_select_11;
+	      * = s_v_algher_select_12;
+	      * = s_v_algher_select_13;
+	      * = s_v_algher_select_14;
+	      * = s_v_algher_select_15;
+	    }
+	  [order_move]
+	    {
+	      priority = vo; 
+	      * = s_v_algher_ack_01;
+	      * = s_v_algher_ack_02;
+	      * = s_v_algher_ack_03;
+	      * = s_v_algher_ack_04;
+	      * = s_v_algher_ack_05;
+	      * = s_v_algher_ack_06;
+	      * = s_v_algher_ack_07;
+	      * = s_v_algher_ack_08;
+	      * = s_v_algher_ack_09;
+	      * = s_v_algher_ack_10;
+	      * = s_v_algher_ack_11;
+	      * = s_v_algher_ack_12;
+	      * = s_v_algher_ack_13;
+	      * = s_v_algher_ack_14;
+	      * = s_v_algher_ack_15;
+	    }
+	  [order_attack]
+	    {
+	      priority = vo; 
+	      * = s_v_algher_attack_01;
+	      * = s_v_algher_attack_02;
+	      * = s_v_algher_attack_03;
+	      * = s_v_algher_attack_04;
+	      * = s_v_algher_attack_05;
+	      * = s_v_algher_attack_06;
+	      * = s_v_algher_attack_07;
+	      * = s_v_algher_attack_08;
+	      * = s_v_algher_attack_09;
+	      * = s_v_algher_attack_10;
+	      * = s_v_algher_attack_11;
+	      * = s_v_algher_attack_12;
+	      * = s_v_algher_attack_13;
+	      * = s_v_algher_attack_14;
+	      * = s_v_algher_attack_15;
+	    }
+	}
+	}
+	[common]
+	{
+		screen_name = "Gareth";
+	}
+
+	[conversation]
+	{
+	}
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_chest = bd_sl_m_g_c_avg;
+			es_feet = #boots/20-30;
+			es_forearms = #gloves/20-30;
+             		es_spellbook = book_glb_magic_01;
+		}
+        [other]
+        {
+            		il_main = sh_m_g_c_r_s_low;
+			il_main = ss_g_c_gl_1h_avg;
+			il_main = book_glb_lore_ut_gareth;
+        }
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+[t:template,n:geddoe]
+{
+	doc = "geddoe";
+	specializes = base_pm_fb;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_isaac;
+		[skills]
+		{
+			strength 		= 18.0, 0, 10;
+			dexterity 		= 7.5, 0, 10;
+			intelligence 		= 2.5, 0, 10;
+			melee 			= 28, 0, 0;
+			uber 			= 28, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_fb_pos_a1;
+		gold_value = 49900;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_17;
+			1 = b_c_pos_a1_027;
+		}
+		[voice]
+		{
+//			[die] { *=s_e_die_male; }
+			[die]		{ priority = high; * = s_v_jondar_die; }
+		}
+	[vo_voice]
+	{
+		[select_char]
+		{ 
+			priority = vo; 
+			* = s_v_jondar_select_01;
+			* = s_v_jondar_select_02;
+			* = s_v_jondar_select_03;
+			* = s_v_jondar_select_04;
+			* = s_v_jondar_select_05;
+			* = s_v_jondar_select_06;
+			* = s_v_jondar_select_07;
+			* = s_v_jondar_select_08;
+			* = s_v_jondar_select_09;
+			* = s_v_jondar_select_10;
+			* = s_v_jondar_select_11;
+			* = s_v_jondar_select_12;
+			* = s_v_jondar_select_13;
+			* = s_v_jondar_select_14;
+			* = s_v_jondar_select_15;
+		}
+		[order_move]
+		{
+			priority = vo; 
+			* = s_v_jondar_ack_01;
+			* = s_v_jondar_ack_02;
+			* = s_v_jondar_ack_03;
+			* = s_v_jondar_ack_04;
+			* = s_v_jondar_ack_05;
+			* = s_v_jondar_ack_06;
+			* = s_v_jondar_ack_07;
+			* = s_v_jondar_ack_08;
+			* = s_v_jondar_ack_09;
+			* = s_v_jondar_ack_10;
+			* = s_v_jondar_ack_11;
+			* = s_v_jondar_ack_12;
+			* = s_v_jondar_ack_13;
+			* = s_v_jondar_ack_14;
+			* = s_v_jondar_ack_15;
+		}
+		[order_attack]
+		{
+			priority = vo; 
+			* = s_v_jondar_attack_01;
+			* = s_v_jondar_attack_02;
+			* = s_v_jondar_attack_03;
+			* = s_v_jondar_attack_04;
+			* = s_v_jondar_attack_05;
+			* = s_v_jondar_attack_06;
+			* = s_v_jondar_attack_07;
+			* = s_v_jondar_attack_08;
+			* = s_v_jondar_attack_09;
+			* = s_v_jondar_attack_10;
+			* = s_v_jondar_attack_11;
+			* = s_v_jondar_attack_12;
+			* = s_v_jondar_attack_13;
+			* = s_v_jondar_attack_14;
+			* = s_v_jondar_attack_15;
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Isaac";
+	}
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_chest = bd_ch_f_g_c_fun;
+			es_feet = #boots/-no_mod/7-10;
+		}
+        	[other]
+        	{
+			il_main = sd_g_c_sd_1h_fun;
+			il_main = book_glb_lore_ut_isaac;
+        	}
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+[t:template,n:felix]
+{
+	doc = "felix";
+	specializes = base_pm_fb;
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_felix;
+		[skills]
+		{
+			strength 		= 32.0, 0, 10;
+			dexterity 		= 13.5, 0, 10;
+			intelligence 		= 4.5, 0, 10;
+			melee 			= 50, 0, 0;
+			uber 			= 50, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		life_recovery_unit   = 1;
+		life_recovery_period = 4;
+
+		mana_recovery_unit   = 2;
+		mana_recovery_period = 3;
+		model = m_c_gah_fb_pos_a1;
+		gold_value = 534500;
+
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_04;
+			1 = b_c_pos_a1_027;
+		}
+		[voice]
+		{
+			[die]		{ priority = high; * = s_v_nardulo_die; }
+		}
+		[vo_voice]
+		{
+	  		[select_char]
+	    		{ 
+	      priority = vo; 
+	      * = s_v_nardulo_select_01;
+	      * = s_v_nardulo_select_02;
+	      * = s_v_nardulo_select_03;
+	      * = s_v_nardulo_select_04;
+	      * = s_v_nardulo_select_05;
+	      * = s_v_nardulo_select_06;
+	      * = s_v_nardulo_select_07;
+	      * = s_v_nardulo_select_08;
+	      * = s_v_nardulo_select_09;
+	      * = s_v_nardulo_select_10;
+	      * = s_v_nardulo_select_11;
+	      * = s_v_nardulo_select_12;
+	      * = s_v_nardulo_select_13;
+	      * = s_v_nardulo_select_14;
+	      * = s_v_nardulo_select_15;
+	    		}
+	  		[order_move]
+	    		{
+	      priority = vo; 
+	      * = s_v_nardulo_ack_01;
+	      * = s_v_nardulo_ack_02;
+	      * = s_v_nardulo_ack_03;
+	      * = s_v_nardulo_ack_04;
+	      * = s_v_nardulo_ack_05;
+	      * = s_v_nardulo_ack_06;
+	      * = s_v_nardulo_ack_07;
+	      * = s_v_nardulo_ack_08;
+	      * = s_v_nardulo_ack_09;
+	      * = s_v_nardulo_ack_10;
+	      * = s_v_nardulo_ack_11;
+	      * = s_v_nardulo_ack_12;
+	      * = s_v_nardulo_ack_13;
+	      * = s_v_nardulo_ack_14;
+	      * = s_v_nardulo_ack_15;
+	    		}
+	  		[order_attack]
+	    		{
+	      priority = vo; 
+	      * = s_v_nardulo_attack_01;
+	      * = s_v_nardulo_attack_02;
+	      * = s_v_nardulo_attack_03;
+	      * = s_v_nardulo_attack_04;
+	      * = s_v_nardulo_attack_05;
+	      * = s_v_nardulo_attack_06;
+	      * = s_v_nardulo_attack_07;
+	      * = s_v_nardulo_attack_08;
+	      * = s_v_nardulo_attack_09;
+	      * = s_v_nardulo_attack_10;
+	      * = s_v_nardulo_attack_11;
+	      * = s_v_nardulo_attack_12;
+	      * = s_v_nardulo_attack_13;
+	      * = s_v_nardulo_attack_14;
+	      * = s_v_nardulo_attack_15;
+	    		}
+		}
+	}
+	[common]
+	{
+		screen_name = "Felix";
+	}
+
+
+	[inventory]
+	{
+		spew_equipped_kill_count = <ignore>;
+		[equipment]
+		{
+			es_chest = bd_bp_f_g_c_avg;
+			es_feet = #boots/-no_mod/70-120;
+		}
+        	[other]
+        	{
+			il_main = sh_ra_w_o_k_m_haze;
+            		il_main = sd_ra_g_o_st_1h_fin;
+			il_main = book_glb_lore_ut_felix;
+        	}
+	}
+	[mind]
+	{
+		actor_weapon_preference         	= WP_MAGIC;
+		combat_orders                           = CO_FREE;
+		movement_orders                         = MO_FREE;
+		actor_auto_switches_to_magic            = true;
+		actor_auto_defends_others               = true;
+		actor_auto_heals_others_life            = true;
+		actor_auto_heals_self_life              = false;
+		actor_auto_reanimates_friends           = true;
+	}
+}
+[t:template,n:ut_lagreth]    //Quest NPC for quest_fallraean -- he is found dead and can be resurrected
+{
+	doc = "MP_quest lagreth";
+	specializes = base_pm_fb;
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_gy;
+		[skills]
+		{
+			dexterity 		= 0.27, 0, 10;
+			intelligence	= 0.09, 0, 10;
+			strength 		= 0.64, 0, 10;
+			melee 			= 1, 0, 0;
+			uber 			= 1, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		model = m_c_gah_fb_pos_a7;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_12;
+			1 = b_c_pos_a7_014;
+		}
+	}
+	[common]
+	{
+		screen_name = "Utraean Priest Lagreth";
+	}
+	[inventory]
+	{
+
+        [other]
+        {
+			il_main = #staff/20-30;
+        }
+	}
+}
+[t:template,n:ut2w_lagreth]    //Quest NPC for quest_fallraean -- he is found dead and can be resurrected
+{
+	doc = "2w_MP_quest lagreth";
+	specializes = base_pm_fb;
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_gy;
+		[skills]
+		{
+			dexterity 		= 0.27, 0, 10;
+			intelligence	= 0.09, 0, 10;
+			strength 		= 0.64, 0, 10;
+			melee 			= 1, 0, 0;
+			uber 			= 1, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		model = m_c_gah_fb_pos_a7;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_12;
+			1 = b_c_pos_a7_014;
+		}
+	}
+	[common]
+	{
+		screen_name = "Utraean Priest Lagreth";
+	}
+	[inventory]
+	{
+
+        [other]
+        {
+			il_main = #staff/120-220;
+        }
+	}
+}
+[t:template,n:ut3w_lagreth]    //Quest NPC for quest_fallraean -- he is found dead and can be resurrected
+{
+	doc = "3w_MP_quest lagreth";
+	specializes = base_pm_fb;
+
+	[actor]
+	{
+		portrait_icon = b_gui_ig_i_ic_c_gy;
+		[skills]
+		{
+			dexterity 		= 0.27, 0, 10;
+			intelligence	= 0.09, 0, 10;
+			strength 		= 0.64, 0, 10;
+			melee 			= 1, 0, 0;
+			uber 			= 1, 0, 0;
+		}
+	}
+	[aspect]
+	{
+		model = m_c_gah_fb_pos_a7;
+		[textures]
+		{
+			0 = b_c_gah_fb_skin_12;
+			1 = b_c_pos_a7_014;
+		}
+	}
+	[common]
+	{
+		screen_name = "Utraean Priest Lagreth";
+	}
+	[inventory]
+	{
+
+        [other]
+        {
+			il_main = #staff/220-320;
+        }
+	}
+}

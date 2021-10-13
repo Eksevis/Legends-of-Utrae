@@ -1,0 +1,51 @@
+[t:map,n:map]
+{
+	description = "- The Eight Stones of Utrae -\nA campaign amidst the southwestern ruins of the Empire playable in both singleplayer and multiplayer";
+	name = utrae_world;
+    world_frustum_radius = 45;
+	world_frustum_height = 60;
+	world_interest_radius	= 4;
+	notes = none;
+	screen_name = "Legends of Utrae V3.3";
+	timeofday			 = 5h00m;
+
+	[camera]
+	{
+        azimuth 		= 70.000000;
+		distance 		= 13.000000;
+		farclip 		= 70.000000;
+		fov 			= 60.000000;
+		max_azimuth 	= 85.000000;
+		max_distance 	= 25.000000;
+		min_azimuth 	= 12.000000;
+		min_distance 	= 1.000000;
+		nearclip 		= 0.100000;
+		orbit 			= 0.000000;
+        position 		= 1.0800, 3.22000, 0.000000, 0x781ee50;
+	}
+
+	[worlds]
+	{
+		[regular]
+		{
+			screen_name = "Regular";
+			description = "Players of all levels can play here.";
+			required_level = 0;
+		}
+
+		[veteran]
+		{
+			screen_name = "Veteran";
+			description = "Must be level 54 or higher to accept this challenge.";
+			required_level = 54;
+		}
+
+		[elite]
+		{
+			screen_name = "Elite";
+			description = "You must be level 83 or higher to attempt this feat.";
+			required_level = 83;
+		}
+
+	}
+}

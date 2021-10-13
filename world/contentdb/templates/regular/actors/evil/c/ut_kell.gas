@@ -1,0 +1,203 @@
+[t:template,n:ut_kell]
+{
+	category_name = "1W_evil_c";
+	doc = "kell";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	36, 0;
+			intelligence =  13, 0;
+			dexterity =  	19, 0;
+			melee =  		42, 0;
+            combat_magic =  42, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 100000;
+		life = 2080;
+		max_life = 2080;
+		mana = 10;
+		max_mana = 10;
+		model = m_c_ecm_kl_pos_1;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_kell; }
+			[hit_critical]	{ priority = low; * = s_e_hit_kell_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_kell_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_kell_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 250;
+		damage_min = 210;
+	}
+	[body]
+	{
+		avg_move_velocity = 2.000000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine1;
+			shield_bone = bip01_l_hand;
+			weapon_bone = bip01_r_hand;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_kl_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = mg;
+					01 = at;
+					02 = at-02;
+				}
+			}
+		}
+	}
+	[effect_manager]
+	{
+		start_msg = WE_ENTERED_WORLD;
+		stop_msg = WE_LEFT_WORLD;
+		stop_msg2 = WE_KILLED;
+
+		effect_name = "";
+		rep_effect_name = "kell_balls";
+
+		repeat_rate = .5;
+		repeat_rate_max = .7;
+
+		run_once = true;
+	}
+	[common]
+	{
+		screen_name="Kell";
+		membership=monster,immune_freeze;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				action* = call_sfx_script("kell_hand_glow");
+			}
+			[*]
+			{
+				condition* = receive_world_message("we_anim_sfx",1);
+				action* = call_sfx_script("kell_hand_spark");
+			}
+			[*]
+			{
+				condition* = receive_world_message("we_anim_sfx",2);
+				action* = call_sfx_script("kell_hand_charge");
+			}
+		}
+	}
+	[defend] { defense=510; }
+   	[inventory]
+	{
+    	selected_active_location = il_active_primary_spell;
+		[other]
+		{
+			il_active_primary_spell=spell_kell_shot;
+			il_spell_1=spell_kell_blast;
+			il_spell_2=spell_kell_bolt;
+		}
+		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.45;
+					il_main = #*/104-138;
+					il_main = #armor/66-334;
+	                il_main = #spell/45-56;
+				}
+				[oneof*]
+				{
+	            	chance = 0.004;
+	                il_main = #weapon/-rare(1)/140-154;
+	                il_main = #armor/-rare(1)/430-485;
+                    il_main = #*/-rare(1)/140-154;
+                }
+				[oneof*]
+				{
+                	chance = 0.002;
+	                il_main = #weapon/-unique(2)/140-154;
+	                il_main = #armor/-unique(2)/430-485;
+                    il_main = #*/-unique(2)/140-154;
+	            }
+				[gold*]
+				{
+					chance = 0.125;
+					max = 28456;
+					min = 22335;
+					min_pile = 3109;
+					piles = 4 - 6;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?meander	= false
+			&still 		= false;
+
+		jat_cast 						= world\ai\jobs\common\job_cast.skrit
+			?rand_spell					= true;
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 1.5;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}

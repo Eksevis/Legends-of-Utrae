@@ -1,0 +1,348 @@
+[t:template,n:ut_werewolf]
+{
+	category_name = "1W_evil_d";
+	doc = "werewolf_base";
+	specializes = actor_evil;
+	[actor]
+	{
+		
+		[skills]
+		{
+			strength =  22, 0;
+			intelligence =  5, 0;
+			dexterity =  18, 0;
+			melee =  21, 0;
+		}
+	}
+        [aspect]
+	{
+		model = m_c_edm_ww_pos_1; 
+		[voice]
+		{
+
+			[die]  		{ priority = high; * = s_e_call_werewolf;  		}
+			[enemy_spotted]	{ priority = high; * = s_e_die_werewolf; }
+			[hit_glance]	{ priority = low; * = s_e_hit_werewolf_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_werewolf_SED;  }
+			[hit_critical]	{ priority = low; * = s_e_hit_werewolf_SED;  }
+		}
+		material = claws; 
+		experience_value = 1329;
+		mana = 10;
+		max_mana = 10;
+		life = 900;
+		max_life = 900;
+		
+		textures:0 = b_c_edm_ww;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 139;
+		damage_min = 125;
+	}
+
+	[body]
+	{
+		
+		min_move_velocity = 3.0;
+		avg_move_velocity = 3.6;
+		
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_ww_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					01 = at;
+					02 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 
+                                                                                        00=ds;
+                                                                                               }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+                                                                                }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		forced_expiration_class = decay_fresh;
+		screen_name="Werewolf";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change;
+
+	}
+	[defend] 
+	{
+		defense=307;
+	}
+	[generator_in_object]
+	{
+		spawn_event = WE_KILLED;
+		child_template_name = emitter_ut_werewolf_die2;
+		spawn_chance = 1.0;
+		spawn_delay = 4.0;
+		fade_kid = true;
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?meander	= false
+			&still		= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_werewolf_black]
+{
+	category_name = "1W_evil_d";
+	doc = "werewolf_base";
+	specializes = actor_evil;
+	[actor]
+	{
+		
+		[skills]
+		{
+			strength =  22, 0;
+			intelligence =  5, 0;
+			dexterity =  18, 0;
+			melee =  21, 0;
+		}
+	}
+        [aspect]
+	{
+		model = m_c_edm_ww_pos_1; 
+		[voice]
+		{
+
+			[die]  		{ priority = high; * = s_e_call_werewolf;  		}
+			[enemy_spotted]	{ priority = high; * = s_e_die_werewolf; }
+			[hit_glance]	{ priority = low; * = s_e_hit_werewolf_SED;  }
+			[hit_solid]		{ priority = low; * = s_e_hit_werewolf_SED;  }
+			[hit_critical]	{ priority = low; * = s_e_hit_werewolf_SED;  }
+		}
+		material = claws; 
+		experience_value = 1329;
+		mana = 10;
+		max_mana = 10;
+		life = 800;
+		max_life = 800;
+		
+		textures:0 = b_c_edm_ww-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 119;
+		damage_min = 115;
+	}
+
+	[body]
+	{
+		
+		min_move_velocity = 3.0;
+		avg_move_velocity = 3.6;
+		
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine1;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_ww_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files]
+				{
+					01 = at;
+					02 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 
+                                                                                        00=ds;
+                                                                                               }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files]
+				{
+					00 = dff;
+                                                                                }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		forced_expiration_class = decay_fresh;
+		screen_name="Werewolf";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change;
+
+	}
+	[defend] 
+	{
+		defense=277;
+	}
+	[generator_in_object]
+	{
+		spawn_event = WE_KILLED;
+		child_template_name = emitter_ut_werewolf_die;
+		spawn_chance = 1.0;
+		spawn_delay = 4.0;
+		fade_kid = true;
+	}
+	[guts_manager]
+	{
+		effect_name = melee_hit_2;
+	}
+	[mind]
+	{
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit
+			?meander	= false
+			&still		= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+[t:template,n:emitter_ut_werewolf_die]
+{
+	specializes 		= point;
+	doc = "emitter called when a werewolf dies. do not place in world.";
+	category_name       = "emitter";
+    
+	[common]
+	{
+		auto_expiration_class = immediate;
+		forced_expiration_class = decay_fresh;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				action*    = call_sfx_script("un_summon");
+			}
+		}
+	}
+	[self_destruct] 
+	{
+		delete_time = 0.0;
+	}
+	[generator_in_object]
+	{
+
+		child_template_name = body_glb_farmer_02;
+		spawn_event = WE_ENTERED_WORLD;
+		spawn_chance = 1.0;
+		spawn_delay = 1.2;
+	}
+}
+
+[t:template,n:emitter_ut_werewolf_die2]
+{
+	specializes 		= point;
+	doc = "emitter called when a werewolf dies. do not place in world.";
+	category_name       = "emitter";
+    
+	[common]
+	{
+		auto_expiration_class = immediate;
+		forced_expiration_class = decay_fresh;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				action*    = call_sfx_script("un_summon");
+			}
+		}
+	}
+	[self_destruct] 
+	{
+		delete_time = 0.0;
+	}
+	[generator_in_object]
+	{
+
+		child_template_name = body_glb_farmer_01;
+		spawn_event = WE_ENTERED_WORLD;
+		spawn_chance = 1.0;
+		spawn_delay = 1.2;
+	}
+}

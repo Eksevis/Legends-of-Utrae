@@ -1,0 +1,46 @@
+[t:template,n:ut_knight_death]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_knight_death";
+	specializes = dsx_knight_death_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength	= 13, 0;
+			intelligence = 8, 0;
+			dexterity	= 9, 0;
+			melee		= 11, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value 	= 287;
+		life				= 388;
+		max_life			= 388;
+		mana				= 45;
+		max_mana			= 45;
+
+		model = m_c_ecm_sk_pos_2;
+		//		model = m_c_edm_iw_pos_1;
+		//		textures:0 = b_c_edm_ph_melee;
+		material = steel;
+		[voice]
+		{
+			[die]			{ priority = high; * = s_e_die_wraith; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_skeleton_SED; }
+			[hit_critical]	{ priority = low; * = s_e_hit_skeleton_SED; }
+			[hit_glance]	{ priority = low; * = s_e_hit_skeleton_SED; }
+			[hit_solid]		{ priority = low; * = s_e_hit_skeleton_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 78; 
+		damage_min = 68; 
+	}
+	[defend] { defense = 128; }
+}
+

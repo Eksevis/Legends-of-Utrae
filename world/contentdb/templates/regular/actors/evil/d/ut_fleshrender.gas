@@ -1,0 +1,223 @@
+[t:template,n:ut_fleshrender]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_fleshrender";
+	specializes = dsx_fleshrender_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 13, 0;
+			intelligence = 8, 0;
+			dexterity    = 9, 0;
+			melee        = 10, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 258;
+		life             = 258;
+		max_life         = 258;
+		mana             = 45;
+		max_mana         = 45;
+
+		material = flesh;
+		draw_shadow = false;
+		[voice]
+		{
+			[die] 			{ priority = high;	* = s_e_call_wraith_SED;			}
+			[enemy_spotted] { priority = high;	* = s_e_call_zombie_ground_SED;	}
+			[hit_critical]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_glance]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_solid]		{ priority = low;	* = s_e_hit_dead_SED;			}
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 68;
+		damage_min = 50; 
+	}
+
+	[common]
+		{
+			screen_name = "Fleshrender"; //--
+			membership = monster; //--
+		}
+
+	[defend] { defense = 100; }
+
+}
+[t:template,n:ut_fleshrender_boss_01]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_fleshrender";
+	specializes = dsx_fleshrender_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 13, 0;
+			intelligence = 8, 0;
+			dexterity    = 9, 0;
+			melee        = 10, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 358;
+		life             = 658;
+		max_life         = 658;
+		mana             = 45;
+		max_mana         = 45;
+
+		material = flesh;
+		draw_shadow = false;
+		[voice]
+		{
+			[die] 			{ priority = high;	* = s_e_call_wraith_SED;			}
+			[enemy_spotted] { priority = high;	* = s_e_call_zombie_ground_SED;	}
+			[hit_critical]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_glance]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_solid]		{ priority = low;	* = s_e_hit_dead_SED;			}
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 78;
+		damage_min = 60; 
+	}
+
+	[common]
+		{
+			screen_name = "Slaghide The Wretched"; //--
+			membership = monster; //--
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_blue(sgx)");
+			}
+		}
+		}
+
+	[defend] { defense = 200; }
+
+}
+[t:template,n:ut_fleshrender_01]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_fleshrender";
+	specializes = dsx_fleshrender_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 13, 0;
+			intelligence = 8, 0;
+			dexterity    = 9, 0;
+			melee        = 10, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 2458;
+		life             = 658;
+		max_life         = 658;
+		mana             = 45;
+		max_mana         = 45;
+
+		material = flesh;
+		draw_shadow = false;
+		[voice]
+		{
+			[die] 			{ priority = high;	* = s_e_call_wraith_SED;			}
+			[enemy_spotted] { priority = high;	* = s_e_call_zombie_ground_SED;	}
+			[hit_critical]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_glance]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_solid]		{ priority = low;	* = s_e_hit_dead_SED;			}
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 168;
+		damage_min = 150; 
+	}
+
+	[common]
+		{
+			screen_name = "Fleshrender"; //--
+			membership = monster; //--
+		}
+
+	[defend] { defense = 300; }
+
+}
+
+[t:template,n:ut_ice_render]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_fleshrender";
+	specializes = dsx_fleshrender_base;
+
+	[actor]
+	{
+		[skills]
+		{
+			strength     = 13, 0;
+			intelligence = 8, 0;
+			dexterity    = 9, 0;
+			melee        = 10, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 158;
+		life             = 258;
+		max_life         = 258;
+		mana             = 45;
+		max_mana         = 45;
+
+		material = flesh;
+		draw_shadow = false;
+		textures:0 = b_c_edm_frender-01;
+		[voice]
+		{
+			[die] 			{ priority = high;	* = s_e_call_wraith_SED;			}
+			[enemy_spotted] { priority = high;	* = s_e_call_zombie_ground_SED;	}
+			[hit_critical]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_glance]	{ priority = low;	* = s_e_hit_dead_SED;			}
+			[hit_solid]		{ priority = low;	* = s_e_hit_dead_SED;			}
+		}
+
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 68;
+		damage_min = 50; 
+	}
+
+	[common]
+		{
+			screen_name = "Fleshgrinder"; //--
+			membership = monster; //--
+		}
+
+	[defend] { defense = 140; }
+
+}
+
+
+

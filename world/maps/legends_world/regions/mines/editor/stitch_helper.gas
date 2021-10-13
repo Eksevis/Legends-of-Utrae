@@ -1,0 +1,32 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xD0807472;
+	source_region_name = mines;
+	[t:stitch_editor,n:mine_town]
+	{
+		dest_region = mine_town;
+		[node_ids]
+		{
+			0x000000f1 = 0x4283D6DB,6;
+		}
+	}
+	[t:stitch_editor,n:mines2]
+	{
+		dest_region = mines2;
+		[node_ids]
+		{
+			0x000000e1 = 0x125936CD,2;
+			0x000000e2 = 0x88F4ADB7,2;
+			0x000000e3 = 0x88F4ADB7,1;
+			0x000000e4 = 0xA00B589B,4;
+		}
+	}
+	[t:stitch_editor,n:path2mines]
+	{
+		dest_region = path2mines;
+		[node_ids]
+		{
+			0x00000ba1 = 0x8A596F5B,6;
+		}
+	}
+}

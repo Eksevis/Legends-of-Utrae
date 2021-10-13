@@ -1,0 +1,41 @@
+[t:template,n:ut3w_pygmy]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_pygmy";
+	specializes = dsx_base_pygmy;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  	38.8, 0;
+			intelligence =  13.3, 0;
+			dexterity =  	15.5, 0;
+			melee =  	111,  0;
+		}
+	}
+	[aspect]
+	{
+		scale_base = 1.4;
+		experience_value = 467500;
+		life = 1560;
+		max_life = 1560;
+		mana = 40;
+		max_mana = 40;
+		model = m_c_edm_PYGMY_pos_1;
+		[textures] { 0=b_c_edm_pygmy; }
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 487;
+		damage_min = 284;
+	}
+	[common]
+	{
+		screen_name="Noble Gulik";
+		membership = monster, party_lava_imp_02;
+
+	}
+	[defend] { defense=850; }
+
+}

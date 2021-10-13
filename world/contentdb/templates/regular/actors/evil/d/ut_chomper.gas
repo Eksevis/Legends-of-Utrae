@@ -1,0 +1,314 @@
+[t:template,n:ut_chomper]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_chomper_base";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =     20, 0;
+			intelligence = 7, 0;
+			dexterity =    8, 0;
+			melee =        18, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1065;
+		life             = 787;
+		max_life         = 787;
+		mana             = 15;
+		max_mana         = 15;
+		model = m_c_ecm_db_pos_1;
+		textures:0 = b_c_ecm_db-02;
+		material = flesh;
+		[voice]
+		{
+			[attack]		{	* = s_e_attack_chomper_SED;	}
+			[die]			{ priority = high; * = s_e_die_chomper_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_chomper_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 130; 
+		damage_min = 120; 
+	}
+	[body]
+	{
+		min_move_velocity = 3.0;
+		avg_move_velocity = 3.750000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_two_handed_melee	= 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_db_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,3;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,3;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,3;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,3;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,3;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Chomper";
+		membership = monster;
+	}
+	[defend] { defense = 337; }
+	[inventory]
+{
+	drop_at_use_point = true;
+	[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 6, Medium */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 836;
+				max = 1271;
+			}
+			[oneof*]
+			{
+				chance = 0.15;
+				il_main = #weapon/14-27;
+				il_main = #armor/63-134;
+				il_main = #*/14-27;
+			}
+			[oneof*]
+			{
+				chance = 0.111111111111111;
+				il_main = potion_mana_medium;
+				il_main = potion_health_medium;
+			}
+			[oneof*]
+			{
+				chance = 0.0075;
+				il_main = #weapon/-rare(1)/17-32;
+				il_main = #armor/-rare(1)/100-153;
+				il_main = #*/-rare(1)/17-32;
+			}
+			
+		}
+	}
+}
+	[mind]
+	{
+		jat_brain = world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party	= true;		
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit;	
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+[t:template,n:ut_chomper_boss_01]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_chomper_base";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =     20, 0;
+			intelligence = 7, 0;
+			dexterity =    8, 0;
+			melee =        18, 0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1065;
+		life             = 1287;
+		max_life         = 1287;
+		mana             = 15;
+		max_mana         = 15;
+		model = m_c_ecm_db_pos_1;
+		textures:0 = b_c_ecm_db-02;
+		material = flesh;
+		[voice]
+		{
+			[attack]		{	* = s_e_attack_chomper_SED;	}
+			[die]			{ priority = high; * = s_e_die_chomper_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_chomper_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 160; 
+		damage_min = 120; 
+	}
+	[body]
+	{
+		min_move_velocity = 3.0;
+		avg_move_velocity = 3.750000;
+		[bone_translator]
+		{
+			body_anterior = bip01_head;
+			body_mid = bip01_spine2;
+			body_posterior = bip01_pelvis;
+			kill_bone = bip01_spine2;
+			shield_bone = shield_grip;
+			weapon_bone = weapon_grip;
+		}
+		[weapon_scales]
+		{
+			as_two_handed_melee	= 1.5, 1.5, 1.5;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_ecm_db_fs;
+			[chore_attack]
+			{
+				chore_stances = 0,3;
+				skrit = select_attack;
+				[anim_files]
+				{
+					00 = at;
+					01 = at-02;
+				}
+			}
+			[chore_default]
+			{
+				chore_stances = 0,3;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0,3;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0,3;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0,3;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name = "Chomper Brute";
+		membership=monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_green(sgx)");
+			}
+		}
+	}
+	[defend] { defense = 507; }
+	[inventory]
+{
+	drop_at_use_point = true;
+	[pcontent]
+	{
+	/* Generated: Tue Jun 17 11:13:15 2003
+		Level 6, Medium */
+		[oneof*]
+		{
+			[gold*]
+			{
+				chance = 0.2;
+				min = 836;
+				max = 1271;
+			}
+			[oneof*]
+			{
+				chance = 0.15;
+				il_main = #weapon/14-27;
+				il_main = #armor/63-134;
+				il_main = #*/14-27;
+			}
+			[oneof*]
+			{
+				chance = 0.111111111111111;
+				il_main = potion_mana_medium;
+				il_main = potion_health_medium;
+			}
+			[oneof*]
+			{
+				chance = 0.0075;
+				il_main = #weapon/-rare(1)/17-32;
+				il_main = #armor/-rare(1)/100-153;
+				il_main = #*/-rare(1)/17-32;
+			}
+			
+		}
+	}
+}
+	[mind]
+	{
+		jat_brain = world\ai\jobs\common\brain_hero.skrit
+		?actor_joins_existing_party	= true;		
+		jat_fidget = world\ai\jobs\common\job_fidget.skrit;	
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+}
+
+

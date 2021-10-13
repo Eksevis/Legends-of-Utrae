@@ -1,0 +1,123 @@
+[t:template,n:ut3W_spider_stalagnid]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_spider_stalagnid";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  34.5, 0;
+			intelligence =  9.9, 0;
+			dexterity =  45.3, 0;
+			melee =  88,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1268013;
+		life = 1609.3;
+		max_life = 1609.3;
+		mana = 65.7;
+		max_mana = 65.7;
+		model = m_c_edm_sn_pos_1;
+		[voice]
+		{
+			[die]	{ priority = high; * = s_e_die_spider; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 373.3;
+		damage_min = 266;
+	}
+	[body]
+	{
+		avg_move_velocity = 1.570000;
+		[bone_translator]
+		{
+			body_anterior = bone04;
+			body_mid = bone02;
+			body_posterior = bone42;
+			kill_bone = bone02;
+			shield_bone = bone01;
+			weapon_bone = bone04;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_sn_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=ds; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_misc]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files]
+				{
+					slep = ds;
+					wake = rv;
+				}
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=ds; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=wl; }
+			}
+		}
+	}
+	[common] 
+	{ 
+		screen_name="Stalagnid Broodwarrior"; 
+
+	}
+	[defend] { defense=667.8; }
+	[mind]
+	{
+		jat_startup = world\ai\jobs\common\job_startup_reveal.skrit;
+		actor_auto_fidgets = false;
+		melee_engage_range = 12;
+		personal_space_range = 0.7;
+		ranged_engage_range = 12.0;
+		sight_range = 13.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		break_effect = blood_mist;
+		break_sound = s_e_meat_explosion;
+		gib_gore_good = true;
+		[break_particulate]
+		{
+			frag_glb_stalagnid_01 = 1;
+			frag_glb_stalagnid_02 = 3;
+			frag_glb_stalagnid_03 = 3;
+			frag_glb_stalagnid_04 = 3;
+			frag_glb_stalagnid_05 = 1;
+		}
+	}
+
+}

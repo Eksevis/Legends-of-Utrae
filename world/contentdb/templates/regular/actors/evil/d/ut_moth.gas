@@ -1,0 +1,296 @@
+[t:template,n:ut_moth]
+{
+	category_name = "1W_evil_d";
+	doc = "moth";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  8, 0;
+			intelligence =  4, 0;
+			dexterity =  10, 0;
+            nature_magic =  4,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 56;
+		life = 55;
+        max_life = 55;
+        mana = 14;
+        max_mana = 14;
+		model = m_c_edm_mo_pos_1;
+		[voice]
+		{
+			[cast]			{ * = s_e_attack_moth; }
+			[die]			{ priority = high; * = s_e_die_moth; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_insectoid_SED;  }
+			[hit_glance]	{ priority = low; * = s_e_hit_moth_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 33;
+		damage_min = 30;
+	}
+	[body]
+	{
+		avg_move_velocity = 3.5;
+		[bone_translator]
+		{
+			body_anterior = Bone01;
+			body_mid = Bone01;
+			body_posterior = Bone01;
+			kill_bone = Bone01;
+			shield_bone = Bone01;
+			weapon_bone = Bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_mo_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}
+	[common]
+	{
+		screen_name="Giant Moth";
+	}
+    [defend] { defense=81; }
+    [inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_moth_dust; }
+
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.01;
+					il_main = #ring/27-33;
+					il_main = #amulet/27-33;
+				}
+			}
+		}
+	}
+	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+			?curious		= 0.75
+			&interest		= interest
+			&meander		= false
+			&still			= false;
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+	[physics]
+	{
+		explode_when_killed = true;
+		[break_particulate]
+		{
+			frag_glb_moth_01 = 1;
+			frag_glb_moth_02 = 2;
+			frag_glb_moth_03 = 1;
+			frag_glb_moth_04 = 1;
+			frag_glb_moth_05 = 1;
+		}
+	}
+}
+
+[t:template,n:ut_ice_moth]
+{
+	category_name = "1W_evil_d";
+	doc = "dsx_moth";
+	specializes = actor_evil;
+	[actor]
+	{
+		[skills]
+		{
+			strength     =  7, 0;
+			intelligence =  17, 0;
+			dexterity    = 7, 0;
+			nature_magic =  18, 0;
+			combat_magic =  18, 0;
+		}
+	}
+	[aspect]
+	{
+		[textures]	{ 0 = b_c_edm_dsx_moth; }
+		experience_value = 86;
+		life = 120;
+		max_life = 120;
+		mana = 500;
+		max_mana = 500;
+		model = m_c_edm_mo_pos_1;
+		[voice]
+		{
+			[cast]		{ * = s_e_attack_moth_SED; }
+			[die]			{ priority = high; * = s_e_die_moth_SED; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_insectoid_SED;  }
+			[hit_glance]	        { priority = low; * = s_e_hit_moth_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 26;
+		damage_min = 23;
+	}
+	[body]
+	{
+		avg_move_velocity = 3.5;
+		[bone_translator]
+		{
+			body_anterior = Bone01;
+			body_mid = Bone01;
+			body_posterior = Bone01;
+			kill_bone = Bone01;
+			shield_bone = Bone01;
+			weapon_bone = Bone01;
+		}
+		[chore_dictionary]
+		{
+			chore_prefix = a_c_edm_mo_fs;
+			[chore_attack]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_magic]
+			{
+				chore_stances = 0;
+				skrit = select_attack;
+				[anim_files] { 00=at; }
+			}
+			[chore_default]
+			{
+				chore_stances = 0;
+				skrit = infinite_loop;
+				[anim_files] { 00=dfs; }
+			}
+			[chore_die]
+			{
+				chore_stances = 0;
+				skrit = select_transition;
+				[anim_files] { 00=di; }
+			}
+			[chore_fidget]
+			{
+				chore_stances = 0;
+				skrit = select_fidget;
+				[anim_files] { 00=dff; }
+			}
+			[chore_walk]
+			{
+				chore_stances = 0;
+				skrit = select_walk;
+				[anim_files] { 00=fl; }
+			}
+		}
+	}
+
+	[common]
+	{
+		screen_name="Ice Moth";
+	}
+
+	[defend] { defense = 150; }
+
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell = ut_spell_ice_moth_dust; }
+   		[pcontent]
+		{
+			[oneof*]
+			{
+				[oneof*]
+				{
+					chance = 0.01;
+					il_main = #ring/27-43;
+					il_main = #amulet/27-43;
+				}
+			}
+		}		
+		
+	}
+
+	[mind]
+	{
+		jat_fidget		= world\ai\jobs\common\job_fidget.skrit
+		?curious		= 0.75
+		&interest		= interest
+		&meander		= false
+		&still		= false;
+		
+		actor_weapon_preference			= WP_MELEE;
+		actor_auto_switches_to_magic	= false;
+		actor_auto_switches_to_karate	= true;
+		actor_auto_switches_to_melee	= true;
+		
+		melee_engage_range = 14;
+		personal_space_range = 0.7;
+		ranged_engage_range = 14.0;
+		sight_range = 14.0;
+	}
+
+	[physics]
+	{
+		explode_when_killed = true;
+		[break_particulate]
+		{
+			frag_glb_dsx_moth_01 = 1;
+			frag_glb_dsx_moth_02 = 2;
+			frag_glb_dsx_moth_03 = 1;
+			frag_glb_dsx_moth_04 = 1;
+			frag_glb_dsx_moth_05 = 1;
+		}
+	}
+}

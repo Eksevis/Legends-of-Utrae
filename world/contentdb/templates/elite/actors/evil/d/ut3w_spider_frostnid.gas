@@ -1,0 +1,96 @@
+[t:template,n:ut3W_spider_frostnid]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_spider_frostnid";
+	specializes = 3W_spider_frostnid_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  39.4, 0;
+			intelligence =  6.8, 0;
+			dexterity =  40.6, 0;
+            melee =  95,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 987924;
+		life = 1276.9;
+        max_life = 1276.9;
+        mana = 57.7;
+		max_mana = 57.7;
+		textures:0 = b_c_edm_fn-02;
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 285.7;
+		damage_min = 194.8;
+	}
+	[common] 
+	{ 
+		screen_name="Frostnid Cruncher"; 
+
+	}
+    [defend] { defense=624; }
+
+}
+[t:template,n:ut3W_spider_frostnid_ranged]
+{
+	category_name = "3W_evil_d";
+	doc = "3W_spider_frostnid_ranged";
+	specializes = 3W_spider_frostnid_base;
+	[actor]
+	{
+		[skills]
+		{
+			strength =  40.4, 0;
+			intelligence =  8.5, 0;
+			dexterity =  43.8, 0;
+            ranged =  97,  0;
+  			combat_magic =  102,  0;
+		}
+	}
+	[aspect]
+	{
+		experience_value = 1152360;
+		life = 830.8;
+        max_life = 830.8;
+        mana = 61.5;
+		max_mana = 61.5;
+		[voice]
+		{
+			[cast]			{ * = s_e_attack_frostnid; }
+			[die]			{ priority = high; * = s_e_die_spider; }
+			[enemy_spotted]	{ priority = high; * = s_e_call_spider_SED; }
+		}
+	}
+	[attack]
+	{
+		attack_range = 0.5;
+		damage_max = 338.5;
+		damage_min = 263.1;
+		damage_bonus_min_cmagic = 281;
+		damage_bonus_max_cmagic = 424;
+	}
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+		[other] { il_active_primary_spell=spell_frostnid_freeze; }
+	}
+	[common] 
+	{ 
+		screen_name="Frostnid Tremor"; 
+
+	}
+    [defend] { defense=676.9; }
+	[mind]
+	{
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_karate	= false;
+		actor_auto_switches_to_melee	= false;
+	}
+
+}

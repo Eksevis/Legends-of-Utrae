@@ -1,0 +1,431 @@
+[t:sign_glb_01,n:0x00700729]
+{
+	[common]
+	{
+		dev_instance_text = "sign_7";
+		screen_name = "Town of Quillrabe, 42";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,-0.707107;
+	  p position = 3.1869,0.80443,-0.233823,0xecbf14a3;
+	}
+}
+[t:sign_glb_01,n:0x0070072a]
+{
+	[common]
+	{
+		screen_name = "Town of Hiroth, 98";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,-0.707107;
+	  p position = 3.90571,0.616968,-0.203788,0xecbf14a3;
+	}
+}
+[t:respawn_statue,n:0x007006de]
+{
+	[placement]
+	{
+	  q orientation = 0,-0.121869,0,0.992546;
+	  p position = -2.27097,2,-0.00871298,0x8b698dd6;
+		use_point_scids = 0x007006e8;
+	}
+}
+[t:sign_glb_01,n:0x00700567]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Hiroth, 109";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.694658,0,0.71934;
+	  p position = 0.334328,0,1.71932,0xc9846812;
+	}
+}
+[t:sign_glb_01,n:0x00700821]
+{
+	[common]
+	{
+		dev_instance_text = "sign_1";
+		screen_name = "Town of Quillrabe, 20";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.991445,0,0.130526;
+	  p position = 0.107246,3.8147e-006,1.33611,0xc9846812;
+	}
+}
+[t:sign_glb_generalstore_01,n:0x0070086b]
+{
+	[common]
+	{
+		screen_name = "Orellean's Knick-Knacks";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = -9.04909,-17.5,-8.70712,0xbbca898a;
+	}
+}
+[t:sign_glb_blacksmith_right,n:0x007006e9]
+{
+	[common]
+	{
+		screen_name = "Orellean's Knick-Knacks";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -21.7129,-5.50493,0.134857,0x8fdd9bfc;
+	}
+}
+[t:sign_glb_magic_left,n:0x00700a24]
+{
+	[common]
+	{
+		screen_name = "Dragon's Wrath Magicks";
+	}
+	[placement]
+	{
+	  q orientation = 0,-5.96046e-008,0,1;
+	  p position = -38.1875,-2.45,-18.4727,0xa6bfb8bd;
+	}
+}
+[t:sign_glb_magic_right,n:0x00700a21]
+{
+	[common]
+	{
+		screen_name = "Dragon's Wrath Magicks";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -15.6604,-13.7466,-23.4274,0xa4b0ed47;
+	}
+}
+[t:sign_glb_magicshop_01,n:0x0070086a]
+{
+	[common]
+	{
+		screen_name = "Dragon's Wrath  Magicks";
+	}
+	[placement]
+	{
+	  p position = -10.9482,5.7,3.50977,0x08b0ccdc;
+	}
+}
+[t:sign_glb_magic_left,n:0x00700a1a]
+{
+	[common]
+	{
+		screen_name = "Dragon's Wrath Magicks";
+	}
+	[placement]
+	{
+	  q orientation = 0,-5.96046e-008,0,1;
+	  p position = -27.9413,0.549999,23.5703,0x5e776aad;
+	}
+}
+[t:sign_glb_blacksmith_left,n:0x00700a1e]
+{
+	[common]
+	{
+		screen_name = "Orellean's Knick-Knacks";
+	}
+	[placement]
+	{
+	  q orientation = 0,1,0,-5.96046e-008;
+	  p position = -32.3575,0.549999,15.0554,0x5e776aad;
+	}
+}
+[t:sign_glb_magic_right,n:0x00700a22]
+{
+	[common]
+	{
+		screen_name = "Dragon's Wrath Magicks";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,-0.707107;
+	  p position = 34.1767,-8.45,-2.31692,0x1a1aeca3;
+	}
+}
+[t:sign_glb_magic_left,n:0x00700771]
+{
+	[common]
+	{
+		screen_name = "Dragon's Wrath Magicks";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 32.9765,6.55,16.53,0x63cc67da;
+	}
+}
+[t:sign_glb_inn_03,n:0x007008fb]
+{
+	[common]
+	{
+		screen_name = "Windy River Alehouse";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 5.55424,0.549997,17.7898,0xa8eb1594;
+	}
+}
+[t:sign_des_quillrabe,n:0x00700794]
+{
+	[placement]
+	{
+	  q orientation = 0,1,0,5.96046e-008;
+	  p position = 24.7132,-16.4068,-24.8799,0x8f2adf84;
+	}
+}
+[t:sign_glb_blacksmith_right,n:0x00700a1c]
+{
+	[common]
+	{
+		screen_name = "Orellean's Knick-Knacks";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.707107,0,0.707107;
+	  p position = 32.2782,-11.3138,-23.8253,0xab07031c;
+	}
+}
+[t:sign_des_quillrabe,n:0x00700855]
+{
+	[placement]
+	{
+	  q orientation = 0,0.819153,0,0.573576;
+	  p position = -7.98201,-1.79564,-3.54427,0xeb54ee86;
+	}
+}
+[t:lever_des_01,n:0x0070061f]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00700618,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707107;
+	  p position = -1.89021,-7.15256e-007,-1.78273,0x977c37b5;
+		use_point_scids = 0x00700807,0x0070080a;
+	}
+}
+[t:sign_glb_01,n:0x007006f7]
+{
+	[common]
+	{
+		dev_instance_text = "sign_4";
+		screen_name = "Town of Crystwind, 95";
+	}
+	[placement]
+	{
+	  q orientation = 0,5.96046e-008,0,-1;
+	  p position = -5.074,1.99999,-3.43885,0xcd6fd4d3;
+	}
+}
+[t:sign_glb_01,n:0x00700714]
+{
+	[common]
+	{
+		screen_name = "Town of Quillrabe, 17";
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.991445,0,0.130525;
+	  p position = -4.94466,1.6365,3.92281,0x9f868a43;
+	}
+}
+[t:lever_des_01,n:0x00700621]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00700618,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,-4.64916e-006,0,1;
+	  p position = 0.398792,-8,0.550034,0xe98b6b03;
+		use_point_scids = 0x00700807,0x00700795;
+	}
+}
+[t:sign_glb_01,n:0x00700869]
+{
+	[common]
+	{
+		dev_instance_text = "sign_3";
+		screen_name = "Town of Quillrabe, 37";
+	}
+	[placement]
+	{
+	  q orientation = 0.353554,0.612372,-0.353553,0.612373;
+	  p position = -6.4229,5.55974,3.46168,0xd0e4b39c;
+	}
+}
+[t:sign_glb_01,n:0x00700865]
+{
+	[common]
+	{
+		dev_instance_text = "sign_2";
+		screen_name = "Town of Quillrabe, 34";
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,-0.707107;
+	  p position = -1.4489,0,1.33829,0x13db08c4;
+	}
+}
+[t:lever_des_01,n:0x00700619]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00700616,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707107,0,0.707105;
+	  p position = 0.770719,-8,0.412414,0xb4e8d346;
+		use_point_scids = 0x0070080b,0x00700824;
+	}
+}
+[t:sign_glb_01,n:0x00700866]
+{
+	[common]
+	{
+		dev_instance_text = "sign_5";
+		screen_name = "Town of Quillrabe, 37";
+	}
+	[placement]
+	{
+	  q orientation = 0.724946,0.0891502,-0.67717,0.0891514;
+	  p position = 0.274296,8.60841,3.43765,0x9984bde8;
+	}
+}
+[t:lever_des_01,n:0x00700622]
+{
+	[aspect]
+	{
+	  f use_range = 2;
+	}
+	[common]
+	{
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = send_world_message("we_req_activate",0x00700616,0f,"default","",0);
+			  b can_self_destruct = true;
+				condition* = receive_world_message("we_req_use",0,"on_every_message");
+			  f delay = 0.000000;
+			  b flip_flop = false;
+			  b multi_player = true;
+			  b no_trig_bits = false;
+				occupants_group = ;
+			  f reset_duration = 0.000000;
+			  b single_player = true;
+			  b single_shot = false;
+			  b start_active = true;
+			}
+		}
+	}
+	[placement]
+	{
+	  q orientation = 0,0.707106,0,0.707108;
+	  p position = 1.88474,0,3.49313,0x2365c6cb;
+		use_point_scids = 0x0070080b,0x00700823;
+	}
+}
+[t:lever_glb_06_message,n:0x00700862]
+{
+	[aspect]
+	{
+	  f scale_multiplier = 1;
+	}
+	[on_off_lever]
+	{
+		off_message = we_req_activate;
+	  x off_scid = 0x0070071B;
+	  x on_scid = 0x0070071B;
+	  f required_level = 42;
+	  f required_level_2 = 77;
+	  f required_level_3 = 103;
+	  f reset_time = 20;
+	  f reset_time_2 = 20;
+	}
+	[placement]
+	{
+	  q orientation = -0.653282,0.270598,0.270598,0.653281;
+	  p position = -0.015686,1.15953,0.0159454,0x03063c2d;
+		use_point_scids = 0x0070072d, 0x0070072e;
+	}
+}

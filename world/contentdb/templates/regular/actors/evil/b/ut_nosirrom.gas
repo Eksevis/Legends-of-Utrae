@@ -1,0 +1,213 @@
+[t:template,n:ut_nosirrom]
+{
+	category_name = "1W_evil_b";
+	doc = "dsx_nosirrom";
+	specializes = actor_evil;
+	[actor]
+		{
+			[skills]
+				{
+					strength 		= 8, 0;
+					intelligence = 8, 0;
+					dexterity =		11, 0;
+					melee =			12, 0;
+					ranged =		12, 0;
+					combat_magic =	12, 0;
+					nature_magic =	12, 0;
+				}
+		}
+	[aspect]
+		{
+			experience_value = 55;
+			life			= 380;
+			max_life		= 380;
+			mana			= 304;
+			max_mana		= 304;
+			model = m_c_ebb_nossirom;
+			// textures:0=;
+			material = flesh;
+			[voice]
+				{
+					[die]			{ priority = high; * = s_v_die_nossy;	 }
+					[attack] { * = s_e_attack_igniter;	}
+					[enemy_spotted]	{ priority = high; * = s_e_nis_call_boss_rune_guardian; }
+					[hit_critical]	{ priority = low; * = s_e_hit_zaurask_mini_boss_2_SED;	}
+					//[hit_glance]	{ priority = low; * = s_e_hit_zaurask_mini_boss_1_SED;	}
+					//[hit_solid]		{ priority = low; * = s_e_hit_zaurask_mini_boss_2_SED;	}
+				}
+		}
+	[attack]
+		{
+			attack_range = 0.5;
+			damage_max = 32;
+			damage_min = 24;
+		}
+	[body]
+		{
+			avg_move_velocity = 2.5;
+			[bone_translator]
+				{
+					body_anterior = Bip01_Head;
+					body_mid = Bip01_Spine2;
+					body_posterior = Bip01_Pelvis;
+					kill_bone = Bip01_Spine2;
+					shield_bone = shield_grip;
+					weapon_bone = weapon_grip;
+				}
+			[weapon_scales]
+				{
+					as_staff = 1.5, 1.5, 1.5;
+				}
+			[chore_dictionary]
+				{
+					chore_prefix = a_c_ebb_nossirom_fs;
+					[chore_attack]
+					{
+						chore_stances = 5;
+						skrit = select_attack;
+						[anim_files]
+							{
+								0mid = at;
+								loww = at-03;
+							}
+					}
+					[chore_default]
+					{
+					chore_stances = 5;
+					skrit = infinite_loop;
+					[anim_files] { 00=ds; }
+					}
+					[chore_die]
+					{
+						chore_stances = 5;
+						skrit = select_transition;
+						[anim_files] { 00=di; }
+					}
+					[chore_fidget]
+					{
+						chore_stances = 5;
+						skrit = select_fidget;
+						[anim_files] { 00=dsf; }
+					}
+					[chore_walk]
+					{
+						chore_stances = 5;
+						skrit = select_walk;
+						[anim_files] { 00=rl; }
+					}
+					[chore_magic]
+					{
+						chore_stances = 5;
+						skrit = select_attack;
+						[anim_files] { 00=mg-01; }
+					}
+					[chore_misc]
+					{
+						chore_stances = ignore;
+						skrit = select_transition;
+						// need all anim files here for nis control
+						[anim_files]
+						{
+							tlk1 = a_c_ebb_nossirom_fs5_dsf-02;
+							tlk2 = a_c_ebb_nossirom_fs5_dsf;
+							tlk3 = a_c_ebb_nossirom_fs5_ds;
+						}
+					}
+				}
+		}
+	[common]
+		{
+			screen_name = "Uzgealth The Chieftain"; 
+			membership = party_nosirrom,monster,immune_charm,immune_control,immune_freeze,immune_polymorph,immune_align_change,immune_explode;
+		[template_triggers]
+		{
+			[*]
+			{
+				action* = call_sfx_script("nosirrom_die");
+				condition* = receive_world_message("WE_KILLED");
+				single_shot = true;
+			}
+			[*]
+			{
+				condition* = receive_world_message("WE_ENTERED_WORLD");
+				single_shot = true;
+				no_trig_bits = true;
+				action* = call_sfx_script("unique_ray_red(sgx)");
+
+			}
+		}
+		}
+	[defend] { defense = 50; }
+
+	[inventory]
+	{
+		selected_active_location = il_active_primary_spell;
+
+		[equipment]
+		{
+			es_weapon_hand=st_g_c_bl_1h_fun_nossirom_ut;
+			//es_shield_hand=st_g_c_bl_1h_fun_nossirom_dsx;
+		}
+		[other]
+		{
+			il_active_primary_spell=ut_spell_nosirrom;
+			  il_active_secondary_spell = spell_resurrect_monster;
+		}
+		[pcontent]
+		{
+			/* Generated: Tue Jun 17 11:13:15 2003
+			Level 26, Special */
+			[all*]
+			{
+       		   	    	il_main = ring_dsx_set_guiseppi;
+				il_main = book_glb_lore_ut_zaurask;
+                	}
+			[all*]
+			{
+				[gold*]
+				{
+					max = 61;
+					min = 45;
+					min_pile = 5;
+					piles = 2 - 4;
+				}
+				[all*]
+				{
+					il_main = #weapon/-rare(1)/12-21;
+					il_main = #armor/-rare(1)/18-41;
+					il_main = #*/-rare(1)/12-21;
+				}
+		}
+	}
+}	
+	[mind]
+	{
+
+		actor_weapon_preference			= WP_MAGIC;
+		actor_auto_heals_others_life	= true;
+		actor_auto_reanimates_friends	= true;
+		actor_auto_switches_to_magic	= true;
+		actor_auto_switches_to_melee	= true;
+
+		on_enemy_entered_icz_switch_to_melee = true;
+
+		jat_brain							 = world\ai\jobs\common\brain_hero.skrit
+			?actor_creates_own_party		 = true
+			&form_party_on_friend_entered_ICZ = true
+			&form_party_on_friend_entered_OCZ = true
+			&party_template					 = "party_nosirrom"
+			&party_creation_distance		 = 20;
+
+		jat_fidget	= world\ai\jobs\common\job_fidget.skrit;
+		
+		job_travel_distance_limit = 10;	
+		on_job_reached_travel_distance_abort_attack = true;
+		
+		melee_engage_range = 4.1;
+		personal_space_range = 1;
+		ranged_engage_range = 20.0;
+		sight_range = 20.0;
+		inner_comfort_zone_range        = 4.0;
+		outer_comfort_zone_range        = 9.0;
+	}
+}

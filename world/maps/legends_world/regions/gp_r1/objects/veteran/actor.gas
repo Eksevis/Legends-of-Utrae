@@ -1,0 +1,25 @@
+[t:ut2w_npc_skeleton,n:0x08700081]
+{
+	[common]
+	{
+		dev_instance_text = "Singleplayer";
+	  b is_multi_player = true;
+		screen_name = "Ramblin' Bones";
+	}
+	[conversation]
+	{
+		[conversations]
+		{
+			* = conversation_skel;
+		}
+	}
+	[mind]
+	{
+		jat_talk = world\ai\jobs\common\job_talk_mp.skrit;
+	}
+	[placement]
+	{
+	  q orientation = 0,-0.688355,0,0.725374;
+	  p position = -1.47291,12.9459,-2.5817,0x4e13cd48;
+	}
+}

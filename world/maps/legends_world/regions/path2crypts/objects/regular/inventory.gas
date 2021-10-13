@@ -1,0 +1,39 @@
+[t:hoe,n:0x01d00184]
+{
+	[placement]
+	{
+	  q orientation = 0,0.866026,0,0.5;
+	  p position = 0.0971718,-3,2.00244,0xe8e82a5e;
+	}
+}
+[t:book_glb_lore_ut_hint,n:0x01d0015f]
+{
+	[common]
+	{
+		screen_name	= "A Hint of Things To Come";
+	  b is_multi_player = false;
+		
+		[instance_triggers]
+		{
+			[*]
+			{
+				action* = change_quest_state("quest_shaladar_quest","active",1);
+				b can_self_destruct = true;
+				condition* = receive_world_message("we_picked_up",0,"on_first_message"), doc("[*one-shot check (trigger is one-shot)*]");
+				f delay = 0.000000;
+				b flip_flop = false;
+				b multi_player = true;
+				b no_trig_bits = false;
+				occupants_group = ;
+				f reset_duration = 0.000000;
+				b single_player = true;
+				b single_shot = true;
+				b start_active = true;
+			}
+		}		
+	}
+	[placement]
+	{
+	  p position = 3.17954,4.76837e-007,-1.53571,0x1ec89e4f;
+	}
+}

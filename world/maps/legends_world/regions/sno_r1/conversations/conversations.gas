@@ -1,0 +1,30 @@
+[zconversation_directions]
+{
+	[text*]
+	{
+		screen_text = "Ummmm, well if you take the displacer you'll get back to Fallraen. Sure beats taking the long walk back now doesn't it? On the other hand if you keep on walking thataways you're sure to reach Meren.";
+	}
+}
+[conversation_wilak]
+{
+	
+    [text*]
+	{
+		choice = shop;
+
+		screen_text = "Ha ha ha well we meet again. Yes I know, I'm as thick as a Krug that had a few too many on prom night. I was heading towards Meren, you know, to make my fortune, when I got cornered by all these critters. I was just thinking what's the better option, getting eaten alive or throwing myself off this ledge, when you arrived saving my sorry ass, once again. Well as you already know, since you're here and I'm here, care to look at my wares? I may make something from this sorry trip afterall.";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0270045c;
+	}
+}
+[conversation_wilak_red]
+{
+	[text*]
+	{
+	
+		choice = shop;	
+		screen_text = "Can't a lad go anywhere in this dratted excuse of a town to get a good night's sleep?";
+		button_1_text = "Directions";
+       		button_1_value = d_0x0270045c;
+	}
+}

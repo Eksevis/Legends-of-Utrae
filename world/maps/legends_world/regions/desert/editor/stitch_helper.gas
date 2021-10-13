@@ -1,0 +1,59 @@
+[stitch_helper_data]
+{
+	source_region_guid = 0xAAA20200;
+	source_region_name = desert;
+	[t:stitch_editor,n:castle_dun]
+	{
+		dest_region = castle_dun;
+		[node_ids]
+		{
+			0x0000acf1 = 0xF18BC157,10;
+		}
+	}
+	[t:stitch_editor,n:dragon_r2]
+	{
+		dest_region = dragon_r2;
+		[node_ids]
+		{
+			0x0000ace3 = 0x3DB9AF63,10;
+		}
+	}
+	[t:stitch_editor,n:dunes]
+	{
+		dest_region = dunes;
+		[node_ids]
+		{
+			0x0000aed1 = 0x063AC0C9,10;
+			0x0000aed2 = 0xB7B5D9BD,9;
+			0x0000aed3 = 0x168CBD88,3;
+			0x0000aed4 = 0x5D0DF32F,4;
+			0x0000aed5 = 0x364C3C31,3;
+			0x0000aed6 = 0x364C3C31,4;
+			0x0000aed7 = 0xF5289A78,3;
+			0x0000aed8 = 0xF5289A78,4;
+			0x0000aed9 = 0x4270C774,2;
+			0x000aed10 = 0x1D918003,1;
+		}
+	}
+	[t:stitch_editor,n:oasis]
+	{
+		dest_region = oasis;
+		[node_ids]
+		{
+			0x0000aeb1 = 0x1D918003,2;
+			0x0000aeb2 = 0xFD971FA4,3;
+			0x0000aeb3 = 0x5CF81568,3;
+			0x0000aeb4 = 0x12E15EBA,3;
+			0x0000aeb5 = 0xA1F1B257,10;
+			0x0000aeb6 = 0xB58703B3,10;
+			0x0000aeb7 = 0xB3FF9623,4;
+			0x0000aeb8 = 0xD5AFAD7E,2;
+			0x0000aec1 = 0x86673FB2,4;
+			0x0000aec2 = 0x3E280D0E,2;
+			0x0000aec3 = 0xEC2A72B6,3;
+			0x0000aec4 = 0x18DF9EF5,4;
+			0x0000aec5 = 0x18DF9EF5,5;
+			0x0000aec6 = 0x063AC0C9,9;
+		}
+	}
+}
